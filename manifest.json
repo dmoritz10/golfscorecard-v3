@@ -1,7 +1,17 @@
 
 {
-    "display": "standalone",
-    "orientation": "landscape",
-     "start_url": "/?standalone=true",
-    "background_color": "red"
-  }
+	"name" : "Golf Scorecard",
+	"theme_color" : "#f9f9f9",
+	"background_color" : "#62db77",
+	"start_url" : "https://dmoritz10.github.io/golfscorecard-v3/",
+	"display" : "standalone",
+	"orientation" : "portrait",
+	"lang" : "",
+	"short_name" : "Dan Golf",
+	"splash_pages": null,
+    "icons": [{
+      "src": "images/icons/golf-icon 144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }]
+}
