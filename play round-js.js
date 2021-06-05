@@ -34,11 +34,11 @@ function checkForIncompleteRound () {
     
     console.log(prevRound)
     
-    if (prevRound.scoreCard && prevRound.courseInfo) {
-//    if (prevScordCard && prevCourseInfo) {
+//    if (prevRound.scoreCard && prevRound.courseInfo) {
+    if (prevScordCard && prevCourseInfo) {
     
-      prScore = JSON.parse(prevRound.scoreCard)
-//      prScore = prevScordCard
+//      prScore = JSON.parse(prevRound.scoreCard)
+      prScore = prevScordCard
       
       var confirmResume = await confirm("Resume previous round at " + 
                                           prScore.courseName +
@@ -48,8 +48,8 @@ function checkForIncompleteRound () {
       
       if (confirmResume) {
       
-        prCourse = JSON.parse(prevRound.courseInfo)
-//        prCourse = prevCourseInfo
+//        prCourse = JSON.parse(prevRound.courseInfo)
+        prCourse = prevCourseInfo
         prClubs = readOption('Clubs', [])
         
         console.log(prCourse)
@@ -62,9 +62,9 @@ function checkForIncompleteRound () {
         
       } else {
       
-        promiseRun('clearRound')
-//        await updateOption('currScoreCard', '')                  
-//        await updateOption('currCourseInfo', '')  
+//        promiseRun('clearRound')
+        await updateOption('currScoreCard', '')                  
+        await updateOption('currCourseInfo', '')  
 
         resolve(false)
     
