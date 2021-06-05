@@ -1,6 +1,8 @@
 <script>
 
 async function btnPlayRoundHtml() {
+
+  console.log('btnPlayRoundHtml')
     
   transitionPlayRoundTab()
   
