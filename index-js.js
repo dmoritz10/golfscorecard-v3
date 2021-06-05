@@ -67,7 +67,8 @@ $(function() {
   var tabs = $( "#main-panel" ).tabs();
   
 // Home tab
-//   $('#btnPlayRound')            .button().click(btnPlayRoundHtml);
+   $('#btnPlayRound')            .button().click(btnPlayRoundHtml);
+   $('#btnPlayRound')            .button().click(btnPlayRoundHtml);
 
 // hi dan
 
