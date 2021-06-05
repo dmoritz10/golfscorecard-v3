@@ -9,7 +9,7 @@
 	"short_name" : "Dan Golf",
 	"splash_pages": null,
     "icons": [{
-      "src": "images/icons/golf-icon 144.png",
+      "src": "images/icons/golf-icon-144.png",
       "sizes": "144x144",
       "type": "image/png"
     }]
