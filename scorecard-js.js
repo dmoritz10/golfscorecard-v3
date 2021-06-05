@@ -1,26 +1,4 @@
-<style>
-<!--
-  The following are an attempt to adapt bootbox to Bootstrap Material Design
--->
 
-.golfersCSS label {
-
-  font-size: 1.2rem;
-  color: black;
-
-}
-
-.golfersCSS input {
-
-  z-index:    0    !important;
-  width:      18px !important;
-  height:     18px !important;
-  opacity:    1    !important;
-  margin-top: 5px  !important;
- 
-}
-
-</style>
 
 
 <script>
@@ -213,12 +191,12 @@ async function initScorecardUpload(tee, gender) {
   prScore.targetScoreHcpAdj = calcHcpAdj(parseInt(prCourse.courseInfo['Target Score'].split(' ')[0]) 
                                           - parseInt(prCourse.courseInfo['Par']), prCourse.holeDetail)
   
-  await promiseRun('logRound', ['currScoreCard','currCourseInfo'], 
-                               [JSON.stringify(prScore), JSON.stringify(prCourse)]
-                  )
+//    await promiseRun('logRound', ['currScoreCard','currCourseInfo'], 
+//                                 [JSON.stringify(prScore), JSON.stringify(prCourse)]
+//                    )
                   
-//  await updateOption('currScoreCard', JSON.stringify(prScore))                  
-//  await updateOption('currCourseInfo', JSON.stringify(prCourse))                  
+  await updateOption('currScoreCard', JSON.stringify(prScore))                  
+  await updateOption('currCourseInfo', JSON.stringify(prCourse))                  
 
 }
 
@@ -569,8 +547,8 @@ async function btnSaveScoreHtml() {
   clubsThisHole = []
   prScore.status = 'in process'
 
-//  await updateOption('currScoreCard', JSON.stringify(prScore))                  
-  await promiseRun('logRound', 'currScoreCard', JSON.stringify(prScore))
+  await updateOption('currScoreCard', JSON.stringify(prScore))                  
+//  await promiseRun('logRound', 'currScoreCard', JSON.stringify(prScore))
   
   var e = {}; e.data = {};e.data.offset = 1
   btnChangeHoleHtml(e)
@@ -593,8 +571,8 @@ async function btnClearScoreHtml() {
 
   clubsThisHole = []
   
-//  await updateOption('currScoreCard', JSON.stringify(prScore))                  
-  await promiseRun('logRound', 'currScoreCard', JSON.stringify(prScore))
+ await updateOption('currScoreCard', JSON.stringify(prScore))                  
+//   await promiseRun('logRound', 'currScoreCard', JSON.stringify(prScore))
   
   var e = {}; e.data = {};e.data.offset = 0
   btnChangeHoleHtml(e)
@@ -627,8 +605,8 @@ async function btnEndRoundHtml() {
   prScore.endTime = new Date()
   prScore.finalScore = $.sum (prScore.scores, 'score')
 
-//  await updateOption('currScoreCard', JSON.stringify(prScore))                  
-  await promiseRun('logRound', 'currScoreCard', JSON.stringify(prScore))
+  await updateOption('currScoreCard', JSON.stringify(prScore))                  
+//  await promiseRun('logRound', 'currScoreCard', JSON.stringify(prScore))
 
   var resource = {
     "majorDimension": "ROWS",
