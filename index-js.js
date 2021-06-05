@@ -67,13 +67,12 @@ $(function() {
   var tabs = $( "#main-panel" ).tabs();
   
 // Home tab
-$('#btnStartRound')           .button().click(btnStartRoundHtml);
-$('#btnPlayRound')            .button().click(btnPlayRoundHtml);
+//   $('#btnPlayRound')            .button().click(btnPlayRoundHtml);
 
 // hi dan
 
 // Play Round tab
-//  $('#btnStartRound')           .button().click(btnStartRoundHtml);
+  $('#btnStartRound')           .button().click(btnStartRoundHtml);
   $( "#hpSelectCourse")         .change({useDefaultTee:true},  loadCourseInfo);
   $( "#hpSelectTees")           .change({useDefaultTee:false}, loadCourseInfo);
   $("#hpTargetHandicap")        .change({useDefaultTee:false}, loadCourseInfo);
