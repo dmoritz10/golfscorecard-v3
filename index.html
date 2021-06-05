@@ -40,9 +40,9 @@
   $(function () {
       $(".load-html").each(function () {
 
-console.log(this.dataset)
+console.log(encodeURI(this.dataset))
 
-          $(this).load(this.dataset.source);
+          $(this).load(encodeURI(this.dataset.source));
       });
   });
 </script> 
