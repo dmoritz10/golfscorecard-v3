@@ -1,0 +1,7 @@
+
+{
+    "display": "standalone",
+    "orientation": "landscape",
+     "start_url": "/?standalone=true",
+    "background_color": "red"
+  }
