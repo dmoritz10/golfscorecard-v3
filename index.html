@@ -39,6 +39,9 @@
 <script>
   $(function () {
       $(".load-html").each(function () {
+
+console.log(this.dataset)
+
           $(this).load(this.dataset.source);
       });
   });
