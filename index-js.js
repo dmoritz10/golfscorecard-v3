@@ -69,6 +69,8 @@ $(function() {
 // Home tab
   $('#btnPlayRound')            .button().click(btnPlayRoundHtml);
 
+// hi dan
+
 // Play Round tab
   $('#btnStartRound')           .button().click(btnStartRoundHtml);
   $( "#hpSelectCourse")         .change({useDefaultTee:true},  loadCourseInfo);
