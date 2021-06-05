@@ -963,7 +963,7 @@ async function btnTestAPIStatusHtml() {
 async function btnTestGASStatusHtml() {
 
   var timer = new Date()
-  await promiseRun('logRound', 'currScoreCard', JSON.stringify(prScore))
+//  await promiseRun('logRound', 'currScoreCard', JSON.stringify(prScore))
   var optionTimer = new Date() - timer
   
   alert('Update Properties successful - ' + optionTimer + 'ms')
