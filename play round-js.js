@@ -32,7 +32,7 @@ function checkForIncompleteRound () {
     var prevScordCard = readOption('currScoreCard')
     var prevCourseInfo = readOption('currCourseInfo')
     
-    console.log(prevRound)
+    console.log(prevScordCard)
     
 //    if (prevRound.scoreCard && prevRound.courseInfo) {
     if (prevScordCard && prevCourseInfo) {
