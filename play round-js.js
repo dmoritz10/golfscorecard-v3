@@ -28,9 +28,9 @@ function checkForIncompleteRound () {
 
   return new Promise(async function(resolve) {
   
-    var prevRound = await promiseRun('readLog')
-//    var prevScordCard = readOption('currScoreCard')
-//    var prevCourseInfo = readOption('currCourseInfo')
+//    var prevRound = await promiseRun('readLog')
+    var prevScordCard = readOption('currScoreCard')
+    var prevCourseInfo = readOption('currCourseInfo')
     
     console.log(prevRound)
     
