@@ -39,9 +39,6 @@
 <script>
   $(function () {
       $(".load-html").each(function () {
-
-console.log(encodeURI(this.dataset))
-
           $(this).load(encodeURI(this.dataset.source));
       });
   });
@@ -50,13 +47,6 @@ console.log(encodeURI(this.dataset))
 <div class="load-html" data-source="index-js.js"></div>
 <div class="load-html" data-source="table-builder.js"></div>
 <div class="load-html" data-source="get rounds-js.js"></div>
-
-<!--  
-<?!= HtmlService.createHtmlOutputFromFile('index-js.js').getContent(); ?>
-<?!= HtmlService.createHtmlOutputFromFile('table-builder.js').getContent(); ?>
-<?!= HtmlService.createHtmlOutputFromFile('get rounds-js.js').getContent(); ?>
-
--->
 
 <style>
 
