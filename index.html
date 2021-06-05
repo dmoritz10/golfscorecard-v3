@@ -334,8 +334,8 @@ fade {
       
       <div class="container-fluid m-0 p-0 tab-pane fade" id="Golfers" style="height:100%" role="tabpanel">
 
-        <div class="load-html" data-source="golfers"></div>
-        <div class="load-html" data-source="golfers-js.js"></div>
+        <div class="load-html d-none" data-source="golfers"></div>
+        <div class="load-html d-none" data-source="golfers-js.js"></div>
                 
 
       </div>        
@@ -343,15 +343,14 @@ fade {
 
     </div>  
   </div> 
+  
   <div class="load-html" data-source="index-js.js"></div>
+
   <button id="authorize_button" style="">Authorize</button>
   
   <button id="signout_button" style="">Sign Out</button>
  
   <button id="test_button" style="">Test</button>
-
-
-  
   
 <script>
 
@@ -487,7 +486,7 @@ return
   
   canUseGeo = document.featurePolicy.allowsFeature("geolocation")
 
-  console.log('version 22222')
+  console.log('version 3333')
 
 </script>
 
