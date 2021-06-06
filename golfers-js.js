@@ -16,7 +16,7 @@
 
     $("#nbrGolfers")[0].innerHTML = golfers.length
 
-    for (var j = 0; j<golfers.length; {
+    for (var j = 0; j<golfers.length;j++) {
 
       var ele = $("#tblGolfers").clone();
 
