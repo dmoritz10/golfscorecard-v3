@@ -29,6 +29,14 @@ var prLng
 var courseCoords = {}
 var nearByUweatherStations = null
 
+var geolocationOptions = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0
+};
+
+
+
 var puttsOriginalState
 var driveOriginalState
 var pnltyOriginalState
