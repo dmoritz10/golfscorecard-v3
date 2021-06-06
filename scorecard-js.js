@@ -1,4 +1,4 @@
-
+<script>
 
 var geolocationOptions = {
   enableHighAccuracy: true,
@@ -1447,3 +1447,4 @@ function getGolfers() {
 
 }
 
+</script>
