@@ -1,11 +1,5 @@
 <script>
 
-var geolocationOptions = {
-  enableHighAccuracy: true,
-  timeout: 5000,
-  maximumAge: 0
-};
-
 
 
 async function btnStartRoundHtml() {
