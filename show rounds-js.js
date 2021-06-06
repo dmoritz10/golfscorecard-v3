@@ -1,4 +1,4 @@
-<script>
+
 
 async function btnShowRoundsHtml() {
 
@@ -263,5 +263,3 @@ function loadCoursesSelect(selectCourse) {
 
 }
 
-
-</script>

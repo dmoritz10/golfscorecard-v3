@@ -1,8 +1,5 @@
 
 
-
-<script>
-
 var geolocationOptions = {
   enableHighAccuracy: true,
   timeout: 5000,
@@ -672,9 +669,9 @@ async function btnCancelRoundHtml() {
   
   navigator.geolocation.clearWatch(geoWatchId);  
 
-  await promiseRun('clearRound')
-//  await updateOption('currScoreCard', '')                  
-//  await updateOption('currCourseInfo', '')                  
+//  await promiseRun('clearRound')
+  await updateOption('currScoreCard', '')                  
+  await updateOption('currCourseInfo', '')                  
 
 
   $('#btnCancelRound').prop('disabled', false) 
@@ -1450,5 +1447,3 @@ function getGolfers() {
 
 }
 
-
-</script>
