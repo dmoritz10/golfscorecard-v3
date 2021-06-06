@@ -204,7 +204,8 @@ fade {
     
       $(function () {
           $(".load-html").each(function () {
-              $(this).load(encodeURI(this.dataset.source));
+            $('body').load(encodeURI(this.dataset.source));
+ //             $(this).load(encodeURI(this.dataset.source));
               console.log($(this))
               $(this).remove()
           });
