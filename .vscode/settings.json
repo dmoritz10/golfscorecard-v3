@@ -1,0 +1,9 @@
+{
+    "ShortcutMenuBar.commentLine": true,
+    "ShortcutMenuBar.findReplace": true,
+    "ShortcutMenuBar.redo": true,
+    "ShortcutMenuBar.save": true,
+    "ShortcutMenuBar.undo": true,
+    "ShortcutMenuBar.saveAll": true,
+    "ShortcutMenuBar.toggleTerminal": false
+}
