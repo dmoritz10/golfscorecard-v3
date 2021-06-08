@@ -1,7 +1,5 @@
 <script>
 
-
-
 async function btnStartRoundHtml() {
 
   prCourse.courseInfo = courseInfo
