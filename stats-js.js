@@ -12,7 +12,7 @@ function btnShowStatsHtml() {
 
     switch (val) {
   
-      case 'Scores and Handicap - all Rounds':
+      // case 'Scores and Handicap - all Rounds':
         break;
 
       case 'Lifetime':
@@ -20,7 +20,7 @@ function btnShowStatsHtml() {
         break;
 
       default:
-        otherStats(val, idx)
+        // otherStats(val, idx)
         break;
 
     }
