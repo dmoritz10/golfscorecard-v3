@@ -20,7 +20,7 @@ function btnShowStatsHtml() {
         break;
 
       default:
-        // otherStats(val, idx)
+        otherStats(val, idx)
         break;
 
     }
