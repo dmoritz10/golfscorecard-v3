@@ -16,7 +16,7 @@ function btnShowStatsHtml() {
         break;
 
       case 'Lifetime':
- //</script>       lifetimeStats()
+ //       lifetimeStats()
         break;
 
       default:
