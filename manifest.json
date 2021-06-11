@@ -3,7 +3,7 @@
 	"theme_color" : "#f9f9f9",
 	"background_color" : "#62db77",
 	"start_url" : "https://dmoritz10.github.io/golfscorecard-v3/",
-	"display" : "fullscreen",
+	"display" : "standalone",
 	"orientation" : "portrait",
 	"lang" : "",
 	"short_name" : "Dan Golf",
