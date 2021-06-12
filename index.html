@@ -186,27 +186,6 @@ fade {
 
   <script>
 
-window.addEventListener('load', function(e) {
-alert('loaded')
-alert('reload')
-window.location.reload();
-window.applicationCache.addEventListener('updateready', function(e) {
-  if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
-    // Browser downloaded a new app cache.
-    // Swap it in and reload the page to get the new hotness.
-
-    alert('new cache')
-    window.applicationCache.swapCache();
-    if (confirm('A new version of this site is available. Load it?')) {
-      window.location.reload();
-    }
-  } else {
-    // Manifest didn't changed. Nothing new to server.
-  }
-}, false);
-
-}, false);
-
     if ("serviceWorker" in navigator) {
             if (navigator.serviceWorker.controller) {
                 console.log("[PWA Builder] active service worker found, no need to register");
@@ -338,7 +317,7 @@ window.applicationCache.addEventListener('updateready', function(e) {
       
       </div>        
       
-      <div class="container-fluid m-0 p-0 tab-pane fade" id="Stats" style="height:100%" role="tabpanel">
+      <div class="container-fluid m-0 p-0 tab-pane fade" id="Stats" style="height:auto" role="tabpanel">
 
         <div class="load-html" data-source="stats"></div>
         <div class="load-html d-none" data-source="stats-js.js"></div>
