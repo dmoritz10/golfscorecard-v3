@@ -76,7 +76,7 @@ $(async function() {
 
 console.log('111')
 
-  await initialUI();
+  // await initialUI();
   console.log('222')
 
   $( "#Home" ).css("visibility", "visible")
