@@ -72,8 +72,13 @@ $(function() {
 
   });
 
+console.log('111')
+
+  await initialUI();
+  console.log('222')
 
   $( "#Home" ).css("visibility", "visible")
+  console.log('333')
 
   var tabs = $( "#main-panel" ).tabs();
   
