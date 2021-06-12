@@ -1,14 +1,14 @@
 <script>
 
-function btnAuthHtml() {
+function btnAuthHtml(event) {
 
-    gapi.auth2.getAuthInstance().signIn();
+handleAuthClick;
     
 }
     
-function btnSignoutHtml() {
+function btnSignoutHtml(event) {
 
-     gapi.auth2.getAuthInstance().signOut();
+handleSignoutClick;
     
 }
        
