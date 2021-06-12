@@ -45,7 +45,7 @@ var sandOriginalState
 var weatherUrlMask = 'https://www.wunderground.com/*type*/*country*/*state*/*city*/*stationId*'
 
 
-$(function() {
+$(async function() {
 
 //  $('body').bootstrapMaterialDesign();
 
