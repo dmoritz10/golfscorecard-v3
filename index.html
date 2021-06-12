@@ -188,6 +188,8 @@ fade {
 
 window.addEventListener('load', function(e) {
 alert('loaded')
+alert('reload')
+window.location.reload();
 window.applicationCache.addEventListener('updateready', function(e) {
   if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
     // Browser downloaded a new app cache.
