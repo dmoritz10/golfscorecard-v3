@@ -74,7 +74,7 @@ $(function() {
 
 alert('hi dan')
 
-  $( "#main-panel" ).show()
+  $( "#Home" ).css("visibility", "visible")
   var tabs = $( "#main-panel" ).tabs();
   
 // Home tab
