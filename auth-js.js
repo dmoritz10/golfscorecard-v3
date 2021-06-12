@@ -8,7 +8,7 @@ function btnAuthHtml() {
     
 function btnSignoutHtml() {
 
-    // gapi.auth2.getAuthInstance().signOut();
+     gapi.auth2.getAuthInstance().signOut();
     
 }
        
