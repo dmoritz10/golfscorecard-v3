@@ -61,7 +61,7 @@ var str = new Date()
 
         var roundObj = makeObj(arrRounds[r][0], cols)
 
-        roundObj.rowidx = arrRounds[r][1]
+        roundObj.rowIdx = arrRounds[r][1]
         
         roundObj.objHandicap = {
 
