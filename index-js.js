@@ -71,7 +71,10 @@ $(function() {
     event.removeClass('hid')
 
   });
- 
+
+alert('hi dan')
+
+  $( "#main-panel" ).show()
   var tabs = $( "#main-panel" ).tabs();
   
 // Home tab
