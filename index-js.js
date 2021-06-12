@@ -278,15 +278,13 @@ function dupIds () {
 
 async function initialUI() {
 
-  $('#main-panel').prop('disabled', true)
-
   arrShts = await openShts (
     [
     {title: 'My Courses',   type: "all"},
     {title: 'Options',      type: "all"}
     ])
     
-    console.log(arrShts)
+  console.log(arrShts)
     
   arrOptions    = toObject(arrShts.Options.vals)
   optionsIdx    = toObjectIdx(arrShts.Options.vals)    
@@ -298,11 +296,8 @@ async function initialUI() {
   
   loadCoursesPlayedDropDown('hpSelectCourse')
   
-  $('#main-panel').prop('disabled', false)
-
-  $( "#Home" ).css("visibility", "visible")
- 
-
+  //  $( "#Home" ).css("visibility", "visible")
+   gotoTab('Home')
 };
 
 var confirm = function (msg) {
