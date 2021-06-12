@@ -297,7 +297,7 @@ async function initialUI() {
   loadCoursesPlayedDropDown('hpSelectCourse')
   
   //  $( "#Home" ).css("visibility", "visible")
-   gotoTab('Auth')
+  
 };
 
 var confirm = function (msg) {

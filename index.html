@@ -434,10 +434,12 @@ console.log('aaa')
 
         await initialUI();
 
+        gotoTab('Home')
 console.log('bbb')
         } else {console.log('NOT signed in')
 //          authorizeButton.style.display = 'block';
-//          signoutButton.style.display = 'none';
+          signoutButton.style.display = 'none';
+gotoTab('Auth')
         }
       }
 
