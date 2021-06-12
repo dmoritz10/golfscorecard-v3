@@ -2,13 +2,13 @@
 
 function btnAuthHtml(event) {
 
-handleAuthClick;
+handleAuthClick();
     
 }
     
 function btnSignoutHtml(event) {
 
-handleSignoutClick;
+handleSignoutClick();
     
 }
        
