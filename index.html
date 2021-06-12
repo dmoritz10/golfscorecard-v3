@@ -445,6 +445,7 @@ gotoTab('Auth')
        *  Sign in the user upon button click.
        */
       function handleAuthClick(event) {
+        alert('signin')
         gapi.auth2.getAuthInstance().signIn();
       }
 
@@ -452,6 +453,7 @@ gotoTab('Auth')
        *  Sign out the user upon button click.
        */
       function handleSignoutClick(event) {
+        alert('signout')
         gapi.auth2.getAuthInstance().signOut();
       }
 
