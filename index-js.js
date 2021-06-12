@@ -77,6 +77,13 @@ $(async function() {
 
  
   var tabs = $( "#main-panel" ).tabs();
+
+</script>/
+// Auth tab
+
+  $('#btnAuth')            .button().click(btnAuthHtml);
+  $('#btnSignout')           .button().click(btnSignoutHtml);
+
   
 // Home tab
 
