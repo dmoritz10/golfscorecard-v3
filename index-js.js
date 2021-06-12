@@ -72,7 +72,6 @@ $(function() {
 
   });
 
-alert('hi dan')
 
   $( "#Home" ).css("visibility", "visible")
   var tabs = $( "#main-panel" ).tabs();
