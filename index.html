@@ -428,6 +428,8 @@ var DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"
 //          authorizeButton.style.display = 'none';
          signoutButton.style.display = 'block';
 
+         $('#authSigninStatus').html('You are already signed in')
+         authSigninStatus
 console.log('aaa')
 
         await initialUI();
@@ -436,6 +438,8 @@ console.log('aaa')
 console.log('bbb')
         } else {console.log('NOT signed in')
 //          authorizeButton.style.display = 'block';
+$('#authSigninStatus').html('You are  signed out.  Authorization is required')
+
           signoutButton.style.display = 'none';
 gotoTab('Auth')
         }
@@ -445,7 +449,7 @@ gotoTab('Auth')
        *  Sign in the user upon button click.
        */
       function handleAuthClick(event) {
-        alert('signin')
+        
         gapi.auth2.getAuthInstance().signIn();
       }
 
@@ -453,7 +457,7 @@ gotoTab('Auth')
        *  Sign out the user upon button click.
        */
       function handleSignoutClick(event) {
-        alert('signout')
+        
         gapi.auth2.getAuthInstance().signOut();
       }
 
