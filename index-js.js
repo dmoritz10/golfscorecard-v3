@@ -74,16 +74,14 @@ $(function() {
 
 
   $( "#Home" ).css("visibility", "visible")
+
   var tabs = $( "#main-panel" ).tabs();
   
 // Home tab
 
-$('#btnPlayRound')            .button().click(btnPlayRoundHtml);
-
-// hi dan
 
 // Play Round tab
-
+  $('#btnPlayRound')            .button().click(btnPlayRoundHtml);
   $('#btnStartRound')           .button().click(btnStartRoundHtml);
   $( "#hpSelectCourse")         .change({useDefaultTee:true},  loadCourseInfo);
   $( "#hpSelectTees")           .change({useDefaultTee:false}, loadCourseInfo);
