@@ -47,6 +47,8 @@ var weatherUrlMask = 'https://www.wunderground.com/*type*/*country*/*state*/*cit
 
 $(async function() {
 
+  // hi dan
+
 //  $('body').bootstrapMaterialDesign();
 
 //  parent.document.getElementById('userHtmlFrame').style.overflowY = "hidden";
