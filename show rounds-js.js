@@ -78,7 +78,7 @@ async function btnShowRoundsHtml() {
       
       }
       
-      ele.find('#srFetchRound')[0].setAttribute("onclick", "showRoundDetail(" + j + ", 'ShowRounds')");
+      ele.find('#srFetchRound')[0].setAttribute("onclick", "showRoundDetail(" + roundObj.rowIdx + ", 'ShowRounds')");
       
       
       ele.show()

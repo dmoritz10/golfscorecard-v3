@@ -39,7 +39,7 @@ var str = new Date()
            continue;
         }
 
-        arrRounds.push(rounds[j])
+        arrRounds.push([rounds[j], j])
     }
 
 
@@ -59,7 +59,9 @@ var str = new Date()
     for (var r = 0; r < arrRounds.length; r++) {
         //  for (var r=800;r<arrRounds.length;r++) {
 
-        var roundObj = makeObj(arrRounds[r], cols)
+        var roundObj = makeObj(arrRounds[r][0], cols)
+
+        roundObj.rowidx = arrRounds[r][1]
         
         roundObj.objHandicap = {
 
