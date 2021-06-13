@@ -283,12 +283,12 @@
 }
 
 async function getSSId() {
-console.log('getSSId')
-var q = "name = 'golfscorecard database v3'" 
-console.log('hi dan')
-            console.log(gapi.client)
 
-var rtn = await gapi.client.drive.files.list({
+  var q = "name = 'golfscorecard database v3'" + 
+          " AND " + "mimeType='application/vnd.google-apps.spreadsheet'" + 
+          " AND " + "trashed = false"
+
+  var rtn = await gapi.client.drive.files.list({
       q: q,
       fields: 'nextPageToken, files(id, name)',
       spaces: 'drive'
