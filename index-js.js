@@ -284,9 +284,7 @@
 
 async function getSSId() {
 console.log('getSSId')
-var q = "title = 'golfscorecard database v3'" + 
-            " AND " + "mimeType='application/vnd.google-apps.spreadsheet'" + 
-            " AND " + "trashed = false"
+var q = "title = 'golfscorecard database v3'" 
 console.log('hi dan')
             console.log(gapi.client)
 
