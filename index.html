@@ -432,6 +432,9 @@ var DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"
 
           var rtn = await getSSId()
 
+          console.log('rtn')
+          console.log(rtn)
+
           if (rtn.fileId) {spreadsheetId = rtn.fileId}
           else {$('#authSigninStatus').html(rtn.msg);return}
            
