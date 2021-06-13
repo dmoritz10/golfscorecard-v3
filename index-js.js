@@ -284,7 +284,7 @@
 
 async function getSSId() {
 console.log('getSSId')
-var q = "title = 'golfscorecard database v3'" 
+var q = "name = 'golfscorecard database v3'" 
 console.log('hi dan')
             console.log(gapi.client)
 
