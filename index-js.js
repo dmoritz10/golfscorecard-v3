@@ -289,7 +289,7 @@ var q = "title = 'golfscorecard database v3'" +
             " AND " + "trashed = false"
 
   gapi.client.drive.files.list({
-    q: q,
+      q: q,
       fields: 'nextPageToken, files(id, name)',
       spaces: 'drive'
   }).then(function(response) {
@@ -299,7 +299,7 @@ var q = "title = 'golfscorecard database v3'" +
 
     if (!files || files.length == 0) return {fileId:null,msg:"'golfscorecard database v3' not found")}
     if (files.length > 1) return {fileId:null,msg:"'golfscorecard database v3' not unique")}
-    return {fileId:files[0].id,msg:ok)}
+    return {fileId:files[0].id,msg:ok}
 
   });  
 
