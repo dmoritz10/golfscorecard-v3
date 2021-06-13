@@ -184,35 +184,35 @@ fade {
 
 <body>
 
-  <script>
+<script>
 
-    if ("serviceWorker" in navigator) {
-            if (navigator.serviceWorker.controller) {
-                console.log("[PWA Builder] active service worker found, no need to register");
-            } else {
-                // Register the service worker
-                navigator.serviceWorker
-                    .register("pwabuilder-sw.js", {
-                        scope: "./"
-                        })
-                    .then(function (reg) {
-                        console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
-                        })
-                    .catch(function(err) {
-                        console.log("[PWA Builder] Service worker registration failed: ", err)
-                        }); 
-            }
-        }
+  if ("serviceWorker" in navigator) {
+    if (navigator.serviceWorker.controller) {
+      console.log("[PWA Builder] active service worker found, no need to register");
+    } else {
+      // Register the service worker
+      navigator.serviceWorker
+        .register("pwabuilder-sw.js", {
+          scope: "./"
+        })
+        .then(function (reg) {
+          console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
+        })
+        .catch(function (err) {
+          console.log("[PWA Builder] Service worker registration failed: ", err)
+        });
+    }
+  }
+  
+  canUseGeo = document.featurePolicy.allowsFeature("geolocation")
     
+  $(function () {
+    $(".load-html").each(function () {
+      $(this).load(encodeURI(this.dataset.source));
+    });
+  });
     
-    
-      $(function () {
-          $(".load-html").each(function () {
-//            $('body').load(encodeURI(this.dataset.source));
-              $(this).load(encodeURI(this.dataset.source));
-          });
-      });
-    </script> 
+</script> 
     
     
   
@@ -360,12 +360,8 @@ fade {
   </div> 
   
   <div class="load-html" data-source="index-js.js"></div>
-
-  <button id="authorize_button" class="d-none">Authorize</button>
-  
-  <button id="signout_button" class="d-none">Sign Out</button>
  
-  <button id="test_button" class="d-none">Test</button>
+  <!-- <button id="test_button" class="d-none">Test</button> -->
   
 <script>
 
@@ -380,8 +376,6 @@ var DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"
                       "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest",
                       "https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"];
   
-      var authorizeButton = document.getElementById('authorize_button');
-      var signoutButton = document.getElementById('signout_button');
       var testButton = document.getElementById('test_button');
 
       /**
@@ -408,9 +402,8 @@ var DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"
 
           // Handle the initial sign-in state.
           updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-          authorizeButton.onclick = handleAuthClick;
-          signoutButton.onclick = handleSignoutClick;
-//          testButton.onclick = handleTestClick;
+
+          //          testButton.onclick = handleTestClick;
         }, function(error) {
           console.log(JSON.stringify(error, null, 2));
         });
@@ -424,16 +417,12 @@ var DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"
        async function  updateSigninStatus(isSignedIn) {
 
         if (isSignedIn) { 
+
           console.log('signed in')
-          // authorizeButton.style.display = 'none';
-          // signoutButton.style.display = 'block';
 
           $('#authSigninStatus').html('You are signed in.')
 
           var rtn = await getSSId()
-
-          console.log('rtn')
-          console.log(rtn)
 
           if (rtn.fileId) {spreadsheetId = rtn.fileId}
           else {$('#authSigninStatus').html(rtn.msg);return}
@@ -443,11 +432,10 @@ var DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"
           gotoTab('Home')
 
         } else {
-          console.log('NOT signed in')
-          // authorizeButton.style.display = 'block';
-          // signoutButton.style.display = 'none';
 
-          $('#authSigninStatus').html('You are  signed out.  Authorization is required.')
+          console.log('NOT signed in')
+
+          $('#authSigninStatus').html('You are signed out.  Authorization is required.')
      
           gotoTab('Auth')
         }
@@ -486,7 +474,7 @@ var DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"
 
 async function testAuth() {
 
-
+return
 
   var signinStatus = await gapi.auth2.getAuthInstance().isSignedIn.get()
 
@@ -501,27 +489,9 @@ async function testAuth() {
 
 }
 
-async function handleTestClick() {
-
- toast(gapi.auth2.getAuthInstance().isSignedIn.get())
-
- console.log(gapi.auth2.getAuthInstance().isSignedIn.get())
-
-return
-  
-}  
-
-
 </script>
 
 
-<script>
-  
-  canUseGeo = document.featurePolicy.allowsFeature("geolocation")
-
-  console.log('version 44444')
-
-</script>
 
 </body>
 </html>

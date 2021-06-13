@@ -288,22 +288,23 @@ async function getSSId() {
           " AND " + "mimeType='application/vnd.google-apps.spreadsheet'" + 
           " AND " + "trashed = false"
 
-  var rtn = await gapi.client.drive.files.list({
+  var ssId = await gapi.client.drive.files.list({
       q: q,
       fields: 'nextPageToken, files(id, name)',
       spaces: 'drive'
   }).then(function(response) {
-    console.log(response)
 
     var files = response.result.files;
 
-    if (!files || files.length == 0) return {fileId:null,msg:"'golfscorecard database v3' not found"}
-    if (files.length > 1) return {fileId:null,msg:"'golfscorecard database v3' not unique"}
+    if (!files || files.length == 0)  return {fileId:null,msg:"'golfscorecard database v3' not found"}
+
+    if (files.length > 1)             return {fileId:null,msg:"'golfscorecard database v3' not unique"}
+
     return {fileId:files[0].id,msg:'ok'}
 
   });  
 
-  return rtn
+  return ssId
 
 }
 
@@ -328,8 +329,6 @@ async function initialUI() {
 
   loadCoursesPlayedDropDown('hpSelectCourse')
 
-  //  $( "#Home" ).css("visibility", "visible")
-  
 };
 
   var confirm = function (msg) {
