@@ -1,4 +1,4 @@
-
+<script>
 // Global variables
 
   var scriptVersion = "Version 193 on Mar 17, 12:05 PM"
@@ -1436,6 +1436,3 @@ async function manualStation() {
 
 */
 </script >
-
-
-
