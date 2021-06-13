@@ -1028,7 +1028,7 @@ async function btnUweatherCompHtml() {
 
   if (uweatherComp === null) return
 
-  var wPrompt = bootbox.alert({
+  var wPrompt = bootbox.prompt({
 
     title: "UWeather Station Comparison",
     message: uweatherComp,
