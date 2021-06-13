@@ -1,4 +1,4 @@
-<script>
+
 // Global variables
 
   var scriptVersion = "Version 193 on Mar 17, 12:05 PM"
@@ -358,7 +358,7 @@ async function initialUI() {
   });
 }
 
-  var openShts = async function (shts) {
+var openShts = async function (shts) {
 
   return new Promise(async resolve => {
 
@@ -368,15 +368,15 @@ async function initialUI() {
 
       var sheet = shts[s]
 
-  switch (sheet.type) {
+      switch (sheet.type) {
 
         case "headers":
-  shtRngs.push("'" + sheet.title + "'!1:1")
-  break;
+          shtRngs.push("'" + sheet.title + "'!1:1")
+          break;
 
-  case "all"  :
-  shtRngs.push("'" + sheet.title + "'!A1:ZZ10000")
-  break;
+        case "all"  :
+          shtRngs.push("'" + sheet.title + "'!A1:ZZ10000")
+          break;
 
       }
 
@@ -388,72 +388,73 @@ async function initialUI() {
 
   .then(async function(response) {
     
-        var allShts = response.result.valueRanges
+    var allShts = response.result.valueRanges
 
-  var arr = []
+    var arr = []
 
-  for (s in allShts) {
-        
-          var shtVals = allShts[s].values
+    for (s in allShts) {
+    
+      var shtVals = allShts[s].values
 
-  var colHdrs = shtVals[0]
-  var vals = shtVals.slice(1)
-  var colCnt = vals[0] ? vals[0].length : 0
-  var rowCnt = vals ? vals.length : 0
+      var colHdrs = shtVals[0]
+      var vals = shtVals.slice(1)
+      var colCnt = vals[0] ? vals[0].length : 0
+      var rowCnt = vals ? vals.length : 0
 
-  var shtTitle = allShts[s].range.split('!')[0].replace(/'/g,"")
+      var shtTitle = allShts[s].range.split('!')[0].replace(/'/g,"")
 
-  arr[shtTitle] =  {
-    colHdrs:      shtVals[0],
-  vals:         shtVals.slice(1),
-  columnCount:  colCnt,
-  rowCount:     rowCnt
-          }
-          
-        }
-
-  resolve(arr)
-      },
-
-  function(response) {
-
-    console.log('Error: ' + response.result.error.message);
-          
+      arr[shtTitle] =  {  
+        colHdrs:      shtVals[0],
+        vals:         shtVals.slice(1),
+        columnCount:  colCnt,
+        rowCount:     rowCnt
       }
-  );
+      
+    }
+
+    resolve(arr)
+      
+  },
+
+    function(response) {
+
+      console.log('Error: ' + response.result.error.message);
+          
+    });
+
   })
 
 }
 
-  function loadCoursesPlayedDropDown(selectCourse) {
+
+function loadCoursesPlayedDropDown(selectCourse) {
 
     removeOldTeetimes()
     
     var nextCourseName = arrOptions.teetimes ? JSON.parse(arrOptions.teetimes)[0].courseName : null
 
-  courses =  arrShts['My Courses'].vals
+    courses =  arrShts['My Courses'].vals
 
-  var s = document.getElementById(selectCourse)
-  $('option', s).remove();
-  var courseIdx
+    var s = document.getElementById(selectCourse)
+    $('option', s).remove();
+    var courseIdx
 
-  for (var j = 0; j < courses.length; ++j) {
+    for (var j = 0; j < courses.length; ++j) {
     
-        
       var courseName = courses[j][0].toString()
-  var shortName = shortCourseName(courseName)
+      var shortName = shortCourseName(courseName)
 
-  if (shortName == nextCourseName) courseIdx = j
+      if (shortName == nextCourseName) courseIdx = j
 
-  $('<option />').val(courses[j][2]).text(shortName).appendTo(s)
-        
-   }
+      $('<option />').val(courses[j][2]).text(shortName).appendTo(s)
+            
+    }
 
-  if (courseIdx) s.selectedIndex = courseIdx; 
+    if (courseIdx) s.selectedIndex = courseIdx; 
 
 }
 
-  function searchTeeTimes() {
+function searchTeeTimes() {
 
   if (!arrOptions.teetimes) return null
 
@@ -465,13 +466,13 @@ async function initialUI() {
   
     if (new Date(val.date) == td) { return val }
   
-})
+  })
 
   return null
 
 }
 
-  function removeOldTeetimes() {
+function removeOldTeetimes() {
 
     var teetimes = readOption('teetimes', null)
 
@@ -492,13 +493,13 @@ async function initialUI() {
 
 }
 
-  function parseDateISOString(s) {
+function parseDateISOString(s) {
     let ds = s.split(/\D/).map(s => parseInt(s));
   ds[1] = ds[1] - 1; // adjust month
   return new Date(...ds);
 }
 
-  function calcTS(targetHandCapDiff) {
+function calcTS(targetHandCapDiff) {
 
   var courseRating = $('#hpCourse_Rating').html()
   var slopeRating = $('#hpSlope_Rating').html()
@@ -514,7 +515,7 @@ async function initialUI() {
   return Math.round(targetScore) + ' ... ' + targetScoreFront + ' / ' + targetScoreBack
 }
 
-  function shortCourseName(longName) {
+function shortCourseName(longName) {
   var wrk = longName.replace(/golf/gi,'')
   wrk = wrk.replace(/course/gi, "")
   wrk = wrk.replace(/country/gi, "")
@@ -527,7 +528,7 @@ async function initialUI() {
 }
 
 
-  function calcRngA1(r, c, nbrRows, nbrCols) {
+function calcRngA1(r, c, nbrRows, nbrCols) {
 
   var rngA1 = colNbrToLtr(c) + r + ':' + colNbrToLtr(c + nbrCols - 1) + (r + nbrRows - 1)
 
@@ -535,7 +536,7 @@ async function initialUI() {
  
 }
 
-  function colNbrToLtr(n){
+function colNbrToLtr(n){
    if (n < 27){
       return String.fromCharCode(64 + n);
    }
@@ -546,21 +547,21 @@ async function initialUI() {
    }
 }
 
-  function toObject(arr) {
+function toObject(arr) {
   var rv = { };
   for (var i = 0; i < arr.length; ++i)
   if (arr[i] !== undefined) rv[arr[i][0]] = arr[i][1];
   return rv;
 }
 
-  function toObjectIdx(arr) {
+function toObjectIdx(arr) {
   var rv = { };
   for (var i = 0; i < arr.length; ++i)
   if (arr[i] !== undefined) rv[arr[i][0]] = i;
   return rv;
 }
 
-  function makeObj(courseInfo, cols) {
+function makeObj(courseInfo, cols) {
 
   var rtnObj = { }
   for (var i = 0; i < courseInfo.length; ++i)
@@ -570,7 +571,7 @@ async function initialUI() {
 
 }
 
-  function formattime(dte){
+function formattime(dte){
 
    if (isNaN(Date.parse(dte))) return
 
@@ -584,7 +585,7 @@ async function initialUI() {
   return hh +':' + mm +':' + ss;
 }
 
-  function formatNumber (str) { 
+function formatNumber (str) { 
 
     if (!str) {return}
   var x = str.toString().split('.');
@@ -598,7 +599,7 @@ async function initialUI() {
 
 };
 
-  function toast(e) {
+function toast(e) {
     /*
    
    bootbox.alert({
@@ -618,7 +619,7 @@ async function initialUI() {
 }
 
 
-  function promiseRun (func) {
+function promiseRun (func) {
 
 // this is a trick to convert the arguments array into an array, and drop the first one
   var runArgs = Array.prototype.slice.call(arguments).slice(1);
@@ -638,7 +639,7 @@ async function initialUI() {
   })
 }
 
-  function gotoTab(tabName) {
+function gotoTab(tabName) {
 
     $('[href="#' + tabName + '"]').trigger('click');
 
@@ -667,7 +668,7 @@ console.log(tab)
 }
 
 
-  function setupFormValidation() {
+function setupFormValidation() {
 
     $.validator.setDefaults({
       highlight: function (element) {
@@ -696,8 +697,7 @@ console.log(tab)
 
 }
 
-  function setupSumFunctions() {
-
+function setupSumFunctions() {
 
     $.fairwaysHit = function (arr) {
 
@@ -722,27 +722,23 @@ console.log(tab)
 
     }
 
-$.sum = function(arr, ele) {
+    $.sum = function(arr, ele) {
 
-    var r = 0;
-  $.each(arr, function(i, v) {
-        if(v) r += +v[ele]; 
-    });
-  return r;
-}
+      var r = 0;
+      $.each(arr, function(i, v) {
+            if(v) r += +v[ele]; 
+      });
+      return r;
+    }
 
 }
 
   function setWeatherHref(e) {
 
   const isURL = (str) => {
-    var pattern = new RegExp(/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/gi); // fragment locator
+  var pattern = new RegExp(/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/gi); // fragment locator
   return pattern.test(str);
     }
-
-  console.log(e)
-  console.log(e.stationId == true)
-  console.log(isURL(e.stationId))
 
   if (e.stationId && isURL(e.stationId)) {
   
@@ -751,20 +747,20 @@ $.sum = function(arr, ele) {
   } else {
   
     var weatherCity = e.city ? e.city.replace(/ /g,'-').toLowerCase() : ''
-  var weatherState = e.state ? e.state.toLowerCase() : ''
-  var weatherCountry = e.country ? e.country.toLowerCase() : ''
-  var weatherType = e.type ? e.type : ''
-  var weatherStationId = e.stationId ? e.stationId : ''
+    var weatherState = e.state ? e.state.toLowerCase() : ''
+    var weatherCountry = e.country ? e.country.toLowerCase() : ''
+    var weatherType = e.type ? e.type : ''
+    var weatherStationId = e.stationId ? e.stationId : ''
 
 
-  var weatherUrl = weatherUrlMask
-  .replace('*state*',weatherState)
-  .replace('*city*',weatherCity)
-  .replace('*country*',weatherCountry)
-  .replace('*type*',weatherType)
-  .replace('*stationId*',weatherStationId)
-//        .replace('https:/', 'https://')
-//        .toLowerCase()
+    var weatherUrl = weatherUrlMask
+    .replace('*state*',weatherState)
+    .replace('*city*',weatherCity)
+    .replace('*country*',weatherCountry)
+    .replace('*type*',weatherType)
+    .replace('*stationId*',weatherStationId)
+  //        .replace('https:/', 'https://')
+  //        .toLowerCase()
         
   }
 
@@ -787,7 +783,7 @@ $.sum = function(arr, ele) {
                         
 }
 
-  function setPhoneHref(d) {
+function setPhoneHref(d) {
 
       if (d.phone) {
 
@@ -801,7 +797,7 @@ $.sum = function(arr, ele) {
 
 }
 
-  function setPhoneHref(d) {
+function setPhoneHref(d) {
 
       if (d.phone) {
 
@@ -815,39 +811,39 @@ $.sum = function(arr, ele) {
 
 }
 
-  async function setSmsHref(d) {
+async function setSmsHref(d) {
 
-      if (d.cellNbrs) {
+  if (d.cellNbrs) {
       
-        var course = findCourse(d.courseName)
-  var coursesObj = makeObj(course, arrShts['My Courses'].colHdrs)
+    var course = findCourse(d.courseName)
+    var coursesObj = makeObj(course, arrShts['My Courses'].colHdrs)
 
-  var weatherUrl = setWeatherHref({
-    stationId:coursesObj['Uweather StationId'],
-  city:coursesObj['City'],
-  state:coursesObj['State'],
-  country:'US',
-  type:'hourly',
-  date:d.date,
-  element:null
-          })
+    var weatherUrl = setWeatherHref({
+      stationId:coursesObj['Uweather StationId'],
+      city:coursesObj['City'],
+      state:coursesObj['State'],
+      country:'US',
+      type:'hourly',
+      date:d.date,
+      element:null
+    })
 
-  var w = await getWeather(weatherUrl)
+    var w = await getWeather(weatherUrl)
 
-  var txtWeather = parseWeatherText(w)
+    var txtWeather = parseWeatherText(w)
 
-  var dt = formatsmsDateTime (d.date, d.time)
+    var dt = formatsmsDateTime (d.date, d.time)
 
-  var txtBody = d.courseName + '%0a' + dt.date + '%0a' + dt.time
+    var txtBody = d.courseName + '%0a' + dt.date + '%0a' + dt.time
 
-  d.element.prop('disabled', false)
-  .prop('href', 'sms:' + d.cellNbrs + "?body=" + txtBody  + "%0a%0a" + txtWeather )
+    d.element.prop('disabled', false)
+    d.element.prop('href', 'sms:' + d.cellNbrs + "?body=" + txtBody  + "%0a%0a" + txtWeather )
           
-      } else {
+  } else {
 
     d.element.removeAttr('href');
       
-      }
+  }
 
 }
 
