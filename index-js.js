@@ -849,24 +849,9 @@ async function setSmsHref(d) {
 
 
 
-  function setWebSiteHref(d) {
+function setWebSiteHref(d) {
 
-      if (d.url) {
-
-    d.element.prop('disabled', false).prop('href', d.url)
-
-  } else {
-
-    d.element.removeAttr('href');
-      
-      }
-
-}
-
-
-  function setSwingUHref(d) {
-
-      if (d.url) {
+  if (d.url) {
 
     d.element.prop('disabled', false).prop('href', d.url)
 
@@ -874,21 +859,36 @@ async function setSmsHref(d) {
 
     d.element.removeAttr('href');
       
-      }
+  }
 
 }
 
-  function setAddTeeTimeClick(d) {
 
-      var objVal = {
+function setSwingUHref(d) {
+
+  if (d.url) {
+
+    d.element.prop('disabled', false).prop('href', d.url)
+
+  } else {
+
+    d.element.removeAttr('href');
+      
+  }
+
+}
+
+function setAddTeeTimeClick(d) {
+
+  var objVal = {
 
     idx: d.idx,
-  courseName: shortCourseName(d.courseName),
-  date: '',
-  time: '',
-  golfers: ''
-        
-      }
+    courseName: shortCourseName(d.courseName),
+    date: '',
+    time: '',
+    golfers: ''
+          
+  }
 
   var x = JSON.stringify(objVal)
 
@@ -896,16 +896,16 @@ async function setSmsHref(d) {
       
 }
 
-  function parseWeatherText(wRptHtml) {
+function parseWeatherText(wRptHtml) {
 
   var strToken = '</a></div ></div > <p _ngcontent'
 
-var str = wRptHtml.indexOf(strToken) + strToken.length + 10
-var end = wRptHtml.indexOf('</p></div></div></div><!----><div', str)
+  var str = wRptHtml.indexOf(strToken) + strToken.length + 10
+  var end = wRptHtml.indexOf('</p></div></div></div><!----><div', str)
 
-var wText = wRptHtml.substring(str, end)
+  var wText = wRptHtml.substring(str, end)
 
-return wText
+  return wText
 
 }
 
