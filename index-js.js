@@ -288,7 +288,7 @@ var q = "name = 'golfscorecard database v3'"
 console.log('hi dan')
             console.log(gapi.client)
 
-gapi.client.drive.files.list({
+await gapi.client.drive.files.list({
       q: q,
       fields: 'nextPageToken, files(id, name)',
       spaces: 'drive'
