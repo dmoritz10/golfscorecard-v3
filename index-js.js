@@ -287,8 +287,10 @@ console.log('getSSId')
 var q = "title = 'golfscorecard database v3'" + 
             " AND " + "mimeType='application/vnd.google-apps.spreadsheet'" + 
             " AND " + "trashed = false"
+console.log('hi dan')
+            console.log(gapi.client)
 
-  gapi.client.drive.files.list({
+gapi.client.drive.files.list({
       q: q,
       fields: 'nextPageToken, files(id, name)',
       spaces: 'drive'
