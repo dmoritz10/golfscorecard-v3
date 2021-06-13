@@ -288,7 +288,7 @@ var q = "name = 'golfscorecard database v3'"
 console.log('hi dan')
             console.log(gapi.client)
 
-await gapi.client.drive.files.list({
+var rtn = await gapi.client.drive.files.list({
       q: q,
       fields: 'nextPageToken, files(id, name)',
       spaces: 'drive'
@@ -299,9 +299,11 @@ await gapi.client.drive.files.list({
 
     if (!files || files.length == 0) return {fileId:null,msg:"'golfscorecard database v3' not found"}
     if (files.length > 1) return {fileId:null,msg:"'golfscorecard database v3' not unique"}
-    resolve ({fileId:files[0].id,msg:'ok'})
+    return {fileId:files[0].id,msg:'ok'}
 
   });  
+
+  return rtn
 
 }
 
