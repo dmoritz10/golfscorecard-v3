@@ -284,12 +284,12 @@
 
 async function getSSId() {
 console.log('getSSId')
-var query = "title = 'golfscorecard database v3'" + \
-            AND + "mimeType='application/vnd.google-apps.spreadsheet'" + \
-            AND + "trashed = false"
+var q = "title = 'golfscorecard database v3'" + 
+            " AND " + "mimeType='application/vnd.google-apps.spreadsheet'" + 
+            " AND " + "trashed = false"
 
   gapi.client.drive.files.list({
-    q: query,
+    q: q,
       fields: 'nextPageToken, files(id, name)',
       spaces: 'drive'
   }).then(function(response) {
