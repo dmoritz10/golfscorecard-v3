@@ -299,7 +299,7 @@ await gapi.client.drive.files.list({
 
     if (!files || files.length == 0) return {fileId:null,msg:"'golfscorecard database v3' not found"}
     if (files.length > 1) return {fileId:null,msg:"'golfscorecard database v3' not unique"}
-    return {fileId:files[0].id,msg:'ok'}
+    resolve {fileId:files[0].id,msg:'ok'}
 
   });  
 
