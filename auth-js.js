@@ -9,7 +9,7 @@ function btnAuthHtml(event) {
 function btnSignoutHtml(event) {
 
     handleSignoutClick();
-    
+    gotoTab('Auth')
 }
        
 </script>
