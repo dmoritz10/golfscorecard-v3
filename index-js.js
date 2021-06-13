@@ -297,8 +297,8 @@ var q = "title = 'golfscorecard database v3'" +
 
     var files = response.result.files;
 
-    if (!files || files.length == 0) return {fileId:null,msg:"'golfscorecard database v3' not found")}
-    if (files.length > 1) return {fileId:null,msg:"'golfscorecard database v3' not unique")}
+    if (!files || files.length == 0) return {fileId:null,msg:"'golfscorecard database v3' not found"}
+    if (files.length > 1) return {fileId:null,msg:"'golfscorecard database v3' not unique"}
     return {fileId:files[0].id,msg:ok}
 
   });  
