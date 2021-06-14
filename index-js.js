@@ -986,7 +986,7 @@ async function checkAuth() {
   }
   var minAuthRemaining = (new Date(gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().expires_at) - new Date()) / (1000 * 60)
 
-  // alert('auth result - ' + minAuthRemaining)
+  alert('auth result - ' + minAuthRemaining)
 
 }
 
@@ -1028,9 +1028,9 @@ async function btnUweatherCompHtml() {
 
   if (uweatherComp === null) return
 
-  alert('tikes dan')
+  alert('yo dan')
 
-  var wPrompt = bootbox.dialog({
+  var wPrompt = bootbox.alert({
 
     title: "UWeather Station Comparison",
     message: uweatherComp,
