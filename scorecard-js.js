@@ -576,8 +576,8 @@ async function btnEndRoundHtml() {
 
   if (!confirmOK) return
   
-  var signinStatus = await testAuth()
-  if (!signinStatus) return
+  // var signinStatus = await testAuth()
+  // if (!signinStatus) return
   
  
   $('#btnEndRound').prop('disabled', true)
