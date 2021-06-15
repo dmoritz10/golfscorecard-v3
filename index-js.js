@@ -1035,7 +1035,7 @@ async function btnUweatherCompHtml() {
   var wPrompt = bootbox.alert({
 
     title: "UWeather Station Comparison",
-    message: 'uweatherComp',
+    message: 'uweatherCompweatherCompweatherCompweatherCompweatherCompweatherCompweatherCompweatherComp',
     // className: 'overflow:auto',
     callback: function (result) {
       console.log('This was logged in the callback: ' + result);
