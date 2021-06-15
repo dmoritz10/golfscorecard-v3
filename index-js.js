@@ -1028,13 +1028,15 @@ async function btnUweatherCompHtml() {
 
   if (uweatherComp === null) return
 
-  alert('oooooouweatherCSS dan')
+  alert(' dan')
+
+  console.log(uweatherComp)
 
   var wPrompt = bootbox.alert({
 
     title: "UWeather Station Comparison",
     message: '<div>' + uweatherComp + '</div>',
-    container: 'scorecardId',
+    container: 'prHoleDescr',
     callback: function (result) {
       console.log('This was logged in the callback: ' + result);
     }
