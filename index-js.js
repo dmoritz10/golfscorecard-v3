@@ -1033,7 +1033,7 @@ async function btnUweatherCompHtml() {
   var wPrompt = bootbox.alert({
 
     title: "UWeather Station Comparison",
-    message: uweatherComp,
+    message: '<div>' + uweatherComp + '</div>',
     container: 'scorecardId',
     callback: function (result) {
       console.log('This was logged in the callback: ' + result);
