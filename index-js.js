@@ -1034,7 +1034,6 @@ async function btnUweatherCompHtml() {
 
     title: "UWeather Station Comparison",
     message: uweatherComp,
-    scrollable: true,
     container: 'scorecardId',
     callback: function (result) {
       console.log('This was logged in the callback: ' + result);
