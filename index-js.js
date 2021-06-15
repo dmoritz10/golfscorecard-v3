@@ -1036,7 +1036,7 @@ async function btnUweatherCompHtml() {
 
     title: "UWeather Station Comparison",
     message: '<div class="overflow:auto">' + uweatherComp + '</div>',
-    container: 'prHoleDescr',
+    className: 'overflow:auto',
     callback: function (result) {
       console.log('This was logged in the callback: ' + result);
     }
