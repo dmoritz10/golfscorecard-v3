@@ -1026,16 +1026,9 @@ async function btnUweatherCompHtml() {
 
   }
 
-  console.log('hi dan')
-  console.log(nearByUweatherStations)
-
   var uweatherComp = await getUWeather(nearByUweatherStations)
 
   if (uweatherComp === null) return
-
-  alert(' dan')
-
-  console.log(uweatherComp)
 
   var wPrompt = bootbox.alert({
 
