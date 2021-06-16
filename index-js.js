@@ -55,6 +55,8 @@
     //  $("body").css("height", "100hv")
     //  $("body").css("overflow", "hidden")
 
+    console.log('doc ready start')
+
     $('.score a').on('shown.bs.tab', function (event) {
 
       var selId = $(event.target)[0].parentElement.parentElement.id
@@ -264,6 +266,9 @@
   const utcOffsetString = utcOffsetSign + (utcOffsetHr.toString.length == 1 ? `0${utcOffsetHr}` : `${utcOffsetHr}`) + ':00';
   return date.toISOString().replace('Z', utcOffsetString);
   };
+
+  console.log('doc ready complete')
+
 
 })
 
