@@ -1036,7 +1036,6 @@ async function btnUweatherCompHtml() {
 
     title: "UWeather Station Comparison",
     message: uweatherComp,
-    className: 'vw-100',
     callback: function (result) {
       console.log('This was logged in the callback: ' + result);
     }
