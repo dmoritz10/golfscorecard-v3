@@ -647,11 +647,14 @@ function promiseRun (func) {
 function gotoTab(tabName) {
 
 
-    $('[href="#' + tabName + '"]').click();
-    // $('[href="#' + tabName + '"]').trigger('click');
+    $('[href="#' + tabName + '"]').trigger('click');
 
    /*
-$(".load-html").addClass('d-none').hide()
+
+    $('[href="#' + tabName + '"]').click();
+
+
+   $(".load-html").addClass('d-none').hide()
 $('[href="#' + tabName + '"]').removeClass('d-none').show()
 
 
