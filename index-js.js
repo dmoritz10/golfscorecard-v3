@@ -646,12 +646,15 @@ function promiseRun (func) {
 
 function gotoTab(tabName) {
 
-$(".load-html").addClass('d-none')
-$('[href="#' + tabName + '"]').removeClass('d-none').show()
 
+    $('[href="#' + tabName + '"]').click();
     // $('[href="#' + tabName + '"]').trigger('click');
 
    /*
+$(".load-html").addClass('d-none').hide()
+$('[href="#' + tabName + '"]').removeClass('d-none').show()
+
+
 console.log(tabName)
 console.log($("#main-panel ul>li a"))
 var tab = $("#main-panel ul>li a:contains('" + tabName + "')");
