@@ -652,7 +652,7 @@ function gotoTab(tabName) {
 
 
   $('[role="tabpanel"]').removeClass('show').removeClass('active').hide()
-$('[href="#' + tabName + '"]').addClass('show').addClass('active').show()
+$('#' + tabName).addClass('show').addClass('active').show()
 
 console.log($('[href="#' + tabName + '"]'))
 
@@ -662,6 +662,7 @@ console.log($('[href="#' + tabName + '"]'))
 
     $('[href="#' + tabName + '"]').click();
 
+$('[href="#' + tabName + '"]').addClass('show').addClass('active').show()
 
  
 console.log(tabName)
