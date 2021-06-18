@@ -209,18 +209,33 @@ fade {
   canUseGeo = document.featurePolicy.allowsFeature("geolocation")
     
   $(function () {
-    $(".load-html").each(function () {
-      console.log(this.dataset.source)
-     $(this).load(encodeURI(this.dataset.source), function(a,b,c) {
-      
-        // console.log(a)
-        // console.log(b)
-        console.log(this.dataset.source)
-        console.log(c)
+var loadList = $(".load-html")
 
-      });
-    });
-  });
+console.log(loadList)
+
+for (i=0;i<loadList.length;i++) {
+
+  console.log(loadList[i])
+
+  var src = loadList[i].dataset.source
+
+  loadList[i].load(src)
+
+
+}
+
+  //   $(".load-html").each(function () {
+  //     console.log(this.dataset.source)
+  //    $(this).load(encodeURI(this.dataset.source), function(a,b,c) {
+      
+  //       // console.log(a)
+  //       // console.log(b)
+  //       console.log(this.dataset.source)
+  //       console.log(c)
+
+  //     });
+  //   });
+  // });
     
 </script> 
     
