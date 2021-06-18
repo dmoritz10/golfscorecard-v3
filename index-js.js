@@ -652,6 +652,7 @@ function gotoTab(tabName) {
 $(".load-html").removeClass('show').removeClass('active').addClass('d-none')
 $('[href="#' + tabName + '"]').addClass('show').addClass('active').removeClass('d-none')
 
+console.log($('[href="#' + tabName + '"]'))
 
     // $('[href="#' + tabName + '"]').trigger('click');
 
