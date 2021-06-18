@@ -646,8 +646,8 @@ function promiseRun (func) {
 
 function gotoTab(tabName) {
 
-$(".load-html").removeClass('show').removeClass('active')
-$('[href="#' + tabName + '"]').addClass('show').addClass('active')
+$(".load-html").removeClass('show').removeClass('active').addClass('d-none')
+$('[href="#' + tabName + '"]').addClass('show').addClass('active').removeClass('d-none')
 
 
     // $('[href="#' + tabName + '"]').trigger('click');
