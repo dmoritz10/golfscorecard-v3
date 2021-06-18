@@ -646,7 +646,13 @@ function promiseRun (func) {
 
 function gotoTab(tabName) {
 
-  console.log($('[role="tabpanel"]'))
+    $('[href="#' + tabName + '"]').trigger('click');
+
+   /*
+
+    $('[href="#' + tabName + '"]').click();
+
+ console.log($('[role="tabpanel"]'))
   console.log($('[href="#' + tabName + '"]'))
 
 
@@ -655,14 +661,6 @@ function gotoTab(tabName) {
 $('#' + tabName).addClass('show').addClass('active').show()
 
 console.log($('[href="#' + tabName + '"]'))
-
-    // $('[href="#' + tabName + '"]').trigger('click');
-
-   /*
-
-    $('[href="#' + tabName + '"]').click();
-
-$('[href="#' + tabName + '"]').addClass('show').addClass('active').show()
 
  
 console.log(tabName)
