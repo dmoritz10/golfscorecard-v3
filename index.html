@@ -219,7 +219,7 @@ for (i=0;i<loadList.length;i++) {
 
   var src = loadList[i].dataset.source
 
-  $(loadList[i]).load(src)
+  $(loadList[i]).load(encodeURI(src))
 
 
 }
