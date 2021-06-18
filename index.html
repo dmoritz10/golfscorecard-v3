@@ -210,7 +210,8 @@ fade {
     
   $(function () {
     $(".load-html").each(function () {
-      $(this).load(encodeURI(this.dataset.source), function(a,b,c) {
+      console.log(this.dataset.source)
+     $(this).load(encodeURI(this.dataset.source), function(a,b,c) {
       
         // console.log(a)
         // console.log(b)
