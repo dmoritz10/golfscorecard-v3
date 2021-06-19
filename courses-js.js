@@ -421,8 +421,10 @@ async function holeDetail() {
 async function editCourse(objVal) {
 alert('hi dan')
     $("#course-modal").modal('show');
+    alert('hi dan')
     $("#course-form")[0].reset();
-    
+    alert('hi dan')
+   
     $('#scmModalTitle').html("Course Maintenance<br><small>" + objVal.name + "</small>") 
     
     $('#scmIdx').val(objVal.idx)       
