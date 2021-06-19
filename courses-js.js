@@ -419,7 +419,7 @@ async function holeDetail() {
 // courseModal
 
 async function editCourse(objVal) {
-
+alert('hi dan')
     $("#course-modal").modal('show');
     $("#course-form")[0].reset();
     
