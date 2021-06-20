@@ -80,7 +80,7 @@ var str = new Date()
         
         if (r<5) continue;
          
-        // var rndHcp = objRounds[objRounds.length-1].objHandicap
+        var rndHcp = objRounds[objRounds.length-1].objHandicap
 
         var sc = JSON.parse(roundObj.scoreCard)
         var ci = JSON.parse(roundObj.courseInfo)
@@ -95,8 +95,8 @@ var str = new Date()
 
         var rtnHcpDiff = calcHandicapDifferential(sc, hcpMethod, slopeRating, courseRating, courseHandicap, ci.holeDetail)
 
-        // rndHcp.handicapDiff = rtnHcpDiff.hcpDiff
-        // rndHcp.escCorrections = rtnHcpDiff.escCorrections
+        rndHcp.handicapDiff = rtnHcpDiff.hcpDiff
+        rndHcp.escCorrections = rtnHcpDiff.escCorrections
 
         var mostRecent20 = []
         for (var i = 0; i <= r; i++) {
@@ -210,13 +210,13 @@ var str = new Date()
         var targetScore = calcRoundsTargetScore(targetHandicapDiff, courseRating, slopeRating, courseRatingFront9) 
 
 
-        // rndHcp.handicap = handicap == '' ? 36.4 : handicap,
-        // rndHcp.courseHandicap = courseHandicap,
-        // rndHcp.handicapScore = handicapScore,
-        // rndHcp.courseAdjustedScore = courseAdjustedScore,
+        rndHcp.handicap = handicap == '' ? 36.4 : handicap,
+        rndHcp.courseHandicap = courseHandicap,
+        rndHcp.handicapScore = handicapScore,
+        rndHcp.courseAdjustedScore = courseAdjustedScore,
 
-        // rndHcp.netAdj = netAdj
-        // rndHcp.targetScore = targetScore
+        rndHcp.netAdj = netAdj
+        rndHcp.targetScore = targetScore
             
         var prevRndHandicap = handicap
 /*            
