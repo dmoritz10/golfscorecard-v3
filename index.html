@@ -223,8 +223,8 @@ $(function () {
     console.log(loadList[i])
     var src = loadList[i].dataset.source
     if (src.slice(-3) == '.js') {
-      if (src !== 'index-js.js') $(loadList[i]).load(encodeURI(src))
-      else setTimeout($(loadList[i]).load(encodeURI(src));, 3000);
+      if (src !== 'index-js.js') {$(loadList[i]).load(encodeURI(src))}
+      else {setTimeout(() => {$(loadList[i]).load(encodeURI(src));}, 3000);}
   } 
 
   //   $(".load-html").each(function () {
