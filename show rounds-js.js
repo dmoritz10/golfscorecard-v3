@@ -66,7 +66,8 @@ async function btnShowRoundsHtml() {
 
 
 
-      ele.find('#srHcpDiff')[0].innerHTML = escCorrections ? hcpDiff + '<sup>' + escCorrections + '</sup>' : hcpDiff
+      // ele.find('#srHcpDiff')[0].innerHTML = escCorrections ? hcpDiff + '<sup>' + escCorrections + '</sup>' : hcpDiff
+      ele.find('#srHcpDiff')[0].innerHTML = objHandicap.handicap
             
       if (roundObj.finalScore*1 <= objTargetScore.score ) {
       
