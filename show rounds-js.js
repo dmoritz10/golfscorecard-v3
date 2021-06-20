@@ -64,7 +64,7 @@ async function btnShowRoundsHtml() {
       var hcpDiff = objHandicap.handicapDiff
       var escCorrections = objHandicap.escCorrections
 
-      ele.find('#srGIR')[0].innerHTML = hcpDiff
+      ele.find('#srGIR')[0].innerHTML = escCorrections ? hcpDiff + '<sup>' + escCorrections + '</sup>' : hcpDiff
 
 
       // ele.find('#srHcpDiff')[0].innerHTML = escCorrections ? hcpDiff + '<sup>' + escCorrections + '</sup>' : hcpDiff
