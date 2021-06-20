@@ -222,7 +222,7 @@ fade {
     for (i = 0; i < loadList.length; i++) {
       console.log(loadList[i])
       var src = loadList[i].dataset.source
-      if (src.slice(-3) == '.js') {
+      if (src.slice(-3) == '.js' && src !== "index-js.js") {
         $(loadList[i]).load(encodeURI(src))
        
       }
@@ -499,10 +499,10 @@ var DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"
   
 </script>
 
-  <div class="load-html" data-source="index-js.js"></div>
- 
-<!-- <div id="indexjs"></div> -->
+<script async defer src="index-js.js"> </script>
 
+
+  // <div class="load-html" data-source="index-js.js"></div>
 <script>
 // $( "#indexjs" ).load( "index-js.js", function(a,b,c) {
       
