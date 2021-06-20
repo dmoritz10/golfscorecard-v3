@@ -55,7 +55,7 @@ async function btnShowRoundsHtml() {
       
       var cntr = 0
       sc.scores.map((val, idx) => {if (val) {if (val.score - val.putts <= val.par - 2) cntr++;}});
-      ele.find('#srGIR')[0].innerHTML = cntr
+      // ele.find('#srGIR')[0].innerHTML = cntr
       
       var slopeRating = ci.courseInfo['Slope Rating']
       var courseRating = ci.courseInfo['USGA Course Rating']
@@ -64,6 +64,7 @@ async function btnShowRoundsHtml() {
       var hcpDiff = objHandicap.handicapDiff
       var escCorrections = objHandicap.escCorrections
 
+      ele.find('#srGIR')[0].innerHTML = hcpDiff
 
 
       // ele.find('#srHcpDiff')[0].innerHTML = escCorrections ? hcpDiff + '<sup>' + escCorrections + '</sup>' : hcpDiff
