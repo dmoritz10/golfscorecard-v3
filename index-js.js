@@ -45,7 +45,7 @@
   var weatherUrlMask = 'https://www.wunderground.com/*type*/*country*/*state*/*city*/*stationId*'
 
 
-  $(async function startApp () {
+  $(async function () {
 
     // hi dan
 

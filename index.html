@@ -228,8 +228,8 @@ fade {
       }
     }
 
-    startClient()
-    
+
+
 //     console.log(src)
 //     setTimeout(function(){ console.log("yello");  $(loadList[i]).load(encodeURI(src));}, 1000);
 // console.log('yo dan')
@@ -392,7 +392,7 @@ fade {
   
 <script>
 
-function startClient() {
+
 
 var API_KEY = 'AIzaSyBG5YxMTiBdvxD5-xxVp0LA1M8IXz8Xtbo';  // TODO: Update placeholder with desired API key.
 
@@ -412,8 +412,7 @@ var DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"
       function handleClientLoad() {
         gapi.load('client:auth2', initClient);
       }
-
-    }      
+     
 
       /**
        *  Initializes the API client library and sets up sign-in state
@@ -451,8 +450,6 @@ var DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"
           console.log('signed in')
 
           $('#authSigninStatus').html('You are signed in.')
-
-          await startApp()
 
           var rtn = await getSSId()
 
