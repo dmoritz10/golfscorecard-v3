@@ -45,7 +45,7 @@
   var weatherUrlMask = 'https://www.wunderground.com/*type*/*country*/*state*/*city*/*stationId*'
 
 
-  $(async function() {
+  $(async function startApp () {
 
     // hi dan
 
@@ -66,13 +66,13 @@
 
     });
 
-  $('.score').on('shown.bs.tab', function(event){
+    $('.score').on('shown.bs.tab', function(event){
   
     var selId = $(event.target)[0].parentElement.parentElement.parentElement.id
-  $('#' + selId).find(".vis").addClass("hid");
+    $('#' + selId).find(".vis").addClass("hid");
 
-  var event =  $(event.target).children().eq(0);
-  event.removeClass('hid')
+    var event =  $(event.target).children().eq(0);
+    event.removeClass('hid')
 
   });
 
@@ -268,7 +268,6 @@
   };
 
   console.log('doc ready complete')
-
 
 })
 
