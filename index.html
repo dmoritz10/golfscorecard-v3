@@ -224,10 +224,11 @@ fade {
       var src = loadList[i].dataset.source
       if (src.slice(-3) == '.js') {
         if (src !== 'index-js.js') { $(loadList[i]).load(encodeURI(src)) }
-        // else { setTimeout(function () { $(loadList[i]).load(encodeURI(src)); }, 3000) }
+       
       }
     }
-
+    setTimeout(function () { $(loadList[i]).load(encodeURI(src)); }, 3000)
+    
     //   $(".load-html").each(function () {
     //     console.log(this.dataset.source)
     //    $(this).load(encodeURI(this.dataset.source), function(a,b,c) {
