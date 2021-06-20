@@ -212,23 +212,27 @@ fade {
 
     var loadList = $(".load-html")
 
-    console.log(loadList)
+    console.log('start code load')
 
     for (i = 0; i < loadList.length; i++) {
-      console.log(loadList[i])
+      
       var src = loadList[i].dataset.source
-      if (src.slice(-3) !== '.js') $(loadList[i]).load(encodeURI(src))
+      if (src.slice(-3) !== '.js') {
+        $(loadList[i]).load(encodeURI(src))
+        console.log(src)
+      }   
     }
+
     for (i = 0; i < loadList.length; i++) {
       console.log(loadList[i])
       var src = loadList[i].dataset.source
       if (src.slice(-3) == '.js' && src !== "index-js.js") {
         $(loadList[i]).load(encodeURI(src))
-       
+        console.log(src)
       }
     }
 
-
+    console.log('end code load')
 
 //     console.log(src)
 //     setTimeout(function(){ console.log("yello");  $(loadList[i]).load(encodeURI(src));}, 1000);
