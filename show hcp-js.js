@@ -8,7 +8,7 @@ async function btnShowHandicapHtml () {
   
   for (var j = rounds.length - 1; j > -1; j--) {
   
-    var roundObj = makeObj(rounds[j], cols)
+    var roundObj = rounds[j]
       
     var sc = JSON.parse(roundObj.scoreCard)
     var ci = JSON.parse(roundObj.courseInfo)
