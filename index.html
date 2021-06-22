@@ -225,7 +225,8 @@ fade {
     for (i = 0; i < loadList.length; i++) {
 
       var src = loadList[i].dataset.source
-      script_arr.push(src)
+      if (src.slice(-3) == '.js') {
+              script_arr.push(src)
   
         console.log(src)
       }
