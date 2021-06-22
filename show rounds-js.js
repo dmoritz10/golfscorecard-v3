@@ -1,4 +1,3 @@
-{/* <script> */}
 
 async function btnShowRoundsHtml() {
 
@@ -11,98 +10,98 @@ async function btnShowRoundsHtml() {
   
   var hcpMethod        = srSelectOptions.hcpMethod
   
-   var rounds = await getRounds(srExcludeSmall)
+  var rounds = await getRounds(srExcludeSmall)
    
-   console.log('rounds')
-    console.log(rounds.length)
+  console.log('rounds')
+  console.log(rounds.length)
     
-    var x = $("#tblShowRounds").clone();
-    $("#srContainer").empty()
-    x.appendTo("#srContainer");
-    
-    $("#tblShowRounds").hide()
-    
-    var rndCntr = 0
-    
-    for (var j = rounds.length - 1; j > -1; j--) {
-    
-      var ele = $("#tblShowRounds").clone();
-      
-      var roundObj = rounds[j]
-      
-      var sc = JSON.parse(roundObj.scoreCard)
-      var ci = JSON.parse(roundObj.courseInfo)
-      var objHandicap = roundObj.objHandicap      
-      var objTargetScore = objHandicap.targetScore
-
-      if (         
-          (srMadeTarget && roundObj.finalScore > objTargetScore.score ) ||
-          (srSelectedCourse && srSelectedCourse !== shortCourseName(roundObj.courseName.toString()))
-        )
-          continue;
+  var x = $("#tblShowRounds").clone();
+  $("#srContainer").empty()
+  x.appendTo("#srContainer");
   
-      var datePlayed = new Date(roundObj.startTime).toString().substring(0,15)
-      
-      ele.find('#srSeqNbr')[0].innerHTML = rounds.length-j
-      ele.find('#srScore')[0].innerHTML = roundObj.finalScore.toString()
-      ele.find('#srCourseName')[0].innerHTML = shortCourseName(roundObj.courseName.toString())
-      ele.find('#srDate')[0].innerHTML = datePlayed
-      ele.find('#srTees')[0].innerHTML = roundObj.tee
-      
-      ele.find('#srTargetScore')[0].innerHTML = objTargetScore.score
-      ele.find('#srPutts')[0].innerHTML = $.sum (sc.scores, 'putts')
-      ele.find('#srFairways')[0].innerHTML = $.fairwaysHit(sc.scores).replace(/ /g,'')
-      
-      var cntr = 0
-      sc.scores.map((val, idx) => {if (val) {if (val.score - val.putts <= val.par - 2) cntr++;}});
-      // ele.find('#srGIR')[0].innerHTML = cntr
-      
-      var slopeRating = ci.courseInfo['Slope Rating']
-      var courseRating = ci.courseInfo['USGA Course Rating']
-      var courseHandicap = objHandicap.courseHandicap
-      
-      var hcpDiff = objHandicap.handicapDiff
-      var escCorrections = objHandicap.escCorrections
+  $("#tblShowRounds").hide()
+  
+  var rndCntr = 0
+  
+  for (var j = rounds.length - 1; j > -1; j--) {
+  
+    var ele = $("#tblShowRounds").clone();
+    
+    var roundObj = rounds[j]
+    
+    var sc = JSON.parse(roundObj.scoreCard)
+    var ci = JSON.parse(roundObj.courseInfo)
+    var objHandicap = roundObj.objHandicap      
+    var objTargetScore = objHandicap.targetScore
 
-      ele.find('#srGIR')[0].innerHTML = escCorrections ? hcpDiff + '<sup>' + escCorrections + '</sup>' : hcpDiff
+    if (         
+        (srMadeTarget && roundObj.finalScore > objTargetScore.score ) ||
+        (srSelectedCourse && srSelectedCourse !== shortCourseName(roundObj.courseName.toString()))
+      )
+        continue;
+
+    var datePlayed = new Date(roundObj.startTime).toString().substring(0,15)
+    
+    ele.find('#srSeqNbr')[0].innerHTML = rounds.length-j
+    ele.find('#srScore')[0].innerHTML = roundObj.finalScore.toString()
+    ele.find('#srCourseName')[0].innerHTML = shortCourseName(roundObj.courseName.toString())
+    ele.find('#srDate')[0].innerHTML = datePlayed
+    ele.find('#srTees')[0].innerHTML = roundObj.tee
+    
+    ele.find('#srTargetScore')[0].innerHTML = objTargetScore.score
+    ele.find('#srPutts')[0].innerHTML = $.sum (sc.scores, 'putts')
+    ele.find('#srFairways')[0].innerHTML = $.fairwaysHit(sc.scores).replace(/ /g,'')
+    
+    var cntr = 0
+    sc.scores.map((val, idx) => {if (val) {if (val.score - val.putts <= val.par - 2) cntr++;}});
+    // ele.find('#srGIR')[0].innerHTML = cntr
+    
+    var slopeRating = ci.courseInfo['Slope Rating']
+    var courseRating = ci.courseInfo['USGA Course Rating']
+    var courseHandicap = objHandicap.courseHandicap
+    
+    var hcpDiff = objHandicap.handicapDiff
+    var escCorrections = objHandicap.escCorrections
+
+    ele.find('#srGIR')[0].innerHTML = escCorrections ? hcpDiff + '<sup>' + escCorrections + '</sup>' : hcpDiff
 
 
-      // ele.find('#srHcpDiff')[0].innerHTML = escCorrections ? hcpDiff + '<sup>' + escCorrections + '</sup>' : hcpDiff
-      ele.find('#srHcpDiff')[0].innerHTML = objHandicap.handicap
-            
-      if (roundObj.finalScore*1 <= objTargetScore.score ) {
-      
-        ele.css( "background", "Khaki")
-      
-      } else {
-      
-        ele.css( "background", "white")
-      
-      }
-      
-      ele.find('#srFetchRound')[0].setAttribute("onclick", "showRoundDetail(" + roundObj.rowIdx + ", 'ShowRounds')");
-      
-      
-      ele.show()
-      
-      ele.appendTo("#srContainer");
-      
-      rndCntr++
+    // ele.find('#srHcpDiff')[0].innerHTML = escCorrections ? hcpDiff + '<sup>' + escCorrections + '</sup>' : hcpDiff
+    ele.find('#srHcpDiff')[0].innerHTML = objHandicap.handicap
+          
+    if (roundObj.finalScore*1 <= objTargetScore.score ) {
+    
+      ele.css( "background", "Khaki")
+    
+    } else {
+    
+      ele.css( "background", "white")
     
     }
     
-    var nbrRounds = JSON.parse(arrOptions.Lifetime).nbrRounds
-    
-    if (nbrRounds == rndCntr) 
-    
-      {$ ('#srNbrRounds').html(nbrRounds)}
-      
-    else 
-    
-     { $ ('#srNbrRounds').html(rndCntr + ' of ' + nbrRounds)}
+    ele.find('#srFetchRound')[0].setAttribute("onclick", "showRoundDetail(" + roundObj.rowIdx + ", 'ShowRounds')");
     
     
-    gotoTab('ShowRounds')
+    ele.show()
+    
+    ele.appendTo("#srContainer");
+    
+    rndCntr++
+  
+  }
+    
+  var nbrRounds = JSON.parse(arrOptions.Lifetime).nbrRounds
+    
+  if (nbrRounds == rndCntr) 
+  
+    {$ ('#srNbrRounds').html(nbrRounds)}
+    
+  else 
+  
+    { $ ('#srNbrRounds').html(rndCntr + ' of ' + nbrRounds)}
+  
+  
+  gotoTab('ShowRounds')
     
 }
 
@@ -264,5 +263,3 @@ function loadCoursesSelect(selectCourse) {
    if (courseIdx) s.selectedIndex = courseIdx; 
 
 }
-
-// </script>

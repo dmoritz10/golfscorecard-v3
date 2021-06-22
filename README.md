@@ -1,8 +1,6 @@
 # golfscorecard-v3
  
- Port to Github - DONE !!!!
- 
- https://dmoritz10.github.io/golfscorecard-v3/
+https://dmoritz10.github.io/golfscorecard-v3/
 
 
 Fix WGS Handicap
@@ -29,6 +27,8 @@ Fix Courses Maintenance
     Calc Bogey Rating
     Calc default front / back ratings
 
+Retro show-hcp to getRounds
+
 Re-format home
 
                 tee times
@@ -42,6 +42,9 @@ Re-format home
                 Settings 
 
 Post Round Save
+
+    calc hcp
+
 
     Update Courses
         Course Handicap	        ?   =>  Courses - Crs Hcp & Playround - Crs Hcp

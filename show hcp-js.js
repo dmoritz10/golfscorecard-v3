@@ -1,31 +1,10 @@
-{/* <script> */}
 
 async function btnShowHandicapHtml () {
 
-  
-  var hcpSelectOptions  = readOption('hcpFilter')
-  var hcpExcludeSmall   = hcpSelectOptions.hcpExcludeSmall
-  var hcpMethod         = hcpSelectOptions.hcpMethod
-  
-  
-  suSht = await openShts (
-    [
-    {title: 'Scorecard Upload', type: "all"}
-    ])
-        
-  if (suSht['Scorecard Upload'].rowCount < 1) {
-  
-    bootbox.alert ('There are no rounds to process')  
-    return
+  var hcpSelectOptions = readOption('hcpFilter')
+  var hcpMethod = hcpSelectOptions.hcpMethod
 
-  }
-
-  var cols = suSht['Scorecard Upload'].colHdrs
-    
-  var nbrRounds = 0
-  var hcpArr = []
-  
-  var rounds = suSht['Scorecard Upload'].vals
+  var rounds = await getRounds(srExcludeSmall)
   
   for (var j = rounds.length - 1; j > -1; j--) {
   
@@ -33,21 +12,9 @@ async function btnShowHandicapHtml () {
       
     var sc = JSON.parse(roundObj.scoreCard)
     var ci = JSON.parse(roundObj.courseInfo)
-      
-    if (
-        (hcpExcludeSmall && $.sum (sc.scores, 'par') < 69 )
-       ) continue;
-  
-        
-    var slopeRating = ci.courseInfo['Slope Rating']
-    var courseRating = ci.courseInfo['USGA Course Rating']
-    var courseHandicap = Math.round((slopeRating * currHandicap) / 113)
-    
-    var rtn = calcHandicapDifferential(sc, hcpMethod, slopeRating, courseRating, courseHandicap, ci.holeDetail)
-    
-    var hcpDiff = rtn.hcpDiff
-    var escCorrections = rtn.escCorrections
-   
+    var objHandicap = roundObj.objHandicap      
+    var objTargetScore = objHandicap.targetScore
+            
     var dtPlayed = new Date(roundObj.startTime).toString().substring(0,15)
    
     hcpArr.push({
@@ -56,15 +23,15 @@ async function btnShowHandicapHtml () {
       datePlayed: dtPlayed,
       teePlayed: roundObj.tee,
       score: roundObj.finalScore.toString(),
-      targetScore: ci.courseInfo['Target Score'].split(' ')[0],
-      courseRating: courseRating,
-      slopeRating: slopeRating,
-      courseHandicap: courseHandicap,
-      hcpDiff: hcpDiff,
-      escCorrections: escCorrections,
+      targetScore: objTargetScore.score,
+      courseRating: ci.courseInfo['USGA Course Rating'],
+      slopeRating: ci.courseInfo['Slope Rating'],
+      courseHandicap: objHandicap.courseHandicap,
+      hcpDiff: objHandicap.handicapDiff,
+      escCorrections: objHandicap.escCorrections,
       rowIdx: j,
       arrIdx: nbrRounds,
-      hcp: null
+      hcp: objHandicap.handicap
       
     })
       
@@ -82,10 +49,8 @@ async function btnShowHandicapHtml () {
   
   var hcpNbrRounds = hcpMethod == 'WHS' ? 8 : 10
 
-  for (var hcpIdx = hcpArr.length - 5; hcpIdx > -1; hcpIdx--) {
-    
-    var frstIdx = hcpIdx
-    var lastIdx = Math.min(hcpArr.length - 1, hcpIdx + 19)
+    var frstIdx = 0
+    var lastIdx = Math.min(hcpArr.length - 1, 19)
     
     var workArr = hcpArr.filter((val, idx) => idx >= frstIdx && idx <= lastIdx)
     
@@ -94,24 +59,23 @@ async function btnShowHandicapHtml () {
     var sum = 0
     var cnt = 0
     var arrHcpIdxs = []
-    var hcpAlert
     
     for (var j=0;j<workArr.length;j++) {
   
       if (j < hcpNbrRounds) {
     
-        sum += workArr[j].hcpDiff
+        // sum += workArr[j].hcpDiff
         arrHcpIdxs.push(workArr[j].arrIdx)
-        cnt++
+        // cnt++
       
       } else  break;
     
-    hcpArr[hcpIdx].hcp = parseInt(sum * 0.96 * 10 / cnt) / 10
+    // hcpArr[hcpIdx].hcp = parseInt(sum * 0.96 * 10 / cnt) / 10
   
     }
     
-  }
-  
+  var hcpAlert
+
   if (arrHcpIdxs.indexOf(19) > -1) {                             // the 20th round was used to calc hcp
     
     hcpAlert = true;
@@ -127,6 +91,7 @@ async function btnShowHandicapHtml () {
    
   }
 
+console.log('hi dan')
 
   var x = $("#tblShowHCP").clone();
   $("#hcpContainer").empty();
@@ -310,6 +275,3 @@ function calcEcsMax(courseHandicap) {
   }
   return ecsMax
 }
-
-
-{/* </script> */}

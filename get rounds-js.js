@@ -1,8 +1,7 @@
-{/* <script> */}
 
 async function getRounds(prmExcludeSmall) {
 
-var str = new Date()
+    var str = new Date()
 
     var hcpSelectOptions = readOption('hcpFilter')
     var hcpExcludeSmall = prmExcludeSmall || hcpSelectOptions.hcpExcludeSmall
@@ -322,7 +321,3 @@ async function updateTarScr(objRounds, cols) {
       alert('error updating option "' + '' + '": ' + reason.result.error.message);
     });
 }
-
-
-{/* </script> */}
-
