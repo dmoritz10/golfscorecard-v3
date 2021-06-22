@@ -1,4 +1,4 @@
-<script>
+{/* <script> */}
 
 async function btnShowCoursesHtml () {
 
@@ -639,4 +639,4 @@ async function btnDeleteCourseHtml() {
 
 
 
-</script>
+// </script>

@@ -1,4 +1,4 @@
-<script>
+{/* <script> */}
 
 async function btnShowHandicapHtml () {
 
@@ -312,4 +312,4 @@ function calcEcsMax(courseHandicap) {
 }
 
 
-</script>
+{/* </script> */}

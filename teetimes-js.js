@@ -1,4 +1,4 @@
-<script>
+{/* <script> */}
 function btnTeetimesHtml () {
     
     var teetimes = readOption('teetimes', [])
@@ -495,4 +495,4 @@ function calcCourseKey(courseName) {
   return wrkArr.join(' ')
 }
 
-</script>
+// </script>

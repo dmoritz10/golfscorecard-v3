@@ -1,4 +1,4 @@
-<script>
+{/* <script> */}
 function btnShowStatsHtml() {
 
   var x = $("#tblStats").clone();
@@ -143,4 +143,4 @@ function camel2title(camelCase) {
 }
 
 
-</script>
+// </script>

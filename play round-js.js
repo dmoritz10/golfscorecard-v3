@@ -1,4 +1,4 @@
-<script>
+{/* <script> */}
 
 async function btnPlayRoundHtml() {
 
@@ -191,4 +191,4 @@ async function loadCourseInfo(e) {
 } 
 
 
-</script>
+// </script>

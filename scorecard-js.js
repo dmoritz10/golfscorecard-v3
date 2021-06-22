@@ -1,4 +1,4 @@
-<script>
+{/* <script> */}
 
 async function btnStartRoundHtml() {
 
@@ -1439,4 +1439,4 @@ function getGolfers() {
 
 }
 
-</script>
+// </script>

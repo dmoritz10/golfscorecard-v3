@@ -1,4 +1,4 @@
-<script>
+{/* <script> */}
 
 async function getRounds(prmExcludeSmall) {
 
@@ -324,5 +324,5 @@ async function updateTarScr(objRounds, cols) {
 }
 
 
-</script>
+{/* </script> */}
 

@@ -1,4 +1,4 @@
-<script>
+{/* <script> */}
 
 
 function btnShowClubsHtml () {
@@ -295,4 +295,4 @@ function adjustClubParmsHtml(e) {
 }
 
 
-</script>
+// </script>
