@@ -70,6 +70,7 @@ async function getRounds(prmExcludeSmall) {
             escCorrections: '',
             handicapScore: '',
             courseAdjustedScore: '',
+            mostRecent20: [],
 
             netAdj: {},
             targetScore: {}
@@ -209,11 +210,11 @@ async function getRounds(prmExcludeSmall) {
         var targetScore = calcRoundsTargetScore(targetHandicapDiff, courseRating, slopeRating, courseRatingFront9) 
 
 
-        rndHcp.handicap = handicap == '' ? 36.4 : handicap,
-        rndHcp.courseHandicap = courseHandicap,
-        rndHcp.handicapScore = handicapScore,
-        rndHcp.courseAdjustedScore = courseAdjustedScore,
-
+        rndHcp.handicap = handicap == '' ? 36.4 : handicap
+        rndHcp.courseHandicap = courseHandicap
+        rndHcp.handicapScore = handicapScore
+        rndHcp.courseAdjustedScore = courseAdjustedScore
+        rndHcp.mostRecent20 = mostRecent20
         rndHcp.netAdj = netAdj
         rndHcp.targetScore = targetScore
             
