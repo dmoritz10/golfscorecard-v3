@@ -1,4 +1,4 @@
-function updateSummaryInfo() {
+async function updateSummaryInfo() {
 
     var hcpSelectOptions = readOption('hcpFilter')
     var hcpMethod = hcpSelectOptions.hcpMethod
