@@ -4,7 +4,7 @@ async function btnShowHandicapHtml () {
   var hcpSelectOptions = readOption('hcpFilter')
   var hcpMethod = hcpSelectOptions.hcpMethod
 
-  var rounds = await getRounds(srExcludeSmall)
+  var rounds = await getRounds()
   var hcpArr = []
   var nbrRounds = 0
   
@@ -67,7 +67,7 @@ async function btnShowHandicapHtml () {
       if (j < hcpNbrRounds) {
     
         // sum += workArr[j].hcpDiff
-        arrHcpIdxs.push(workArr[j].arrIdx)
+        arrHcpIdxs.push(workArr[j].rowIdx)
         // cnt++
       
       } else  break;
@@ -82,7 +82,7 @@ async function btnShowHandicapHtml () {
     
     hcpAlert = true;
 
-    var idxOf11th = workArr[j].arrIdx                            // j is an artifact of the loop above
+    var idxOf11th = workArr[j].rowIdx                            // j is an artifact of the loop above
     var hcpDiffOf11th = workArr[j].hcpDiff
     var hcpDiffOf10th = hcpArr[19].hcpDiff
 
