@@ -148,8 +148,10 @@ async function getRounds(prmExcludeSmall) {
         var lowScores = []
 
         var mostRecent20 = mostRecent20.filter(Boolean); // remove rounds with no hcpdiff (ie first 5 rounds)
+
+        var mostRecent20Chron = JSON.parse(JSON.stringify(mostRecent20))
         
-        var mostRecent19 = JSON.parse(JSON.stringify(mostRecent20))
+        var mostRecent19 = mostRecent20Chron
         mostRecent19.shift()
         
         nbrToUse = Math.min(nbrToUse, hcpNbrRounds)
@@ -214,7 +216,7 @@ async function getRounds(prmExcludeSmall) {
         rndHcp.courseHandicap = courseHandicap
         rndHcp.handicapScore = handicapScore
         rndHcp.courseAdjustedScore = courseAdjustedScore
-        rndHcp.mostRecent20 = mostRecent20
+        rndHcp.mostRecent20 = mostRecent20Chron
         rndHcp.netAdj = netAdj
         rndHcp.targetScore = targetScore
             
