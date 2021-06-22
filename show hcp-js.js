@@ -93,7 +93,7 @@ async function btnShowHandicapHtml () {
    
   }
 
-console.log('hi dan')
+console.log('yo dan')
 
   var x = $("#tblShowHCP").clone();
   $("#hcpContainer").empty();
