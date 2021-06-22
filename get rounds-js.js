@@ -273,31 +273,27 @@ async function updateTarScr(objRounds, cols) {
 
   var arrCi = []
 
-  for (var j = 0; j < objRounds.length; j++) {
+    for (var j = 0; j < objRounds.length; j++) {
   
     var roundObj = objRounds[j]
-        
+
     var ts = roundObj.objHandicap.targetScore
     var targetScore = ts.score + ' ... ' + ts.front + ' / ' + ts.back
     var ci = JSON.parse(roundObj.courseInfo)
-    
-      console.log(JSON.parse(JSON.stringify(ci.courseInfo)))
-    
-    ci.courseInfo['Target Score'
-        ] = targetScore
-    ci.courseInfo['Course Handicap'
-        ] = Math.round(roundObj.objHandicap.courseHandicap)
-    ci.courseInfo['Course Equivalent Score'
-        ] = Math.round(roundObj.objHandicap.courseAdjustedScore)
-    
+
+    console.log(JSON.parse(JSON.stringify(ci.courseInfo)))
+
+    ci.courseInfo['Target Score'] = targetScore
+    ci.courseInfo['Course Handicap'] = Math.round(roundObj.objHandicap.courseHandicap)
+    ci.courseInfo['Course Equivalent Score'] = Math.round(roundObj.objHandicap.courseAdjustedScore)
+
     console.log(roundObj.objHandicap.courseAdjustedScore)
     console.log( Math.round(roundObj.objHandicap.courseAdjustedScore))
-    console.log(ci.courseInfo['Course Equivalent Score'
-        ])
+    console.log(ci.courseInfo['Course Equivalent Score'])
     console.log(ci.courseInfo)
-    
+
     arrCi.push([JSON.stringify(ci)])
-    }
+  }
   
   console.log(arrCi)
   

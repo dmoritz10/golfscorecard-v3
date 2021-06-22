@@ -1,16 +1,56 @@
 # golfscorecard-v3
- Port to Github
+ 
+ Port to Github - DONE !!!!
  
  https://dmoritz10.github.io/golfscorecard-v3/
 
- test github
 
- this and that
+Fix WGS Handicap
+    Fix Course Handicap 
+    Fix Target Score Calc
 
- lts make another change to readme
+    Round Stats called from 
+        Scorecard
+        Handicap
+        Rounds
 
- here is another change
+    Playround called from
+        Courses
+        Home.btnPlayRound
 
- blah
+Fix re-positioning to top of listing
+    Courses - edit course
+    Courses - Playround
 
- 
+    Rounds - Round Stats
+    Handicap - Round Stats
+
+Fix Courses Maintenance
+    Calc Bogey Rating
+    Calc default front / back ratings
+
+Re-format home
+
+                tee times
+
+    Handicap	Rounds		Stats
+
+    Courses		Golfers		Clubs
+
+                Play round
+
+                Settings 
+
+Post Round Save
+
+    Update Courses
+        Course Handicap	        ?   =>  Courses - Crs Hcp & Playround - Crs Hcp
+        Target Score	        ?
+        Nbr Times Played        !	
+        Avg Play Time	        !
+        Course Equivalent Score ?
+
+    Update Options
+        Current Handicap
+
+Stats

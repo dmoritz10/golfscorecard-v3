@@ -221,17 +221,44 @@ fade {
       }   
     }
 
+    var script_arr = []
     for (i = 0; i < loadList.length; i++) {
 
       var src = loadList[i].dataset.source
-      if (src.slice(-3) == '.js') {
-      // if (src.slice(-3) == '.js' && src !== "index-js.js") {
-        $(loadList[i]).load(encodeURI(src))
+      script_arr.push(src)
+  
         console.log(src)
       }
     }
 
-    console.log('end code load')
+    $.getMultiScripts = function(arr, path) {
+    var _arr = $.map(arr, function(scr) {
+        return $.getScript( (path||"") + scr );
+    });
+        
+    _arr.push($.Deferred(function( deferred ){
+        $( deferred.resolve );
+    }));
+        
+    return $.when.apply($, _arr);
+}
+    $.getMultiScripts(script_arr).done(function() {
+    console.log('all scripts loaded')
+});
+
+console.log('end code load')
+  
+// for (i = 0; i < loadList.length; i++) {
+
+  //     var src = loadList[i].dataset.source
+  //     if (src.slice(-3) == '.js') {
+  //     // if (src.slice(-3) == '.js' && src !== "index-js.js") {
+  //       $(loadList[i]).load(encodeURI(src))
+  //       console.log(src)
+  //     }
+  //   }
+
+
 
 //     console.log(src)
 //     setTimeout(function(){ console.log("yello");  $(loadList[i]).load(encodeURI(src));}, 1000);
