@@ -208,46 +208,53 @@ fade {
     
   $(function () {
 
-    var loadList = $(".load-html")
-
     console.log('start code load')
+
+    // get loads of html files started
+    
+    var loadList = $(".load-html")
 
     for (i = 0; i < loadList.length; i++) {
       
       var src = loadList[i].dataset.source
-      if (src.slice(-3) !== '.js') {
-        $(loadList[i]).load(encodeURI(src))
-        console.log(src)
-      }   
+      $(loadList[i]).load(encodeURI(src))
+      console.log(src)
+    
     }
 
+    // get array of script files to be loaded.  Exclude index-js.js because it must run after all other scripts are fully loaded
+
+    var loadList = $(".load-script")
     var script_arr = []
     for (i = 0; i < loadList.length; i++) {
 
       var src = loadList[i].dataset.source
-      if (src.slice(-3) == '.js' && src !== 'index-js.js') {
-              script_arr.push(src)
-  
+      if (src !== 'index-js.js') {
+
+        script_arr.push(src)
         console.log(src)
+      
       }
     }
 
-    $.getMultiScripts = function(arr, path) {
-    var _arr = $.map(arr, function(scr) {
-        return $.getScript( (path||"") + scr );
-    });
-        
-    _arr.push($.Deferred(function( deferred ){
-        $( deferred.resolve );
-    }));
-        
-    return $.when.apply($, _arr);
-}
     $.getMultiScripts(script_arr).done(function() {
       console.log('load index-js.js')
-      $.getScript( 'index-js.js' )
-    console.log('all scripts loaded')
-});
+      $.getScript( 'index-js.js' )      // load and run index-js.js last
+      console.log('all scripts loaded')
+    });
+
+    $.getMultiScripts = function(arr, path) {
+      var _arr = $.map(arr, function(scr) {
+        return $.getScript( (path||"") + scr );
+      });
+        
+      _arr.push($.Deferred(function( deferred ){
+        $( deferred.resolve );
+      }));
+        
+      return $.when.apply($, _arr);
+    }
+
 
 console.log('end code load')
   
@@ -332,35 +339,35 @@ console.log('end code load')
       <div class="m-0 p-0 tab-pane fade show active" id="Auth" style="height:100%;" role="tabpanel">
 
         <div class="load-html" data-source="auth"></div>
-        <div class="load-html d-none" data-source="auth-js.js"></div>
+        <div class="load-script d-none" data-source="auth-js.js"></div>
                
       </div> 
 
       <div class="m-0 p-0 tab-pane fade" id="Home" style="height:100%;" role="tabpanel">
 
         <div class="load-html" data-source="home"></div>
-        <div class="load-html d-none" data-source="home-js.js"></div>
+        <div class="load-script d-none" data-source="home-js.js"></div>
                
       </div> 
 
       <div class="m-0 p-0 tab-pane fade" id="PlayRound" style="height:100%" role="tabpanel">
 
         <div class="load-html" data-source="play round"></div>
-        <div class="load-html d-none" data-source="play round-js.js"></div>
+        <div class="load-script d-none" data-source="play round-js.js"></div>
                         
      </div> 
 
       <div class="m-0 p-0 tab-pane fade" id="Scorecard" style="height:100%" role="tabpanel">
 
         <div class="load-html" data-source="scorecard"></div>
-        <div class="load-html d-none" data-source="scorecard-js.js"></div>
+        <div class="load-script d-none" data-source="scorecard-js.js"></div>
                         
       </div>        
       
       <div class="m-0 p-0 tab-pane fade" id="RoundStats" style="height:100%" role="tabpanel">
 
         <div class="load-html" data-source="round stats"></div>
-        <div class="load-html d-none" data-source="round stats-js.js"></div>
+        <div class="load-script d-none" data-source="round stats-js.js"></div>
                               
       </div>        
       
@@ -368,7 +375,7 @@ console.log('end code load')
       <div class="m-0 p-0 tab-pane fade" id="ShowRounds" style="height:100%" role="tabpanel">
 
         <div class="load-html" data-source="show rounds"></div>
-        <div class="load-html d-none" data-source="show rounds-js.js"></div>
+        <div class="load-script d-none" data-source="show rounds-js.js"></div>
                         
      
       </div>        
@@ -376,7 +383,7 @@ console.log('end code load')
       <div class="m-0 p-0 tab-pane fade" id="ShowHCP" style="height:100%" role="tabpanel">
 
         <div class="load-html" data-source="show hcp"></div>
-        <div class="load-html d-none" data-source="show hcp-js.js"></div>
+        <div class="load-script d-none" data-source="show hcp-js.js"></div>
                         
      
       </div>        
@@ -384,7 +391,7 @@ console.log('end code load')
       <div class="m-0 p-0 tab-pane fade" id="Clubs" style="height:100%" role="tabpanel">
 
         <div class="load-html" data-source="clubs"></div>
-        <div class="load-html d-none" data-source="clubs-js.js"></div>
+        <div class="load-script d-none" data-source="clubs-js.js"></div>
                         
       
       </div>        
@@ -392,21 +399,21 @@ console.log('end code load')
       <div class="m-0 p-0 tab-pane fade" style="height:100%" id="Stats" role="tabpanel">
 
         <div class="load-html" data-source="stats"></div>
-        <div class="load-html d-none" data-source="stats-js.js"></div>
+        <div class="load-script d-none" data-source="stats-js.js"></div>
                        
       </div>        
       
       <div class="m-0 p-0 tab-pane fade" id="Teetimes" style="height:100%" role="tabpanel">
 
         <div class="load-html" data-source="teetimes"></div>
-        <div class="load-html d-none" data-source="teetimes-js.js"></div>
+        <div class="load-script d-none" data-source="teetimes-js.js"></div>
                         
      </div>        
       
       <div class="m-0 p-0 tab-pane fade" id="Courses" style="height:100%" role="tabpanel">
 
         <div class="load-html" data-source="courses"></div>
-        <div class="load-html d-none" data-source="courses-js.js"></div>
+        <div class="load-script d-none" data-source="courses-js.js"></div>
                         
 
       </div>        
@@ -414,16 +421,17 @@ console.log('end code load')
       <div class="m-0 p-0 tab-pane fade" id="Golfers" style="height:100%" role="tabpanel">
 
         <div class="load-html" data-source="golfers"></div>
-        <div class="load-html d-none" data-source="golfers-js.js"></div>
+        <div class="load-script d-none" data-source="golfers-js.js"></div>
                 
 
       </div>        
     </div>  
   </div> 
 
-<div class="load-html" data-source="table-builder.js"></div>
-<div class="load-html" data-source="get rounds-js.js"></div>
-<div class="load-html" data-source="index-js.js"></div>
+<div class="load-script d-none" data-source="table-builder.js"></div>
+<div class="load-script d-none" data-source="get rounds-js.js"></div>
+<div class="load-script d-none" data-source="update summary info.js"></div>
+<div class="load-script d-none" data-source="index-js.js"></div>
   
   <!-- <button id="test_button" class="d-none">Test</button> -->
   

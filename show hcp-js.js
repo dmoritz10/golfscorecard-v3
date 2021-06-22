@@ -67,7 +67,7 @@ async function btnShowHandicapHtml () {
       if (j < hcpNbrRounds) {
     
         // sum += workArr[j].hcpDiff
-        arrHcpIdxs.push(workArr[j].rowIdx)
+        arrHcpIdxs.push(workArr[j].arrIdx)
         // cnt++
       
       } else  break;
@@ -82,7 +82,7 @@ async function btnShowHandicapHtml () {
     
     hcpAlert = true;
 
-    var idxOf11th = workArr[j].rowIdx                            // j is an artifact of the loop above
+    var idxOf11th = workArr[j].arrIdx                            // j is an artifact of the loop above
     var hcpDiffOf11th = workArr[j].hcpDiff
     var hcpDiffOf10th = hcpArr[19].hcpDiff
 
@@ -93,7 +93,7 @@ async function btnShowHandicapHtml () {
    
   }
 
-console.log('yo dan')
+console.log('hi dan')
 
   var x = $("#tblShowHCP").clone();
   $("#hcpContainer").empty();

@@ -646,9 +646,10 @@ async function btnEndRoundHtml() {
 
   $('#btnEndRound').prop('disabled', false) 
   
-  toast('Round saved')
-  
+  toast('Round saved.  Updating Summary Info ...')
 
+  // updateSummaryInfo()
+  
 }
 
 async function btnCancelRoundHtml() {
