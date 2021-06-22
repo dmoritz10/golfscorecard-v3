@@ -151,7 +151,7 @@ async function getRounds(prmExcludeSmall) {
 
         var mostRecent20Chron = JSON.parse(JSON.stringify(mostRecent20))
         
-        var mostRecent19 = mostRecent20Chron
+        var mostRecent19 = JSON.parse(JSON.stringify(mostRecent20))
         mostRecent19.shift()
         
         nbrToUse = Math.min(nbrToUse, hcpNbrRounds)
