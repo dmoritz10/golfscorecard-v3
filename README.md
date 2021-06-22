@@ -27,7 +27,9 @@ Fix Courses Maintenance
     Calc Bogey Rating
     Calc default front / back ratings
 
-Retro show-hcp to getRounds
+Full Courses Maintenance
+
+x Retro show-hcp to getRounds
 
 Re-format home
 
