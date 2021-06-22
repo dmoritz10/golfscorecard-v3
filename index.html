@@ -237,11 +237,7 @@ fade {
       }
     }
 
-    $.getMultiScripts(script_arr).done(function() {
-      console.log('load index-js.js')
-      $.getScript( 'index-js.js' )      // load and run index-js.js last
-      console.log('all scripts loaded')
-    });
+    // define a function to load array of scripts and wait for all to load before continuing
 
     $.getMultiScripts = function(arr, path) {
       var _arr = $.map(arr, function(scr) {
@@ -254,6 +250,13 @@ fade {
         
       return $.when.apply($, _arr);
     }
+
+    $.getMultiScripts(script_arr).done(function() {
+      console.log('load index-js.js')
+      $.getScript( 'index-js.js' )      // load and run index-js.js last
+      console.log('all scripts loaded')
+    });
+
 
 
 console.log('end code load')
