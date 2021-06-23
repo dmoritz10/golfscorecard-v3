@@ -44,7 +44,7 @@ async function btnShowCoursesHtml () {
       
       var ele = $("#tblShowCourses").clone();
 
-      var hcpObj = readOption('mostRecent20HcpDiff')
+      var hcpObj = readOption('handicapObj')
 
       var tsObj = calcTargetScoreDan(hcpObj.mostRecent20HcpDiff, hcpObj.currHandicap *1 - .1, coursesObj['USGA Course Rating'], coursesObj['Slope Rating'], coursesObj['Front 9 Rating'])
       
