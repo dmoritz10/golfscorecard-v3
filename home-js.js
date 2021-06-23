@@ -2,7 +2,7 @@
 
 function goHome() {
   
-  var hcpObj = readOption('handicapObj')
+  var hcpObj = readOption('handicapObj', 'hi dan')
   var currHandicap = hcpObj.currHandicap
 
   $('#hmCurrHandicap').html(currHandicap)
