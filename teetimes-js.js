@@ -32,11 +32,13 @@ function btnTeetimesHtml () {
       
       var ts = tsObj.score
 
-      ele.find('#ttTargetScore')[0].innerHTML = ts ? ts : '&nbsp'
+      Math.round(($('#hpSlope_Rating').html() * hcpObj.currHandicap*1) / 113)
+
+      ele.find('#ttTargetScore')[0].innerHTML = tsObj.score ? tsObj.score : '&nbsp'
       ele.find('#ttTees')[0].innerHTML = coursesObj['Tee Name']
       ele.find('#ttCourseRating')[0].innerHTML = coursesObj['USGA Course Rating']
       ele.find('#ttSlopeRating')[0].innerHTML = coursesObj['Slope Rating']
-      ele.find('#ttCourseHandicap')[0].innerHTML = coursesObj['Course Handicap'] ? coursesObj['Course Handicap'] : '&nbsp'
+      ele.find('#ttCourseHandicap')[0].innerHTML = Math.round(coursesObj['Slope Rating'] * hcpObj.currHandicap*1) / 113)
       ele.find('#ttAvgPlayTime')[0].innerHTML = coursesObj['Avg Play Time'] ? coursesObj['Avg Play Time'] : '&nbsp'
      
       setPhoneHref({      

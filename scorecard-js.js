@@ -645,7 +645,7 @@ async function btnEndRoundHtml() {
 
   $('#btnEndRound').prop('disabled', false) 
   
-  toast('Round saved.  Calculating new Handicap ...')
+  toast('Round saved.  Calculating new Handicap.')
 
   btnShowHandicapHtml()
   

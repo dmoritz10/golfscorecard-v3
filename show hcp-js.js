@@ -1,8 +1,6 @@
 
 async function btnShowHandicapHtml () {
 
-  // alert('hi dan')
-
   var hcpSelectOptions = readOption('hcpFilter')
   var hcpMethod = hcpSelectOptions.hcpMethod
 
