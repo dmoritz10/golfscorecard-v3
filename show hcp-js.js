@@ -16,7 +16,11 @@ async function btnShowHandicapHtml () {
     var ci = JSON.parse(roundObj.courseInfo)
     var objHandicap = roundObj.objHandicap      
     var objTargetScore = objHandicap.targetScore
-            
+
+    if (j == rounds.length - 1) {
+      console.log(objHandicap.mostRecent20)
+      updateOption('mostRecent20HcpDiff', objHandicap.mostRecent20)
+    }      
     var dtPlayed = new Date(roundObj.startTime).toString().substring(0,15)
    
     hcpArr.push({
