@@ -1,6 +1,6 @@
 {/* <script> */}
 
-function goHome(x) {
+function goHome() {
   
   var currHandicap = readOption('handicapObj').currHandicap
 
