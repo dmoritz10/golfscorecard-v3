@@ -65,5 +65,10 @@ Post Round Save
     Update Options
         Current Handicap
 
+Deprecate
+    (arrOptions['Handicap Diff Count']*1 + 1)) / .96) - arrOptions['Handicap Diff Sum']
+    calcTS
+    currHandicap = arrOptions['Current Handicap']
+
 
 Stats

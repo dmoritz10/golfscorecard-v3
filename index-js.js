@@ -326,7 +326,7 @@ async function initialUI() {
   arrOptions    = toObject(arrShts.Options.vals)
   optionsIdx    = toObjectIdx(arrShts.Options.vals)
 
-  currHandicap = arrOptions['Current Handicap']
+  var currHandicap = readOption('handicapObj').currHandicap
 
   $('#hmCurrHandicap').html(currHandicap)
   $('#hmNbrRounds').html(JSON.parse(arrOptions.Lifetime).nbrRounds)

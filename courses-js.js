@@ -231,7 +231,7 @@ async function showCourseDetail(courseInfo) {
       // var x = ((($('#hpTargetHandicap').val()) * (arrOptions['Handicap Diff Count']*1 + 1)) / .96) - arrOptions['Handicap Diff Sum']
       // courseInfo['Target Score'] = calcTS(x)
 
-      courseInfo['Target Score'] = tsObj.score
+      courseInfo['Target Score'] = tsObj.scoreFmt
       $('#hpTargetScore').html (courseInfo['Target Score'])
 
       $('#hpSelectTees').change(function(){

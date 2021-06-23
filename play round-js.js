@@ -9,6 +9,8 @@ async function btnPlayRoundHtml() {
   var resumeRound = await checkForIncompleteRound()
   
   if (resumeRound) return
+  
+  var currHandicap = readOption('handicapObj').currHandicap
 
   $('#hpCurrHandicap').html(currHandicap)
   $('#hpNbrRounds').html(JSON.parse(arrOptions.Lifetime).nbrRounds)
