@@ -1,4 +1,3 @@
-{/* <script> */}
 
 async function btnShowCoursesHtml () {
 
@@ -47,7 +46,7 @@ async function btnShowCoursesHtml () {
       var hcpObj = readOption('handicapObj')
       var tsObj = calcTargetScoreDan(hcpObj.mostRecent20HcpDiff, hcpObj.currHandicap *1 - .1, coursesObj['USGA Course Rating'], coursesObj['Slope Rating'], coursesObj['Front 9 Rating'])
       
-      ele.find('#scTargetScore')[0].innerHTML = coursesObj['Target Score'].split(' ')[0] + ' - ' + tsObj.score
+      ele.find('#scTargetScore')[0].innerHTML = tsObj.score
       ele.find('#scCourseName')[0].innerHTML = shortCourseName(coursesObj['Course Name'].toString())
       ele.find('#scCityState')[0].innerHTML = coursesObj['City'].toString() + ', ' + coursesObj['State'].toString()
       
@@ -646,8 +645,3 @@ async function btnDeleteCourseHtml() {
 
 
 */
-
-
-
-
-// </script>
