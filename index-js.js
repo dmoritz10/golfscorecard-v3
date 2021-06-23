@@ -266,7 +266,7 @@
   return date.toISOString().replace('Z', utcOffsetString);
   };
 
-  goHome()
+
 
   console.log('doc ready complete')
 
