@@ -46,7 +46,7 @@ async function btnShowCoursesHtml () {
 
       var hcpObj = readOption('mostRecent20HcpDiff')
 
-      var tsObj = calcTargetScore(hcpObj.mostRecent20HcpDiff, hcpObj.currHandicap *1 - .1, courseRating, slopeRating, courseRatingFront9)
+      var tsObj = calcTargetScore(hcpObj.mostRecent20HcpDiff, hcpObj.currHandicap *1 - .1, coursesObj['USGA Course Rating'], coursesObj['Slope Rating'], coursesObj['Front 9 Rating'])
       
       ele.find('#scTargetScore')[0].innerHTML = coursesObj['Target Score'].split(' ')[0] + ' - ' + tsObj.score
       ele.find('#scCourseName')[0].innerHTML = shortCourseName(coursesObj['Course Name'].toString())
