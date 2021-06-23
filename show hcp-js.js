@@ -120,7 +120,7 @@ async function btnShowHandicapHtml () {
     ele.find('#hcpCourseName')[0].innerHTML = val.shortCourseName
     ele.find('#hcpDate')[0].innerHTML = val.datePlayed
     ele.find('#hcpTees')[0].innerHTML = val.teePlayed
-    ele.find('#hcpTargetScore')[0].innerHTML = val.targetScore
+    ele.find('#hcpTargetScore')[0].innerHTML = val.targetScore.split(' ')[0]
     ele.find('#hcpCourseRating')[0].innerHTML = val.courseRating
     ele.find('#hcpSlopeRating')[0].innerHTML = val.slopeRating
     ele.find('#hcpHcpDiff')[0].innerHTML = val.escCorrections ? val.hcpDiff + '<sup>' + val.escCorrections + '</sup>' : val.hcpDiff
