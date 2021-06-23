@@ -17,9 +17,15 @@ async function btnShowHandicapHtml () {
     var objHandicap = roundObj.objHandicap      
     var objTargetScore = objHandicap.targetScore
 
-    if (j == rounds.length - 1) {
-      console.log(objHandicap.mostRecent20)
-      updateOption('mostRecent20HcpDiff', objHandicap.mostRecent20)
+    if (j == rounds.length - 1) {                 //  handicap info from most recent round
+      
+      handicapObj = {
+        'mostRecent20HcpDiff': objHandicap.mostRecent20,
+        'currHandicap': objHandicap.handicap
+      }
+
+      updateOption('handicapObj', handicapObj)
+      
     }      
     var dtPlayed = new Date(roundObj.startTime).toString().substring(0,15)
    
