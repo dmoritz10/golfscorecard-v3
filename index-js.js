@@ -926,6 +926,9 @@ function parseWeatherText(wRptHtml) {
 
 function readOption(key, defaultReturn = '') {
 
+  console.log(key)
+  console.log(arrOptions[key])
+
   if (!arrOptions[key]) return defaultReturn
   if (arrOptions[key] == 'null') return defaultReturn
 
