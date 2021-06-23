@@ -56,7 +56,6 @@ async function getRounds(prmExcludeSmall) {
     
 
     for (var r = 0; r < arrRounds.length; r++) {
-        //  for (var r=800;r<arrRounds.length;r++) {
 
         var roundObj = makeObj(arrRounds[r][0], cols)
 
@@ -111,39 +110,7 @@ async function getRounds(prmExcludeSmall) {
             }
         }
 
-        var nbrToUse = 10
-        switch (true) {
-            case mostRecent20.length <= 4:
-                nbrToUse = 0
-                break;
-            case mostRecent20.length <= 6:
-                nbrToUse = 1
-                break;
-            case mostRecent20.length <= 8:
-                nbrToUse = 2
-                break;
-            case mostRecent20.length <= 10:
-                nbrToUse = 3
-                break;
-            case mostRecent20.length <= 12:
-                nbrToUse = 4
-                break;
-            case mostRecent20.length <= 14:
-                nbrToUse = 5
-                break;
-            case mostRecent20.length <= 16:
-                nbrToUse = 6
-                break;
-            case mostRecent20.length <= 17:
-                nbrToUse = 7
-                break;
-            case mostRecent20.length <= 18:
-                nbrToUse = 8
-                break;
-            case mostRecent20.length <= 19:
-                nbrToUse = 9
-                break;
-        }
+        var nbrToUse = calcNbrToUse(mostRecent20)
 
         var lowScores = []
 
@@ -270,6 +237,43 @@ function calcRoundsTargetScore(targetHandCapDiff, courseRating, slopeRating, cou
     }
 }
 
+function calcNbrToUse(mostRecent20) {
+    var nbrToUse = 10
+    switch (true) {
+        case mostRecent20.length <= 4:
+            nbrToUse = 0
+            break;
+        case mostRecent20.length <= 6:
+            nbrToUse = 1
+            break;
+        case mostRecent20.length <= 8:
+            nbrToUse = 2
+            break;
+        case mostRecent20.length <= 10:
+            nbrToUse = 3
+            break;
+        case mostRecent20.length <= 12:
+            nbrToUse = 4
+            break;
+        case mostRecent20.length <= 14:
+            nbrToUse = 5
+            break;
+        case mostRecent20.length <= 16:
+            nbrToUse = 6
+            break;
+        case mostRecent20.length <= 17:
+            nbrToUse = 7
+            break;
+        case mostRecent20.length <= 18:
+            nbrToUse = 8
+            break;
+        case mostRecent20.length <= 19:
+            nbrToUse = 9
+            break;
+    }
+
+    return nbrToUse
+}
 
 async function updateTarScr(objRounds, cols) {
 

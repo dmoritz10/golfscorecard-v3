@@ -47,15 +47,23 @@ Post Round Save
 
     calc hcp
 
+        get mostRecent20HcpDiff(hcpMethod, hcpIncludeSmall)
+        store in Options
+        calc hcp
+        store in Options
+
 
     Update Courses
+        Nbr Times Played        !	=>  Add one
+        Avg Play Time	        !   =>  Calc
+        
         Course Handicap	        ?   =>  Courses - Crs Hcp & Playround - Crs Hcp
-        Target Score	        ?
-        Nbr Times Played        !	
-        Avg Play Time	        !
+        Target Score	        ?   =>  
+            calcTargetScore(mostRecent20HcpDiff, targetHandicap, courseRating, slopeRating, courseRatingFront9)
         Course Equivalent Score ?
 
     Update Options
         Current Handicap
+
 
 Stats
