@@ -48,7 +48,7 @@ async function btnShowCoursesHtml () {
 
       var tsObj = calcTargetScore(hcp, targetHandicap, courseRating, slopeRating, courseRatingFront9)
       
-      ele.find('#scTargetScore')[0].innerHTML = coursesObj['Target Score'].split(' ')[0]
+      ele.find('#scTargetScore')[0].innerHTML = coursesObj['Target Score'].split(' ')[0] + ' - ' + tsObj.score
       ele.find('#scCourseName')[0].innerHTML = shortCourseName(coursesObj['Course Name'].toString())
       ele.find('#scCityState')[0].innerHTML = coursesObj['City'].toString() + ', ' + coursesObj['State'].toString()
       
