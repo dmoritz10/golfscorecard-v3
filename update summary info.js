@@ -50,7 +50,7 @@ async function updateSummaryInfo() {
 
 
 
-function calcTargetScore(mostRecent20HcpDiff, targetHandicap, courseRating, slopeRating, courseRatingFront9) {
+function calcTargetScoreDan(mostRecent20HcpDiff, targetHandicap, courseRating, slopeRating, courseRatingFront9) {
 
     var mostRecent19 = JSON.parse(JSON.stringify(mostRecent20HcpDiff))
     
