@@ -45,7 +45,6 @@ async function btnShowCoursesHtml () {
       var ele = $("#tblShowCourses").clone();
 
       var hcpObj = readOption('handicapObj')
-
       var tsObj = calcTargetScoreDan(hcpObj.mostRecent20HcpDiff, hcpObj.currHandicap *1 - .1, coursesObj['USGA Course Rating'], coursesObj['Slope Rating'], coursesObj['Front 9 Rating'])
       
       ele.find('#scTargetScore')[0].innerHTML = coursesObj['Target Score'].split(' ')[0] + ' - ' + tsObj.score
@@ -212,8 +211,9 @@ async function showCourseDetail(courseInfo) {
         element:$('#btnHPWeather')
       })
       
+      var hcpObj = readOption('handicapObj')
  
-      $("#hpTargetHandicap").val(courseInfo.targetHcp ? courseInfo.targetHcp : Math.round((arrOptions['Current Handicap'] - 0.1)*10)/10)
+      $("#hpTargetHandicap").val(courseInfo.targetHcp ? courseInfo.targetHcp : Math.round((hcpObj.currHandicap*1 - .1)*10)/10)
 
       $("#hpSelectCourse option").filter(function() {return $(this).text() == shortCourseName(courseInfo['Course Name'])})
                                 .prop('selected', true);
@@ -222,11 +222,16 @@ async function showCourseDetail(courseInfo) {
       $('#hpNbr_Times_Played').html ( courseInfo['Nbr Times Played'])
       $('#hpAvg_Play_Time').html ( courseInfo['Avg Play Time'])
       
-      courseInfo['Course Handicap'] = Math.round(($('#hpSlope_Rating').html() * arrOptions['Current Handicap']) / 113)
+      courseInfo['Course Handicap'] = Math.round(($('#hpSlope_Rating').html() * hcpObj.currHandicap*1) / 113)
       $('#hpCourseHandicap').html (courseInfo['Course Handicap'])
   
-      var x = ((($('#hpTargetHandicap').val()) * (arrOptions['Handicap Diff Count']*1 + 1)) / .96) - arrOptions['Handicap Diff Sum']
-      courseInfo['Target Score'] = calcTS(x)
+
+      var tsObj = calcTargetScoreDan(hcpObj.mostRecent20HcpDiff, $('#hpTargetHandicap').val(), coursesObj['USGA Course Rating'], coursesObj['Slope Rating'], coursesObj['Front 9 Rating'])
+
+      // var x = ((($('#hpTargetHandicap').val()) * (arrOptions['Handicap Diff Count']*1 + 1)) / .96) - arrOptions['Handicap Diff Sum']
+      // courseInfo['Target Score'] = calcTS(x)
+      
+      courseInfo['Target Score'] = tsObj.score
       $('#hpTargetScore').html (courseInfo['Target Score'])
 
       $('#hpSelectTees').change(function(){
