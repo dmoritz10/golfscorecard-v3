@@ -27,7 +27,7 @@ function btnTeetimesHtml () {
       var coursesObj = makeObj(course, arrShts['My Courses'].colHdrs)
       
       var hcpObj = readOption('handicapObj')
-      var tsObj = calcTargetScoreDan(hcpObj.mostRecent20HcpDiff, $('#hpTargetHandicap').val(), coursesObj['USGA Course Rating'], coursesObj['Slope Rating'], coursesObj['Front 9 Rating'])
+      var tsObj = calcTargetScoreDan(hcpObj.mostRecent20HcpDiff, hcpObj.currHandicap*1 -.1, coursesObj['USGA Course Rating'], coursesObj['Slope Rating'], coursesObj['Front 9 Rating'])
 
       
       var ts = tsObj.score
