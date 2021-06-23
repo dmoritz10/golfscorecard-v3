@@ -53,7 +53,7 @@ Post Round Save
         store in Options
 
 
-    Update Courses
+    Update Courses - i think I'm done
         Nbr Times Played        !	=>  Add one
         Avg Play Time	        !   =>  Calc
         
@@ -62,7 +62,7 @@ Post Round Save
             calcTargetScore(mostRecent20HcpDiff, targetHandicap, courseRating, slopeRating, courseRatingFront9)
         Course Equivalent Score ?
 
-    Update Options
+    x Update Options
         Current Handicap
 
 Deprecate
