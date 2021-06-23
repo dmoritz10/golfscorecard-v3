@@ -38,7 +38,7 @@ function btnTeetimesHtml () {
       ele.find('#ttTees')[0].innerHTML = coursesObj['Tee Name']
       ele.find('#ttCourseRating')[0].innerHTML = coursesObj['USGA Course Rating']
       ele.find('#ttSlopeRating')[0].innerHTML = coursesObj['Slope Rating']
-      ele.find('#ttCourseHandicap')[0].innerHTML = Math.round(coursesObj['Slope Rating'] * hcpObj.currHandicap*1) / 113)
+      ele.find('#ttCourseHandicap')[0].innerHTML = Math.round((coursesObj['Slope Rating'] * hcpObj.currHandicap*1) / 113)
       ele.find('#ttAvgPlayTime')[0].innerHTML = coursesObj['Avg Play Time'] ? coursesObj['Avg Play Time'] : '&nbsp'
      
       setPhoneHref({      
