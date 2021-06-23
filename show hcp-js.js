@@ -25,7 +25,9 @@ async function btnShowHandicapHtml () {
       }
 
       updateOption('handicapObj', handicapObj)
-      
+
+      console.log(handicapObj)
+
     }      
     var dtPlayed = new Date(roundObj.startTime).toString().substring(0,15)
    
