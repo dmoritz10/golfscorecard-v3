@@ -26,7 +26,11 @@ function btnTeetimesHtml () {
       
       var coursesObj = makeObj(course, arrShts['My Courses'].colHdrs)
       
-      var ts = coursesObj['Target Score'].split(' ')[0]
+      var hcpObj = readOption('handicapObj')
+      var tsObj = calcTargetScoreDan(hcpObj.mostRecent20HcpDiff, $('#hpTargetHandicap').val(), courseInfo['USGA Course Rating'], courseInfo['Slope Rating'], courseInfo['Front 9 Rating'])
+
+      
+      var ts = tsObj.score
 
       ele.find('#ttTargetScore')[0].innerHTML = ts ? ts : '&nbsp'
       ele.find('#ttTees')[0].innerHTML = coursesObj['Tee Name']
