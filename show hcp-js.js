@@ -51,30 +51,28 @@ async function btnShowHandicapHtml () {
   
   var hcpNbrRounds = hcpMethod == 'WHS' ? 8 : 10
 
-    var frstIdx = 0
-    var lastIdx = Math.min(hcpArr.length - 1, 19)
-    
-    var workArr = hcpArr.filter((val, idx) => idx >= frstIdx && idx <= lastIdx)
-    
-    workArr.sort((a, b) => (a.hcpDiff > b.hcpDiff) ? 1 : -1)
-   
-    var sum = 0
-    var cnt = 0
-    var arrHcpIdxs = []
-    
-    for (var j=0;j<workArr.length;j++) {
+  var frstIdx = 0
+  var lastIdx = Math.min(hcpArr.length - 1, 19)
   
-      if (j < hcpNbrRounds) {
-    
-        // sum += workArr[j].hcpDiff
-        arrHcpIdxs.push(workArr[j].arrIdx)
-        // cnt++
-      
-      } else  break;
-    
-    // hcpArr[hcpIdx].hcp = parseInt(sum * 0.96 * 10 / cnt) / 10
+  var workArr = hcpArr.filter((val, idx) => idx >= frstIdx && idx <= lastIdx)
   
-    }
+  workArr.sort((a, b) => (a.hcpDiff > b.hcpDiff) ? 1 : -1)
+  
+  var sum = 0
+  var cnt = 0
+  var arrHcpIdxs = []
+  
+  for (var j=0;j<workArr.length;j++) {
+
+    if (j < hcpNbrRounds) {
+  
+      sum += workArr[j].hcpDiff
+      arrHcpIdxs.push(workArr[j].arrIdx)
+      cnt++
+    
+    } else  break;
+  
+  }
     
   var hcpAlert
 
@@ -92,8 +90,6 @@ async function btnShowHandicapHtml () {
     var handicapAlert = parseInt(sum * 0.96 * 10 / cnt) / 10     // calc the hcp as if the 20th round was replaced with the 11th ranked by Hcp Diff
    
   }
-
-console.log('hi dan')
 
   var x = $("#tblShowHCP").clone();
   $("#hcpContainer").empty();
