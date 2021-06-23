@@ -43,6 +43,10 @@ async function btnShowCoursesHtml () {
       nbrCourses++
       
       var ele = $("#tblShowCourses").clone();
+
+      var hcp = readOption('mostRecent20HcpDiff').currHandicap
+
+      var tsObj = calcTargetScore(hcp, targetHandicap, courseRating, slopeRating, courseRatingFront9)
       
       ele.find('#scTargetScore')[0].innerHTML = coursesObj['Target Score'].split(' ')[0]
       ele.find('#scCourseName')[0].innerHTML = shortCourseName(coursesObj['Course Name'].toString())
