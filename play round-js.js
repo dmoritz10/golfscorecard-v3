@@ -9,13 +9,13 @@ async function btnPlayRoundHtml() {
   var resumeRound = await checkForIncompleteRound()
   
   if (resumeRound) return
-  
-  var currHandicap = readOption('handicapObj').currHandicap
 
-  $('#hpCurrHandicap').html(currHandicap)
+  var hcpObj = readOption('handicapObj')
+
+  $('#hpCurrHandicap').html(hcpObj.currHandicap)
   $('#hpNbrRounds').html(JSON.parse(arrOptions.Lifetime).nbrRounds)
   
-  $("#hpTargetHandicap").val(Math.round((arrOptions['Current Handicap'] - 0.1)*10)/10)
+  $("#hpTargetHandicap").val( Math.round((hcpObj.currHandicap*1 - .1)*10)/10)
 
   var e = {}; e.data = {};
   e.data.useDefaultTee = true
@@ -146,7 +146,9 @@ async function loadCourseInfo(e) {
                                          
       var st = document.getElementById('hpSelectTees')
       $('option', st).remove();
-  
+      
+      var hcpObj = readOption('handicapObj')
+   
       for (var i=0;i<teeInfo.length;i++) {
   
         if (teeInfo[i][teeInfoIdx.gender] == courseInfo['Gender']) {
@@ -183,12 +185,15 @@ async function loadCourseInfo(e) {
       $('#hpNbr_Times_Played').html ( courseInfo['Nbr Times Played'])
       $('#hpAvg_Play_Time').html ( courseInfo['Avg Play Time'])
       
-      courseInfo['Course Handicap'] = Math.round(($('#hpSlope_Rating').html() * $('#hpCurrHandicap').html()) / 113)
+      courseInfo['Course Handicap'] = Math.round(($('#hpSlope_Rating').html() * hcpObj.currHandicap*1) / 113)
       $('#hpCourseHandicap').html (courseInfo['Course Handicap'])
 
-      var x = ((($('#hpTargetHandicap').val()) * (arrOptions['Handicap Diff Count']*1 + 1)) / .96) - arrOptions['Handicap Diff Sum']
-      courseInfo['Target Score'] = calcTS(x)
-      $('#hpTargetScore').html (courseInfo['Target Score'])
+      var tsObj = calcTargetScoreDan(hcpObj.mostRecent20HcpDiff, $('#hpTargetHandicap').val(), courseInfo['USGA Course Rating'], courseInfo['Slope Rating'], courseInfo['Front 9 Rating'])
+      
+      // var x = ((($('#hpTargetHandicap').val()) * (arrOptions['Handicap Diff Count']*1 + 1)) / .96) - arrOptions['Handicap Diff Sum']
+      // courseInfo['Target Score'] = calcTS(x)
+      
+      $('#hpTargetScore').html (tsObj.scoreFmt)
 
 } 
 
