@@ -589,7 +589,6 @@ async function btnEndRoundHtml() {
   
   gotoTab('RoundStats')  
 
-
   prScore.status = 'complete'
   prScore.endTime = new Date()
   prScore.finalScore = $.sum (prScore.scores, 'score')
@@ -646,9 +645,9 @@ async function btnEndRoundHtml() {
 
   $('#btnEndRound').prop('disabled', false) 
   
-  toast('Round saved.  Updating Summary Info ...')
+  toast('Round saved.  Calculating new Handicap ...')
 
-  // updateSummaryInfo()
+  btnShowHandicapHtml()
   
 }
 
