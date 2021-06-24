@@ -914,7 +914,7 @@ function parseWeatherText(wRptHtml) {
 
   console.log(wRptHtml)
 
-  var strToken = '</a></div ></div > <p _ngcontent'
+  var strToken = '</a></div></div><p _ngcontent-sc271="">'
 
   var str = wRptHtml.indexOf(strToken) + strToken.length + 10
   var end = wRptHtml.indexOf('</p></div></div></div><!----><div', str)
