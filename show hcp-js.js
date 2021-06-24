@@ -43,7 +43,7 @@ async function btnShowHandicapHtml () {
       courseHandicap: ci.courseInfo['Course Handicap'],
       hcpDiff: objHandicap.handicapDiff,
       escCorrections: objHandicap.escCorrections,
-      rowIdx: rounds.length - 1 - j,
+      rowIdx: j - rounds.length - 1,
       arrIdx: nbrRounds,
       hcp: objHandicap.handicap
       
