@@ -54,7 +54,7 @@ async function btnShowCoursesHtml () {
       ele.find('#scCourseRating')[0].innerHTML = coursesObj['USGA Course Rating']
       ele.find('#scSlopeRating')[0].innerHTML = coursesObj['Slope Rating']
       // ele.find('#scCourseHandicap')[0].innerHTML = coursesObj['Course Handicap']
-      ele.find('#scCourseHandicap')[0].innerHTML = Math.round(($('#hpSlope_Rating').html() * hcpObj.currHandicap*1) / 113)
+      ele.find('#scCourseHandicap')[0].innerHTML = Math.round((coursesObj['Slope Rating'] * hcpObj.currHandicap*1) / 113)
 
       ele.find('#scTimesPlayed')[0].innerHTML = coursesObj['Nbr Times Played'] > 0 ? coursesObj['Nbr Times Played'] : '\u00a0'
 
