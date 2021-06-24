@@ -912,6 +912,8 @@ function setAddTeeTimeClick(d) {
 
 function parseWeatherText(wRptHtml) {
 
+  console.log(wRptHtml)
+
   var strToken = '</a></div ></div > <p _ngcontent'
 
   var str = wRptHtml.indexOf(strToken) + strToken.length + 10

@@ -45,7 +45,7 @@ Re-format home
 
 Post Round Save
 
-    calc hcp
+    x calc hcp
 
         get mostRecent20HcpDiff(hcpMethod, hcpIncludeSmall)
         store in Options
