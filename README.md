@@ -27,6 +27,11 @@ Fix Courses Maintenance
     Calc Bogey Rating
     Calc default front / back ratings
 
+Fix weather rpt on SMS from Tee Times
+
+
+
+
 Full Courses Maintenance
 
 x Retro show-hcp to getRounds
