@@ -498,7 +498,7 @@ function calcScoreSummary() {
     .setTableClass('table')
     .setTrClass()
     .setTcClass(['', 'text-right'])
-    .setTdClass('pb-1 pt-1 border-0 h3')
+    .setTdClass('pb-1 pt-1 border-0 h4')
     .build();
     
   return tbl.html
