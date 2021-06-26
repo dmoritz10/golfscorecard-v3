@@ -176,7 +176,15 @@ fade {
   top:0; /* Keep at the very top of the viewport */
 } */
 
- 
+body {
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+.body::-webkit-scrollbar { /* WebKit */
+    width: 0;
+    height: 0;
+} 
 
 </style>
 
