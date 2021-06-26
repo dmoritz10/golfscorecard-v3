@@ -916,7 +916,9 @@ function parseWeatherText(wRptHtml) {
 
   var strToken = '</a></div></div><p _ngcontent-sc248="">'
 
+
   var str = wRptHtml.indexOf(strToken) + strToken.length
+  if (str < 0) return ''
   var end = wRptHtml.indexOf('</p>', str)
 
   var wText = wRptHtml.substring(str, end)
