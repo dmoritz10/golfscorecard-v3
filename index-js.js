@@ -918,7 +918,7 @@ function parseWeatherText(wRptHtml) {
 
 
   var str = wRptHtml.indexOf(strToken) + strToken.length
-  if (str < 0) return ''
+  if (str < 100) return ''
   var end = wRptHtml.indexOf('</p>', str)
 
   var wText = wRptHtml.substring(str, end)
