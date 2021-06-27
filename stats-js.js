@@ -198,7 +198,7 @@ function extrRndData	(rounds, colName, nbrRows) {
   // var rndArr =  rounds.slice(0,nbrRows)
   var rtn = []
 
-  for (var i = rndArr.length - 1; i > rndArr.length - nbrRows - 1; i--) {
+  for (var i = rounds.length - 1; i > rounds.length - nbrRows - 1; i--) {
 
     var rnd = rounds[i]
 
