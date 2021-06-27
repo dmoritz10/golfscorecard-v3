@@ -1,5 +1,5 @@
 {/* <script> */}
-function btnShowStatsHtml() {
+async function btnShowStatsHtml() {
 
   var statSelectOptions  = readOption('statExcludeSmallVal')
   var statExcludeSmall = statSelectOptions.statExcludeSmallVal
