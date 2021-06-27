@@ -220,8 +220,13 @@ function extrRndData	(rounds, colName, endRow) {
         console.log(parseCol)
         console.log(colName)
 
-        var x = rnd[colName]
-        rtn.push(x)
+        var a = rnd[parseCol[0]]
+        var b = a[parseCol[1]]
+
+        console.log(b)
+
+        // var x = rnd[colName]
+        rtn.push(b)
 
       } else {
 
