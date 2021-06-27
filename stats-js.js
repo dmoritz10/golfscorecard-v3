@@ -196,7 +196,6 @@ function extrRndData	(rounds, colName, endRow) {
   var testRnd = rounds[0]
   var parseCol = colName.split('.')
 
-
   var rndArr =  rounds.slice(0,endRow)
   var rtn = []
 
@@ -206,17 +205,31 @@ function extrRndData	(rounds, colName, endRow) {
 
     if (parseCol.length == 1) {
 
-      var x = rnd[parseCol]
+      console.log('1')
+      console.log(parseCol)
+      console.log(rnd[parseCol[0]])
+
+      var x = rnd[parseCol[0]]
       rtn.push(x)
 
     } else {
 
+      console.log('2')
+
       if (rnd[parseCol[0]] === "object") {
 
-        var x = rnd[parseCol]
+        console.log('2')
+        console.log(parseCol)
+        console.log(colName])
+
+        var x = rnd[colName]
         rtn.push(x)
 
       } else {
+
+        console.log('3')
+        console.log(parseCol)
+        console.log(colName])
 
         var obj = JSON.parse(rnd[parseCol[0]])
         var x = obj[parseCol[1]]
@@ -225,11 +238,9 @@ function extrRndData	(rounds, colName, endRow) {
       }
 
     }
-      
-    return rtn
 
   }
-
+  return rtn
 }
 
 
