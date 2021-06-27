@@ -17,13 +17,14 @@
           <div>
             <div class="dropdown-menu more-vert-menu" style="will-change: top, right !important;">
               <form id="statSelectForm" class="px-4 pt-3">
-                <div class="form-check">
+                <div class="form-check row">
                   <input type="checkbox" class="form-check-input" id="statExcludeSmall">
                   <label class="form-check-label" for="statExcludeSmall">
                     Exclude small courses
                   </label>
                 </div>
-                <div>
+                <div class="row">
+                  div class="col">
                   <select class="form-select col-12 mt-2" id="selectStatsRng1" style="background-color: white">
                     <option>This Round</option>
                     <option>Last 5 Rounds</option>
@@ -36,7 +37,21 @@
                     <option>Past Year</option>
                     <option>All Time</option>
                    </select>
+                
+              </div>
+
+                <div class="col" >
+                  <div id="disStatsDate1" class='label'></div>
+                  <br>
                 </div>
+                <div class="col"  align="right">
+                  <div id="disNbrRnds1" class='label'></div>
+                  <br>
+                </div>
+              </div>
+
+
+
                 <button type="button" class="btn btn-primary float-right mt-2" id="btnStatSelect">Go</button>
               </form>
             </div>
