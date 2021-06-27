@@ -187,27 +187,22 @@ function sumArr(arr) {
   }
   return sum
 }
-function extrRndData	(rounds, colName, endRow) {
+function extrRndData	(rounds, colName, nbrRows) {
 
 	// rounds, 
 	// 'courseInfo.courseName', 'scorecard.putts', 'objHandicap.courseAdjustedScore', 'finalScore'
 	// endRow
 
-  var testRnd = rounds[0]
   var parseCol = colName.split('.')
 
   var rndArr =  rounds.slice(0,endRow)
   var rtn = []
 
-  for (i=0;i<rndArr.length;i++) {
+  for (var i = rndArr.length - 1; i < rndArr.length - nbrRows; i--) {
 
     var rnd = rndArr[i]
 
     if (parseCol.length == 1) {
-
-      console.log('1')
-      console.log(parseCol)
-      console.log(rnd[parseCol[0]])
 
       var x = rnd[parseCol[0]]
       rtn.push(x)
@@ -216,28 +211,13 @@ function extrRndData	(rounds, colName, endRow) {
 
       if (typeof rnd[parseCol[0]] === "object") {
 
-        console.log('2')
-        console.log(parseCol)
-        console.log(colName)
-
         var a = rnd[parseCol[0]]
         var b = a[parseCol[1]]
-
-        console.log(b)
-
-        // var x = rnd[colName]
         rtn.push(b)
 
       } else {
 
-        console.log('3')
-        console.log(parseCol)
-        console.log(colName)
-
         var obj = JSON.parse(rnd[parseCol[0]])
-
-        console.log(obj)
-
         var x = obj[parseCol[1]]
         rtn.push(x)
 
