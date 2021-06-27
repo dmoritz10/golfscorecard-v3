@@ -24,7 +24,7 @@ async function btnShowStatsHtml() {
   var x = extrRndData	(rounds, 'objHandicap.courseAdjustedScore', 25)
   console.log(x)
   
-  var x = extrRndData	(rounds, 'scoreCard.gender', 25)
+  var x = extrRndData	(rounds, 'scoreCard.scores', 25)
   console.log(x)
 
   return
