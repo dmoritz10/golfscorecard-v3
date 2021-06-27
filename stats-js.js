@@ -129,6 +129,34 @@ function lifetimeStats() {
 
 }
 
+
+async function btnStatSelectHtml(e) {
+  
+  var statExcludeSmallVal     = $('#statExcludeSmall').prop('checked')
+  var statSelectedCourseVal   = $( "#statSelectCourse" ).val() > -1 ? $( "#statSelectCourse option:selected" ).text() : false
+
+  await updateOption('statFilter', {
+                                  'statExcludeSmall':   srExcludeSmallVal ,
+                                  'statSelectedCourse': srSelectedCourseVal
+                                  })
+                                  
+                                  
+  $("#btnStatMoreVert").click()
+  
+  btnShowStatsHtml()
+
+}
+
+async function btnStatsMoreVertHtml() {
+
+  var statSelectOptions  = await readOption('statFilter') 
+  $('#statExcludeSmall').prop('checked',  statSelectOptions.statExcludeSmall )
+
+}
+
+
+
+
 function camel2title(camelCase) {
   
   return camelCase

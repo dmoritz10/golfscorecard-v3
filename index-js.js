@@ -181,7 +181,11 @@
 
 
   // Show Stats
-  $('#btnShowStats')         .click(btnShowStatsHtml);
+  $('#btnShowStats')          .click(btnShowStatsHtml);
+  $('#btnStatSelect')         .click(btnStatSelectHtml);
+  $('#statSelectDropDown').on('show.bs.dropdown', function () {
+    btnStatsMoreVertHtml()
+  })
 
   // Show Teetimes
   $('#btnTeetimes')          .click(btnTeetimesHtml);
