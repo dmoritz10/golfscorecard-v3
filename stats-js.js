@@ -1,6 +1,22 @@
 {/* <script> */}
 function btnShowStatsHtml() {
 
+  var statSelectOptions  = readOption('statExcludeSmallVal')
+  var statExcludeSmall = statSelectOptions.statExcludeSmallVal
+  var statRng1 = statSelectOptions.statRng1
+  var statRng2 = statSelectOptions.statRng2
+  var statRng3 = statSelectOptions.statRng3
+
+  var rounds = await getRounds(statExcludeSmall)
+
+  var datePlayed = rounds.map(x => x['date'])
+  
+  var endRow = {}
+    endRow['row1'] = getEndRow(datePlayed, statRng1)
+    endRow['row2'] = getEndRow(datePlayed, statRng2)
+    endRow['row3'] = getEndRow(datePlayed, statRng3)
+
+
   var x = $("#tblStats").clone();
   $("#statsContainer").empty()
   x.appendTo("#statsContainer");
@@ -133,11 +149,15 @@ function lifetimeStats() {
 async function btnStatSelectHtml(e) {
   
   var statExcludeSmallVal     = $('#statExcludeSmall').prop('checked')
-  var statSelectedCourseVal   = $( "#statSelectCourse" ).val() > -1 ? $( "#statSelectCourse option:selected" ).text() : false
+  var statRng1                = $( "#selectStatsRng1" ).val()
+  var statRng2                = $( "#selectStatsRng2" ).val()
+  var statRng3                = $( "#selectStatsRng3" ).val()
 
-  await updateOption('statFilter', {
-                                  'statExcludeSmall':   srExcludeSmallVal ,
-                                  'statSelectedCourse': srSelectedCourseVal
+  await updateOption('statSelectOptions', {
+                                  'statExcludeSmallVal':   statExcludeSmallVal ,
+                                  'statRng1': statRng1,
+                                  'statRng1': statRng2,
+                                  'statRng1': statRng3
                                   })
                                   
                                   
