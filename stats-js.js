@@ -235,6 +235,9 @@ function extrRndData	(rounds, colName, endRow) {
         console.log(colName)
 
         var obj = JSON.parse(rnd[parseCol[0]])
+
+        console.log(obj)
+
         var x = obj[parseCol[1]]
         rtn.push(x)
 
