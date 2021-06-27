@@ -155,6 +155,87 @@ async function btnStatsMoreVertHtml() {
 }
 
 
+function avgArr(arr) {
+  var i = arr.length
+  var sum = 0;
+  var nbr = 0
+  while (i--) {
+    if (typeof arr[i] == 'number') {
+      sum = sum + arr[i]
+      nbr++
+    }
+  }
+  return nbr == 0 ? 0 : sum / nbr
+}
+
+function sumArr(arr) {
+  var i = arr.length
+  var sum = 0;
+  while (i--) {
+    if (typeof arr[i] == 'number') {
+      sum = sum + arr[i]
+    }
+  }
+  return sum
+}
+
+function getColData(colName, Hdrs, arr, firstRow, nbrRows) {
+  var colNbr = Hdrs.indexOf(colName)
+  if (nbrRows === undefined) {
+    var coldata =  arr[colNbr].slice(firstRow - 1)
+  } else {
+    var coldata =  arr[colNbr].slice(firstRow - 1, firstRow + nbrRows - 1)
+  }
+  return coldata
+}
+
+function getEndRow(datePlayedArr, dataRngDescr) {
+
+  switch (dataRngDescr) {
+    case "This Round":
+      return 1
+      break;
+    case "Last 5 Rounds":
+      return Math.min(5, datePlayedArr.length)
+      break;
+    case "Last 10 Rounds":
+      return Math.min(10, datePlayedArr.length)
+      break;
+    case "Last 20 Rounds":
+      return Math.min(20, datePlayedArr.length)
+      break;
+    case "Last 25 Rounds":
+      return Math.min(25, datePlayedArr.length)
+      break;
+    case "Last 50 Rounds":
+      return Math.min(50, datePlayedArr.length)
+      break;
+    case "Last 100 Rounds":
+      return Math.min(100, datePlayedArr.length)
+      break;
+    case "Past Year":
+      var now = new Date();
+      var oneYrAgo = new Date();
+      oneYrAgo.setFullYear(now.getFullYear() - 1);
+      for (var i = 1; i < datePlayedArr.length; i++) {if (datePlayedArr[i] < oneYrAgo) {
+        return i}
+      }
+      return datePlayedArr.length
+      break;
+    case "Past Month":
+      var now = new Date();
+      var oneMoAgo = new Date();
+      oneMoAgo.setMonth(now.getMonth() - 1);
+      for (var i = 1; i < datePlayedArr.length; i++) {if (datePlayedArr[i] < oneMoAgo) {
+        return i}
+      }
+      return datePlayedArr.length
+      break;
+    case "All Time":
+      return datePlayedArr.length
+      break;
+  }
+}
 
 
 function camel2title(camelCase) {
