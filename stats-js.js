@@ -187,7 +187,7 @@ function sumArr(arr) {
   }
   return sum
 }
-function extrRndData	(rounds, colName, endRow) {}
+function extrRndData	(rounds, colName, endRow) {
 
 	// rounds, 
 	// 'courseInfo.courseName', 'scorecard.putts', 'objHandicap.courseAdjustedScore', 'finalScore'
@@ -228,14 +228,10 @@ function extrRndData	(rounds, colName, endRow) {}
       
     return rtn
 
-    }
-
   }
 
-
-
-
 }
+
 
 function getColData(colName, Hdrs, arr, firstRow, nbrRows) {
   var colNbr = Hdrs.indexOf(colName)
