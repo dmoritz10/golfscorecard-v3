@@ -195,15 +195,7 @@ function extrRndData	(rounds, colName, endRow) {}
 
   var testRnd = rounds[0]
   var parseCol = colName.split('.')
-  if (parseCol.length > 1) {
 
-    if (testRnd[parseCol[0]] === "object") {
-
-      var col = 
-
-    }
-
-  }
 
   var rndArr =  rounds.slice(0,endRow)
   var rtn = []
