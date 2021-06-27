@@ -1,4 +1,4 @@
-{/* <script> */}
+
 async function btnShowStatsHtml() {
 
   var statSelectOptions  = readOption('statExcludeSmallVal')
@@ -17,35 +17,24 @@ async function btnShowStatsHtml() {
     endRow['row3'] = getEndRow(datePlayed, statRng3)
 
 
+  var x = extrRndData	(rounds, 'finalScore', 25)
+
+  console.log(x)
+
+  var x = extrRndData	(rounds, 'objHandicap.courseAdjustedScore', 25)
+  console.log(x)
+  
+  var x = extrRndData	(rounds, 'scoreCard.finalScore', 25)
+  console.log(x)
+
+  return
   var x = $("#tblStats").clone();
   $("#statsContainer").empty()
   x.appendTo("#statsContainer");
   $("#tblStats").hide()
   
-  var charts = arrOptions['myStatsCharts'].split(',')
     
-  charts.forEach( (val, idx) => {
 
-    switch (val) {
-  
-      case 'Scores and Handicap - all Rounds':
-        break;
-
-      case 'Lifetime':
-        lifetimeStats()
-        break;
-
-      default:
-        otherStats(val, idx)
-        break;
-
-    }
-
-
-  })   
-    
-    
-//  $('[href="#Stats"]').trigger('click');
   gotoTab('Stats')
     
 }
@@ -198,6 +187,63 @@ function sumArr(arr) {
   }
   return sum
 }
+function extrRndData	(rounds, colName, endRow) {}
+
+	// rounds, 
+	// 'courseInfo.courseName', 'scorecard.putts', 'objHandicap.courseAdjustedScore', 'finalScore'
+	// endRow
+
+  var testRnd = rounds[0]
+  var parseCol = colName.split('.')
+  if (parseCol.length > 1) {
+
+    if (testRnd[parseCol[0]] === "object") {
+
+      var col = 
+
+    }
+
+  }
+
+  var rndArr =  rounds.slice(0,endRow)
+  var rtn = []
+
+  for (i=0;i<rndArr.length;i++) {
+
+    var rnd = rndArr[i]
+
+    if (parseCol.length == 1) {
+
+      var x = rnd[parseCol]
+      rtn.push(x)
+
+    } else {
+
+      if (rnd[parseCol[0]] === "object") {
+
+        var x = rnd[parseCol]
+        rtn.push(x)
+
+      } else {
+
+        var obj = JSON.parse(rnd[parseCol[0]])
+        var x = obj[parseCol[1]]
+        rtn.push(x)
+
+      }
+
+    }
+      
+    return rtn
+
+    }
+
+  }
+
+
+
+
+}
 
 function getColData(colName, Hdrs, arr, firstRow, nbrRows) {
   var colNbr = Hdrs.indexOf(colName)
@@ -270,6 +316,3 @@ function camel2title(camelCase) {
       return match.toUpperCase();
     });
 }
-
-
-// </script>
