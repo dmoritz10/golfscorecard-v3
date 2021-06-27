@@ -195,12 +195,12 @@ function extrRndData	(rounds, colName, nbrRows) {
 
   var parseCol = colName.split('.')
 
-  var rndArr =  rounds.slice(0,nbrRows)
+  // var rndArr =  rounds.slice(0,nbrRows)
   var rtn = []
 
   for (var i = rndArr.length - 1; i > rndArr.length - nbrRows - 1; i--) {
 
-    var rnd = rndArr[i]
+    var rnd = rounds[i]
 
     if (parseCol.length == 1) {
 
