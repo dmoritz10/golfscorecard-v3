@@ -191,11 +191,11 @@ function extrRndData	(rounds, colName, nbrRows) {
 
 	// rounds, 
 	// 'courseInfo.courseName', 'scorecard.putts', 'objHandicap.courseAdjustedScore', 'finalScore'
-	// endRow
+	// nbrRows
 
   var parseCol = colName.split('.')
 
-  var rndArr =  rounds.slice(0,endRow)
+  var rndArr =  rounds.slice(0,nbrRows)
   var rtn = []
 
   for (var i = rndArr.length - 1; i < rndArr.length - nbrRows; i--) {
