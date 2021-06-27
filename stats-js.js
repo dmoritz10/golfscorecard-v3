@@ -214,9 +214,7 @@ function extrRndData	(rounds, colName, endRow) {
 
     } else {
 
-      console.log('2')
-
-      if (rnd[parseCol[0]] === "object") {
+      if (typeof rnd[parseCol[0]] === "object") {
 
         console.log('2')
         console.log(parseCol)
