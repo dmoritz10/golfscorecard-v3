@@ -12,6 +12,8 @@ async function btnShowStatsHtml() {
   var rounds = await getRounds(statExcludeSmall)
 
   var datePlayed = rounds.map(x => x['date'])
+
+  console.log(getEndRow(datePlayed, statRng1))
   
   var endRow = {}
     endRow['row1'] = getEndRow(datePlayed, statRng1)
@@ -355,7 +357,7 @@ console.log(endRow)
   const avgScrByPar = (scoreCard, par, holePar) => {
     totScore = 0
     totCnt = 0
-    scores1.forEach((scoreCard) => {
+    scoreCard.forEach((scoreCard) => {
       scoreCard.forEach((val, idx) => {
         if (par[idx] == holePar) {
           totScore += val
