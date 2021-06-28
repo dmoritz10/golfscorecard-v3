@@ -25,15 +25,14 @@ async function btnShowStatsHtml() {
     myStatsRng['rng2'] = statRng2
     myStatsRng['rng3'] = statRng3
 
-  var x = extrRndData	(rounds, 'finalScore', 25)
+  // var x = extrRndData	(rounds, 'finalScore', 25)
+  // console.log(x)
 
-  console.log(x)
-
-  var x = extrRndData	(rounds, 'objHandicap.courseAdjustedScore', 25)
-  console.log(x)
+  // var x = extrRndData	(rounds, 'objHandicap.courseAdjustedScore', 25)
+  // console.log(x)
   
-  var x = extrRndData	(rounds, 'scoreCard.scores', 25)
-  console.log(x)
+  // var x = extrRndData	(rounds, 'scoreCard.scores', 25)
+  // console.log(x)
 
 
   var title = "Average Score by Par"
@@ -362,6 +361,10 @@ function chartAverageScorebyPar   (title, rounds, myStatsRng, endRow) {
   var scores1 = extrRndData	(rounds, 'scoreCard.scores', endRow.row1)
   var scores2 = extrRndData	(rounds, 'scoreCard.scores', endRow.row2)
   var scores3 = extrRndData	(rounds, 'scoreCard.scores', endRow.row3)
+
+  console.log(scores1)
+  console.log(scores2)
+  console.log(scores3)
 
   var par = scores1[0].map(el => el.par)
 
