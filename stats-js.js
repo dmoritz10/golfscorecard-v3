@@ -363,6 +363,10 @@ console.log(endRow)
         if (par[idx] == holePar) {
           totScore += val.score
           totCnt ++
+
+console.log(totScore)
+console.log(totCnt)
+
         }
       })
     })
