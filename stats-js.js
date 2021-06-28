@@ -373,6 +373,7 @@ console.log(endRow)
 var x = avgScrByPar(scores1, par, 3)
 
 console.log(x)
+return
   var rtn = [
     [
     '', 
