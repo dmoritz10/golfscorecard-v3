@@ -485,6 +485,8 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
       var nbrHoles = scoreCard.length
       var nbrPutts = scoreCard.reduce((a, b) => a.putts*1 + b.putts*1, 0)
 
+      scoreCard.forEach( sc => console.log(sc))
+
 console.log(nbrHoles)
 console.log(nbrPutts)
 
