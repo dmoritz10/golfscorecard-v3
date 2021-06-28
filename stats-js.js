@@ -337,12 +337,15 @@ function chartAverageScorebyPar   (title, rounds, myStatsRng, endRow) {
   var scores2 = extrRndData	(rounds, 'scoreCard.scores', endRow.row2)
   var scores3 = extrRndData	(rounds, 'scoreCard.scores', endRow.row3)
 
+console.log(scores1)
+console.log(endRow)
+
   var par = scores1[0].map(el => el.par)
 
   console.log(scores1)
   console.log(par)
 
-  const avgScrByPar = (scoreCard, par, holePar) => {
+  // const avgScrByPar = (scoreCard, par, holePar) => {
     totScore = 0
     totCnt = 0
     scores1.forEach((scoreCard) => {
