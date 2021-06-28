@@ -368,11 +368,11 @@ function chartAverageScorebyPar   (title, rounds, myStatsRng, endRow) {
 
   var par = scores1[0].map(el => el.par)
 
-  const avgScrByPar = (scoreCard, holePar) => {
+  const avgScrByPar = (scoreCardArr, holePar) => {
     arr = []
-    scoreCard.forEach((scoreCard) => {
+    scoreCardArr.forEach((scoreCard) => {
+      var par = scoreCard.map(el => el.par)
       scoreCard.forEach((val, idx) => {
-        var par = val.map(el => el.par)
         if (par[idx]*1 == holePar*1) {
           arr.push(val.score*1)
         }
