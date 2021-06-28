@@ -1,13 +1,13 @@
 
 async function btnShowStatsHtml() {
 
-  var statSelectOptions  = readOption('statExcludeSmallVal')
-  var statExcludeSmall = statSelectOptions.statExcludeSmallVal
-  var statRng1 = statSelectOptions.statRng1
-  var statRng2 = statSelectOptions.statRng2
-  var statRng3 = statSelectOptions.statRng3
+  var statOptions  = readOption('statOptions')
+  var statExcludeSmall = statOptions.statExcludeSmallCourses
+  var statRng1 = statOptions.statRng1
+  var statRng2 = statOptions.statRng2
+  var statRng3 = statOptions.statRng3
 
-  var rounds = await getRounds(statExcludeSmall)
+  var rounds = await getRounds(statExcludeSmallCourses)
 
   var datePlayed = rounds.map(x => x['date'])
   
@@ -21,6 +21,8 @@ async function btnShowStatsHtml() {
     myStatsRng['rng2'] = statRng2
     myStatsRng['rng3'] = statRng3
 
+    console.log(myStatsRng)
+    console.log(endRow)
 
   var x = extrRndData	(rounds, 'finalScore', 25)
 
@@ -35,7 +37,10 @@ async function btnShowStatsHtml() {
 
   var title = "Average Score by Par"
   var rtn = chartAverageScorebyPar   (title, rounds, myStatsRng, endRow)
+  console.log(  var rtn = chartAverageScorebyPar   (title, rounds, myStatsRng, endRow)
+  )
     
+return  
   var title = "Course Adjusted Score"
   var rtn = chartCourseAdjustedScore (title, rounds, myStatsRng, endRow)        
  
