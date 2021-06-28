@@ -25,9 +25,6 @@ async function btnShowStatsHtml() {
     myStatsRng['rng2'] = statRng2
     myStatsRng['rng3'] = statRng3
 
-    console.log(myStatsRng)
-    console.log(endRow)
-
   var x = extrRndData	(rounds, 'finalScore', 25)
 
   console.log(x)
@@ -346,27 +343,14 @@ function chartAverageScorebyPar   (title, rounds, myStatsRng, endRow) {
   var scores2 = extrRndData	(rounds, 'scoreCard.scores', endRow.row2)
   var scores3 = extrRndData	(rounds, 'scoreCard.scores', endRow.row3)
 
-console.log(scores1)
-console.log(endRow)
-
   var par = scores1[0].map(el => el.par)
 
-  console.log(scores1)
-  console.log(par)
-
-
   const avgScrByPar = (scoreCard, par, holePar) => {
-    totScore = 0
-    totCnt = 0
+    arr = []
     scoreCard.forEach((scoreCard) => {
       scoreCard.forEach((val, idx) => {
         if (par[idx] == holePar) {
-          totScore += val.score*1
-          totCnt ++
-
-console.log(totScore)
-console.log(totCnt)
-
+          arr.push(val.score*1)
         }
       })
     })
@@ -375,13 +359,6 @@ console.log(totCnt)
 
   }    
 
-var x = avgScrByPar(scores1, par, 3)
-console.log(x)
-var x = avgScrByPar(scores1, par, 4)
-console.log(x)
-var x = avgScrByPar(scores1, par, 5)
-console.log(x)
-return
   var rtn = [
     [
     '', 
@@ -392,29 +369,31 @@ return
     
     [
     "Par 3",
-    avgArr(getColData("Scoring Avg by Par 3", myRoundsHdrs, myRoundsArr, 3, endRow.row1)),
-    avgArr(getColData("Scoring Avg by Par 3", myRoundsHdrs, myRoundsArr, 3, endRow.row2)),
-    avgArr(getColData("Scoring Avg by Par 3", myRoundsHdrs, myRoundsArr, 3, endRow.row3))
+    avgArr(avgScrByPar(scores1, par, 3)),
+    avgArr(avgScrByPar(scores2, par, 3)),
+    avgArr(avgScrByPar(scores3, par, 3))
     ],
       
     [
     "Par 4",
-    avgArr(getColData("Scoring Avg by Par 4", myRoundsHdrs, myRoundsArr, 3, endRow.row1)),
-    avgArr(getColData("Scoring Avg by Par 4", myRoundsHdrs, myRoundsArr, 3, endRow.row2)),
-    avgArr(getColData("Scoring Avg by Par 4", myRoundsHdrs, myRoundsArr, 3, endRow.row3))
+    avgArr(avgScrByPar(scores1, par, 4)),
+    avgArr(avgScrByPar(scores2, par, 4)),
+    avgArr(avgScrByPar(scores3, par, 4))
     ],
       
     [  
     "Par 5",
-    avgArr(getColData("Scoring Avg by Par 5", myRoundsHdrs, myRoundsArr, 3, endRow.row1)),      
-    avgArr(getColData("Scoring Avg by Par 5", myRoundsHdrs, myRoundsArr, 3, endRow.row2)),
-    avgArr(getColData("Scoring Avg by Par 5", myRoundsHdrs, myRoundsArr, 3, endRow.row3))
-    ],
+    avgArr(avgScrByPar(scores1, par, 5)),
+    avgArr(avgScrByPar(scores2, par, 5)),
+    avgArr(avgScrByPar(scores3, par, ))
+     ],
     ]
     
     arrRound(rtn, 1)
+
+    console.log(rtn)
     
-    return {arrData:rtn, format:''};
+    return {title: title, arrData:rtn, format:''};
 
 
 
