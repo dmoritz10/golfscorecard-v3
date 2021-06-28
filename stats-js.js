@@ -355,7 +355,7 @@ function chartAverageScorebyPar   (title, rounds, myStatsRng, endRow) {
       })
     })
 
-    return totScore / totCnt
+    return arr
 
   }    
 
