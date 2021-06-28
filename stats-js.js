@@ -38,7 +38,7 @@ async function btnShowStatsHtml() {
   var title = "Average Score by Par"
   var rtn = chartAverageScorebyPar   (title, rounds, myStatsRng, endRow)
   console.log( rtn)
-  )
+  
     
 return  
   var title = "Course Adjusted Score"
