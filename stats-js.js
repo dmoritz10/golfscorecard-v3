@@ -376,7 +376,10 @@ console.log(totCnt)
   }    
 
 var x = avgScrByPar(scores1, par, 3)
-
+console.log(x)
+var x = avgScrByPar(scores1, par, 4)
+console.log(x)
+var x = avgScrByPar(scores1, par, 5)
 console.log(x)
 return
   var rtn = [
