@@ -368,10 +368,11 @@ function chartAverageScorebyPar   (title, rounds, myStatsRng, endRow) {
 
   var par = scores1[0].map(el => el.par)
 
-  const avgScrByPar = (scoreCard, par, holePar) => {
+  const avgScrByPar = (scoreCard, holePar) => {
     arr = []
     scoreCard.forEach((scoreCard) => {
       scoreCard.forEach((val, idx) => {
+        var par = val.map(el => el.par)
         if (par[idx]*1 == holePar*1) {
           arr.push(val.score*1)
         }
@@ -392,23 +393,23 @@ function chartAverageScorebyPar   (title, rounds, myStatsRng, endRow) {
     
     [
     "Par 3",
-    avgArr(avgScrByPar(scores1, par, 3)),
-    avgArr(avgScrByPar(scores2, par, 3)),
-    avgArr(avgScrByPar(scores3, par, 3))
+    avgArr(avgScrByPar(scores1, 3)),
+    avgArr(avgScrByPar(scores2, 3)),
+    avgArr(avgScrByPar(scores3, 3))
     ],
       
     [
     "Par 4",
-    avgArr(avgScrByPar(scores1, par, 4)),
-    avgArr(avgScrByPar(scores2, par, 4)),
-    avgArr(avgScrByPar(scores3, par, 4))
+    avgArr(avgScrByPar(scores1, 4)),
+    avgArr(avgScrByPar(scores2, 4)),
+    avgArr(avgScrByPar(scores3, 4))
     ],
       
     [  
     "Par 5",
-    avgArr(avgScrByPar(scores1, par, 5)),
-    avgArr(avgScrByPar(scores2, par, 5)),
-    avgArr(avgScrByPar(scores3, par, 5))
+    avgArr(avgScrByPar(scores1, 5)),
+    avgArr(avgScrByPar(scores2, 5)),
+    avgArr(avgScrByPar(scores3, 5))
      ],
     ]
 
