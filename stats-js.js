@@ -487,11 +487,20 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
       scoreCard.forEach((val, idx) => {
         nbrPutts += val.putts*1
       })
-
-console.log(nbrHoles)
-console.log(nbrPutts)
-
       arr.push(nbrPutts * 18 / nbrHoles)
+    })
+    return arr
+  }    
+
+  const puttsPerHole = (scoreCardArr) => {
+    arr = []
+    scoreCardArr.forEach((scoreCard) => {
+      var nbrHoles = scoreCard.length
+      var nbrPutts = 0
+      scoreCard.forEach((val, idx) => {
+        nbrPutts += val.putts*1
+      })
+      arr.push(nbrPutts / nbrHoles)
     })
     return arr
   }    
@@ -511,12 +520,12 @@ console.log(nbrPutts)
     avgArr(puttsPerRound(scores3))
     ],
       
-    // [
-    // "Putts Per Hole",
-    // avgArr(getColData("Putts Per Hole", myRoundsHdrs, myRoundsArr, 3, endRow.row1)),
-    // avgArr(getColData("Putts Per Hole", myRoundsHdrs, myRoundsArr, 3, endRow.row2)),
-    // avgArr(getColData("Putts Per Hole", myRoundsHdrs, myRoundsArr, 3, endRow.row3))
-    // ],
+    [
+    "Putts Per Hole",
+    avgArr(puttsPerHole(scores1)),
+    avgArr(puttsPerHole(scores2)),
+    avgArr(puttsPerHole(scores3))
+    ],
       
     // [
     // "Putts Per GIR",
