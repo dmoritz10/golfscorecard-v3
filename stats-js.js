@@ -505,6 +505,53 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
     return arr
   }    
 
+  const puttsPerGIR = (scoreCardArr) => {
+    arr = []
+    scoreCardArr.forEach((scoreCard) => {
+      var nbrHoles = 0
+      var nbrPutts = 0
+      scoreCard.forEach((val, idx) => {
+        if (val.score - val.putts <= val.par - 2) {
+          nbrPutts += val.putts*1
+          nbrHoles++
+        }
+      })
+      arr.push(nbrPutts / nbrHoles)
+    })
+    return arr
+  }    
+
+  const puttsPerGIRPlusOne = (scoreCardArr) => {
+    arr = []
+    scoreCardArr.forEach((scoreCard) => {
+      var nbrHoles = 0
+      var nbrPutts = 0
+      scoreCard.forEach((val, idx) => {
+        if (val.score - val.putts <= val.par - 1) {
+          nbrPutts += val.putts*1
+          nbrHoles++
+        }
+      })
+      arr.push(nbrPutts / nbrHoles)
+    })
+    return arr
+  }    
+
+  const xPuttsPerRound = (scoreCardArr, x) => {
+    arr = []
+    scoreCardArr.forEach((scoreCard) => {
+      var nbrHoles = scoreCard.length
+      var nbrOnePutts = 0
+      scoreCard.forEach((val, idx) => {
+        if (val.putts*1 == x) {
+          nbrOnePutts++
+        }
+      })
+      arr.push(nbrPutts * 18 / nbrHoles)
+     })
+    return arr
+  }    
+
   var rtn = [
     [
     '', 
@@ -521,36 +568,36 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
     ],
       
     [
-    "Putts Per Hole",
+    "Putts / Hole",
     avgArr(puttsPerHole(scores1)),
     avgArr(puttsPerHole(scores2)),
     avgArr(puttsPerHole(scores3))
     ],
       
-    // [
-    // "Putts Per GIR",
-    // avgArr(prepPuttsPerGIR(x1)),
-    // avgArr(prepPuttsPerGIR(x2)),
-    // avgArr(prepPuttsPerGIR(x3))
-    // ],
-    // [  
-    // "Putts Per GIR+1",
-    // avgArr(prepPuttsPerGIRPlusOne(x1)),
-    // avgArr(prepPuttsPerGIRPlusOne(x2)),
-    // avgArr(prepPuttsPerGIRPlusOne(x3))
-    // ],
-    // [
-    // "1 Putts",
-    // avgArr(prep1Putts(x1)),
-    // avgArr(prep1Putts(x2)),
-    // avgArr(prep1Putts(x3))
-    // ],
-    // [
-    // "3 Putts",
-    // avgArr(prep3Putts(x1)),
-    // avgArr(prep3Putts(x2)),
-    // avgArr(prep3Putts(x3))
-    // ]    
+    [
+    "Putts / GIR",
+    avgArr(puttsPerGIR(scores1)),
+    avgArr(puttsPerGIR(scores2)),
+    avgArr(puttsPerGIR(scores3))
+    ], puttsPerGIRPlusOne
+    [  
+    "Putts / GIR+1",
+    avgArr(puttsPerGIRPlusOne(scores1)),
+    avgArr(puttsPerGIRPlusOne(scores2)),
+    avgArr(puttsPerGIRPlusOne(scores3))
+    ],
+    [
+    "1 Putts",
+    avgArr(xPuttsPerRound(scores1, 1)),
+    avgArr(xPuttsPerRound(scores2, 1)),
+    avgArr(xPuttsPerRound(scores3, 1))
+    ],
+    [
+    "3 Putts",
+    avgArr(xPuttsPerRound(scores1, 3)),
+    avgArr(xPuttsPerRound(scores2, 3)),
+    avgArr(xPuttsPerRound(scores3, 3))
+    ]    
     ]
 
     
