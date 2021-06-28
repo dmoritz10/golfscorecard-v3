@@ -9,7 +9,7 @@ async function btnShowStatsHtml() {
   var statRng2 = statOptions.statRng2
   var statRng3 = statOptions.statRng3
 
-  var rounds = await getRounds(statExcludeSmallCourses)
+  var rounds = await getRounds(statExcludeSmall)
 
   var datePlayed = rounds.map(x => x['date'])
   
