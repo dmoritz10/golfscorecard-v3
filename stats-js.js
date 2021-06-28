@@ -51,39 +51,42 @@ async function btnShowStatsHtml() {
   console.log( rtn)
   rptArr.push(rtn)
    
-  return
-  var title = "Tee to Green"
-  var rtn = chartTeeToGreen          (title, rounds, myStatsRng, endRow)        
+  // var title = "Tee to Green"
+  // var rtn = chartTeeToGreen          (title, rounds, myStatsRng, endRow)        
     
-  var title = "Score Comparison"
-  var rtn = chartScoreComparison     (title, rounds, myStatsRng, endRow)        
+  // var title = "Score Comparison"
+  // var rtn = chartScoreComparison     (title, rounds, myStatsRng, endRow)        
   
-  var title = "Driving Accuracy"
-  var rtn = driveAccuracy            (title, rounds, myStatsRng, endRow)        
+  // var title = "Driving Accuracy"
+  // var rtn = driveAccuracy            (title, rounds, myStatsRng, endRow)        
   
-  var title = "Lifetime"
-  var rtn = otherStuff               (title, rounds, myStatsRng, endRow)        
+  // var title = "Lifetime"
+  // var rtn = otherStuff               (title, rounds, myStatsRng, endRow)        
 
 
-
-  return
   var x = $("#tblStats").clone();
   $("#statsContainer").empty()
   x.appendTo("#statsContainer");
   $("#tblStats").hide()
   
-    
+  rptArr.forEach( rpt => {
+
+    otherStats(rpt)
+
+
+
+
+  })  
 
   gotoTab('Stats')
     
 }
 
-function otherStats(val, idx) {
+function otherStats(rpt) {
 
-
-  var json = JSON.parse(arrOptions[val] )
-  var arrChart =  json.arrData
-  var arrFormat = json.format
+  var title = rpt.title
+  var arrChart =  rpt.arrData
+  var arrFormat = rpt.format
       
   var ele = $("#tblStats").clone().show();
 
@@ -120,7 +123,7 @@ function otherStats(val, idx) {
       .setTdClass('py-0 border-0 h5')
       .build(ele);
         
-    ele.prepend( "<h3 class='w-100 text-center'>" + val + "</h3>")
+    ele.prepend( "<h3 class='w-100 text-center'>" + title + "</h3>")
     ele.append( "<hr class='w-100'>")
 
     ele.appendTo("#statsContainer");
