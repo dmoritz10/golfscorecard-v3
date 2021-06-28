@@ -579,7 +579,7 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
     avgArr(puttsPerGIR(scores1)),
     avgArr(puttsPerGIR(scores2)),
     avgArr(puttsPerGIR(scores3))
-    ], puttsPerGIRPlusOne
+    ],
     [  
     "Putts / GIR+1",
     avgArr(puttsPerGIRPlusOne(scores1)),
