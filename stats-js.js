@@ -345,7 +345,7 @@ console.log(endRow)
   console.log(scores1)
   console.log(par)
 
-  // const avgScrByPar = (scoreCard, par, holePar) => {
+  const avgScrByPar = (scoreCard, par, holePar) => {
     totScore = 0
     totCnt = 0
     scores1.forEach((scoreCard) => {
