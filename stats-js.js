@@ -2,6 +2,8 @@
 async function btnShowStatsHtml() {
 
   var statOptions  = readOption('statOptions')
+
+  console.log(statOptions)
   var statExcludeSmall = statOptions.statExcludeSmallCourses
   var statRng1 = statOptions.statRng1
   var statRng2 = statOptions.statRng2
