@@ -342,11 +342,11 @@ function chartAverageScorebyPar   (title, rounds, myStatsRng, endRow) {
   console.log(scores1)
   console.log(par)
 
-  const avgScrByPar (scores, par, holePar) => {}
+  const avgScrByPar = (scoreCard, par, holePar) => {
     totScore = 0
     totCnt = 0
-    scores1.forEach((score) => {
-      score.forEach((val, idx) => {
+    scores1.forEach((scoreCard) => {
+      scoreCard.forEach((val, idx) => {
         if (par[idx] == holePar) {
           totScore += val
           totCnt ++
