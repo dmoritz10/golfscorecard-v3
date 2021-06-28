@@ -600,7 +600,8 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
     ]    
     ]
 
-    
+console.log('hi dan')    
+console.log(rtn)
     arrRound(rtn, 1)
 
     console.log(title)
