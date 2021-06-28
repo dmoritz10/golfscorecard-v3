@@ -16,6 +16,11 @@ async function btnShowStatsHtml() {
     endRow['row2'] = getEndRow(datePlayed, statRng2)
     endRow['row3'] = getEndRow(datePlayed, statRng3)
 
+  var myStatsRng = {};
+    myStatsRng['rng1'] = statRng1
+    myStatsRng['rng2'] = statRng2
+    myStatsRng['rng3'] = statRng3
+
 
   var x = extrRndData	(rounds, 'finalScore', 25)
 
@@ -26,6 +31,30 @@ async function btnShowStatsHtml() {
   
   var x = extrRndData	(rounds, 'scoreCard.scores', 25)
   console.log(x)
+
+
+  var title = "Average Score by Par"
+  var rtn = chartAverageScorebyPar   (title, rounds, myStatsRng, endRow)
+    
+  var title = "Course Adjusted Score"
+  var rtn = chartCourseAdjustedScore (title, rounds, myStatsRng, endRow)        
+ 
+  var title = "Putting"
+  var rtn = chartPutting             (title, rounds, myStatsRng, endRow)        
+   
+  var title = "Tee to Green"
+  var rtn = chartTeeToGreen          (title, rounds, myStatsRng, endRow)        
+    
+  var title = "Score Comparison"
+  var rtn = chartScoreComparison     (title, rounds, myStatsRng, endRow)        
+  
+  var title = "Driving Accuracy"
+  var rtn = driveAccuracy            (title, rounds, myStatsRng, endRow)        
+  
+  var title = "Lifetime"
+  var rtn = otherStuff               (title, rounds, myStatsRng, endRow)        
+
+
 
   return
   var x = $("#tblStats").clone();
@@ -300,4 +329,72 @@ function camel2title(camelCase) {
     .replace(/^./, function(match) {
       return match.toUpperCase();
     });
+}
+
+function chartAverageScorebyPar   (title, rounds, myStatsRng, endRow) {
+
+  var scores1 = extrRndData	(rounds, 'scoreCard.scores', endRow.row1)
+  var scores2 = extrRndData	(rounds, 'scoreCard.scores', endRow.row2)
+  var scores3 = extrRndData	(rounds, 'scoreCard.scores', endRow.row3)
+
+  var par = scores1[0].map(el => el.par)
+
+  console.log(scores1)
+  console.log(par)
+
+  const avgScrByPar (scores, par, holePar) => {}
+    totScore = 0
+    totCnt = 0
+    scores1.forEach((score) => {
+      score.forEach((val, idx) => {
+        if (par[idx] == holePar) {
+          totScore += val
+          totCnt ++
+        }
+      })
+    })
+
+    return totScore / totCnt
+
+  }    
+
+var x = avgScrByPar(scores1, par, 3)
+
+console.log(x)
+  var rtn = [
+    [
+    '', 
+    myStatsRng.rng1, 
+    myStatsRng.rng2, 
+    myStatsRng.rng3
+    ],
+    
+    [
+    "Par 3",
+    avgArr(getColData("Scoring Avg by Par 3", myRoundsHdrs, myRoundsArr, 3, endRow.row1)),
+    avgArr(getColData("Scoring Avg by Par 3", myRoundsHdrs, myRoundsArr, 3, endRow.row2)),
+    avgArr(getColData("Scoring Avg by Par 3", myRoundsHdrs, myRoundsArr, 3, endRow.row3))
+    ],
+      
+    [
+    "Par 4",
+    avgArr(getColData("Scoring Avg by Par 4", myRoundsHdrs, myRoundsArr, 3, endRow.row1)),
+    avgArr(getColData("Scoring Avg by Par 4", myRoundsHdrs, myRoundsArr, 3, endRow.row2)),
+    avgArr(getColData("Scoring Avg by Par 4", myRoundsHdrs, myRoundsArr, 3, endRow.row3))
+    ],
+      
+    [  
+    "Par 5",
+    avgArr(getColData("Scoring Avg by Par 5", myRoundsHdrs, myRoundsArr, 3, endRow.row1)),      
+    avgArr(getColData("Scoring Avg by Par 5", myRoundsHdrs, myRoundsArr, 3, endRow.row2)),
+    avgArr(getColData("Scoring Avg by Par 5", myRoundsHdrs, myRoundsArr, 3, endRow.row3))
+    ],
+    ]
+    
+    arrRound(rtn, 1)
+    
+    return {arrData:rtn, format:''};
+
+
+
 }
