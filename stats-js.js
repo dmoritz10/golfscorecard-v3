@@ -34,16 +34,21 @@ async function btnShowStatsHtml() {
   // var x = extrRndData	(rounds, 'scoreCard.scores', 25)
   // console.log(x)
 
+  var rptArr = []
 
   var title = "Average Score by Par"
   var rtn = chartAverageScorebyPar   (title, rounds, myStatsRng, endRow)
   console.log( rtn)
+  rptArr.push(rtn)
   
-    
-return  
   var title = "Course Adjusted Score"
-  var rtn = chartCourseAdjustedScore (title, rounds, myStatsRng, endRow)        
- 
+  var rtn = chartCourseAdjustedScore (title, rounds, myStatsRng, endRow)   
+  console.log( rtn)
+  rptArr.push(rtn)
+   
+  
+
+  return
   var title = "Putting"
   var rtn = chartPutting             (title, rounds, myStatsRng, endRow)        
    
@@ -420,6 +425,55 @@ function chartAverageScorebyPar   (title, rounds, myStatsRng, endRow) {
     console.log(rtn)
     
     return {title: title, arrData:rtn, format:''};
+
+}
+
+function chartCourseAdjustedScore (title, rounds, myStatsRng, endRow)   {
+
+  var adjScores1 = extrRndData	(rounds, 'objHandicap.courseAdjustedScore', endRow.row1)
+  var adjScores2 = extrRndData	(rounds, 'objHandicap.courseAdjustedScore', endRow.row2)
+  var adjScores3 = extrRndData	(rounds, 'objHandicap.courseAdjustedScore', endRow.row3)
+
+  var hcps1 = extrRndData	(rounds, 'objHandicap.handicap', endRow.row1)
+  var hcps2 = extrRndData	(rounds, 'objHandicap.handicap', endRow.row2)
+  var hcps3 = extrRndData	(rounds, 'objHandicap.handicap', endRow.row3)
+
+  console.log(adjScores1)
+  console.log(adjScores2)
+  console.log(adjScores3)
+
+  var rtn = [
+    [
+    '', 
+    myStatsRng.rng1, 
+    myStatsRng.rng2, 
+    myStatsRng.rng3
+    ],
+    
+    [
+    "Score",
+    avgArr(adjScores1),
+    avgArr(adjScores2),
+    avgArr(adjScores3)
+    ],
+      
+    [
+    "Handicap",
+    hcps1.pop(),
+    hcps2.pop(),
+    hcps3.pop()
+    ]
+    ]
+
+    console.log(rtn)
+    
+    arrRound(rtn, 1)
+
+    console.log(rtn)
+    
+    return {title: title, arrData:rtn, format:''};
+
+
 
 
 
