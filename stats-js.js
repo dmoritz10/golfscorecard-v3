@@ -46,12 +46,12 @@ async function btnShowStatsHtml() {
   console.log( rtn)
   rptArr.push(rtn)
    
-  
-
-  return
   var title = "Putting"
   var rtn = chartPutting             (title, rounds, myStatsRng, endRow)        
+  console.log( rtn)
+  rptArr.push(rtn)
    
+  return
   var title = "Tee to Green"
   var rtn = chartTeeToGreen          (title, rounds, myStatsRng, endRow)        
     
@@ -371,8 +371,6 @@ function chartAverageScorebyPar   (title, rounds, myStatsRng, endRow) {
   console.log(scores2)
   console.log(scores3)
 
-  var par = scores1[0].map(el => el.par)
-
   const avgScrByPar = (scoreCardArr, holePar) => {
     arr = []
     scoreCardArr.forEach((scoreCard) => {
@@ -415,7 +413,7 @@ function chartAverageScorebyPar   (title, rounds, myStatsRng, endRow) {
     avgArr(avgScrByPar(scores1, 5)),
     avgArr(avgScrByPar(scores2, 5)),
     avgArr(avgScrByPar(scores3, 5))
-     ],
+     ]
     ]
 
     console.log(rtn)
@@ -473,8 +471,78 @@ function chartCourseAdjustedScore (title, rounds, myStatsRng, endRow)   {
     
     return {title: title, arrData:rtn, format:''};
 
+}
 
+function chartPutting (title, rounds, myStatsRng, endRow)   {
 
+  var scores1 = extrRndData	(rounds, 'scoreCard.scores', endRow.row1)
+  var scores2 = extrRndData	(rounds, 'scoreCard.scores', endRow.row2)
+  var scores3 = extrRndData	(rounds, 'scoreCard.scores', endRow.row3)
 
+  const puttsPerRound = (scoreCardArr) => {
+    arr = []
+    scoreCardArr.forEach((scoreCard) => {
+      var nbrHoles = scoreCard.length
+      var nbrPutts = scoreCard.reduce((a, b) => a*1 + b*1, 0)
+      arr.push(nbrPutts * 18 / nbrHoles)
+    })
+    return arr
+  }    
+
+  var rtn = [
+    [
+    '', 
+    myStatsRng.rng1, 
+    myStatsRng.rng2, 
+    myStatsRng.rng3
+    ],
+    
+    [
+    "Putts",
+    avgArr(puttsPerRound(scores1)),
+    avgArr(puttsPerRound(scores2)),
+    avgArr(puttsPerRound(scores3))
+    ],
+      
+    // [
+    // "Putts Per Hole",
+    // avgArr(getColData("Putts Per Hole", myRoundsHdrs, myRoundsArr, 3, endRow.row1)),
+    // avgArr(getColData("Putts Per Hole", myRoundsHdrs, myRoundsArr, 3, endRow.row2)),
+    // avgArr(getColData("Putts Per Hole", myRoundsHdrs, myRoundsArr, 3, endRow.row3))
+    // ],
+      
+    // [
+    // "Putts Per GIR",
+    // avgArr(prepPuttsPerGIR(x1)),
+    // avgArr(prepPuttsPerGIR(x2)),
+    // avgArr(prepPuttsPerGIR(x3))
+    // ],
+    // [  
+    // "Putts Per GIR+1",
+    // avgArr(prepPuttsPerGIRPlusOne(x1)),
+    // avgArr(prepPuttsPerGIRPlusOne(x2)),
+    // avgArr(prepPuttsPerGIRPlusOne(x3))
+    // ],
+    // [
+    // "1 Putts",
+    // avgArr(prep1Putts(x1)),
+    // avgArr(prep1Putts(x2)),
+    // avgArr(prep1Putts(x3))
+    // ],
+    // [
+    // "3 Putts",
+    // avgArr(prep3Putts(x1)),
+    // avgArr(prep3Putts(x2)),
+    // avgArr(prep3Putts(x3))
+    // ]    
+    ]
+
+    
+    arrRound(rtn, 1)
+
+    console.log(title)
+    console.log(rtn)
+    
+    return {title: title, arrData:rtn, format:''};
 
 }
