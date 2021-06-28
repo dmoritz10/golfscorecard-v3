@@ -222,6 +222,26 @@ function sumArr(arr) {
   }
   return sum
 }
+
+function arrRound(arr, nbrDec, percent) {
+  var multiplier = Math.pow(10, nbrDec || 0);
+  
+  arr.forEach(function(is) { 
+    is.forEach( function (item, index, array) { 
+      if (typeof item === 'number') {
+//        array[index] = parseInt(Math.round(item * multiplier)) / multiplier;
+        if (percent) {
+          array[index] = Number((item* 100).toFixed(nbrDec))  + "%";
+        }
+        else {
+          array[index] = Number((item).toFixed(nbrDec));
+//          array[index] = array[index] * 100 + "%"
+        }
+      }
+    }              
+  ) } );  
+    
+}  
 function extrRndData	(rounds, colName, nbrRows) {
 
 	// rounds, 
