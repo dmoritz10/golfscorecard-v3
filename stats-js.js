@@ -361,7 +361,7 @@ console.log(endRow)
     scoreCard.forEach((scoreCard) => {
       scoreCard.forEach((val, idx) => {
         if (par[idx] == holePar) {
-          totScore += val.score
+          totScore += val.score*1
           totCnt ++
 
 console.log(totScore)
