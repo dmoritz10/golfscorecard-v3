@@ -632,7 +632,7 @@ function lifeTime               (title, rounds) {
     var years = Math.floor(difdtInYrs)
     var months = Math.floor((difdtInYrs - years) * 365 / 30)
     var days = Math.round((difdt - years * (1000*60*60*24*365) - months * (1000*60*60*24*30)) / (1000*60*60*24))
-  var playTime =  years + "Y " + months + "M " + days + "D"
+  var totTime =  years + "Y " + months + "M " + days + "D"
 
     var totPlayTime = 0
     rounds.forEach((rnd) => {
