@@ -645,8 +645,7 @@ function lifeTime               (title, rounds) {
     var minutes = Math.round((totPlayTime - days * (1000*60*60*24) - hours * (1000*60*60)) / (1000*60))
   var playTime =  days + "D " + hours + "H " + minutes + "M"
   
-  var nbrYrs = (difdt.toISOString().slice(0, 4) - 1970) + (((difdt.getMonth()+1)) / 12) + (difdt.getDate() / 365)
-  
+console.log(playTime)  
   var roundsPerYr = Math.round(nbrRounds / nbrYrs)
   
   var strokes = 0
