@@ -624,9 +624,9 @@ function lifeTime               (title, rounds) {
 
   var distance = Math.round(nbrHoles * .33)
 
-    var lastDate = rounds[0]['startTime']
-    var frstDate = rounds[rounds.length-1]['endTime']
-    var difdt = new Date(lastDate - frstDate);
+    var lastDate = new Date(rounds[0]['startTime'])
+    var frstDate = new Date(rounds[rounds.length-1]['endTime'])
+    var difdt = lastDate - frstDate;
   var totTime = (difdt.toISOString().slice(0, 4) - 1970) + "Y " + (difdt.getMonth()) + "M " + difdt.getDate() + "D"; 
 
     var totPlayTime = 0
