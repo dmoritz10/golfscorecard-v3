@@ -636,7 +636,7 @@ function lifeTime               (title, rounds) {
 
     var totPlayTime = 0
     rounds.forEach((rnd) => {
-      var pt = newDate(rnd.endTime) - new Date(rnd.startTime)
+      var pt = new Date(rnd.endTime) - new Date(rnd.startTime)
       totPlayTime += pt    
     })
 
