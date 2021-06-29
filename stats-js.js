@@ -648,7 +648,7 @@ console.log(years)
 
     console.log((difdtInYrs - years) * 365 / 30)
     console.log(months)
-    var days = Math.round((difdt - years * (1000*60*60*24*365) - months * (1000*60*60*24*30) / (1000*60*60*24))
+    var days = Math.round((difdt - years * (1000*60*60*24*365) - months * (1000*60*60*24*30)) / (1000*60*60*24))
 
 console.log(difdt - years * (1000*60*60*24*365))
 console.log(months * (1000*60*60*24*365)/30)
