@@ -640,8 +640,8 @@ console.log(difdt)
      var difdtInYrs = difdt / (1000*60*60*24*365)
     var years = Math.floor(difdtInYrs)
     var months = Math.floor((difdtInYrs - years) * 365 / 12)
-    var days = Math.round((difdt - years * (1000*60*60*24*365) - month * (1000*60*60*24*365)/12) / 1000*60*60*24)
-    var playTime =  days + "D " + hours + "H " + minutes + "M"
+    var days = Math.round((difdt - years * (1000*60*60*24*365) - months * (1000*60*60*24*365)/12) / 1000*60*60*24)
+    var playTime =  years + "Y " + months + "M " + days + "D"
 
 console.log(playTime)
 
