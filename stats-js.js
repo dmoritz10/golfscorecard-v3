@@ -60,8 +60,8 @@ async function btnShowStatsHtml() {
   // var title = "Driving Accuracy"
   // var rtn = driveAccuracy            (title, rounds, myStatsRng, endRow)        
   
-  // var title = "Lifetime"
-  // var rtn = otherStuff               (title, rounds, myStatsRng, endRow)        
+  var title = "Lifetime"
+  var ltStats = lifeTime                  (title, rounds)        
 
 
   var x = $("#tblStats").clone();
@@ -70,13 +70,10 @@ async function btnShowStatsHtml() {
   $("#tblStats").hide()
   
   rptArr.forEach( rpt => {
-
     otherStats(rpt)
-
-
-
-
   })  
+
+  lifeTimeStats(ltStats)
 
   gotoTab('Stats')
     
@@ -131,9 +128,9 @@ function otherStats(rpt) {
 }
 
 
-function lifetimeStats() {
+function lifeTimeStats(ltStats) {
 
-    var stats = JSON.parse(arrOptions.Lifetime)
+    var stats = ltStats
     
     var x = $("#tblLtStats").clone();
     $("#statsLtContainer").empty()
@@ -611,5 +608,137 @@ console.log(rtn)
     console.log(rtn)
     
     return {title: title, arrData:rtn, format:''};
+
+}
+
+function lifeTime               (title, rounds) {
+
+  var nbrRounds = rounds.length
+
+  var nbrHoles = 0
+    rounds.forEach((rnd) => {
+      var scorecard = JSON.parse(rnd.scoreCard)
+      nbrHoles += scorecard.length
+     })
+
+
+  var distance = Math.round(nbrHoles * .33)
+
+    var lastDate = rounds[0]['startTime']
+    var frstDate = rounds[rounds.length-1]['endTime']
+    var difdt = new Date(lastDate - frstDate);
+  var totTime = (difdt.toISOString().slice(0, 4) - 1970) + "Y " + (difdt.getMonth()) + "M " + difdt.getDate() + "D"; 
+
+    var totPlayTime = 0
+    rounds.forEach((rnd) => {
+      var pt = newDate(rnd.endTime) - new Date(rnd.startTime)
+      totPlayTime += pt    
+    })
+
+    var days = Math.floor(totPlayTime)
+    var hours = Math.floor((totPlayTime - days) * 24)
+    var minutes = Math.round((totPlayTime - days - hours / 24) * 24 * 60)
+  var playTime =  days + "D " + hours + "H " + minutes + "M"
+  
+  var nbrYrs = (difdt.toISOString().slice(0, 4) - 1970) + (((difdt.getMonth()+1)) / 12) + (difdt.getDate() / 365)
+  
+  var roundsPerYr = Math.round(nbrRounds / nbrYrs)
+  
+  var strokes = 0
+  var putts = 0
+  var penaltyStrokes = 0
+  var bunkers = 0
+    rounds.forEach((rnd) => {
+      var scorecard = JSON.parse(rnd.scoreCard)
+      scorecard.forEach( val => {
+        strokes += val.score
+        putts += val.putts
+        penaltyStrokes += val.pnlty
+        bunkers += val.sand == 'YES' ? 1 : 0
+      })
+    })
+
+    var playTimeMinutes = calcPlayTimeMinutes(playTime)
+    var minutesPerStoke = Math.round(playTimeMinutes / (strokes - penaltyStrokes))  
+
+    var scoringSummary = calcScoringSummary(rounds)
+  
+    return {
+    
+      nbrRounds:nbrRounds, 
+      totTime:totTime, 
+      roundsPerYr:roundsPerYr,
+      playTime:playTime, 
+      distance:distance,
+      scoringSummary:scoringSummary,
+      strokes:strokes,
+      putts:putts,
+      penaltyStrokes:penaltyStrokes, 
+      bunkers:bunkers,
+      minutesPerStoke:minutesPerStoke
+
+    }
+
+
+
+}
+
+function calcPlayTimeMinutes(strPT) {
+  
+  var x = strPT.split("D ")
+  var days = x[0]*1
+  var y = x[1].split("H ")
+  var hrs = y[0]*1
+  var z = y[1].split("M")
+  var mins = z[0]*1
+  
+  return days*24*60 + hrs*60 + mins
+
+}
+
+function calcScoringSummary(rounds) {
+
+  var s = {
+   
+    Eagles:0,
+    Birdies:0,
+    Pars:0,
+    Bogeys:0,
+    'Dbl Bogeys':0,
+    'Over Dbl Bogeys':0
+  }
+  
+  rounds.forEach((rnd) => {
+    var scorecard = JSON.parse(rnd.scoreCard)
+    scorecard.forEach( val => {
+      var wrtp = val.score - val.par
+
+      switch(wrtp) {
+
+        case < -1:
+          s.Eagles++
+          break;
+        case < 0:
+          s.Birdies++
+          break;
+        case < 1:
+          s.Pars++
+          break;
+        case < 2:
+          s.Bogeys++
+          break;
+        case < 3:
+          s['Dbl Bogeys']++
+          break;
+        default:
+          s['Over Dbl Bogeys']++
+          break;
+
+      }
+
+    })
+  })
+
+  return [s]
 
 }

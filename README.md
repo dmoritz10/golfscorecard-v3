@@ -83,3 +83,7 @@ Fix weather report on sms
 
 </a></div></div><p _ngcontent-sc271="">
 </a></div ></div > <p _ngcontent
+
+fix Playround 
+      $('#hpNbr_Times_Played').html ( courseInfo['Nbr Times Played'])
+      $('#hpAvg_Play_Time').html ( courseInfo['Avg Play Time'])
