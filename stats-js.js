@@ -717,7 +717,7 @@ function calcScoringSummary(rounds) {
   
   rounds.forEach((rnd) => {
     var scorecard = JSON.parse(rnd.scoreCard)
-    scorecard.forEach( val => {
+    scorecard.scores.forEach( val => {
       var wrtp = val.score - val.par
 
       switch(true) {
