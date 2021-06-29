@@ -654,7 +654,10 @@ console.log(playTime)
   var bunkers = 0
     rounds.forEach((rnd) => {
       var scorecard = JSON.parse(rnd.scoreCard)
-      scorecard.forEach( val => {
+
+console.log(scorecard)
+
+      scorecard.forEach( (val) => {
         strokes += val.score
         putts += val.putts
         penaltyStrokes += val.pnlty
