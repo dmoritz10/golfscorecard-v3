@@ -630,10 +630,10 @@ function lifeTime               (title, rounds) {
 console.log(rounds[0]['startTime'])
 console.log(rounds[rounds.length-1]['endTime'])
 console.log(lastDate)
-console.log(lastDate)
+console.log(frstDate)
 
 
-    var difdt = lastDate - frstDate;
+    var difdt = frstDate - lastDate;
 
 console.log(difdt)
 
