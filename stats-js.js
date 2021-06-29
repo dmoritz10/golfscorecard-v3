@@ -657,7 +657,7 @@ console.log(playTime)
 
 console.log(scorecard)
 
-      scorecard.forEach( (val) => {
+      scorecard.scores.forEach( (val) => {
         strokes += val.score
         putts += val.putts
         penaltyStrokes += val.pnlty
