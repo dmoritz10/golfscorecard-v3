@@ -646,7 +646,7 @@ function lifeTime               (title, rounds) {
   var playTime =  days + "D " + hours + "H " + minutes + "M"
   
 console.log(playTime)  
-  var roundsPerYr = Math.round(nbrRounds / nbrYrs)
+  var roundsPerYr = Math.round(nbrRounds / years)
   
   var strokes = 0
   var putts = 0
