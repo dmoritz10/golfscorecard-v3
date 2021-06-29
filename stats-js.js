@@ -626,7 +626,17 @@ function lifeTime               (title, rounds) {
 
     var lastDate = new Date(rounds[0]['startTime'])
     var frstDate = new Date(rounds[rounds.length-1]['endTime'])
+
+console.log(rounds[0]['startTime'])
+console.log(rounds[rounds.length-1]['endTime'])
+console.log(lastDate)
+console.log(lastDate)
+
+
     var difdt = lastDate - frstDate;
+
+console.log(difdt)
+
   var totTime = (difdt.toISOString().slice(0, 4) - 1970) + "Y " + (difdt.getMonth()) + "M " + difdt.getDate() + "D"; 
 
     var totPlayTime = 0
