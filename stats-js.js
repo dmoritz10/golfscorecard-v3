@@ -677,7 +677,7 @@ console.log(scorecard)
       roundsPerYr:roundsPerYr,
       playTime:playTime, 
       distance:distance,
-      scoringSummary:[scoringSummary],
+      scoringSummary:[JSON.stringify(scoringSummary)],
       strokes:strokes,
       putts:putts,
       penaltyStrokes:penaltyStrokes, 
