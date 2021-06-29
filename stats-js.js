@@ -626,40 +626,13 @@ function lifeTime               (title, rounds) {
 
     var lastDate = new Date(rounds[0]['startTime'])
     var frstDate = new Date(rounds[rounds.length-1]['endTime'])
-
-console.log(rounds[0]['startTime'])
-console.log(rounds[rounds.length-1]['endTime'])
-console.log(lastDate)
-console.log(frstDate)
-
-
     var difdt = frstDate - lastDate;
 
-console.log(difdt)
-
-     var difdtInYrs = difdt / (1000*60*60*24*365)
-
-console.log(difdtInYrs)
-
+    var difdtInYrs = difdt / (1000*60*60*24*365)
     var years = Math.floor(difdtInYrs)
-console.log(years)
-
     var months = Math.floor((difdtInYrs - years) * 365 / 30)
-
-    console.log((difdtInYrs - years) * 365 / 30)
-    console.log(months)
     var days = Math.round((difdt - years * (1000*60*60*24*365) - months * (1000*60*60*24*30)) / (1000*60*60*24))
-
-console.log(difdt - years * (1000*60*60*24*365))
-console.log(months * (1000*60*60*24*365)/30)
-console.log((difdt - years * (1000*60*60*24*365) - months * (1000*60*60*24*365)/30))
-console.log()
-
-    var playTime =  years + "Y " + months + "M " + days + "D"
-
-console.log(playTime)
-
-  var totTime = (difdt.toISOString().slice(0, 4) - 1970) + "Y " + (difdt.getMonth()) + "M " + difdt.getDate() + "D"; 
+  var playTime =  years + "Y " + months + "M " + days + "D"
 
     var totPlayTime = 0
     rounds.forEach((rnd) => {
@@ -667,9 +640,9 @@ console.log(playTime)
       totPlayTime += pt    
     })
 
-    var days = Math.floor(totPlayTime)
-    var hours = Math.floor((totPlayTime - days) * 24)
-    var minutes = Math.round((totPlayTime - days - hours / 24) * 24 * 60)
+    var days = Math.floor(totPlayTime / (1000*60*60*24))
+    var hours = Math.floor((totPlayTime - days * (1000*60*60*24)) / (1000*60*60))
+    var minutes = Math.round((totPlayTime - days * (1000*60*60*24) - hours * (1000*60*60)) / (1000*60))
   var playTime =  days + "D " + hours + "H " + minutes + "M"
   
   var nbrYrs = (difdt.toISOString().slice(0, 4) - 1970) + (((difdt.getMonth()+1)) / 12) + (difdt.getDate() / 365)
