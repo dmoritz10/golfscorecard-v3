@@ -713,21 +713,21 @@ function calcScoringSummary(rounds) {
     scorecard.forEach( val => {
       var wrtp = val.score - val.par
 
-      switch(wrtp) {
+      switch(true) {
 
-        case < -1:
+        case wrtp < -1:
           s.Eagles++
           break;
-        case < 0:
+        case wrtp < 0:
           s.Birdies++
           break;
-        case < 1:
+        case wrtp < 1:
           s.Pars++
           break;
-        case < 2:
+        case wrtp < 2:
           s.Bogeys++
           break;
-        case < 3:
+        case wrtp < 3:
           s['Dbl Bogeys']++
           break;
         default:
