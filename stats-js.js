@@ -618,9 +618,13 @@ function chartTeeToGreen          (title, rounds, myStatsRng, endRow) {
     var nbrFairways = 2
     scoreCardArr.forEach((scoreCard) => {
       scoreCard.forEach((val, idx) => {
+
+        console.log(val)
         if (val.par > 3) {
+          console.log('none3')
           nbrNonPar3s++
           if (val.drive = 'Str8') {
+            console.log('fairway')
             nbrFairways++
           }
 
