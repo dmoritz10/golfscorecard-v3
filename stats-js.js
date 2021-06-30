@@ -673,7 +673,7 @@ console.log(playTime)
     var minutesPerStoke = Math.round(playTimeMinutes / (strokes - penaltyStrokes))  
 
     var scoringSummary = calcScoringSummary(rounds)
-    arr.push('hi','dan')
+    arr.push(['',''])
     arr.push(['Rounds', formatNumber(nbrRounds)])
     arr.push(['Elapsed Time', totTime])
     arr.push(['Rounds Per Year', roundsPerYr])
