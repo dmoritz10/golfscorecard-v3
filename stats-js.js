@@ -45,8 +45,7 @@ rptArr.push(rtn)
   
   var title = "Tee to Green"
   var rtn = chartTeeToGreen          (title, rounds, myStatsRng, endRow)        
-rptArr.push(rtn) 
-
+rptArr.push(rtn)    
   // var title = "Driving Accuracy"
   // var rtn = driveAccuracy            (title, rounds, myStatsRng, endRow)        
   
@@ -615,9 +614,9 @@ function chartTeeToGreen          (title, rounds, myStatsRng, endRow) {
 
   const fairways = (scoreCardArr) => {
     arr = []
-    scoreCardArr.forEach((scoreCard) => {
-      var nbrNonPar3s = 0
-      var nbrFairways = 0
+    var nbrNonPar3s = 0
+    var nbrFairways = 0
+  scoreCardArr.forEach((scoreCard) => {
       scoreCard.forEach((val, idx) => {
         if (val.par > 3) {
           nbrNonPar3s++
