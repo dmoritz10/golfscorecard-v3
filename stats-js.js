@@ -153,7 +153,7 @@ function setDropdownValues(datePlayedArr, endRow) {
 
   var nbrRnds = datePlayedArr.length
 
-  const options = { weekday: 'short', year: '2-digit', month: 'short', day: '2-digit' };
+  const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'long' };
 
   $( "#disStatsDate1" ).html(new Date(datePlayedArr[endRow.row1]).toLocaleString('en-US', options))
   $( "#disNbrRnds1" ).html(nbrRnds - endRow.row1)
