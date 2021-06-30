@@ -1009,11 +1009,11 @@ function calcDrivingSummary(rounds) {
     })
   })
 
-  s.Str8 = s.Str8 / NbrHoles
-  s.Left = s.Left / NbrHoles
-  s.Right = s.Right / NbrHoles
-  s.Chunk = s.Chunk / NbrHoles
-  s.Top = s.Top / NbrHoles  
+  s.Str8 = s.Str8 / nbrHoles
+  s.Left = s.Left / nbrHoles
+  s.Right = s.Right / nbrHoles
+  s.Chunk = s.Chunk / nbrHoles
+  s.Top = s.Top / nbrHoles  
 
   return s
 
