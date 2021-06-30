@@ -614,7 +614,7 @@ function chartTeeToGreen          (title, rounds, myStatsRng, endRow) {
 
   const fairways = (scoreCardArr) => {
     arr = []
-    var nbrNonPar3s = 4
+    var nbrNonPar3s = 100
     var nbrFairways = 2
     scoreCardArr.forEach((scoreCard) => {
       scoreCard.forEach((val, idx) => {
