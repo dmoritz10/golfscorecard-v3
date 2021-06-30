@@ -673,17 +673,21 @@ console.log(playTime)
     var minutesPerStoke = Math.round(playTimeMinutes / (strokes - penaltyStrokes))  
 
     var scoringSummary = calcScoringSummary(rounds)
-  
-    arr.push(['Rounds', nbrRounds])
+    arr.push('','')
+    arr.push(['Rounds', formatNumber(nbrRounds)])
     arr.push(['Elapsed Time', totTime])
     arr.push(['Rounds Per Year', roundsPerYr])
     arr.push(['Play Time', playTime])
-    arr.push(['Distance', distance])
-    // arr.push(['ccc', totTime])
-    arr.push(['Strokes', strokes])
-    arr.push(['Putts', putts])
-    arr.push(['Penalty Strokes', penaltyStrokes])
-    arr.push(['Bunkers', bunkers])
+    arr.push(['Distance', formatNumber(distance)])
+
+    for (const key of Object.keys(scoringSummary)) {
+      arr.push([key, formatNumber(val[key]*1)])
+    }
+            
+    arr.push(['Strokes', formatNumber(strokes)])
+    arr.push(['Putts', formatNumber(putts)])
+    arr.push(['Penalty Strokes', formatNumber(penaltyStrokes)])
+    arr.push(['Bunkers', formatNumber(bunkers)])
     arr.push(['Minutes per Stroke', minutesPerStoke])
 
 
