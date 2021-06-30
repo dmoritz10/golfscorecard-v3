@@ -18,6 +18,8 @@ async function btnShowStatsHtml() {
     endRow['row2'] = getEndRow(datePlayed, statRng2)
     endRow['row3'] = getEndRow(datePlayed, statRng3)
 
+    console.log(endRow)
+
   var myStatsRng = {};
     myStatsRng['rng1'] = statRng1
     myStatsRng['rng2'] = statRng2
@@ -307,6 +309,10 @@ function chartAverageScorebyPar   (title, rounds, myStatsRng, endRow) {
   var scores1 = extrRndData	(rounds, 'scoreCard.scores', endRow.row1)
   var scores2 = extrRndData	(rounds, 'scoreCard.scores', endRow.row2)
   var scores3 = extrRndData	(rounds, 'scoreCard.scores', endRow.row3)
+
+  console.log(scores1)
+  console.log(scores2)
+  console.log(scores3)
 
   const avgScrByPar = (scoreCardArr, holePar) => {
     arr = []
