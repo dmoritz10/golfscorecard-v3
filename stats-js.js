@@ -156,8 +156,8 @@ async function btnStatsMoreVertHtml() {
   var statSelectOptions  = await readOption('statOptions') 
   $('#statExcludeSmall').prop('checked',  statSelectOptions.statExcludeSmallCourses )
   $( "#selectStatsRng1" ).val(statSelectOptions.statRng1)
-  $( "#selectStatsRng2" ).val(statSelectOptions.statRng1)
-  $( "#selectStatsRng3" ).val(statSelectOptions.statRng1)
+  $( "#selectStatsRng2" ).val(statSelectOptions.statRng2)
+  $( "#selectStatsRng3" ).val(statSelectOptions.statRng3)
 
 }
 
