@@ -12,7 +12,7 @@ async function btnShowStatsHtml() {
   var rounds = await getRounds(statExcludeSmall)
 
   var datePlayed = rounds.map(x => x['date'])
-  
+
 console.log(datePlayed)
   console.log(getEndRow(datePlayed, statRng1))
   console.log(getEndRow(datePlayed, statRng2))
@@ -208,7 +208,7 @@ function arrRound(arr, nbrDec, percent) {
   ) } );  
     
 }  
-function extrRndData	(rounds, colName, nbrRows) {
+function extrRndData	(rounds, colName, endRow) {
 
 	// rounds, 
 	// 'courseInfo.courseName', 'scorecard.putts', 'objHandicap.courseAdjustedScore', 'finalScore'
@@ -219,7 +219,8 @@ function extrRndData	(rounds, colName, nbrRows) {
   // var rndArr =  rounds.slice(0,nbrRows)
   var rtn = []
 
-  for (var i = rounds.length - 1; i > rounds.length - nbrRows - 1; i--) {
+// for (var i = rounds.length - 1; i > rounds.length - nbrRows - 1; i--) {
+  for (var i = rounds.length - 1; i > endRow; i--) {
 
     var rnd = rounds[i]
 
