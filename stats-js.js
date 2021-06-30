@@ -972,9 +972,10 @@ function calcDrivingSummary(rounds) {
   
   }
   
+  var nbrHoles = 0
+ 
   rounds.forEach((rnd) => {
     var scorecard = JSON.parse(rnd.scoreCard)
-    var nbrHoles = 0
 
     scorecard.scores.forEach( val => {
 
