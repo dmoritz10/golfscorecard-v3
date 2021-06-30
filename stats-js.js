@@ -142,6 +142,8 @@ async function btnStatSelectHtml(e) {
 
 async function btnStatsMoreVertHtml() {
 
+  alert('hi dan')
+
   var statSelectOptions  = await readOption('statOptions') 
   $('#statExcludeSmall').prop('checked',  statSelectOptions.statExcludeSmallCourses )
   $( "#selectStatsRng1" ).val(statSelectOptions.statRng1).text(statSelectOptions.statRng2)
