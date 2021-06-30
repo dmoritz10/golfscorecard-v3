@@ -773,9 +773,9 @@ function driveAccuracy            (title, rounds, myStatsRng, endRow)     {
     
     [
     "Straight",
-    driveSumm1["Eagles"]/rounds1.length,
-    driveSumm2["Eagles"]/rounds2.length,
-    driveSumm3["Eagles"]/rounds3.length
+    driveSumm1["Str8"]/rounds1.length,
+    driveSumm2["Str8"]/rounds2.length,
+    driveSumm3["Str8"]/rounds3.length
     ],
       
     [
@@ -798,10 +798,10 @@ function driveAccuracy            (title, rounds, myStatsRng, endRow)     {
     driveSumm3["Chunk"]/rounds3.length
     ],
     [
-    "Thin",
-    driveSumm1["Thin"]/rounds1.length,
-    driveSumm2["Thin"]/rounds2.length,
-    driveSumm3["Thin"]/rounds3.length
+    "Top",
+    driveSumm1["Top"]/rounds1.length,
+    driveSumm2["Top"]/rounds2.length,
+    driveSumm3["Top"]/rounds3.length
 
     ]    
     ]
@@ -968,7 +968,7 @@ function calcDrivingSummary(rounds) {
     Left:0,
     Right:0,
     Chunk:0,
-    Thin:0  
+    Top:0  
   
   }
   
@@ -976,6 +976,8 @@ function calcDrivingSummary(rounds) {
     var scorecard = JSON.parse(rnd.scoreCard)
     scorecard.scores.forEach( val => {
       var drv = val.drive
+
+      console.log(drv)
 
       switch(true) {
 
@@ -991,8 +993,8 @@ function calcDrivingSummary(rounds) {
         case drv = 'Chunk':
           s.Chunk++
           break;
-        case drv = 'Thin':
-          s.Thin++
+        case drv = 'Top':
+          s.Top++
           break;
         default:
           s.Str8++
@@ -1002,7 +1004,7 @@ function calcDrivingSummary(rounds) {
 
     })
   })
-
+console.log(s)
   return s
 
 }
