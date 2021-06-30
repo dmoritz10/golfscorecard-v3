@@ -142,7 +142,7 @@ function lifeTimeStats(ltStats) {
     
       if (typeof val === 'object') {
   
-        for (var p=0;p<val.length;p++) {
+        
 
         for (const key of Object.keys(val)) {
             
