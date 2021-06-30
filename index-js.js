@@ -183,7 +183,7 @@
   // Show Stats
   $('#btnShowStats')          .click(btnShowStatsHtml);
   $('#btnStatSelect')         .click(btnStatSelectHtml);
-  $('#statSelectForm').on('show.bs.dropdown', function () {
+  $('#statSelectDropDown').on('show.bs.dropdown', function () {
     btnStatsMoreVertHtml()
   })
 
