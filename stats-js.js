@@ -726,6 +726,7 @@ function chartTeeToGreen          (title, rounds, myStatsRng, endRow) {
     GIRs(scores2),
     GIRs(scores3)
     ],
+    [
     "GIR + 1",
     GIRPlus1(scores1),
     GIRPlus1(scores2),
@@ -743,7 +744,6 @@ function chartTeeToGreen          (title, rounds, myStatsRng, endRow) {
     sandSaves(scores1),
     sandSaves(scores2),
     sandSaves(scores3)
-
     ]    
     ]
 
