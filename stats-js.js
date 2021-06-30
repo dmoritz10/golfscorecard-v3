@@ -981,19 +981,19 @@ function calcDrivingSummary(rounds) {
 
       switch(true) {
 
-        case drv = 'Str8':
+        case drv == 'Str8':
           s.Str8++
           break;
-        case drv = 'Left':
+        case drv == 'Left':
           s.Left++
           break;
-        case drv = 'Right':
+        case drv == 'Right':
           s.Right++
           break;
-        case drv = 'Chunk':
+        case drv == 'Chunk':
           s.Chunk++
           break;
-        case drv = 'Top':
+        case drv == 'Top':
           s.Top++
           break;
         default:
