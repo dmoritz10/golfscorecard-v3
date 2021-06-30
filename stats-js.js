@@ -537,9 +537,9 @@ function chartScoreComparison (title, rounds, myStatsRng, endRow) {
   var rounds2 = extrRndData	(rounds, null, endRow.row2)
   var rounds3 = extrRndData	(rounds, null, endRow.row3)
 
-  var scoreSumm1 = calcScoringSummary(rounds1)
-  var scoreSumm2 = calcScoringSummary(rounds2)
-  var scoreSumm3 = calcScoringSummary(rounds3)
+  var scoreSumm1 = calcScoringSummary(rounds1)/rounds1.length
+  var scoreSumm2 = calcScoringSummary(rounds2)/rounds2.length
+  var scoreSumm3 = calcScoringSummary(rounds3)/rounds3.length
 
   var rtn = [
     [
@@ -590,7 +590,7 @@ function chartScoreComparison (title, rounds, myStatsRng, endRow) {
     ]    
     ]
 
-    // arrRound(rtn, 1)
+    arrRound(rtn, 1)
     
     return {title: title, arrData:rtn, format:''};
 
