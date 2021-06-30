@@ -244,45 +244,47 @@ function extrRndData	(rounds, colName, endRow) {
 
 function getEndRow(datePlayedArr, dataRngDescr) {
 
+  var nbrRnds = datePlayedArr.length
+
   switch (dataRngDescr) {
     case "This Round":
       return 1
       break;
     case "Last 5 Rounds":
-      return Math.min(5, datePlayedArr.length)
+      return Math.min(nbrRnds - 5, nbrRnds)
       break;
     case "Last 10 Rounds":
-      return Math.min(10, datePlayedArr.length)
+      return Math.min(nbrRnds - 10, nbrRnds)
       break;
     case "Last 20 Rounds":
-      return Math.min(20, datePlayedArr.length)
+      return Math.min(nbrRnds - 20, nbrRnds)
       break;
     case "Last 25 Rounds":
-      return Math.min(25, datePlayedArr.length)
+      return Math.min(nbrRnds - 25, nbrRnds)
       break;
     case "Last 50 Rounds":
-      return Math.min(50, datePlayedArr.length)
+      return Math.min(nbrRnds - 50, nbrRnds)
       break;
     case "Last 100 Rounds":
-      return Math.min(100, datePlayedArr.length)
+      return Math.min(nbrRnds - 100, nbrRnds)
       break;
     case "Past Year":
       var now = new Date();
       var oneYrAgo = new Date();
       oneYrAgo.setFullYear(now.getFullYear() - 1);
-      for (var i = 1; i < datePlayedArr.length; i++) {if (new Date(datePlayedArr[i]) >= oneYrAgo) {
+      for (var i = 1; i < nbrRnds; i++) {if (new Date(datePlayedArr[i]) >= oneYrAgo) {
         return i}
       }
-      return datePlayedArr.length
+      return nbrRnds
       break;
     case "Past Month":
       var now = new Date();
       var oneMoAgo = new Date();
       oneMoAgo.setMonth(now.getMonth() - 1);
-      for (var i = 1; i < datePlayedArr.length; i++) {if (new Date(datePlayedArr[i]) >= oneMoAgo) {
+      for (var i = 1; i < nbrRnds; i++) {if (new Date(datePlayedArr[i]) >= oneMoAgo) {
         return i}
       }
-      return datePlayedArr.length
+      return nbrRnds
       break;
     case "All Time":
       return 0
