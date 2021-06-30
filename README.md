@@ -87,3 +87,9 @@ Fix weather report on sms
 fix Playround 
       $('#hpNbr_Times_Played').html ( courseInfo['Nbr Times Played'])
       $('#hpAvg_Play_Time').html ( courseInfo['Avg Play Time'])
+
+
+fix stats putting
+    last 100 rounds putts / gir
+
+    
