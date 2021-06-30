@@ -46,13 +46,14 @@ rptArr.push(rtn)
   var title = "Tee to Green"
   var rtn = chartTeeToGreen          (title, rounds, myStatsRng, endRow)        
 rptArr.push(rtn)    
-  // var title = "Driving Accuracy"
-  // var rtn = driveAccuracy            (title, rounds, myStatsRng, endRow)        
-  
+
+//   var title = "Driving Accuracy"
+//   var rtn = driveAccuracy            (title, rounds, myStatsRng, endRow)        
+// rptArr.push(rtn)    
+
   var title = "Lifetime"
   var rtn = lifeTime                  (title, rounds)        
-  console.log( rtn)
-  rptArr.push(rtn)
+rptArr.push(rtn)
 
 
   var x = $("#tblStats").clone();
@@ -644,65 +645,66 @@ function chartTeeToGreen          (title, rounds, myStatsRng, endRow) {
     return nbrFairways / nbrNonPar3s
   }    
 
-  const puttsPerHole = (scoreCardArr) => {
+  const GIRs = (scoreCardArr) => {
     arr = []
+    var nbrGIRs = 0
+    var nbrHoles = 0
     scoreCardArr.forEach((scoreCard) => {
-      var nbrHoles = scoreCard.length
-      var nbrPutts = 0
       scoreCard.forEach((val, idx) => {
-        nbrPutts += val.putts*1
-      })
-      arr.push(nbrPutts / nbrHoles)
-    })
-    return arr
-  }    
-
-  const puttsPerGIR = (scoreCardArr) => {
-    arr = []
-    scoreCardArr.forEach((scoreCard) => {
-      var nbrHoles = 0
-      var nbrPutts = 0
-      scoreCard.forEach((val, idx) => {
+        nbrHoles++
         if (val.score - val.putts <= val.par - 2) {
-          nbrPutts += val.putts*1
-          nbrHoles++
+          nbrGIRs++
         }
-      })
-      arr.push(nbrPutts / nbrHoles)
+      })     
     })
-    return arr
+    return nbrGIRs / nbrHoles
   }    
 
-  const puttsPerGIRPlusOne = (scoreCardArr) => {
+  const GIRPlus1 = (scoreCardArr) => {
     arr = []
+    var nbrGIRs = 0
+    var nbrHoles = 0
     scoreCardArr.forEach((scoreCard) => {
-      var nbrHoles = 0
-      var nbrPutts = 0
       scoreCard.forEach((val, idx) => {
+        nbrHoles++
         if (val.score - val.putts <= val.par - 1) {
-          nbrPutts += val.putts*1
-          nbrHoles++
+          nbrGIRs++
         }
-      })
-      arr.push(nbrPutts / nbrHoles)
+      })     
     })
-    return arr
+    return nbrGIRs / nbrHoles
   }    
 
-  const xPuttsPerRound = (scoreCardArr, x) => {
+  const scrambling = (scoreCardArr) => {
     arr = []
+    var nbrscrmbls = 0
+    var nbrHoles = 0
     scoreCardArr.forEach((scoreCard) => {
-      var nbrHoles = scoreCard.length
-      var nbrPutts = 0
       scoreCard.forEach((val, idx) => {
-        if (val.putts*1 == x) {
-          nbrPutts++
+        nbrHoles++
+        if (!(val.score - val.putts <= val.par - 2) && (val.score <= val.par)) {
+          nbrscrmbls++
         }
-      })
-      arr.push(nbrPutts * 18 / nbrHoles)
-     })
-    return arr
+      })     
+    })
+    return nbrscrmbls / nbrHoles
   }    
+
+  const sandSaves = (scoreCardArr) => {
+    arr = []
+    var sandSaves = 0
+    var nbrHoles = 0
+    scoreCardArr.forEach((scoreCard) => {
+      scoreCard.forEach((val, idx) => {
+        nbrHoles++
+        if (val.sand.toUpperCase() == "YES" && (val.score <= val.par)) {
+          sandSaves++
+        }
+      })     
+    })
+    return sandSaves / nbrHoles
+  }    
+
 
   var rtn = [
     [
@@ -718,38 +720,31 @@ function chartTeeToGreen          (title, rounds, myStatsRng, endRow) {
     fairways(scores2),
     fairways(scores3)
     ],
-      
-    // [
-    // "GIR",
-    // avgArr(puttsPerHole(scores1)),
-    // avgArr(puttsPerHole(scores2)),
-    // avgArr(puttsPerHole(scores3))
-    // ],
-      
-    // [
-    // "GIR + 1",
-    // avgArr(puttsPerGIR(scores1)),
-    // avgArr(puttsPerGIR(scores2)),
-    // avgArr(puttsPerGIR(scores3))
-    // ],
-    // [  
-    // "Putts / GIR+1",
-    // avgArr(puttsPerGIRPlusOne(scores1)),
-    // avgArr(puttsPerGIRPlusOne(scores2)),
-    // avgArr(puttsPerGIRPlusOne(scores3))
-    // ],
-    // [
-    // "Scrambling",
-    // avgArr(xPuttsPerRound(scores1, 1)),
-    // avgArr(xPuttsPerRound(scores2, 1)),
-    // avgArr(xPuttsPerRound(scores3, 1))
-    // ],
-    // [
-    // "Sand Saves",
-    // avgArr(xPuttsPerRound(scores1, 3)),
-    // avgArr(xPuttsPerRound(scores2, 3)),
-    // avgArr(xPuttsPerRound(scores3, 3))
-    // ]    
+    [
+    "GIR",
+    GIRs(scores1),
+    GIRs(scores2),
+    GIRs(scores3)
+    ],
+    "GIR + 1",
+    GIRPlus1(scores1),
+    GIRPlus1(scores2),
+    GIRPlus1(scores3)
+    ],
+    [
+    "Scrambling",
+    scrambling(scores1),
+    scrambling(scores2),
+    scrambling(scores3)
+
+    ],
+    [
+    "Sand Saves",
+    sandSaves(scores1),
+    sandSaves(scores2),
+    sandSaves(scores3)
+
+    ]    
     ]
 
     arrRound(rtn, 2, 'percent')
