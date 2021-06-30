@@ -661,7 +661,7 @@ console.log(pt)
   var playTime =  days + "D " + hours + "H " + minutes + "M"
   
 console.log(playTime)  
-  var roundsPerYr = Math.round(nbrRounds / years)
+  var roundsPerYr = Math.round(nbrRounds / difdtInYrs)
   
   var strokes = 0
   var putts = 0
