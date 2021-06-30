@@ -614,8 +614,8 @@ function chartTeeToGreen          (title, rounds, myStatsRng, endRow) {
 
   const fairways = (scoreCardArr) => {
     arr = []
-    var nbrNonPar3s = 100
-    var nbrFairways = 2
+    var nbrNonPar3s = 0
+    var nbrFairways = 0
     scoreCardArr.forEach((scoreCard) => {
       scoreCard.forEach((val, idx) => {
 
@@ -746,7 +746,7 @@ function chartTeeToGreen          (title, rounds, myStatsRng, endRow) {
 
     arrRound(rtn, 1)
     
-    return {title: title, arrData:rtn, format:''};
+    return {title: title, arrData:rtn, format:'percent'};
 
 
 
