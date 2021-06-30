@@ -47,9 +47,9 @@ rptArr.push(rtn)
   var rtn = chartTeeToGreen          (title, rounds, myStatsRng, endRow)        
 rptArr.push(rtn)    
 
-//   var title = "Driving Accuracy"
-//   var rtn = driveAccuracy            (title, rounds, myStatsRng, endRow)        
-// rptArr.push(rtn)    
+  var title = "Driving Accuracy"
+  var rtn = driveAccuracy            (title, rounds, myStatsRng, endRow)        
+rptArr.push(rtn)    
 
   var title = "Lifetime"
   var rtn = lifeTime                  (title, rounds)        
@@ -751,12 +751,69 @@ function chartTeeToGreen          (title, rounds, myStatsRng, endRow) {
     
     return {title: title, arrData:rtn, format:''};
 
-
-
-
-
-
 }
+
+function driveAccuracy            (title, rounds, myStatsRng, endRow)     {
+
+  var rounds1 = extrRndData	(rounds, null, endRow.row1)
+  var rounds2 = extrRndData	(rounds, null, endRow.row2)
+  var rounds3 = extrRndData	(rounds, null, endRow.row3)
+
+  var driveSumm1 = calcDrivingSummary(rounds1)
+  var driveSumm2 = calcDrivingSummary(rounds2)
+  var driveSumm3 = calcDrivingSummary(rounds3)
+
+  var rtn = [
+    [
+    '', 
+    myStatsRng.rng1, 
+    myStatsRng.rng2, 
+    myStatsRng.rng3
+    ],
+    
+    [
+    "Straight",
+    driveSumm1["Eagles"]/rounds1.length,
+    driveSumm2["Eagles"]/rounds2.length,
+    scoreSumm3["Eagles"]/rounds3.length
+    ],
+      
+    [
+    "Left",
+    driveSumm1["Left"]/rounds1.length,
+    driveSumm2["Left"]/rounds2.length,
+    driveSumm3["Left"]/rounds3.length
+    ],
+      
+    [
+    "Right",
+    driveSumm1["Right"]/rounds1.length,
+    driveSumm2["Right"]/rounds2.length,
+    driveSumm3["Right"]/rounds3.length
+    ],
+    [  
+    "Chunk",
+    driveSumm1["Chunk"]/rounds1.length,
+    driveSumm2["Chunk"]/rounds2.length,
+    driveSumm3["Chunk"]/rounds3.length
+    ],
+    [
+    "Thin",
+    driveSumm1["Thin"]/rounds1.length,
+    driveSumm2["Thin"]/rounds2.length,
+    driveSumm3["Thin"]/rounds3.length
+
+    ]    
+    ]
+
+    console.log(rtn)
+
+    arrRound(rtn, 1)
+    
+    return {title: title, arrData:rtn, format:''};
+
+}   
+
 
 function lifeTime               (title, rounds) {
 
@@ -891,6 +948,54 @@ function calcScoringSummary(rounds) {
           break;
         default:
           s['Over Dbl Bogeys']++
+          break;
+
+      }
+
+    })
+  })
+
+  return s
+
+}
+
+
+function calcDrivingSummary(rounds) {
+
+  var s = {
+   
+    Str8:0,
+    Left:0,
+    Right:0,
+    Chunk:0,
+    Thin:0  
+  
+  }
+  
+  rounds.forEach((rnd) => {
+    var scorecard = JSON.parse(rnd.scoreCard)
+    scorecard.scores.forEach( val => {
+      var drv = val.drive
+
+      switch(true) {
+
+        case drv = 'Str8':
+          s.Str8++
+          break;
+        case drv = 'Left':
+          s.Left++
+          break;
+        case drv = 'Right':
+          s.Right++
+          break;
+        case drv = 'Chunk':
+          s.Chunk++
+          break;
+        case drv = 'Thin':
+          s.Thin++
+          break;
+        default:
+          s.Str8++
           break;
 
       }
