@@ -144,13 +144,13 @@ function lifeTimeStats(ltStats) {
   
         for (var p=0;p<val.length;p++) {
         
-          var x = val[p].split(": ")
-          var key = x[0]
-          var value = x[1] * 1.0
+          // var x = val[p].split(": ")
+          // var key = x[0]
+          // var value = x[1] * 1.0
           var ele = $("#tblLtStats").clone();
   
-          ele.find('#statsLtDescr')[0].innerHTML = camel2title(key)
-          ele.find('#statsLtVal')[0].innerHTML = formatNumber(value)
+          ele.find('#statsLtDescr')[0].innerHTML = camel2title(p)
+          ele.find('#statsLtVal')[0].innerHTML = formatNumber(val[p]*1)
           ele.show()
       
           ele.appendTo("#statsLtContainer");
@@ -655,9 +655,9 @@ console.log(playTime)
     rounds.forEach((rnd) => {
       var scorecard = JSON.parse(rnd.scoreCard)
       scorecard.scores.forEach( (val) => {
-        strokes += val.score
-        putts += val.putts
-        penaltyStrokes += val.pnlty
+        strokes += val.score*1
+        putts += val.putts*1
+        penaltyStrokes += val.pnlty*1
         bunkers += val.sand == 'YES' ? 1 : 0
       })
     })
@@ -743,6 +743,6 @@ function calcScoringSummary(rounds) {
     })
   })
 
-  return [s]
+  return s
 
 }
