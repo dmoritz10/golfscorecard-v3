@@ -681,7 +681,7 @@ console.log(playTime)
     arr.push(['Distance', formatNumber(distance)])
 
     for (const key of Object.keys(scoringSummary)) {
-      arr.push([key, formatNumber(val[key]*1)])
+      arr.push([key, formatNumber(scoringSummary[key]*1)])
     }
             
     arr.push(['Strokes', formatNumber(strokes)])
