@@ -46,7 +46,7 @@ rptArr.push(rtn)
   var title = "Tee to Green"
   var rtn = chartTeeToGreen          (title, rounds, myStatsRng, endRow)        
 rptArr.push(rtn) 
-   
+
   // var title = "Driving Accuracy"
   // var rtn = driveAccuracy            (title, rounds, myStatsRng, endRow)        
   
@@ -703,9 +703,9 @@ function chartTeeToGreen          (title, rounds, myStatsRng, endRow) {
     
     [
     "Fairways ",
-    fairways(scores1)),
-    fairways(scores2)),
-    fairways(scores3))
+    fairways(scores1),
+    fairways(scores2),
+    fairways(scores3)
     ],
       
     // [
