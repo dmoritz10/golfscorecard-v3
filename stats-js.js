@@ -140,8 +140,8 @@ async function btnStatSelectHtml(e) {
   await updateOption('statOptions', {
                                   'statExcludeSmallCourses':   statExcludeSmallCourses ,
                                   'statRng1': statRng1,
-                                  'statRng1': statRng2,
-                                  'statRng1': statRng3
+                                  'statRng2': statRng2,
+                                  'statRng3': statRng3
                                   })
                                   
                                   
@@ -153,8 +153,11 @@ async function btnStatSelectHtml(e) {
 
 async function btnStatsMoreVertHtml() {
 
-  var statSelectOptions  = await readOption('statFilter') 
-  $('#statExcludeSmall').prop('checked',  statSelectOptions.statExcludeSmall )
+  var statSelectOptions  = await readOption('statOptions') 
+  $('#statExcludeSmall').prop('checked',  statSelectOptions.statExcludeSmallCourses )
+  $( "#selectStatsRng1" ).html(statSelectOptions.statRng1)
+  $( "#selectStatsRng2" ).html(statSelectOptions.statRng1)
+  $( "#selectStatsRng3" ).html(statSelectOptions.statRng1)
 
 }
 
