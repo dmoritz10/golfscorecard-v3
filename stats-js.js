@@ -537,7 +537,7 @@ function chartScoreComparison (title, rounds, myStatsRng, endRow) {
   var rounds2 = extrRndData	(rounds, null, endRow.row2)
   var rounds3 = extrRndData	(rounds, null, endRow.row3)
 
-  var scoreSumm1 = calcScoringSummary(rounds1)/rounds1.length
+  var scoreSumm1 = calcScoringSummary(rounds1)
   var scoreSumm2 = calcScoringSummary(rounds2)/rounds2.length
   var scoreSumm3 = calcScoringSummary(rounds3)/rounds3.length
 
@@ -551,41 +551,41 @@ function chartScoreComparison (title, rounds, myStatsRng, endRow) {
     
     [
     "Eagles",
-    scoreSumm1["Eagles"],
-    scoreSumm2["Eagles"],
-    scoreSumm3["Eagles"]
+    scoreSumm1["Eagles"]/rounds1.length,
+    scoreSumm2["Eagles"]/rounds2.length,
+    scoreSumm3["Eagles"]/rounds3.length
     ],
       
     [
     "Birdies",
-    scoreSumm1["Birdies"],
-    scoreSumm2["Birdies"],
-    scoreSumm3["Birdies"]
+    scoreSumm1["Birdies"]/rounds1.length,
+    scoreSumm2["Birdies"]/rounds2.length,
+    scoreSumm3["Birdies"]/rounds3.length
     ],
       
     [
     "Pars",
-    scoreSumm1["Pars"],
-    scoreSumm2["Pars"],
-    scoreSumm3["Pars"]
+    scoreSumm1["Pars"]/rounds1.length,
+    scoreSumm2["Pars"]/rounds2.length,
+    scoreSumm3["Pars"]/rounds3.length
     ],
     [  
     "Bogeys",
-    scoreSumm1["Bogeys"],
-    scoreSumm2["Bogeys"],
-    scoreSumm3["Bogeys"]
+    scoreSumm1["Bogeys"]/rounds1.length,
+    scoreSumm2["Bogeys"]/rounds2.length,
+    scoreSumm3["Bogeys"]/rounds3.length
     ],
     [
     "Dbl Bogeys",
-    scoreSumm1["Dbl Bogeys"],
-    scoreSumm2["Dbl Bogeys"],
-    scoreSumm3["Dbl Bogeys"]
+    scoreSumm1["Dbl Bogeys"]/rounds1.length,
+    scoreSumm2["Dbl Bogeys"]/rounds2.length,
+    scoreSumm3["Dbl Bogeys"]/rounds3.length
     ],
     [
     "> Dbl Bogeys",
-    scoreSumm1["Over Dbl Bogeys"],
-    scoreSumm2["Over Dbl Bogeys"],
-    scoreSumm3["Over Dbl Bogeys"]
+    scoreSumm1["Over Dbl Bogeys"]/rounds1.length,
+    scoreSumm2["Over Dbl Bogeys"]/rounds2.length,
+    scoreSumm3["Over Dbl Bogeys"]/rounds3.length
 
     ]    
     ]
