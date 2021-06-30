@@ -153,6 +153,9 @@ function setDropdownValues(datePlayedArr, endRow) {
 
   var nbrRnds = datePlayedArr.length
 
+  console.log(new Date(datePlayedArr[endRow.row1]))
+  console.log(new Date(datePlayedArr[endRow.row1]).toLocaleISOString())
+
   $( "#disStatsDate1" ).html(new Date(datePlayedArr[endRow.row1]).toLocaleISOString().substring(0,19))
   $( "#disNbrRnds1" ).html(nbrRnds - endRow.row1)
 
