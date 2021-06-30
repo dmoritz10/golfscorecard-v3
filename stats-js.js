@@ -630,11 +630,8 @@ function chartTeeToGreen          (title, rounds, myStatsRng, endRow) {
           if (val.drive == 'Str8') {
            nbrFairways++
           }
-
         }
-
-      })
-      
+      })     
     })
     return nbrFairways / nbrNonPar3s
   }    
