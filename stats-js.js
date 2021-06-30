@@ -590,6 +590,8 @@ function chartScoreComparison (title, rounds, myStatsRng, endRow) {
     ]    
     ]
 
+    console.log(rtn)
+
     arrRound(rtn, 1)
     
     return {title: title, arrData:rtn, format:''};
