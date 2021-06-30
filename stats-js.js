@@ -11,14 +11,14 @@ async function btnShowStatsHtml() {
 
   var rounds = await getRounds(statExcludeSmall)
 
-  var datePlayed = rounds.map(x => x['date'])
+  var datePlayedArr = rounds.map(x => x['date'])
 
   var endRow = {}
-    endRow['row1'] = getEndRow(datePlayed, statRng1)
-    endRow['row2'] = getEndRow(datePlayed, statRng2)
-    endRow['row3'] = getEndRow(datePlayed, statRng3)
+    endRow['row1'] = getEndRow(datePlayedArr, statRng1)
+    endRow['row2'] = getEndRow(datePlayedArr, statRng2)
+    endRow['row3'] = getEndRow(datePlayedArr, statRng3)
 
-    console.log(endRow)
+  setDropdownValues(datePlayedArr, endRow)
 
   var myStatsRng = {};
     myStatsRng['rng1'] = statRng1
@@ -120,7 +120,6 @@ function otherStats(rpt) {
 
 async function btnStatSelectHtml(e) {
 
-
   var statExcludeSmallCourses = $('#statExcludeSmall').prop('checked')
   var statRng1                = $( "#selectStatsRng1" ).val()
   var statRng2                = $( "#selectStatsRng2" ).val()
@@ -142,23 +141,24 @@ async function btnStatSelectHtml(e) {
 
 async function btnStatsMoreVertHtml() {
 
-  alert('hi danzzzxx')
-
-  var statSelectOptions  = await readOption('statOptions') 
+   var statSelectOptions  = await readOption('statOptions') 
   $('#statExcludeSmall').prop('checked',  statSelectOptions.statExcludeSmallCourses )
   $( "#selectStatsRng1" ).val(statSelectOptions.statRng1)
   $( "#selectStatsRng2" ).val(statSelectOptions.statRng2)
   $( "#selectStatsRng3" ).val(statSelectOptions.statRng3)
 
-  console.log($( "#selectStatsRng1" ).val())
-  console.log($( "#selectStatsRng1" ).text())
-
-  console.log($( "#selectStatsRng2" ).val())
-  console.log($( "#selectStatsRng2" ).text())
-
-  console.log($( "#selectStatsRng2" ))
 }
 
+function setDropdownValues(datePlayedArr, endRow) {
+
+  var nbrRnds = datePlayedArr.length
+
+  $( "#disStatsDate1" ).html(datePlayedArr[endRow.row1])
+  $( "#disNbrRnds1" ).html(nbrRnds - endRow.row1)
+
+
+
+}
 
 function avgArr(arr) {
   var i = arr.length
