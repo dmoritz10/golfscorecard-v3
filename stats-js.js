@@ -43,9 +43,10 @@ async function btnShowStatsHtml() {
   var rtn = chartScoreComparison     (title, rounds, myStatsRng, endRow)        
 rptArr.push(rtn)
   
- // var title = "Tee to Green"
-  // var rtn = chartTeeToGreen          (title, rounds, myStatsRng, endRow)        
-    
+  var title = "Tee to Green"
+  var rtn = chartTeeToGreen          (title, rounds, myStatsRng, endRow)        
+rptArr.push(rtn) 
+   
   // var title = "Driving Accuracy"
   // var rtn = driveAccuracy            (title, rounds, myStatsRng, endRow)        
   
@@ -608,6 +609,141 @@ function chartScoreComparison (title, rounds, myStatsRng, endRow) {
 
 function chartTeeToGreen          (title, rounds, myStatsRng, endRow) {
 
+  var scores1 = extrRndData	(rounds, 'scoreCard.scores', endRow.row1)
+  var scores2 = extrRndData	(rounds, 'scoreCard.scores', endRow.row2)
+  var scores3 = extrRndData	(rounds, 'scoreCard.scores', endRow.row3)
+
+  const fairways = (scoreCardArr) => {
+    arr = []
+    scoreCardArr.forEach((scoreCard) => {
+      var nbrNonPar3s = 0
+      var nbrFairways = 0
+      scoreCard.forEach((val, idx) => {
+        if (val.par > 3) {
+          nbrNonPar3s++
+          if (val.drive = 'Str8') {
+            nbrFairways++
+          }
+
+        }
+
+      })
+      
+    })
+    return nbrFairways / nbrNonPar3s
+  }    
+
+  const puttsPerHole = (scoreCardArr) => {
+    arr = []
+    scoreCardArr.forEach((scoreCard) => {
+      var nbrHoles = scoreCard.length
+      var nbrPutts = 0
+      scoreCard.forEach((val, idx) => {
+        nbrPutts += val.putts*1
+      })
+      arr.push(nbrPutts / nbrHoles)
+    })
+    return arr
+  }    
+
+  const puttsPerGIR = (scoreCardArr) => {
+    arr = []
+    scoreCardArr.forEach((scoreCard) => {
+      var nbrHoles = 0
+      var nbrPutts = 0
+      scoreCard.forEach((val, idx) => {
+        if (val.score - val.putts <= val.par - 2) {
+          nbrPutts += val.putts*1
+          nbrHoles++
+        }
+      })
+      arr.push(nbrPutts / nbrHoles)
+    })
+    return arr
+  }    
+
+  const puttsPerGIRPlusOne = (scoreCardArr) => {
+    arr = []
+    scoreCardArr.forEach((scoreCard) => {
+      var nbrHoles = 0
+      var nbrPutts = 0
+      scoreCard.forEach((val, idx) => {
+        if (val.score - val.putts <= val.par - 1) {
+          nbrPutts += val.putts*1
+          nbrHoles++
+        }
+      })
+      arr.push(nbrPutts / nbrHoles)
+    })
+    return arr
+  }    
+
+  const xPuttsPerRound = (scoreCardArr, x) => {
+    arr = []
+    scoreCardArr.forEach((scoreCard) => {
+      var nbrHoles = scoreCard.length
+      var nbrPutts = 0
+      scoreCard.forEach((val, idx) => {
+        if (val.putts*1 == x) {
+          nbrPutts++
+        }
+      })
+      arr.push(nbrPutts * 18 / nbrHoles)
+     })
+    return arr
+  }    
+
+  var rtn = [
+    [
+    '', 
+    myStatsRng.rng1, 
+    myStatsRng.rng2, 
+    myStatsRng.rng3
+    ],
+    
+    [
+    "Fairways ",
+    fairways(scores1)),
+    fairways(scores2)),
+    fairways(scores3))
+    ],
+      
+    // [
+    // "GIR",
+    // avgArr(puttsPerHole(scores1)),
+    // avgArr(puttsPerHole(scores2)),
+    // avgArr(puttsPerHole(scores3))
+    // ],
+      
+    // [
+    // "GIR + 1",
+    // avgArr(puttsPerGIR(scores1)),
+    // avgArr(puttsPerGIR(scores2)),
+    // avgArr(puttsPerGIR(scores3))
+    // ],
+    // [  
+    // "Putts / GIR+1",
+    // avgArr(puttsPerGIRPlusOne(scores1)),
+    // avgArr(puttsPerGIRPlusOne(scores2)),
+    // avgArr(puttsPerGIRPlusOne(scores3))
+    // ],
+    // [
+    // "Scrambling",
+    // avgArr(xPuttsPerRound(scores1, 1)),
+    // avgArr(xPuttsPerRound(scores2, 1)),
+    // avgArr(xPuttsPerRound(scores3, 1))
+    // ],
+    // [
+    // "Sand Saves",
+    // avgArr(xPuttsPerRound(scores1, 3)),
+    // avgArr(xPuttsPerRound(scores2, 3)),
+    // avgArr(xPuttsPerRound(scores3, 3))
+    // ]    
+    ]
+
+    arrRound(rtn, 1)
+    
+    return {title: title, arrData:rtn, format:''};
 
 
 
