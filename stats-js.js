@@ -808,7 +808,7 @@ function driveAccuracy            (title, rounds, myStatsRng, endRow)     {
 
     console.log(rtn)
 
-    arrRound(rtn, 1, percent)
+    arrRound(rtn, 1, 'percent')
     
     return {title: title, arrData:rtn, format:''};
 
