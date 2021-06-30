@@ -153,15 +153,16 @@ function setDropdownValues(datePlayedArr, endRow) {
 
   var nbrRnds = datePlayedArr.length
 
-  console.log(new Date(datePlayedArr[endRow.row1]))
-  console.log(new Date(datePlayedArr[endRow.row1]).toLocaleISOString())
+  const options = { weekday: 'short', year: '2-digit', month: 'short' };
 
-  $( "#disStatsDate1" ).html(new Date(datePlayedArr[endRow.row1]).toLocaleISOString().substring(0,19))
+  $( "#disStatsDate1" ).html(new Date(datePlayedArr[endRow.row1]).toLocaleString('en-US', options))
   $( "#disNbrRnds1" ).html(nbrRnds - endRow.row1)
 
-  $( "#disStatsDate2" ).html(new Date(datePlayedArr[endRow.row2]).toLocaleISOString().substring(0,19))
+  $( "#disStatsDate2" ).html(new Date(datePlayedArr[endRow.row2]).toLocaleString('en-US', options))
   $( "#disNbrRnds2" ).html(nbrRnds - endRow.row2)
 
+  $( "#disStatsDate3" ).html(new Date(datePlayedArr[endRow.row3]).toLocaleString('en-US', options))
+  $( "#disNbrRnds3" ).html(nbrRnds - endRow.row3)
 
 }
 
