@@ -87,7 +87,7 @@ function otherStats(rpt) {
       
   var ele = $("#tblStats").clone().show();
 
-  var hdr = null
+  var hdr = arrChart[0].join('') == '' ? null : arrChart[0]
   arrChart.shift() 
       
   arrChart.forEach((currentValue, index, array) => {
