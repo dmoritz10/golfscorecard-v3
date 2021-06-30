@@ -155,9 +155,9 @@ async function btnStatsMoreVertHtml() {
 
   var statSelectOptions  = await readOption('statOptions') 
   $('#statExcludeSmall').prop('checked',  statSelectOptions.statExcludeSmallCourses )
-  $( "#selectStatsRng1" ).html(statSelectOptions.statRng1)
-  $( "#selectStatsRng2" ).html(statSelectOptions.statRng1)
-  $( "#selectStatsRng3" ).html(statSelectOptions.statRng1)
+  $( "#selectStatsRng1" ).val(statSelectOptions.statRng1)
+  $( "#selectStatsRng2" ).val(statSelectOptions.statRng1)
+  $( "#selectStatsRng3" ).val(statSelectOptions.statRng1)
 
 }
 
@@ -259,6 +259,9 @@ function getColData(colName, Hdrs, arr, firstRow, nbrRows) {
 }
 
 function getEndRow(datePlayedArr, dataRngDescr) {
+
+  console.log(datePlayedArr)
+  console.log(dataRngDescr)
 
   switch (dataRngDescr) {
     case "This Round":
