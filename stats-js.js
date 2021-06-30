@@ -130,14 +130,15 @@ function otherStats(rpt) {
 
 
 async function btnStatSelectHtml(e) {
-  
-  var statExcludeSmallVal     = $('#statExcludeSmall').prop('checked')
+
+
+  var statExcludeSmallCourses = $('#statExcludeSmall').prop('checked')
   var statRng1                = $( "#selectStatsRng1" ).val()
   var statRng2                = $( "#selectStatsRng2" ).val()
   var statRng3                = $( "#selectStatsRng3" ).val()
 
-  await updateOption('statSelectOptions', {
-                                  'statExcludeSmallVal':   statExcludeSmallVal ,
+  await updateOption('statOptions', {
+                                  'statExcludeSmallCourses':   statExcludeSmallCourses ,
                                   'statRng1': statRng1,
                                   'statRng1': statRng2,
                                   'statRng1': statRng3
@@ -563,6 +564,16 @@ console.log(rtn)
     console.log(rtn)
     
     return {title: title, arrData:rtn, format:''};
+
+}
+
+function chartTeeToGreen          (title, rounds, myStatsRng, endRow) {
+
+
+
+
+
+
 
 }
 
