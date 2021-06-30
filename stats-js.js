@@ -623,7 +623,7 @@ function chartTeeToGreen          (title, rounds, myStatsRng, endRow) {
         if (val.par > 3) {
           console.log('none3')
           nbrNonPar3s++
-          if (val.drive = 'Str8') {
+          if (val.drive == 'Str8') {
             console.log('fairway')
             nbrFairways++
           }
