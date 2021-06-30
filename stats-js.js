@@ -625,7 +625,7 @@ function lifeTime               (title, rounds) {
   var nbrHoles = 0
     rounds.forEach((rnd) => {
       var scorecard = JSON.parse(rnd.scoreCard)
-      nbrHoles += scorecard.length
+      nbrHoles += scorecard.scores.length
      })
 
 
@@ -644,6 +644,14 @@ function lifeTime               (title, rounds) {
     var totPlayTime = 0
     rounds.forEach((rnd) => {
       var pt = new Date(rnd.endTime) - new Date(rnd.startTime)
+
+      if (pt < 1000*60*60) {
+        var scorecard = JSON.parse(rnd.scoreCard)
+console.log(pt)        
+        pt = scorecard.scores.length * 15*60*1000
+console.log(pt)        
+      }
+
       totPlayTime += pt    
     })
 
@@ -665,7 +673,7 @@ console.log(playTime)
         strokes += val.score*1
         putts += val.putts*1
         penaltyStrokes += val.pnlty*1
-        bunkers += val.sand == 'YES' ? 1 : 0
+        bunkers += val.sand.toUpperCase() == 'YES' ? 1 : 0
       })
     })
 
