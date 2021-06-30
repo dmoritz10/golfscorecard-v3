@@ -747,7 +747,7 @@ function chartTeeToGreen          (title, rounds, myStatsRng, endRow) {
     ]    
     ]
 
-    arrRound(rtn, 2, 'percent')
+    arrRound(rtn, 1, 'percent')
     
     return {title: title, arrData:rtn, format:''};
 
