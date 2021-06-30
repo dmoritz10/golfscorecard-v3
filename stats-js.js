@@ -220,7 +220,7 @@ function extrRndData	(rounds, colName, endRow) {
   var rtn = []
 
 // for (var i = rounds.length - 1; i > rounds.length - nbrRows - 1; i--) {
-  for (var i = rounds.length - 1; i > endRow; i--) {
+  for (var i = rounds.length - 1; i >= endRow; i--) {
 
     var rnd = rounds[i]
 
@@ -308,7 +308,7 @@ function getEndRow(datePlayedArr, dataRngDescr) {
       return datePlayedArr.length
       break;
     case "All Time":
-      return datePlayedArr.length
+      return 0
       break;
   }
 }
