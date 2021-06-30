@@ -36,16 +36,16 @@ async function btnShowStatsHtml() {
 
   var rptArr = []
 
-  var title = "Average Score by Par"
-  var rtn = chartAverageScorebyPar   (title, rounds, myStatsRng, endRow)
-  console.log( rtn)
-  rptArr.push(rtn)
-  
   var title = "Course Adjusted Score"
   var rtn = chartCourseAdjustedScore (title, rounds, myStatsRng, endRow)   
   console.log( rtn)
   rptArr.push(rtn)
    
+ var title = "Average Score by Par"
+  var rtn = chartAverageScorebyPar   (title, rounds, myStatsRng, endRow)
+  console.log( rtn)
+  rptArr.push(rtn)
+  
   var title = "Putting"
   var rtn = chartPutting             (title, rounds, myStatsRng, endRow)        
   console.log( rtn)
@@ -62,6 +62,8 @@ async function btnShowStatsHtml() {
   
   var title = "Lifetime"
   var ltStats = lifeTime                  (title, rounds)        
+  console.log( rtn)
+  rptArr.push(rtn)
 
 
   var x = $("#tblStats").clone();
@@ -73,7 +75,7 @@ async function btnShowStatsHtml() {
     otherStats(rpt)
   })  
 
-  lifeTimeStats(ltStats)
+  // lifeTimeStats(ltStats)
 
   gotoTab('Stats')
     
@@ -616,6 +618,8 @@ console.log(rtn)
 
 function lifeTime               (title, rounds) {
 
+  var arr = []
+
   var nbrRounds = rounds.length
 
   var nbrHoles = 0
@@ -670,6 +674,21 @@ console.log(playTime)
 
     var scoringSummary = calcScoringSummary(rounds)
   
+    arr.push(['Rounds', nbrRounds])
+    arr.push(['Elapsed Time', totTime])
+    arr.push(['Rounds Per Year', roundsPerYr])
+    arr.push(['Play Time', playTime])
+    arr.push(['Distance', distance])
+    // arr.push(['ccc', totTime])
+    arr.push(['Strokes', strokes])
+    arr.push(['Putts', putts])
+    arr.push(['Penalty Strokes', penaltyStrokes])
+    arr.push(['Bunkers', bunkers])
+    arr.push(['Minutes per Stroke', minutesPerStoke])
+
+
+    return {title: title, arrData:arr, format:''};
+
     return {
     
       nbrRounds:nbrRounds, 
