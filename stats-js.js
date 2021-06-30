@@ -775,7 +775,7 @@ function driveAccuracy            (title, rounds, myStatsRng, endRow)     {
     "Straight",
     driveSumm1["Eagles"]/rounds1.length,
     driveSumm2["Eagles"]/rounds2.length,
-    scoreSumm3["Eagles"]/rounds3.length
+    driveSumm3["Eagles"]/rounds3.length
     ],
       
     [
