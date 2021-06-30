@@ -260,7 +260,7 @@ function getColData(colName, Hdrs, arr, firstRow, nbrRows) {
 
 function getEndRow(datePlayedArr, dataRngDescr) {
 
-  console.log(datePlayedArr)
+
   console.log(dataRngDescr)
 
   switch (dataRngDescr) {
@@ -289,7 +289,7 @@ function getEndRow(datePlayedArr, dataRngDescr) {
       var now = new Date();
       var oneYrAgo = new Date();
       oneYrAgo.setFullYear(now.getFullYear() - 1);
-      for (var i = 1; i < datePlayedArr.length; i++) {if (new Date(datePlayedArr[i]) < oneYrAgo) {
+      for (var i = 1; i < datePlayedArr.length; i++) {if (new Date(datePlayedArr[i]) >= oneYrAgo) {
         return i}
       }
       return datePlayedArr.length
@@ -298,7 +298,7 @@ function getEndRow(datePlayedArr, dataRngDescr) {
       var now = new Date();
       var oneMoAgo = new Date();
       oneMoAgo.setMonth(now.getMonth() - 1);
-      for (var i = 1; i < datePlayedArr.length; i++) {if (new Date(datePlayedArr[i]) < oneMoAgo) {
+      for (var i = 1; i < datePlayedArr.length; i++) {if (new Date(datePlayedArr[i]) >= oneMoAgo) {
         return i}
       }
       return datePlayedArr.length
