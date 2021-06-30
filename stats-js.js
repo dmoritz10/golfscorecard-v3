@@ -13,11 +13,6 @@ async function btnShowStatsHtml() {
 
   var datePlayed = rounds.map(x => x['date'])
 
-console.log(datePlayed)
-  console.log(getEndRow(datePlayed, statRng1))
-  console.log(getEndRow(datePlayed, statRng2))
-  console.log(getEndRow(datePlayed, statRng3))
-  
   var endRow = {}
     endRow['row1'] = getEndRow(datePlayed, statRng1)
     endRow['row2'] = getEndRow(datePlayed, statRng2)
@@ -28,38 +23,26 @@ console.log(datePlayed)
     myStatsRng['rng2'] = statRng2
     myStatsRng['rng3'] = statRng3
 
-  // var x = extrRndData	(rounds, 'finalScore', 25)
-  // console.log(x)
-
-  // var x = extrRndData	(rounds, 'objHandicap.courseAdjustedScore', 25)
-  // console.log(x)
-  
-  // var x = extrRndData	(rounds, 'scoreCard.scores', 25)
-  // console.log(x)
-
   var rptArr = []
 
-  var title = "Course Adjusted Score"
-  var rtn = chartCourseAdjustedScore (title, rounds, myStatsRng, endRow)   
-  console.log( rtn)
+    var title = "Course Adjusted Score"
+    var rtn = chartCourseAdjustedScore (title, rounds, myStatsRng, endRow)   
   rptArr.push(rtn)
    
- var title = "Average Score by Par"
-  var rtn = chartAverageScorebyPar   (title, rounds, myStatsRng, endRow)
-  console.log( rtn)
+    var title = "Average Score by Par"
+    var rtn = chartAverageScorebyPar   (title, rounds, myStatsRng, endRow)
   rptArr.push(rtn)
   
-  var title = "Putting"
-  var rtn = chartPutting             (title, rounds, myStatsRng, endRow)        
-  console.log( rtn)
+    var title = "Putting"
+    var rtn = chartPutting             (title, rounds, myStatsRng, endRow)        
   rptArr.push(rtn)
    
-  // var title = "Tee to Green"
+  var title = "Score Comparison"
+  var rtn = chartScoreComparison     (title, rounds, myStatsRng, endRow)        
+  
+ // var title = "Tee to Green"
   // var rtn = chartTeeToGreen          (title, rounds, myStatsRng, endRow)        
     
-  // var title = "Score Comparison"
-  // var rtn = chartScoreComparison     (title, rounds, myStatsRng, endRow)        
-  
   // var title = "Driving Accuracy"
   // var rtn = driveAccuracy            (title, rounds, myStatsRng, endRow)        
   
@@ -214,58 +197,49 @@ function extrRndData	(rounds, colName, endRow) {
 	// 'courseInfo.courseName', 'scorecard.putts', 'objHandicap.courseAdjustedScore', 'finalScore'
 	// nbrRows
 
-  var parseCol = colName.split('.')
+  if (colName) {var parseCol = colName.split('.')}
 
-  // var rndArr =  rounds.slice(0,nbrRows)
   var rtn = []
 
-// for (var i = rounds.length - 1; i > rounds.length - nbrRows - 1; i--) {
   for (var i = rounds.length - 1; i >= endRow; i--) {
 
     var rnd = rounds[i]
 
-    if (parseCol.length == 1) {
+    if (colName) {
+      if (parseCol.length == 1) {
 
-      var x = rnd[parseCol[0]]
-      rtn.push(x)
-
-    } else {
-
-      if (typeof rnd[parseCol[0]] === "object") {
-
-        var a = rnd[parseCol[0]]
-        var b = a[parseCol[1]]
-        rtn.push(b)
+        var x = rnd[parseCol[0]]
+        rtn.push(x)
 
       } else {
 
-        var obj = JSON.parse(rnd[parseCol[0]])
-        var x = obj[parseCol[1]]
-        rtn.push(x)
+        if (typeof rnd[parseCol[0]] === "object") {
+
+          var a = rnd[parseCol[0]]
+          var b = a[parseCol[1]]
+          rtn.push(b)
+
+        } else {
+
+          var obj = JSON.parse(rnd[parseCol[0]])
+          var x = obj[parseCol[1]]
+          rtn.push(x)
+
+        }
 
       }
 
-    }
+  } else {
+
+    rtn.push(rnd)
+
+  }
 
   }
   return rtn
 }
 
-
-function getColData(colName, Hdrs, arr, firstRow, nbrRows) {
-  var colNbr = Hdrs.indexOf(colName)
-  if (nbrRows === undefined) {
-    var coldata =  arr[colNbr].slice(firstRow - 1)
-  } else {
-    var coldata =  arr[colNbr].slice(firstRow - 1, firstRow + nbrRows - 1)
-  }
-  return coldata
-}
-
 function getEndRow(datePlayedArr, dataRngDescr) {
-
-
-  console.log(dataRngDescr)
 
   switch (dataRngDescr) {
     case "This Round":
@@ -333,10 +307,6 @@ function chartAverageScorebyPar   (title, rounds, myStatsRng, endRow) {
   var scores2 = extrRndData	(rounds, 'scoreCard.scores', endRow.row2)
   var scores3 = extrRndData	(rounds, 'scoreCard.scores', endRow.row3)
 
-  console.log(scores1)
-  console.log(scores2)
-  console.log(scores3)
-
   const avgScrByPar = (scoreCardArr, holePar) => {
     arr = []
     scoreCardArr.forEach((scoreCard) => {
@@ -382,12 +352,8 @@ function chartAverageScorebyPar   (title, rounds, myStatsRng, endRow) {
      ]
     ]
 
-    console.log(rtn)
-    
     arrRound(rtn, 1)
 
-    console.log(rtn)
-    
     return {title: title, arrData:rtn, format:''};
 
 }
@@ -401,10 +367,6 @@ function chartCourseAdjustedScore (title, rounds, myStatsRng, endRow)   {
   var hcps1 = extrRndData	(rounds, 'objHandicap.handicap', endRow.row1)
   var hcps2 = extrRndData	(rounds, 'objHandicap.handicap', endRow.row2)
   var hcps3 = extrRndData	(rounds, 'objHandicap.handicap', endRow.row3)
-
-  console.log(adjScores1)
-  console.log(adjScores2)
-  console.log(adjScores3)
 
   var rtn = [
     [
@@ -429,11 +391,7 @@ function chartCourseAdjustedScore (title, rounds, myStatsRng, endRow)   {
     ]
     ]
 
-    console.log(rtn)
-    
     arrRound(rtn, 1)
-
-    console.log(rtn)
     
     return {title: title, arrData:rtn, format:''};
 
@@ -566,16 +524,76 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
     ]    
     ]
 
-console.log('hi dan')    
-console.log(rtn)
     arrRound(rtn, 1)
-
-    console.log(title)
-    console.log(rtn)
     
     return {title: title, arrData:rtn, format:''};
 
 }
+
+function chartScoreComparison (title, rounds, myStatsRng, endRow) {
+
+  var rounds1 = extrRndData	(rounds, null, endRow.row1)
+  var rounds2 = extrRndData	(rounds, null, endRow.row2)
+  var rounds3 = extrRndData	(rounds, null, endRow.row3)
+
+  var scoreSumm1 = calcScoringSummary(rounds1)
+  var scoreSumm2 = calcScoringSummary(rounds2)
+  var scoreSumm3 = calcScoringSummary(rounds3)
+
+  var rtn = [
+    [
+    '', 
+    myStatsRng.rng1, 
+    myStatsRng.rng2, 
+    myStatsRng.rng3
+    ],
+    
+    [
+    "Eagles",
+    scoreSumm1["Eagles"],
+    scoreSumm2["Eagles"],
+    scoreSumm3["Eagles"]
+    ],
+      
+    [
+    "Birdies",
+    scoreSumm1["Birdies"],
+    scoreSumm2["Birdies"],
+    scoreSumm3["Birdies"]
+    ],
+      
+    [
+    "Pars",
+    scoreSumm1["Pars"],
+    scoreSumm2["Pars"],
+    scoreSumm3["Pars"]
+    ],
+    [  
+    "Bogeys",
+    scoreSumm1["Bogeys"],
+    scoreSumm2["Bogeys"],
+    scoreSumm3["Bogeys"]
+    ],
+    [
+    "Dbl Bogeys",
+    scoreSumm1["Dbl Bogeys"],
+    scoreSumm2["Dbl Bogeys"],
+    scoreSumm3["Dbl Bogeys"]
+    ],
+    [
+    "> Dbl Bogeys",
+    scoreSumm1["Over Dbl Bogeys"],
+    scoreSumm2["Over Dbl Bogeys"],
+    scoreSumm3["Over Dbl Bogeys"]
+
+    ]    
+    ]
+
+    // arrRound(rtn, 1)
+    
+    return {title: title, arrData:rtn, format:''};
+
+}  
 
 function chartTeeToGreen          (title, rounds, myStatsRng, endRow) {
 
