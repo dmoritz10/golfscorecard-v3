@@ -808,7 +808,7 @@ function driveAccuracy            (title, rounds, myStatsRng, endRow)     {
 
     console.log(rtn)
 
-    arrRound(rtn, 1)
+    arrRound(rtn, 1, percent)
     
     return {title: title, arrData:rtn, format:''};
 
@@ -974,7 +974,11 @@ function calcDrivingSummary(rounds) {
   
   rounds.forEach((rnd) => {
     var scorecard = JSON.parse(rnd.scoreCard)
+    var nbrHoles = 0
+
     scorecard.scores.forEach( val => {
+
+      nbrHoles++
       var drv = val.drive
 
       console.log(drv)
@@ -1004,7 +1008,13 @@ function calcDrivingSummary(rounds) {
 
     })
   })
-console.log(s)
+
+  s.Str8 = s.Str8 / NbrHoles
+  s.Left = s.Left / NbrHoles
+  s.Right = s.Right / NbrHoles
+  s.Chunk = s.Chunk / NbrHoles
+  s.Top = s.Top / NbrHoles  
+
   return s
 
 }
