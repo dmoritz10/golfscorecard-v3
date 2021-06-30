@@ -248,7 +248,7 @@ function getEndRow(datePlayedArr, dataRngDescr) {
 
   switch (dataRngDescr) {
     case "This Round":
-      return nbrRnds
+      return nbrRnds - 1
       break;
     case "Last 5 Rounds":
       return Math.min(nbrRnds - 5, nbrRnds)
