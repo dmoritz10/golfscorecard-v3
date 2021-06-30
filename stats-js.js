@@ -148,6 +148,13 @@ async function btnStatsMoreVertHtml() {
   $( "#selectStatsRng2" ).val(statSelectOptions.statRng2).text(statSelectOptions.statRng2)
   $( "#selectStatsRng3" ).val(statSelectOptions.statRng3).text(statSelectOptions.statRng3)
 
+  console.log($( "#selectStatsRng1" ).val())
+  console.log($( "#selectStatsRng1" ).text())
+
+  console.log($( "#selectStatsRng2" ).val())
+  console.log($( "#selectStatsRng2" ).text())
+
+  console.log($( "#selectStatsRng2" ))
 }
 
 
