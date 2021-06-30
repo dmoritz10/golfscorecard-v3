@@ -75,8 +75,6 @@ async function btnShowStatsHtml() {
     otherStats(rpt)
   })  
 
-  // lifeTimeStats(ltStats)
-
   gotoTab('Stats')
     
 }
@@ -89,7 +87,7 @@ function otherStats(rpt) {
       
   var ele = $("#tblStats").clone().show();
 
-  var hdr = arrChart[0]
+  var hdr = null
   arrChart.shift() 
       
   arrChart.forEach((currentValue, index, array) => {
@@ -129,54 +127,6 @@ function otherStats(rpt) {
 
 }
 
-
-function lifeTimeStats(ltStats) {
-
-    var stats = ltStats
-    
-    var x = $("#tblLtStats").clone();
-    $("#statsLtContainer").empty()
-    x.appendTo("#statsLtContainer");
-        
-    $("#tblLtStats").hide()
-    
-    $.each(stats, function (idx, val) {
-    
-      if (typeof val === 'object') {
-  
-        
-
-        for (const key of Object.keys(val)) {
-            
-        
-          // var x = val[p].split(": ")
-          // var key = x[0]
-          // var value = x[1] * 1.0
-          var ele = $("#tblLtStats").clone();
-  
-          ele.find('#statsLtDescr')[0].innerHTML = camel2title(key)
-          ele.find('#statsLtVal')[0].innerHTML = formatNumber(val[key]*1)
-          ele.show()
-      
-          ele.appendTo("#statsLtContainer");
-  
-        }
-      
-      } else {
-        
-        var ele = $("#tblLtStats").clone();
-
-        ele.find('#statsLtDescr')[0].innerHTML = camel2title(idx)
-        ele.find('#statsLtVal')[0].innerHTML = formatNumber(val)
-        ele.show()
-      
-        ele.appendTo("#statsLtContainer");
-     
-      }
-     
-    })
-
-}
 
 
 async function btnStatSelectHtml(e) {
@@ -647,11 +597,8 @@ function lifeTime               (title, rounds) {
 
       if (pt < 1000*60*60) {
         var scorecard = JSON.parse(rnd.scoreCard)
-console.log(pt)        
         pt = scorecard.scores.length * 15*60*1000
-console.log(pt)        
       }
-
       totPlayTime += pt    
     })
 
@@ -660,7 +607,7 @@ console.log(pt)
     var minutes = Math.round((totPlayTime - days * (1000*60*60*24) - hours * (1000*60*60)) / (1000*60))
   var playTime =  days + "D " + hours + "H " + minutes + "M"
   
-console.log(playTime)  
+  
   var roundsPerYr = Math.round(nbrRounds / difdtInYrs)
   
   var strokes = 0
@@ -700,24 +647,6 @@ console.log(playTime)
 
 
     return {title: title, arrData:arr, format:''};
-
-    return {
-    
-      nbrRounds:nbrRounds, 
-      totTime:totTime, 
-      roundsPerYr:roundsPerYr,
-      playTime:playTime, 
-      distance:distance,
-      scoringSummary:[JSON.stringify(scoringSummary)],
-      strokes:strokes,
-      putts:putts,
-      penaltyStrokes:penaltyStrokes, 
-      bunkers:bunkers,
-      minutesPerStoke:minutesPerStoke
-
-    }
-
-
 
 }
 
