@@ -143,14 +143,17 @@ function lifeTimeStats(ltStats) {
       if (typeof val === 'object') {
   
         for (var p=0;p<val.length;p++) {
+
+        for (const key of Object.keys(val)) {
+            
         
           // var x = val[p].split(": ")
           // var key = x[0]
           // var value = x[1] * 1.0
           var ele = $("#tblLtStats").clone();
   
-          ele.find('#statsLtDescr')[0].innerHTML = camel2title(p)
-          ele.find('#statsLtVal')[0].innerHTML = formatNumber(val[p]*1)
+          ele.find('#statsLtDescr')[0].innerHTML = camel2title(key)
+          ele.find('#statsLtVal')[0].innerHTML = formatNumber(val[key]*1)
           ele.show()
       
           ele.appendTo("#statsLtContainer");
