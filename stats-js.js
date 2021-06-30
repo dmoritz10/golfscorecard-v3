@@ -39,6 +39,7 @@ async function btnShowStatsHtml() {
    
   var title = "Score Comparison"
   var rtn = chartScoreComparison     (title, rounds, myStatsRng, endRow)        
+rptArr.push(rtn)
   
  // var title = "Tee to Green"
   // var rtn = chartTeeToGreen          (title, rounds, myStatsRng, endRow)        
