@@ -308,7 +308,7 @@ async function getSSId() {
     var files = response.result.files;
     console.log('hi')
     console.log(files)
-    files.forEach( (file, idx, arr) => if (file.sharedWithMeTime) arr.splice(idx, 1))
+    files.forEach( (file, idx, arr) => {if (file.sharedWithMeTime) arr.splice(idx, 1)})
 
 console.log(files)
 
