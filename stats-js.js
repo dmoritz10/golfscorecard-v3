@@ -102,7 +102,7 @@ function otherStats(rpt) {
       
     tbl
       .setHeader(hdr)
-      .setTableHeaderClass('text-right')
+      .setTableHeaderClass('text-right  bg-white')
       .setData(arrChart)
       .setTableClass('table')
       .setTrClass()
