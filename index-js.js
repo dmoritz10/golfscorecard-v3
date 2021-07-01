@@ -306,8 +306,10 @@ async function getSSId() {
   }).then(function(response) {
 
     var files = response.result.files;
-
     console.log(files)
+    files.forEach( (file, idx, arr) => if (file.sharedWithMeTime) arr.splice(idx, 1))
+
+console.log(files)
 
     if (!files || files.length == 0)  return {fileId:null,msg:"'golfscorecard database v3' not found"}
 
