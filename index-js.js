@@ -297,16 +297,16 @@ async function getSSId() {
           " AND " + "mimeType='application/vnd.google-apps.spreadsheet'" + 
           " AND " + "trashed = false"
 
+          console.log('hi ')
 
   var ssId = await gapi.client.drive.files.list({
       q: q,
-      // sharedWithMe: false,
+      ownedByMe: false,
       fields: 'nextPageToken, files(id, name, sharedWithMeTime, owners, ownedByMe)',
       spaces: 'drive'
   }).then(function(response) {
 
     var files = response.result.files;
-
     console.log(JSON.parse(JSON.stringify(files)))
   
     files.forEach( (file, idx, arr) => {if (file.sharedWithMeTime) arr.splice(idx, 1)})
