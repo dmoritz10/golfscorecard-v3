@@ -307,7 +307,7 @@ async function getSSId() {
     var files = response.result.files;
   
     // files.forEach( (file, idx, arr) => {if (!file.ownedByMe) arr.splice(idx, 1)})
-
+console.log('hi dan')
     console.log(files)
 
     files = files.filter(item => item.ownedByMe);    // remove files that are shared with me
