@@ -301,7 +301,7 @@ async function getSSId() {
   var ssId = await gapi.client.drive.files.list({
       q: q,
       // sharedWithMe: false,
-      fields: 'nextPageToken, files(id, name, sharedWithMeTime, owners)',
+      fields: 'nextPageToken, files(id, name, sharedWithMeTime, owners, ownedByMe)',
       spaces: 'drive'
   }).then(function(response) {
 
