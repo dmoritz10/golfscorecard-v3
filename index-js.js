@@ -295,12 +295,12 @@ async function getSSId() {
 
   var q = "name = 'golfscorecard database v3'" + 
           " AND " + "mimeType='application/vnd.google-apps.spreadsheet'" + 
-          " AND " + "trashed = false" + 
-          " AND " + "sharedWithMe = false"
-          
+          " AND " + "trashed = false"
+
 
   var ssId = await gapi.client.drive.files.list({
       q: q,
+      sharedWithMe: false,
       fields: 'nextPageToken, files(id, name)',
       spaces: 'drive'
   }).then(function(response) {
