@@ -306,7 +306,7 @@ async function getSSId() {
 
     var files = response.result.files;
   
-    files.forEach( (file, idx, arr) => {if (!file.ownedByMe) arr.splice(idx, 1)})
+    // files.forEach( (file, idx, arr) => {if (!file.ownedByMe) arr.splice(idx, 1)})
 
     console.log(files)
 
