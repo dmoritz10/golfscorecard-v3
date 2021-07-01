@@ -297,20 +297,22 @@ async function getSSId() {
           " AND " + "mimeType='application/vnd.google-apps.spreadsheet'" + 
           " AND " + "trashed = false"
 
-          console.log('yo ')
 
   var ssId = await gapi.client.drive.files.list({
       q: q,
-      ownedByMe: false,
-      fields: 'nextPageToken, files(id, name, sharedWithMeTime, ownedByMe)',
+      fields: 'nextPageToken, files(id, name, ownedByMe)',
       spaces: 'drive'
   }).then(function(response) {
 
     var files = response.result.files;
-    console.log(JSON.parse(JSON.stringify(files)))
   
     files.forEach( (file, idx, arr) => {if (!file.ownedByMe) arr.splice(idx, 1)})
-    console.log(JSON.parse(JSON.stringify(files)))
+
+    console.log(files)
+
+    files = files.filter(item => item.ownedByMe);    // remove files that are shared with me
+    console.log(files)
+    // review = review.filter(item => item !== 'a');
 
     if (!files || files.length == 0)  return {fileId:null,msg:"'golfscorecard database v3' not found"}
 
