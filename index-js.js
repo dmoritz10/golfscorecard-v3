@@ -297,6 +297,7 @@ async function getSSId() {
           " AND " + "mimeType='application/vnd.google-apps.spreadsheet'" + 
           " AND " + "trashed = false" + 
           " AND " + "sharedWithMe = false"
+          
 
   var ssId = await gapi.client.drive.files.list({
       q: q,
