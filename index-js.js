@@ -300,13 +300,14 @@ async function getSSId() {
 
   var ssId = await gapi.client.drive.files.list({
       q: q,
-      corpora:'drive',
       // sharedWithMe: false,
-      fields: 'nextPageToken, files(id, name)',
+      fields: 'nextPageToken, files(id, name, sharedWithMeTime, sharingUser)',
       spaces: 'drive'
   }).then(function(response) {
 
     var files = response.result.files;
+
+    console.log(files)
 
     if (!files || files.length == 0)  return {fileId:null,msg:"'golfscorecard database v3' not found"}
 
