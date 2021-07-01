@@ -773,35 +773,35 @@ function driveAccuracy            (title, rounds, myStatsRng, endRow)     {
     
     [
     "Straight",
-    driveSumm1["Str8"]/rounds1.length,
-    driveSumm2["Str8"]/rounds2.length,
-    driveSumm3["Str8"]/rounds3.length
+    driveSumm1["Str8"],
+    driveSumm2["Str8"],
+    driveSumm3["Str8"]
     ],
       
     [
     "Left",
-    driveSumm1["Left"]/rounds1.length,
-    driveSumm2["Left"]/rounds2.length,
-    driveSumm3["Left"]/rounds3.length
+    driveSumm1["Left"],
+    driveSumm2["Left"],
+    driveSumm3["Left"]
     ],
       
     [
     "Right",
-    driveSumm1["Right"]/rounds1.length,
-    driveSumm2["Right"]/rounds2.length,
-    driveSumm3["Right"]/rounds3.length
+    driveSumm1["Right"],
+    driveSumm2["Right"],
+    driveSumm3["Right"]
     ],
     [  
     "Chunk",
-    driveSumm1["Chunk"]/rounds1.length,
-    driveSumm2["Chunk"]/rounds2.length,
-    driveSumm3["Chunk"]/rounds3.length
+    driveSumm1["Chunk"],
+    driveSumm2["Chunk"],
+    driveSumm3["Chunk"]
     ],
     [
     "Top",
-    driveSumm1["Top"]/rounds1.length,
-    driveSumm2["Top"]/rounds2.length,
-    driveSumm3["Top"]/rounds3.length
+    driveSumm1["Top"],
+    driveSumm2["Top"],
+    driveSumm3["Top"]
 
     ]    
     ]
