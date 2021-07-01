@@ -306,14 +306,8 @@ async function getSSId() {
 
     var files = response.result.files;
   
-    // files.forEach( (file, idx, arr) => {if (!file.ownedByMe) arr.splice(idx, 1)})
-console.log('hi dan')
-    console.log(files)
-
     files = files.filter(item => item.ownedByMe);    // remove files that are shared with me
-    console.log(files)
-    // review = review.filter(item => item !== 'a');
-
+  
     if (!files || files.length == 0)  return {fileId:null,msg:"'golfscorecard database v3' not found"}
 
     if (files.length > 1)             return {fileId:null,msg:"'golfscorecard database v3' not unique"}
