@@ -328,11 +328,7 @@ function chartAverageScorebyPar   (title, rounds, myStatsRng, endRow) {
   var scores2 = extrRndData	(rounds, 'scoreCard.scores', endRow.row2)
   var scores3 = extrRndData	(rounds, 'scoreCard.scores', endRow.row3)
 
-  console.log(scores1)
-  console.log(scores2)
-  console.log(scores3)
-
-  const avgScrByPar = (scoreCardArr, holePar) => {
+\  const avgScrByPar = (scoreCardArr, holePar) => {
     arr = []
     scoreCardArr.forEach((scoreCard) => {
       var par = scoreCard.map(el => el.par)
@@ -747,7 +743,7 @@ function chartTeeToGreen          (title, rounds, myStatsRng, endRow) {
     ]    
     ]
 
-    arrRound(rtn, 1, 'percent')
+    arrRound(rtn, 0, 'percent')
     
     return {title: title, arrData:rtn, format:''};
 
@@ -808,7 +804,7 @@ function driveAccuracy            (title, rounds, myStatsRng, endRow)     {
 
     console.log(rtn)
 
-    arrRound(rtn, 1, 'percent')
+    arrRound(rtn, 0, 'percent')
     
     return {title: title, arrData:rtn, format:''};
 
