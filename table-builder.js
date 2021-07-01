@@ -113,7 +113,7 @@ Table.prototype.build = function(container) {
     $(container).empty()
     
     var dom = document.createElement('tbl');
-    dom.className = this.tableClass
+    // dom.className = this.tableClass
     dom.innerHTML = this.html;
     $(container).append(dom);
      
