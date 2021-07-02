@@ -35,7 +35,7 @@ async function btnShowStatsHtml() {
   rptArr.push(rtn)
   
     var title = "Putting"
-    var rtn = chartPutting             (title, rounds, myStatsRng, endRow)        
+    // var rtn = chartPutting             (title, rounds, myStatsRng, endRow)        
   rptArr.push(rtn)
    
   var title = "Score Comparison"
