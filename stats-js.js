@@ -35,7 +35,7 @@ async function btnShowStatsHtml() {
   rptArr.push(rtn)
   
     var title = "Putting"
-    // var rtn = chartPutting             (title, rounds, myStatsRng, endRow)        
+    var rtn = chartPutting             (title, rounds, myStatsRng, endRow)        
   rptArr.push(rtn)
    
   var title = "Score Comparison"
@@ -60,9 +60,9 @@ rptArr.push(rtn)
   x.appendTo("#statsContainer");
   $("#tblStats").hide()
   
-  rptArr.forEach( rpt => {
-    otherStats(rpt)
-  })  
+  // rptArr.forEach( rpt => {
+  //   otherStats(rpt)
+  // })  
 
   gotoTab('Stats')
     
