@@ -3,7 +3,6 @@ async function btnShowStatsHtml() {
 
   var statOptions  = readOption('statOptions')
 
-  console.log(statOptions)
   var statExcludeSmall = statOptions.statExcludeSmallCourses
   var statRng1 = statOptions.statRng1
   var statRng2 = statOptions.statRng2
@@ -610,8 +609,6 @@ function chartScoreComparison (title, rounds, myStatsRng, endRow) {
     ]    
     ]
 
-    console.log(rtn)
-
     arrRound(rtn, 1)
     
     return {title: title, arrData:rtn, format:''};
@@ -802,8 +799,6 @@ function driveAccuracy            (title, rounds, myStatsRng, endRow)     {
     ]    
     ]
 
-    console.log(rtn)
-
     arrRound(rtn, 0, 'percent')
     
     return {title: title, arrData:rtn, format:''};
@@ -977,8 +972,6 @@ function calcDrivingSummary(rounds) {
 
       nbrHoles++
       var drv = val.drive
-
-      console.log(drv)
 
       switch(true) {
 
