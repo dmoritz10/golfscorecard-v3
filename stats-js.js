@@ -60,9 +60,9 @@ rptArr.push(rtn)
   x.appendTo("#statsContainer");
   $("#tblStats").hide()
   
-  // rptArr.forEach( rpt => {
-  //   otherStats(rpt)
-  // })  
+  rptArr.forEach( rpt => {
+    otherStats(rpt)
+  })  
 
   gotoTab('Stats')
     
