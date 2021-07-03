@@ -1480,6 +1480,9 @@ async function courseSummary() {
 
   })
 
+  console.log(nbrArr)
+  console.log(sumArr)
+
   courses.forEach((val, idx, arr) => {
 
     var avgTime = nbrArr[idx] > 0 ? (sumArr[idx] / (1000 * 60)) / nbrArr[idx] : ''
