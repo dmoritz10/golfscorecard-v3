@@ -1473,8 +1473,8 @@ async function courseSummary() {
 
       var tm = new Date(val.endTime).getTime() - new Date(val.startTime).getTime()
 
-      nbrArr++
-      sumArr += tm
+      nbrArr[idx]++
+      sumArr[idx] += tm
 
     } 
 
@@ -1482,7 +1482,7 @@ async function courseSummary() {
 
   courses.forEach((val, idx, arr) => {
 
-    var avgTime = nbrArr > 0 ? (sumArr / (1000 * 60)) / nbrArr : ''
+    var avgTime = nbrArr[idx] > 0 ? (sumArr[idx] / (1000 * 60)) / nbrArr[idx] : ''
 
     if (avgTime) {
 
