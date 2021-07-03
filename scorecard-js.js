@@ -649,7 +649,12 @@ async function btnEndRoundHtml() {
   
   toast('Round saved.  Calculating new Handicap.')
 
-  var rounds = await courseSummary()
+  var stat = readOption('course summery status')
+  if (stat !== 'complete') {
+    var rounds = await courseSummary()
+  } else {
+    var rounds = null
+  }
 
   btnShowHandicapHtml(rounds)
   
@@ -1446,10 +1451,6 @@ function getGolfers() {
 
 async function courseSummary() {
 
-  var stat = readOption('course summery status')
-
-  if (stat == 'complete') return null
-
   var rounds = await getRounds()
 
   var cols = arrShts['My Courses'].colHdrs
@@ -1511,9 +1512,6 @@ async function courseSummary() {
 
   })
   
-  console.log(avgArr)
-console.log('z')
-
   var data =     [
     { 
       range: calcRngA1(2, nbrPlayedCol + 1, nbrArr.length, 1),   
@@ -1529,22 +1527,21 @@ console.log('z')
     valueInputOption: 'USER_ENTERED',
     data
   }
-  
-  var params = {
-    spreadsheetId: spreadsheetId,
-    valueInputOption: 'USER_ENTERED'
-  };
 
   await checkAuth()
-  await gapi.client.sheets.spreadsheets.values.batchUpdate({spreadsheetId: spreadsheetId,
-    resource: resource})
-    .then(function(response) { console.log('My Courses update successful')
+  await gapi.client.sheets.spreadsheets.values.batchUpdate({
+    spreadsheetId: spreadsheetId,
+    resource: resource
+  })
+    .then(function(response) { 
+      console.log('My Courses update successful')
+      updateOption('course summery status', 'complete')
+
     }, function(reason) {
       console.error('error updating courses "Nbr Times Played" : ' + reason.result.error.message);
       alert('error updating courses "Nbr Times Played" : ' + reason.result.error.message);
     });
     
-
 }
 
 // </script>
