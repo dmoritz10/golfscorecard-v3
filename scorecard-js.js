@@ -1509,7 +1509,7 @@ async function courseSummary() {
   })
   
   console.log(avgArr)
-console.log('hpdate')
+console.log('USER_ENTERED')
 
   var resource = {
     "majorDimension": "ROWS",
@@ -1521,7 +1521,7 @@ console.log('hpdate')
   var params = {
     spreadsheetId: spreadsheetId,
     range: "'My Courses'!" + rng,
-    valueInputOption: 'RAW'
+    valueInputOption: 'USER_ENTERED'
   };
 
   await checkAuth()
