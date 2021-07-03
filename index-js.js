@@ -117,8 +117,7 @@
   $('#btnEndRound')            .button().click(btnEndRoundHtml);
   $('#btnCancelRound')         .button().click(btnCancelRoundHtml);
   $('#btnPauseRound')          .button().click(btnPauseRoundHtml);
-  // $('#btnGolfers')             .button().click(btnGolfersHtml);
-  $('#btnGolfers')             .button().click(courseSummary);
+  $('#btnGolfers')             .button().click(btnGolfersHtml);
   
   $('#btnUweatherComp')             .button().click(btnUweatherCompHtml);
 
@@ -171,7 +170,8 @@
   })
 
   // Show Clubs
-  $('#btnShowClubs')          .click(btnShowClubsHtml);
+  // $('#btnShowClubs')          .click(btnShowClubsHtml);
+  $('#btnShowClubs')          .click(courseSummary);
   $('#btnSubmitClub')         .click(btnSubmitClubHtml);
   $('#btnDeleteClub')         .click(btnDeleteClubHtml);
   $('#btnAddClub')            .click(btnAddClubHtml);
