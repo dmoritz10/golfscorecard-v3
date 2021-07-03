@@ -1527,7 +1527,7 @@ async function courseSummary() {
     valueInputOption: 'USER_ENTERED',
     data
   }
-
+console.log('hi dan')
   await checkAuth()
   await gapi.client.sheets.spreadsheets.values.batchUpdate({
     spreadsheetId: spreadsheetId,
