@@ -1528,8 +1528,8 @@ console.log('hpdate')
   await gapi.client.sheets.spreadsheets.values.update(params, resource)
     .then(function(response) { console.log('My Courses update successful')
     }, function(reason) {
-      console.error('error updating option "' + row + '": ' + reason.result.error.message);
-      alert('error updating option "' + row + '": ' + reason.result.error.message);
+      console.error('error updating courses "Nbr Times Played" : ' + reason.result.error.message);
+      alert('error updating courses "Nbr Times Played" : ' + reason.result.error.message);
     });
     
 
