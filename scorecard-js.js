@@ -1495,8 +1495,10 @@ async function courseSummary() {
 
   })
 
-  console.log('navrrrrrry')
+  console.log('ddddddd')
   console.log(navy)
+
+  console.log(nbrArr)
 
   nbrArr.forEach((val, idx, arr) => {
 
