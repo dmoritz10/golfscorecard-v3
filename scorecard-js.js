@@ -1466,13 +1466,14 @@ async function courseSummary() {
 
     var key = shortCourseName(val.courseName)
     var courseIdx = courseKeys.indexOf(key)
-    if (courseIdx < 0) continue;
+    if (courseIdx > -1) {
 
-    var tm = new Date(val.endTime).getTime() - new Date(val.startTime).getTime()
+      var tm = new Date(val.endTime).getTime() - new Date(val.startTime).getTime()
 
-    courses[courseIdx][nbrPlayedCol]++
-    courses[courseIdx][avgPlayTimeCol] += tm
-
+      courses[courseIdx][nbrPlayedCol]++
+      courses[courseIdx][avgPlayTimeCol] += tm
+      
+    }
   })
 
   courses.forEach((val, idx, arr) => {
