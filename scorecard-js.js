@@ -1516,7 +1516,7 @@ console.log('daa')
 
   var resource = {
     "majorDimension": "ROWS",
-    data = [
+    [
       { 
         range: calcRngA1(2, nbrPlayedCol + 1, nbrArr.length, 1),   // Update single cell
         values: nbrArr
