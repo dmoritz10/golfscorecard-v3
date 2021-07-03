@@ -1482,7 +1482,7 @@ async function courseSummary() {
 
   courses.forEach((val, idx, arr) => {
 
-    var avgTime = nbrArr > 0 ? sumArr / (1000 * 60)) / nbrArr : ''
+    var avgTime = nbrArr > 0 ? (sumArr / (1000 * 60)) / nbrArr : ''
 
     if (avgTime) {
 
