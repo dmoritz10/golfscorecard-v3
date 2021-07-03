@@ -1514,18 +1514,20 @@ async function courseSummary() {
   console.log(avgArr)
 console.log('daa')
 
+  var data =     [
+    { 
+      range: calcRngA1(2, nbrPlayedCol + 1, nbrArr.length, 1),   
+      values: nbrArr
+    },
+    {
+      range: calcRngA1(2, avgPlayTimeCol + 1, avgArr.length, 1),   
+      values: avgArr
+    }
+  ]
+
   var resource = {
     "majorDimension": "ROWS",
-    [
-      { 
-        range: calcRngA1(2, nbrPlayedCol + 1, nbrArr.length, 1),   // Update single cell
-        values: nbrArr
-      },
-      {
-        range: calcRngA1(2, avgPlayTimeCol + 1, avgArr.length, 1),   // Update single cell
-        values: avgArr
-      }
-    ]
+    data
   }
   
   var params = {
