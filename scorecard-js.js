@@ -1512,19 +1512,25 @@ async function courseSummary() {
   })
   
   console.log(avgArr)
-console.log('xxx')
+console.log('daa')
 
   var resource = {
     "majorDimension": "ROWS",
-    "values": nbrArr
-    }
-  
-  var rng = calcRngA1(2, nbrPlayedCol + 1, nbrArr.length, 1)
+    data = [
+      { 
+        range: calcRngA1(2, nbrPlayedCol + 1, nbrArr.length, 1),   // Update single cell
+        values: nbrArr
+      },
+      {
+        range: calcRngA1(2, avgPlayTimeCol + 1, avgArr.length, 1),   // Update single cell
+        values: avgArr
+      }
+    ]
+  }
   
   var params = {
     spreadsheetId: spreadsheetId,
-    range: "'My Courses'!" + rng,
-    valueInputOption: 'RAW'
+    valueInputOption: 'USER_ENTERED'
   };
 
   await checkAuth()
