@@ -1462,8 +1462,8 @@ async function courseSummary() {
   const getCol = (arr, n) => courses.map(x => x[keyCol]);
   var courseKeys = getCol(courses.keyCol)
 
-  var nbrArr = []
-  var sumArr = []
+  var nbrArr = Array(courses.length).fill(0)
+  var sumArr = Array(courses.length).fill(0)
 
   rounds.forEach( (val, idx, arr) => {
 
