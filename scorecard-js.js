@@ -1474,10 +1474,10 @@ async function courseSummary() {
       var tm = new Date(val.endTime).getTime() - new Date(val.startTime).getTime()
 
       courses[courseIdx][nbrPlayedCol]++
-      courses[courseIdx][avgPlayTimeCol] += tm
+      courses[courseIdx][avgPlayTimeCol]*1 += tm
 
     }
-    
+
   })
 
   courses.forEach((val, idx, arr) => {
