@@ -1463,6 +1463,8 @@ async function courseSummary() {
   const getCol = (arr, n) => courses.map(x => x[keyCol]);
   var courseKeys = getCol(courses.keyCol)
 
+  console.log(courseKeys)
+
   rounds.forEach( (val, idx, arr) => {
 
     var key = shortCourseName(val.courseName)
@@ -1474,7 +1476,7 @@ async function courseSummary() {
       courses[courseIdx][nbrPlayedCol]++
       courses[courseIdx][avgPlayTimeCol] += tm
 
-    }
+    } else console.log(key)
   })
 
   courses.forEach((val, idx, arr) => {
