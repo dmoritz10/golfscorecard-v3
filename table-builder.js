@@ -73,7 +73,7 @@ Table.prototype.build = function(container) {
     var tcClass = this.tcClass
  
     //creates table
-    var table = $('<table></table>').addClass(this.tableClass)
+    var table = $('<table></table>').addClass(this.tableClass).addClass("w-100")
  
     var tr = $('<tr></tr>').addClass(this.trClass) //creates row
     var th = $('<th></th>').addClass(this.tableHeaderClass) //creates table header cells
