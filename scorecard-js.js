@@ -1472,7 +1472,7 @@ async function courseSummary() {
 
       courses[courseIdx][nbrPlayedCol]++
       courses[courseIdx][avgPlayTimeCol] += tm
-      
+
     }
   })
 
@@ -1488,7 +1488,7 @@ async function courseSummary() {
       arr[idx][nbrPlayedCol] = val[nbrPlayedCol] ? val[nbrPlayedCol] : ''
       arr[idx][avgPlayTimeCol] = hours + ':' + minutes
     }
-  }
+  })
   
   console.log(courses)
 }
