@@ -1509,14 +1509,14 @@ async function courseSummary() {
   })
   
   console.log(avgArr)
-console.log('USER_ENTERED')
+console.log('USER_ENTavgERED')
 
   var resource = {
     "majorDimension": "ROWS",
-    "values": nbrArr
+    "values": avgArr
     }
   
-  var rng = calcRngA1(2, nbrPlayedCol + 1, nbrArr.length, 1)
+  var rng = calcRngA1(2, avgPlayTimeCol + 1, nbrArr.length, 1)
   
   var params = {
     spreadsheetId: spreadsheetId,
