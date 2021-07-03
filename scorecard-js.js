@@ -1460,7 +1460,8 @@ async function courseSummary() {
   var avgPlayTimeCol = cols.indexOf("Avg Play Time")
   
   courses.forEach((val, idx, arr) => arr[idx][nbrPlayedCol] = arr[idx][avgPlayTimeCol] = '')
-  const courseKeys = (arr, n) => courses.map(x => x[keyCol]);
+  const getCol = (arr, n) => courses.map(x => x[keyCol]);
+  var courseKeys = getCol(courses.keyCol)
 
   rounds.forEach( (val, idx, arr) => {
 
