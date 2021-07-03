@@ -1507,12 +1507,12 @@ async function courseSummary() {
 
     }
 
-    nbrArr[idx] = [nbrArr[idx]]
+    nbrArr[idx] = nbrArr[idx] ? [nbrArr[idx]] : ['']
 
   })
   
   console.log(avgArr)
-console.log('nbr')
+console.log('xxx')
 
   var resource = {
     "majorDimension": "ROWS",
