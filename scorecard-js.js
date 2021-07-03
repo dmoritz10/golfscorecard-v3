@@ -1480,9 +1480,9 @@ async function courseSummary() {
 
         var sc = JSON.parse(val.scoreCard)
         tm = sc.scores.length * 15 * 60 * 1000              // estimate 15 minutes per hole
+        console.log('approx - ' + val.courseName + ' - ' + val.startTime )
 
-
-      }else  console.log('approx - ' + val.courseName + ' - ' + val.startTime )
+      }
 
       nbrArr[courseIdx]++
       sumArr[courseIdx] += tm
