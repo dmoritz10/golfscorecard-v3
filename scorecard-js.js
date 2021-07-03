@@ -1512,7 +1512,7 @@ async function courseSummary() {
   })
   
   console.log(avgArr)
-console.log('zzzxxxcc')
+console.log('z')
 
   var data =     [
     { 
@@ -1526,7 +1526,7 @@ console.log('zzzxxxcc')
   ]
 
   var resource = {
-    "majorDimension": "ROWS",
+    valueInputOption: 'USER_ENTERED',
     data
   }
   
