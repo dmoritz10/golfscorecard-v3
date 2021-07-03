@@ -1462,7 +1462,7 @@ async function courseSummary() {
   courses.forEach((val, idx, arr) => arr[idx][nbrPlayedCol] = arr[idx][avgPlayTimeCol] = '')
   const courseKeys = (arr, n) => courses.map(x => x[keyCol]);
 
-  rounds.foreach( (val, idx, arr) => {
+  rounds.forEach( (val, idx, arr) => {
 
     var key = shortCourseName(val.courseName)
     var courseIdx = courseKeys.indexOf(key)
