@@ -1473,8 +1473,8 @@ async function courseSummary() {
 
       var tm = new Date(val.endTime).getTime() - new Date(val.startTime).getTime()
 
-      nbrArr[idx]++
-      sumArr[idx] += tm
+      nbrArr[courseIdx]++
+      sumArr[courseIdx] += tm
 
     } 
 
