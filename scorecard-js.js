@@ -1489,6 +1489,8 @@ async function courseSummary() {
 
     } else  console.log('course key - ' + val.courseName + ' - ' + val.startTime )
 
+    if (key = 'beach destroyer navy seal') console.log('navy - ' + val.courseName + ' - ' + val.startTime )
+
   })
 
   nbrArr.forEach((val, idx, arr) => {
