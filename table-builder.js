@@ -73,7 +73,7 @@ Table.prototype.build = function(container) {
     var tcClass = this.tcClass
  
     //creates table
-    var table = $('<table></table>').addClass(this.tableClass).addClass("w-100")
+    var table = $('<table></table>').addClass(this.tableClass)
  
     var tr = $('<tr></tr>').addClass(this.trClass) //creates row
     var th = $('<th></th>').addClass(this.tableHeaderClass) //creates table header cells
@@ -113,6 +113,7 @@ Table.prototype.build = function(container) {
     $(container).empty()
     
     var dom = document.createElement('tbl');
+    dom.classList.add("w-100");
     // dom.className = this.tableClass
     dom.innerHTML = this.html;
     $(container).append(dom);
