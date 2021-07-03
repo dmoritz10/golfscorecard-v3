@@ -1467,7 +1467,7 @@ async function courseSummary() {
 
   rounds.forEach( (val, idx, arr) => {
 
-    var key = shortCourseName(val.courseName)
+    var key = calcCourseKey(val.courseName)
     var courseIdx = courseKeys.indexOf(key)
     if (courseIdx > -1) {
 
@@ -1476,7 +1476,8 @@ async function courseSummary() {
       courses[courseIdx][nbrPlayedCol]++
       courses[courseIdx][avgPlayTimeCol] += tm
 
-    } else console.log(key)
+    }
+    
   })
 
   courses.forEach((val, idx, arr) => {
