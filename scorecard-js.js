@@ -1464,6 +1464,7 @@ async function courseSummary() {
 
   var nbrArr = Array(courses.length).fill(0)
   var sumArr = Array(courses.length).fill(0)
+  var avgArr = Array(courses.length).fill(0)
 
   rounds.forEach( (val, idx, arr) => {
 
@@ -1489,10 +1490,7 @@ async function courseSummary() {
 
   })
 
-  console.log(nbrArr)
-  console.log(sumArr)
-
-  courses.forEach((val, idx, arr) => {
+  nbrArr.forEach((val, idx, arr) => {
 
     var avgTime = nbrArr[idx] > 0 ? (sumArr[idx] / (1000 * 60)) / nbrArr[idx] : ''
 
@@ -1501,18 +1499,41 @@ async function courseSummary() {
       var hours   = ('0' + Math.floor(avgTime / 60)).slice(-2);
       var minutes = ('0' + Math.floor(avgTime % 60)).slice(-2);
 
-      arr[idx][nbrPlayedCol] = val[nbrPlayedCol] ? val[nbrPlayedCol] : ''
-      arr[idx][avgPlayTimeCol] = hours + ':' + minutes
+      avgArr[idx] = hours + ':' + minutes
 
     } else {
 
-      arr[idx][nbrPlayedCol] = ''
-      arr[idx][avgPlayTimeCol] = ''
+      avgArr[idx] = ''
 
     }
   })
   
-  console.log(courses)
+  console.log(avgArr)
+
+return
+  var resource = {
+    "majorDimension": "ROWS",
+    "values": [nbrArr]
+    }
+  
+  var row = idx*1 + 2
+  var rng = calcRngA1(2, nbrPlayedCol + 1, nbrArr.length, 1)
+  
+  var params = {
+    spreadsheetId: spreadsheetId,
+    range: "'My Courses'!" + rng,
+    valueInputOption: 'RAW'
+  };
+
+  await checkAuth()
+  await gapi.client.sheets.spreadsheets.values.update(params, resource)
+    .then(function(response) { console.log('My Courses update successful')
+    }, function(reason) {
+      console.error('error updating option "' + row + '": ' + reason.result.error.message);
+      alert('error updating option "' + row + '": ' + reason.result.error.message);
+    });
+    
+
 }
 
 // </script>
