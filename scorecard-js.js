@@ -655,8 +655,7 @@ async function btnEndRoundHtml() {
   } else {
     var rounds = null
   }
-console.log('round')
-console.log(rounds)
+
   btnShowHandicapHtml(rounds)
   
 }
@@ -1495,11 +1494,6 @@ async function courseSummary() {
 
   })
 
-  console.log('ddddddd')
-  console.log(navy)
-
-  console.log(nbrArr)
-
   nbrArr.forEach((val, idx, arr) => {
 
     var avgTime = nbrArr[idx] > 0 ? (sumArr[idx] / (1000 * 60)) / nbrArr[idx] : ''
@@ -1521,7 +1515,7 @@ async function courseSummary() {
     
 
   })
-  console.log(nbrArr)
+  
   var data =     [
     { 
       range: "'My Courses'!" + calcRngA1(2, nbrPlayedCol + 1, nbrArr.length, 1),   
@@ -1539,7 +1533,7 @@ async function courseSummary() {
   }
 console.log('hi asdasd')
   await checkAuth()
-  var gapiResult = await gapi.client.sheets.spreadsheets.values.batchUpdate({
+  await gapi.client.sheets.spreadsheets.values.batchUpdate({
     spreadsheetId: spreadsheetId,
     resource: resource
   })
@@ -1548,7 +1542,6 @@ console.log('hi asdasd')
       updateOption('course summery status', 'complete')
       console.log('gapiResult batchUpdate')
       console.log(response)
-      console.log(rounds)
       return rounds
 
     }, function(reason) {
@@ -1557,6 +1550,7 @@ console.log('hi asdasd')
       return null
     });
   
+    console.log('test await')
 }
 
 // </script>
