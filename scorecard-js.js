@@ -655,7 +655,8 @@ async function btnEndRoundHtml() {
   } else {
     var rounds = null
   }
-
+console.log('round')
+console.log(rounds)
   btnShowHandicapHtml(rounds)
   
 }
@@ -1527,7 +1528,7 @@ async function courseSummary() {
     valueInputOption: 'USER_ENTERED',
     data
   }
-console.log('hi www')
+console.log('hi ggg')
   await checkAuth()
   var gapiResult = await gapi.client.sheets.spreadsheets.values.batchUpdate({
     spreadsheetId: spreadsheetId,
