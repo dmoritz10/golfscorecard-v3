@@ -1512,7 +1512,7 @@ async function courseSummary() {
   })
   
   console.log(avgArr)
-console.log('asddd')
+console.log('dds')
 
   var data =     [
     { 
@@ -1536,7 +1536,7 @@ console.log('asddd')
   };
 
   await checkAuth()
-  await gapi.client.sheets.spreadsheets.values.batchUpdate(resource, params)
+  await gapi.client.sheets.spreadsheets.batchUpdate(resource, params)
     .then(function(response) { console.log('My Courses update successful')
     }, function(reason) {
       console.error('error updating courses "Nbr Times Played" : ' + reason.result.error.message);
