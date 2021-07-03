@@ -625,8 +625,8 @@ async function btnEndRoundHtml() {
     .then(function(response) {
       
       // updateOption('Clubs', prClubs)
-
-      updateOption('course summery status', 'in process')
+      console.log('round posted')
+      await updateOption('course summery status', 'in process')
     
     }, 
     
@@ -1536,10 +1536,12 @@ async function courseSummary() {
     .then(function(response) { 
       console.log('My Courses update successful')
       updateOption('course summery status', 'complete')
+      return rounds
 
     }, function(reason) {
       console.error('error updating courses "Nbr Times Played" : ' + reason.result.error.message);
       alert('error updating courses "Nbr Times Played" : ' + reason.result.error.message);
+      return null
     });
     
 }
