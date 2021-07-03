@@ -1527,9 +1527,9 @@ async function courseSummary() {
     valueInputOption: 'USER_ENTERED',
     data
   }
-console.log('hi dan')
+console.log('hi xxx')
   await checkAuth()
-  await gapi.client.sheets.spreadsheets.values.batchUpdate({
+  var gapiresult = await gapi.client.sheets.spreadsheets.values.batchUpdate({
     spreadsheetId: spreadsheetId,
     resource: resource
   })
@@ -1543,7 +1543,8 @@ console.log('hi dan')
       alert('error updating courses "Nbr Times Played" : ' + reason.result.error.message);
       return null
     });
-    
+    console.log('gapiResult batchUpdate')
+    console.log(gapiResult)
 }
 
 // </script>
