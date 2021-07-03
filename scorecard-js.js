@@ -1509,8 +1509,8 @@ async function courseSummary() {
   })
   
   console.log(avgArr)
+console.log('hpdate')
 
-return
   var resource = {
     "majorDimension": "ROWS",
     "values": [nbrArr]
