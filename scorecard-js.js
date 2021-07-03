@@ -1506,17 +1506,20 @@ async function courseSummary() {
       avgArr[idx] = ['']
 
     }
+
+    nbrArr[idx] = [nbrArr[idx]]
+
   })
   
   console.log(avgArr)
-console.log('raw')
+console.log('nbr')
 
   var resource = {
     "majorDimension": "ROWS",
-    "values": avgArr
+    "values": nbrArr
     }
   
-  var rng = calcRngA1(2, avgPlayTimeCol + 1, nbrArr.length, 1)
+  var rng = calcRngA1(2, nbrPlayedCol + 1, nbrArr.length, 1)
   
   var params = {
     spreadsheetId: spreadsheetId,
