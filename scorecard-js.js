@@ -1527,7 +1527,7 @@ async function courseSummary() {
     valueInputOption: 'USER_ENTERED',
     data
   }
-console.log('hi sss')
+console.log('hi www')
   await checkAuth()
   var gapiResult = await gapi.client.sheets.spreadsheets.values.batchUpdate({
     spreadsheetId: spreadsheetId,
@@ -1538,6 +1538,7 @@ console.log('hi sss')
       updateOption('course summery status', 'complete')
       console.log('gapiResult batchUpdate')
       console.log(response)
+      console.log(rounds)
       return rounds
 
     }, function(reason) {
