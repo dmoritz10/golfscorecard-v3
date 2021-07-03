@@ -1513,7 +1513,7 @@ console.log('hpdate')
 
   var resource = {
     "majorDimension": "ROWS",
-    "values": [nbrArr]
+    "values": nbrArr
     }
   
   var rng = calcRngA1(2, nbrPlayedCol + 1, nbrArr.length, 1)
