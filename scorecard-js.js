@@ -1524,11 +1524,11 @@ async function courseSummary() {
   console.log(nbrArr)
   var data =     [
     { 
-      range: calcRngA1(2, nbrPlayedCol + 1, nbrArr.length, 1),   
+      range: "'My Courses'!" + calcRngA1(2, nbrPlayedCol + 1, nbrArr.length, 1),   
       values: nbrArr
     },
     {
-      range: calcRngA1(2, avgPlayTimeCol + 1, avgArr.length, 1),   
+      range: "'My Courses'!" + calcRngA1(2, avgPlayTimeCol + 1, avgArr.length, 1),   
       values: avgArr
     }
   ]
@@ -1537,7 +1537,7 @@ async function courseSummary() {
     valueInputOption: 'USER_ENTERED',
     data
   }
-console.log('hi qqqq')
+console.log('hi asdasd')
   await checkAuth()
   var gapiResult = await gapi.client.sheets.spreadsheets.values.batchUpdate({
     spreadsheetId: spreadsheetId,
