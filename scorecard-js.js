@@ -1476,7 +1476,7 @@ async function courseSummary() {
       if (tm < 1000 * 60) {
 
         var sc = JSON.parse(val.scoreCard)
-        tm = sc.scores.length * 15 * 60 * 60 * 1000
+        tm = sc.scores.length * 15 * 60 * 1000              // estimate 15 minutes per hole
 
         console.log('tm calc')
 
