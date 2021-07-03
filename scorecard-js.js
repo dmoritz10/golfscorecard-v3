@@ -1486,7 +1486,7 @@ async function courseSummary() {
       sumArr[courseIdx] += tm
 
     } 
-    console.log(' - ' + val.courseName + ' - ' + val.startTime + ' - '  + tm)
+    // console.log(' - ' + val.courseName + ' - ' + val.startTime + ' - '  + tm)
 
   })
 
