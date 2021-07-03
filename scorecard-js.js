@@ -1482,13 +1482,12 @@ async function courseSummary() {
         tm = sc.scores.length * 15 * 60 * 1000              // estimate 15 minutes per hole
 
 
-      }
+      }else  console.log('approx - ' + val.courseName + ' - ' + val.startTime )
 
       nbrArr[courseIdx]++
       sumArr[courseIdx] += tm
 
-    } 
-    // console.log(' - ' + val.courseName + ' - ' + val.startTime + ' - '  + tm)
+    } else  console.log('course key - ' + val.courseName + ' - ' + val.startTime )
 
   })
 
@@ -1528,7 +1527,7 @@ async function courseSummary() {
     valueInputOption: 'USER_ENTERED',
     data
   }
-console.log('hi ggg')
+console.log('hi qqqq')
   await checkAuth()
   var gapiResult = await gapi.client.sheets.spreadsheets.values.batchUpdate({
     spreadsheetId: spreadsheetId,
