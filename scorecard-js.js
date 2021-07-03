@@ -1473,7 +1473,7 @@ async function courseSummary() {
 
       var tm = new Date(val.endTime).getTime() - new Date(val.startTime).getTime()
 
-      if (tm < 1000 * 60) {
+      if (tm < 1000 * 60 * 60) {
 
         var sc = JSON.parse(val.scoreCard)
         tm = sc.scores.length * 15 * 60 * 1000              // estimate 15 minutes per hole
