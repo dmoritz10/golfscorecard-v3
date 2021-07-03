@@ -624,7 +624,9 @@ async function btnEndRoundHtml() {
   await gapi.client.sheets.spreadsheets.values.append(params, resource)
     .then(function(response) {
       
-      updateOption('Clubs', prClubs)
+      // updateOption('Clubs', prClubs)
+
+      updateOption('course summery status', 'in process')
     
     }, 
     
@@ -647,7 +649,9 @@ async function btnEndRoundHtml() {
   
   toast('Round saved.  Calculating new Handicap.')
 
-  btnShowHandicapHtml()
+  var rounds = await courseSummary()
+
+  btnShowHandicapHtml(rounds)
   
 }
 
@@ -1437,6 +1441,55 @@ function getGolfers() {
 */  
   return arr
 
+}
+
+
+async function courseSummary() {
+
+  var stat = readOption('course summery status')
+
+  if (stat == 'complete') return null
+
+  var rounds = await getRounds()
+
+  var cols = arrShts['My Courses'].colHdrs
+  var courses = arrShts['My Courses'].vals
+
+  var keyCol = cols.indexOf("Key")
+  var nbrPlayedCol = cols.indexOf("Nbr Times Played")
+  var avgPlayTimeCol = cols.indexOf("Avg Play Time")
+  
+  courses.forEach((val, idx, arr) => arr[idx][nbrPlayedCol] = arr[idx][avgPlayTimeCol] = '')
+  const courseKeys = (arr, n) => courses.map(x => x[keyCol]);
+
+  rounds.foreach( (val, idx, arr) => {
+
+    var key = shortCourseName(val.courseName)
+    var courseIdx = courseKeys.indexOf(key)
+    if (courseIdx < 0) continue;
+
+    var tm = new Date(val.endTime).getTime() - new Date(val.startTime).getTime()
+
+    courses[courseIdx][nbrPlayedCol]++
+    courses[courseIdx][avgPlayTimeCol] += tm
+
+  })
+
+  courses.forEach((val, idx, arr) => {
+
+    var avgTime = val[nbrPlayedCol] > 0 ? (val[avgPlayTimeCol]  / (1000 * 60)) / val[nbrPlayedCol] : ''
+
+    if (avgTime) {
+
+      var hours   = ('0' + Math.floor(avgTime / 60)).slice(-2);
+      var minutes = ('0' + Math.floor(avgTime % 60)).slice(-2);
+
+      arr[idx][nbrPlayedCol] = val[nbrPlayedCol] ? val[nbrPlayedCol] : ''
+      arr[idx][avgPlayTimeCol] = hours + ':' + minutes
+    }
+  }
+  
+  console.log(courses)
 }
 
 // </script>

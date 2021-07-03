@@ -117,8 +117,9 @@
   $('#btnEndRound')            .button().click(btnEndRoundHtml);
   $('#btnCancelRound')         .button().click(btnCancelRoundHtml);
   $('#btnPauseRound')          .button().click(btnPauseRoundHtml);
-  $('#btnGolfers')             .button().click(btnGolfersHtml);
-
+  // $('#btnGolfers')             .button().click(btnGolfersHtml);
+  $('#btnGolfers')             .button().click(courseSummary);
+  
   $('#btnUweatherComp')             .button().click(btnUweatherCompHtml);
 
   $('#btnTestAPIStatus')       .button().click(btnTestAPIStatusHtml);
