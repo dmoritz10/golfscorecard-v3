@@ -1468,6 +1468,8 @@ async function courseSummary() {
   var sumArr = Array(courses.length).fill(0)
   var avgArr = Array(courses.length).fill(0)
 
+  var navy = 0
+
   rounds.forEach( (val, idx, arr) => {
 
     var key = calcCourseKey(val.courseName)
@@ -1489,9 +1491,12 @@ async function courseSummary() {
 
     } else  console.log('course key - ' + val.courseName + ' - ' + val.startTime )
 
-    if (key == 'beach destroyer navy seal') console.log('navy - ' + val.courseName + ' - ' + val.startTime )
+    if (key == 'beach destroyer navy seal') navy++
 
   })
+
+  console.log('navy')
+  console.log(navy)
 
   nbrArr.forEach((val, idx, arr) => {
 
