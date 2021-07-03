@@ -1518,9 +1518,10 @@ async function courseSummary() {
     }
 
     nbrArr[idx] = nbrArr[idx] ? [nbrArr[idx]] : ['']
+    
 
   })
-  
+  console.log(nbrArr)
   var data =     [
     { 
       range: calcRngA1(2, nbrPlayedCol + 1, nbrArr.length, 1),   
