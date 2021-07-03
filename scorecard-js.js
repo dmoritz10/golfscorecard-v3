@@ -1459,11 +1459,11 @@ async function courseSummary() {
   var nbrPlayedCol = cols.indexOf("Nbr Times Played")
   var avgPlayTimeCol = cols.indexOf("Avg Play Time")
   
-  courses.forEach((val, idx, arr) => arr[idx][nbrPlayedCol] = arr[idx][avgPlayTimeCol] = '')
   const getCol = (arr, n) => courses.map(x => x[keyCol]);
   var courseKeys = getCol(courses.keyCol)
 
-  console.log(courseKeys)
+  var nbrArr = []
+  var sumArr = []
 
   rounds.forEach( (val, idx, arr) => {
 
@@ -1473,16 +1473,16 @@ async function courseSummary() {
 
       var tm = new Date(val.endTime).getTime() - new Date(val.startTime).getTime()
 
-      courses[courseIdx][nbrPlayedCol]++
-      courses[courseIdx][avgPlayTimeCol]*1 += tm
+      nbrArr++
+      sumArr += tm
 
-    }
+    } 
 
   })
 
   courses.forEach((val, idx, arr) => {
 
-    var avgTime = val[nbrPlayedCol] > 0 ? (val[avgPlayTimeCol]  / (1000 * 60)) / val[nbrPlayedCol] : ''
+    var avgTime = nbrArr > 0 ? sumArr / (1000 * 60)) / nbrArr : ''
 
     if (avgTime) {
 
@@ -1491,6 +1491,12 @@ async function courseSummary() {
 
       arr[idx][nbrPlayedCol] = val[nbrPlayedCol] ? val[nbrPlayedCol] : ''
       arr[idx][avgPlayTimeCol] = hours + ':' + minutes
+
+    } else {
+
+      arr[idx][nbrPlayedCol] = ''
+      arr[idx][avgPlayTimeCol] = ''
+
     }
   })
   
