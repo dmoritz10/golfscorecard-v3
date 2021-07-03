@@ -1496,7 +1496,7 @@ async function courseSummary() {
 
     if (avgTime) {
 
-      var hours   = ('0' + Math.floor(avgTime / 60)).slice(-2);
+      var hours   = (Math.floor(avgTime / 60));
       var minutes = ('0' + Math.floor(avgTime % 60)).slice(-2);
 
       avgArr[idx] = hours + ':' + minutes
