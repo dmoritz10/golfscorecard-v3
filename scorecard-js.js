@@ -1516,7 +1516,6 @@ console.log('hpdate')
     "values": [nbrArr]
     }
   
-  var row = idx*1 + 2
   var rng = calcRngA1(2, nbrPlayedCol + 1, nbrArr.length, 1)
   
   var params = {
