@@ -1499,17 +1499,17 @@ async function courseSummary() {
       var hours   = (Math.floor(avgTime / 60));
       var minutes = ('0' + Math.floor(avgTime % 60)).slice(-2);
 
-      avgArr[idx] = hours + ':' + minutes
+      avgArr[idx] = [hours + ':' + minutes]
 
     } else {
 
-      avgArr[idx] = ''
+      avgArr[idx] = ['']
 
     }
   })
   
   console.log(avgArr)
-console.log('USER_ENTavgERED')
+console.log('arr')
 
   var resource = {
     "majorDimension": "ROWS",
