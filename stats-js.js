@@ -891,11 +891,7 @@ function lifeTime               (title, rounds) {
 
     var arr = []
 
-     arr.push(['<h5 class="text-left">Rounds','<h5>' + formatNumber(nbrRounds)])
-    // arr.push(['<hr>', '<hr>'])
-    // arr.push(['<small>&nbsp;', '<small>&nbsp;'])
-    arr.push(['<h5 style="font-size: 50%;">smaller</h5>', '<h5 style="font-size: 50%;">smaller</h5>'])
-    arr.push(['<h5><small>h5 small', '<h5><small>h5 small;'])
+    arr.push(['<small>&nbsp;', '<small>&nbsp;'])
     arr.push(['Made Target', formatNumber(nbrMadeTarget)])
     arr.push(['Elapsed Time', totTime])
     arr.push(['Rounds Per Year', roundsPerYr])
@@ -906,7 +902,6 @@ function lifeTime               (title, rounds) {
 
     arr = []
   
-    arr.push(['<h5 class="text-left">Holes','<h5>' + formatNumber(holes)])
     arr.push(['<small>&nbsp;', '<small>&nbsp;'])
     for (const key of Object.keys(scoringSummary)) {
       arr.push([key, formatNumber(scoringSummary[key]*1)])
@@ -917,11 +912,7 @@ function lifeTime               (title, rounds) {
 
     arr = []
 
-    arr.push(['<h5 class="text-left">Strokes','<h5>' + formatNumber(strokes)])
-    // arr.push(['<hr>', '<hr>'])
-    // arr.push(['<small>&nbsp;', '<small>&nbsp;'])
-    arr.push(['<h5 style="font-size: 50%;">smaller</h5>', '<h5 style="font-size: 50%;">smaller</h5>'])
-
+    arr.push(['<small>&nbsp;', '<small>&nbsp;'])
     arr.push(['Putts', formatNumber(putts)])
     arr.push(['Penalty Strokes', formatNumber(penaltyStrokes)])
     arr.push(['Bunkers', formatNumber(bunkers)])
