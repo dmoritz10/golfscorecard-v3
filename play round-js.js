@@ -13,7 +13,7 @@ async function btnPlayRoundHtml() {
   var hcpObj = readOption('handicapObj')
 
   $('#hpCurrHandicap').html(hcpObj.currHandicap)
-  $('#hpNbrRounds').html(JSON.parse(arrOptions.Lifetime).nbrRounds)
+  $('#hpNbrRounds').html(hcpObj.nbrRounds)
   
   $("#hpTargetHandicap").val( Math.round((hcpObj.currHandicap*1 - .1)*10)/10)
 

@@ -58,7 +58,7 @@ Post Round Save
         store in Options
 
 
-    Update Courses - i think I'm done
+    x Update Courses - i think I'm done
         Nbr Times Played        !	=>  Add one
         Avg Play Time	        !   =>  Calc
         
@@ -69,6 +69,7 @@ Post Round Save
 
     x Update Options
         Current Handicap
+        Nbr Rounds
 
 Deprecate
     (arrOptions['Handicap Diff Count']*1 + 1)) / .96) - arrOptions['Handicap Diff Sum']

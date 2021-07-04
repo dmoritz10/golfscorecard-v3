@@ -22,7 +22,8 @@ async function btnShowHandicapHtml (e, rnds) {
       
       handicapObj = {
         'mostRecent20HcpDiff': objHandicap.mostRecent20,
-        'currHandicap': objHandicap.handicap
+        'currHandicap': objHandicap.handicap,
+        'nbrRounds': rounds.length
       }
 
       updateOption('handicapObj', handicapObj)
