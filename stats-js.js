@@ -50,9 +50,15 @@ rptArr.push(rtn)
   var rtn = driveAccuracy            (title, rounds, myStatsRng, endRow)        
 rptArr.push(rtn)    
 
-  var title = null
+  var title = "Lifetime"
   var rtn = lifeTime                  (title, rounds)        
-rptArr.push(rtn)
+rptArr.push(rtn.rounds)
+
+var title = null 
+rptArr.push(rtn.holes)
+
+var title = null    
+rptArr.push(rtn.strokes)
 
 
   var x = $("#tblStats").clone();
@@ -808,7 +814,6 @@ function driveAccuracy            (title, rounds, myStatsRng, endRow)     {
 
 function lifeTime               (title, rounds) {
 
-  var arr = []
 
   var nbrRounds = rounds.length
 
@@ -874,6 +879,11 @@ function lifeTime               (title, rounds) {
     var minutesPerStoke = Math.round(playTimeMinutes / (strokes - penaltyStrokes))  
 
     var scoringSummary = calcScoringSummary(rounds)
+
+    var arrRtn = {}
+
+    var arr = []
+
     arr.push(['&nbsp;','&nbsp;'])
     arr.push(['<h4>Rounds'])
     arr.push(['<hr>', '<hr>'])
@@ -884,6 +894,9 @@ function lifeTime               (title, rounds) {
     arr.push(['Play Time', playTime])
     arr.push(['Distance', formatNumber(distance)])
 
+    arrRtn.rounds = JSON.parse(JSON.stringify(arr))
+
+    arr = []
   
     arr.push(['&nbsp;','&nbsp;'])
     arr.push(['<h4>Holes'])
@@ -892,7 +905,11 @@ function lifeTime               (title, rounds) {
     for (const key of Object.keys(scoringSummary)) {
       arr.push([key, formatNumber(scoringSummary[key]*1)])
     }
-            
+
+    arrRtn.holes = JSON.parse(JSON.stringify(arr))
+
+    arr = []
+
     arr.push(['&nbsp;','&nbsp;'])
     arr.push(['<h4>Strokes',''])
     arr.push(['<hr>', '<hr>'])
@@ -902,8 +919,10 @@ function lifeTime               (title, rounds) {
     arr.push(['Bunkers', formatNumber(bunkers)])
     arr.push(['Minutes per Stroke', minutesPerStoke])
 
+    arrRtn.strokes = JSON.parse(JSON.stringify(arr))
 
-    return {title: title, arrData:arr, format:''};
+
+    return {title: title, arrData:arrRtn, format:''};
 
 }
 
