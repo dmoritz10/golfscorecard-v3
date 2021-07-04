@@ -652,10 +652,6 @@ async function btnEndRoundHtml() {
   var stat = readOption('course summery status')
   if (stat !== 'complete') {
     var rounds = await courseSummary()
-
-console.log('rounds')
-console.log(rounds)
-
   } else {
     var rounds = null
   }
