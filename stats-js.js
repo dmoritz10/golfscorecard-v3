@@ -894,7 +894,7 @@ function lifeTime               (title, rounds) {
     arr.push(['Play Time', playTime])
     arr.push(['Distance', formatNumber(distance)])
 
-    arrRtn.rounds = JSON.parse(JSON.stringify(arr))
+    arrRtn.rounds = {title: 'Rounds', arrData:JSON.parse(JSON.stringify(arr)), format:''};
 
     arr = []
   
@@ -906,7 +906,8 @@ function lifeTime               (title, rounds) {
       arr.push([key, formatNumber(scoringSummary[key]*1)])
     }
 
-    arrRtn.holes = JSON.parse(JSON.stringify(arr))
+    // arrRtn.holes = JSON.parse(JSON.stringify(arr))
+    arrRtn.holes = {title: 'Holes', arrData:JSON.parse(JSON.stringify(arr)), format:''};
 
     arr = []
 
@@ -919,10 +920,10 @@ function lifeTime               (title, rounds) {
     arr.push(['Bunkers', formatNumber(bunkers)])
     arr.push(['Minutes per Stroke', minutesPerStoke])
 
-    arrRtn.strokes = JSON.parse(JSON.stringify(arr))
+    arrRtn.strokes = {title: 'Strokes', arrData:JSON.parse(JSON.stringify(arr)), format:''};
 
 
-    return {title: title, arrData:arrRtn, format:''};
+    return arrRtn;
 
 }
 
