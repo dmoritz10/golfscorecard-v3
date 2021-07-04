@@ -403,7 +403,13 @@ function chartCourseAdjustedScore (title, rounds, myStatsRng, endRow)   {
     myStatsRng.rng2, 
     myStatsRng.rng3
     ],
-    
+    [
+      '', 
+      '<small>&nbsp;', 
+      '<small>&nbsp;', 
+      '<small>&nbsp;'
+      ],    
+     
     [
     "Score",
     avgArr(adjScores1),
@@ -511,7 +517,13 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
     myStatsRng.rng2, 
     myStatsRng.rng3
     ],
-    
+    [
+      '<small>&nbsp;', 
+      '<small>&nbsp;', 
+      '<small>&nbsp;', 
+      '<small>&nbsp;'
+      ],    
+      
     [
     "Putts",
     avgArr(puttsPerRound(scores1)),
@@ -575,7 +587,13 @@ function chartScoreComparison (title, rounds, myStatsRng, endRow) {
     myStatsRng.rng2, 
     myStatsRng.rng3
     ],
-    
+    [
+      '', 
+      '<small>&nbsp;', 
+      '<small>&nbsp;', 
+      '<small>&nbsp;'
+      ],    
+      
     [
     "Eagles",
     scoreSumm1["Eagles"]/rounds1.length,
@@ -714,7 +732,13 @@ function chartTeeToGreen          (title, rounds, myStatsRng, endRow) {
     myStatsRng.rng2, 
     myStatsRng.rng3
     ],
-    
+    [
+      '', 
+      '<small>&nbsp;', 
+      '<small>&nbsp;', 
+      '<small>&nbsp;'
+      ],    
+      
     [
     "Fairways ",
     fairways(scores1),
@@ -891,7 +915,7 @@ function lifeTime               (title, rounds) {
 
     var arr = []
 
-     arr.push(['<h5 class="text-left">Rounds','<h5>' + formatNumber(nbrRounds)])
+    arr.push(['<h5 class="text-left">Rounds','<h5>' + formatNumber(nbrRounds)])
     arr.push(['<small>&nbsp;', '<small>&nbsp;'])
     arr.push(['Made Target', formatNumber(nbrMadeTarget)])
     arr.push(['Elapsed Time', totTime])
