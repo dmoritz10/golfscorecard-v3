@@ -451,7 +451,7 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
       scoreCard.forEach((val, idx) => {
         nbrPutts += val.putts*1
       })
-      arr.push(nbrPutts * 18 / nbrHoles)
+      if (nbrHoles>0) {arr.push(nbrPutts / nbrHoles)}
     })
     return arr
   }    
@@ -464,7 +464,7 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
       scoreCard.forEach((val, idx) => {
         nbrPutts += val.putts*1
       })
-      if (nbrHoles>0) {arr.push(nbrPutts / nbrHoles)} else {arr.push(0)}
+      if (nbrHoles>0) {arr.push(nbrPutts / nbrHoles)}
     })
     return arr
   }    
@@ -499,7 +499,7 @@ console.log(arr)
           nbrHoles++
         }
       })
-      arr.push(nbrPutts / nbrHoles)
+      if (nbrHoles>0) {arr.push(nbrPutts / nbrHoles)}
     })
     return arr
   }    
@@ -514,7 +514,7 @@ console.log(arr)
           nbrPutts++
         }
       })
-      arr.push(nbrPutts * 18 / nbrHoles)
+      if (nbrHoles>0) {arr.push(nbrPutts / nbrHoles)}
      })
     return arr
   }   
