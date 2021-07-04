@@ -877,13 +877,13 @@ function lifeTime               (title, rounds) {
     arr.push(['Play Time', playTime])
     arr.push(['Distance', formatNumber(distance)])
 
-    arr.push(['Holes',''])
+    arr.push(['<strong>Holes',''])
     arr.push(['Holes', formatNumber(holes)])
     for (const key of Object.keys(scoringSummary)) {
       arr.push([key, formatNumber(scoringSummary[key]*1)])
     }
             
-    arr.push(['Strokes',''])
+    arr.push(['<strong>Strokes',''])
     arr.push(['Strokes', formatNumber(strokes)])
     arr.push(['Putts', formatNumber(putts)])
     arr.push(['Penalty Strokes', formatNumber(penaltyStrokes)])
