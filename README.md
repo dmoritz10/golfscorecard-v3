@@ -76,6 +76,8 @@ Deprecate
     calcTS
     currHandicap = arrOptions['Current Handicap']
 
+    clone 'Settings' from 'Options'
+
 
 Stats
 

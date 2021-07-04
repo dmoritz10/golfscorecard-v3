@@ -850,6 +850,7 @@ function lifeTime               (title, rounds) {
   
   var roundsPerYr = Math.round(nbrRounds / difdtInYrs)
   
+  var holes = 0
   var strokes = 0
   var putts = 0
   var penaltyStrokes = 0
@@ -857,6 +858,7 @@ function lifeTime               (title, rounds) {
     rounds.forEach((rnd) => {
       var scorecard = JSON.parse(rnd.scoreCard)
       scorecard.scores.forEach( (val) => {
+        holes++
         strokes += val.score*1
         putts += val.putts*1
         penaltyStrokes += val.pnlty*1
@@ -875,6 +877,7 @@ function lifeTime               (title, rounds) {
     arr.push(['Play Time', playTime])
     arr.push(['Distance', formatNumber(distance)])
 
+    arr.push(['Holes', formatNumber(holes)])
     for (const key of Object.keys(scoringSummary)) {
       arr.push([key, formatNumber(scoringSummary[key]*1)])
     }
