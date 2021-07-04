@@ -519,6 +519,9 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
     return arr
   }    
 
+console.log(avgArr(puttsPerGIR(scores1)))
+console.log((puttsPerGIR(scores1)))
+
   var rtn = [
     [
     '', 
