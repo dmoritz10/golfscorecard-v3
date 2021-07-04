@@ -771,7 +771,12 @@ function driveAccuracy            (title, rounds, myStatsRng, endRow)     {
     myStatsRng.rng2, 
     myStatsRng.rng3
     ],
-    
+    [
+    '', 
+    '<small>&nbsp;', 
+    '<small>&nbsp;', 
+    '<small>&nbsp;'
+    ],    
     [
     "Straight",
     driveSumm1["Str8"],
@@ -888,7 +893,7 @@ function lifeTime               (title, rounds) {
 
      arr.push(['<h5 class="text-left">Rounds','<h5>' + formatNumber(nbrRounds)])
     // arr.push(['<hr>', '<hr>'])
-    arr.push(['&nbsp;', '&nbsp;'])
+    arr.push(['<small>&nbsp;', '<small>&nbsp;'])
     arr.push(['Made Target', formatNumber(nbrMadeTarget)])
     arr.push(['Elapsed Time', totTime])
     arr.push(['Rounds Per Year', roundsPerYr])
@@ -912,7 +917,7 @@ function lifeTime               (title, rounds) {
 
     arr.push(['<h5 class="text-left">Strokes','<h5>' + formatNumber(strokes)])
     // arr.push(['<hr>', '<hr>'])
-    arr.push(['&nbsp;', '&nbsp;'])
+    arr.push(['<small>&nbsp;', '<small>&nbsp;'])
     arr.push(['Putts', formatNumber(putts)])
     arr.push(['Penalty Strokes', formatNumber(penaltyStrokes)])
     arr.push(['Bunkers', formatNumber(bunkers)])
