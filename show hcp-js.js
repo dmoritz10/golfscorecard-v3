@@ -5,8 +5,8 @@ async function btnShowHandicapHtml (e, rnds) {
   var hcpMethod = hcpSelectOptions.hcpMethod
 
 
-console.log('hi vdss')
-  console.log(rounds)
+console.log('hi erwerw')
+  console.log(rnds.r)
 
   var rounds = rnds ? rnds.r : null
 
