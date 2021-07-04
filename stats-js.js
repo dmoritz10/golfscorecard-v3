@@ -884,7 +884,7 @@ function lifeTime               (title, rounds) {
 
     var arr = []
 
-     arr.push(['<h4 class="text-left">Rounds','<h4>' + formatNumber(nbrRounds)])
+     arr.push(['<h5 class="text-left">Rounds','<h5>' + formatNumber(nbrRounds)])
     // arr.push(['<hr>', '<hr>'])
     arr.push(['&nbsp;', '&nbsp;'])
     arr.push(['Made Target', formatNumber(nbrMadeTarget)])
@@ -897,8 +897,8 @@ function lifeTime               (title, rounds) {
 
     arr = []
   
-    arr.push(['<h4 class="text-left">Holes','<h4>' + formatNumber(holes)])
-    arr.push(['&nbsp;', '&nbsp;'])
+    arr.push(['<h5 class="text-left">Holes','<h5>' + formatNumber(holes)])
+    arr.push(['<small>&nbsp;', '<small>&nbsp;'])
     for (const key of Object.keys(scoringSummary)) {
       arr.push([key, formatNumber(scoringSummary[key]*1)])
     }
@@ -908,7 +908,7 @@ function lifeTime               (title, rounds) {
 
     arr = []
 
-    arr.push(['<h4 class="text-left">Strokes','<h4>' + formatNumber(strokes)])
+    arr.push(['<h5 class="text-left">Strokes','<h5>' + formatNumber(strokes)])
     // arr.push(['<hr>', '<hr>'])
     arr.push(['&nbsp;', '&nbsp;'])
     arr.push(['Putts', formatNumber(putts)])
