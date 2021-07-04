@@ -871,7 +871,7 @@ function lifeTime               (title, rounds) {
 
     var scoringSummary = calcScoringSummary(rounds)
     arr.push(['',''])
-    arr.push(['<h3>Rounds',''])
+    arr.push(['<h4>Rounds',''])
     arr.push(['Rounds', formatNumber(nbrRounds)])
     arr.push(['Elapsed Time', totTime])
     arr.push(['Rounds Per Year', roundsPerYr])
@@ -879,13 +879,13 @@ function lifeTime               (title, rounds) {
     arr.push(['Distance', formatNumber(distance)])
 
   
-    arr.push(['<h3>Holes',''])
+    arr.push(['<h4>Holes',''])
     arr.push(['Holes', formatNumber(holes)])
     for (const key of Object.keys(scoringSummary)) {
       arr.push([key, formatNumber(scoringSummary[key]*1)])
     }
             
-    arr.push(['<h3>Strokes',''])
+    arr.push(['<h4>Strokes',''])
     arr.push(['Strokes', formatNumber(strokes)])
     arr.push(['Putts', formatNumber(putts)])
     arr.push(['Penalty Strokes', formatNumber(penaltyStrokes)])
