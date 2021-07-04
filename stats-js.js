@@ -874,7 +874,7 @@ function lifeTime               (title, rounds) {
     var minutesPerStoke = Math.round(playTimeMinutes / (strokes - penaltyStrokes))  
 
     var scoringSummary = calcScoringSummary(rounds)
-    // arr.push(['&nbsp;','&nbsp;'])
+    arr.push(['&nbsp;','&nbsp;'])
     arr.push(['<h4>Rounds'])
     arr.push(['<hr>', '<hr>'])
     arr.push(['Rounds', formatNumber(nbrRounds)])
