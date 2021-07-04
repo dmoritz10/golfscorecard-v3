@@ -818,7 +818,7 @@ function lifeTime               (title, rounds) {
       var scorecard = JSON.parse(rnd.scoreCard)
       nbrHoles += scorecard.scores.length
 
-      if (rnd.finalScore <= rnd.objHandicap.targetScore.score) nbrMadeTarget++)
+      if (rnd.finalScore <= rnd.objHandicap.targetScore.score) nbrMadeTarget++
 
      })
 
