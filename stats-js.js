@@ -517,8 +517,13 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
   }   
 
   console.log('hi dan')
-console.log(avgArr(puttsPerGIR(scores1)))
-console.log((puttsPerGIR(scores1)))
+  console.log((puttsPerGIR(scores1)))
+  console.log(avgArr(puttsPerGIR(scores1)))
+console.log('hi dan')
+console.log('hi dan')
+console.log((puttsPerGIRPlusOne(scores1)))
+console.log(avgArr(puttsPerGIRPlusOne(scores1)))
+console.log('hi dan')
 
   var rtn = [
     [
