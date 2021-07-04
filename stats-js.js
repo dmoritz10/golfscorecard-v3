@@ -894,6 +894,8 @@ function lifeTime               (title, rounds) {
      arr.push(['<h5 class="text-left">Rounds','<h5>' + formatNumber(nbrRounds)])
     // arr.push(['<hr>', '<hr>'])
     arr.push(['<small>&nbsp;', '<small>&nbsp;'])
+    arr.push(['<small>small', '<small>small'])
+    arr.push(['<h5><small>h5 small', '<h5><small>h5 small;'])
     arr.push(['Made Target', formatNumber(nbrMadeTarget)])
     arr.push(['Elapsed Time', totTime])
     arr.push(['Rounds Per Year', roundsPerYr])
