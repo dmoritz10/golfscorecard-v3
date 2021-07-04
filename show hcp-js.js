@@ -1,5 +1,5 @@
 
-async function btnShowHandicapHtml () {
+async function btnShowHandicapHtml (rnds) {
 
   var hcpSelectOptions = readOption('hcpFilter')
   var hcpMethod = hcpSelectOptions.hcpMethod
