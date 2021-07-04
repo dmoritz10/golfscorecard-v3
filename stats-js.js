@@ -480,7 +480,7 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
           nbrHoles++
         }
       })
-      if (nbrHoles>0) {arr.push(nbrPutts / nbrHoles)} else {arr.push(0)}
+      if (nbrHoles>0) {arr.push(nbrPutts / nbrHoles)}
     })
 console.log('arr')
 console.log(arr)
