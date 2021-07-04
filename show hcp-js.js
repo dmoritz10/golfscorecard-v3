@@ -5,10 +5,10 @@ async function btnShowHandicapHtml (e, rounds) {
   var hcpMethod = hcpSelectOptions.hcpMethod
 
 
-console.log('hi qwerty')
+console.log('hi zxcv')
   console.log(rounds)
 
-  var rounds = rounds || await getRounds()
+  var rounds = rounds.r || await getRounds()
   var hcpArr = []
   var nbrRounds = 0
   
