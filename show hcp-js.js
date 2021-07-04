@@ -5,7 +5,7 @@ async function btnShowHandicapHtml (e) {
   var hcpMethod = hcpSelectOptions.hcpMethod
 
 
-console.log('hi ddd')
+console.log('hi sdff')
   console.log(e)
 
   var rounds = roundsParm || await getRounds()
