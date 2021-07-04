@@ -657,8 +657,9 @@ async function btnEndRoundHtml() {
   }
 
 
-return
-  btnShowHandicapHtml()
+  $('#btnShowHandicap').trigger( "click", rounds );
+
+  //btnShowHandicapHtml()
   
 }
 

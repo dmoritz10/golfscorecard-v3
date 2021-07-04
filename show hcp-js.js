@@ -1,12 +1,12 @@
 
-async function btnShowHandicapHtml (e) {
+async function btnShowHandicapHtml (e, rounds) {
 
   var hcpSelectOptions = readOption('hcpFilter')
   var hcpMethod = hcpSelectOptions.hcpMethod
 
 
 console.log('hi sdff')
-  console.log(e)
+  console.log(rounds)
 
   var rounds = roundsParm || await getRounds()
   var hcpArr = []

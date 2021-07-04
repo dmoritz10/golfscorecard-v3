@@ -162,7 +162,7 @@
   })
 
   // Show Handicap
-  $('#btnShowHandicap')         .click({rounds: rounds}, btnShowHandicapHtml);
+  $('#btnShowHandicap')         .click(btnShowHandicapHtml);
   $('#btnHCPSelect')            .click(btnHCPSelectHtml);
   $('#hcpSelectDropDown').on('show.bs.dropdown', function () {
     btnHCPMoreVertHtml()
