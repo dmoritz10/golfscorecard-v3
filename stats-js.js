@@ -884,8 +884,7 @@ function lifeTime               (title, rounds) {
 
     var arr = []
 
-    arr.push(['&nbsp;','&nbsp;'])
-    arr.push(['<h4>Rounds'])
+     arr.push(['<h4>Rounds'])
     arr.push(['<hr>', '<hr>'])
     arr.push(['Rounds', formatNumber(nbrRounds)])
     arr.push(['Made Target', formatNumber(nbrMadeTarget)])
@@ -894,11 +893,10 @@ function lifeTime               (title, rounds) {
     arr.push(['Play Time', playTime])
     arr.push(['Distance', formatNumber(distance)])
 
-    arrRtn.rounds = {title: 'Rounds', arrData:JSON.parse(JSON.stringify(arr)), format:''};
+    arrRtn.rounds = {title: title, arrData:JSON.parse(JSON.stringify(arr)), format:''};
 
     arr = []
   
-    arr.push(['&nbsp;','&nbsp;'])
     arr.push(['<h4>Holes'])
     arr.push(['<hr>', '<hr>'])
     arr.push(['Holes', formatNumber(holes)])
@@ -907,11 +905,10 @@ function lifeTime               (title, rounds) {
     }
 
     // arrRtn.holes = JSON.parse(JSON.stringify(arr))
-    arrRtn.holes = {title: 'Holes', arrData:JSON.parse(JSON.stringify(arr)), format:''};
+    arrRtn.holes = {title: null, arrData:JSON.parse(JSON.stringify(arr)), format:''};
 
     arr = []
 
-    arr.push(['&nbsp;','&nbsp;'])
     arr.push(['<h4>Strokes',''])
     arr.push(['<hr>', '<hr>'])
     arr.push(['Strokes', formatNumber(strokes)])
@@ -920,7 +917,7 @@ function lifeTime               (title, rounds) {
     arr.push(['Bunkers', formatNumber(bunkers)])
     arr.push(['Minutes per Stroke', minutesPerStoke])
 
-    arrRtn.strokes = {title: 'Strokes', arrData:JSON.parse(JSON.stringify(arr)), format:''};
+    arrRtn.strokes = {title: null, arrData:JSON.parse(JSON.stringify(arr)), format:''};
 
 
     return arrRtn;
