@@ -481,6 +481,9 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
         }
       })
       arr.push(nbrPutts / nbrHoles)
+      console.log(nbrPutts)
+      console.log(nbrHoles)
+      console.log(nbrPutts / nbrHoles)
     })
     return arr
   }    
