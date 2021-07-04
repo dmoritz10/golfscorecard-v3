@@ -813,9 +813,13 @@ function lifeTime               (title, rounds) {
   var nbrRounds = rounds.length
 
   var nbrHoles = 0
+  var nbrMadeTarget = 0
     rounds.forEach((rnd) => {
       var scorecard = JSON.parse(rnd.scoreCard)
       nbrHoles += scorecard.scores.length
+
+      if (rnd.finalScore <= rnd.objHandicap.targetScore.score) nbrMadeTarget++)
+
      })
 
 
@@ -873,6 +877,7 @@ function lifeTime               (title, rounds) {
     arr.push(['',''])
     arr.push(['<h4>Rounds'])
     arr.push(['Rounds', formatNumber(nbrRounds)])
+    arr.push(['Made Target', formatNumber(nbrMadeTarget)])
     arr.push(['Elapsed Time', totTime])
     arr.push(['Rounds Per Year', roundsPerYr])
     arr.push(['Play Time', playTime])
