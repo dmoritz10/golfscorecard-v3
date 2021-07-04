@@ -658,7 +658,7 @@ async function btnEndRoundHtml() {
 
   console.log(rounds)
 
-  $('#btnShowHandicap').trigger( "click", rounds );
+  $('#btnShowHandicap').trigger( "click", {r:rounds} );
 
   //btnShowHandicapHtml()
   
