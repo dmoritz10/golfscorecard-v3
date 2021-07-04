@@ -481,9 +481,6 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
         }
       })
       arr.push(nbrPutts / nbrHoles)
-      console.log(nbrPutts)
-      console.log(nbrHoles)
-      console.log(nbrPutts / nbrHoles)
     })
     return arr
   }    
@@ -517,8 +514,9 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
       arr.push(nbrPutts * 18 / nbrHoles)
      })
     return arr
-  }    
+  }   
 
+  console.log('hi dan')
 console.log(avgArr(puttsPerGIR(scores1)))
 console.log((puttsPerGIR(scores1)))
 
