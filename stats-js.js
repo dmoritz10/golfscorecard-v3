@@ -50,7 +50,7 @@ rptArr.push(rtn)
   var rtn = driveAccuracy            (title, rounds, myStatsRng, endRow)        
 rptArr.push(rtn)    
 
-  var title = "Lifetime"
+  // var title = "Lifetime"
   var rtn = lifeTime                  (title, rounds)        
 rptArr.push(rtn)
 
