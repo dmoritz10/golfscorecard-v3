@@ -90,15 +90,13 @@ async function btnShowRoundsHtml() {
   
   }
     
-  var nbrRounds = JSON.parse(arrOptions.Lifetime).nbrRounds
-    
-  if (nbrRounds == rndCntr) 
+   if (nbrRounds == rndCntr) 
   
     {$ ('#srNbrRounds').html(nbrRounds)}
     
   else 
   
-    { $ ('#srNbrRounds').html(rndCntr + ' of ' + nbrRounds)}
+    { $ ('#srNbrRounds').html(rndCntr + ' of ' + rounds.length)}
   
   
   gotoTab('ShowRounds')
