@@ -357,7 +357,13 @@ function chartAverageScorebyPar   (title, rounds, myStatsRng, endRow) {
     myStatsRng.rng2, 
     myStatsRng.rng3
     ],
-    
+    [
+      '<small>&nbsp;', 
+      '<small>&nbsp;', 
+      '<small>&nbsp;', 
+      '<small>&nbsp;'
+      ],    
+   
     [
     "Par 3",
     avgArr(avgScrByPar(scores1, 3)),
@@ -365,12 +371,6 @@ function chartAverageScorebyPar   (title, rounds, myStatsRng, endRow) {
     avgArr(avgScrByPar(scores3, 3))
     ],
       
-    [
-      '<small>&nbsp;', 
-      '<small>&nbsp;', 
-      '<small>&nbsp;', 
-      '<small>&nbsp;'
-      ],    
     [
     "Par 4",
     avgArr(avgScrByPar(scores1, 4)),
