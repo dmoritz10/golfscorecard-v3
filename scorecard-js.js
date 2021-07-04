@@ -655,8 +655,10 @@ async function btnEndRoundHtml() {
   } else {
     var rounds = null
   }
+  var ele = document.getElementsByName("btnShowHandicap")[0];
+  ele.rounds = rounds;
 
-  btnShowHandicapHtml(rounds)
+  btnShowHandicapHtml()
   
 }
 
