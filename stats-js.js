@@ -880,7 +880,7 @@ function lifeTime               (title, rounds) {
 
   
     arr.push(['&nbsp;','&nbsp;'])
-     arr.push(['<h4 class="text-success">Holedds',''])
+     arr.push(['<h4 style=”color:white">Holezzzds',''])
    arr.push(['Holes', formatNumber(holes)])
     for (const key of Object.keys(scoringSummary)) {
       arr.push([key, formatNumber(scoringSummary[key]*1)])
