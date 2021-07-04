@@ -115,7 +115,7 @@ function otherStats(rpt) {
       .setTdClass('py-0 border-0 h5')
       .build(ele);
         
-    if (title) {
+    if (title && title !== 'Lifetime') {
       ele.prepend( "<h2 class='w-100 text-center'>" + title + "</h2>")
       ele.append( "<hr class='w-100'>")
     }
