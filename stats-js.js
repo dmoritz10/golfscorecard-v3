@@ -475,13 +475,16 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
       var nbrHoles = 0
       var nbrPutts = 0
       scoreCard.forEach((val, idx) => {
-        if (val.score*1 - val.putts*1 <= val.par*1 - 2) { console.log(val)
+        if (val.score*1 - val.putts*1 <= val.par*1 - 2) { 
           nbrPutts += val.putts*1
           nbrHoles++
         }
       })
       arr.push(nbrPutts / nbrHoles)
     })
+console.log('arr')
+console.log(arr)
+
     return arr
   }    
 
