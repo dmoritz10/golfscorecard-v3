@@ -886,7 +886,7 @@ function lifeTime               (title, rounds) {
 
      arr.push(['<h4 class="text-left">Rounds','<h4>' + formatNumber(nbrRounds)])
     // arr.push(['<hr>', '<hr>'])
-    arr.push(['Rounds', formatNumber(nbrRounds)])
+    arr.push(['&nbsp;', '&nbsp;'])
     arr.push(['Made Target', formatNumber(nbrMadeTarget)])
     arr.push(['Elapsed Time', totTime])
     arr.push(['Rounds Per Year', roundsPerYr])
@@ -898,8 +898,7 @@ function lifeTime               (title, rounds) {
     arr = []
   
     arr.push(['<h4 class="text-left">Holes','<h4>' + formatNumber(holes)])
-    // arr.push(['<hr>', '<hr>'])
-    arr.push(['Holes', formatNumber(holes)])
+    arr.push(['&nbsp;', '&nbsp;'])
     for (const key of Object.keys(scoringSummary)) {
       arr.push([key, formatNumber(scoringSummary[key]*1)])
     }
@@ -911,7 +910,7 @@ function lifeTime               (title, rounds) {
 
     arr.push(['<h4 class="text-left">Strokes','<h4>' + formatNumber(strokes)])
     // arr.push(['<hr>', '<hr>'])
-    arr.push(['Strokes', formatNumber(strokes)])
+    arr.push(['&nbsp;', '&nbsp;'])
     arr.push(['Putts', formatNumber(putts)])
     arr.push(['Penalty Strokes', formatNumber(penaltyStrokes)])
     arr.push(['Bunkers', formatNumber(bunkers)])
