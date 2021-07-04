@@ -11,6 +11,8 @@ async function btnShowRoundsHtml() {
   var hcpMethod        = srSelectOptions.hcpMethod
   
   var rounds = await getRounds(srExcludeSmall)
+
+  var nbrRounds = rounds.length
    
   console.log('rounds')
   console.log(rounds.length)
@@ -96,7 +98,7 @@ async function btnShowRoundsHtml() {
     
   else 
   
-    { $ ('#srNbrRounds').html(rndCntr + ' of ' + rounds.length)}
+    { $ ('#srNbrRounds').html(rndCntr + ' of ' + nbrRounds)}
   
   
   gotoTab('ShowRounds')
