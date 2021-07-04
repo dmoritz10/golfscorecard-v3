@@ -874,8 +874,9 @@ function lifeTime               (title, rounds) {
     var minutesPerStoke = Math.round(playTimeMinutes / (strokes - penaltyStrokes))  
 
     var scoringSummary = calcScoringSummary(rounds)
-    arr.push(['',''])
+    arr.push(['&nbsp;','&nbsp;'])
     arr.push(['<h4>Rounds'])
+    arr.push(['<hr>', '<hr>'])
     arr.push(['Rounds', formatNumber(nbrRounds)])
     arr.push(['Made Target', formatNumber(nbrMadeTarget)])
     arr.push(['Elapsed Time', totTime])
@@ -884,7 +885,7 @@ function lifeTime               (title, rounds) {
     arr.push(['Distance', formatNumber(distance)])
 
   
-    arr.push(['&nbsp;','&nbsp;'])
+    arr.push(['<hr>', '<hr>'])
     arr.push(['<h4>Holes'])
     arr.push(['<hr>', '<hr>'])
    arr.push(['Holes', formatNumber(holes)])
@@ -894,6 +895,7 @@ function lifeTime               (title, rounds) {
             
     arr.push(['&nbsp;','&nbsp;'])
     arr.push(['<h4>Strokes',''])
+    arr.push(['<hr>', '<hr>'])
     arr.push(['Strokes', formatNumber(strokes)])
     arr.push(['Putts', formatNumber(putts)])
     arr.push(['Penalty Strokes', formatNumber(penaltyStrokes)])
