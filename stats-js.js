@@ -906,6 +906,9 @@ function lifeTime               (title, rounds) {
       var scorecard = JSON.parse(rnd.scoreCard)
       scorecard.scores.forEach( (val) => {
         holes++
+
+console.log(new Date(rnd.startTime))
+
         strokes += val.score*1
         putts += val.putts*1
         penaltyStrokes += val.pnlty*1
