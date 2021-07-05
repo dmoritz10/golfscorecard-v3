@@ -4,7 +4,8 @@ async function btnShowHandicapHtml (e, rnds) {
   var hcpSelectOptions = readOption('hcpFilter')
   var hcpMethod = hcpSelectOptions.hcpMethod
 
-  var rounds = rnds ? rnds.r : await getRounds()
+  // var rounds = rnds ? rnds.r : await getRounds()
+  var rounds = await getRounds()
 
   var hcpArr = []
   var nbrRounds = 0
@@ -153,10 +154,30 @@ async function btnShowHandicapHtml (e, rnds) {
   displayHcpTrend(hcpArr, handicapAlert)
 
   gotoTab('ShowHCP')
+
+  if (rounds.length !== sumNbrRoundsPlayed()) {
+
+    courseSummary(rounds)
+
+  }
   
 }
 
+function sumNbrRoundsPlayed() {
 
+  var cols = arrShts['My Courses'].colHdrs
+  var courses = arrShts['My Courses'].vals
+
+  var col = cols.indexOf('Nbr Times Played')
+  var sum = courses.reduce((a, b) => a[col] + b[col], 0)
+  
+console.log('sum')
+  console.log(sum)
+
+
+
+
+}
 
 function displayHcpTrend(hcpArr, handicapAlert) {
 

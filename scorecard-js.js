@@ -1453,9 +1453,9 @@ function getGolfers() {
 }
 
 
-async function courseSummary() {
+async function courseSummary(rounds) {
 
-  var rounds = await getRounds()
+  // var rounds = await getRounds()
 
   var cols = arrShts['My Courses'].colHdrs
   var courses = arrShts['My Courses'].vals
