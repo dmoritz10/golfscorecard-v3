@@ -482,8 +482,6 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
       })
       if (nbrHoles>0) {arr.push(nbrPutts / nbrHoles)}
     })
-console.log('arr')
-console.log(arr)
 
     return arr
   }    
@@ -518,15 +516,6 @@ console.log(arr)
      })
     return arr
   }   
-
-  console.log('hi dan')
-  console.log((puttsPerGIR(scores1)))
-  console.log(avgArr(puttsPerGIR(scores1)))
-console.log('hi dan')
-console.log('hi dan')
-console.log((puttsPerGIRPlusOne(scores1)))
-console.log(avgArr(puttsPerGIRPlusOne(scores1)))
-console.log('hi dan')
 
   var rtn = [
     [
