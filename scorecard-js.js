@@ -626,8 +626,7 @@ async function btnEndRoundHtml() {
       
       // updateOption('Clubs', prClubs)
       console.log('round posted')
-      await updateOption('course summery status', 'in process')
-    
+   
     }, 
     
     function(reason) {
