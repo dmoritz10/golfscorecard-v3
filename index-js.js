@@ -969,7 +969,7 @@ async function updateOption(key, val) {
 
   var params = {
     spreadsheetId: spreadsheetId,
-    range: "'Options'!A" + row + ":B" + row,
+    range: "'Settings'!A" + row + ":B" + row,
     valueInputOption: 'RAW'
   };
 
