@@ -905,14 +905,13 @@ function lifeTime               (title, rounds) {
     rounds.forEach((rnd) => {
       var scorecard = JSON.parse(rnd.scoreCard)
       scorecard.scores.forEach( (val) => {
-        holes++
-
-console.log(new Date(rnd.startTime))
-
-        strokes += val.score*1
-        putts += val.putts*1
-        penaltyStrokes += val.pnlty*1
-        bunkers += val.sand.toUpperCase() == 'YES' ? 1 : 0
+        if (val) {
+          holes++
+          strokes += val.score*1
+          putts += val.putts*1
+          penaltyStrokes += val.pnlty*1
+          bunkers += val.sand.toUpperCase() == 'YES' ? 1 : 0
+        }
       })
     })
 
@@ -990,6 +989,8 @@ function calcScoringSummary(rounds) {
   rounds.forEach((rnd) => {
     var scorecard = JSON.parse(rnd.scoreCard)
     scorecard.scores.forEach( val => {
+      if (val) {
+
       var wrtp = val.score - val.par
 
       switch(true) {
@@ -1014,7 +1015,7 @@ function calcScoringSummary(rounds) {
           break;
 
       }
-
+    }
     })
   })
 
@@ -1042,6 +1043,8 @@ function calcDrivingSummary(rounds) {
 
     scorecard.scores.forEach( val => {
 
+      if (val) {
+
       nbrHoles++
       var drv = val.drive
 
@@ -1067,7 +1070,7 @@ function calcDrivingSummary(rounds) {
           break;
 
       }
-
+    }
     })
   })
 
