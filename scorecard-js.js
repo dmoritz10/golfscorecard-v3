@@ -1472,9 +1472,7 @@ async function courseSummary(rounds) {
 
         var sc = JSON.parse(val.scoreCard)
 
-
-
-        // tm = sc.scores.length * 15 * 60 * 1000              // estimate 15 minutes per hole
+        tm = sc.scores.length * 15 * 60 * 1000              // estimate 15 minutes per hole
 
       }
 
