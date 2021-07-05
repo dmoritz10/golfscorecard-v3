@@ -169,7 +169,7 @@ function sumNbrRoundsPlayed() {
   var courses = arrShts['My Courses'].vals
 
   var col = cols.indexOf('Nbr Times Played')
-  var sum = courses.reduce((a, b) => a + b[col], 0)
+  var sum = courses.reduce((a, b) => a + b[col]*1, 0)
 
 console.log('sum')
   console.log(sum)
