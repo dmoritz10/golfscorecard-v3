@@ -1,10 +1,9 @@
 
-async function btnShowHandicapHtml (e, rnds) {
+async function btnShowHandicapHtml () {
 
   var hcpSelectOptions = readOption('hcpFilter')
   var hcpMethod = hcpSelectOptions.hcpMethod
 
-  // var rounds = rnds ? rnds.r : await getRounds()
   var rounds = await getRounds()
 
   var hcpArr = []
@@ -170,12 +169,6 @@ function sumNbrRoundsPlayed() {
 
   var col = cols.indexOf('Nbr Times Played')
   var sum = courses.reduce((a, b) => a + b[col]*1, 0)
-
-console.log('sum')
-  console.log(sum)
-
-
-
 
 }
 

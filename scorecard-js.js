@@ -649,18 +649,8 @@ async function btnEndRoundHtml() {
   
   toast('Round saved.  Calculating new Handicap.')
 
-  var stat = readOption('course summery status')
-  if (stat !== 'complete') {
-    var rounds = await courseSummary()
-  } else {
-    var rounds = null
-  }
 
-  console.log(rounds)
-
-  $('#btnShowHandicap').trigger( "click", {r:rounds} );
-
-  //btnShowHandicapHtml()
+  btnShowHandicapHtml()
   
 }
 
@@ -1483,7 +1473,6 @@ async function courseSummary(rounds) {
 
         var sc = JSON.parse(val.scoreCard)
         tm = sc.scores.length * 15 * 60 * 1000              // estimate 15 minutes per hole
-        console.log('approx - ' + val.courseName + ' - ' + val.startTime )
 
       }
 
@@ -1532,7 +1521,7 @@ async function courseSummary(rounds) {
     valueInputOption: 'USER_ENTERED',
     data
   }
-console.log('hi yeryeree')
+
   await checkAuth()
   await gapi.client.sheets.spreadsheets.values.batchUpdate({
     spreadsheetId: spreadsheetId,
@@ -1540,7 +1529,6 @@ console.log('hi yeryeree')
   })
     .then(function(response) { 
       console.log('My Courses update successful')
-      updateOption('course summery status', 'complete')
       console.log('gapiResult batchUpdate')
       console.log(response)
 
@@ -1551,7 +1539,7 @@ console.log('hi yeryeree')
       return null
     });
   
-    console.log('test await')
+    
     return rounds
 }
 
