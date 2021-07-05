@@ -169,8 +169,8 @@
   })
 
   // Show Clubs
-  // $('#btnShowClubs')          .click(btnShowClubsHtml);
-  $('#btnShowClubs')          .click(courseSummary);
+  $('#btnShowClubs')          .click(btnShowClubsHtml);
+  // $('#btnShowClubs')          .click(courseSummary);
   $('#btnSubmitClub')         .click(btnSubmitClubHtml);
   $('#btnDeleteClub')         .click(btnDeleteClubHtml);
   $('#btnAddClub')            .click(btnAddClubHtml);
