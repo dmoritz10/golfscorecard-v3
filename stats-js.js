@@ -338,7 +338,7 @@ function chartAverageScorebyPar   (title, rounds, myStatsRng, endRow) {
   const avgScrByPar = (scoreCardArr, holePar) => {
     arr = []
     scoreCardArr.forEach((scoreCard) => {
-console.log(scoreCard.holeFinishTime)
+
       if (scoreCard.score) {
       var par = scoreCard.map(el => el.par)
       scoreCard.forEach((val, idx) => {
@@ -449,12 +449,15 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
   const puttsPerRound = (scoreCardArr) => {
     arr = []
     scoreCardArr.forEach((scoreCard) => {
+      if (scoreCard.score) {
+
       var nbrHoles = scoreCard.length
       var nbrPutts = 0
       scoreCard.forEach((val, idx) => {
         nbrPutts += val.putts*1
       })
       if (nbrHoles>0) {arr.push(nbrPutts / nbrHoles)}
+    }
     })
     return arr
   }    
@@ -462,12 +465,15 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
   const puttsPerHole = (scoreCardArr) => {
     arr = []
     scoreCardArr.forEach((scoreCard) => {
+      if (scoreCard.score) {
+
       var nbrHoles = scoreCard.length
       var nbrPutts = 0
       scoreCard.forEach((val, idx) => {
         nbrPutts += val.putts*1
       })
       if (nbrHoles>0) {arr.push(nbrPutts / nbrHoles)}
+    }
     })
     return arr
   }    
@@ -475,6 +481,8 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
   const puttsPerGIR = (scoreCardArr) => {
     arr = []
     scoreCardArr.forEach((scoreCard) => {
+      if (scoreCard.score) {
+
       var nbrHoles = 0
       var nbrPutts = 0
       scoreCard.forEach((val, idx) => {
@@ -484,6 +492,7 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
         }
       })
       if (nbrHoles>0) {arr.push(nbrPutts / nbrHoles)}
+    }
     })
 
     return arr
@@ -492,6 +501,8 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
   const puttsPerGIRPlusOne = (scoreCardArr) => {
     arr = []
     scoreCardArr.forEach((scoreCard) => {
+      if (scoreCard.score) {
+
       var nbrHoles = 0
       var nbrPutts = 0
       scoreCard.forEach((val, idx) => {
@@ -501,6 +512,7 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
         }
       })
       if (nbrHoles>0) {arr.push(nbrPutts / nbrHoles)}
+    }
     })
     return arr
   }    
@@ -508,6 +520,8 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
   const xPuttsPerRound = (scoreCardArr, x) => {
     arr = []
     scoreCardArr.forEach((scoreCard) => {
+      if (scoreCard.score) {
+
       var nbrHoles = scoreCard.length
       var nbrPutts = 0
       scoreCard.forEach((val, idx) => {
@@ -516,6 +530,7 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
         }
       })
       if (nbrHoles>0) {arr.push(nbrPutts / nbrHoles)}
+    }
      })
     return arr
   }   
@@ -662,6 +677,7 @@ function chartTeeToGreen          (title, rounds, myStatsRng, endRow) {
     var nbrNonPar3s = 0
     var nbrFairways = 0
     scoreCardArr.forEach((scoreCard) => {
+      
       scoreCard.forEach((val, idx) => {
         if (val.par > 3) {
           nbrNonPar3s++
