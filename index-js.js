@@ -326,13 +326,13 @@ async function initialUI() {
     arrShts = await openShts(
       [
         { title: 'My Courses', type: "all" },
-        { title: 'Options', type: "all" }
+        { title: 'Settings', type: "all" }
       ])
     
   console.log(arrShts)
 
-  arrOptions    = toObject(arrShts.Options.vals)
-  optionsIdx    = toObjectIdx(arrShts.Options.vals)
+  arrOptions    = toObject(arrShts.Settings.vals)
+  optionsIdx    = toObjectIdx(arrShts.Settings.vals)
 
   loadCoursesPlayedDropDown('hpSelectCourse')
 

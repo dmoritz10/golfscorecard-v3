@@ -446,7 +446,6 @@ async function editCourse(objVal) {
     $('#scmSxsUrl').val(objVal.sxsUrl) 
     
 //    $('#btnDeleteCourse').removeClass('d-none')
-alert('hi dan')
 
 }
 

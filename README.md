@@ -48,7 +48,7 @@ Re-format home
 
                 Settings 
 
-Post Round Save
+x Post Round Save
 
     x calc hcp
 
@@ -76,10 +76,10 @@ Deprecate
     calcTS
     currHandicap = arrOptions['Current Handicap']
 
-    clone 'Settings' from 'Options'
+clone 'Settings' from 'Options'
 
 
-Stats
+x stats
 
 
 Fix weather report on sms
@@ -87,12 +87,12 @@ Fix weather report on sms
 </a></div></div><p _ngcontent-sc271="">
 </a></div ></div > <p _ngcontent
 
-fix Playround 
+X fix Playround 
       $('#hpNbr_Times_Played').html ( courseInfo['Nbr Times Played'])
       $('#hpAvg_Play_Time').html ( courseInfo['Avg Play Time'])
 
 
-fix stats putting
+x fix stats putting
     last 100 rounds putts / gir
 
     
