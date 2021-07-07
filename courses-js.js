@@ -435,7 +435,7 @@ async function editCourse(objVal) {
     
     $('#scmIdx').val(objVal.idx)       
  
-    $('#scmName').val(objVal['Course Name']) 
+    $('#scmName').val(objVal.name) 
     $('#scmPhone').val(objVal.phone) 
     $('#scmWebsite').val(objVal.website) 
     $('#scmStationId').val(objVal.stationId) 
