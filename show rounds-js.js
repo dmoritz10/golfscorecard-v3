@@ -102,7 +102,8 @@ async function btnShowRoundsHtml() {
   
   
   gotoTab('ShowRounds')
-    
+  alert((new Date() - timerStart) / 1000)
+
 }
 
 async function showRoundDetail (rowIdx, rtnTo) {

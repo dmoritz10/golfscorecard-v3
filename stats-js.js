@@ -72,8 +72,6 @@ rptArr.push(rtn.strokes)
 
   gotoTab('Stats')
 
-  alert((new Date() - timerStart) / 1000)
-
 }
 
 function otherStats(rpt) {
