@@ -1,6 +1,5 @@
 
 async function getRounds(prmExcludeSmall) {
-    timerStart = new Date()
 
     var str = new Date()
 
