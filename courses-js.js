@@ -110,8 +110,8 @@ async function btnShowCoursesHtml () {
 
       coursesObj.idx = j
       console.log(coursesObj)
-      var x = JSON.stringify(courses[j])           
-      ele.find('#btnScEditCourse')[0].setAttribute("onclick", "editCourse(" + coursesObj + ")");
+      var x = JSON.stringify(coursesObj)           
+      ele.find('#btnScEditCourse')[0].setAttribute("onclick", "editCourse(" + x + ")");
       
 /*
 */
@@ -432,8 +432,8 @@ async function holeDetail() {
 async function editCourse(course) {
   console.log(course)
 
- // var course = JSON.parse(course)
-  console.log(course.par)
+ var course = JSON.parse(course)
+  console.log(course)
 
     $("#course-modal").modal('show');
     $("#course-form")[0].reset();
