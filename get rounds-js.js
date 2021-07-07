@@ -19,6 +19,8 @@ async function getRounds(prmExcludeSmall) {
         bootbox.alert('There are no rounds to process')
         return
     }
+
+    timerStart = new Date()
     
     var cols = suSht['Scorecard Upload'].colHdrs
     var rounds = suSht['Scorecard Upload'].vals

@@ -3,7 +3,7 @@
 
   var scriptVersion = "Version 193 on Mar 17, 12:05 PM"
 
-  var spreadsheetId = '1hd8wclEwowN2ar5trUgk2AbNbhovFoYLSMOTRqzSN30'
+  var spreadsheetId
 
   var arrShts = []
   var suSht = []
@@ -31,11 +31,11 @@
 
   var geolocationOptions = {
     enableHighAccuracy: true,
-  timeout: 5000,
-  maximumAge: 0
+    timeout: 5000,
+    maximumAge: 0
 };
 
-
+  var timerStart
 
   var puttsOriginalState
   var driveOriginalState
