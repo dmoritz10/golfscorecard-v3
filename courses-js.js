@@ -429,9 +429,9 @@ async function holeDetail() {
 // courseModal
 
 async function editCourse(course) {
-  console.log(course)
+  console.log(course.par)
 
-  var course = JSON.parse(course)
+ // var course = JSON.parse(course)
   console.log(course)
 
     $("#course-modal").modal('show');
@@ -441,7 +441,7 @@ async function editCourse(course) {
     
     $('#scmIdx').val(objVal.idx)       
  
-    $('#scmName').val(objVal.name) 
+    $('#scmName').val(course['Course Name']) 
     $('#scmPhone').val(objVal.phone) 
     $('#scmWebsite').val(objVal.website) 
     $('#scmStationId').val(objVal.stationId) 
