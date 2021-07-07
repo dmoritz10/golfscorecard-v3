@@ -410,9 +410,8 @@ function chartCourseAdjustedScore (title, rounds, myStatsRng, endRow)   {
 
 
   const madeTargetScore = (scoreCardArr) => {
-    arr = []
+    var nbrMadeTarget = 0
     scoreCardArr.forEach((scoreCard) => {
-      var nbrMadeTarget = 0
       var scorecard = JSON.parse(scoreCard.scoreCard)
       if (scoreCard.finalScore <= scoreCard.objHandicap.targetScore.score) nbrMadeTarget++
       })
