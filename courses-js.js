@@ -438,19 +438,19 @@ async function editCourse(course) {
     $("#course-modal").modal('show');
     $("#course-form")[0].reset();
     
-    $('#scmModalTitle').html("Course Maintenance<br><small>" + course.name + "</small>") 
+    $('#scmModalTitle').html("Course Maintenance<br><small>" + course['Course Name'] + "</small>") 
     
     $('#scmIdx').val(course.idx)       
  
     $('#scmName').val(course['Course Name']) 
-    $('#scmPhone').val(course.phone) 
-    $('#scmWebsite').val(course.website) 
-    $('#scmStationId').val(course.stationId) 
-    $('#scmCity').val(course.city) 
-    $('#scmState').val(course.state) 
-    $('#scmZip').val(course.zip) 
-    $('#scmCountry').val(course.country) 
-    $('#scmSxsUrl').val(course.sxsUrl) 
+    $('#scmPhone').val(course['Phone']) 
+    $('#scmWebsite').val(course['Website']) 
+    $('#scmStationId').val(course['Uweather StationId']) 
+    $('#scmCity').val(course['City']) 
+    $('#scmState').val(course['State']) 
+    $('#scmZip').val(course['Zip']) 
+    $('#scmCountry').val(course['Country']) 
+    $('#scmSxsUrl').val(course['SxS Course Id']) 
     
 //    $('#btnDeleteCourse').removeClass('d-none')
 
