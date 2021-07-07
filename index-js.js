@@ -796,7 +796,7 @@ function setupSumFunctions() {
 
   }
 //  else  {
-    console.log(weatherUrl)
+    // console.log(weatherUrl)
    
     return weatherUrl
    
@@ -1158,7 +1158,7 @@ async function getWeatherByStationId(stationId) {
 
   let w = await response.text(); // read response body as text
 
-  console.log('getWeatherByStationId - ' + weatherUrl)
+  // console.log('getWeatherByStationId - ' + weatherUrl)
 
   var rtn = parseUweather(w)
 
@@ -1170,12 +1170,12 @@ async function getNearByUweatherStations() {
   console.log('getNearByUweatherStations')
 
   var weatherUrl = 'https://www.wunderground.com/weather/' + prCourse.courseInfo.courseCoords.lat + ',' + prCourse.courseInfo.courseCoords.lng
-  console.log(weatherUrl)
+  // console.log(weatherUrl)
 
   var response = await fetch('https://cors.bridged.cc/' + weatherUrl);
 
   let w = await response.text(); // read response body as text
-  console.log(w.length)
+  // console.log(w.length)
   //  console.log(w)
 
   var rtn = parseNearByUweatherStations(w)
