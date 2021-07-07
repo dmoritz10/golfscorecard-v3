@@ -595,8 +595,7 @@ function updateSCMForm(sxsRtn) {
     conditionalUpdate($('#scmState'),sxs.state) 
     conditionalUpdate($('#scmZip'),sxs.zipCode) 
     conditionalUpdate($('#scmCountry'),sxs.country) 
-    conditionalUpdate($('#scmWebsite'),sxs.website) 
-
+ 
 }
 
 function fixUrl(url) {
