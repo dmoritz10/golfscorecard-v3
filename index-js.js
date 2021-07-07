@@ -919,8 +919,6 @@ function setAddTeeTimeClick(d) {
 
 function parseWeatherText(wRptHtml) {
 
-  console.log(wRptHtml)
-
   var strToken = '</a></div></div><p _ngcontent-sc248="">'
 
 
@@ -1067,12 +1065,8 @@ async function btnUweatherCompHtml() {
 async function getUWeather(stationIds) {
 
   var removeDup = stationIds.indexOf(prCourse.courseInfo["Uweather StationId"])
-  console.log(stationIds)
-  console.log(removeDup)
 
   if (removeDup > -1) stationIds.splice(removeDup, 1)
-
-  console.log(stationIds)
 
   const wRtn = await Promise.all([
     getWeatherByStationId(prCourse.courseInfo["Uweather StationId"]),
