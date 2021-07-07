@@ -109,7 +109,7 @@ async function btnShowCoursesHtml () {
       // ele.find('#btnScEditCourse')[0].setAttribute("onclick", "editCourse(" + x + ")");
 
       courses[j].idx = j
-      ele.find('#btnScEditCourse')[0].setAttribute("onclick", "editCourse(" + courses[j] + ")");
+      ele.find('#btnScEditCourse')[0].setAttribute("onclick", "editCourse(" + JSON.stringify(courses[j]) + ")");
       
 /*
 */
@@ -429,8 +429,8 @@ async function holeDetail() {
 
 async function editCourse(course) {
 
+  var course = JSON.parse(course)
   console.log(course)
-  
 
     $("#course-modal").modal('show');
     $("#course-form")[0].reset();
