@@ -426,14 +426,17 @@ async function holeDetail() {
 
 async function editCourse(objVal) {
 
+  console.log(objVal)
+
     $("#course-modal").modal('show');
     $("#course-form")[0].reset();
     
     $('#scmModalTitle').html("Course Maintenance<br><small>" + objVal.name + "</small>") 
     
     $('#scmIdx').val(objVal.idx)       
-    
-    $('#scmPhone').val(objVal.phone) 
+    'Course Name'
+    $('#scmPhone').val(objVal.['Course Name']) 
+     $('#scmPhone').val(objVal.phone) 
     $('#scmWebsite').val(objVal.website) 
     $('#scmStationId').val(objVal.stationId) 
     $('#scmCity').val(objVal.city) 
