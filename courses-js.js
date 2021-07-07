@@ -108,9 +108,9 @@ async function btnShowCoursesHtml () {
 
       // ele.find('#btnScEditCourse')[0].setAttribute("onclick", "editCourse(" + x + ")");
 
-      courses[j].idx = j
+      coursesObj.idx = j
       var x = JSON.stringify(courses[j])           
-      ele.find('#btnScEditCourse')[0].setAttribute("onclick", "editCourse(" + x + ")");
+      ele.find('#btnScEditCourse')[0].setAttribute("onclick", "editCourse(" + coursesObj + ")");
       
 /*
 */
@@ -437,19 +437,19 @@ async function editCourse(course) {
     $("#course-modal").modal('show');
     $("#course-form")[0].reset();
     
-    $('#scmModalTitle').html("Course Maintenance<br><small>" + objVal.name + "</small>") 
+    $('#scmModalTitle').html("Course Maintenance<br><small>" + course.name + "</small>") 
     
-    $('#scmIdx').val(objVal.idx)       
+    $('#scmIdx').val(course.idx)       
  
     $('#scmName').val(course['Course Name']) 
-    $('#scmPhone').val(objVal.phone) 
-    $('#scmWebsite').val(objVal.website) 
-    $('#scmStationId').val(objVal.stationId) 
-    $('#scmCity').val(objVal.city) 
-    $('#scmState').val(objVal.state) 
-    $('#scmZip').val(objVal.zip) 
-    $('#scmCountry').val(objVal.country) 
-    $('#scmSxsUrl').val(objVal.sxsUrl) 
+    $('#scmPhone').val(course.phone) 
+    $('#scmWebsite').val(course.website) 
+    $('#scmStationId').val(course.stationId) 
+    $('#scmCity').val(course.city) 
+    $('#scmState').val(course.state) 
+    $('#scmZip').val(course.zip) 
+    $('#scmCountry').val(course.country) 
+    $('#scmSxsUrl').val(course.sxsUrl) 
     
 //    $('#btnDeleteCourse').removeClass('d-none')
 
