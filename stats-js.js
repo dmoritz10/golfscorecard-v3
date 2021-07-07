@@ -406,6 +406,8 @@ function chartCourseAdjustedScore (title, rounds, myStatsRng, endRow)   {
   var rounds2 = extrRndData	(rounds, null, endRow.row2)
   var rounds3 = extrRndData	(rounds, null, endRow.row3)
 
+  console.log(rounds2)
+
 
   const madeTargetScore = (scoreCardArr) => {
     arr = []
@@ -414,7 +416,7 @@ function chartCourseAdjustedScore (title, rounds, myStatsRng, endRow)   {
       var scorecard = JSON.parse(scoreCard.scoreCard)
       if (scoreCard.finalScore <= scoreCard.objHandicap.targetScore.score) nbrMadeTarget++
       })
-    return arr
+    return nbrMadeTarget
   }    
 
   var rtn = [
