@@ -433,8 +433,7 @@ async function editCourse(course) {
   console.log(course)
 
 //  var course = JSON.parse(course)
-   console.log(course.par)
-
+   
     $("#course-modal").modal('show');
     $("#course-form")[0].reset();
     
@@ -586,6 +585,8 @@ function updateSCMForm(sxsRtn) {
 
   var d = sxsRtn.split('bootstrapData(').pop().split('}}});')[0] + '}}}'
   var sxs = JSON.parse(d).model.data
+
+  console.log(sxs)
   
     conditionalUpdate($('#scmPhone'),sxs.phone) 
     conditionalUpdate($('#scmWebsite'),fixUrl(sxs.website))
