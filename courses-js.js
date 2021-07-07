@@ -104,7 +104,8 @@ async function btnShowCoursesHtml () {
         sxsUrl:coursesObj['SxS Course Id']
       
       }
-      
+      console.log(JSON.stringify(editCourse))
+
       // ele.find('#btnScEditCourse')[0].setAttribute("onclick", "editCourse(" + x + ")");
 
       courses[j].idx = j
