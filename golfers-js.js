@@ -153,9 +153,8 @@ async function updateGolfersOption() {
     golfers.sort(nameCompare);
 
     }
-console.time('updateOption')
+
   await updateOption('Golfers', golfers)
-console.timeEnd('updateOption')
 
 }
 
