@@ -104,11 +104,12 @@ async function btnShowCoursesHtml () {
         sxsUrl:coursesObj['SxS Course Id']
       
       }
-      console.log(JSON.stringify(editCourse))
+      // console.log(JSON.stringify(editCourse))
 
       // ele.find('#btnScEditCourse')[0].setAttribute("onclick", "editCourse(" + x + ")");
 
       coursesObj.idx = j
+      console.log(coursesObj)
       var x = JSON.stringify(courses[j])           
       ele.find('#btnScEditCourse')[0].setAttribute("onclick", "editCourse(" + coursesObj + ")");
       
@@ -429,10 +430,10 @@ async function holeDetail() {
 // courseModal
 
 async function editCourse(course) {
-  console.log(course.par)
+  console.log(course)
 
  // var course = JSON.parse(course)
-  console.log(course)
+  console.log(course.par)
 
     $("#course-modal").modal('show');
     $("#course-form")[0].reset();
