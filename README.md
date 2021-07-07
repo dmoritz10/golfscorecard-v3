@@ -29,7 +29,7 @@ Fix Courses Maintenance
 
 Fix weather rpt on SMS from Tee Times
 
-
+Port Course Maintenance
 
 
 Full Courses Maintenance
@@ -72,11 +72,11 @@ x Post Round Save
         Nbr Rounds
 
 Deprecate
-    (arrOptions['Handicap Diff Count']*1 + 1)) / .96) - arrOptions['Handicap Diff Sum']
+    x (arrOptions['Handicap Diff Count']*1 + 1)) / .96) - arrOptions['Handicap Diff Sum']
     calcTS
-    currHandicap = arrOptions['Current Handicap']
+    x currHandicap = arrOptions['Current Handicap']
 
-clone 'Settings' from 'Options'
+x clone 'Settings' from 'Options'
 
 
 x stats

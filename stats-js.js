@@ -402,6 +402,21 @@ function chartCourseAdjustedScore (title, rounds, myStatsRng, endRow)   {
   var hcps2 = extrRndData	(rounds, 'objHandicap.handicap', endRow.row2)
   var hcps3 = extrRndData	(rounds, 'objHandicap.handicap', endRow.row3)
 
+  var rounds1 = extrRndData	(rounds, null, endRow.row1)
+  var rounds2 = extrRndData	(rounds, null, endRow.row2)
+  var rounds3 = extrRndData	(rounds, null, endRow.row3)
+
+
+  const madeTargetScore = (scoreCardArr) => {
+    arr = []
+    scoreCardArr.forEach((scoreCard) => {
+      var nbrMadeTarget = 0
+      var scorecard = JSON.parse(scoreCard.scoreCard)
+      if (scoreCard.finalScore <= scoreCard.objHandicap.targetScore.score) nbrMadeTarget++
+      })
+    return arr
+  }    
+
   var rtn = [
     [
     '', 
@@ -428,7 +443,14 @@ function chartCourseAdjustedScore (title, rounds, myStatsRng, endRow)   {
     hcps1.pop(),
     hcps2.pop(),
     hcps3.pop()
+    ],
+    [
+    "Made Target",
+    madeTargetScore(rounds1),
+    madeTargetScore(rounds2),
+    madeTargetScore(rounds3)
     ]
+  
     ]
 
     arrRound(rtn, 1)
