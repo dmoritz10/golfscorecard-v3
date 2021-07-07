@@ -588,12 +588,14 @@ function updateSCMForm(sxsRtn) {
 
   console.log(sxs)
   
+    conditionalUpdate($('#scmName'),sxs.name) 
     conditionalUpdate($('#scmPhone'),sxs.phone) 
     conditionalUpdate($('#scmWebsite'),fixUrl(sxs.website))
     conditionalUpdate($('#scmCity'),sxs.city) 
     conditionalUpdate($('#scmState'),sxs.state) 
     conditionalUpdate($('#scmZip'),sxs.zipCode) 
     conditionalUpdate($('#scmCountry'),sxs.country) 
+    conditionalUpdate($('#scmWebsite'),sxs.website) 
 
 }
 
