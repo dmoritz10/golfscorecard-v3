@@ -105,11 +105,11 @@ async function btnShowCoursesHtml () {
       
       }
       
-      // var x = JSON.stringify(editCourse)           
       // ele.find('#btnScEditCourse')[0].setAttribute("onclick", "editCourse(" + x + ")");
 
       courses[j].idx = j
-      ele.find('#btnScEditCourse')[0].setAttribute("onclick", "editCourse(" + JSON.stringify(courses[j]) + ")");
+      var x = JSON.stringify(courses[j])           
+      ele.find('#btnScEditCourse')[0].setAttribute("onclick", "editCourse(" + x + ")");
       
 /*
 */
@@ -428,6 +428,7 @@ async function holeDetail() {
 // courseModal
 
 async function editCourse(course) {
+  console.log(course)
 
   var course = JSON.parse(course)
   console.log(course)
