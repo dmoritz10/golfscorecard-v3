@@ -1,5 +1,6 @@
 
 async function getRounds(prmExcludeSmall) {
+    timerStart = new Date()
 
     var str = new Date()
 
@@ -20,7 +21,6 @@ async function getRounds(prmExcludeSmall) {
         return
     }
 
-    timerStart = new Date()
     
     var cols = suSht['Scorecard Upload'].colHdrs
     var rounds = suSht['Scorecard Upload'].vals
