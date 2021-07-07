@@ -602,6 +602,8 @@ function fixUrl(url) {
 
   if (url.substring(0, 8) !== 'https://' && url.substring(0, 7) !== 'http://') return 'https://' + url
 
+  return url
+
 }
 
 function conditionalUpdate(ele, val) {
