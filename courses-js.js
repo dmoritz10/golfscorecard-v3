@@ -432,8 +432,8 @@ async function holeDetail() {
 async function editCourse(course) {
   console.log(course)
 
- var course = JSON.parse(course)
-  console.log(course)
+//  var course = JSON.parse(course)
+   console.log(course.par)
 
     $("#course-modal").modal('show');
     $("#course-form")[0].reset();
