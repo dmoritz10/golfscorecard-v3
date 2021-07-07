@@ -159,7 +159,6 @@ async function btnShowHandicapHtml () {
     courseSummary(rounds)
 
   }
-  alert((new Date() - timerStart) / 1000)
 
 }
 
