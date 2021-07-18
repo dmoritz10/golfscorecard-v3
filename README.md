@@ -95,4 +95,4 @@ X fix Playround
 x fix stats putting
     last 100 rounds putts / gir
 
-    
+Fix Target Score
