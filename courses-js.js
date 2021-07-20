@@ -486,9 +486,7 @@ function loadTeeBoxes(teeInfo){
 
     var ele = $("#tblSCM").clone();
 
-    var c = teeInfo[j].cell
-
-    ele.find('#glfName')[0].innerHTML = teeInfo[j][tee_name]
+    ele.find('#scmTeeName')[0].val = teeInfo[j][tee_name]
 
 
     ele.show()
