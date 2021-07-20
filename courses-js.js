@@ -490,16 +490,16 @@ function loadTeeBoxes(teeInfo){
 
     var ele = $("#tblSCM").clone();
 
-    ele.find('#scmDefaultTee').eq(0).val(ti[j][tiCols.tee_name])
+    ele.find('#scmDefaultTee').eq(0).val(ti[j][tiCols.default_tee])
     ele.find('#scmTeeName').eq(0).val(ti[j][tiCols.tee_name])
-    ele.find('#scmGender').eq(0).val(ti[j][tiCols.tee_name])
-    ele.find('#scmTeeNascmParme').eq(0).val(ti[j][tiCols.tee_name])
-    ele.find('#scmCourseRating').eq(0).val(ti[j][tiCols.tee_name])
-    ele.find('#scmSlopeRating').eq(0).val(ti[j][tiCols.tee_name])
-    ele.find('#scmBogeyRating').eq(0).val(ti[j][tiCols.tee_name])
-    ele.find('#scmFront').eq(0).val(ti[j][tiCols.tee_name])
-    ele.find('#scmBack').eq(0).val(ti[j][tiCols.tee_name])
-    ele.find('#scmYardage').eq(0).val(ti[j][tiCols.tee_name])
+    ele.find('#scmGender').eq(0).val(ti[j][tiCols.gender])
+    ele.find('#scmPar').eq(0).val(ti[j][tiCols.par])
+    ele.find('#scmCourseRating').eq(0).val(ti[j][tiCols.course_rating])
+    ele.find('#scmSlopeRating').eq(0).val(ti[j][tiCols.slope_rating])
+    ele.find('#scmBogeyRating').eq(0).val(ti[j][tiCols.bogey_rating])
+    ele.find('#scmFront').eq(0).val(ti[j][tiCols.front])
+    ele.find('#scmBack').eq(0).val(ti[j][tiCols.back])
+    ele.find('#scmYardage').eq(0).val(ti[j][tiCols.yardage])
 
 
     ele.show()
