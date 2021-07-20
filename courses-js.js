@@ -454,6 +454,52 @@ async function editCourse(course) {
     
 //    $('#btnDeleteCourse').removeClass('d-none')
 
+    loadTeeBoxes($('#scmSxsUrl').val(course['Tee Info']))
+
+
+}
+
+function loadTeeBoxes(teeInfo){
+
+  var teeInfoCols = {
+
+    default_tee:0,
+    tee_name:1,
+    gender:2,
+    par:3,
+    course_rating:4,
+    slope_rating:5,
+    bogey_rating:6,
+    front:7,
+    back:8,
+    yardage:9
+  
+  }
+
+  var x = $("#tblSCM").clone();
+  $("#scmContainer").empty()
+  x.appendTo("#scmContainer");
+
+  $("#tblSCM").hide()
+
+  for (var j = 0; j<teeInfo.length;j++) {
+
+    var ele = $("#tblSCM").clone();
+
+    var c = teeInfo[j].cell
+
+    ele.find('#glfName')[0].innerHTML = teeInfo[j][tee_name]
+\
+
+    ele.show()
+
+    ele.appendTo("#scmContainer");
+
+  }
+
+
+
+
 }
 
 async function btnSCMSubmitCourseHtml() {
