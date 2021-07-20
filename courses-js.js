@@ -493,9 +493,9 @@ function loadTeeBoxes(teeInfo){
     console.log(ele.find('#scmTeeName'))
 console.log(ti)
 
+// console.log(ele.find('#scmTeeName')[0].val())
+    ele.find('#scmTeeName')[0].innerHTML = (ti[j][tiCols.tee_name])
 
-    ele.find('#scmTeeName')[0].val(ti[j][tiCols.tee_name])
-    console.log(ele)
 
 
     ele.show()
