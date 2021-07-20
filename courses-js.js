@@ -482,14 +482,18 @@ function loadTeeBoxes(teeInfo){
 
   $("#tblSCM").hide()
 
+  var ti = JSON.parse(teeInfo[j])
+
   for (var j = 0; j<teeInfo.length;j++) {
 
     var ele = $("#tblSCM").clone();
 
     console.log(ele.find('#scmTeeName'))
-console.log(teeInfo[j][tiCols.tee_name])
+console.log(teeInfo[j])
 
-    ele.find('#scmTeeName')[0].val = teeInfo[j][tiCols.tee_name]
+  var ti = JSON.parse(teeInfo[j])
+
+    ele.find('#scmTeeName')[0].val = ti[tiCols.tee_name]
     console.log(ele)
 
 
