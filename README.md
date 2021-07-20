@@ -82,7 +82,7 @@ x clone 'Settings' from 'Options'
 x stats
 
 
-Fix weather report on sms
+x Fix weather report on sms
 
 </a></div></div><p _ngcontent-sc271="">
 </a></div ></div > <p _ngcontent
@@ -96,3 +96,10 @@ x fix stats putting
     last 100 rounds putts / gir
 
 Fix Target Score
+
+Fix Hole Detail in Courses 
+
+Tackle gender issue more generally
+
+Fix Calendar updates / deletes
+

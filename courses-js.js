@@ -356,7 +356,8 @@ async function btnHPHoleDetailHtml() {
 
 async function holeDetail() {
 
-  var gender = arrOptions['myTeeType'].toLowerCase()
+  // var gender = arrOptions['myTeeType'].toLowerCase()
+  var gender = null
   var tee = $('#hpSelectTees').val().toLowerCase()
   var sxsCourseId = $('#btnHPHoleDetail').data('button-data').sxsCourseId;   
   
