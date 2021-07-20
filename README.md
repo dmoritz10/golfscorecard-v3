@@ -105,3 +105,4 @@ Fix Calendar updates / deletes
 
 courses.holeDetail = can't set lat/lng because prCourse not initialized
 
+add nbr of times played to Golfers
