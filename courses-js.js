@@ -490,13 +490,16 @@ function loadTeeBoxes(teeInfo){
 
     var ele = $("#tblSCM").clone();
 
-    console.log(ele.find('#scmTeeName'))
-console.log(ti[j])
-
-console.log(ele.find('#scmTeeName').eq(0).val())
+    ele.find('#scmDefaultTee').eq(0).val(ti[j][tiCols.tee_name])
     ele.find('#scmTeeName').eq(0).val(ti[j][tiCols.tee_name])
-    console.log(ele.find('#scmTeeName').eq(0).val())
-
+    ele.find('#scmGender').eq(0).val(ti[j][tiCols.tee_name])
+    ele.find('#scmTeeNascmParme').eq(0).val(ti[j][tiCols.tee_name])
+    ele.find('#scmCourseRating').eq(0).val(ti[j][tiCols.tee_name])
+    ele.find('#scmSlopeRating').eq(0).val(ti[j][tiCols.tee_name])
+    ele.find('#scmBogeyRating').eq(0).val(ti[j][tiCols.tee_name])
+    ele.find('#scmFront').eq(0).val(ti[j][tiCols.tee_name])
+    ele.find('#scmBack').eq(0).val(ti[j][tiCols.tee_name])
+    ele.find('#scmYardage').eq(0).val(ti[j][tiCols.tee_name])
 
 
     ele.show()
