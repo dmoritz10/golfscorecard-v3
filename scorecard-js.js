@@ -484,8 +484,9 @@ function assembleHoleDetail(sxsCourseInfo, tee, gender) {
 console.log(tee)      
 console.log(teeColor)
       
-      if (teeColor == tee && teeGender == gender ? gender : teeGender) {
-        
+      // if (teeColor == tee && teeGender == gender ? gender : teeGender) {
+      if (teeColor == tee) {
+         
         var dtl = {
         
           hole: hole.hole,
