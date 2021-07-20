@@ -459,7 +459,7 @@ async function editCourse(course) {
 
 }
 
-function loadTeeBoxes(ti){
+function loadTeeBoxes(teeInfo){
 
   var tiCols = {
 
@@ -482,7 +482,7 @@ function loadTeeBoxes(ti){
 
   $("#tblSCM").hide()
 
-  // var ti = JSON.parse(teeInfo)
+  var ti = JSON.parse(teeInfo)
   console.log(ti)
   console.log(ti.length)
 
