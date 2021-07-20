@@ -95,11 +95,13 @@ X fix Playround
 x fix stats putting
     last 100 rounds putts / gir
 
-Fix Target Score
+? Fix Target Score = fixed ??? need more analysis
 
 Fix Hole Detail in Courses 
 
 Tackle gender issue more generally
 
 Fix Calendar updates / deletes
+
+courses.holeDetail = can't set lat/lng because prCourse not initialized
 
