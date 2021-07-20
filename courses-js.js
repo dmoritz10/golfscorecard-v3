@@ -454,7 +454,7 @@ async function editCourse(course) {
     
 //    $('#btnDeleteCourse').removeClass('d-none')
 
-    loadTeeBoxes($('#scmSxsUrl').val(course['Tee Info']))
+    loadTeeBoxes(course['Tee Info'])
 
 
 }
