@@ -461,7 +461,7 @@ async function editCourse(course) {
 
 function loadTeeBoxes(teeInfo){
 
-  var teeInfoCols = {
+  var tiCols = {
 
     default_tee:0,
     tee_name:1,
@@ -488,7 +488,7 @@ function loadTeeBoxes(teeInfo){
 
     console.log(ele)
 
-    ele.find('#scmTeeName')[0].val = teeInfo[j][tee_name]
+    ele.find('#scmTeeName')[0].val = teeInfo[j][tiCols.tee_name]
     console.log(ele)
 
 
