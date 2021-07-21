@@ -496,7 +496,7 @@ function loadTeeBoxes(teeInfo){
     ele.find('#scmGender').eq(0).val(ti[j][tiCols.gender])
     ele.find('#scmPar').eq(0).val(ti[j][tiCols.par])
     ele.find('#scmCourseRating').eq(0).val(ti[j][tiCols.course_rating])
-    ele.find('#scmCourseRating').eq(0).setAttribute("onchange", "scmCourseRatingHtml(" + j + ")");
+    ele.find('#scmCourseRating')[0]).setAttribute("onchange", "scmCourseRatingHtml(" + j + ")");
     ele.find('#scmSlopeRating').eq(0).val(ti[j][tiCols.slope_rating])
     ele.find('#scmBogeyRating').eq(0).val(ti[j][tiCols.bogey_rating])
     ele.find('#scmFront').eq(0).val(ti[j][tiCols.front])
