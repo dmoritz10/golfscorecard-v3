@@ -593,7 +593,7 @@ function scmPrepTeeInfo() {
 
 
   
-  for (var i=1;i<teeName-1;i++) {
+  for (var i=1;i<teeName.length;i++) {
 
     var ti = []
 
