@@ -732,7 +732,8 @@ function updateSCMForm(sxsRtn) {
 
     })
 
-    loadTeeBoxes(teeInfo)
+    console.log(teeInfo)
+    loadTeeBoxes(JSON.stringify(teeInfo))
  
 }
 
