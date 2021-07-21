@@ -522,6 +522,9 @@ async function btnSCMSubmitCourseHtml() {
   console.log('hi dan')
   console.log(formValues)
 
+var x = document.getElementsByName('scmDefaultTee')
+
+console.log(x)
 
 console.log($('#scmDefaultTee'))
 console.log($('#scmTeeName'))
