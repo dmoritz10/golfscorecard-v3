@@ -567,11 +567,17 @@ console.log(idx)
 
 var ele = $("#tblSCM")
 var y = ele.find('#scmCourseRating')[0]
-var z = ele.find('#scmCourseRating')[j]
+var z = ele.find('#scmCourseRating')[idx]
+
+
 
 console.log(ele)
 console.log(y)
 console.log(z)
+
+var x = document.getElementsByName('scmCourseRating')
+
+console.log(x)
 
 }
 
