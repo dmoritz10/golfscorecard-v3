@@ -496,10 +496,12 @@ function loadTeeBoxes(teeInfo){
     ele.find('#scmGender').eq(0).val(ti[j][tiCols.gender])
     ele.find('#scmPar').eq(0).val(ti[j][tiCols.par])
     ele.find('#scmCourseRating').eq(0).val(ti[j][tiCols.course_rating])
-    ele.find('#scmCourseRating')[0].setAttribute("onchange", "scmCourseRatingHtml(" + j + ")");
+    ele.find('#scmCourseRating')[0].setAttribute("onchange", "scmCalcBogeyBack9(" + j + ")");
     ele.find('#scmSlopeRating').eq(0).val(ti[j][tiCols.slope_rating])
+    ele.find('#scmSlopeRating')[0].setAttribute("onchange", "scmCalcBogeyBack9(" + j + ")");
     ele.find('#scmBogeyRating').eq(0).val(ti[j][tiCols.bogey_rating])
     ele.find('#scmFront').eq(0).val(ti[j][tiCols.front])
+    ele.find('#scmFront')[0].setAttribute("onchange", "scmCalcBogeyBack9(" + j + ")");
     ele.find('#scmBack').eq(0).val(ti[j][tiCols.back])
     ele.find('#scmYardage').eq(0).val(ti[j][tiCols.yardage])
 
@@ -561,25 +563,23 @@ console.log(x)
 
 }
 
-function scmCourseRatingHtml(idx) {
-alert('yp dan')
-console.log(idx)
+function scmCalcBogeyBack9(idx) {
 
-var ele = $("#tblSCM")
-var y = ele.find('#scmCourseRating')[0]
-var z = ele.find('#scmCourseRating')[idx]
+  idx++
+
+  var gender = document.getElementsByName('scmGender')[idx]
+  var crsRat = document.getElementsByName('scmCourseRating')[idx]
+  var slpRat = document.getElementsByName('scmSlopeRating')[idx]
+  var bogRat = document.getElementsByName('scmBogeyRating')[idx]
+  var frntRat = document.getElementsByName('scmFront')[idx]
+  var backRat = document.getElementsByName('scmBack')[idx]
+
+  var mlt = gender ? 'M' 5.381 : 4.24
+  var bog = Math.round(slpRat / mlt * 10 + crsRat) / 10
+
+  bogRat[idx].value = bog
 
 
-
-console.log(ele)
-console.log(y)
-console.log(z)
-
-var x = document.getElementsByName('scmCourseRating')
-
-x[idx].value = 123
-
-console.log(x)
 
 }
 
