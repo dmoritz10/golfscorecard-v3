@@ -113,10 +113,7 @@ async function btnShowCoursesHtml () {
       var x = JSON.stringify(coursesObj)           
       ele.find('#btnScEditCourse')[0].setAttribute("onclick", "editCourse(" + x + ")");
       
-/*
-*/
-
-          
+   
       coursesObj['Nbr Times Played'] > 0 ? ele.css( "background", "#f5edcb") : ele.css( "background", "white")
       
       ele.show()
@@ -694,6 +691,50 @@ function updateSCMForm(sxsRtn) {
     conditionalUpdate($('#scmState'),sxs.state) 
     conditionalUpdate($('#scmZip'),sxs.zipCode) 
     conditionalUpdate($('#scmCountry'),sxs.country) 
+
+    var tiCols = {
+    
+      default_tee:0,
+      tee_name:1,
+      gender:2,
+      par:3,
+      course_rating:4,
+      slope_rating:5,
+      bogey_rating:6,
+      front:7,
+      back:8,
+      yardage:9
+    
+    }
+
+    var teeInfo = []
+    var teeBoxes = sxs.stats
+
+    teeBoxes.forEach(val => {
+
+      var ti = []
+
+      ti[tiCols.default_tee] = 
+      ti[tiCols.tee_name] = val.teeColorType
+      ti[tiCols.gender] = val.teeType.toLowerCase() == 'women' ? 'F' : 'M'
+
+      var mlt = ti[tiCols.gender] == 'M' ? 5.381 : 4.24
+
+      ti[tiCols.par] = val.par
+      ti[tiCols.course_rating] = val.rating
+      ti[tiCols.slope_rating] = val.slope
+      ti[tiCols.bogey_rating] = Math.round(((val.slope*1 / mlt) + val.rating*1) * 10) / 10
+      ti[tiCols.front] = val.frontNineRating + ' / ' + frontNineSlope
+      ti[tiCols.back] = val.backNineRating + ' / ' + backNineSlope
+      ti[tiCols.yardage] = val.yards
+
+    teeInfo.push(ti)
+
+    })
+
+    loadTeeBoxes(teeInfo){
+
+    }
  
 }
 
