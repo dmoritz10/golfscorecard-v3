@@ -576,9 +576,9 @@ function scmCalcBogeyBack9(idx) {
 
   var mlt = gender == 'M' ? 5.381 : 4.24
 
-console.log()
-console.log()
-console.log()
+console.log(gender)
+console.log(crsRat)
+console.log(slpRat)
 console.log()
 console.log()
 
