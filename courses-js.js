@@ -570,7 +570,7 @@ function scmCalcBogeyBack9(idx) {
   var gender = document.getElementsByName('scmGender')[idx].value
   var crsRat = document.getElementsByName('scmCourseRating')[idx].value
   var slpRat = document.getElementsByName('scmSlopeRating')[idx].value
-  var bogRat = document.getElementsByName('scmBogeyRating')[idx].value
+  var bogRat = document.getElementsByName('scmBogeyRating')[idx]
   var frntRat = document.getElementsByName('scmFront')[idx].value
   var backRat = document.getElementsByName('scmBack')[idx].value
 
