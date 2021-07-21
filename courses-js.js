@@ -542,6 +542,7 @@ console.log(x)
     course[cols.indexOf("Zip")] = $('#scmZip').val()
     course[cols.indexOf("Country")] = $('#scmCountry').val()
     course[cols.indexOf("SxS Course Id")] = $('#scmSxsUrl').val()
+    course[cols.indexOf("Tee Info")] = scmPrepTeeInfo()
   
   } else {                                                         // add new course
 
@@ -557,6 +558,61 @@ console.log(x)
   $("#course-modal").modal('hide');
   
   btnShowCoursesHtml()  
+
+}
+
+function scmPrepTeeInfo() {
+
+  var tiCols = {
+
+    default_tee:0,
+    tee_name:1,
+    gender:2,
+    par:3,
+    course_rating:4,
+    slope_rating:5,
+    bogey_rating:6,
+    front:7,
+    back:8,
+    yardage:9
+  
+  }
+
+  var defaultTee = document.getElementsByName('scmDefaultTee')
+  var teeName = document.getElementsByName('scmTeeName')
+  var gender = document.getElementsByName('scmGender')
+  var crsRat = document.getElementsByName('scmCourseRating')
+  var slpRat = document.getElementsByName('scmSlopeRating')
+  var frntRat = document.getElementsByName('scmFront')
+  var bogRat = document.getElementsByName('scmBogeyRating')
+  var backRat = document.getElementsByName('scmBack')
+  var par = document.getElementsByName('scmPar')
+  var yardage = document.getElementsByName('scmYardage')
+
+  var teeInfo = []
+  var teeBoxes = sxs.stats
+
+  teeBoxes.forEach(val => {
+
+    var ti = []
+
+    ti[tiCols.default_tee] = val.defaultTee
+    ti[tiCols.tee_name] = val.teeName
+    ti[tiCols.gender] = val.gender
+
+    ti[tiCols.par] = val.par
+    ti[tiCols.course_rating] = val.crsRat
+    ti[tiCols.slope_rating] = val.slpRat
+    ti[tiCols.bogey_rating] = val.bogRat
+    ti[tiCols.front] = val.front
+    ti[tiCols.back] = val.back
+    ti[tiCols.yardage] = val.yardage
+
+  teeInfo.push(ti)
+
+  })
+
+  return JSON.stringify(teeInfo)
 
 }
 
