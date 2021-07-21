@@ -575,7 +575,15 @@ function scmCalcBogeyBack9(idx) {
   var backRat = document.getElementsByName('scmBack')[idx]
 
   var mlt = gender == 'M' ? 5.381 : 4.24
-  var bog = Math.round(slpRat / mlt * 10 + crsRat) / 10
+
+console.log()
+console.log()
+console.log()
+console.log()
+console.log()
+
+
+  var bog = Math.round(slpRat*1 / mlt * 10 + crsRat*1) / 10
 
   bogRat.value = bog
 
