@@ -561,11 +561,15 @@ console.log(x)
 
 }
 
-function scmCourseRatingHtml(e) {
+function scmCourseRatingHtml(idx) {
 alert('hi dan')
-console.log(e)
-console.log(this)
+console.log(idx)
 
+var x = ele.find('#scmCourseRating')[0]
+var y = ele.find('#scmCourseRating')[j]
+
+console.log(x)
+console.log(y)
 
 
 }
