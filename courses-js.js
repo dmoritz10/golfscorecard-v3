@@ -562,15 +562,16 @@ console.log(x)
 }
 
 function scmCourseRatingHtml(idx) {
-alert('hi dan')
+alert('yp dan')
 console.log(idx)
 
-var x = ele.find('#scmCourseRating')[0]
-var y = ele.find('#scmCourseRating')[j]
+var ele = $("#tblSCM")
+var y = ele.find('#scmCourseRating')[0]
+var z = ele.find('#scmCourseRating')[j]
 
-console.log(x)
+console.log(ele)
 console.log(y)
-
+console.log(z)
 
 }
 
