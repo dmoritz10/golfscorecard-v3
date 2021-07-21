@@ -596,17 +596,17 @@ function scmPrepTeeInfo() {
 
     var ti = []
 
-    ti[tiCols.default_tee] = defaultTee[idx]
-    ti[tiCols.tee_name] = teeName[idx]
-    ti[tiCols.gender] = gender[idx]
+    ti[tiCols.default_tee] = defaultTee[idx].value
+    ti[tiCols.tee_name] = teeName[idx].value
+    ti[tiCols.gender] = gender[idx].value
 
-    ti[tiCols.par] = par[idx]
-    ti[tiCols.course_rating] = crsRat[idx]
-    ti[tiCols.slope_rating] = slpRat[idx]
-    ti[tiCols.bogey_rating] = bogRat[idx]
-    ti[tiCols.front] = frntRat[idx]
-    ti[tiCols.back] = backRat[idx]
-    ti[tiCols.yardage] = yardage[idx]
+    ti[tiCols.par] = par[idx].value
+    ti[tiCols.course_rating] = crsRat[idx].value
+    ti[tiCols.slope_rating] = slpRat[idx].value
+    ti[tiCols.bogey_rating] = bogRat[idx].value
+    ti[tiCols.front] = frntRat[idx].value
+    ti[tiCols.back] = backRat[idx].value
+    ti[tiCols.yardage] = yardage[idx].value
 
   teeInfo.push(ti)
 
