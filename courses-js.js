@@ -560,6 +560,14 @@ console.log(x)
 
 }
 
+function scmCourseRatingHtml(e) {
+alert('hi dan')
+console.log(e)
+
+
+
+}
+
 async function updateCourse(arrCourse, idx) {
 
   arrCourse.forEach((val, idx, arr) => {

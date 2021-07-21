@@ -225,6 +225,11 @@
     btnSCMoreVertHtml()
   })
 
+  $('#scmCourseRating')           .change(scmCourseRatingHtml);
+
+
+  
+
   // Golfers
   $('#btnShowGolfers')          .click(btnShowGolfersHtml);
   $('#btnSubmitGolfer')         .click(btnSubmitGolferHtml);
