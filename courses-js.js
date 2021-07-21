@@ -579,7 +579,9 @@ function scmCalcBogeyBack9(idx) {
 console.log(gender)
 console.log(crsRat)
 console.log(slpRat)
-console.log(Math.round(((slpRat*1 / mlt) + crsRat*1) * 10) / 10)
+console.log(mlt)
+
+console.log(((slpRat*1 / mlt) + crsRat*1) * 10)
 
 
   var bog = Math.round(((slpRat*1 / mlt) + crsRat*1) * 10) / 10
