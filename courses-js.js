@@ -477,7 +477,9 @@ function loadTeeBoxes(teeInfo){
   }
 
   var x = $("#tblSCM").clone();
+  var y = $("#scmHdrs").clone();
   $("#scmContainer").empty()
+  y.appendTo("#scmContainer");
   x.appendTo("#scmContainer");
 
   $("#tblSCM").hide()
@@ -507,9 +509,6 @@ function loadTeeBoxes(teeInfo){
     ele.appendTo("#scmContainer");
   
   }
-
-
-
 
 }
 
