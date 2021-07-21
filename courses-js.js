@@ -732,9 +732,7 @@ function updateSCMForm(sxsRtn) {
 
     })
 
-    loadTeeBoxes(teeInfo){
-
-    }
+    loadTeeBoxes(teeInfo)
  
 }
 
