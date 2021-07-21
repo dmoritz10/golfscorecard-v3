@@ -225,7 +225,7 @@
     btnSCMoreVertHtml()
   })
 
-  $('#scmCourseRating')           .change(scmCourseRatingHtml);
+  // $('#scmCourseRating')           .change(scmCourseRatingHtml);
 
 
   
