@@ -567,12 +567,12 @@ function scmCalcBogeyBack9(idx) {
 
   idx++
 
-  var gender = document.getElementsByName('scmGender')[idx]
-  var crsRat = document.getElementsByName('scmCourseRating')[idx]
-  var slpRat = document.getElementsByName('scmSlopeRating')[idx]
-  var bogRat = document.getElementsByName('scmBogeyRating')[idx]
-  var frntRat = document.getElementsByName('scmFront')[idx]
-  var backRat = document.getElementsByName('scmBack')[idx]
+  var gender = document.getElementsByName('scmGender')[idx].value
+  var crsRat = document.getElementsByName('scmCourseRating')[idx].value
+  var slpRat = document.getElementsByName('scmSlopeRating')[idx].value
+  var bogRat = document.getElementsByName('scmBogeyRating')[idx].value
+  var frntRat = document.getElementsByName('scmFront')[idx].value
+  var backRat = document.getElementsByName('scmBack')[idx].value
 
   var mlt = gender == 'M' ? 5.381 : 4.24
 
