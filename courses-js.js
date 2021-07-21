@@ -109,7 +109,7 @@ async function btnShowCoursesHtml () {
       // ele.find('#btnScEditCourse')[0].setAttribute("onclick", "editCourse(" + x + ")");
 
       coursesObj.idx = j
-      console.log(coursesObj)
+      // console.log(coursesObj)
       var x = JSON.stringify(coursesObj)           
       ele.find('#btnScEditCourse')[0].setAttribute("onclick", "editCourse(" + x + ")");
       
@@ -522,6 +522,9 @@ async function btnSCMSubmitCourseHtml() {
   console.log('hi dan')
   console.log(formValues)
 
+
+console.log($('#scmDefaultTee'))
+console.log($('#scmTeeName'))
 
   var idx = $('#scmIdx').val()
   
