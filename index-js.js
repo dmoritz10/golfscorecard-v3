@@ -715,6 +715,7 @@ function setupFormValidation() {
 
   $("#teetime-form").validate();
   $("#golfer-form").validate();
+  $("#course-form").validate();
 
 }
 

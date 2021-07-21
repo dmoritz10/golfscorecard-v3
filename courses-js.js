@@ -505,7 +505,7 @@ function loadTeeBoxes(teeInfo){
     ele.show()
 
     ele.appendTo("#scmContainer");
-
+  
   }
 
 
