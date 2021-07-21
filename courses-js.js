@@ -570,25 +570,24 @@ function scmCalcBogeyBack9(idx) {
   var gender = document.getElementsByName('scmGender')[idx].value
   var crsRat = document.getElementsByName('scmCourseRating')[idx].value
   var slpRat = document.getElementsByName('scmSlopeRating')[idx].value
-  var bogRat = document.getElementsByName('scmBogeyRating')[idx]
   var frntRat = document.getElementsByName('scmFront')[idx].value
-  var backRat = document.getElementsByName('scmBack')[idx].value
+  
+  var bogRat = document.getElementsByName('scmBogeyRating')[idx]
+  var backRat = document.getElementsByName('scmBack')[idx]
 
   var mlt = gender == 'M' ? 5.381 : 4.24
 
-console.log(gender)
-console.log(crsRat)
-console.log(slpRat)
-console.log(mlt)
-
-console.log(((slpRat*1 / mlt) + crsRat*1) * 10)
-
-
   var bog = Math.round(((slpRat*1 / mlt) + crsRat*1) * 10) / 10
-  console.log(bog)
   bogRat.value = bog
 
+  var x = frntRat.split(' / ')
+  var frntCrsRat = x[0]
+  var frntSlpRat = x[1]
 
+  var backCrsRat = crsRat - frntCrsRat
+  var backSlpRat = slpRat - frntSlpRat
+
+  backRat.value = backCrsRat + ' / ' + backSlpRat
 
 }
 
