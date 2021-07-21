@@ -592,7 +592,8 @@ function scmPrepTeeInfo() {
   var teeInfo = []
 
 
-  teeName.forEach( (val, idx) => {
+  
+  for (var i=1;i<teeName-1;i++) {
 
     var ti = []
 
@@ -608,9 +609,9 @@ function scmPrepTeeInfo() {
     ti[tiCols.back] = backRat[idx].value
     ti[tiCols.yardage] = yardage[idx].value
 
-  teeInfo.push(ti)
+    teeInfo.push(ti)
 
-  })
+  }
 
   return JSON.stringify(teeInfo)
 
