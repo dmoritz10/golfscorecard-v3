@@ -485,14 +485,13 @@ function loadTeeBoxes(teeInfo){
   $("#tblSCM").hide()
 
   var ti = JSON.parse(teeInfo)
-  console.log(ti)
-  console.log(ti.length)
 
   for (var j = 0; j<ti.length;j++) {
 
     var ele = $("#tblSCM").clone();
 
-    ele.find('#scmDefaultTee').eq(0).val(ti[j][tiCols.default_tee])
+    ele.find('#scmDefaultTee').eq(0).prop('checked', ti[j][tiCols.default_tee])
+  
     ele.find('#scmTeeName').eq(0).val(ti[j][tiCols.tee_name])
     ele.find('#scmGender').eq(0).val(ti[j][tiCols.gender])
     ele.find('#scmPar').eq(0).val(ti[j][tiCols.par])
