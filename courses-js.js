@@ -577,6 +577,8 @@ console.log(z)
 
 var x = document.getElementsByName('scmCourseRating')
 
+x[idx].value = 123
+
 console.log(x)
 
 }
