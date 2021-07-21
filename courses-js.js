@@ -590,23 +590,23 @@ function scmPrepTeeInfo() {
   var yardage = document.getElementsByName('scmYardage')
 
   var teeInfo = []
-  var teeBoxes = sxs.stats
 
-  teeBoxes.forEach(val => {
+
+  teeName.forEach( (val, idx) => {
 
     var ti = []
 
-    ti[tiCols.default_tee] = val.defaultTee
-    ti[tiCols.tee_name] = val.teeName
-    ti[tiCols.gender] = val.gender
+    ti[tiCols.default_tee] = defaultTee[idx]
+    ti[tiCols.tee_name] = teeName[idx]
+    ti[tiCols.gender] = gender[idx]
 
-    ti[tiCols.par] = val.par
-    ti[tiCols.course_rating] = val.crsRat
-    ti[tiCols.slope_rating] = val.slpRat
-    ti[tiCols.bogey_rating] = val.bogRat
-    ti[tiCols.front] = val.front
-    ti[tiCols.back] = val.back
-    ti[tiCols.yardage] = val.yardage
+    ti[tiCols.par] = par[idx]
+    ti[tiCols.course_rating] = crsRat[idx]
+    ti[tiCols.slope_rating] = slpRat[idx]
+    ti[tiCols.bogey_rating] = bogRat[idx]
+    ti[tiCols.front] = front[idx]
+    ti[tiCols.back] = back[idx]
+    ti[tiCols.yardage] = yardage[idx]
 
   teeInfo.push(ti)
 
