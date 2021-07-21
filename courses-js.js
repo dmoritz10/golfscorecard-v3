@@ -724,8 +724,8 @@ function updateSCMForm(sxsRtn) {
       ti[tiCols.course_rating] = val.rating
       ti[tiCols.slope_rating] = val.slope
       ti[tiCols.bogey_rating] = Math.round(((val.slope*1 / mlt) + val.rating*1) * 10) / 10
-      ti[tiCols.front] = val.frontNineRating + ' / ' + frontNineSlope
-      ti[tiCols.back] = val.backNineRating + ' / ' + backNineSlope
+      ti[tiCols.front] = val.frontNineRating + ' / ' + val.frontNineSlope
+      ti[tiCols.back] = val.backNineRating + ' / ' + val.backNineSlope
       ti[tiCols.yardage] = val.yards
 
     teeInfo.push(ti)
