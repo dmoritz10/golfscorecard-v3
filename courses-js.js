@@ -563,6 +563,7 @@ console.log(x)
 function scmCourseRatingHtml(e) {
 alert('hi dan')
 console.log(e)
+console.log(this)
 
 
 
