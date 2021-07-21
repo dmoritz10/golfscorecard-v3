@@ -604,8 +604,8 @@ function scmPrepTeeInfo() {
     ti[tiCols.course_rating] = crsRat[idx]
     ti[tiCols.slope_rating] = slpRat[idx]
     ti[tiCols.bogey_rating] = bogRat[idx]
-    ti[tiCols.front] = front[idx]
-    ti[tiCols.back] = back[idx]
+    ti[tiCols.front] = frntRat[idx]
+    ti[tiCols.back] = backRat[idx]
     ti[tiCols.yardage] = yardage[idx]
 
   teeInfo.push(ti)
