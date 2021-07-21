@@ -517,6 +517,12 @@ async function btnSCMSubmitCourseHtml() {
 
   if (!$('#course-form').valid()) return
 
+  var formValues = $('#course-form').serializeArray();
+
+  console.log('hi dan')
+  console.log(formValues)
+
+
   var idx = $('#scmIdx').val()
   
   var cols = arrShts['My Courses'].colHdrs
