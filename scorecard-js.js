@@ -481,7 +481,8 @@ function assembleHoleDetail(sxsCourseInfo, tee, gender) {
       var teeColor = teeBox.teeColorType
       var teeGender = teeBox.teeType == "women" ? "f" : "m"
       
-      if (teeColor == tee && teeGender == gender) {
+      // if (teeColor == tee && teeGender == gender) {
+      if (teeColor == tee ) {
         
         var dtl = {
         
