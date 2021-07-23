@@ -727,7 +727,7 @@ function setupFormValidation() {
     }, "Format is 'nn.n / mmm' where n is front rating and m is front slope");
 
     $.validator.addMethod("editGender", function (value, element) {
-      if (/[MF]/.test(value)) {
+      if (/^[MF]$/.test(value)) {
           return true;
       } else {
           return false;
@@ -742,8 +742,7 @@ function setupFormValidation() {
           },
         scmGender: {
           editGender: true,
-            required: true,
-            maxlength: 1
+            required: true
         }
 
       }
