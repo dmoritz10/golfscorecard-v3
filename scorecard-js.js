@@ -8,7 +8,8 @@ async function btnStartRoundHtml() {
   console.log(prClubs)
   
   var gender = prCourse.courseInfo["Gender"].toLowerCase()
-  var tee = teePlayed.toLowerCase()
+  var tee = teePlayed
+  // var tee = teePlayed.toLowerCase()
 
   prCourse.holeDetail = await getHoleDetail(prCourse.courseInfo['SxS Course Id'], tee, gender)
   
