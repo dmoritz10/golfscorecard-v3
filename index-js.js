@@ -719,7 +719,7 @@ function setupFormValidation() {
     });
 
     $.validator.addMethod("editFrntRating", function (value, element) {
-      if (/^[0-9]{9}[vVxX]$/.test(value)) {
+      if (/^\d*\.?\d \/ \d+/.test(value)) {
           return true;
       } else {
           return false;
