@@ -482,6 +482,8 @@ function loadTeeBoxes(teeInfo){
   $("#tblSCM").hide()
 
   var ti = JSON.parse(teeInfo)
+  console.log('ti')
+  console.log(ti)
 
   for (var j = 0; j<ti.length;j++) {
 
