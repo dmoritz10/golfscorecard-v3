@@ -724,16 +724,31 @@ function setupFormValidation() {
       } else {
           return false;
       };
-  }, "format must be nn.n / nnn");
+    }, "Format is 'nn.n / mmm' where n is front rating and m is front slope");
 
-  $('#course-form').validate({
+    $.validator.addMethod("editGender", function (value, element) {
+      if (/[MF]/) {
+          return true;
+      } else {
+          return false;
+      };
+    }, "Must be M or F");
+
+    $('#course-form').validate({
       rules: {
         scmFront: {
               editFrntRating: true,
               required: true
-          }
+          },
+        scmGender: {
+          editGender: true,
+            required: true
+        }
+
       }
-  });    
+    });    
+
+  // scmGender
 
   $("#teetime-form").validate();
   $("#golfer-form").validate();
