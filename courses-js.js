@@ -617,6 +617,8 @@ function scmCalcBogeyBack9(idx) {
   var crsRat = document.getElementsByName('scmCourseRating')[idx].value
   var slpRat = document.getElementsByName('scmSlopeRating')[idx].value
   var frntRat = document.getElementsByName('scmFront')[idx].value
+
+  var frntRatELe = document.getElementsByName('scmFront')[idx]
   
   var bogRat = document.getElementsByName('scmBogeyRating')[idx]
   var backRat = document.getElementsByName('scmBack')[idx]
@@ -634,7 +636,7 @@ function scmCalcBogeyBack9(idx) {
   var backSlpRat = 2 * slpRat - frntSlpRat
 
   backRat.value = backCrsRat.toFixed(1) + ' / ' + backSlpRat
-  frntRat.value = frntCrsRat.toFixed(1) + ' / ' + frntSlpRat
+  frntRatELe.value = frntCrsRat.toFixed(1) + ' / ' + frntSlpRat
 
 }
 
