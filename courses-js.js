@@ -519,16 +519,6 @@ async function btnSCMSubmitCourseHtml() {
 
   var formValues = $('#course-form').serializeArray();
 
-  console.log('hi dan')
-  console.log(formValues)
-
-var x = document.getElementsByName('scmDefaultTee')
-
-console.log(x)
-var x = document.getElementsByName('scmTeeName')
-
-console.log(x)
-
   var idx = $('#scmIdx').val()
   
   var cols = arrShts['My Courses'].colHdrs
@@ -686,19 +676,6 @@ async function updateCourse(arrCourse, idx) {
     
 }
 
-async function updateCoursesOption() {
-
-    var courses = readOption('Courses', null)
-    
-    if (courses) {
-
-      courses.sort(nameCompare);
-      
-    }
- 
-   await updateOption('Courses', courses)
-
-}
 
 async function btnSCMFetchSxsHtml(e) {
 
@@ -847,6 +824,20 @@ async function btnDeleteCourseHtml() {
   $("#course-modal").modal('hide');
   
   btnShowCoursesHtml()  
+
+}
+
+async function updateCoursesOption() {
+
+    var courses = readOption('Courses', null)
+    
+    if (courses) {
+
+      courses.sort(nameCompare);
+      
+    }
+ 
+   await updateOption('Courses', courses)
 
 }
 
