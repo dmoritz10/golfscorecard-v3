@@ -726,7 +726,7 @@ function setupFormValidation() {
       };
   }, "format must be nn.n / nnn");
 
-  $('#scmFront').validate({
+  $('#course-form').validate({
       rules: {
         scmFront: {
               editFrntRating: true,
@@ -737,7 +737,7 @@ function setupFormValidation() {
 
   $("#teetime-form").validate();
   $("#golfer-form").validate();
-  $("#course-form").validate();
+  // $("#course-form").validate();
 
 }
 
