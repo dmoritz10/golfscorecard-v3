@@ -742,7 +742,8 @@ function setupFormValidation() {
           },
         scmGender: {
           editGender: true,
-            required: true
+            required: true,
+            maxlength: 1
         }
 
       }
