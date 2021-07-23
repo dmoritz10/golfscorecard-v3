@@ -591,7 +591,7 @@ function scmPrepTeeInfo() {
 
   var teeInfo = []
 
-
+console.log(defaultTee)
   
   for (var idx=1;idx<teeName.length;idx++) {
 
