@@ -697,12 +697,7 @@ console.log(tab)
 function setupFormValidation() {
 
     $.validator.setDefaults({
-      highlight: function (element) {
-        $(element).addClass('text-danger');
-      },
-      unhighlight: function (element) {
-        $(element).removeClass('text-danger');
-      },
+      
       errorElement: 'small',
       errorClass: 'form-control-feedback d-block',
       errorPlacement: function (error, element) {
