@@ -718,6 +718,23 @@ function setupFormValidation() {
       },
     });
 
+    $.validator.addMethod("editFrntRating", function (value, element) {
+      if (/^[0-9]{9}[vVxX]$/.test(value)) {
+          return true;
+      } else {
+          return false;
+      };
+  }, "format must be nn.n / nnn");
+
+  $('#scmFront').validate({
+      rules: {
+        scmFront: {
+              editFrntRating: true,
+              required: true
+          }
+      }
+  });    
+
   $("#teetime-form").validate();
   $("#golfer-form").validate();
   $("#course-form").validate();
