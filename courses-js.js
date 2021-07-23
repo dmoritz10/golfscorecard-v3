@@ -571,7 +571,7 @@ function scmPrepTeeInfo() {
   
   }
 
-  var defaultTee = camel2title(document.getElementsByName('scmDefaultTee'))
+  var defaultTee = document.getElementsByName('scmDefaultTee')
   var teeName = document.getElementsByName('scmTeeName')
   var gender = document.getElementsByName('scmGender')
   var crsRat = document.getElementsByName('scmCourseRating')
@@ -591,7 +591,7 @@ console.log(defaultTee)
     var ti = []
 
     ti[tiCols.default_tee] = defaultTee[idx].checked
-    ti[tiCols.tee_name] = teeName[idx].value
+    ti[tiCols.tee_name] = camel2title(teeName[idx].value)
     ti[tiCols.gender] = gender[idx].value
 
     ti[tiCols.par] = par[idx].value
@@ -755,7 +755,7 @@ function updateSCMForm(sxsRtn) {
       var ti = []
 
       ti[tiCols.default_tee] = true
-      ti[tiCols.tee_name] = val.teeColorType
+      ti[tiCols.tee_name] = camel2title(val.teeColorType)
       ti[tiCols.gender] = val.teeType.toLowerCase() == 'women' ? 'F' : 'M'
 
       var mlt = ti[tiCols.gender] == 'M' ? 5.381 : 4.24
