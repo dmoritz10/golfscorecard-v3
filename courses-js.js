@@ -630,10 +630,11 @@ function scmCalcBogeyBack9(idx) {
   var frntCrsRat = x[0]
   var frntSlpRat = x[1]
 
-  var backCrsRat = Math.round((crsRat - frntCrsRat) * 10) / 10
+  var backCrsRat =(Math.round((crsRat - frntCrsRat) * 10) / 10
   var backSlpRat = 2 * slpRat - frntSlpRat
 
-  backRat.value = backCrsRat + ' / ' + backSlpRat
+  backRat.value = backCrsRat.toFixed(1) + ' / ' + backSlpRat
+  frntRat.value = frntCrsRat.toFixed(1) + ' / ' + frntSlpRat
 
 }
 
