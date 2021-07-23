@@ -627,7 +627,7 @@ function scmCalcBogeyBack9(idx) {
   var mlt = gender == 'M' ? 5.381 : 4.24
 
   var bog = Math.round(((slpRat*1 / mlt) + crsRat*1) * 10) / 10
-  bogRat.value = bog
+  bogRat.value = bog.toFixed(1)
 
   var x = frntRat.split(' / ')
   var frntCrsRat = x[0]
