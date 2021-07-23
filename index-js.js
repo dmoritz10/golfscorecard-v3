@@ -703,7 +703,7 @@ function setupFormValidation() {
       unhighlight: function (element) {
         $(element).parent().removeClass('text-danger');
       },
-      errorElement: 'small',
+      errorElement: 'bold',
       errorClass: 'form-control-feedback d-block',
       errorPlacement: function (error, element) {
         if (element.parent('.input-group').length) {
