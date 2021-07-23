@@ -599,7 +599,7 @@ console.log(defaultTee)
 
     var ti = []
 
-    ti[tiCols.default_tee] = defaultTee[idx].value
+    ti[tiCols.default_tee] = defaultTee[idx].checked
     ti[tiCols.tee_name] = teeName[idx].value
     ti[tiCols.gender] = gender[idx].value
 
@@ -773,7 +773,7 @@ function updateSCMForm(sxsRtn) {
 
       var ti = []
 
-      ti[tiCols.default_tee] = 
+      ti[tiCols.default_tee] = true
       ti[tiCols.tee_name] = val.teeColorType
       ti[tiCols.gender] = val.teeType.toLowerCase() == 'women' ? 'F' : 'M'
 
