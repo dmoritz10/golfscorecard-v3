@@ -698,10 +698,10 @@ function setupFormValidation() {
 
     $.validator.setDefaults({
       highlight: function (element) {
-        $(element).closest('.form-group').addClass('text-danger');
+        $(element).addClass('text-danger');
       },
       unhighlight: function (element) {
-        $(element).closest('.form-group').removeClass('text-danger');
+        $(element).removeClass('text-danger');
       },
       errorElement: 'small',
       errorClass: 'form-control-feedback d-block',
