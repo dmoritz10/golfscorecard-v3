@@ -1,4 +1,3 @@
-{/* <script> */}
 
 async function btnStartRoundHtml() {
 
@@ -1544,5 +1543,3 @@ async function courseSummary(rounds) {
     
     return rounds
 }
-
-// </script>

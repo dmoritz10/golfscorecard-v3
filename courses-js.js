@@ -571,7 +571,7 @@ function scmPrepTeeInfo() {
   
   }
 
-  var defaultTee = document.getElementsByName('scmDefaultTee')
+  var defaultTee = camel2title(document.getElementsByName('scmDefaultTee'))
   var teeName = document.getElementsByName('scmTeeName')
   var gender = document.getElementsByName('scmGender')
   var crsRat = document.getElementsByName('scmCourseRating')
