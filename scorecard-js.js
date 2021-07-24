@@ -627,6 +627,7 @@ async function btnEndRoundHtml() {
   await gapi.client.sheets.spreadsheets.values.append(params, resource)
     .then(async function(response) {
       
+      console.log(response)
       // updateOption('Clubs', prClubs)
       console.log('round posted')
    

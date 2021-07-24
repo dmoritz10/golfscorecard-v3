@@ -657,11 +657,14 @@ async function updateCourse(arrCourse, idx) {
     }
     
   })
-  
+
+  await checkAuth()
   var resource = {
     "majorDimension": "ROWS",
     "values": [arrCourse]
     }
+  
+  if (idx) {
   
   var row = idx*1 + 2
   var rng = calcRngA1(row, 1, 1, arrShts['My Courses'].columnCount + 1)
@@ -672,13 +675,40 @@ async function updateCourse(arrCourse, idx) {
     valueInputOption: 'RAW'
   };
 
-  await checkAuth()
+
   await gapi.client.sheets.spreadsheets.values.update(params, resource)
     .then(function(response) { console.log('My Courses update successful')
     }, function(reason) {
       console.error('error updating option "' + row + '": ' + reason.result.error.message);
       alert('error updating option "' + row + '": ' + reason.result.error.message);
     });
+
+  } else {
+
+    var params = {
+      spreadsheetId: spreadsheetId,
+      range: "'Scorecard Upload'!A2:J2",
+      valueInputOption: 'RAW',
+      insertDataOption: 'INSERT_ROWS'
+    };
+  
+    await gapi.client.sheets.spreadsheets.values.append(params, resource)
+      .then(async function(response) {
+        
+        console.log('course added')
+
+        
+     
+      }, 
+      
+      function(reason) {
+        
+        console.error('error appending course "' + prScore.courseName + '": ' + reason.result.error.message);      
+        bootbox.alert('error appending course "' + prScore.courseName + '": ' + reason.result.error.message);
+      
+      });
+
+  }
     
 }
 
