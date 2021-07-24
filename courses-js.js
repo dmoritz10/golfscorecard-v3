@@ -630,8 +630,8 @@ function scmCalcBogeyBack9(idx) {
   bogRat.value = bog.toFixed(1)
 
   var x = frntRat.split(' / ')
-  var frntCrsRat = x[0]
-  var frntSlpRat = x[1]
+  var frntCrsRat = x[0]*1
+  var frntSlpRat = x[1]*1
 
   var backCrsRat = Math.round((crsRat - frntCrsRat) * 10) / 10
   var backSlpRat = 2 * slpRat - frntSlpRat
@@ -772,7 +772,7 @@ function updateSCMForm(sxsRtn) {
 
     })
     console.log(teeInfo)
-    teeInfo.sort((a,b)=> (b[tiCols.gender].localeCompare(a[tiCols.gender]) || b[tiCols.course_rating] - a[tiCols.course_rating]));
+    // teeInfo.sort((a,b)=> (b[tiCols.gender].localeCompare(a[tiCols.gender]) || b[tiCols.course_rating] - a[tiCols.course_rating]));
     console.log(teeInfo)
     loadTeeBoxes(JSON.stringify(teeInfo))
  
