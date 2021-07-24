@@ -301,7 +301,7 @@ async function btnDeleteTeetimeHtml() {
         'eventId': arrTeetimes[idx].eventId
     })      
     .then(async function(response) {
-        
+             
       console.log('teetime deleted added')
       console.log(response.result.updates.updatedRange)
     }, 
@@ -309,7 +309,7 @@ async function btnDeleteTeetimeHtml() {
     function(reason) {
       
       console.error('error appending course "' + prScore.courseName + '": ' + reason.result.error.message);      
-      bootbox.alert('error appending course "' + prScore.courseName + '": ' + reason.result.error.message);
+      // bootbox.alert('error appending course "' + prScore.courseName + '": ' + reason.result.error.message);
     
     });
 

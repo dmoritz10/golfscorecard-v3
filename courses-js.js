@@ -717,7 +717,20 @@ async function updateCourse(arrCourse, idx) {
         console.log('course added')
         console.log(response.result.updates.updatedRange)
 
-     
+        var request = {
+          sortRange: {
+              range:  "'My Courses'!A1:Z" ,
+              sortSpecs: [
+                {
+                  sortOrder: "ASCENDING",
+                  dimensionIndex: 0
+                }
+              ]
+          }
+        }
+
+        await gapi.client.sheets.spreadsheets.values.batchUpdate(request)   
+
       }, 
       
       function(reason) {
