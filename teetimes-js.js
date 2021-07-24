@@ -299,6 +299,18 @@ async function btnDeleteTeetimeHtml() {
     var request = await gapi.client.calendar.events.delete({
         'calendarId': 'primary',
         'eventId': arrTeetimes[idx].eventId
+    })      
+    .then(async function(response) {
+        
+      console.log('teetime deleted added')
+      console.log(response.result.updates.updatedRange)
+    }, 
+    
+    function(reason) {
+      
+      console.error('error appending course "' + prScore.courseName + '": ' + reason.result.error.message);      
+      bootbox.alert('error appending course "' + prScore.courseName + '": ' + reason.result.error.message);
+    
     });
 
   } else {
