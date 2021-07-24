@@ -492,7 +492,7 @@ function loadTeeBoxes(teeInfo){
 
     ele.find('#scmDefaultTee').eq(0).prop('checked', ti[j][tiCols.default_tee])
   
-    ele.find('#scmTeeName').eq(0).val(ti[j][tiCols.tee_name])
+    ele.find('#scmTeeName').eq(0).val(<strong>ti[j][tiCols.tee_name])
     ele.find('#scmGender').eq(0).val(ti[j][tiCols.gender])
     ele.find('#scmPar').eq(0).val(ti[j][tiCols.par])
     ele.find('#scmCourseRating').eq(0).val(ti[j][tiCols.course_rating])
@@ -583,8 +583,6 @@ function scmPrepTeeInfo() {
   var yardage = document.getElementsByName('scmYardage')
 
   var teeInfo = []
-
-console.log(defaultTee)
   
   for (var idx=1;idx<teeName.length;idx++) {
 
@@ -605,7 +603,7 @@ console.log(defaultTee)
     teeInfo.push(ti)
 
   }
-  
+
   teeInfo.sort((a,b)=> (b[tiCols.gender].localeCompare(a[tiCols.gender]) || b[tiCols.course_rating] - a[tiCols.course_rating]));
 
   return JSON.stringify(teeInfo)
