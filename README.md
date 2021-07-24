@@ -23,16 +23,14 @@ Fix re-positioning to top of listing
     Rounds - Round Stats
     Handicap - Round Stats
 
-Fix Courses Maintenance
+x Fix Courses Maintenance
     Calc Bogey Rating
     Calc default front / back ratings
 
 Fix weather rpt on SMS from Tee Times
 
 Port Course Maintenance
-
-
-Full Courses Maintenance
+    Full Courses Maintenance
 
 x Retro show-hcp to getRounds
 
@@ -98,11 +96,11 @@ x fix stats putting
 ? Fix Target Score = fixed ??? need more analysis
 
 Fix Hole Detail in Courses 
+    courses.holeDetail = can't set lat/lng because prCourse not initialized
 
 Tackle gender issue more generally
 
 Fix Calendar updates / deletes
 
-courses.holeDetail = can't set lat/lng because prCourse not initialized
 
 add nbr of times played to Golfers
