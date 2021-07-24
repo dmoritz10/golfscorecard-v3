@@ -326,7 +326,8 @@ function camel2title(camelCase) {
     // replace first char with upper case
     .replace(/^./, function(match) {
       return match.toUpperCase();
-    });
+    })
+    .trim();
 }
 
 function chartAverageScorebyPar   (title, rounds, myStatsRng, endRow) {
