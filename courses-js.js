@@ -535,6 +535,8 @@ async function btnSCMSubmitCourseHtml() {
   if (!signinStatus) return
   
   await updateCourse(course, idx)
+
+  await initialUI()
   
   $("#course-modal").modal('hide');
   
@@ -685,9 +687,13 @@ async function updateCourse(arrCourse, idx) {
 
   } else {
 
+    var row = 2
+    var rng = calcRngA1(row, 1, 1, arrShts['My Courses'].columnCount + 1)
+   
+
     var params = {
       spreadsheetId: spreadsheetId,
-      range: "'Scorecard Upload'!A2:J2",
+      range: "'My Courses'!" + rng,
       valueInputOption: 'RAW',
       insertDataOption: 'INSERT_ROWS'
     };
@@ -696,8 +702,8 @@ async function updateCourse(arrCourse, idx) {
       .then(async function(response) {
         
         console.log('course added')
+        console.log(response.result.updates.updatedRange)
 
-        
      
       }, 
       
