@@ -492,7 +492,7 @@ function loadTeeBoxes(teeInfo){
 
     ele.find('#scmDefaultTee').eq(0).prop('checked', ti[j][tiCols.default_tee])
   
-    ele.find('#scmTeeName').eq(0).val(<strong>ti[j][tiCols.tee_name])
+    ele.find('#scmTeeName').eq(0).val('<strong>' + ti[j][tiCols.tee_name])
     ele.find('#scmGender').eq(0).val(ti[j][tiCols.gender])
     ele.find('#scmPar').eq(0).val(ti[j][tiCols.par])
     ele.find('#scmCourseRating').eq(0).val(ti[j][tiCols.course_rating])
