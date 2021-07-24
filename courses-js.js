@@ -764,7 +764,7 @@ function updateSCMForm(sxsRtn) {
   
     conditionalUpdate($('#scmName'),sxs.name) 
     conditionalUpdate($('#scmPhone'),sxs.phone) 
-    conditionalUpdate($('#scmWebsite'),fixUrl(sxs.website))
+    conditionalUpdate($('#scmWebsite'),sxs.website ? fixUrl(sxs.website) : '')
     conditionalUpdate($('#scmCity'),sxs.city) 
     conditionalUpdate($('#scmState'),sxs.state) 
     conditionalUpdate($('#scmZip'),sxs.zipCode) 
