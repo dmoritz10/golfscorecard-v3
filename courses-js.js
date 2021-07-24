@@ -91,29 +91,24 @@ async function btnShowCoursesHtml () {
         element: ele.find('#btnScEnterTeeTime')[0]
       })   
       
-      var editCourse = {
-        idx: j,
-        name:coursesObj['Course Name'],
-        phone:coursesObj['Phone'],
-        website:coursesObj['Website'],
-        stationId:coursesObj['Uweather StationId'],
-        city:coursesObj['City'],
-        state:coursesObj['State'],
-        country:coursesObj['Country'],
-        zip:coursesObj['Zip'],
-        sxsUrl:coursesObj['SxS Course Id']
+      // var editCourse = {
+      //   idx: j,
+      //   name:coursesObj['Course Name'],
+      //   phone:coursesObj['Phone'],
+      //   website:coursesObj['Website'],
+      //   stationId:coursesObj['Uweather StationId'],
+      //   city:coursesObj['City'],
+      //   state:coursesObj['State'],
+      //   country:coursesObj['Country'],
+      //   zip:coursesObj['Zip'],
+      //   sxsUrl:coursesObj['SxS Course Id']
       
-      }
-      // console.log(JSON.stringify(editCourse))
-
-      // ele.find('#btnScEditCourse')[0].setAttribute("onclick", "editCourse(" + x + ")");
-
+      // }
+ 
       coursesObj.idx = j
-      // console.log(coursesObj)
       var x = JSON.stringify(coursesObj)           
       ele.find('#btnScEditCourse')[0].setAttribute("onclick", "editCourse(" + x + ")");
-      
-   
+        
       coursesObj['Nbr Times Played'] > 0 ? ele.css( "background", "#f5edcb") : ele.css( "background", "white")
       
       ele.show()
@@ -434,7 +429,7 @@ async function editCourse(course) {
     $("#course-modal").modal('show');
     $("#course-form")[0].reset();
     
-    $('#scmModalTitle').html("<small>" + course['Course Name'] + "</small>") 
+    $('#scmModalTitle').html(course['Course Name']) 
     
     $('#scmIdx').val(course.idx)       
  
@@ -480,9 +475,7 @@ function loadTeeBoxes(teeInfo){
   $("#tblSCM").hide()
 
   var ti = JSON.parse(teeInfo)
-  console.log('ti')
-  console.log(ti)
-
+  
   for (var j = 0; j<ti.length;j++) {
 
     var ele = $("#tblSCM").clone();
@@ -530,7 +523,7 @@ async function btnSCMSubmitCourseHtml() {
     course[cols.indexOf("Zip")] = $('#scmZip').val()
     course[cols.indexOf("Country")] = $('#scmCountry').val()
     course[cols.indexOf("SxS Course Id")] = $('#scmSxsUrl').val()
-    course[cols.indexOf("Tee Info")] = scmPrepTeeInfo()
+    course[cols.indexOf("Tee Info")] = scmPrepTeeInfo(cols, course)
   
   } else {                                                         // add new course
 
@@ -549,7 +542,7 @@ async function btnSCMSubmitCourseHtml() {
 
 }
 
-function scmPrepTeeInfo() {
+function scmPrepTeeInfo(cols, course) {
 
   var tiCols = {
 
@@ -596,6 +589,20 @@ function scmPrepTeeInfo() {
     ti[tiCols.yardage] = yardage[idx].value
 
     teeInfo.push(ti)
+
+    if (defaultTee[idx].checked) {
+
+      course[cols.indexOf("Tee Name")] = camel2title(teeName[idx].value)
+      course[cols.indexOf("Par")] = par[idx].value
+      course[cols.indexOf("USGA Course Rating")] = crsRat[idx].value
+      course[cols.indexOf("Slope Rating")] = slpRat[idx].value
+      course[cols.indexOf("Front 9 Rating")] = frntRat[idx].value
+      course[cols.indexOf("Back 9 Rating")] = backRat[idx].value
+      course[cols.indexOf("Bogey Rating")] = bogRat[idx].value
+      course[cols.indexOf("Gender	")] = gender[idx].value
+      course[cols.indexOf("Yardage")] = yardage[idx].value
+
+    }
 
   }
 
