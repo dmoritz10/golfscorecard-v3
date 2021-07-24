@@ -792,16 +792,17 @@ function conditionalUpdate(ele, val) {
 
 }
 
-/*
+
 async function btnAddCourseHtml () {
 
     $("#course-modal").modal('show');
     $("#course-form")[0].reset();
     
-    $('#btnDeleteCourse').addClass('d-none')
+    // $('#btnDeleteCourse').addClass('d-none')
 
 }
 
+/*
 async function btnDeleteCourseHtml() {
 
   if (arrOptions['Courses']) {

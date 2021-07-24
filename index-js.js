@@ -219,6 +219,9 @@
   $('#btnHPHoleDetail')         .button().click(btnHPHoleDetailHtml);
   $('#btnSCMFetchSxs')         .click(btnSCMFetchSxsHtml);
   $('#btnSCMSubmitCourse')         .click(btnSCMSubmitCourseHtml);
+  $('#btnAddCourse')            .click(btnAddCourseHtml);
+
+  
 
 
   $('#scSelectDropDown').on('show.bs.dropdown', function () {
