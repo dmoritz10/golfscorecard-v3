@@ -429,14 +429,12 @@ async function holeDetail() {
 // courseModal
 
 async function editCourse(course) {
-  console.log(course)
 
-//  var course = JSON.parse(course)
    
     $("#course-modal").modal('show');
     $("#course-form")[0].reset();
     
-    $('#scmModalTitle').html("Course Maintenance<br><small>" + course['Course Name'] + "</small>") 
+    $('#scmModalTitle').html("<small>" + course['Course Name'] + "</small>") 
     
     $('#scmIdx').val(course.idx)       
  
@@ -453,7 +451,6 @@ async function editCourse(course) {
 //    $('#btnDeleteCourse').removeClass('d-none')
 
     loadTeeBoxes(course['Tee Info'])
-
 
 }
 
