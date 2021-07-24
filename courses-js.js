@@ -772,7 +772,7 @@ function updateSCMForm(sxsRtn) {
 
     })
     console.log(teeInfo)
-    teeInfo.sort((a,b)=> (!a[tiCols.gender].localeCompare(b.name) || b[tiCols.course_rating] - a[tiCols.course_rating]));
+    teeInfo.sort((a,b)=> (b[tiCols.course_rating] - a[tiCols.course_rating] || !a[tiCols.gender].localeCompare(b.name)));
     console.log(teeInfo)
     loadTeeBoxes(JSON.stringify(teeInfo))
  
