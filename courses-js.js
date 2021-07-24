@@ -729,6 +729,7 @@ async function updateCourse(arrCourse, idx) {
           }
         }
 
+        console.log(request)
         await gapi.client.sheets.spreadsheets.values.batchUpdate(request)   
 
       }, 
