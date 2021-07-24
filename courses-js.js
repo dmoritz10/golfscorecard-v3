@@ -771,6 +771,8 @@ function updateSCMForm(sxsRtn) {
     teeInfo.push(ti)
 
     })
+    console.log(teeInfo)
+    teeInfo.sort([{column: tiCols.gender}, {column: tiCols.course_rating}]);
 
     console.log(teeInfo)
     loadTeeBoxes(JSON.stringify(teeInfo))

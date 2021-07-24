@@ -220,7 +220,6 @@ function compareNumbers(a, b) { return a - b}
 
 function median(a, b, c) { return a < b ? b < c ? b : a < c ? c : a : b < c ? a < c ? a : c : b;}
   
-
 function calcRoundsTargetScore(targetHandCapDiff, courseRating, slopeRating, courseRatingFront9) {
 
   var targetScore = ((targetHandCapDiff * slopeRating /  113) + courseRating * 1.0)
