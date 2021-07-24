@@ -525,7 +525,18 @@ async function btnSCMSubmitCourseHtml() {
     course[cols.indexOf("SxS Course Id")] = $('#scmSxsUrl').val()
     course[cols.indexOf("Tee Info")] = scmPrepTeeInfo(cols, course)
   
-  } else {                                                         // add new course
+  } else {     
+    
+    course = []
+    course[cols.indexOf("Phone")] = $('#scmPhone').val()
+    course[cols.indexOf("Website")] = $('#scmWebsite').val()
+    course[cols.indexOf("Uweather StationId")] = $('#scmStationId').val()
+    course[cols.indexOf("City")] = $('#scmCity').val()
+    course[cols.indexOf("State")] = $('#scmState').val()
+    course[cols.indexOf("Zip")] = $('#scmZip').val()
+    course[cols.indexOf("Country")] = $('#scmCountry').val()
+    course[cols.indexOf("SxS Course Id")] = $('#scmSxsUrl').val()
+    course[cols.indexOf("Tee Info")] = scmPrepTeeInfo(cols, course)
 
   }
   
