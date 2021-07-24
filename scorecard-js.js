@@ -464,14 +464,16 @@ function assembleHoleDetail(sxsCourseInfo, tee, gender) {
   var holes = p.model.data.holes
   
   var data = p.model.data
+
+  if (prCourse.courseInfo) {
   
-  prCourse.courseInfo.courseCoords = {
-  
-    lat: data.lat,
-    lng: data.lng
+    prCourse.courseInfo.courseCoords = {
     
-  }
-    
+      lat: data.lat,
+      lng: data.lng
+      
+    }
+  } 
   var holeDetail = []
   
   holes.forEach(hole => {
