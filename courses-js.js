@@ -528,6 +528,8 @@ async function btnSCMSubmitCourseHtml() {
   } else {     
     
     course = []
+    course[cols.indexOf("Course Name")] = $('#scmName').val()
+    course[cols.indexOf("Key")] = calcCourseKey($('#scmName').val())
     course[cols.indexOf("Phone")] = $('#scmPhone').val()
     course[cols.indexOf("Website")] = $('#scmWebsite').val()
     course[cols.indexOf("Uweather StationId")] = $('#scmStationId').val()
