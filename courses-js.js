@@ -605,6 +605,8 @@ console.log(defaultTee)
     teeInfo.push(ti)
 
   }
+  
+  teeInfo.sort((a,b)=> (b[tiCols.gender].localeCompare(a[tiCols.gender]) || b[tiCols.course_rating] - a[tiCols.course_rating]));
 
   return JSON.stringify(teeInfo)
 
@@ -771,9 +773,9 @@ function updateSCMForm(sxsRtn) {
     teeInfo.push(ti)
 
     })
-    console.log(teeInfo)
+
     teeInfo.sort((a,b)=> (b[tiCols.gender].localeCompare(a[tiCols.gender]) || b[tiCols.course_rating] - a[tiCols.course_rating]));
-    console.log(teeInfo)
+
     loadTeeBoxes(JSON.stringify(teeInfo))
  
 }
