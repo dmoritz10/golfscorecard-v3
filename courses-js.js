@@ -861,7 +861,7 @@ function updateSCMForm(sxsRtn) {
         var f9r = (val.rating / 2).toFixed(1)
       }
       if (val.frontNineSlope) {
-        var f9s = val.frontNineSlope
+        var f9s = val.frontNineSlope ? val.frontNineSlope : val.slope
       } else {
         var f9s = val.slope
       }
