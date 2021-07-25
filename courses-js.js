@@ -692,7 +692,9 @@ async function updateCourse(arrCourse, idx) {
 
 
   await gapi.client.sheets.spreadsheets.values.update(params, resource)
-    .then(function(response) { console.log('My Courses update successful')
+    .then(function(response) { 
+      console.log('My Courses update successful')
+      console.log(response)
     }, function(reason) {
       console.error('error updating option "' + row + '": ' + reason.result.error.message);
       alert('error updating option "' + row + '": ' + reason.result.error.message);
@@ -719,7 +721,7 @@ async function updateCourse(arrCourse, idx) {
 
         var request = [{
           sortRange: {
-              range:  "'My Courses'!A1:Z" ,
+              range:  "'My Courses'!A1:Z1" ,
               sortSpecs: [
                 {
                   sortOrder: "ASCENDING",
