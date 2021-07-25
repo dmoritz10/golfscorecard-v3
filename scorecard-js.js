@@ -1450,6 +1450,11 @@ async function courseSummary(rounds) {
 
   // var rounds = await getRounds()
 
+  var golfers = readOption('Golfers', [])
+golfers.forEach((val,idx,arr) => arr.nbr = 0)
+
+  golfers.map(a=>a.nbr=0);
+
   var cols = arrShts['My Courses'].colHdrs
   var courses = arrShts['My Courses'].vals
 
