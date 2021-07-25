@@ -573,11 +573,12 @@ function dupCourse(courseKey) {
   var courses = arrShts['My Courses'].vals
   let courseKeys = courses.map(a => a[cols.indexOf('Key')]);
 
+  console.log(courseKeys)
+
   if (courseKeys.indexOf(courseKey)) {
     return true 
   } else {
     return false
-  }
   }
 
 }
