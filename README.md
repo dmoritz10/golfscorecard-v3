@@ -30,7 +30,8 @@ x Fix Courses Maintenance
 Fix weather rpt on SMS from Tee Times
 
 Port Course Maintenance
-    Full Courses Maintenance
+    x Full Courses Maintenance
+    course delete
 
 x Retro show-hcp to getRounds
 
