@@ -954,7 +954,7 @@ function abbrState(state) {
       return states[a];
     }
   
-    return null;
+    return state;
 
 }
 
@@ -962,6 +962,7 @@ function abbrState(state) {
 function abbrCountry(country) {
 
   if (country == "United States of America") return 'US'
+  return country
 
 }
 /*
