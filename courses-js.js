@@ -721,7 +721,11 @@ async function updateCourse(arrCourse, idx) {
 
         var request = [{
           sortRange: {
-              range:  "'My Courses'!A1:Z1" ,
+              range: {sheetId: 12345,
+              startRowIndex: 0,
+              endRowIndex: 10,
+              startColumnIndex: 0,
+              endColumnIndex: 6} ,
               sortSpecs: [
                 {
                   sortOrder: "ASCENDING",
