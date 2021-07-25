@@ -1494,14 +1494,16 @@ golfersArr.forEach((val,idx,arr) => arr.nbr = 0)
     const findGolfer = (obj, key, value)=> obj.find(v => v[key] === value);
     var golfers = sc.golfers
 
+  
     console.log(golfers)
+    if (sc.golfers) {
     golfers.forEach(val => {
 
       console.log(findGolfer(golfersArr, 'name', val.name))
       findGolfer(golfersArr, 'name', val.name).nbr++
 
     })
-
+  }
   })
 
   console.log(golfersArr)
