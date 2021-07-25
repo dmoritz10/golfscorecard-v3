@@ -864,13 +864,9 @@ function updateSCMForm(sxsRtn) {
         var f9s = val.slope
       }
 
-      var b9r = val.rating - f9r
+      var b9r = (val.rating - f9r).toFixed(1)
       var b9s = val.slope * 2 - f9s
 
-      console.log(val.teeColorType)
-      console.log(b9r)
-      console.log(b9s)
-      console.log(b9r + ' / ' + b9s)
 
       ti[tiCols.par] = val.par
       ti[tiCols.course_rating] = val.rating
