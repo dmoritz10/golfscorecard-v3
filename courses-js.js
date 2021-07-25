@@ -948,12 +948,12 @@ function abbrState(state) {
        'Saskatchewan': 'SK',
        'Yukon': 'YT'
     }
-  
+  console.log(state)
     let a = state.trim().replace(/[^\w ]/g, "").toLowerCase(); //Trim, remove all non-word characters with the exception of spaces, and convert to lowercase
     if(states[a] !== null) {
       return states[a];
     }
-  
+    console.log(state)
     return state;
 
 }
