@@ -797,9 +797,9 @@ function updateSCMForm(sxsRtn) {
     conditionalUpdate($('#scmPhone'),sxs.phone) 
     conditionalUpdate($('#scmWebsite'),sxs.website ? fixUrl(sxs.website) : '')
     conditionalUpdate($('#scmCity'),sxs.city) 
-    conditionalUpdate($('#scmState'),sxs.state) 
+    conditionalUpdate($('#scmState'),abbrState(sxs.stateOrProvince))
     conditionalUpdate($('#scmZip'),sxs.zipCode) 
-    conditionalUpdate($('#scmCountry'),sxs.country) 
+    conditionalUpdate($('#scmCountry'),abbrCountry(sxs.country))
 
     var tiCols = {
     
@@ -873,6 +873,97 @@ async function btnAddCourseHtml () {
 
 }
 
+
+function abbrState(state) {
+  
+    let states = {
+      "arizona": "AZ",
+      "alabama": "AL",
+      "alaska": "AK",
+      "arkansas": "AR",
+      "california": "CA",
+      "colorado": "CO",
+      "connecticut": "CT",
+      "district of columbia": "DC",
+      "delaware": "DE",
+      "florida": "FL",
+      "georgia": "GA",
+      "hawaii": "HI",
+      "idaho": "ID",
+      "illinois": "IL",
+      "indiana": "IN",
+      "iowa": "IA",
+      "kansas": "KS",
+      "kentucky": "KY",
+      "louisiana": "LA",
+      "maine": "ME",
+      "maryland": "MD",
+      "massachusetts": "MA",
+      "michigan": "MI",
+      "minnesota": "MN",
+      "mississippi": "MS",
+      "missouri": "MO",
+      "montana": "MT",
+      "nebraska": "NE",
+      "nevada": "NV",
+      "new hampshire": "NH",
+      "new jersey": "NJ",
+      "new mexico": "NM",
+      "new york": "NY",
+      "north carolina": "NC",
+      "north dakota": "ND",
+      "ohio": "OH",
+      "oklahoma": "OK",
+      "oregon": "OR",
+      "pennsylvania": "PA",
+      "rhode island": "RI",
+      "south carolina": "SC",
+      "south dakota": "SD",
+      "tennessee": "TN",
+      "texas": "TX",
+      "utah": "UT",
+      "vermont": "VT",
+      "virginia": "VA",
+      "washington": "WA",
+      "west virginia": "WV",
+      "wisconsin": "WI",
+      "wyoming": "WY",
+      "american samoa": "AS",
+      "guam": "GU",
+      "northern mariana islands": "MP",
+      "puerto rico": "PR",
+      "us virgin islands": "VI",
+      "us minor outlying islands": "UM",
+      'Alberta': 'AB',
+       'British Columbia': 'BC',
+       'Manitoba': 'MB',
+       'New Brunswick': 'NB',
+       'Newfoundland': 'NF',
+       'Northwest Territory': 'NT',
+       'Nova Scotia': 'NS',
+       'Nunavut': 'NU',
+       'Ontario': 'ON',
+       'Prince Edward Island': 'PE',
+       'Quebec': 'QC',
+       'Saskatchewan': 'SK',
+       'Yukon': 'YT'
+    }
+  
+    let a = state.trim().replace(/[^\w ]/g, "").toLowerCase(); //Trim, remove all non-word characters with the exception of spaces, and convert to lowercase
+    if(states[a] !== null) {
+      return states[a];
+    }
+  
+    return null;
+
+}
+
+
+function abbrCountry(country) {
+
+  if (country == "United States of America") return 'US'
+
+}
 /*
 async function btnDeleteCourseHtml() {
 
