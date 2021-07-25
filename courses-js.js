@@ -534,9 +534,6 @@ async function btnSCMSubmitCourseHtml() {
       return
     }
 
-
-
-    
     course = []
     course[cols.indexOf("Course Name")] = $('#scmName').val()
     course[cols.indexOf("Key")] = courseKey
@@ -633,6 +630,7 @@ function scmPrepTeeInfo(cols, course) {
 
     if (defaultTee[idx].checked) {
 
+      course[cols.indexOf("Gender")] = gender[idx].value)
       course[cols.indexOf("Tee Name")] = camel2title(teeName[idx].value)
       course[cols.indexOf("Par")] = par[idx].value
       course[cols.indexOf("USGA Course Rating")] = crsRat[idx].value
