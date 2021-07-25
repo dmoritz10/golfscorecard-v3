@@ -1450,10 +1450,10 @@ async function courseSummary(rounds) {
 
   // var rounds = await getRounds()
 
-  var golfers = readOption('Golfers', [])
-golfers.forEach((val,idx,arr) => arr.nbr = 0)
+  var golfersArr = readOption('Golfers', [])
+golfersArr.forEach((val,idx,arr) => arr.nbr = 0)
 
-  golfers.map(a=>a.nbr=0);
+  golfersArr.map(a=>a.nbr=0);
 
   var cols = arrShts['My Courses'].colHdrs
   var courses = arrShts['My Courses'].vals
@@ -1470,6 +1470,8 @@ golfers.forEach((val,idx,arr) => arr.nbr = 0)
   var avgArr = Array(courses.length).fill(0)
 
   rounds.forEach( (val, idx, arr) => {
+    
+    var sc = JSON.parse(val.scoreCard)
 
     var key = calcCourseKey(val.courseName)
     var courseIdx = courseKeys.indexOf(key)
@@ -1478,8 +1480,6 @@ golfers.forEach((val,idx,arr) => arr.nbr = 0)
       var tm = new Date(val.endTime).getTime() - new Date(val.startTime).getTime()
 
       if (tm < 1000 * 60 * 60) {
-
-        var sc = JSON.parse(val.scoreCard)
 
         tm = sc.scores.length * 15 * 60 * 1000              // estimate 15 minutes per hole
 
@@ -1491,7 +1491,18 @@ golfers.forEach((val,idx,arr) => arr.nbr = 0)
     } 
     // else  console.log('course key - ' + val.courseName + ' - ' + val.startTime )
 
+    const findGolfer = (obj, key, value)=> obj.find(v => v[key] === value);
+    var golfers = sc.golfers
+    golfers.forEach(val => {
+
+      console.log(findGolfer(golfersArr, 'name', val.name))
+      findGolfer(golfersArr, 'name', val.name).nbr++
+
+    })
+
   })
+
+  console.log(golfersArr)
 
   nbrArr.forEach((val, idx, arr) => {
 
