@@ -853,21 +853,24 @@ function updateSCMForm(sxsRtn) {
 
       var mlt = ti[tiCols.gender] == 'M' ? 5.381 : 4.24
 
-      var f9r = val.frontNineRating ? val.frontNineRating : (val.rating / 2).toFixed(1)
-
       if (val.frontNineRating) {
         var f9r = val.frontNineRating.toFixed(1)
       } else {
         var f9r = (val.rating / 2).toFixed(1)
       }
       if (val.frontNineSlope) {
-        var f9s = val.frontNineSlope ? val.frontNineSlope : val.slope
+        var f9s = val.frontNineSlope
       } else {
         var f9s = val.slope
       }
 
       var b9r = val.rating - f9r
       var b9s = val.slope * 2 - f9s
+
+      console.log(val.teeColorType)
+      console.log(b9r)
+      console.log(b9s)
+      console.log(b9r + ' / ' + b9s)
 
       ti[tiCols.par] = val.par
       ti[tiCols.course_rating] = val.rating
