@@ -730,7 +730,10 @@ async function updateCourse(arrCourse, idx) {
         }
 
         console.log(request)
-        await gapi.client.sheets.spreadsheets.values.batchUpdate(request)   
+        await gapi.client.sheets.spreadsheets.values.batchUpdate({
+          spreadsheetId: spreadsheetId,
+          resource: request
+        })
 
       }, 
       
