@@ -575,7 +575,7 @@ function dupCourse(courseKey) {
 
   console.log(courseKeys)
 
-  if (courseKeys.indexOf(courseKey)) {
+  if (courseKeys.indexOf(courseKey) > -1) {
     return true 
   } else {
     return false
