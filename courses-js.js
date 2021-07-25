@@ -526,10 +526,20 @@ async function btnSCMSubmitCourseHtml() {
     course[cols.indexOf("Tee Info")] = scmPrepTeeInfo(cols, course)
   
   } else {     
+    var courseKey = calcCourseKey($('#scmName').val())
+    if (dupCourse(courseKey)) {
+
+      toast("Course already exists")
+
+      return
+    }
+
+
+
     
     course = []
     course[cols.indexOf("Course Name")] = $('#scmName').val()
-    course[cols.indexOf("Key")] = calcCourseKey($('#scmName').val())
+    course[cols.indexOf("Key")] = courseKey
     course[cols.indexOf("Phone")] = $('#scmPhone').val()
     course[cols.indexOf("Website")] = $('#scmWebsite').val()
     course[cols.indexOf("Uweather StationId")] = $('#scmStationId').val()
@@ -554,6 +564,21 @@ async function btnSCMSubmitCourseHtml() {
   $("#course-modal").modal('hide');
   
   btnShowCoursesHtml()  
+
+}
+
+function dupCourse(courseKey) {
+
+  var cols = arrShts['My Courses'].colHdrs
+  var courses = arrShts['My Courses'].vals
+  let courseKeys = courses.map(a => a[cols.indexOf('Key')]);
+
+  if (courseKeys.indexOf(courseKey)) {
+    return true 
+  } else {
+    return false
+  }
+  }
 
 }
 
