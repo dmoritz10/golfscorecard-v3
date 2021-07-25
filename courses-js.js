@@ -950,7 +950,7 @@ function abbrState(state) {
     }
   console.log(state)
     let a = state.trim().replace(/[^\w ]/g, "").toLowerCase(); //Trim, remove all non-word characters with the exception of spaces, and convert to lowercase
-    if(states[a] !== null) {
+    if(states[a]) {
       return states[a];
     }
     console.log(state)
