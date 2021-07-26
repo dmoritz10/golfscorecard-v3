@@ -106,4 +106,9 @@ Tackle gender issue more generally
 Fix Calendar updates / deletes
 
 
-add nbr of times played to Golfers
+x add nbr of times played to Golfers
+
+
+Firefox
+    permissions for geolocation
+    sizing
