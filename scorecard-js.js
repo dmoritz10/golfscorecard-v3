@@ -1507,7 +1507,7 @@ console.log(golfersArr)
     }
   })
 
-  arrOptions['Golfers'] = JSON.stringify(arrGolfers)
+  arrOptions['Golfers'] = JSON.stringify(golfersArr)
 
   var signinStatus = await testAuth()
   if (!signinStatus) return
