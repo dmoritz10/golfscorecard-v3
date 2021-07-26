@@ -1450,13 +1450,6 @@ async function courseSummary(rounds) {
 
   // var rounds = await getRounds()
 
-  var golfersArr = readOption('Golfers', [])
-golfersArr.forEach((val,idx,arr) => arr.nbr = 0)
-
-console.log(golfersArr)
-
-  golfersArr.map(a=>a.nbr=0);
-
   var cols = arrShts['My Courses'].colHdrs
   var courses = arrShts['My Courses'].vals
 
@@ -1471,6 +1464,8 @@ console.log(golfersArr)
   var sumArr = Array(courses.length).fill(0)
   var avgArr = Array(courses.length).fill(0)
 
+  var golfersArr = readOption('Golfers', [])
+  golfersArr.map(a=>a.nbr=0);
   const findGolfer = (obj, key, value)=> obj.find(v => v[key] === value);
 
   rounds.forEach( (val, idx, arr) => {
@@ -1509,9 +1504,8 @@ console.log(golfersArr)
 
   arrOptions['Golfers'] = JSON.stringify(golfersArr)
 
-  var signinStatus = await testAuth()
-  if (!signinStatus) return
-
+  await testAuth()
+  
   updateGolfersOption()
 
   nbrArr.forEach((val, idx, arr) => {
@@ -1552,7 +1546,6 @@ console.log(golfersArr)
     data
   }
 
-  await checkAuth()
   await gapi.client.sheets.spreadsheets.values.batchUpdate({
     spreadsheetId: spreadsheetId,
     resource: resource

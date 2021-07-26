@@ -154,11 +154,11 @@ async function btnShowHandicapHtml () {
 
   gotoTab('ShowHCP')
 
-  // if (rounds.length !== sumNbrRoundsPlayed()) {
+  if (rounds.length !== sumNbrRoundsPlayed()) {
 
     courseSummary(rounds)
 
-  // }
+  }
 
 }
 
