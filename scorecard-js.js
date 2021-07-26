@@ -1501,8 +1501,8 @@ console.log(golfersArr)
     if (sc.golfers) {
     golfers.forEach(val => {
 
-      console.log(findGolfer(golfersArr, 'name', val.name))
-      findGolfer(golfersArr, 'name', val.name).nbr++
+      console.log(findGolfer(golfersArr, 'name', val))
+      findGolfer(golfersArr, 'name', val).nbr++
 
     })
   }
