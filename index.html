@@ -216,7 +216,8 @@ body::-webkit-scrollbar { /* WebKit */
     }
   }
   
-  // canUseGeo = document.featurePolicy.allowsFeature("geolocation")
+  try { canUseGeo = document.featurePolicy.allowsFeature("geolocation") }
+  catch(err) {console.log(err)}
     
   $(function () {
 
