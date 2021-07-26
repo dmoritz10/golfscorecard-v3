@@ -303,13 +303,13 @@ async function btnDeleteTeetimeHtml() {
     .then(async function(response) {
              
       console.log('teetime deleted')
-      console.log(response.result.updates.updatedRange)
+      // console.log(response.result.updates.updatedRange)
     }, 
     
     function(reason) {
       
-      console.error('error appending course "' + prScore.courseName + '": ' + reason.result.error.message);      
-      // bootbox.alert('error appending course "' + prScore.courseName + '": ' + reason.result.error.message);
+      console.error('error deleting course "' + prScore.courseName + '": ' + reason.result.error.message);      
+      // bootbox.alert('error deleting course "' + prScore.courseName + '": ' + reason.result.error.message);
     
     });
 
