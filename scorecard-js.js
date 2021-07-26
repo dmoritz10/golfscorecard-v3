@@ -1471,6 +1471,8 @@ console.log(golfersArr)
   var sumArr = Array(courses.length).fill(0)
   var avgArr = Array(courses.length).fill(0)
 
+  const findGolfer = (obj, key, value)=> obj.find(v => v[key] === value);
+
   rounds.forEach( (val, idx, arr) => {
     
     var sc = JSON.parse(val.scoreCard)
@@ -1493,23 +1495,24 @@ console.log(golfersArr)
     } 
     // else  console.log('course key - ' + val.courseName + ' - ' + val.startTime )
 
-    const findGolfer = (obj, key, value)=> obj.find(v => v[key] === value);
     var golfers = sc.golfers
 
-  
-    console.log(golfers)
     if (sc.golfers) {
-    golfers.forEach(val => {
+      golfers.forEach(val => {
 
-      console.log(findGolfer(golfersArr, 'name', val.name))
       var glfr = findGolfer(golfersArr, 'name', val.name)
       if (glfr) glfr.nbr++
 
     })
-  }
+    }
   })
 
-  console.log(golfersArr)
+  arrOptions['Golfers'] = JSON.stringify(arrGolfers)
+
+  var signinStatus = await testAuth()
+  if (!signinStatus) return
+
+  updateGolfersOption()
 
   nbrArr.forEach((val, idx, arr) => {
 
