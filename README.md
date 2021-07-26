@@ -98,7 +98,7 @@ x fix stats putting
 
 ? Fix Target Score = fixed ??? need more analysis
 
-Fix Hole Detail in Courses 
+x Fix Hole Detail in Courses 
     courses.holeDetail = can't set lat/lng because prCourse not initialized
 
 Tackle gender issue more generally
@@ -112,3 +112,4 @@ x add nbr of times played to Golfers
 Firefox
     permissions for geolocation
     sizing
+    install pwa

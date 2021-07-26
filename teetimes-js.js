@@ -302,7 +302,7 @@ async function btnDeleteTeetimeHtml() {
     })      
     .then(async function(response) {
              
-      console.log('teetime deleted added')
+      console.log('teetime deleted')
       console.log(response.result.updates.updatedRange)
     }, 
     
