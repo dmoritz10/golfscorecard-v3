@@ -275,7 +275,7 @@ function adjustClubParmsHtml(e) {
   var p = e.data.p
   
   var launchAngle = $('#clbmLaunch').val();
-  var ballSpeed = $('#clbmSpeed').val();
+  var ballSpeed = $('#clbmSpeed').val() ?$('#clbmSpeed').val() : 50 ;
   var distance = $('#clbmDistance').val();
   
   switch (p) {
