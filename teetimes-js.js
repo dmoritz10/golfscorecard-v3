@@ -312,7 +312,7 @@ async function btnDeleteTeetimeHtml() {
     
   }
   
-  arrOptions['teetimes'] = arrTeetimes  ? JSON.stringify(arrTeetimes) : []
+  arrOptions['teetimes'] = arrTeetimes  ? JSON.stringify(arrTeetimes) : ''
   
   await updateTeetimesOption()
   
