@@ -54,7 +54,7 @@ function calcTargetScoreDan(mostRecent20HcpDiff, targetHandicap, courseRating, s
 
     var mostRecent19 = JSON.parse(JSON.stringify(mostRecent20HcpDiff))
     
-    mostRecent19.shift()
+    mostRecent19.pop()
 
     var nbrToUse = calcNbrToUse(mostRecent20HcpDiff)
     
