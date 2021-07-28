@@ -152,7 +152,7 @@ async function btnShowHandicapHtml () {
   
   }
   
-  if (hcpArr.length > 0) displayHcpTrend(hcpArr, handicapAlert)
+  displayHcpTrend(hcpArr, handicapAlert)
 
   gotoTab('ShowHCP')
 
@@ -178,14 +178,21 @@ function displayHcpTrend(hcpArr, handicapAlert) {
 
   var hcpAlertTxt = handicapAlert ? '<i class="material-icons">trending_up</i>' + handicapAlert : ''
   
-  $ ('#hcpHcp1').html(hcpArr[0].hcp + hcpAlertTxt)
-  $ ('#hcpHcp2').html(hcpArr[9].hcp)
-  $ ('#hcpHcp3').html(hcpArr[19].hcp)
-  
-  $ ('#hcpHcpTime1').html('Current')
-  $ ('#hcpHcpTime2').html('Last 10 Rounds')
-  $ ('#hcpHcpTime3').html('Last 20 Rounds')
+  if (hcpArr.length > 0) {
+    $ ('#hcpHcp1').html(hcpArr[0].hcp + hcpAlertTxt)
+    $ ('#hcpHcpTime1').html('Current')
+  }
 
+  if (hcpArr.length > 9) {
+    $ ('#hcpHcp2').html(hcpArr[9].hcp)
+    $ ('#hcpHcpTime2').html('Last 10 Rounds')
+  }
+
+  if (hcpArr.length > 19) {
+    $ ('#hcpHcp3').html(hcpArr[19].hcp)
+    $ ('#hcpHcpTime3').html('Last 20 Rounds')
+  }
+  
 }
 
 function displayHcpHist(handicap) {                                                // replaced by displayHcpTrend
