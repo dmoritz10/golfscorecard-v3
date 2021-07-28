@@ -10,6 +10,8 @@ async function btnShowStatsHtml() {
 
   var rounds = await getRounds(statExcludeSmall)
 
+  if (!rounds) return
+
   var datePlayedArr = rounds.map(x => x['date'])
 
   var endRow = {}

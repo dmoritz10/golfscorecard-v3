@@ -44,9 +44,8 @@ async function getRounds(prmExcludeSmall) {
 
 
     if (arrRounds.length < 5) {
-
         bootbox.alert('5 are more rounds are required to calculated Handicap')
-        return
+        return null
     }
     
     var objRounds = []

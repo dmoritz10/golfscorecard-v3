@@ -12,6 +12,9 @@ async function btnShowRoundsHtml() {
   
   var rounds = await getRounds(srExcludeSmall)
 
+  if (!rounds) return
+
+
   var nbrRounds = rounds.length
    
   console.log('rounds')

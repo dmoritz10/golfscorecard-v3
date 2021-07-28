@@ -5,6 +5,9 @@ async function updateSummaryInfo() {
   
     var rounds = await getRounds()
 
+    if (!rounds) return
+
+
     var hcpArr = []
     var nbrRounds = 0
     
