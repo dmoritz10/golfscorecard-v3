@@ -273,9 +273,11 @@ function btnShowClubsHtmlxxx() {
 function adjustClubParmsHtml(e) {
 
   var p = e.data.p
+
+  if (!$('#clbmSpeed').val()) $('#clbmSpeed').val(50)
   
   var launchAngle = $('#clbmLaunch').val();
-  var ballSpeed = $('#clbmSpeed').val() ?$('#clbmSpeed').val() : 50 ;
+  var ballSpeed = $('#clbmSpeed').val();
   var distance = $('#clbmDistance').val();
   
   switch (p) {
