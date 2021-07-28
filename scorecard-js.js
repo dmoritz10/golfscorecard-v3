@@ -1401,6 +1401,8 @@ function distance(lat1, lon1, lat2, lon2, unit) {
 function btnGolfersHtml() {
   
   var inputOptions = getGolfers()
+
+  if (inputOptions.length == 0) return
   
   var golferPrompt = bootbox.prompt({
     
