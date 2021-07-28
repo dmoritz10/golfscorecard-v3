@@ -2,7 +2,7 @@
 
 async function btnPlayRoundHtml() {
 
-  if (!arrShts['My Courses'].vals)  {
+  if (!arrShts['My Courses'].vals.length)  {
     bootbox.alert('You must set up a Course before playing a round')
     return null
 }
