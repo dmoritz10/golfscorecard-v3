@@ -190,8 +190,6 @@ async function loadCourseInfo(e) {
 
       var tsObj = calcTargetScoreDan(hcpObj.mostRecent20HcpDiff, $('#hpTargetHandicap').val(), courseInfo['USGA Course Rating'], courseInfo['Slope Rating'], courseInfo['Front 9 Rating'])
       
-      // var x = ((($('#hpTargetHandicap').val()) * (arrOptions['Handicap Diff Count']*1 + 1)) / .96) - arrOptions['Handicap Diff Sum']
-      
       courseInfo['Target Score'] = tsObj.scoreFmt
       
       $('#hpTargetScore').html (tsObj.scoreFmt)

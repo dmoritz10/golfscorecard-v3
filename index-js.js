@@ -301,7 +301,7 @@
 
 async function getSSId() {
 
-  var q = "name = 'golfscorecard database v3'" + 
+  var q = "name = 'golfscorecard database initial'" + 
           " AND " + "mimeType='application/vnd.google-apps.spreadsheet'" + 
           " AND " + "trashed = false"
 

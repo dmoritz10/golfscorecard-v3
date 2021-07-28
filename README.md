@@ -96,15 +96,14 @@ X fix Playround
 x fix stats putting
     last 100 rounds putts / gir
 
-? Fix Target Score = fixed ??? need more analysis
+x Fix Target Score = fixed
 
 x Fix Hole Detail in Courses 
     courses.holeDetail = can't set lat/lng because prCourse not initialized
 
 Tackle gender issue more generally
 
-Fix Calendar updates / deletes
-
+x Fix Calendar updates / deletes
 
 x add nbr of times played to Golfers
 
