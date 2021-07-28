@@ -109,7 +109,12 @@ Fix Calendar updates / deletes
 x add nbr of times played to Golfers
 
 
-Firefox
+Firefox - scrub this as mozilla not supporting pwa s ?????
     permissions for geolocation
     sizing
     install pwa
+
+Start from scratch
+    courses
+    scorecards
+    settings
