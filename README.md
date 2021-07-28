@@ -107,6 +107,8 @@ x Fix Calendar updates / deletes
 
 x add nbr of times played to Golfers
 
+f/m for local courses
+
 
 Firefox - scrub this as mozilla not supporting pwa s ?????
     permissions for geolocation

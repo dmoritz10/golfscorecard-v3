@@ -1279,7 +1279,7 @@ function _calcVaporPressureE(Dp) {
     return E;
 }	
 
-function calcClubDistance(wind, airDensity, launchAngle, ballSpeed) {
+function calcClubDistance(wind, airDensity, launchAngle, ballSpeed=50) {
 
   var p = airDensity
   var Cd = 0.275     
