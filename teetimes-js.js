@@ -279,28 +279,21 @@ async function btnDeleteTeetimeHtml() {
 
 
   if (arrOptions['teetimes']) {
-  
-    var arrTeetimes = JSON.parse(arrOptions['teetimes'])
-    
+
+    var arrTeetimes = readOption('teetimes', [])
+
     var idx = $('#ttmIdx').val()
-/*
 
-    var eventId = await promiseRun('deleteCalendarEvent', {
-      
-                   eventId: arrTeetimes[idx].eventId
-                  
-                  })    
-*/
 
-    arrTeetimes.splice(idx, 1)
-    if (arrTeetimes.length == 0) arrTeetimes = ''
-
-    await checkAuth()
     var request = await gapi.client.calendar.events.delete({
         'calendarId': 'primary',
         'eventId': arrTeetimes[idx].eventId
     })      
     .then(async function(response) {
+
+      arrTeetimes.splice(idx, 1)
+
+      if (arrTeetimes.length == 0) arrTeetimes = ''  
              
       console.log('teetime deleted')
       // console.log(response.result.updates.updatedRange)
@@ -319,7 +312,7 @@ async function btnDeleteTeetimeHtml() {
     
   }
   
-  arrOptions['teetimes'] = arrTeetimes  ? JSON.stringify(arrTeetimes) : ''
+  arrOptions['teetimes'] = arrTeetimes  ? JSON.stringify(arrTeetimes) : []
   
   await updateTeetimesOption()
   
