@@ -2,6 +2,11 @@
 
 async function btnPlayRoundHtml() {
 
+  if (!arrShts['My Courses'].vals)  {
+    bootbox.alert('You must set up a Course before playing a round')
+    return null
+}
+
   console.log('btnPlayRoundHtml')
     
   transitionPlayRoundTab()
