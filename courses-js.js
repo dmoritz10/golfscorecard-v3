@@ -3,13 +3,7 @@ async function btnShowCoursesHtml () {
 
   var rowCount = arrShts['My Courses'].rowCount - 1
   
-  if (rowCount < 1) {
-  
-    bootbox.alert ('There are no courses to show')  
-    return
-
-  }
-  
+ 
   var scOptions = readOption('scFilter')
   var scSelectLocal  = scOptions.scSelectLocal
   var scSelectPlayed = scOptions.scSelectPlayed
