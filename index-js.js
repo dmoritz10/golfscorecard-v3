@@ -1039,6 +1039,8 @@ async function updateOption(key, val) {
 }
 
 async function checkAuth() {
+console.log('curruser')
+  console.log(await gapi.auth2.getAuthInstance().currentUser.get())
 
   var minAuthRemaining = (new Date(gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().expires_at) - new Date()) / (1000 * 60)
   if (minAuthRemaining < 10) {
