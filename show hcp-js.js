@@ -152,7 +152,7 @@ async function btnShowHandicapHtml () {
   
   }
   
-  displayHcpTrend(hcpArr, handicapAlert)
+  if (hcpArr.length > 0) displayHcpTrend(hcpArr, handicapAlert)
 
   gotoTab('ShowHCP')
 
