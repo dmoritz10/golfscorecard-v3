@@ -108,10 +108,10 @@ async function btnShowCoursesHtml () {
       var eleFav = ele.find('#ScFavIcon')[0]
       if (fav) {
         eleFav.innerHTML = "star"
-        eleFav.animate({color:'blue'},1000);;
+        eleFav.css('color', 'blue');
       } else {
         eleFav.innerHTML = "star_outline"
-        eleFav.animate({color:'black'},1000);;
+        eleFav.css('color', 'black');
       }
         
       coursesObj['Nbr Times Played'] > 0 ? ele.css( "background", "#f5edcb") : ele.css( "background", "white")
@@ -436,13 +436,13 @@ async function setFavorite(idx) {
 
     course[cols.indexOf("Favorite")] = "FALSE"
     eleFav.innerHTML = "star"
-    eleFav.animate({color:'blue'},1000);;
-   
+    eleFav.css('color', 'blue');
+    
   } else {
 
     course[cols.indexOf("Favorite")] = "TRUE"
     eleFav.innerHTML = "star_outline"
-    eleFav.animate({color:'black'},1000);;
+    eleFav.css('color', 'black');
   }
 
   await updateCourse(course, idx)
