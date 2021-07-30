@@ -105,7 +105,10 @@ async function btnShowCoursesHtml () {
       ele.find('#btnScFavorite')[0].setAttribute("onclick", "setFavorite(" + x + ")");
 
 console.log(!!(coursesObj['Favorite'].toLowerCase()))
-console.log(!!(coursesObj['Favorite'].toLowerCase()) == true)
+console.log(!!(coursesObj['Favorite'].toLowerCase()) === 'true')
+var bool = !!(coursesObj['Favorite'].toLowerCase()) === 'true'
+console.log(bool)
+console.log(bool == true)
 
       ele.find('#ScFavIcon')[0].innerHTML = (!!(coursesObj['Favorite'].toLowerCase()) ? "star" : "star_outline");
 
