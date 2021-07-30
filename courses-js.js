@@ -102,6 +102,10 @@ async function btnShowCoursesHtml () {
       coursesObj.idx = j
       var x = JSON.stringify(coursesObj)           
       ele.find('#btnScEditCourse')[0].setAttribute("onclick", "editCourse(" + x + ")");
+      ele.find('#btnScFavorite')[0].setAttribute("onclick", "setFavorite(" + x + ")");
+      ele.find('#ScFavIcon')[0].text(coursesObj['Favorite'] ? "star" : "star_outline");
+
+      
         
       coursesObj['Nbr Times Played'] > 0 ? ele.css( "background", "#f5edcb") : ele.css( "background", "white")
       
@@ -414,7 +418,29 @@ async function holeDetail() {
     
 }
 
+function setFavorite(idx) {
 
+  var cols = arrShts['My Courses'].colHdrs
+  var course = arrShts['My Courses'].vals[idx]
+
+  var fav = course[cols.indexOf("Favorite")]
+
+  if (fav) {
+
+    course[cols.indexOf("Favorite")] = false
+    ele.find('#ScFavIcon')[0].text = "star_outline"
+    
+
+  } else {
+
+    course[cols.indexOf("Favorite")] = true
+    ele.find('#ScFavIcon')[0].text = "star"
+
+  }
+
+  await updateCourse(course, idx)
+
+}
 // courseModal
 
 async function editCourse(course) {
@@ -544,9 +570,6 @@ async function btnSCMSubmitCourseHtml() {
   }
   
   arrShts['My Courses'].vals[idx] = course
-  
-  var signinStatus = await testAuth()
-  if (!signinStatus) return
   
   await updateCourse(course, idx)
 
