@@ -104,15 +104,15 @@ async function btnShowCoursesHtml () {
       ele.find('#btnScEditCourse')[0].setAttribute("onclick", "editCourse(" + x + ")");
       ele.find('#btnScFavorite')[0].setAttribute("onclick", "setFavorite(" + x + ")");
 
-console.log((coursesObj['Favorite'].toLowerCase()))
-console.log((coursesObj['Favorite'].toLowerCase()) === 'true')
-var bool = (coursesObj['Favorite'].toLowerCase()) === 'true'
-console.log(bool)
-console.log(bool == true)
-
-      ele.find('#ScFavIcon')[0].innerHTML = (bool ? "star" : "star_outline");
-
-      
+      var fav = (coursesObj['Favorite'].toLowerCase()) === 'true'
+      var eleFav = ele.find('#ScFavIcon')[0]
+      if (fav) {
+        eleFav.innerHTML = "star"
+        eleFav.animate({color:'blue'},1000);;
+      } else {
+        eleFav.innerHTML = "star_outline"
+        eleFav.animate({color:'black'},1000);;
+      }
         
       coursesObj['Nbr Times Played'] > 0 ? ele.css( "background", "#f5edcb") : ele.css( "background", "white")
       
@@ -430,19 +430,19 @@ async function setFavorite(idx) {
   var cols = arrShts['My Courses'].colHdrs
   var course = arrShts['My Courses'].vals[idx]
 
-  var fav = course[cols.indexOf("Favorite")]
+  var fav = (course[cols.indexOf("Favorite")].toLowerCase()) === 'true'
 
   if (fav) {
 
-    course[cols.indexOf("Favorite")] = false
-    ele.find('#ScFavIcon')[0].text = "star_outline"
-    
-
+    course[cols.indexOf("Favorite")] = "FALSE"
+    eleFav.innerHTML = "star"
+    eleFav.animate({color:'blue'},1000);;
+   
   } else {
 
-    course[cols.indexOf("Favorite")] = true
-    ele.find('#ScFavIcon')[0].text = "star"
-
+    course[cols.indexOf("Favorite")] = "TRUE"
+    eleFav.innerHTML = "star_outline"
+    eleFav.animate({color:'black'},1000);;
   }
 
   await updateCourse(course, idx)
