@@ -103,7 +103,7 @@ async function btnShowCoursesHtml () {
       var x = JSON.stringify(coursesObj)           
       ele.find('#btnScEditCourse')[0].setAttribute("onclick", "editCourse(" + x + ")");
       ele.find('#btnScFavorite')[0].setAttribute("onclick", "setFavorite(" + x + ")");
-      ele.find('#ScFavIcon')[0].text(coursesObj['Favorite'] ? "star" : "star_outline");
+      ele.find('#ScFavIcon')[0].val(coursesObj['Favorite'] ? "star" : "star_outline");
 
       
         
