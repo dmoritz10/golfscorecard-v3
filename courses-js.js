@@ -115,13 +115,13 @@ async function btnShowCoursesHtml () {
       console.log($(eleFav))
       console.log($(eleFav)[0])
 
-      if (fav) {
-        eleFav.innerHTML = "star"
-        eleFav.css('color', 'blue');
-      } else {
-        eleFav.innerHTML = "star_outline"
-        eleFav.css('color', 'black');
-      }
+      // if (fav) {
+      //   eleFav.innerHTML = "star"
+      //   eleFav.css('color', 'blue');
+      // } else {
+      //   eleFav.innerHTML = "star_outline"
+      //   eleFav.css('color', 'black');
+      // }
         
       
       ele.show()
