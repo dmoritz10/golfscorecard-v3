@@ -106,6 +106,9 @@ async function btnShowCoursesHtml () {
 
       var fav = (coursesObj['Favorite'].toLowerCase()) === 'true'
       var eleFav = ele.find('#ScFavIcon')[0]
+
+      console.log(eleFav)
+      
       if (fav) {
         eleFav.innerHTML = "star"
         eleFav.css('color', 'blue');
@@ -431,6 +434,7 @@ async function setFavorite(idx) {
   var course = arrShts['My Courses'].vals[idx]
 
   var fav = (course[cols.indexOf("Favorite")].toLowerCase()) === 'true'
+  var eleFav = ele.find('#ScFavIcon')[0]
 
   if (fav) {
 
