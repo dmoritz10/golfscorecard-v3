@@ -431,7 +431,7 @@ async function setFavorite(idx) {
   var cols = arrShts['My Courses'].colHdrs
   var course = arrShts['My Courses'].vals[idx]
 
-  var fav = course[cols.indexOf("Favorite")].toLowerCase()) === 'true'
+  var fav = course[cols.indexOf("Favorite")].toLowerCase() === 'true'
 
   if (fav) {
     course[cols.indexOf("Favorite")] = "FALSE"
