@@ -105,7 +105,7 @@ async function btnShowCoursesHtml () {
       coursesObj['Nbr Times Played'] > 0 ? ele.css( "background", "#f5edcb") : ele.css( "background", "white")
       
       ele.find('#btnScFavorite')[0].setAttribute("onclick", "setFavorite(" + x + ")");
-      ele.find('#btnScFavorite')[0].setAttribute("color", "yellow");
+      ele.find('#btnScFavorite')[0].css('color', 'blue');;
 
       var fav = (coursesObj['Favorite'].toLowerCase()) === 'true'
       var eleFav = ele.find('#ScFavIcon')[0]
