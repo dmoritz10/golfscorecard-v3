@@ -418,7 +418,7 @@ async function holeDetail() {
     
 }
 
-function setFavorite(idx) {
+async function setFavorite(idx) {
 
   var cols = arrShts['My Courses'].colHdrs
   var course = arrShts['My Courses'].vals[idx]
