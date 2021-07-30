@@ -106,7 +106,7 @@ async function btnShowCoursesHtml () {
 
 console.log(ele.find('#ScFavIcon'))
 
-      ele.find('#ScFavIcon')[0].val(coursesObj['Favorite'] ? "star" : "star_outline");
+      ele.find('#ScFavIcon')[0].innerHTML = (coursesObj['Favorite'] ? "star" : "star_outline");
 
       
         
