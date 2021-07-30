@@ -104,13 +104,13 @@ async function btnShowCoursesHtml () {
       ele.find('#btnScEditCourse')[0].setAttribute("onclick", "editCourse(" + x + ")");
       ele.find('#btnScFavorite')[0].setAttribute("onclick", "setFavorite(" + x + ")");
 
-console.log(!!(coursesObj['Favorite'].toLowerCase()))
-console.log(!!(coursesObj['Favorite'].toLowerCase()) === 'true')
-var bool = !!(coursesObj['Favorite'].toLowerCase()) === 'true'
+console.log((coursesObj['Favorite'].toLowerCase()))
+console.log((coursesObj['Favorite'].toLowerCase()) === 'true')
+var bool = (coursesObj['Favorite'].toLowerCase()) === 'true'
 console.log(bool)
 console.log(bool == true)
 
-      ele.find('#ScFavIcon')[0].innerHTML = (!!(coursesObj['Favorite'].toLowerCase()) ? "star" : "star_outline");
+      ele.find('#ScFavIcon')[0].innerHTML = (bool ? "star" : "star_outline");
 
       
         
