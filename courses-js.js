@@ -107,8 +107,9 @@ async function btnShowCoursesHtml () {
       var fav = (coursesObj['Favorite'].toLowerCase()) === 'true'
       var eleFav = ele.find('#ScFavIcon')[0]
 
-      console.log(eleFav)
-      
+      console.log(ele.find('#ScFavIcon'))
+      console.log(eleFav[0])
+
       if (fav) {
         eleFav.innerHTML = "star"
         eleFav.css('color', 'blue');
