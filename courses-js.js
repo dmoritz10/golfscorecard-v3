@@ -119,11 +119,11 @@ async function btnShowCoursesHtml () {
       // ele.find('#ScFavIcon').css('color', 'blue');
 
       if (fav) {
-        eleFav[0].innerHTML = "star"
-        eleFav.addClass('text-primary')
+        ele.find('#ScFavIcon')[0].innerHTML = "star"
+        ele.find('#ScFavIcon').addClass('text-primary')
       } else {
-        eleFav[0].innerHTML = "star_outline"
-        eleFav.removeClass('text-primary')
+        ele.find('#ScFavIcon')[0].innerHTML = "star_outline"
+        ele.find('#ScFavIcon').removeClass('text-primary')
       }
         
       
