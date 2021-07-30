@@ -107,24 +107,24 @@ async function btnShowCoursesHtml () {
       ele.find('#btnScFavorite')[0].setAttribute("onclick", "setFavorite(" + x + ")");
 
       var fav = (coursesObj['Favorite'].toLowerCase()) === 'true'
-      var eleFav = ele.find('#ScFavIcon')[0]
+      var eleFav = ele.find('#ScFavIcon')
 
       console.log($(ele.find('#ScFavIcon')[0]))
       console.log(ele.find('#ScFavIcon'))
       console.log($(eleFav))
       console.log($(eleFav)[0])
 
-      ele.find('#ScFavIcon').addClass('text-success')
+      // ele.find('#ScFavIcon').addClass('text-primary')
 
-      ele.find('#ScFavIcon').css('color', 'blue');
+      // ele.find('#ScFavIcon').css('color', 'blue');
 
-      // if (fav) {
-      //   eleFav.innerHTML = "star"
-      //   eleFav.css('color', 'blue');
-      // } else {
-      //   eleFav.innerHTML = "star_outline"
-      //   eleFav.css('color', 'black');
-      // }
+      if (fav) {
+        eleFav.innerHTML = "star"
+        eleFav.addClass('text-primary')
+      } else {
+        eleFav.innerHTML = "star_outline"
+        eleFav.removeClass('text-primary')
+      }
         
       
       ele.show()
