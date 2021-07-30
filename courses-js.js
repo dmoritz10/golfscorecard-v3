@@ -104,8 +104,8 @@ async function btnShowCoursesHtml () {
       ele.find('#btnScEditCourse')[0].setAttribute("onclick", "editCourse(" + x + ")");
       ele.find('#btnScFavorite')[0].setAttribute("onclick", "setFavorite(" + x + ")");
 
-console.log(coursesObj['Favorite'])
-console.log(coursesObj['Favorite'] == true)
+console.log(!!coursesObj['Favorite'])
+console.log(!!coursesObj['Favorite'] == true)
 
       ele.find('#ScFavIcon')[0].innerHTML = (coursesObj['Favorite'] ? "star" : "star_outline");
 
