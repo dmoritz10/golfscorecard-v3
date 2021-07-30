@@ -105,7 +105,6 @@ async function btnShowCoursesHtml () {
       coursesObj['Nbr Times Played'] > 0 ? ele.css( "background", "#f5edcb") : ele.css( "background", "white")
       
       ele.find('#btnScFavorite')[0].setAttribute("onclick", "setFavorite(" + x + ")");
-      ele.find('#btnScFavorite').css('color', 'blue');;
 
       var fav = (coursesObj['Favorite'].toLowerCase()) === 'true'
       var eleFav = ele.find('#ScFavIcon')[0]
@@ -114,6 +113,10 @@ async function btnShowCoursesHtml () {
       console.log(ele.find('#ScFavIcon'))
       console.log($(eleFav))
       console.log($(eleFav)[0])
+
+      eleFav.addClass('text-success')
+
+      ele.find('#ScFavIcon').css('color', 'blue');
 
       // if (fav) {
       //   eleFav.innerHTML = "star"
