@@ -114,7 +114,7 @@ async function btnShowCoursesHtml () {
       console.log($(eleFav))
       console.log($(eleFav)[0])
 
-      eleFav.addClass('text-success')
+      ele.find('#ScFavIcon').addClass('text-success')
 
       ele.find('#ScFavIcon').css('color', 'blue');
 
