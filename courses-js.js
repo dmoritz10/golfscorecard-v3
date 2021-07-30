@@ -107,16 +107,6 @@ async function btnShowCoursesHtml () {
       ele.find('#btnScFavorite')[0].setAttribute("onclick", "setFavorite(" + x + ")");
 
       var fav = (coursesObj['Favorite'].toLowerCase()) === 'true'
-      var eleFav = ele.find('#ScFavIcon')
-
-      console.log($(ele.find('#ScFavIcon')[0]))
-      console.log(ele.find('#ScFavIcon'))
-      console.log($(eleFav))
-      console.log($(eleFav)[0])
-
-      // ele.find('#ScFavIcon').addClass('text-primary')
-
-      // ele.find('#ScFavIcon').css('color', 'blue');
 
       if (fav) {
         ele.find('#ScFavIcon')[0].innerHTML = "star"
@@ -441,20 +431,16 @@ async function setFavorite(idx) {
   var cols = arrShts['My Courses'].colHdrs
   var course = arrShts['My Courses'].vals[idx]
 
-  var fav = (course[cols.indexOf("Favorite")].toLowerCase()) === 'true'
-  var eleFav = ele.find('#ScFavIcon')[0]
+  var fav = (coursesObj['Favorite'].toLowerCase()) === 'true'
 
   if (fav) {
-
     course[cols.indexOf("Favorite")] = "FALSE"
-    eleFav.innerHTML = "star"
-    eleFav.css('color', 'blue');
-    
+    ele.find('#ScFavIcon')[0].innerHTML = "star"
+    ele.find('#ScFavIcon').addClass('text-primary')
   } else {
-
     course[cols.indexOf("Favorite")] = "TRUE"
-    eleFav.innerHTML = "star_outline"
-    eleFav.css('color', 'black');
+    ele.find('#ScFavIcon')[0].innerHTML = "star_outline"
+    ele.find('#ScFavIcon').removeClass('text-primary')
   }
 
   await updateCourse(course, idx)
