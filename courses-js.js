@@ -102,7 +102,10 @@ async function btnShowCoursesHtml () {
       coursesObj.idx = j
       var x = JSON.stringify(coursesObj)           
       ele.find('#btnScEditCourse')[0].setAttribute("onclick", "editCourse(" + x + ")");
+      coursesObj['Nbr Times Played'] > 0 ? ele.css( "background", "#f5edcb") : ele.css( "background", "white")
+      
       ele.find('#btnScFavorite')[0].setAttribute("onclick", "setFavorite(" + x + ")");
+      ele.find('#btnScFavorite')[0].setAttribute("color", "yellow");
 
       var fav = (coursesObj['Favorite'].toLowerCase()) === 'true'
       var eleFav = ele.find('#ScFavIcon')[0]
@@ -121,7 +124,6 @@ async function btnShowCoursesHtml () {
         eleFav.css('color', 'black');
       }
         
-      coursesObj['Nbr Times Played'] > 0 ? ele.css( "background", "#f5edcb") : ele.css( "background", "white")
       
       ele.show()
       
