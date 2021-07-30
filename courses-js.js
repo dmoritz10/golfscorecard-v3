@@ -114,7 +114,6 @@ async function btnShowCoursesHtml () {
       console.log(ele.find('#ScFavIcon'))
       console.log($(eleFav))
       console.log($(eleFav)[0])
-      console.log(ele.find('#ScFavIcon')[0].val())
 
       if (fav) {
         eleFav.innerHTML = "star"
