@@ -55,7 +55,7 @@ async function btnShowRoundsHtml() {
     ele.find('#srDate')[0].innerHTML = datePlayed
     ele.find('#srTees')[0].innerHTML = roundObj.tee
     
-    ele.find('#srTargetScore')[0].innerHTML = ci['Target Score'].split(' ')[0]
+    ele.find('#srTargetScore')[0].innerHTML = ci.courseInfo['Target Score'].split(' ')[0]
     ele.find('#srPutts')[0].innerHTML = $.sum (sc.scores, 'putts')
     ele.find('#srFairways')[0].innerHTML = $.fairwaysHit(sc.scores).replace(/ /g,'')
     
