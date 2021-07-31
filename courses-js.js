@@ -438,15 +438,17 @@ async function setFavorite(idx) {
 
   if (fav) {
     course[cols.indexOf("Favorite")] = "FALSE"
-    ele.find('#ScFavIcon')[0].innerHTML = "star"
-    ele.find('#ScFavIcon').addClass('text-primary')
+    // ele.find('#ScFavIcon')[0].innerHTML = "star"
+    // ele.find('#ScFavIcon').addClass('text-primary')
   } else {
     course[cols.indexOf("Favorite")] = "TRUE"
-    ele.find('#ScFavIcon')[0].innerHTML = "star_outline"
-    ele.find('#ScFavIcon').removeClass('text-primary')
+    // ele.find('#ScFavIcon')[0].innerHTML = "star_outline"
+    // ele.find('#ScFavIcon').removeClass('text-primary')
   }
 
   await updateCourse(course, idx)
+
+  btnShowCoursesHtml()
 
 }
 // courseModal
