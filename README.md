@@ -107,7 +107,9 @@ x Fix Calendar updates / deletes
 
 x add nbr of times played to Golfers
 
-f/m for local courses
+x f/m for local courses = rename as 'favorite'
+
+x Change name to Dan Golf - emailName
 
 
 Firefox - scrub this as mozilla not supporting pwa s ?????
@@ -115,7 +117,7 @@ Firefox - scrub this as mozilla not supporting pwa s ?????
     sizing
     install pwa
 
-Start from scratch
+x Start from scratch
     courses
     scorecards
     settings

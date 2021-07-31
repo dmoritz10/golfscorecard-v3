@@ -336,6 +336,8 @@ async function getSSId() {
 
 
 async function initialUI() {
+console.log('body size')
+  console.log(document.body.getBoundingClientRect())
 
     arrShts = await openShts(
       [
