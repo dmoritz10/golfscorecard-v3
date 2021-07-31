@@ -306,8 +306,8 @@ async function getSSId() {
   console.log(currUser)
 
 
-  var q = "name = 'Dan Golf - '" + currUser.emailName +
-          " AND " + "mimeType='application/vnd.google-apps.spreadsheet'" + 
+  var q = "name = 'Dan Golf - " + currUser.emailName +
+          "' AND " + "mimeType='application/vnd.google-apps.spreadsheet'" + 
           " AND " + "trashed = false"
 
   console.log(q)          
