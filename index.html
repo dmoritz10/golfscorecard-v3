@@ -500,6 +500,17 @@ var DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"
 
           $('#authSigninStatus').html('You are signed in.')
 
+          console.log('curruser')
+ 
+          var currUserObj = await gapi.auth2.getAuthInstance().currentUser.get()
+          console.log(currUserObj)
+          
+          currUser['email']     = currUserObj.kx.Os.zt
+          currUser['firstName'] = currUserObj.kx.Os.ET
+          currUser['lastName']  = currUserObj.kx.Os.GR
+          currUser['fullName']  = currUserObj.kx.Os.Ne
+          currUser['emailName'] = currUser('email').split('@')[0]
+
           var rtn = await getSSId()
 
           if (rtn.fileId) {spreadsheetId = rtn.fileId}
@@ -514,6 +525,8 @@ var DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"
           console.log('NOT signed in')
 
           $('#authSigninStatus').html('You are signed out.  Authorization is required.')
+
+          currUser = {}
      
           gotoTab('Auth')
         }

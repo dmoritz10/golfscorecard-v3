@@ -303,6 +303,8 @@
 
 async function getSSId() {
 
+  console.log(currUser)
+
 
   var q = "name = 'Dan Golf - '" + currUser.emailName +
           " AND " + "mimeType='application/vnd.google-apps.spreadsheet'" + 
@@ -1042,17 +1044,7 @@ async function updateOption(key, val) {
 }
 
 async function checkAuth() {
-  console.log('curruser')
- 
-  var currUserObj = await gapi.auth2.getAuthInstance().currentUser.get()
-  console.log(currUserObj)
-  
-  currUser['email']     = currUserObj.kx.Os.zt
-  currUser['firstName'] = currUserObj.kx.Os.ET
-  currUser['lastName']  = currUserObj.kx.Os.GR
-  currUser['fullName']  = currUserObj.kx.Os.Ne
-  currUser['emailName'] = currUser('email').split('@')[0]
- 
+
 
 
   var minAuthRemaining = (new Date(gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().expires_at) - new Date()) / (1000 * 60)
