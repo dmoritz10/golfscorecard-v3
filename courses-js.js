@@ -127,7 +127,7 @@ async function btnShowCoursesHtml () {
     
     btnTeetimesHtml()
     
-    gotoTab('Courses')
+    // gotoTab('Courses')
     
 }
 
