@@ -39,7 +39,7 @@ async function btnShowRoundsHtml() {
     var objHandicap = roundObj.objHandicap      
     var objTargetScore = objHandicap.targetScore
 
-    var targetScore = ci.courseInfo['Target Score'].split(' ')[0]
+    var targetScore = ci.courseInfo['Target Score'].split(' ')[0] === 'undefined' ? roundObj.finalScore + 1 : ci.courseInfo['Target Score'].split(' ')[0]
     var datePlayed = new Date(roundObj.startTime).toString().substring(0,15)
 
     if (         
