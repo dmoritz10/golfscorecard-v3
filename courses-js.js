@@ -448,7 +448,7 @@ async function setFavorite(idx) {
 
   await updateCourse(course, idx)
 
-  btnShowCoursesHtml()
+  // btnShowCoursesHtml()
 
 }
 // courseModal
