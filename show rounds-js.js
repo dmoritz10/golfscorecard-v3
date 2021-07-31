@@ -42,6 +42,9 @@ async function btnShowRoundsHtml() {
     var targetScore = ci.courseInfo['Target Score'].split(' ')[0] === 'undefined' ? roundObj.finalScore + 1 : ci.courseInfo['Target Score'].split(' ')[0]
     var datePlayed = new Date(roundObj.startTime).toString().substring(0,15)
 
+    console.log(datePlayed)
+    console.log(targetScore)
+
     if (         
         (srMadeTarget && roundObj.finalScore > targetScore*1 ) ||
         (srSelectedCourse && srSelectedCourse !== shortCourseName(roundObj.courseName.toString()))
