@@ -48,6 +48,8 @@ async function btnShowRoundsHtml() {
         continue;
 
     var datePlayed = new Date(roundObj.startTime).toString().substring(0,15)
+
+    var targetScore = ci.courseInfo['Target Score'].split(' ')[0]
     
     ele.find('#srSeqNbr')[0].innerHTML = rounds.length-j
     ele.find('#srScore')[0].innerHTML = roundObj.finalScore.toString()
@@ -55,7 +57,7 @@ async function btnShowRoundsHtml() {
     ele.find('#srDate')[0].innerHTML = datePlayed
     ele.find('#srTees')[0].innerHTML = roundObj.tee
     
-    ele.find('#srTargetScore')[0].innerHTML = ci.courseInfo['Target Score'].split(' ')[0]
+    ele.find('#srTargetScore')[0].innerHTML = targetScore
     ele.find('#srPutts')[0].innerHTML = $.sum (sc.scores, 'putts')
     ele.find('#srFairways')[0].innerHTML = $.fairwaysHit(sc.scores).replace(/ /g,'')
     
@@ -76,7 +78,7 @@ async function btnShowRoundsHtml() {
     // ele.find('#srHcpDiff')[0].innerHTML = escCorrections ? hcpDiff + '<sup>' + escCorrections + '</sup>' : hcpDiff
     ele.find('#srHcpDiff')[0].innerHTML = objHandicap.handicap
           
-    if (roundObj.finalScore*1 <= objTargetScore.score ) {
+    if (roundObj.finalScore*1 <= targetScore*1 ) {
     
       ele.css( "background", "Khaki")
     
