@@ -39,6 +39,8 @@ async function btnShowRoundsHtml() {
     var objHandicap = roundObj.objHandicap      
     var objTargetScore = objHandicap.targetScore
 
+    console.log(ci)
+
     if (         
         (srMadeTarget && roundObj.finalScore > objTargetScore.score ) ||
         (srSelectedCourse && srSelectedCourse !== shortCourseName(roundObj.courseName.toString()))
