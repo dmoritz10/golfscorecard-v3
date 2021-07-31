@@ -416,7 +416,10 @@ function chartCourseAdjustedScore (title, rounds, myStatsRng, endRow)   {
     var nbrMadeTarget = 0
     scoreCardArr.forEach((scoreCard) => {
       var scorecard = JSON.parse(scoreCard.scoreCard)
-      if (scoreCard.finalScore <= scoreCard.objHandicap.targetScore.score) nbrMadeTarget++
+      var ci = JSON.parse(scoreCard.courseInfo)
+      var targetScore = ci.courseInfo['Target Score'].split(' ')[0]
+
+      if (scoreCard.finalScore <= targetScore*1) nbrMadeTarget++
       })
     return nbrMadeTarget
   }    
