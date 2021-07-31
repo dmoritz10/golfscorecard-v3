@@ -428,25 +428,25 @@ async function holeDetail() {
 
 async function setFavorite(idx) {
 
-  var cols = arrShts['My Courses'].colHdrs
-  var course = arrShts['My Courses'].vals[idx]
+  // var cols = arrShts['My Courses'].colHdrs
+  // var course = arrShts['My Courses'].vals[idx]
 
-  console.log(idx)
-  console.log(course)
+  // console.log(idx)
+  // console.log(course)
 
-  var fav = course[cols.indexOf("Favorite")].toLowerCase() === 'true'
+  // var fav = course[cols.indexOf("Favorite")].toLowerCase() === 'true'
 
-  if (fav) {
-    course[cols.indexOf("Favorite")] = "FALSE"
-    // ele.find('#ScFavIcon')[0].innerHTML = "star"
-    // ele.find('#ScFavIcon').addClass('text-primary')
-  } else {
-    course[cols.indexOf("Favorite")] = "TRUE"
-    // ele.find('#ScFavIcon')[0].innerHTML = "star_outline"
-    // ele.find('#ScFavIcon').removeClass('text-primary')
-  }
+  // if (fav) {
+  //   course[cols.indexOf("Favorite")] = "FALSE"
+  //   // ele.find('#ScFavIcon')[0].innerHTML = "star"
+  //   // ele.find('#ScFavIcon').addClass('text-primary')
+  // } else {
+  //   course[cols.indexOf("Favorite")] = "TRUE"
+  //   // ele.find('#ScFavIcon')[0].innerHTML = "star_outline"
+  //   // ele.find('#ScFavIcon').removeClass('text-primary')
+  // }
 
-  await updateCourse(course, idx)
+  // await updateCourse(course, idx)
 
   // btnShowCoursesHtml()
 
