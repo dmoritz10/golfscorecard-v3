@@ -28,7 +28,7 @@ async function btnShowCoursesHtml () {
       var coursesObj = makeObj(courses[j], cols)
       
       if (
-          (scSelectLocal  && coursesObj['Favorite'].toLowerCase() === 'true') ||
+          (scSelectLocal  && !(coursesObj['Favorite'].toLowerCase() === 'true')) ||
           (scSelectPlayed && !coursesObj['Nbr Times Played'] ) ||
           (scExcludeSmall  && coursesObj['Par'] < 69 )
          ) continue;
