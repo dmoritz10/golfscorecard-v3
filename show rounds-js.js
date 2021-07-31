@@ -39,7 +39,7 @@ async function btnShowRoundsHtml() {
     var objHandicap = roundObj.objHandicap      
     var objTargetScore = objHandicap.targetScore
 
-    var targetScore = sNaN(ci.courseInfo['Target Score'].split(' ')[0]) ? roundObj.finalScore*1 + 1 : ci.courseInfo['Target Score'].split(' ')[0]*1
+    var targetScore = isNaN(ci.courseInfo['Target Score'].split(' ')[0]) ? roundObj.finalScore*1 + 1 : ci.courseInfo['Target Score'].split(' ')[0]*1
     var datePlayed = new Date(roundObj.startTime).toString().substring(0,15)
 
     console.log(datePlayed)
