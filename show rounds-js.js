@@ -39,14 +39,14 @@ async function btnShowRoundsHtml() {
     var objHandicap = roundObj.objHandicap      
     var objTargetScore = objHandicap.targetScore
 
-    var targetScore = ci.courseInfo['Target Score'].split(' ')[0] === 'undefined' ? roundObj.finalScore + 1 : ci.courseInfo['Target Score'].split(' ')[0]
+    var targetScore = sNaN(ci.courseInfo['Target Score'].split(' ')[0]) ? roundObj.finalScore*1 + 1 : ci.courseInfo['Target Score'].split(' ')[0]*1
     var datePlayed = new Date(roundObj.startTime).toString().substring(0,15)
 
     console.log(datePlayed)
     console.log(targetScore)
 
     if (         
-        (srMadeTarget && roundObj.finalScore > targetScore*1 ) ||
+        (srMadeTarget && roundObj.finalScore*1 > targetScore*1 ) ||
         (srSelectedCourse && srSelectedCourse !== shortCourseName(roundObj.courseName.toString()))
       ) {
       console.log(datePlayed)
