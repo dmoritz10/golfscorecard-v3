@@ -68,7 +68,7 @@ function btnShowClubsHtml () {
     
     }
     
-    gotoTab('Courses')
+    gotoTab('Clubs')
     
 }
 
