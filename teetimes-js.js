@@ -98,7 +98,7 @@ function btnTeetimesHtml () {
     
     }
     
-    gotoTab('Teetimes')
+    // gotoTab('Teetimes')
     
 }
 
