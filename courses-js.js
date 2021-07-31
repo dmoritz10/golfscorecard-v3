@@ -123,9 +123,9 @@ async function btnShowCoursesHtml () {
           
     }
     
-    $("#scNbrCoursess")[0].innerHTML = nbrCourses
+    // $("#scNbrCoursess")[0].innerHTML = nbrCourses
     
-    btnTeetimesHtml()
+    // btnTeetimesHtml()
     
     gotoTab('Courses')
     
