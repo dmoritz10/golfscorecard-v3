@@ -47,7 +47,7 @@ async function btnShowRoundsHtml() {
       ) {
       
       console.log(roundObj.finalScore)
-      console.log(targetScore*1)
+      console.log(targetScore)
         continue;
       
       
