@@ -53,7 +53,7 @@ async function updateSummaryInfo() {
 
 function madeTargetScore(targetScore, finalScore) {
 
-  if (isNaN(targetScore) return false
+  if (isNaN(targetScore)) return false
 
   if (finalScore*1 <= targetScore*1) return true
   
