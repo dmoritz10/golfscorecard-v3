@@ -412,7 +412,7 @@ function chartCourseAdjustedScore (title, rounds, myStatsRng, endRow)   {
   console.log(rounds2)
 
 
-  const madeTargetScore = (scoreCardArr) => {
+  const madeTargetScoreCnt = (scoreCardArr) => {
     var nbrMadeTarget = 0
     scoreCardArr.forEach((scoreCard) => {
       var scorecard = JSON.parse(scoreCard.scoreCard)
@@ -453,9 +453,9 @@ function chartCourseAdjustedScore (title, rounds, myStatsRng, endRow)   {
     ],
     [
     "Made Target",
-    madeTargetScore(rounds1),
-    madeTargetScore(rounds2),
-    madeTargetScore(rounds3)
+    madeTargetScoreCnt(rounds1),
+    madeTargetScoreCnt(rounds2),
+    madeTargetScoreCnt(rounds3)
     ]
   
     ]
