@@ -46,7 +46,7 @@ async function btnShowRoundsHtml() {
     console.log(targetScore)
 
     if (         
-        (srMadeTarget && roundObj.finalScore*1 > targetScore*1 ) ||
+        (srMadeTarget && roundObj.finalScore*1 > targetScore ) ||
         (srSelectedCourse && srSelectedCourse !== shortCourseName(roundObj.courseName.toString()))
       ) {
       console.log(datePlayed)
@@ -85,7 +85,7 @@ async function btnShowRoundsHtml() {
     // ele.find('#srHcpDiff')[0].innerHTML = escCorrections ? hcpDiff + '<sup>' + escCorrections + '</sup>' : hcpDiff
     ele.find('#srHcpDiff')[0].innerHTML = objHandicap.handicap
           
-    if (roundObj.finalScore*1 <= targetScore*1 ) {
+    if (roundObj.finalScore*1 <= targetScore ) {
     
       ele.css( "background", "Khaki")
     

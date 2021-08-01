@@ -35,7 +35,7 @@ async function getRounds(prmExcludeSmall) {
           var round = sc.scores
           var nbrHolesCorrection = 18 / sc.scores.filter(Boolean).length
           
-          if (nbrHolesCorrection !== 1 || rounds[j][parCol] < 69)
+          if (nbrHolesCorrection !== 1 || rounds[j][parCol]*1 < 69)
            continue;
         }
 

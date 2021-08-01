@@ -121,3 +121,5 @@ x Start from scratch
     courses
     scorecards
     settings
+
+Recover Costa Mesa Country Club  (Los Lagos Course)	7/25/19  from Scorecards
