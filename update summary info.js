@@ -53,8 +53,6 @@ async function updateSummaryInfo() {
 
 function madeTargetScore(targetScore, finalScore) {
 
-  var targetScore = isNaN(ci.courseInfo['Target Score'].split(' ')[0]) ? rnd.finalScore.finalScore*1 + 1 : ci.courseInfo['Target Score'].split(' ')[0]*1
-
   if (isNaN(targetScore) return false
 
   if (finalScore*1 <= targetScore*1) return true
