@@ -893,9 +893,9 @@ function lifeTime               (title, rounds) {
 
       nbrHoles += scorecard.scores.length
 
-      var targetScore = isNaN(ci.courseInfo['Target Score'].split(' ')[0]) ? scoreCard.finalScore*1 + 1 : ci.courseInfo['Target Score'].split(' ')[0]*1
+      var targetScore = isNaN(ci.courseInfo['Target Score'].split(' ')[0]) ? rnd.finalScore.finalScore*1 + 1 : ci.courseInfo['Target Score'].split(' ')[0]*1
 
-      if (rnd.finalScore <= targetScore) nbrMadeTarget++
+      if (rnd.finalScore*1 <= targetScore) nbrMadeTarget++
 
      })
 
