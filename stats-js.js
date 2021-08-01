@@ -419,7 +419,7 @@ function chartCourseAdjustedScore (title, rounds, myStatsRng, endRow)   {
       var ci = JSON.parse(scoreCard.courseInfo)
       var targetScore = isNaN(ci.courseInfo['Target Score'].split(' ')[0]) ? scoreCard.finalScore*1 + 1 : ci.courseInfo['Target Score'].split(' ')[0]*1
 
-      if (scoreCard.finalScore <= targetScore) nbrMadeTarget++
+      if (!(scoreCard.finalScore > targetScore)) nbrMadeTarget++
       })
     return nbrMadeTarget
   }    
