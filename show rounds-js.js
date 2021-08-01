@@ -42,7 +42,7 @@ async function btnShowRoundsHtml() {
     var targetScore = ci.courseInfo['Target Score'].split(' ')[0]
 
     if (         
-        (srMadeTarget && madeTargetScore(targetScore, roundObj.finalScore))
+        (srMadeTarget && !madeTargetScore(targetScore, roundObj.finalScore)) ||
         (srSelectedCourse && srSelectedCourse !== shortCourseName(roundObj.courseName.toString()))
       ) {
          continue;     
