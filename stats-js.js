@@ -480,7 +480,7 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
       scoreCard.forEach((val, idx) => {
         nbrPutts += val.putts*1
       })
-      if (nbrHoles>0) {arr.push(nbrPutts / nbrHoles)}
+      if (nbrHoles>0) {arr.push(nbrPutts / scoreCardArr.length)}
     })
     return arr
   }    
