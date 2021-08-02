@@ -77,6 +77,10 @@ function calcTargetScoreDan(mostRecent20HcpDiff, targetHandicap, courseRating, s
         
     if (nbrToUse > 0 && mostRecent19.length > 0) {
         mostRecent19.sort(compareNumbers)
+
+        console.log('hi dan')
+console.log(mostRecent19)
+
         var cnt = 0
         var sum = 0
         for (var i = 0; i < nbrToUse - 1; i++) {
