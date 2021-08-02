@@ -473,7 +473,7 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
   var scores3 = extrRndData	(rounds, 'scoreCard.scores', endRow.row3)
 
   const puttsPerRound = (scoreCardArr) => {
-    arr = []
+    var arr = []
     var nbrPutts = 0
     scoreCardArr.forEach((scoreCard) => {
  
@@ -490,7 +490,7 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
   }    
 
   const puttsPerHole = (scoreCardArr) => {
-    arr = []
+    var arr = []
     scoreCardArr.forEach((scoreCard) => {
       var nbrHoles = scoreCard.length
       var nbrPutts = 0
@@ -503,7 +503,7 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
   }    
 
   const puttsPerGIR = (scoreCardArr) => {
-    arr = []
+    var arr = []
     scoreCardArr.forEach((scoreCard) => {
       var nbrHoles = 0
       var nbrPutts = 0
@@ -520,7 +520,7 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
   }    
 
   const puttsPerGIRPlusOne = (scoreCardArr) => {
-    arr = []
+    var arr = []
     scoreCardArr.forEach((scoreCard) => {
       var nbrHoles = 0
       var nbrPutts = 0
@@ -536,7 +536,7 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
   }    
 
   const xPuttsPerRound = (scoreCardArr, x) => {
-    arr = []
+    var arr = []
     scoreCardArr.forEach((scoreCard) => {
       var nbrHoles = scoreCard.length
       var nbrPutts = 0
