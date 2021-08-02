@@ -474,21 +474,21 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
 
   const puttsPerRound = (scoreCardArr) => {
     var arr = []
-    var nbrPutts = 0
+
     scoreCardArr.forEach((scoreCard) => {
- 
+      var nbrPutts = 0
       scoreCard.forEach((val, idx) => {
         nbrPutts += val.putts*1
       })
 
-      arr.push(nbrPutts)
+      arr.push(nbrPutts / scoreCardArr.length)
 
       console.log(nbrPutts)
       console.log(scoreCardArr.length)
     })
 
     console.log(arr)
-    return arr / scoreCardArr.length
+    return arr
   }    
 
   const puttsPerHole = (scoreCardArr) => {
