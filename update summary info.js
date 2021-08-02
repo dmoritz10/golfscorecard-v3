@@ -100,8 +100,12 @@ console.log(mostRecent19)
       var targetHandicapDiff = ''
     }
 
+console.log(targetHandicapDiff)
+
     var tsObj = calcRoundsTargetScore(targetHandicapDiff, courseRating, slopeRating, courseRatingFront9) 
 
+    console.log(tsObj)
+    
     return {
         score           : tsObj.score,
         scoreFront      : tsObj.front,
