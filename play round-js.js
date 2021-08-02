@@ -173,8 +173,8 @@ async function loadCourseInfo(e) {
             courseInfo['Back 9 Rating']      = teeInfo[i][teeInfoIdx.back9Rating]
             courseInfo['Yardage']            = teeInfo[i][teeInfoIdx.yardage]
 
-            $('#hpCourse_Rating')          .html ( courseInfo['USGA Course Rating']).toFixed(1)
-            $('#hpBogey_Rating')           .html ( courseInfo['Bogey Rating']).toFixed(1)
+            $('#hpCourse_Rating')          .html ( courseInfo['USGA Course Rating'])
+            $('#hpBogey_Rating')           .html ( courseInfo['Bogey Rating'])
             $('#hpSlope_Rating')           .html ( courseInfo['Slope Rating'])
             $('#hpFront_9_Rating')         .html ( courseInfo['Front 9 Rating'])
             $('#hpBack_9_Rating')          .html ( courseInfo['Back 9 Rating'])
