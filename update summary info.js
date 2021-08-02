@@ -66,52 +66,42 @@ function calcTargetScoreDan(mostRecent20HcpDiff, targetHandicap, courseRating, s
   var hcpSelectOptions = readOption('hcpFilter')
   var hcpMethod = hcpSelectOptions.hcpMethod
 
-    var mostRecent19 = JSON.parse(JSON.stringify(mostRecent20HcpDiff))
+  var mostRecent19 = JSON.parse(JSON.stringify(mostRecent20HcpDiff))
+  
+  mostRecent19.pop()
+
+  var nbrToUse = calcNbrToUse(mostRecent20HcpDiff)
+  
+  var hcpNbrRounds = hcpMethod == 'WHS' ? 8 : 10
+  
+  nbrToUse = Math.min(nbrToUse, hcpNbrRounds)
+
+  if (nbrToUse > 0 && mostRecent19.length > 0) {
+      mostRecent19.sort(compareNumbers)
+
+      var lowScores = []
+      var cnt = 0
+      var sum = 0
+      for (var i = 0; i < nbrToUse - 1; i++) {
+          cnt++
+          sum = sum + mostRecent19[i] * 1.0
+          lowScores.push(mostRecent19[i])
+      }
+      //  handicap = (sum * 0.96  / cnt)
+      //  (handicap - .1) = ((sum + thd) * .96) / (cnt + 1)
+      //  ((sum + thd) * .96) = (handicap - .1) * (cnt + 1)
+      //  thd = (((handicap - .1) * (cnt + 1)) / .96 ) - sum)
     
-    mostRecent19.pop()
-
-    var nbrToUse = calcNbrToUse(mostRecent20HcpDiff)
+    var targetHandicapDiff = ((targetHandicap * (cnt + 1)) / .96) - sum
+  
+  } else {
     
-    var hcpNbrRounds = hcpMethod == 'WHS' ? 8 : 10
-console.log(hcpMethod)
-    console.log(hcpNbrRounds)
-    
-    nbrToUse = Math.min(nbrToUse, hcpNbrRounds)
+    var targetHandicapDiff = ''
+  }
 
-        console.log(nbrToUse)
-    if (nbrToUse > 0 && mostRecent19.length > 0) {
-        mostRecent19.sort(compareNumbers)
+  var tsObj = calcRoundsTargetScore(targetHandicapDiff, courseRating, slopeRating, courseRatingFront9) 
 
-        console.log('hi dan')
-console.log(mostRecent19)
-
-        var lowScores = []
-        var cnt = 0
-        var sum = 0
-        for (var i = 0; i < nbrToUse - 1; i++) {
-            cnt++
-            sum = sum + mostRecent19[i] * 1.0
-            lowScores.push(mostRecent19[i])
-        }
-        //  handicap = (sum * 0.96  / cnt)
-        //  (handicap - .1) = ((sum + thd) * .96) / (cnt + 1)
-        //  ((sum + thd) * .96) = (handicap - .1) * (cnt + 1)
-        //  thd = (((handicap - .1) * (cnt + 1)) / .96 ) - sum)
-      
-      var targetHandicapDiff = ((targetHandicap * (cnt + 1)) / .96) - sum
-    
-    } else {
-      
-      var targetHandicapDiff = ''
-    }
-console.log(lowScores)
-console.log(targetHandicapDiff)
-
-    var tsObj = calcRoundsTargetScore(targetHandicapDiff, courseRating, slopeRating, courseRatingFront9) 
-
-    console.log(tsObj)
-
-    return {
+  return {
         score           : tsObj.score,
         scoreFront      : tsObj.front,
         scoreBack       : tsObj.back,
