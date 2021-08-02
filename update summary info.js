@@ -70,10 +70,12 @@ function calcTargetScoreDan(mostRecent20HcpDiff, targetHandicap, courseRating, s
     var nbrToUse = calcNbrToUse(mostRecent20HcpDiff)
     
     var hcpNbrRounds = hcpMethod == 'WHS' ? 8 : 10
+console.log(hcpMethod)
+    console.log(hcpNbrRounds)
     
     nbrToUse = Math.min(nbrToUse, hcpNbrRounds)
 
-        
+        console.log(nbrToUse)
     if (nbrToUse > 0 && mostRecent19.length > 0) {
         mostRecent19.sort(compareNumbers)
 
