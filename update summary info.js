@@ -73,7 +73,6 @@ function calcTargetScoreDan(mostRecent20HcpDiff, targetHandicap, courseRating, s
     
     nbrToUse = Math.min(nbrToUse, hcpNbrRounds)
 
-    var lowScores = []
         
     if (nbrToUse > 0 && mostRecent19.length > 0) {
         mostRecent19.sort(compareNumbers)
@@ -81,6 +80,7 @@ function calcTargetScoreDan(mostRecent20HcpDiff, targetHandicap, courseRating, s
         console.log('hi dan')
 console.log(mostRecent19)
 
+        var lowScores = []
         var cnt = 0
         var sum = 0
         for (var i = 0; i < nbrToUse - 1; i++) {
@@ -99,13 +99,13 @@ console.log(mostRecent19)
       
       var targetHandicapDiff = ''
     }
-
+console.log(lowScores)
 console.log(targetHandicapDiff)
 
     var tsObj = calcRoundsTargetScore(targetHandicapDiff, courseRating, slopeRating, courseRatingFront9) 
 
     console.log(tsObj)
-    
+
     return {
         score           : tsObj.score,
         scoreFront      : tsObj.front,
