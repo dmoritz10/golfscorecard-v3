@@ -70,11 +70,11 @@ async function btnShowRoundsHtml() {
     var hcpDiff = objHandicap.handicapDiff
     var escCorrections = objHandicap.escCorrections
 
-    ele.find('#srGIR')[0].innerHTML = escCorrections ? hcpDiff + '<sup>' + escCorrections + '</sup>' : hcpDiff
+    ele.find('#srGIR')[0].innerHTML = escCorrections ? hcpDiff.toFixed(1) + '<sup>' + escCorrections + '</sup>' : hcpDiff.toFixed(1)
 
 
     // ele.find('#srHcpDiff')[0].innerHTML = escCorrections ? hcpDiff + '<sup>' + escCorrections + '</sup>' : hcpDiff
-    ele.find('#srHcpDiff')[0].innerHTML = objHandicap.handicap
+    ele.find('#srHcpDiff')[0].innerHTML = objHandicap.handicap.toFixed(1)
           
     if (roundObj.finalScore*1 <= targetScore ) {
     
