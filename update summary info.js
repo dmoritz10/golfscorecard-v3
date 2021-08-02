@@ -63,6 +63,9 @@ function madeTargetScore(targetScore, finalScore) {
 
 function calcTargetScoreDan(mostRecent20HcpDiff, targetHandicap, courseRating, slopeRating, courseRatingFront9) {
 
+  var hcpSelectOptions = readOption('hcpFilter')
+  var hcpMethod = hcpSelectOptions.hcpMethod
+
     var mostRecent19 = JSON.parse(JSON.stringify(mostRecent20HcpDiff))
     
     mostRecent19.pop()
