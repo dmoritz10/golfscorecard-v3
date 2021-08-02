@@ -123,7 +123,7 @@ async function btnShowHandicapHtml () {
     ele.find('#hcpDate')[0].innerHTML = val.datePlayed
     ele.find('#hcpTees')[0].innerHTML = val.teePlayed
     ele.find('#hcpTargetScore')[0].innerHTML = val.targetScore.split(' ')[0]
-    ele.find('#hcpCourseRating')[0].innerHTML = val.courseRating
+    ele.find('#hcpCourseRating')[0].innerHTML = val.courseRating.toFixed(1)
     ele.find('#hcpSlopeRating')[0].innerHTML = val.slopeRating
     ele.find('#hcpHcpDiff')[0].innerHTML = val.escCorrections ? val.hcpDiff + '<sup>' + val.escCorrections + '</sup>' : val.hcpDiff
     ele.find('#hcpHcp')[0].innerHTML = val.hcp
@@ -179,17 +179,17 @@ function displayHcpTrend(hcpArr, handicapAlert) {
   var hcpAlertTxt = handicapAlert ? '<i class="material-icons">trending_up</i>' + handicapAlert : ''
   
   if (hcpArr.length > 0) {
-    $ ('#hcpHcp1').html(hcpArr[0].hcp + hcpAlertTxt)
+    $ ('#hcpHcp1').html(hcpArr[0].hcp.toFixed(1) + hcpAlertTxt)
     $ ('#hcpHcpTime1').html('Current')
   }
 
   if (hcpArr.length > 9) {
-    $ ('#hcpHcp2').html(hcpArr[9].hcp)
+    $ ('#hcpHcp2').html(hcpArr[9].hcp.toFixed(1))
     $ ('#hcpHcpTime2').html('Last 10 Rounds')
   }
 
   if (hcpArr.length > 19) {
-    $ ('#hcpHcp3').html(hcpArr[19].hcp)
+    $ ('#hcpHcp3').html(hcpArr[19].hcp.toFixed(1))
     $ ('#hcpHcpTime3').html('Last 20 Rounds')
   }
   
