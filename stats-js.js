@@ -1129,7 +1129,7 @@ function calcDrivingSummary(rounds) {
 function graphRounds(rounds) {
 
   var ctx = document.getElementById('myChart').getContext('2d');
-  new Chart(document.getElementById("mixed-chart"), {
+  new Chart(document.getElementById("myChart"), {
     type: 'bar',
     data: {
       labels: ["1900", "1950", "1999", "2050"],
