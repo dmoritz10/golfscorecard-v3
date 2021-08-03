@@ -412,8 +412,6 @@ function chartCourseAdjustedScore (title, rounds, myStatsRng, endRow)   {
   var rounds2 = extrRndData	(rounds, null, endRow.row2)
   var rounds3 = extrRndData	(rounds, null, endRow.row3)
 
-  console.log(rounds2)
-
 
   const madeTargetScoreCnt = (scoreCardArr) => {
     var nbrMadeTarget = 0
@@ -1128,43 +1126,54 @@ function calcDrivingSummary(rounds) {
 
 function graphRounds(rounds) {
 
-  var ctx = document.getElementById('myChart').getContext('2d');
+  var datePlayedArr = []
+  var scoresArr = []
+  var hcpArr = []
+
+  for (i=0;i<rounds.length;i++) {
+    var dt = rounds[i][startTime]
+    var yr = dt.getFullYear()
+    var mo = dt.getMonth()
+    var da = dt.getDate()
+
+    datePlayedArr.push( yr + "-" + mo + "-" + da)
+    scoresArr.push(round[i].finalScore)
+    hcpArr.push(round[i].objHandicap.handicap)
+    
+  }
+
+
   new Chart(document.getElementById("myChart"), {
-    type: 'bar',
+    type: 'line',
     data: {
-      labels: ["1900", "1950", "1999", "2050"],
-      datasets: [{
-          label: "Europe",
-          type: "line",
-          borderColor: "#8e5ea2",
-          data: [408,547,675,734],
-          fill: false
-        }, {
-          label: "Africa",
-          type: "line",
-          borderColor: "#3e95cd",
-          data: [133,221,783,2478],
-          fill: false
-        }, {
-          label: "Europe",
-          type: "bar",
-          backgroundColor: "rgba(0,0,0,0.2)",
-          data: [408,547,675,734],
-        }, {
-          label: "Africa",
-          type: "bar",
-          backgroundColor: "rgba(0,0,0,0.2)",
-          backgroundColorHover: "#3e95cd",
-          data: [133,221,783,2478]
-        }
-      ]
+    labels: datePlayedArr,
+    datasets: [{
+    label: 'Humidity',
+    data: scoresArr,
+    backgroundColor: "rgba(255,153,0,0.4)"
+    }]
     },
-    options: {
-      title: {
-        display: true,
-        text: 'Population growth (millions): Europe & Africa'
-      },
-      legend: { display: false }
+
+        options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }],
+            xAxes: [{
+                type: 'time',
+                time: {
+                    parser: 'YYYY-MM-DD',
+                    unit: 'year',
+                    displayFormats: {
+                    }
+                },
+                ticks: {
+                    source: 'data'
+                }
+            }]                    
+        }
     }
 });
 }
