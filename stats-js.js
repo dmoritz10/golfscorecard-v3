@@ -1137,8 +1137,8 @@ function graphRounds(rounds) {
     var da = dt.getDate()
 
     datePlayedArr.push( yr + "-" + mo + "-" + da)
-    scoresArr.push(round[i].finalScore)
-    hcpArr.push(round[i].objHandicap.handicap)
+    scoresArr.push(rounds[i].finalScore)
+    hcpArr.push(rounds[i].objHandicap.handicap)
     
   }
 
