@@ -1128,7 +1128,7 @@ function calcDrivingSummary(rounds) {
 
 function graphRounds(rounds) {
 
-
+  var ctx = document.getElementById('myChart').getContext('2d');
   var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
@@ -1163,5 +1163,5 @@ function graphRounds(rounds) {
         }
     }
 
-  }
+  })
 }
