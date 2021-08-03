@@ -1129,7 +1129,7 @@ function calcDrivingSummary(rounds) {
 function graphRounds(rounds) {
 
   var ctx = document.getElementById('myChart').getContext('2d');
-  var myChart = new Chart(ctx, {
+  Chart(ctx, {
     type: 'bar',
     data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
