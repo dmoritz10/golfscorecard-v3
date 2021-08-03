@@ -1133,7 +1133,7 @@ function graphRounds(rounds) {
   for (i=0;i<rounds.length;i++) {
     var dt = new Date(rounds[i].startTime)
     var yr = dt.getFullYear()
-    var mo = dt.getMonth()
+    var mo = dt.getMonth() + 1
     var da = dt.getDate()
 
     datePlayedArr.push( yr + "-" + mo + "-" + da)
@@ -1148,10 +1148,16 @@ function graphRounds(rounds) {
     data: {
     labels: datePlayedArr,
     datasets: [{
-    label: 'Humidity',
-    data: scoresArr,
-    backgroundColor: "rgba(255,153,0,0.4)"
-    }]
+      label: 'Score',
+      data: scoresArr,
+      backgroundColor: "rgba(255,153,0,0.4)"
+    },
+    {
+      label: 'Handicap',
+      data: hcpArr,
+      backgroundColor: 'red'
+    }
+  ]
     },
 
         options: {
