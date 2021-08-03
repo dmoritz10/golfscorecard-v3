@@ -1131,7 +1131,7 @@ function graphRounds(rounds) {
   var hcpArr = []
 
   for (i=0;i<rounds.length;i++) {
-    var dt = rounds[i].startTime
+    var dt = new Date(rounds[i].startTime)
     var yr = dt.getFullYear()
     var mo = dt.getMonth()
     var da = dt.getDate()
