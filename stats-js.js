@@ -1162,16 +1162,17 @@ function graphRounds(rounds) {
                 }
             }],
             xAxes: [{
-                type: 'time',
-                time: {
-                    parser: 'YYYY-MM-DD',
-                    unit: 'year',
-                    displayFormats: {
-                },
-                ticks: {
-                    source: 'data'
-                }
-            }]                    
+              type: 'time',
+              time: {
+                  parser: 'YYYY-MM-DD',
+                  unit: 'year',
+                  displayFormats: {
+                  }
+              },
+              ticks: {
+                  source: 'data'
+              }
+          }]                     
         }
     }
 });
