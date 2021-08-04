@@ -131,7 +131,9 @@ function otherStats(rpt) {
     if (chart) {
 console.log(chart)
       console.log(chart)
-      ele.append( chart)
+
+      var parent = document.getElementById('chartContainer');
+      ele.prepend( parent)
       
     }
 
