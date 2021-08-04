@@ -1127,8 +1127,11 @@ function graphRounds(rounds) {
   var datePlayedArr = []
   var scoresArr = []
   var hcpArr = []
+  var madeTargetArr = []
 
   for (let i=rounds.length - 1;i>-1;i--) {
+
+    var ci = JSON.parse(rounds[i].courseInfo)
     var dt = new Date(rounds[i].startTime)
     var yr = dt.getFullYear()
     var mo = dt.getMonth() + 1
@@ -1137,6 +1140,8 @@ function graphRounds(rounds) {
     datePlayedArr.push( yr + "-" + mo + "-" + da)
     scoresArr.push(rounds[i].finalScore)
     hcpArr.push(rounds[i].objHandicap.handicap)
+
+    madeTargetArr.push(madeTargetScore(ci.courseInfo['Target Score'].split(' ')[0], scoreCard.finalScore) ? scoresArr[i]: null)
     
   }
 
@@ -1159,6 +1164,10 @@ function graphRounds(rounds) {
         type: 'bar'
       },
       {
+        data: madeTargetArr,
+        backgroundColor: "green",
+        type: 'bar'
+      },{
         label: 'Handicap',
         yAxisID: 'hcpId',
         data: hcpArr,
