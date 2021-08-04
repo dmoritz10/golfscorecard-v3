@@ -1183,6 +1183,7 @@ function graphRounds(rounds) {
               type: 'linear',
               display: true,
               position: 'right',
+              fontColor: 'red',
               min:0,
               max:40
             },
