@@ -1203,5 +1203,5 @@ function graphRounds(rounds) {
         }
     }
 });
-
+console.log(x)
 }
