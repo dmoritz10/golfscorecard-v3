@@ -133,7 +133,7 @@ console.log(chart)
       console.log(chart)
 
       var parent = document.getElementById('chartContainer');
-      ele.prepend( parent)
+      ele.append( parent)
       
     }
 
