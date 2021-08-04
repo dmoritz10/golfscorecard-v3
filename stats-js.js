@@ -1153,6 +1153,7 @@ function graphRounds(rounds) {
       labels: datePlayedArr,
       datasets: [{
         label: 'Score',
+        yAxisID: 'scoreId',
         data: scoresArr,
         backgroundColor: "rgba(255,153,0,0.4)",
         type: 'bar',
@@ -1160,6 +1161,7 @@ function graphRounds(rounds) {
       },
       {
         label: 'Handicap',
+        yAxisID: 'hcpId',
         data: hcpArr,
         backgroundColor: 'red',
         type: 'line',
@@ -1170,11 +1172,39 @@ function graphRounds(rounds) {
 
         options: {
         scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true
-                }
-            }],
+          yAxes: [{
+            stacked: true,
+            position: 'left',
+            type: 'bar',
+            scaleLabel: {
+              display: true,
+            },
+            id: 'scoreId',
+            ticks: {
+              max: 120,
+              min: 60,
+              callback: function (tick, index, ticks) {
+                return numeral(tick).format('(0,0)');
+              },
+            }
+          }, {
+            stacked: false,
+            position: 'right',
+            type: 'line',
+            id: 'hcpId',
+            ticks: {
+              max: 30,
+              min: 0,
+              stepSize: 1,
+              display: true,
+              beginAtZero: true,
+              fontSize: 13,
+              padding: 10,
+              callback: function (tick, index, ticks) {
+                return numeral(tick).format('$ 0,0');
+              }
+            }
+          }],
             xAxes: [{
               type: 'time',
               time: {
