@@ -125,7 +125,7 @@ function otherStats(rpt) {
     }
     if (chart) {
       var parent = document.getElementById('chartContainer');
-      ele.append( "<div class='w-100 text-center'>" + chart + "</div>")
+      ele.append(chart)
     }
 
 
