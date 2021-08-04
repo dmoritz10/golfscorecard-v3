@@ -1245,9 +1245,10 @@ function graphAvgScoreByPar(rounds) {
     
     datePlayedArr.push( yr + "-" + mo + "-" + da)
 
-    sc.forEach((scores, scoreIdx) => {
+    console.log(sc)
+
      
-      scores.forEach((val) => {
+      sc.forEach((val) => {
 
         var par = val.par*1
 
@@ -1266,7 +1267,7 @@ function graphAvgScoreByPar(rounds) {
         }
 
       })
-    })
+
 
 
   try {
