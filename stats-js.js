@@ -1182,7 +1182,7 @@ function graphRounds(rounds) {
             id: 'scoreId',
             ticks: {
               max: 120,
-              min: 60
+              min: 80
               }
             
           }, {
