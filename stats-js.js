@@ -1169,6 +1169,7 @@ function graphRounds(rounds) {
       },
       {
         label: 'Made Target',
+        yAxisID: 'targetId',
         data: madeTargetArr,
         backgroundColor: "green",
         stacked: false,
@@ -1179,7 +1180,7 @@ function graphRounds(rounds) {
         data: hcpArr,
         borderColor: 'red',
         borderWidth: 2,
-        fontColor: 'red',
+        fontColor: 'lightblue',
         fontStyle: 'bold',
         pointRadius: 0,
         type: 'line'
