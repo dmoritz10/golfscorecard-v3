@@ -1184,6 +1184,7 @@ function graphRounds(rounds) {
               display: true,
               position: 'right',
               fontColor: 'red',
+              fontStyle: 'bold',
               min:0,
               max:40
             },
