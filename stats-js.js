@@ -1173,7 +1173,7 @@ function graphRounds(rounds) {
     options: {
         scales: {
           yAxes: [{
-            stacked: true,
+            stacked: false,
             position: 'left',
             type: 'bar',
             scaleLabel: {
@@ -1186,7 +1186,7 @@ function graphRounds(rounds) {
             position: 'right',
             type: 'line',
             id: 'hcpId'
-            }
+            
           }],
             xAxes: [{
               type: 'time',
