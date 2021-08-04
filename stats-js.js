@@ -30,8 +30,7 @@ async function btnShowStatsHtml() {
   var rptArr = []
 
     var title = "Course Adjusted Score"
-    var rtn = chartCourseAdjustedScore (title, rounds, myStatsRng, endRow)  
-    rtn.chart = casGraph 
+    var rtn = chartCourseAdjustedScore (title, rounds, myStatsRng, endRow)   
   rptArr.push(rtn)
    
     var title = "Average Score by Par"
