@@ -24,6 +24,8 @@ async function btnShowStatsHtml() {
   var rounds3 = extrRndData	(rounds, null, endRow.row3)
   var casGraph = graphRounds(rounds3)
 
+  console.log(casGraph)
+
   var myStatsRng = {};
     myStatsRng['rng1'] = statRng1
     myStatsRng['rng2'] = statRng2
@@ -127,6 +129,8 @@ function otherStats(rpt) {
       if (title !== 'Lifetime') ele.append( "<hr class='w-100'>")
     }
     if (chart) {
+console.log(chart)
+      console.log(chart)
       ele.append( chart)
       
     }
