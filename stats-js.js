@@ -1172,12 +1172,12 @@ function graphRounds(rounds) {
         scales: {
           yAxes: [{
             stacked: false,
-            position: 'left'
+            position: 'left',
             id: 'scoreId'
             
           }, {
             stacked: false,
-            position: 'right'
+            position: 'right',
             id: 'hcpId'
             
           }],
