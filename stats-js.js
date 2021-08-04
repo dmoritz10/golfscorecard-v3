@@ -126,9 +126,6 @@ function otherStats(rpt) {
     if (chart) {
       var parent = document.getElementById('chartContainer');
       ele.append( chart)
-console.log('hi dan')
-      console.log(chart)
-      
     }
 
 
@@ -1198,7 +1195,7 @@ function graphRounds(rounds) {
               display: true,
               position: 'left',
               min: 70,
-              max: 120
+              max: 100
             },
             hcpId: {
               type: 'linear',
