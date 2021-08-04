@@ -22,7 +22,7 @@ async function btnShowStatsHtml() {
   setDropdownValues(datePlayedArr, endRow)
 
   var rounds3 = extrRndData	(rounds, null, endRow.row3)
-  graphRounds(rounds3)
+  var casGraph = graphRounds(rounds3)
 
   var myStatsRng = {};
     myStatsRng['rng1'] = statRng1
@@ -32,7 +32,8 @@ async function btnShowStatsHtml() {
   var rptArr = []
 
     var title = "Course Adjusted Score"
-    var rtn = chartCourseAdjustedScore (title, rounds, myStatsRng, endRow)   
+    var rtn = chartCourseAdjustedScore (title, rounds, myStatsRng, endRow)  
+    rtn.chart = casGraph 
   rptArr.push(rtn)
    
     var title = "Average Score by Par"
@@ -82,15 +83,16 @@ rptArr.push(rtn.strokes)
 function otherStats(rpt) {
 
   var title = rpt.title
-  var arrChart =  rpt.arrData
+  var arrData =  rpt.arrData
+  var chart = rpt.chart
   var arrFormat = rpt.format
       
   var ele = $("#tblStats").clone().show();
 
-  var hdr = arrChart[0].join('') == '' ? null : arrChart[0]
-  arrChart.shift() 
+  var hdr = arrData[0].join('') == '' ? null : arrData[0]
+  arrData.shift() 
       
-  arrChart.forEach((currentValue, index, array) => {
+  arrData.forEach((currentValue, index, array) => {
       
     array[index][0] = currentValue[0].replace(/ /g, '\u00a0')         // replace spaces with non-printing spaces for table formatting
         
@@ -113,7 +115,7 @@ function otherStats(rpt) {
     tbl
       .setHeader(hdr)
       .setTableHeaderClass('text-right  bg-white')
-      .setData(arrChart)
+      .setData(arrData)
       .setTableClass('table')
       .setTrClass()
       .setTcClass(['', 'text-right', 'text-right', 'text-right'])
@@ -124,6 +126,11 @@ function otherStats(rpt) {
       ele.prepend( "<h2 class='w-100 text-center'>" + title + "</h2>")
       if (title !== 'Lifetime') ele.append( "<hr class='w-100'>")
     }
+    if (chart) {
+      ele.append( chart)
+      
+    }
+
 
     ele.appendTo("#statsContainer");
 
@@ -1140,7 +1147,7 @@ function graphRounds(rounds) {
 
     var courseRating = ci.courseInfo['USGA Course Rating']*1
     var slopeRating = ci.courseInfo['Slope Rating']*1
-    var courseAdjustedScore = courseRating + ((rounds[i].finalScore*1 - courseRating) * 113 / slopeRating)
+    var courseAdjustedScore = (courseRating + ((rounds[i].finalScore*1 - courseRating) * 113 / slopeRating)).toFixed(1)
     
     datePlayedArr.push( yr + "-" + mo + "-" + da)
     scoresArr.push(courseAdjustedScore)
