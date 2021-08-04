@@ -1141,7 +1141,7 @@ function graphRounds(rounds) {
     scoresArr.push(rounds[i].finalScore)
     hcpArr.push(rounds[i].objHandicap.handicap)
 
-    madeTargetArr.push(madeTargetScore(ci.courseInfo['Target Score'].split(' ')[0], rounds[i].finalScore) ? scoresArr[i]: null)
+    madeTargetArr.push(madeTargetScore(ci.courseInfo['Target Score'].split(' ')[0], rounds[i].finalScore) ? rounds[i].finalScore : null)
     
   }
 
