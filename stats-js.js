@@ -1195,7 +1195,7 @@ function graphRounds(rounds) {
               display: true,
               position: 'left',
               min: 70,
-              max: 100
+              max: 110
             },
             hcpId: {
               type: 'linear',
