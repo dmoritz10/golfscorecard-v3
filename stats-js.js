@@ -21,8 +21,8 @@ async function btnShowStatsHtml() {
 
   setDropdownValues(datePlayedArr, endRow)
 
-
-  graphRounds(rounds)
+  var rounds3 = extrRndData	(rounds, null, endRow.row3)
+  graphRounds(rounds3)
 
   var myStatsRng = {};
     myStatsRng['rng1'] = statRng1
