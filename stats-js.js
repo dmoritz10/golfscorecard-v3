@@ -1156,16 +1156,14 @@ function graphRounds(rounds) {
         yAxisID: 'scoreId',
         data: scoresArr,
         backgroundColor: "rgba(255,153,0,0.4)",
-        type: 'bar',
-        order: 0
+        type: 'bar'
       },
       {
         label: 'Handicap',
         yAxisID: 'hcpId',
         data: hcpArr,
         backgroundColor: 'red',
-        type: 'line',
-        order: 1
+        type: 'linear'
       }
       ]
     },
@@ -1176,9 +1174,6 @@ function graphRounds(rounds) {
             stacked: false,
             position: 'left',
             type: 'bar',
-            scaleLabel: {
-              display: true,
-            },
             id: 'scoreId'
             
           }, {
