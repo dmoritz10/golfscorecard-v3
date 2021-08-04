@@ -1140,7 +1140,7 @@ function graphRounds(rounds) {
     
   }
 
-  new Chart(document.getElementById("myChart"), {
+  var x = new Chart(document.getElementById("myChart"), {
    
     data: {
       labels: datePlayedArr,
