@@ -1173,6 +1173,7 @@ function graphRounds(rounds) {
         yAxisID: 'hcpId',
         data: hcpArr,
         borderColor: 'red',
+        borderWidth: '10px',
         fontColor: 'red',
         fontStyle: 'bold',
         pointRadius: 0,
