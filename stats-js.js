@@ -1266,7 +1266,6 @@ function graphAvgScoreByPar(rounds) {
   
         }
 
-        }
       })
     })
 
