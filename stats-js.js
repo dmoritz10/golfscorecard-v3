@@ -1227,6 +1227,6 @@ function graphRounds(rounds) {
     }
 });
 
-  return chart
+  return parent
 
 }
