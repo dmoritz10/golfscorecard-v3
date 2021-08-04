@@ -484,11 +484,9 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
 
       arr.push(nbrPutts)
 
-      console.log(nbrPutts)
-      console.log(scoreCardArr.length)
+
     })
 
-    console.log(arr)
     return arr
   }    
 
