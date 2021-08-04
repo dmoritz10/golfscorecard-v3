@@ -1140,7 +1140,7 @@ function graphRounds(rounds) {
     
   }
 
-  document.getElementById("myChart").innerHTML = '&nbsp;';
+  document.getElementById("chartContainer").innerHTML = '&nbsp;';
   document.getElementById("chartContainer").innerHTML = 'canvas id="myChart" width="400" height="400"';
   
   var x = new Chart(document.getElementById("myChart"), {
