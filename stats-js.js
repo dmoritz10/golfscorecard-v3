@@ -1141,7 +1141,7 @@ function graphRounds(rounds) {
   }
 
   document.getElementById("chartContainer").innerHTML = '&nbsp;';
-  document.getElementById("chartContainer").append ('canvas id="myChart" width="400" height="400"')
+  document.getElementById("chartContainer").append ('<canvas id="myChart" width="400" height="400"></canvas>')
   
   var x = new Chart(document.getElementById("myChart"), {
    
