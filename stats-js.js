@@ -1170,7 +1170,7 @@ function graphRounds(rounds) {
       ]
     },
 
-        options: {
+    options: {
         scales: {
           yAxes: [{
             stacked: true,
@@ -1179,20 +1179,13 @@ function graphRounds(rounds) {
             scaleLabel: {
               display: true,
             },
-            id: 'scoreId',
-            ticks: {
-              max: 120,
-              min: 80
-              }
+            id: 'scoreId'
             
           }, {
             stacked: false,
             position: 'right',
             type: 'line',
-            id: 'hcpId',
-            ticks: {
-              max: 40,
-              min: 0
+            id: 'hcpId'
             }
           }],
             xAxes: [{
