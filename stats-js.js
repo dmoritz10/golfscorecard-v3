@@ -1155,7 +1155,7 @@ function graphRounds(rounds) {
         label: 'Score',
         yAxisID: 'scoreId',
         data: scoresArr,
-        backgroundColor: "rgba(255,153,0,0.4)",
+        backgroundColor: "blue",
         type: 'bar',
         order: 0
       },
@@ -1192,11 +1192,7 @@ function graphRounds(rounds) {
             id: 'hcpId',
             ticks: {
               max: 40,
-              min: 0,
-              stepSize: 1,
-              display: true,
-              beginAtZero: false
-              
+              min: 0
             }
           }],
             xAxes: [{
