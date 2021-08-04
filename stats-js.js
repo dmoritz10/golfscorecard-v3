@@ -1142,26 +1142,25 @@ function graphRounds(rounds) {
     
   }
 
-
   new Chart(document.getElementById("myChart"), {
    
     data: {
-    labels: datePlayedArr,
-    datasets: [{
-      label: 'Score',
-      data: scoresArr,
-      backgroundColor: "rgba(255,153,0,0.4)",
-      type: 'bar',
-      order: 0
-    },
-    {
-      label: 'Handicap',
-      data: hcpArr,
-      backgroundColor: 'red',
-      type: 'line',
-      order: 1
-    }
-  ]
+      labels: datePlayedArr,
+      datasets: [{
+        label: 'Score',
+        data: scoresArr,
+        backgroundColor: "rgba(255,153,0,0.4)",
+        type: 'bar',
+        order: 0
+      },
+      {
+        label: 'Handicap',
+        data: hcpArr,
+        backgroundColor: 'red',
+        type: 'line',
+        order: 1
+      }
+      ]
     },
 
         options: {
