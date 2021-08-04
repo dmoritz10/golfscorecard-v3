@@ -1163,7 +1163,7 @@ function graphRounds(rounds) {
         yAxisID: 'hcpId',
         data: hcpArr,
         backgroundColor: 'red',
-        type: 'linear'
+        type: 'line'
       }
       ]
     },
@@ -1172,14 +1172,12 @@ function graphRounds(rounds) {
         scales: {
           yAxes: [{
             stacked: false,
-            position: 'left',
-            type: 'bar',
+            position: 'left'
             id: 'scoreId'
             
           }, {
             stacked: false,
-            position: 'right',
-            type: 'line',
+            position: 'right'
             id: 'hcpId'
             
           }],
