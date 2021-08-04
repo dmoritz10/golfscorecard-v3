@@ -1189,7 +1189,7 @@ function graphRounds(rounds) {
                 color: 'red'
               },
               min:10,
-              max:30
+              max:20
             },
           
           xAxes: [{
