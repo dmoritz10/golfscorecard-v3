@@ -126,6 +126,7 @@ function otherStats(rpt) {
     if (chart) {
       var parent = document.getElementById('chartContainer');
       ele.append(chart)
+      ele.append( "<hr class='w-100'>")
     }
 
 
