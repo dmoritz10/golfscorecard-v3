@@ -1175,11 +1175,15 @@ function graphRounds(rounds) {
               type: 'linear',
               display: true,
               position: 'left',
+              min: 80,
+              max: 120
             },
             hcpId: {
               type: 'linear',
               display: true,
-              position: 'right'
+              position: 'right',
+              min:0,
+              max:40
             },
           
           xAxes: [{
