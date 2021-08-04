@@ -1169,7 +1169,6 @@ function graphRounds(rounds) {
       },
       {
         label: 'Made Target',
-        yAxisID: 'targetId',
         data: madeTargetArr,
         backgroundColor: "green",
     
