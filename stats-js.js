@@ -1137,15 +1137,15 @@ function graphRounds(rounds) {
     var mo = dt.getMonth() + 1
     var da = dt.getDate()
 
-    datePlayedArr.push( yr + "-" + mo + "-" + da)
-    scoresArr.push(rounds[i].finalScore)
-    hcpArr.push(rounds[i].objHandicap.handicap)
 
     var courseRating = ci.courseInfo['USGA Course Rating']*1
     var slopeRating = ci.courseInfo['Slope Rating']*1
     var courseAdjustedScore = courseRating + ((rounds[i].finalScore*1 - courseRating) * 113 / slopeRating)
     
-    madeTargetArr.push(madeTargetScore(ci.courseInfo['Target Score'].split(' ')[0], rounds[i].finalScore) ? courseAdjustedScore : null)
+    datePlayedArr.push( yr + "-" + mo + "-" + da)
+    scoresArr.push(courseAdjustedScore)
+    hcpArr.push(rounds[i].objHandicap.handicap)
+    madeTargetArr.push(madeTargetScore(ci.courseInfo['Target Score'].split(' ')[0], rounds[i].finalScore) ? 'green' : 'yellow')
     
   }
 
@@ -1164,16 +1164,10 @@ function graphRounds(rounds) {
         label: 'Score',
         yAxisID: 'scoreId',
         data: scoresArr,
-        backgroundColor: "rgba(255,153,0,0.4)",
+        backgroundColor: madeTargetArr,
         type: 'bar'
       },
       {
-        label: 'Made Target',
-        data: madeTargetArr,
-        backgroundColor: "green",
-    
-        type: 'bar'
-      },{
         label: 'Handicap',
         yAxisID: 'hcpId',
         data: hcpArr,
