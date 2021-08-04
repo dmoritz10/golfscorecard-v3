@@ -1178,8 +1178,8 @@ function graphRounds(rounds) {
               type: 'linear',
               display: true,
               position: 'left',
-              min: 80,
-              max: 110
+              min: 70,
+              max: 120
             },
             hcpId: {
               type: 'linear',
