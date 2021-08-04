@@ -21,10 +21,6 @@ async function btnShowStatsHtml() {
 
   setDropdownValues(datePlayedArr, endRow)
 
-  var rounds3 = extrRndData	(rounds, null, endRow.row3)
-  var casGraph = graphRounds(rounds3)
-
-  console.log(casGraph)
 
   var myStatsRng = {};
     myStatsRng['rng1'] = statRng1
@@ -129,11 +125,10 @@ function otherStats(rpt) {
       if (title !== 'Lifetime') ele.append( "<hr class='w-100'>")
     }
     if (chart) {
-console.log(chart)
-      console.log(chart)
-
       var parent = document.getElementById('chartContainer');
       ele.append( parent)
+
+      console.log(parent)
       
     }
 
@@ -475,8 +470,10 @@ function chartCourseAdjustedScore (title, rounds, myStatsRng, endRow)   {
     ]
 
     arrRound(rtn, 1)
+
+    var casChart = graphRounds(rounds3)
     
-    return {title: title, arrData:rtn, format:''};
+    return {title: title, arrData:rtn, chart: casChart, format:''};
 
 }
 
