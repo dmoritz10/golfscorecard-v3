@@ -1145,7 +1145,7 @@ function graphRounds(rounds) {
     datePlayedArr.push( yr + "-" + mo + "-" + da)
     scoresArr.push(courseAdjustedScore)
     hcpArr.push(rounds[i].objHandicap.handicap)
-    madeTargetArr.push(madeTargetScore(ci.courseInfo['Target Score'].split(' ')[0], rounds[i].finalScore) ? 'green' : 'yellow')
+    madeTargetArr.push(madeTargetScore(ci.courseInfo['Target Score'].split(' ')[0], rounds[i].finalScore) ? 'green' : 'rgba(255,153,0,0.4)')
     
   }
 
