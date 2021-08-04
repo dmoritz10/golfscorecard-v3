@@ -1193,7 +1193,8 @@ function graphRounds(rounds) {
           scoreId: {
               type: 'linear',
               display: true,
-              position: 'left'
+              position: 'left',
+              min: 70
             },
             hcpId: {
               type: 'linear',
