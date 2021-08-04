@@ -1141,7 +1141,11 @@ function graphRounds(rounds) {
     scoresArr.push(rounds[i].finalScore)
     hcpArr.push(rounds[i].objHandicap.handicap)
 
-    madeTargetArr.push(madeTargetScore(ci.courseInfo['Target Score'].split(' ')[0], rounds[i].finalScore) ? rounds[i].finalScore : null)
+    var courseRating = ci.courseInfo['USGA Course Rating']*1
+    var slopeRating = ci.courseInfo['Slope Rating']*1
+    var courseAdjustedScore = courseRating + ((rounds[i].finalScore*1 - courseRating) * 113 / slopeRating)
+    
+    madeTargetArr.push(madeTargetScore(ci.courseInfo['Target Score'].split(' ')[0], rounds[i].finalScore) ? courseAdjustedScore : null)
     
   }
 
