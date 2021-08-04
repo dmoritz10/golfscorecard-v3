@@ -125,9 +125,9 @@ function otherStats(rpt) {
     }
     if (chart) {
       var parent = document.getElementById('chartContainer');
-      ele.append( parent)
-
-      console.log(parent)
+      ele.append( chart)
+console.log('hi dan')
+      console.log(chart)
       
     }
 
