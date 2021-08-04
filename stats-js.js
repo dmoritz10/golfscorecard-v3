@@ -1178,7 +1178,7 @@ function graphRounds(rounds) {
         label: 'Handicap',
         yAxisID: 'hcpId',
         data: hcpArr,
-        borderColor: 'red',
+        borderColor: 'lightblue',
         borderWidth: 2,
         fontColor: 'lightblue',
         fontStyle: 'bold',
