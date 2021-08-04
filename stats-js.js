@@ -1285,18 +1285,24 @@ function graphAvgScoreByPar(rounds) {
         label: 'Par 3',
         yAxisID: 'par3Id',
         data: par3Arr,
+        borderColor: 'red',
+        pointRadius: 0,
         type: 'line'
       },
       {
         label: 'Par 4',
         yAxisID: 'par4Id',
         data: par4Arr,
+        borderColor: 'blue',
+        pointRadius: 0,
         type: 'line'
       },
       {
         label: 'Par 5',
         yAxisID: 'par5Id',
         data: par5Arr,
+        borderColor: 'yellow',
+        pointRadius: 0,
         type: 'line'
       }
       ]
