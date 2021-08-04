@@ -1163,7 +1163,7 @@ function graphRounds(rounds) {
     parent.innerHTML ='<canvas id="myChart" width="400" height="300" ></canvas>'; 
   } catch(e) {console.log(e)}
   
-  var x = new Chart(document.getElementById("myChart"), {
+  var chart = new Chart(document.getElementById("myChart"), {
    
     data: {
       labels: datePlayedArr,
@@ -1224,5 +1224,7 @@ function graphRounds(rounds) {
         }
     }
 });
-console.log(x)
+
+  return chart
+
 }
