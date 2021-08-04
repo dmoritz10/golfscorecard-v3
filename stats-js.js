@@ -1128,7 +1128,7 @@ function graphRounds(rounds) {
   var scoresArr = []
   var hcpArr = []
 
-  for (i=0;i<rounds.length;i++) {
+  for (let i=rounds.length - 1;i>-1;i--) {
     var dt = new Date(rounds[i].startTime)
     var yr = dt.getFullYear()
     var mo = dt.getMonth() + 1
