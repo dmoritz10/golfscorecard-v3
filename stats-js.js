@@ -1182,27 +1182,21 @@ function graphRounds(rounds) {
             id: 'scoreId',
             ticks: {
               max: 120,
-              min: 60,
-              callback: function (tick, index, ticks) {
-                return numeral(tick).format('(0,0)');
-              },
-            }
+              min: 60
+              }
+            
           }, {
             stacked: false,
             position: 'right',
             type: 'line',
             id: 'hcpId',
             ticks: {
-              max: 30,
+              max: 40,
               min: 0,
               stepSize: 1,
               display: true,
-              beginAtZero: true,
-              fontSize: 13,
-              padding: 10,
-              callback: function (tick, index, ticks) {
-                return numeral(tick).format('$ 0,0');
-              }
+              beginAtZero: false
+              
             }
           }],
             xAxes: [{
