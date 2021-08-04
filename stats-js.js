@@ -1170,28 +1170,29 @@ function graphRounds(rounds) {
 
     options: {
         scales: {
-          yAxes: [{
-            stacked: false,
-            position: 'left',
-            id: 'scoreId'
-            
-          }, {
-            stacked: false,
-            position: 'right',
-            id: 'hcpId'
-            
-          }],
-            xAxes: [{
-              type: 'time',
-              time: {
-                  parser: 'YYYY-MM',
-                  unit: 'month',
-                  displayFormats: {
-                  }
-              },
-              ticks: {
-                  source: 'data'
-              }
+          
+          scoreId: {
+              type: 'linear',
+              display: true,
+              position: 'left',
+            },
+            hcpId: {
+              type: 'linear',
+              display: true,
+              position: 'right'
+            },
+          
+          xAxes: [{
+            type: 'time',
+            time: {
+                parser: 'YYYY-MM',
+                unit: 'month',
+                displayFormats: {
+                }
+            },
+            ticks: {
+                source: 'data'
+            }
           }]                     
         }
     }
