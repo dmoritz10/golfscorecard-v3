@@ -1171,13 +1171,14 @@ function graphRounds(rounds) {
         label: 'Made Target',
         data: madeTargetArr,
         backgroundColor: "green",
+        stacked: false,
         type: 'bar'
       },{
         label: 'Handicap',
         yAxisID: 'hcpId',
         data: hcpArr,
         borderColor: 'red',
-        borderWidth: 1,
+        borderWidth: 2,
         fontColor: 'red',
         fontStyle: 'bold',
         pointRadius: 0,
