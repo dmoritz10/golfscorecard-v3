@@ -1140,7 +1140,7 @@ function graphRounds(rounds) {
     
   }
 
-  $("canvas#myChartt").destroy();
+  $("canvas#myChart").destroy();
   var x = new Chart(document.getElementById("myChart"), {
    
     data: {
