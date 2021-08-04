@@ -1152,14 +1152,14 @@ function graphRounds(rounds) {
       data: scoresArr,
       backgroundColor: "rgba(255,153,0,0.4)",
       type: 'bar',
-            order: 1
+      order: 0
     },
     {
       label: 'Handicap',
       data: hcpArr,
       backgroundColor: 'red',
       type: 'line',
-      order: 0
+      order: 1
     }
   ]
     },
