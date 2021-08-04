@@ -123,17 +123,15 @@ function otherStats(rpt) {
       ele.prepend( "<h2 class='w-100 text-center'>" + title + "</h2>")
       if (title !== 'Lifetime') ele.append( "<hr class='w-100'>")
     }
+
     if (chart) {
-      var parent = document.getElementById('chartContainer');
       ele.append(chart)
       ele.append( "<hr class='w-100'>")
     }
 
-
     ele.appendTo("#statsContainer");
 
 }
-
 
 
 async function btnStatSelectHtml(e) {
@@ -399,8 +397,10 @@ function chartAverageScorebyPar   (title, rounds, myStatsRng, endRow) {
 
     arrRound(rtn, 1)
 
-    return {title: title, arrData:rtn, format:''};
-
+    var rounds3 = extrRndData	(rounds, null, endRow.row3)
+    var chart = graphAvgScoreByPar(rounds3)
+    
+    return {title: title, arrData:rtn, chart: chart, format:''};
 }
 
 function chartCourseAdjustedScore (title, rounds, myStatsRng, endRow)   {
@@ -468,9 +468,9 @@ function chartCourseAdjustedScore (title, rounds, myStatsRng, endRow)   {
 
     arrRound(rtn, 1)
 
-    var casChart = graphRounds(rounds3)
+    var chart = graphRounds(rounds3)
     
-    return {title: title, arrData:rtn, chart: casChart, format:''};
+    return {title: title, arrData:rtn, chart: chart, format:''};
 
 }
 
@@ -1157,13 +1157,13 @@ function graphRounds(rounds) {
   }
 
   try {
-    var parent = document.getElementById('chartContainer');
-    var child = document.getElementById('myChart');          
+    var parent = document.getElementById('casChartContainer');
+    var child = document.getElementById('casChart');          
     parent.removeChild(child);            
-    parent.innerHTML ='<canvas id="myChart" width="400" height="300" ></canvas>'; 
+    parent.innerHTML ='<canvas id="casChart" width="400" height="300" ></canvas>'; 
   } catch(e) {console.log(e)}
   
-  var chart = new Chart(document.getElementById("myChart"), {
+  var chart = new Chart(document.getElementById("casChart"), {
    
     data: {
       labels: datePlayedArr,
@@ -1207,6 +1207,106 @@ function graphRounds(rounds) {
               min:10,
               max:20
             },
+          
+          xAxes: [{
+            type: 'time',
+            time: {
+                parser: 'YYYY-MM',
+                unit: 'month',
+                displayFormats: {
+                }
+            },
+            ticks: {
+                source: 'data'
+            }
+          }]                     
+        }
+    }
+});
+
+  return parent
+
+}
+
+function graphAvgScoreByPar(rounds) {
+
+  var datePlayedArr = []
+  var par3Arr = []
+  var par4Arr = []
+  var par5Arr = []
+
+  for (let i=rounds.length - 1;i>-1;i--) {
+
+    var sc = JSON.parse(rounds[i].scoreCard).scores
+    var dt = new Date(rounds[i].startTime)
+    var yr = dt.getFullYear()
+    var mo = dt.getMonth() + 1
+    var da = dt.getDate()
+    
+    datePlayedArr.push( yr + "-" + mo + "-" + da)
+
+    arr = []
+    sc.forEach((scores, scoreIdx) => {
+     
+      scores.forEach((val) => {
+
+        var par = val.par*1
+
+        switch(true) {
+  
+          case par == 3:
+            par3Arr[i]++
+            break;
+          case par == 4:
+            par4Arr[i]++
+            break;
+          case par == 5:
+            par5Arr[i]++
+            break;
+  
+        }
+
+        }
+      })
+    })
+
+
+  try {
+    var parent = document.getElementById('aspChartContainer');
+    var child = document.getElementById('aspChart');          
+    parent.removeChild(child);            
+    parent.innerHTML ='<canvas id="aspChart" width="400" height="300" ></canvas>'; 
+  } catch(e) {console.log(e)}
+  
+  var chart = new Chart(document.getElementById("aspChart"), {
+   
+    data: {
+      labels: datePlayedArr,
+      datasets: [{
+        label: 'Par 3',
+        yAxisID: 'par3Id',
+        data: par3Arr,
+        type: 'line'
+      },
+      {
+        label: 'Par 4',
+        yAxisID: 'par4Id',
+        data: par4Arr,
+        type: 'line'
+      },
+      {
+        label: 'Par 5',
+        yAxisID: 'par5Id',
+        data: par5Arr,
+        type: 'line'
+      }
+      ]
+    },
+
+    options: {
+        scales: {
+          
+ 
           
           xAxes: [{
             type: 'time',
