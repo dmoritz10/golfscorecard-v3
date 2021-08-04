@@ -1155,7 +1155,7 @@ function graphRounds(rounds) {
         label: 'Score',
         yAxisID: 'scoreId',
         data: scoresArr,
-        backgroundColor: "blue",
+        backgroundColor: "rgba(255,153,0,0.4)",
         type: 'bar',
         order: 0
       },
