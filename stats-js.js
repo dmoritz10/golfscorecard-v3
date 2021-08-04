@@ -1140,8 +1140,8 @@ function graphRounds(rounds) {
     
   }
 
-  document.getElementById("chartContainer").innerHTML = '&nbsp;';
-  document.getElementById("chartContainer").append ('<canvas id="myChart" width="400" height="400"></canvas>')
+  // document.getElementById("chartContainer").innerHTML = '&nbsp;';
+  // document.getElementById("chartContainer").append ('<canvas id="myChart" width="400" height="400"></canvas>')
   
   var x = new Chart(document.getElementById("myChart"), {
    
@@ -1188,5 +1188,7 @@ function graphRounds(rounds) {
 });
 
 console.log(x)
+
+x.destroy()
 
 }
