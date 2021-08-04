@@ -1151,7 +1151,7 @@ function graphRounds(rounds) {
       label: 'Score',
       data: scoresArr,
       backgroundColor: "rgba(255,153,0,0.4)",
-      type: 'line',
+      type: 'bar',
             order: 1
     },
     {
