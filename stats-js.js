@@ -1139,8 +1139,10 @@ function graphRounds(rounds) {
     hcpArr.push(rounds[i].objHandicap.handicap)
     
   }
-
-  $("canvas#myChart").destroy();
+  let chart = document.getElementById("myChart"); 
+  if(chart){
+    chart.remove()
+ }
   var x = new Chart(document.getElementById("myChart"), {
    
     data: {
