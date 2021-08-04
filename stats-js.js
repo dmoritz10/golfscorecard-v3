@@ -1173,8 +1173,8 @@ function graphRounds(rounds) {
             xAxes: [{
               type: 'time',
               time: {
-                  parser: 'YYYY-MM-DD',
-                  unit: 'year',
+                  parser: 'YYYY-MM',
+                  unit: 'month',
                   displayFormats: {
                   }
               },
