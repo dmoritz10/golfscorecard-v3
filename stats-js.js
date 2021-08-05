@@ -1338,14 +1338,17 @@ console.log(par5Arr)
 
           },
 
-          par3Id: {
+          par3Id: {ticks: {
             display: false
+        }
           },
-          par4Id: {
+          par4Id: {ticks: {
             display: false
+        }
           },
-          par5Id: {
+          par5Id: {ticks: {
             display: false
+        }
           },
           
           xAxes: [{
