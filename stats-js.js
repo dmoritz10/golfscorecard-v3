@@ -1331,7 +1331,7 @@ console.log(par5Arr)
         
         scales: {
           
-          yAxes: {
+          yAxisId: {
 
             min: 0,
             max: 10
