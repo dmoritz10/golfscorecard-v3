@@ -1318,6 +1318,7 @@ function graphAvgScoreByPar(rounds) {
         yAxisID: 'yAxisId',
         data: par5Arr,
         borderColor: 'green',
+        lineTension: 0.8,
         borderWidth: 2,
         pointRadius: 0,
         type: 'line'
