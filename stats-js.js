@@ -1333,9 +1333,19 @@ console.log(par5Arr)
           
           yAxes: {
 
-            min: 3,
-            max: 5
+            min: 0,
+            max: 10
 
+          },
+
+          par3Id: {
+            display: false
+          },
+          par4Id: {
+            display: false
+          },
+          par5Id: {
+            display: false
           },
           
           xAxes: [{
