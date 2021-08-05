@@ -1247,7 +1247,14 @@ function graphAvgScoreByPar(rounds) {
 
     console.log(sc)
 
-     
+    var scr3 = 0
+    var cnt3 = 0
+    var cnt4 = 0
+    var scr4 = 0
+    var cnt5 = 0
+    var scr5 = 0
+
+
       sc.forEach((val) => {
 
         var par = val.par*1
@@ -1255,21 +1262,27 @@ function graphAvgScoreByPar(rounds) {
         switch(true) {
   
           case par == 3:
-            par3Arr[i] += val.score*1
+            scr3 += val.score*1
+            cnt3++
             break;
           case par == 4:
-            par4Arr[i]+= val.score*1
+            scr3 += val.score*1
+            cnt3++
             break;
           case par == 5:
-            par5Arr[i]+= val.score*1
+            scr3 += val.score*1
+            cnt3++
             break;
   
         }
 
       })
 
+      par3Arr.push(cnt3 ? scr3 / cnt3 : null)
+      par4Arr.push(cnt4 ? scr4 / cnt4 : null)
+      par5Arr.push(cnt5 ? scr5 / cnt5 : null)
 
-console.log(par3Arr)
+onsole.log(par3Arr)
 console.log(par4Arr)
 console.log(par5Arr)
 
@@ -1312,6 +1325,7 @@ console.log(par5Arr)
     },
 
     options: {
+        type: 'line',
         scales: {
           
  
