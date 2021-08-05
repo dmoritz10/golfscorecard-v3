@@ -1276,11 +1276,14 @@ function graphAvgScoreByPar(rounds) {
   
         }
 
+
+
       })
 
       par3Arr.push(cnt3 ? scr3 / cnt3 : null)
       par4Arr.push(cnt4 ? scr4 / cnt4 : null)
       par5Arr.push(cnt5 ? scr5 / cnt5 : null)
+    }
 
 console.log(par3Arr)
 console.log(par4Arr)
@@ -1348,5 +1351,5 @@ console.log(par5Arr)
 
   return parent
   
-  }
+
 }
