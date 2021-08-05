@@ -1266,12 +1266,12 @@ function graphAvgScoreByPar(rounds) {
             cnt3++
             break;
           case par == 4:
-            scr3 += val.score*1
-            cnt3++
+            scr4 += val.score*1
+            cnt4++
             break;
           case par == 5:
-            scr3 += val.score*1
-            cnt3++
+            scr5 += val.score*1
+            cnt5++
             break;
   
         }
