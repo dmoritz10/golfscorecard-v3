@@ -1255,13 +1255,13 @@ function graphAvgScoreByPar(rounds) {
         switch(true) {
   
           case par == 3:
-            par3Arr[i]++
+            par3Arr[i] += val.score*1
             break;
           case par == 4:
-            par4Arr[i]++
+            par4Arr[i]+= val.score*1
             break;
           case par == 5:
-            par5Arr[i]++
+            par5Arr[i]+= val.score*1
             break;
   
         }
@@ -1269,6 +1269,9 @@ function graphAvgScoreByPar(rounds) {
       })
 
 
+console.log(par3Arr)
+console.log(par4Arr)
+console.log(par5Arr)
 
   try {
     var parent = document.getElementById('aspChartContainer');
