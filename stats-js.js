@@ -1320,7 +1320,7 @@ console.log(par5Arr)
         label: 'Par 5',
         yAxisID: 'par5Id',
         data: par5Arr,
-        borderColor: 'yellow',
+        borderColor: 'green',
         pointRadius: 0,
         type: 'line'
       }
@@ -1331,7 +1331,12 @@ console.log(par5Arr)
         
         scales: {
           
- 
+          yAxes: {
+
+            min: 3,
+            max: 5
+
+          }
           
           xAxes: [{
             type: 'time',
