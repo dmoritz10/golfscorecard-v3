@@ -1282,7 +1282,7 @@ function graphAvgScoreByPar(rounds) {
       par4Arr.push(cnt4 ? scr4 / cnt4 : null)
       par5Arr.push(cnt5 ? scr5 / cnt5 : null)
 
-onsole.log(par3Arr)
+console.log(par3Arr)
 console.log(par4Arr)
 console.log(par5Arr)
 
@@ -1325,7 +1325,7 @@ console.log(par5Arr)
     },
 
     options: {
-        type: 'line',
+        
         scales: {
           
  
