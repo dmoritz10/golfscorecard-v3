@@ -1313,7 +1313,7 @@ function graphAvgScoreByPar(rounds) {
         pointRadius: 0,
         
       cubicInterpolationMode: 'monotone',
-      tension: 0.8,
+      tension: 1.0,
         type: 'line'
       },
       {
