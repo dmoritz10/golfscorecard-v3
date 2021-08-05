@@ -1302,7 +1302,7 @@ console.log(par5Arr)
       labels: datePlayedArr,
       datasets: [{
         label: 'Par 3',
-        yAxisID: 'par3Id',
+        yAxisID: 'yAxisId',
         data: par3Arr,
         borderColor: 'red',
         pointRadius: 0,
@@ -1310,7 +1310,7 @@ console.log(par5Arr)
       },
       {
         label: 'Par 4',
-        yAxisID: 'par4Id',
+        yAxisID: 'yAxisId',
         data: par4Arr,
         borderColor: 'blue',
         pointRadius: 0,
@@ -1318,7 +1318,7 @@ console.log(par5Arr)
       },
       {
         label: 'Par 5',
-        yAxisID: 'par5Id',
+        yAxisID: 'yAxisId',
         data: par5Arr,
         borderColor: 'green',
         pointRadius: 0,
@@ -1336,19 +1336,6 @@ console.log(par5Arr)
             min: 0,
             max: 10
 
-          },
-
-          par3Id: {ticks: {
-            display: false
-        }
-          },
-          par4Id: {ticks: {
-            display: false
-        }
-          },
-          par5Id: {ticks: {
-            display: false
-        }
           },
           
           xAxes: [{
