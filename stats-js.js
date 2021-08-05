@@ -1336,7 +1336,7 @@ console.log(par5Arr)
             min: 3,
             max: 5
 
-          }
+          },
           
           xAxes: [{
             type: 'time',
