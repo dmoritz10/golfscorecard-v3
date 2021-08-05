@@ -1311,6 +1311,9 @@ function graphAvgScoreByPar(rounds) {
         borderColor: 'blue',
         borderWidth: 2,
         pointRadius: 0,
+        
+      cubicInterpolationMode: 'monotone',
+      tension: 0.4,
         type: 'line'
       },
       {
