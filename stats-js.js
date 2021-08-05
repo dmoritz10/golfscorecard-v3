@@ -1333,8 +1333,8 @@ console.log(par5Arr)
           
           yAxisId: {
 
-            min: 0,
-            max: 10
+            min: 1,
+            max: 8
 
           },
           
