@@ -1229,7 +1229,7 @@ function graphRounds(rounds) {
           }]                     
         },
         plugins: {
-        tooltips: {
+        tooltip: {
           
           callbacks: {
             label: function(tooltipItem, data) {
