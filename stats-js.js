@@ -1170,7 +1170,6 @@ function graphRounds(rounds) {
       datasets: [{
         label: 'Made Target',
         yAxisID: 'scoreId',
-        data: [],
         backgroundColor: 'green',
         type: 'bar'
       },{
