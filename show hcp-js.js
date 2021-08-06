@@ -1,6 +1,9 @@
 
 async function btnShowHandicapHtml () {
 
+  var hcpObj = readOption('handicapObj')
+  var prevNbrRounds = hcpObj.nbrRounds*1
+
   var hcpSelectOptions = readOption('hcpFilter')
   var hcpMethod = hcpSelectOptions.hcpMethod
 
@@ -20,7 +23,6 @@ async function btnShowHandicapHtml () {
     var objHandicap = roundObj.objHandicap      
     // var objTargetScore = objHandicap.targetScore
 
-    var summarizeRounds = (rounds.length == readOption('handicapObj').nbrRounds) ? false : true 
 
     if (j == rounds.length - 1) {                 //  handicap info from most recent round
       
@@ -158,9 +160,10 @@ async function btnShowHandicapHtml () {
 
   gotoTab('ShowHCP')
 
-  if (summarizeRounds)    courseSummary(rounds)
+  if (rounds.length == prevNbrRounds)    courseSummary(rounds)
+
   console.log('summarizeRounds')
-  console.log(summarizeRounds)
+  console.log(rounds.length == prevNbrRounds)
 
 }
 
