@@ -1305,8 +1305,8 @@ function graphAvgScoreByPar(rounds) {
         yAxisID: 'yAxisId',
         data: par3Arr,
         borderColor: 'red',
-        borderWidth: 0,
-        pointRadius: 2,
+        borderWidth: 1,
+        pointRadius: 1,
         type: 'line'
       },
       {
@@ -1314,8 +1314,8 @@ function graphAvgScoreByPar(rounds) {
         yAxisID: 'yAxisId',
         data: par4Arr,
         borderColor: 'blue',
-        borderWidth: 0,
-        pointRadius: 2,
+        borderWidth: 1,
+        pointRadius: 1,
         type: 'line'
       },
       {
@@ -1323,8 +1323,8 @@ function graphAvgScoreByPar(rounds) {
         yAxisID: 'yAxisId',
         data: par5Arr,
         borderColor: 'green',
-        borderWidth: 0,
-        pointRadius: 2,
+        borderWidth: 1,
+        pointRadius: 1,
         type: 'line'
       }
       ]
