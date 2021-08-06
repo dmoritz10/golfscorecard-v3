@@ -1338,6 +1338,7 @@ function graphAvgScoreByPar(rounds) {
 
             min: 2,
             max: 7,
+            multiple: 1,
             grid: {
               color: ['lightgrey', 'lightgrey','red','blue','green','lightgrey','lightgrey','lightgrey'],
             }
