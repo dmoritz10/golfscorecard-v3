@@ -1229,14 +1229,15 @@ function graphRounds(rounds) {
           }]                     
         },
         tooltips: {
-          callbacks: {
-              label: function(tooltipItem, data) {
-                  console.log(tooltipItem)
-                  console.log(data)
-                  return 'hi dan';
-              }
-          }
-      }
+          titleFontFamily: 'Open Sans',
+          backgroundColor: 'rgba(0,0,0,0.3)',
+          titleFontColor: 'red',
+          caretSize: 5,
+          cornerRadius: 2,
+          xPadding: 10,
+          yPadding: 10
+        }
+
     }
 });
 
