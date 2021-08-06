@@ -33,6 +33,9 @@ async function getRounds(prmExcludeSmall) {
           var sc = JSON.parse(rounds[j][scoreCardCol])
           var round = sc.scores
           var nbrHolesCorrection = 18 / sc.scores.filter(Boolean).length
+
+          console.log(nbrHolesCorrection)
+          console.log(rounds[j][parCol]*1)
           
           if (nbrHolesCorrection !== 1 || rounds[j][parCol]*1 < 69)
            continue;
