@@ -6,7 +6,7 @@ async function getRounds(prmExcludeSmall) {
     var hcpSelectOptions = readOption('hcpFilter')
     var hcpExcludeSmall = prmExcludeSmall || hcpSelectOptions.hcpExcludeSmall
 
-console.log(prmExcludeSmall)
+console.log(hcpExcludeSmall)
 console.log(prmExcludeSmall)
 console.log(hcpSelectOptions.hcpExcludeSmall)
 
