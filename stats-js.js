@@ -1337,9 +1337,13 @@ function graphAvgScoreByPar(rounds) {
           yAxisId: {
 
             min: 1,
-            max: 8
+            max: 8,
+            gridLines: {
+              color: ['black', 'black','red','blue','green','black','black','black'],
+         }
 
           },
+          
           
           xAxes: [{
             type: 'time',
