@@ -160,7 +160,7 @@ async function btnShowHandicapHtml () {
 
   gotoTab('ShowHCP')
 
-  if (rounds.length == prevNbrRounds)    courseSummary(rounds)
+  if (rounds.length != prevNbrRounds)    courseSummary(rounds)
 
   console.log('summarizeRounds dan')
   console.log(rounds.length == prevNbrRounds)
