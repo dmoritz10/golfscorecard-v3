@@ -5,6 +5,12 @@ async function getRounds(prmExcludeSmall) {
 
     var hcpSelectOptions = readOption('hcpFilter')
     var hcpExcludeSmall = prmExcludeSmall || hcpSelectOptions.hcpExcludeSmall
+
+console.log(prmExcludeSmall)
+console.log(prmExcludeSmall)
+console.log(hcpSelectOptions.hcpExcludeSmall)
+
+
     var hcpMethod = hcpSelectOptions.hcpMethod
 
     suSht = await openShts(
