@@ -39,7 +39,7 @@ async function getRounds(prmExcludeSmall) {
           
           if (nbrHolesCorrection !== 1 || rounds[j][parCol]*1 < 69) {
 
-          console.log(rounds[j][date])
+          console.log(rounds[j][cols.indexOf('date')])
 console.log('skippppppppppppppppppppppppppppppppppppppppppppp')
 
            continue;}
