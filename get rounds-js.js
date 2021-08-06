@@ -4,7 +4,7 @@ async function getRounds(prmExcludeSmall) {
     var str = new Date()
 
     var hcpSelectOptions = readOption('hcpFilter')
-    var hcpExcludeSmall = prmExcludeSmall || hcpSelectOptions.hcpExcludeSmall
+    var hcpExcludeSmall = prmExcludeSmall === undefined ? hcpSelectOptions.hcpExcludeSmall : prmExcludeSmall
 
 console.log(hcpExcludeSmall)
 console.log(prmExcludeSmall)
