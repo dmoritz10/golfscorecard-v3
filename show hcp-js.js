@@ -163,7 +163,7 @@ async function btnShowHandicapHtml () {
   if (rounds.length != prevNbrRounds)    courseSummary(rounds)
 
   console.log('summarizeRounds')
-  console.log(rounds.length == prevNbrRounds)
+  console.log(rounds.length != prevNbrRounds)
 
 }
 
