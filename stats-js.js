@@ -1137,7 +1137,7 @@ function graphRounds(rounds) {
   var madeTargetArr = []
 
   // for (let i=rounds.length - 1;i>-1;i--) {
-  for (let i=0;i>rounds.length;i++) {
+  for (let i=0;i<rounds.length;i++) {
 
     var ci = JSON.parse(rounds[i].courseInfo)
     var dt = new Date(rounds[i].startTime)
@@ -1243,7 +1243,7 @@ function graphAvgScoreByPar(rounds) {
   var par5Arr = []
 
   // for (let i=rounds.length - 1;i>-1;i--) {
-  for (let i=0;i>rounds.length;i++) {
+  for (let i=0;i<rounds.length;i++) {
 
     var sc = JSON.parse(rounds[i].scoreCard).scores
     var dt = new Date(rounds[i].startTime)
