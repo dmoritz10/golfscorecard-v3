@@ -1228,6 +1228,7 @@ function graphRounds(rounds) {
             }
           }]                     
         },
+        plugins: {
         tooltips: {
           titleFontFamily: 'Open Sans',
           backgroundColor: 'rgba(0,0,0,0.3)',
@@ -1237,7 +1238,7 @@ function graphRounds(rounds) {
           xPadding: 10,
           yPadding: 10
         }
-
+      }
     }
 });
 
