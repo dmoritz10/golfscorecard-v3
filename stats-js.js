@@ -1227,7 +1227,16 @@ function graphRounds(rounds) {
                 source: 'data'
             }
           }]                     
-        }
+        },
+        tooltips: {
+          callbacks: {
+              label: function(tooltipItem, data) {
+                  console.log(tooltipItem)
+                  console.log(data)
+                  return 'hi dan';
+              }
+          }
+      }
     }
 });
 
