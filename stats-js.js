@@ -1230,7 +1230,7 @@ function graphRounds(rounds) {
         },
         plugins: {
         tooltips: {
-          titleFontFamily: 'Open Sans',
+          
           callbacks: {
             label: function(tooltipItem, data) {
                 console.log(tooltipItem)
