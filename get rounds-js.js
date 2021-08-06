@@ -40,15 +40,8 @@ console.log(hcpSelectOptions.hcpExcludeSmall)
           var round = sc.scores
           var nbrHolesCorrection = 18 / sc.scores.filter(Boolean).length
 
-          console.log(nbrHolesCorrection)
-          console.log(rounds[j][parCol]*1)
-          
-          if (nbrHolesCorrection !== 1 || rounds[j][parCol]*1 < 69) {
-
-          console.log(rounds[j][cols.indexOf('date')])
-console.log('skippppppppppppppppppppppppppppppppppppppppppppp')
-
-           continue;}
+          if (nbrHolesCorrection !== 1 || rounds[j][parCol]*1 < 69) 
+            continue;
         }
 
         arrRounds.push([rounds[j], j])
