@@ -1452,6 +1452,8 @@ function getGolfers() {
 
 async function courseSummary(rounds) {
 
+  console.log('courseSummary')
+
   // var rounds = await getRounds()
 
   var cols = arrShts['My Courses'].colHdrs

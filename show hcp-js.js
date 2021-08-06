@@ -15,10 +15,12 @@ async function btnShowHandicapHtml () {
   
     var roundObj = rounds[j]
       
-    var sc = JSON.parse(roundObj.scoreCard)
+    // var sc = JSON.parse(roundObj.scoreCard)
     var ci = JSON.parse(roundObj.courseInfo)
     var objHandicap = roundObj.objHandicap      
-    var objTargetScore = objHandicap.targetScore
+    // var objTargetScore = objHandicap.targetScore
+
+    var summarizeRounds = (rounds.length == readOption('handicapObj').nbrRounds) ? false : true 
 
     if (j == rounds.length - 1) {                 //  handicap info from most recent round
       
@@ -156,21 +158,11 @@ async function btnShowHandicapHtml () {
 
   gotoTab('ShowHCP')
 
-  if (rounds.length !== sumNbrRoundsPlayed()) {
+  if (summarizeRounds) 
 
     courseSummary(rounds)
 
-  }
-
-}
-
-function sumNbrRoundsPlayed() {
-
-  var cols = arrShts['My Courses'].colHdrs
-  var courses = arrShts['My Courses'].vals
-
-  var col = cols.indexOf('Nbr Times Played')
-  var sum = courses.reduce((a, b) => a + b[col]*1, 0)
+  
 
 }
 
