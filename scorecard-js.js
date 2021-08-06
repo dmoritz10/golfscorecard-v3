@@ -1275,14 +1275,11 @@ function _calcVaporPressureE(Dp) {
     Dp = parseFloat(Dp);
     let a = (7.5 * Dp) / (237.3 + Dp);
     let E = 6.11 * Math.pow(10, a);
-    console.log('E ' + E);
+
     return E;
 }	
 
 function calcClubDistance(wind, airDensity, launchAngle, ballSpeed) {
-
-  console.log(launchAngle <= 0 )
-  console.log(ballSpeed <= 0)
 
   if (launchAngle <= 0 || ballSpeed <= 0) return
 
