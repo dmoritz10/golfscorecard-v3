@@ -1316,10 +1316,6 @@ function graphAvgScoreByPar(rounds) {
         data: par4Arr,
         borderColor: 'blue',
         borderWidth: 2,
-        pointRadius: 0,
-        
-      cubicInterpolationMode: 'monotone',
-      tension: 1.0,
         type: 'line'
       },
       {
@@ -1327,7 +1323,6 @@ function graphAvgScoreByPar(rounds) {
         yAxisID: 'yAxisId',
         data: par5Arr,
         borderColor: 'green',
-        lineTension: 0.8,
         borderWidth: 2,
         pointRadius: 0,
         type: 'line'
