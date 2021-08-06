@@ -1336,10 +1336,10 @@ function graphAvgScoreByPar(rounds) {
           
           yAxisId: {
 
-            min: 1,
-            max: 8,
+            min: 2,
+            max: 7,
             grid: {
-              color: [null, null,'red','blue','green',null,null,null],
+              color: ['lightgrey', 'lightgrey','red','blue','green','lightgrey','lightgrey','lightgrey'],
             }
 
           },
