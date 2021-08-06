@@ -1168,16 +1168,17 @@ function graphRounds(rounds) {
     data: {
       labels: datePlayedArr,
       datasets: [{
-        label: 'Made Target',
-        yAxisID: 'scoreId',
-        backgroundColor: 'green',
-        type: 'line'
-      },{
         label: 'Score',
         yAxisID: 'scoreId',
         data: scoresArr,
         backgroundColor: madeTargetArr,
         type: 'bar'
+      },
+      {
+        label: 'Made Target',
+        yAxisID: 'scoreId',
+        backgroundColor: 'green',
+        type: 'line'
       },
       {
         label: 'Handicap',
