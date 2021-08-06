@@ -158,11 +158,9 @@ async function btnShowHandicapHtml () {
 
   gotoTab('ShowHCP')
 
-  if (summarizeRounds) 
-
-    courseSummary(rounds)
-
-  
+  if (summarizeRounds)    courseSummary(rounds)
+  console.log('summarizeRounds')
+  console.log(summarizeRounds)
 
 }
 
