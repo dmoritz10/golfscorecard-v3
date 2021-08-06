@@ -39,7 +39,7 @@ async function getRounds(prmExcludeSmall) {
           
           if (nbrHolesCorrection !== 1 || rounds[j][parCol]*1 < 69)
 
-console.log('skip')
+console.log('skippppppppppppppppppppppppppppppppppppppppppppp')
 
            continue;
         }
