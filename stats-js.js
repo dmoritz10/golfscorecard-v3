@@ -1251,15 +1251,12 @@ function graphAvgScoreByPar(rounds) {
     
     datePlayedArr.push( yr + "-" + mo + "-" + da)
 
-    console.log(sc)
-
     var scr3 = 0
     var cnt3 = 0
     var cnt4 = 0
     var scr4 = 0
     var cnt5 = 0
     var scr5 = 0
-
 
       sc.forEach((val) => {
 
