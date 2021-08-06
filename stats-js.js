@@ -1343,7 +1343,7 @@ function graphAvgScoreByPar(rounds) {
               stepSize: 1
             },
             grid: {
-              color: ['lightgrey', 'lightgrey','red','blue','green','lightgrey','lightgrey','lightgrey'],
+              color: ['lightgrey', 'lightgrey','red','blue','green','lightgrey'],
             }
 
           },
