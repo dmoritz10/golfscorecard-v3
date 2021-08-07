@@ -1183,12 +1183,7 @@ function graphRounds(rounds) {
         backgroundColor: 'green',
         type: 'line'
       },
-      {
-        
-        yAxisID: 'scoreId',
-        data: courseNameArr,
-        type: 'line'
-      },
+      
       {
         label: 'Handicap',
         yAxisID: 'hcpId',
@@ -1198,6 +1193,13 @@ function graphRounds(rounds) {
         fontColor: 'lightblue',
         fontStyle: 'bold',
         pointRadius: 0,
+        type: 'line'
+      },
+      {
+        label: "Course Name",
+        hidden: true,
+        yAxisID: 'scoreId',
+        data: courseNameArr,
         type: 'line'
       }
       ]
@@ -1259,7 +1261,7 @@ function graphRounds(rounds) {
               console.log(ds3.label )
                 console.log(ds3.data)
                   
-                return [ds0.label, ds1.label, ds2.label, ds3.label];
+                return [ds0.data, ds1.data, ds2.data, ds3.data];
             }
         }
         }
