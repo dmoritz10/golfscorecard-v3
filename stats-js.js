@@ -1269,7 +1269,7 @@ function graphRounds(rounds) {
   console.log(item)
   console.log(chart)
   
-              return false;
+              return [false, true, true, true];
             }
           }
         }
