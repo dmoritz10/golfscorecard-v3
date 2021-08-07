@@ -1245,35 +1245,33 @@ function graphRounds(rounds) {
           }]                     
         },
         plugins: {
-        tooltip: {
-          
-          callbacks: {
-            label: function(tooltipItem) {
+          tooltip: {
+            
+            callbacks: {
+              label: function(tooltipItem) {
 
-              var idx = tooltipItem.dataIndex
+                var idx = tooltipItem.dataIndex
 
-              var ds0 = tooltipItem.chart._metasets[0]._dataset
-              var ds1 = tooltipItem.chart._metasets[1]._dataset
-              var ds2 = tooltipItem.chart._metasets[2]._dataset             
-              var ds3 = tooltipItem.chart._metasets[3]._dataset
-              
+                var ds0 = tooltipItem.chart._metasets[0]._dataset
+                var ds1 = tooltipItem.chart._metasets[1]._dataset
+                var ds2 = tooltipItem.chart._metasets[2]._dataset             
+                var ds3 = tooltipItem.chart._metasets[3]._dataset
+                
                 return [ds3.data[idx], "Score: " + ds0.data[idx], "Handicap: " + ds2.data[idx]];
+                
+              }
             }
-        }
-        },
-        legend: {
-          labels: {
-            filter: function(item, chart) {
-              // Logic to remove a particular legend item goes here
-  
-  console.log(item)
-  console.log(chart)
-  
-              return item.text == "Course Name" ? false : true
+          },
+
+          legend: {
+            labels: {
+              filter: function(item, chart) {
+                return item.text == "Course Name" ? false : true
+              }
             }
           }
+          
         }
-      }
 
     }
 });
