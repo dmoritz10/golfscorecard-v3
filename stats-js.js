@@ -1156,7 +1156,7 @@ function graphRounds(rounds) {
     hcpArr.push(rounds[i].objHandicap.handicap)
     madeTargetArr.push(madeTargetScore(ci.courseInfo['Target Score'].split(' ')[0], rounds[i].finalScore) ? 'green' : 'rgba(255,153,0,0.4)')
     courseNameArr.push(rounds[i].courseName)
-    
+
   }
 
   try {
@@ -1223,7 +1223,7 @@ function graphRounds(rounds) {
             },
           courseName: {
               display: false
-          }
+          },
           
           xAxes: [{
             type: 'time',
@@ -1243,9 +1243,12 @@ function graphRounds(rounds) {
           
           callbacks: {
             label: function(tooltipItem) {
-                console.log(tooltipItem)
+
+              var ds = tooltipItem.chart._metasets[3]._dataset
+              console.log(ds.label )
+                console.log(ds.data)
       
-                return 'hi dan';
+                return 'ds.label';
             }
         }
         }
