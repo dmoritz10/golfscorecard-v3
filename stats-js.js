@@ -1197,7 +1197,6 @@ function graphRounds(rounds) {
       },
       {
         label: "Course Name",
-        hidden: true,
         yAxisID: 'scoreId',
         data: courseNameArr,
         type: 'line'
@@ -1226,9 +1225,7 @@ function graphRounds(rounds) {
             },
           courseName: {
               type: 'linear',
-              display: false,
-              hiddenLegend: true,
-              hidden: true
+              display: false
           },
           
           xAxes: [{
@@ -1270,7 +1267,7 @@ function graphRounds(rounds) {
               }
             }
           }
-          
+
         }
 
     }
@@ -1287,6 +1284,8 @@ function graphAvgScoreByPar(rounds) {
   var par3Arr = []
   var par4Arr = []
   var par5Arr = []
+  var courseNameArr = []
+
 
   // for (let i=rounds.length - 1;i>-1;i--) {
   for (let i=0;i<rounds.length;i++) {
@@ -1298,6 +1297,7 @@ function graphAvgScoreByPar(rounds) {
     var da = dt.getDate()
     
     datePlayedArr.push( yr + "-" + mo + "-" + da)
+    courseNameArr.push(rounds[i].courseName)
 
     var scr3 = 0
     var cnt3 = 0
