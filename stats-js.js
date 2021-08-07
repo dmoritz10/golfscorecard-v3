@@ -1205,73 +1205,73 @@ function graphRounds(rounds) {
     },
 
     options: {
-        scales: {
-          
-          scoreId: {
-              type: 'linear',
-              display: true,
-              position: 'left',
-              min: 70
-            },
-          hcpId: {
-              type: 'linear',
-              display: true,
-              position: 'right',
-              title: {
-                color: 'red'
-              },
-              min:10,
-              max:20
-            },
-          courseName: {
-              type: 'linear',
-              display: false
+      scales: {
+        
+        scoreId: {
+            type: 'linear',
+            display: true,
+            position: 'left',
+            min: 70
           },
-          
-          xAxes: [{
-            type: 'time',
-            time: {
-                parser: 'YYYY-MM',
-                unit: 'month',
-                displayFormats: {
-                }
+        hcpId: {
+            type: 'linear',
+            display: true,
+            position: 'right',
+            title: {
+              color: 'red'
             },
-            ticks: {
-                source: 'data'
-            }
-          }]                     
+            min:10,
+            max:20
+          },
+        courseName: {
+            type: 'linear',
+            display: false
         },
-        plugins: {
-          tooltip: {
-            
-            callbacks: {
-              label: function(tooltipItem) {
-
-                var idx = tooltipItem.dataIndex
-
-                var ds0 = tooltipItem.chart._metasets[0]._dataset
-                var ds1 = tooltipItem.chart._metasets[1]._dataset
-                var ds2 = tooltipItem.chart._metasets[2]._dataset             
-                var ds3 = tooltipItem.chart._metasets[3]._dataset
-                
-                return [ds3.data[idx], "Score:\t\t\t\t\t\t\t\t" + ds0.data[idx], "Handicap:\t\t" + ds2.data[idx]];
-                
+        
+        xAxes: [{
+          type: 'time',
+          time: {
+              parser: 'YYYY-MM',
+              unit: 'month',
+              displayFormats: {
               }
-            }
           },
+          ticks: {
+              source: 'data'
+          }
+        }]                     
+      },
+      plugins: {
+        tooltip: {
+          
+          callbacks: {
+            label: function(tooltipItem) {
 
-          legend: {
-            labels: {
-              filter: function(item, chart) {
-                return item.text == "Course Name" ? false : true
-              }
+              var idx = tooltipItem.dataIndex
+
+              var ds0 = tooltipItem.chart._metasets[0]._dataset
+              var ds1 = tooltipItem.chart._metasets[1]._dataset
+              var ds2 = tooltipItem.chart._metasets[2]._dataset             
+              var ds3 = tooltipItem.chart._metasets[3]._dataset
+              
+              return [ds3.data[idx], "Score:\t\t\t\t\t\t\t\t" + ds0.data[idx], "Handicap:\t\t" + ds2.data[idx]];
+              
             }
           }
+        },
 
+        legend: {
+          labels: {
+            filter: function(item, chart) {
+              return item.text == "Course Name" ? false : true
+            }
+          }
         }
 
+      }
+
     }
-});
+  // });
 
   return parent
 
@@ -1352,7 +1352,7 @@ function graphAvgScoreByPar(rounds) {
         data: par3Arr,
         borderColor: 'red',
         borderWidth: 1,
-        pointRadius: 1,
+        pointRadius: 2,
         type: 'line'
       },
       {
@@ -1361,7 +1361,7 @@ function graphAvgScoreByPar(rounds) {
         data: par4Arr,
         borderColor: 'blue',
         borderWidth: 1,
-        pointRadius: 1,
+        pointRadius: 2,
         type: 'line'
       },
       {
@@ -1370,7 +1370,7 @@ function graphAvgScoreByPar(rounds) {
         data: par5Arr,
         borderColor: 'green',
         borderWidth: 1,
-        pointRadius: 1,
+        pointRadius: 2,
         type: 'line'
       },
       {
@@ -1384,70 +1384,70 @@ function graphAvgScoreByPar(rounds) {
 
     options: {
         
-        scales: {
-          
-          yAxisId: {
+      scales: {
+        
+        yAxisId: {
 
-            min: 2,
-            max: 7,
-            ticks: {
-              // forces step size to be 50 units
-              stepSize: 1
-            },
-            grid: {
-              color: ['lightgrey', 'lightgrey','red','blue','green','lightgrey'],
-            }
-
+          min: 2,
+          max: 7,
+          ticks: {
+            // forces step size to be 1 unit
+            stepSize: 1
           },
-          courseName: {
-              type: 'linear',
-              display: false
-          },
-          
-          
-          xAxes: [{
-            type: 'time',
-            time: {
-                parser: 'YYYY-MM',
-                unit: 'month',
-                displayFormats: {
-                }
-            },
-            ticks: {
-                source: 'data'
-            }
-          }]                     
-        },
-        plugins: {
-          tooltip: {
-            
-            callbacks: {
-              label: function(tooltipItem) {
-
-                var idx = tooltipItem.dataIndex
-
-                var ds0 = tooltipItem.chart._metasets[0]._dataset
-                var ds1 = tooltipItem.chart._metasets[1]._dataset
-                var ds2 = tooltipItem.chart._metasets[2]._dataset             
-                var ds3 = tooltipItem.chart._metasets[3]._dataset
-                
-                return [ds3.data[idx], "Par 3:\t\t\t\t" + ds0.data[idx], "Par 4:\t\t\t\t" + ds1.data[idx], "Par 5:\t\t\t\t" + ds2.data[idx]];
-                
-              }
-            }
-          },
-
-          legend: {
-            labels: {
-              filter: function(item, chart) {
-                return item.text == "Course Name" ? false : true
-              }
-            }
+          grid: {
+            color: ['lightgrey', 'lightgrey','red','blue','green','lightgrey'],
           }
 
+        },
+        courseName: {
+            type: 'linear',
+            display: false
+        },
+        
+        
+        xAxes: [{
+          type: 'time',
+          time: {
+              parser: 'YYYY-MM',
+              unit: 'month',
+              displayFormats: {
+              }
+          },
+          ticks: {
+              source: 'data'
+          }
+        }]                     
+      },
+      plugins: {
+        tooltip: {
+          
+          callbacks: {
+            label: function(tooltipItem) {
+
+              var idx = tooltipItem.dataIndex
+
+              var ds0 = tooltipItem.chart._metasets[0]._dataset
+              var ds1 = tooltipItem.chart._metasets[1]._dataset
+              var ds2 = tooltipItem.chart._metasets[2]._dataset             
+              var ds3 = tooltipItem.chart._metasets[3]._dataset
+              
+              return [ds3.data[idx], "Par 3:\t\t\t\t" + ds0.data[idx], "Par 4:\t\t\t\t" + ds1.data[idx], "Par 5:\t\t\t\t" + ds2.data[idx]];
+              
+            }
+          }
+        },
+
+        legend: {
+          labels: {
+            filter: function(item, chart) {
+              return item.text == "Course Name" ? false : true
+            }
+          }
         }
+
+      }
     }
-});
+  });
 
   return parent
   
