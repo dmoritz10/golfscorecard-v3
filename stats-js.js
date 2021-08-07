@@ -1186,7 +1186,8 @@ function graphRounds(rounds) {
       {
         label: 'Course Name',
         yAxisID: 'scoreId',
-        data: courseNameArr
+        data: courseNameArr,
+        type: 'line'
       },
       {
         label: 'Handicap',
@@ -1222,6 +1223,7 @@ function graphRounds(rounds) {
               max:20
             },
           courseName: {
+              type: 'linear',
               display: false
           },
           
