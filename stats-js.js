@@ -1227,6 +1227,7 @@ function graphRounds(rounds) {
           courseName: {
               type: 'linear',
               display: false,
+              hiddenLegend: true,
               hidden: true
           },
           
