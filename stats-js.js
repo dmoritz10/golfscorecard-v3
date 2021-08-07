@@ -1184,7 +1184,7 @@ function graphRounds(rounds) {
         type: 'line'
       },
       {
-        label: 'Course Name',
+        
         yAxisID: 'scoreId',
         data: courseNameArr,
         type: 'line'
