@@ -1249,26 +1249,24 @@ function graphRounds(rounds) {
           callbacks: {
             label: function(tooltipItem) {
 
-              console.log(tooltipItem)
-
               var idx = tooltipItem.dataIndex
 
               var ds0 = tooltipItem.chart._metasets[0]._dataset
-              console.log(ds0.label )
-                console.log(ds0.data)
               var ds1 = tooltipItem.chart._metasets[1]._dataset
-              console.log(ds1.label )
-                console.log(ds1.data)
-              var ds2 = tooltipItem.chart._metasets[2]._dataset
-              console.log(ds2.label )
-                console.log(ds2.data)
+              var ds2 = tooltipItem.chart._metasets[2]._dataset             
               var ds3 = tooltipItem.chart._metasets[3]._dataset
-              console.log(ds3.label )
-                console.log(ds3.data)
-                  
+              
                 return [ds3.data[idx], "Score: " + ds0.data[idx], "Handicap: " + ds2.data[idx]];
             }
         }
+        }
+      },
+      legend: {
+        labels: {
+          filter: function(item, chart) {
+            // Logic to remove a particular legend item goes here
+            return !item.text.includes('Course Name');
+          }
         }
       }
     }
