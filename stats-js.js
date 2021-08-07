@@ -1269,7 +1269,7 @@ function graphRounds(rounds) {
   console.log(item)
   console.log(chart)
   
-              return [false, true, true, true];
+              return item.text == "Course Name" ? false : true
             }
           }
         }
@@ -1281,6 +1281,7 @@ function graphRounds(rounds) {
   return parent
 
 }
+
 
 function graphAvgScoreByPar(rounds) {
 
