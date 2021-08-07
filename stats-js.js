@@ -1260,20 +1260,21 @@ function graphRounds(rounds) {
                 return [ds3.data[idx], "Score: " + ds0.data[idx], "Handicap: " + ds2.data[idx]];
             }
         }
-        }
-      },
-      legend: {
-        labels: {
-          filter: function(item, chart) {
-            // Logic to remove a particular legend item goes here
-
-console.log(item)
-console.log(chart)
-
-            return !item.text.includes('Course Name');
+        },
+        legend: {
+          labels: {
+            filter: function(item, chart) {
+              // Logic to remove a particular legend item goes here
+  
+  console.log(item)
+  console.log(chart)
+  
+              return false;
+            }
           }
         }
       }
+
     }
 });
 
