@@ -1135,6 +1135,7 @@ function graphRounds(rounds) {
   var scoresArr = []
   var hcpArr = []
   var madeTargetArr = []
+  var courseNameArr = []
 
   // for (let i=rounds.length - 1;i>-1;i--) {
   for (let i=0;i<rounds.length;i++) {
@@ -1154,6 +1155,7 @@ function graphRounds(rounds) {
     scoresArr.push(courseAdjustedScore)
     hcpArr.push(rounds[i].objHandicap.handicap)
     madeTargetArr.push(madeTargetScore(ci.courseInfo['Target Score'].split(' ')[0], rounds[i].finalScore) ? 'green' : 'rgba(255,153,0,0.4)')
+    courseNameArr.push(rounds[i].courseName)
     
   }
 
@@ -1182,6 +1184,11 @@ function graphRounds(rounds) {
         type: 'line'
       },
       {
+        label: 'Course Name',
+        yAxisID: 'scoreId',
+        data: courseNameArr
+      },
+      {
         label: 'Handicap',
         yAxisID: 'hcpId',
         data: hcpArr,
@@ -1204,7 +1211,7 @@ function graphRounds(rounds) {
               position: 'left',
               min: 70
             },
-            hcpId: {
+          hcpId: {
               type: 'linear',
               display: true,
               position: 'right',
@@ -1214,6 +1221,9 @@ function graphRounds(rounds) {
               min:10,
               max:20
             },
+          courseName: {
+              display: false
+          }
           
           xAxes: [{
             type: 'time',
@@ -1232,9 +1242,9 @@ function graphRounds(rounds) {
         tooltip: {
           
           callbacks: {
-            label: function(tooltipItem, data) {
+            label: function(tooltipItem) {
                 console.log(tooltipItem)
-                console.log(data)
+      
                 return 'hi dan';
             }
         }
