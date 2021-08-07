@@ -1372,6 +1372,12 @@ function graphAvgScoreByPar(rounds) {
         borderWidth: 1,
         pointRadius: 1,
         type: 'line'
+      },
+      {
+        label: "Course Name",
+        yAxisID: 'scoreId',
+        data: courseNameArr,
+        type: 'line'
       }
       ]
     },
@@ -1393,6 +1399,10 @@ function graphAvgScoreByPar(rounds) {
             }
 
           },
+          courseName: {
+              type: 'linear',
+              display: false
+          },
           
           
           xAxes: [{
@@ -1407,6 +1417,34 @@ function graphAvgScoreByPar(rounds) {
                 source: 'data'
             }
           }]                     
+        },
+        plugins: {
+          tooltip: {
+            
+            callbacks: {
+              label: function(tooltipItem) {
+
+                var idx = tooltipItem.dataIndex
+
+                var ds0 = tooltipItem.chart._metasets[0]._dataset
+                var ds1 = tooltipItem.chart._metasets[1]._dataset
+                var ds2 = tooltipItem.chart._metasets[2]._dataset             
+                var ds3 = tooltipItem.chart._metasets[3]._dataset
+                
+                return [ds3.data[idx], "Par 3: " + ds0.data[idx], "Par 4: " + ds1.data[idx], "Par 5: " + ds2.data[idx]];
+                
+              }
+            }
+          },
+
+          legend: {
+            labels: {
+              filter: function(item, chart) {
+                return item.text == "Course Name" ? false : true
+              }
+            }
+          }
+
         }
     }
 });
