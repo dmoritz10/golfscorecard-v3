@@ -1431,7 +1431,7 @@ function graphAvgScoreByPar(rounds) {
                 var ds2 = tooltipItem.chart._metasets[2]._dataset             
                 var ds3 = tooltipItem.chart._metasets[3]._dataset
                 
-                return [ds3.data[idx], "Par 3: \t" + ds0.data[idx], "Par 4: " + ds1.data[idx], "Par 5: " + ds2.data[idx]];
+                return [ds3.data[idx], "Par 3: \t" + ds0.data[idx], "Par 4:      " + ds1.data[idx], "Par 5: " + ds2.data[idx]];
                 
               }
             }
