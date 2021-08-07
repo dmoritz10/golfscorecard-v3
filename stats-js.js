@@ -1251,6 +1251,8 @@ function graphRounds(rounds) {
 
               console.log(tooltipItem)
 
+              var idx = tooltipItem.dataIndex
+
               var ds0 = tooltipItem.chart._metasets[0]._dataset
               console.log(ds0.label )
                 console.log(ds0.data)
@@ -1264,7 +1266,7 @@ function graphRounds(rounds) {
               console.log(ds3.label )
                 console.log(ds3.data)
                   
-                return [ds0.data, ds1.data, ds2.data, ds3.data];
+                return [ds3.data[idx], "Score: " + ds0.data[idx], "Handicap: " + ds2.data[idx]];
             }
         }
         }
