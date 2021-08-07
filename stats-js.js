@@ -1246,11 +1246,20 @@ function graphRounds(rounds) {
           callbacks: {
             label: function(tooltipItem) {
 
-              var ds = tooltipItem.chart._metasets[3]._dataset
-              console.log(ds.label )
-                console.log(ds.data)
-      
-                return 'ds.label';
+              var ds0 = tooltipItem.chart._metasets[0]._dataset
+              console.log(ds0.label )
+                console.log(ds0.data)
+              var ds1 = tooltipItem.chart._metasets[1]._dataset
+              console.log(ds1.label )
+                console.log(ds1.data)
+              var ds2 = tooltipItem.chart._metasets[2]._dataset
+              console.log(ds2.label )
+                console.log(ds2.data)
+              var ds3 = tooltipItem.chart._metasets[3]._dataset
+              console.log(ds3.label )
+                console.log(ds3.data)
+                  
+                return [ds0.label, ds1.label, ds2.label, ds3.label];
             }
         }
         }
