@@ -1266,6 +1266,10 @@ function graphRounds(rounds) {
         labels: {
           filter: function(item, chart) {
             // Logic to remove a particular legend item goes here
+
+console.log(item)
+console.log(chart)
+
             return !item.text.includes('Course Name');
           }
         }
