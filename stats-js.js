@@ -1226,7 +1226,8 @@ function graphRounds(rounds) {
             },
           courseName: {
               type: 'linear',
-              display: false
+              display: false,
+              hidden: true
           },
           
           xAxes: [{
@@ -1247,6 +1248,8 @@ function graphRounds(rounds) {
           
           callbacks: {
             label: function(tooltipItem) {
+
+              console.log(tooltipItem)
 
               var ds0 = tooltipItem.chart._metasets[0]._dataset
               console.log(ds0.label )
