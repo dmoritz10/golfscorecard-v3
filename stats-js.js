@@ -1329,9 +1329,9 @@ function graphAvgScoreByPar(rounds) {
 
       })
 
-      par3Arr.push(cnt3 ? scr3 / cnt3 : null)
-      par4Arr.push(cnt4 ? scr4 / cnt4 : null)
-      par5Arr.push(cnt5 ? scr5 / cnt5 : null)
+      par3Arr.push(cnt3 ? (scr3 / cnt3).toFixed(1) : null)
+      par4Arr.push(cnt4 ? (scr4 / cnt4).toFixed(1) : null)
+      par5Arr.push(cnt5 ? (scr5 / cnt5).toFixed(1) : null)
     }
 
 
