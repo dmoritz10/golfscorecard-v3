@@ -6,11 +6,6 @@ async function getRounds(prmExcludeSmall) {
     var hcpSelectOptions = readOption('hcpFilter')
     var hcpExcludeSmall = prmExcludeSmall === undefined ? hcpSelectOptions.hcpExcludeSmall : prmExcludeSmall
 
-console.log(hcpExcludeSmall)
-console.log(prmExcludeSmall)
-console.log(hcpSelectOptions.hcpExcludeSmall)
-
-
     var hcpMethod = hcpSelectOptions.hcpMethod
 
     suSht = await openShts(
@@ -48,8 +43,8 @@ console.log(hcpSelectOptions.hcpExcludeSmall)
     }
 
 
-    if (arrRounds.length < 5) {
-        bootbox.alert('5 are more rounds are required to calculated Handicap')
+    if (arrRounds.length == 0) {
+        bootbox.alert('There are no rounds.')
         return null
     }
     
