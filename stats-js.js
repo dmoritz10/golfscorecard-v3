@@ -397,10 +397,10 @@ function chartAverageScorebyPar   (title, rounds, myStatsRng, endRow) {
 
     arrRound(rtn, 1)
 
-    var rounds = extrRndData	(rounds, null, endRow.row3)
-    if (rounds.length == 0 ) var rounds = extrRndData	(rounds, null, endRow.row2)
-    if (rounds.length == 0 ) var rounds = extrRndData	(rounds, null, endRow.row1)
-    var chart = graphAvgScoreByPar(rounds)
+    var rnds = extrRndData	(rounds, null, endRow.row3)
+    if (rnds.length == 0 ) var rnds = extrRndData	(rounds, null, endRow.row2)
+    if (rnds.length == 0 ) var rnds = extrRndData	(rounds, null, endRow.row1)
+    var chart = graphAvgScoreByPar(rnds)
     
     return {title: title, arrData:rtn, chart: chart, format:''};
 }
@@ -470,10 +470,10 @@ function chartCourseAdjustedScore (title, rounds, myStatsRng, endRow)   {
 
     arrRound(rtn, 1)
 
-    var rounds = extrRndData	(rounds, null, endRow.row3)
-    if (rounds.length == 0 ) var rounds = extrRndData	(rounds, null, endRow.row2)
-    if (rounds.length == 0 ) var rounds = extrRndData	(rounds, null, endRow.row1)
-    var chart = graphRounds(rounds)
+    var rnds = extrRndData	(rounds, null, endRow.row3)
+    if (rnds.length == 0 ) var rnds = extrRndData	(rounds, null, endRow.row2)
+    if (rnds.length == 0 ) var rnds = extrRndData	(rounds, null, endRow.row1)
+    var chart = graphRounds(rnds)
     
     return {title: title, arrData:rtn, chart: chart, format:''};
 
