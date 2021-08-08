@@ -1,4 +1,4 @@
-{/* <script> */}
+
 
   function btnShowGolfersHtml () {
 
@@ -189,5 +189,3 @@ function convertGolferOption() {
 
 }
 
-
-// </script>

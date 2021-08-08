@@ -1,4 +1,4 @@
-{/* <script> */}
+
 
 function btnAuthHtml(event) {
 
@@ -12,4 +12,3 @@ function btnSignoutHtml(event) {
     gotoTab('Auth')
 }
        
-// </script>

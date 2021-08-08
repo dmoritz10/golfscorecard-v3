@@ -1,4 +1,4 @@
-{/* <script> */}
+
 
 async function goHome() {
 
@@ -18,4 +18,3 @@ async function goHome() {
   gotoTab('Home')
 
 }
-// </script>

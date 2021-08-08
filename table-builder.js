@@ -1,4 +1,4 @@
-{/* <script> */}
+
 
 function Table() {
     //sets attributes
@@ -121,4 +121,3 @@ Table.prototype.build = function(container) {
     // if a 'container' is provided this will properly include embedded html
 }
 
-// </script>

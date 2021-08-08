@@ -1,4 +1,4 @@
-{/* <script> */}
+
 
 function RSCloseHtml(e) {
 
@@ -669,6 +669,3 @@ function getDateDiff(adate, bdate) {
 
 }
 
-
-  
-// </script>
