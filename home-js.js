@@ -3,7 +3,9 @@
 async function goHome() {
 
   var signinStatus = await gapi.auth2.getAuthInstance().isSignedIn.get()
-  if (!signinStatus) gotoTab('Auth')
+  console.log('signinStatus')
+  console.log(signinStatus)
+   if (!signinStatus) gotoTab('Auth')
   
   var hcpObj = readOption('handicapObj')
 
