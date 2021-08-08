@@ -120,7 +120,7 @@ async function btnShowHandicapHtml () {
   
     var val = hcpArr[j]
 
-    val.hcpDiff = hcpDiff ? hcpDiff : '&nbsp;'
+    val.hcpDiff = val.hcpDiff ? val.hcpDiff : '&nbsp;'
       
     var ele = $("#tblShowHCP").clone();
 
