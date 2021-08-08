@@ -733,7 +733,7 @@ async function updateCourse(arrCourse, idx) {
   if (idx) {
   
   var row = idx*1 + 2
-  var rng = calcRngA1(row, 1, 1, arrShts['My Courses'].columnCount + 1)
+  var rng = calcRngA1(row, 1, 1, arrShts['My Courses'].colHdrs.length + 1)
   
   var params = {
     spreadsheetId: spreadsheetId,
@@ -754,7 +754,7 @@ async function updateCourse(arrCourse, idx) {
   } else {
 
     var row = 2
-    var rng = calcRngA1(row, 1, 1, arrShts['My Courses'].columnCount + 1)
+    var rng = calcRngA1(row, 1, 1, arrShts['My Courses'].colHdrs.length + 1)
    
 
     var params = {

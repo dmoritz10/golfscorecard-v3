@@ -420,15 +420,14 @@ var openShts = async function (shts) {
 
       var colHdrs = shtVals[0]
       var vals = shtVals.slice(1)
-      var colCnt = vals[0] ? vals[0].length : 0
       var rowCnt = vals ? vals.length : 0
 
       var shtTitle = allShts[s].range.split('!')[0].replace(/'/g,"")
 
       arr[shtTitle] =  {  
-        colHdrs:      shtVals[0],
+        colHdrs:      colHdrs,
         vals:         shtVals.slice(1),
-        columnCount:  colCnt,
+        columnCount:  colHdrs.length,
         rowCount:     rowCnt
       }
       
