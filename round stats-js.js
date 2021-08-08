@@ -127,7 +127,6 @@ function scorecard() {
                                           
   ci.forEach((val,idx) => {
   
-  console.log(val)
     
     var adj = arrHcpAdj[val.hole - 1][2]
                                           
