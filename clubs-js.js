@@ -113,9 +113,7 @@ async function btnSubmitClubHtml() {
 
   if (!$('#club-form').valid()) return
   
-  var signinStatus = await testAuth()
-  if (!signinStatus) return
-  
+  await checkAuth()
 
   var arrClubs = readOption('Clubs', [])
   
@@ -171,10 +169,6 @@ async function btnSubmitClubHtml() {
 
 
 async function btnDeleteClubHtml() {
-
-  var signinStatus = await testAuth()
-  if (!signinStatus) return
-
 
   if (arrOptions['Clubs']) {
   

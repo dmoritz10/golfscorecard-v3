@@ -104,9 +104,6 @@ async function btnSubmitGolferHtml() {
 
   arrOptions['Golfers'] = JSON.stringify(arrGolfers)
 
-  var signinStatus = await testAuth()
-  if (!signinStatus) return
-
   await updateGolfersOption()
 
   $("#golfer-modal").modal('hide');

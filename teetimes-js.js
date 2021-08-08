@@ -186,9 +186,6 @@ async function btnSubmitTeetimeHtml() {
 
   if (!$('#teetime-form').valid()) return
   
-  var signinStatus = await testAuth()
-  if (!signinStatus) return
-  
   var arrTeetimes = readOption('teetimes', [])
   
   var idx = $('#ttmIdx').val()
@@ -273,10 +270,6 @@ async function btnSubmitTeetimeHtml() {
 
 
 async function btnDeleteTeetimeHtml() {
-
-  var signinStatus = await testAuth()
-  if (!signinStatus) return
-
 
   if (arrOptions['teetimes']) {
 

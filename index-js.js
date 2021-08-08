@@ -1053,7 +1053,7 @@ async function checkAuth() {
   var minAuthRemaining = (new Date(gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().expires_at) - new Date()) / (1000 * 60)
   if (minAuthRemaining < 10) {
     console.log('auth reload - ' + Math.round(minAuthRemaining));
-    alert('auth reload - ' + Math.round(minAuthRemaining));
+    // alert('auth reload - ' + Math.round(minAuthRemaining));
     await gapi.auth2.getAuthInstance().currentUser.get().reloadAuthResponse()
   } else {
     console.log('auth ok - ' + minAuthRemaining);

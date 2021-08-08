@@ -1509,8 +1509,6 @@ async function courseSummary(rounds) {
   })
 
   arrOptions['Golfers'] = JSON.stringify(golfersArr)
-
-  await testAuth()
   
   updateGolfersOption()
 
