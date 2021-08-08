@@ -1224,9 +1224,7 @@ function graphRounds(rounds) {
             position: 'right',
             title: {
               color: 'red'
-            },
-            min:10,
-            max:20
+            }
           },
         courseName: {
             type: 'linear',
