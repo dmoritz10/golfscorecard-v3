@@ -132,7 +132,7 @@ async function btnShowHandicapHtml () {
     ele.find('#hcpCourseRating')[0].innerHTML = (val.courseRating*1).toFixed(1)
     ele.find('#hcpSlopeRating')[0].innerHTML = val.slopeRating
     ele.find('#hcpHcpDiff')[0].innerHTML = val.escCorrections ? val.hcpDiff + '<sup>' + val.escCorrections + '</sup>' : val.hcpDiff
-    ele.find('#hcpHcp')[0].innerHTML = val.hcp
+    ele.find('#hcpHcp')[0].innerHTML = val.hcp ? val.hcp : '&nbsp;'
   
     ele.find('#hcpFetchRound')[0].setAttribute("onclick", "showRoundDetail(" + val.rowIdx + ", 'ShowHCP')");
     

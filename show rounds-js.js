@@ -67,14 +67,14 @@ async function btnShowRoundsHtml() {
     var courseRating = ci.courseInfo['USGA Course Rating']
     var courseHandicap = objHandicap.courseHandicap
     
-    var hcpDiff = objHandicap.handicapDiff
+    var hcpDiff = objHandicap.handicapDiff ? (objHandicap.handicapDiff*1).toFixed(1) : '&nbsp;'
     var escCorrections = objHandicap.escCorrections
 
     // ele.find('#srGIR')[0].innerHTML = escCorrections ? (hcpDiff*1).toFixed(1) + '<sup>' + escCorrections + '</sup>' : (hcpDiff*1).toFixed(1)
 
 
     // ele.find('#srHcpDiff')[0].innerHTML = escCorrections ? hcpDiff + '<sup>' + escCorrections + '</sup>' : hcpDiff
-    ele.find('#srHcpDiff')[0].innerHTML = (objHandicap.handicap*1).toFixed(1)
+    ele.find('#srHcpDiff')[0].innerHTML = hcpDiff
           
     if (roundObj.finalScore*1 <= targetScore ) {
     
