@@ -1048,7 +1048,11 @@ async function updateOption(key, val) {
 async function checkAuth() {
 
   var signinStatus = await gapi.auth2.getAuthInstance().isSignedIn.get()
-  if (!signinStatus) console.log('not signed in')
+ 
+   if (!signinStatus) {
+     gotoTab('Auth')
+     return
+   }
   
 
   var minAuthRemaining = (new Date(gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().expires_at) - new Date()) / (1000 * 60)
