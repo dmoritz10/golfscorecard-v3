@@ -240,7 +240,7 @@ function calcNbrToUse(mostRecent20) {
     var nbrToUse = 10
     switch (true) {
         case mostRecent20.length <= 4:
-            nbrToUse = 0
+            nbrToUse = 1
             break;
         case mostRecent20.length <= 6:
             nbrToUse = 1
