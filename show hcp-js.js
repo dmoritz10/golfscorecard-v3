@@ -62,9 +62,9 @@ async function btnShowHandicapHtml () {
   }
     
     
-  if (nbrRounds < 5) {
+  if (nbrRounds == 0) {
   
-    bootbox.alert ('5 are more rounds are required to calculated Handicap')  
+    bootbox.alert ('No rounds qualify for handicap.')  
     return
     
   }
