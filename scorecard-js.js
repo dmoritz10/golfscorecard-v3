@@ -4,7 +4,6 @@ async function btnStartRoundHtml() {
   prCourse.courseInfo = courseInfo
   if (!prClubs) prClubs = readOption('Clubs', [])
   
-  console.log(prClubs)
   
   var gender = prCourse.courseInfo["Gender"].toLowerCase()
   var tee = teePlayed
@@ -12,7 +11,6 @@ async function btnStartRoundHtml() {
 
   prCourse.holeDetail = await getHoleDetail(prCourse.courseInfo['SxS Course Id'], tee, gender)
   
-  console.log(prCourse)
   
   if (prCourse.holeDetail.length == 0) {
   
@@ -627,7 +625,7 @@ async function btnEndRoundHtml() {
   await gapi.client.sheets.spreadsheets.values.append(params, resource)
     .then(async function(response) {
       
-      console.log(response.result.updates.updatedRange)
+      // console.log(response.result.updates.updatedRange)
       // updateOption('Clubs', prClubs)
       console.log('round posted')
    
@@ -917,8 +915,6 @@ async function showPosition(position, pinLocn, strTimer) {
   
   var rtn = parseWeather(weatherRpt, bearingToHole, distToPin, distToTee, altitude)
   
-  console.log(rtn)
-  
   var cr = rtn.clubRec
   var w = rtn.currWeather
   
@@ -1071,7 +1067,7 @@ function getWeather(weatherUrl) {
 
         resolve ( this.response )
         
-        console.log(request.status)
+        // console.log(request.status)
         
         } else if (request.status == 503) {                                     // it seems that sometimes, cors-anywhere is not available
       
@@ -1103,8 +1099,8 @@ function parseWeather(wRptHtml, bearingToHole, distToPin, distToTee) {
   var str = wRptHtml.indexOf('{&q;value&q;:{&q;observations&q;:[{&q;stationID&q;:&q;')
   var end = wRptHtml.indexOf(',&q;expiresAt&q;:', str)  
   
-console.log(str)
-console.log(end)
+// console.log(str)
+// console.log(end)
   
   var current = wRptHtml.substring(str, end).replace(/&q;/g, '"') + '}'  
   var w = JSON.parse(current).value.observations[0]
@@ -1112,7 +1108,7 @@ console.log(end)
     
   var effectiveWindSpeed = -Math.round(windSpeed * Math.cos(toRadians(bearingToHole - w.winddir)))
   
-  console.log(JSON.parse(current).value.observations[0])
+  // console.log(JSON.parse(current).value.observations[0])
   
   const calcWindDirectionCardinal = (winddir) => (winddir ? ["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW","N"][(Math.round((winddir)/ 22.5,0))] : '')
   var windDirectionCardinal = calcWindDirectionCardinal(w.winddir)
@@ -1149,8 +1145,6 @@ console.log(end)
 function calcAdjDist(effectiveWindSpeed, distToPin, distToTee, w) {
 
   var clubDist = chooseClub(effectiveWindSpeed, distToPin, distToTee, w)
-  
-  console.log(clubDist)
 
   return clubDist
 
