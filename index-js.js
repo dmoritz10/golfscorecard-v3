@@ -1047,9 +1047,6 @@ async function updateOption(key, val) {
 
 async function checkAuth() {
 
-  var signinStatus = await gapi.auth2.getAuthInstance().isSignedIn.get()
-  if (!signinStatus) gotoTab('Auth')
-
   var minAuthRemaining = (new Date(gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().expires_at) - new Date()) / (1000 * 60)
   if (minAuthRemaining < 10) {
     console.log('auth reload - ' + Math.round(minAuthRemaining));
@@ -1058,9 +1055,6 @@ async function checkAuth() {
   } else {
     console.log('auth ok - ' + minAuthRemaining);
   }
-  var minAuthRemaining = (new Date(gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().expires_at) - new Date()) / (1000 * 60)
-
-  // alert('auth result - ' + minAuthRemaining)
 
 }
 
