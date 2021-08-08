@@ -49,7 +49,7 @@ async function getRounds(prmExcludeSmall) {
     }
     
     var objRounds = []
-    var prevRndHandicap = 36.4
+    var prevRndHandicap = 0 
     var hcpNbrRounds = hcpMethod == 'WHS' ? 8 : 10
     
     var cl = []
@@ -63,7 +63,7 @@ async function getRounds(prmExcludeSmall) {
         
         roundObj.objHandicap = {
 
-            handicap: 36.4,
+            handicap: '',
             handicapDiff: '',
             courseHandicap: '',
             escCorrections: '',
@@ -181,7 +181,7 @@ async function getRounds(prmExcludeSmall) {
         var targetScore = calcRoundsTargetScore(targetHandicapDiff, courseRating, slopeRating, courseRatingFront9) 
 
 
-        rndHcp.handicap = handicap == '' ? 36.4 : handicap
+        rndHcp.handicap = handicap == '' ? handicap : handicap
         rndHcp.courseHandicap = courseHandicap
         rndHcp.handicapScore = handicapScore
         rndHcp.courseAdjustedScore = courseAdjustedScore
