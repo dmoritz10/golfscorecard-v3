@@ -320,11 +320,11 @@ async function getSSId() {
 
     var files = response.result.files;
   
-    files = files.filter(item => item.ownedByMe);    // remove files that are shared with me
+    // files = files.filter(item => item.ownedByMe);    // remove files that are shared with me
   
-    if (!files || files.length == 0)  return {fileId:null,msg:"'golfscorecard database v3' not found"}
+    if (!files || files.length == 0)  return {fileId:null,msg:"'Dan Golf' not found"}
 
-    if (files.length > 1)             return {fileId:null,msg:"'golfscorecard database v3' not unique"}
+    if (files.length > 1)             return {fileId:null,msg:"'Dan Golf' not unique"}
 
     return {fileId:files[0].id,msg:'ok'}
 
@@ -336,8 +336,7 @@ async function getSSId() {
 
 
 async function initialUI() {
-// console.log('body size')
-//   alert(document.body.getBoundingClientRect())
+
 
     arrShts = await openShts(
       [
@@ -1047,8 +1046,6 @@ async function updateOption(key, val) {
 }
 
 async function checkAuth() {
-
-
 
   var minAuthRemaining = (new Date(gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().expires_at) - new Date()) / (1000 * 60)
   if (minAuthRemaining < 10) {
