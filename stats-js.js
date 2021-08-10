@@ -318,6 +318,7 @@ function getEndRow(datePlayedArr, dataRngDescr) {
       return nbrRnds
       break;
     case "All Time":
+    case "Show All Rounds":
       return 0
       break;
   }
