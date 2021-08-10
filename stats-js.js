@@ -249,7 +249,7 @@ function extrRndData	(rounds, colName, endRow) {
 
     var rnd = rounds[i]
 
-    if (shortCourseName(rnd.courseName) == statSelectOptions) {
+    if (statSelectOptions ? shortCourseName(rnd.courseName) == statSelectOptions : true) {
 
     if (colName) {
       if (parseCol.length == 1) {
