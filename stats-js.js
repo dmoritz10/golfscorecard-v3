@@ -137,13 +137,16 @@ function otherStats(rpt) {
 async function btnStatSelectHtml(e) {
 
   var statExcludeSmallCourses = $('#statExcludeSmall').prop('checked')
-  setSelectedIdx('statSelectCourse','selectStatsCourse')
+
+  var statSelectCourse  = document.getElementById("selectRoundsDateRng").selectedIndex > 0 ? $( "#selectRoundsDateRng option:selected" ).text() : false
+
   var statRng1                = $( "#selectStatsRng1" ).val()
   var statRng2                = $( "#selectStatsRng2" ).val()
   var statRng3                = $( "#selectStatsRng3" ).val()
 
   await updateOption('statOptions', {
-                                  'statExcludeSmallCourses':   statExcludeSmallCourses ,
+                                  'statExcludeSmallCourses':    statExcludeSmallCourses ,
+                                  'statSelectCourse':           statSelectCourse ,
                                   'statRng1': statRng1,
                                   'statRng2': statRng2,
                                   'statRng3': statRng3
@@ -165,6 +168,8 @@ async function btnStatsMoreVertHtml() {
   $( "#selectStatsRng3" ).val(statSelectOptions.statRng3)
 
   loadCoursesSelect('statSelectCourse')
+
+  setSelectedIdx('statSelectCourse',statSelectOptions.selectStatsCourse)
 
 }
 
@@ -234,6 +239,8 @@ function extrRndData	(rounds, colName, endRow) {
 	// 'courseInfo.courseName', 'scorecard.putts', 'objHandicap.courseAdjustedScore', 'finalScore'
 	// nbrRows
 
+  var statSelectOptions  = await readOption('statOptions').statSelectCourse
+
   if (colName) {var parseCol = colName.split('.')}
 
   var rtn = []
@@ -242,7 +249,7 @@ function extrRndData	(rounds, colName, endRow) {
 
     var rnd = rounds[i]
 
-    if (rnd.courseName == "Meadowlark Golf Club") {
+    if (shortCourseName(rnd.courseName) == statSelectOptions) {
 
     if (colName) {
       if (parseCol.length == 1) {
