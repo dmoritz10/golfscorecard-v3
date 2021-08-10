@@ -245,11 +245,15 @@ function extrRndData	(rounds, colName, endRow) {
 
   var rtn = []
 
+  console.log(statSelectOptions)
+
   for (var i = rounds.length - 1; i >= endRow; i--) {
 
     var rnd = rounds[i]
 
-    if (statSelectOptions ? shortCourseName(rnd.courseName) == statSelectOptions : true) {
+    var select = statSelectOptions ? shortCourseName(rnd.courseName) == statSelectOptions : true
+
+    if (select) {
 
       console.log(shortCourseName(rnd.courseName))
 
