@@ -1,10 +1,11 @@
 
-async function getRounds(prmExcludeSmall) {
+async function getRounds(prmExcludeSmall, prmSelectCourse) {
 
     var str = new Date()
 
     var hcpSelectOptions = readOption('hcpFilter')
     var hcpExcludeSmall = prmExcludeSmall === undefined ? hcpSelectOptions.hcpExcludeSmall : prmExcludeSmall
+    var selectCourse = prmSelectCourse === undefined ? false : prmSelectCourse
 
     var hcpMethod = hcpSelectOptions.hcpMethod
 
@@ -27,6 +28,7 @@ async function getRounds(prmExcludeSmall) {
     
     var parCol = cols.indexOf('par')
     var scoreCardCol = cols.indexOf('scoreCard')
+    var courseNameCol = cols.indexOf('courseName')
 
     for (var j = 0; j < rounds.length; j++) {
         if (hcpExcludeSmall) {
@@ -38,6 +40,12 @@ async function getRounds(prmExcludeSmall) {
           if (nbrHolesCorrection !== 1 || rounds[j][parCol]*1 < 69) 
             continue;
         }
+
+        if (selectCourse) {
+            if (shortCourseName(rounds[j][courseNameCol]) != selectCourse) 
+                continue
+        }
+            ;
 
         arrRounds.push([rounds[j], j])
     }
