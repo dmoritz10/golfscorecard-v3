@@ -157,7 +157,7 @@ async function btnSRSelectHtml(e) {
 
   console.log(srSelectedCourseVal)
   console.log($( "#srSelectCourse" ))
-  console.log(srSelectedDateRng)
+  console.log(srSelectedDateRngVal)
   console.log($( "#selectRoundsDateRng" ))
 
   await updateOption('srFilter', {

@@ -123,8 +123,6 @@ async function getRounds(prmExcludeSmall) {
         
         nbrToUse = Math.min(nbrToUse, hcpNbrRounds)
 
-        console.log(nbrToUse)
-
         if (nbrToUse > 0) {
             mostRecent20.sort(compareNumbers)
             var cnt = 0
