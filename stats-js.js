@@ -239,7 +239,7 @@ function extrRndData	(rounds, colName, endRow) {
 	// 'courseInfo.courseName', 'scorecard.putts', 'objHandicap.courseAdjustedScore', 'finalScore'
 	// nbrRows
 
-  var statSelectOptions  = await readOption('statOptions').statSelectCourse
+  var statSelectOptions  = readOption('statOptions').statSelectCourse
 
   if (colName) {var parseCol = colName.split('.')}
 
