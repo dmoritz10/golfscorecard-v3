@@ -32,7 +32,7 @@ async function btnShowRoundsHtml() {
   var datePlayedArr = rounds.map(x => x['date']) 
   var endRow = srSelectedDateRng ? getEndRow(datePlayedArr, srSelectedDateRng) : -1
   
-  for (var j = rounds.length - 1; j > endRow - 1; j--) {
+  for (var j = rounds.length - 1; j > endRow; j--) {
   
     var ele = $("#tblShowRounds").clone();
     
