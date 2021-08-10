@@ -143,7 +143,7 @@ async function btnSRMoreVertHtml() {
   var srSelectOptions  = await readOption('srFilter') 
   $('#srExcludeSmall').prop('checked',  srSelectOptions.srExcludeSmall )
   $('#srMadeTarget').prop('checked',  srSelectOptions.srMadeTarget  )
-  $('#selectRoundsDateRng').prop('checked',  srSelectOptions.srSelectedDateRng  )
+  $('#selectRoundsDateRng').text(srSelectOptions.srSelectedDateRng  )
   loadCoursesSelect('srSelectCourse')
 
 }
