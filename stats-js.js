@@ -8,7 +8,7 @@ async function btnShowStatsHtml() {
   var statRng2 = statOptions.statRng2
   var statRng3 = statOptions.statRng3
 
-  var rounds = await getRounds(statExcludeSmall)
+  var rounds = await getRounds(statExcludeSmall, statOptions.statSelectCourse)
 
   if (!rounds) return
 
