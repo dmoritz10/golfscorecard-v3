@@ -267,7 +267,8 @@ function loadCoursesSelect(selectCourse) {
     courses =  arrShts['My Courses'].vals
           
     var s = document.getElementById(selectCourse)
-    $('option', s).remove();Show All Courses').appendTo(s)
+    $('option', s).remove();
+    $('<option/>').val(-1).text('Show All Courses').appendTo(s)
     var courseIdx
         
     for (var j = 0; j < courses.length; ++j) {
