@@ -143,7 +143,7 @@ async function btnSRMoreVertHtml() {
   $('#srExcludeSmall').prop('checked',  srSelectOptions.srExcludeSmall )
   $('#srMadeTarget').prop('checked',  srSelectOptions.srMadeTarget  )
   setSelectedIdx('selectRoundsDateRng','srSelectedDateRng')
-  $('#selectRoundsDateRng').text(srSelectOptions.srSelectedDateRng  )
+ 
   loadCoursesSelect('srSelectCourse')
 
 }
