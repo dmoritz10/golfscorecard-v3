@@ -239,6 +239,8 @@ function extrRndData	(rounds, colName, endRow) {
 
     var rnd = rounds[i]
 
+    if (rnd.courseName == "Meadowlark Golf Club") {
+
     if (colName) {
       if (parseCol.length == 1) {
 
@@ -268,7 +270,7 @@ function extrRndData	(rounds, colName, endRow) {
     rtn.push(rnd)
 
   }
-
+    }
   }
   return rtn
 }
