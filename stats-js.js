@@ -138,7 +138,7 @@ async function btnStatSelectHtml(e) {
 
   var statExcludeSmallCourses = $('#statExcludeSmall').prop('checked')
 
-  var statSelectCourse  = document.getElementById("selectStatsCourse").selectedIndex > 0 ? $( "#selectStatsCourse option:selected" ).text() : false
+  var statSelectCourse  = document.getElementById("statSelectCourse").selectedIndex > 0 ? $( "#statSelectCourse option:selected" ).text() : false
 
   var statRng1                = $( "#selectStatsRng1" ).val()
   var statRng2                = $( "#selectStatsRng2" ).val()
