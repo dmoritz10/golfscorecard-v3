@@ -4,11 +4,12 @@ async function btnShowRoundsHtml() {
 
   var srSelectOptions  = readOption('srFilter')
 
-  var srExcludeSmall   = srSelectOptions.srExcludeSmall
-  var srMadeTarget     = srSelectOptions.srMadeTarget
-  var srSelectedCourse = srSelectOptions.srSelectedCourse
+  var srExcludeSmall    = srSelectOptions.srExcludeSmall
+  var srMadeTarget      = srSelectOptions.srMadeTarget
+  var srSelectedCourse  = srSelectOptions.srSelectedCourse
+  var srSelectedDateRng = srSelectOptions.srSelectedDateRng
   
-  var hcpMethod        = srSelectOptions.hcpMethod
+  var hcpMethod         = srSelectOptions.hcpMethod
   
   var rounds = await getRounds(srExcludeSmall)
 
@@ -27,8 +28,11 @@ async function btnShowRoundsHtml() {
   $("#tblShowRounds").hide()
   
   var rndCntr = 0
+
+  var datePlayedArr = rounds.map(x => x['date']) 
+  var endRow = srSelectedDateRng ? getEndRow(datePlayedArr, srSelectedDateRng) : rounds.length
   
-  for (var j = rounds.length - 1; j > -1; j--) {
+  for (var j = endRow - 1; j > -1; j--) {
   
     var ele = $("#tblShowRounds").clone();
     
@@ -139,6 +143,7 @@ async function btnSRMoreVertHtml() {
   var srSelectOptions  = await readOption('srFilter') 
   $('#srExcludeSmall').prop('checked',  srSelectOptions.srExcludeSmall )
   $('#srMadeTarget').prop('checked',  srSelectOptions.srMadeTarget  )
+  $('#selectRoundsDateRng').prop('checked',  srSelectOptions.srSelectedDateRng  )
   loadCoursesSelect('srSelectCourse')
 
 }
@@ -148,10 +153,14 @@ async function btnSRSelectHtml(e) {
   var srExcludeSmallVal     = $('#srExcludeSmall').prop('checked')
   var srMadeTargetVal       = $('#srMadeTarget').prop('checked')
   var srSelectedCourseVal   = $( "#srSelectCourse" ).val() > -1 ? $( "#srSelectCourse option:selected" ).text() : false
+  var srSelectedDateRng   = $( "#selectRoundsDateRng" ).val() > -1 ? $( "#selectRoundsDateRng option:selected" ).text() : false
+
+  
 
   await updateOption('srFilter', {
                                   'srExcludeSmall':   srExcludeSmallVal ,
                                   'srSelectedCourse': srSelectedCourseVal ,
+                                  'srSelectedDateRng': srSelectedDateRng ,
                                   'srMadeTarget':     srMadeTargetVal
                                   })
                                   
