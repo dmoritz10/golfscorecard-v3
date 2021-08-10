@@ -161,15 +161,15 @@ async function btnStatSelectHtml(e) {
 
 async function btnStatsMoreVertHtml() {
 
-   var statSelectOptions  = await readOption('statOptions') 
-  $('#statExcludeSmall').prop('checked',  statSelectOptions.statExcludeSmallCourses )
+  var statSelectOptions  = await readOption('statOptions') 
+  $( '#statExcludeSmall').prop('checked',  statSelectOptions.statExcludeSmallCourses )
   $( "#selectStatsRng1" ).val(statSelectOptions.statRng1)
   $( "#selectStatsRng2" ).val(statSelectOptions.statRng2)
   $( "#selectStatsRng3" ).val(statSelectOptions.statRng3)
 
   loadCoursesSelect('statSelectCourse')
 
-  setSelectedIdx('statSelectCourse',statSelectOptions.selectStatsCourse)
+  setSelectedIdx('statSelectCourse',statSelectOptions.statSelectCourse)
 
 }
 
@@ -250,6 +250,8 @@ function extrRndData	(rounds, colName, endRow) {
     var rnd = rounds[i]
 
     if (statSelectOptions ? shortCourseName(rnd.courseName) == statSelectOptions : true) {
+
+      console.log(shortCourseName(rnd.courseName))
 
     if (colName) {
       if (parseCol.length == 1) {
