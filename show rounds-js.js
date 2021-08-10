@@ -1,7 +1,6 @@
 
 async function btnShowRoundsHtml() {
 
-
   var srSelectOptions  = readOption('srFilter')
 
   var srExcludeSmall    = srSelectOptions.srExcludeSmall
@@ -144,7 +143,7 @@ async function btnSRMoreVertHtml() {
   $('#srExcludeSmall').prop('checked',  srSelectOptions.srExcludeSmall )
   $('#srMadeTarget').prop('checked',  srSelectOptions.srMadeTarget  )
   setSelectedIdx('selectRoundsDateRng','srSelectedDateRng')
-  $('#selectRoundsDateRng').val(srSelectOptions.srSelectedDateRng  )
+  $('#selectRoundsDateRng').text(srSelectOptions.srSelectedDateRng  )
   loadCoursesSelect('srSelectCourse')
 
 }
