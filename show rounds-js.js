@@ -143,7 +143,8 @@ async function btnSRMoreVertHtml() {
   var srSelectOptions  = await readOption('srFilter') 
   $('#srExcludeSmall').prop('checked',  srSelectOptions.srExcludeSmall )
   $('#srMadeTarget').prop('checked',  srSelectOptions.srMadeTarget  )
-  $('#selectRoundsDateRng').text(srSelectOptions.srSelectedDateRng  )
+  setSelectedIdx('selectRoundsDateRng','srSelectedDateRng')
+  $('#selectRoundsDateRng').val(srSelectOptions.srSelectedDateRng  )
   loadCoursesSelect('srSelectCourse')
 
 }
@@ -283,5 +284,17 @@ function loadCoursesSelect(selectCourse) {
    }
    
    if (courseIdx) s.selectedIndex = courseIdx; 
+
+}
+function setSelectedIdx(ele, txt) {
+
+  var dd = document.getElementById(ele);
+  for (var i = 0; i < dd.options.length; i++) {
+      if (dd.options[i].text === txt) {
+          dd.selectedIndex = i;
+          break;
+      }
+
+    }
 
 }
