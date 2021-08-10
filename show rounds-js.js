@@ -159,6 +159,8 @@ async function btnSRSelectHtml(e) {
   console.log($( "#srSelectCourse" ))
   console.log(srSelectedDateRngVal)
   console.log($( "#selectRoundsDateRng" ))
+  console.log($( "#selectRoundsDateRng option:selected" ))
+  console.log($( "#selectRoundsDateRng option:selected" ).text())
 
   await updateOption('srFilter', {
                                   'srExcludeSmall':     srExcludeSmallVal ,
