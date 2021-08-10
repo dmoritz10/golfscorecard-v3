@@ -155,13 +155,14 @@ async function btnSRSelectHtml(e) {
   var srExcludeSmallVal     = $('#srExcludeSmall').prop('checked')
   var srMadeTargetVal       = $('#srMadeTarget').prop('checked')
   var srSelectedCourseVal   = $( "#srSelectCourse" ).val() > -1 ? $( "#srSelectCourse option:selected" ).text() : false
-  var srSelectedDateRngVal  = $( "#selectRoundsDateRng" ).selectedIndex > 0 ? $( "#selectRoundsDateRng option:selected" ).text() : false
+  var srSelectedDateRngVal  = $( "#selectRoundsDateRng" )[0].selectedIndex > 0 ? $( "#selectRoundsDateRng option:selected" ).text() : false
 
   console.log(srSelectedCourseVal)
   console.log($( "#srSelectCourse" ))
   console.log(srSelectedDateRngVal)
   console.log($( "#selectRoundsDateRng" ))
   console.log($( "#selectRoundsDateRng" ).val())
+  console.log($( "#selectRoundsDateRng" ).selectedIndex)
   console.log($( "#selectRoundsDateRng option:selected" ).text())
 
   await updateOption('srFilter', {
