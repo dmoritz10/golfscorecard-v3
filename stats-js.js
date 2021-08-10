@@ -137,6 +137,7 @@ function otherStats(rpt) {
 async function btnStatSelectHtml(e) {
 
   var statExcludeSmallCourses = $('#statExcludeSmall').prop('checked')
+  setSelectedIdx('statSelectCourse','selectStatsCourse')
   var statRng1                = $( "#selectStatsRng1" ).val()
   var statRng2                = $( "#selectStatsRng2" ).val()
   var statRng3                = $( "#selectStatsRng3" ).val()
@@ -162,6 +163,8 @@ async function btnStatsMoreVertHtml() {
   $( "#selectStatsRng1" ).val(statSelectOptions.statRng1)
   $( "#selectStatsRng2" ).val(statSelectOptions.statRng2)
   $( "#selectStatsRng3" ).val(statSelectOptions.statRng3)
+
+  loadCoursesSelect('statSelectCourse')
 
 }
 
