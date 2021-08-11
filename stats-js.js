@@ -1252,6 +1252,11 @@ function graphRounds(rounds) {
             display: false
         },
         
+          ticks: {
+            color: 'red',
+            callback: function(val, idx, arr) {console.log('hi dan')}
+          },
+        
         xAxes: [{
           type: 'time',
           time: {
@@ -1259,15 +1264,11 @@ function graphRounds(rounds) {
               unit: 'month',
               displayFormats: {
               }
-          }],
-          ticks: {
-            color: 'red',
-            callback: function(val, idx, arr) {console.log('hi dan')}
           },
           grid: {
             color: ['lightgrey', 'lightgrey','red','blue','green','lightgrey'],
           }
-        }                   
+        }]                   
       },
       plugins: {
         tooltip: {
