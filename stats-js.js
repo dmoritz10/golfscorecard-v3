@@ -14,8 +14,12 @@ async function btnShowStatsHtml() {
 
   {$ ('#statHdrSelectCourse').html(statSelectCourse ? statSelectCourse : '')}
 
-  if (!rounds) return
-
+  if (rounds.length == 0) {
+    
+    ("#statsContainer").empty();
+ 
+    return
+  }
   var datePlayedArr = rounds.map(x => x['date'])
 
   var endRow = {}
