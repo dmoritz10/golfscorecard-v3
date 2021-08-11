@@ -35,7 +35,7 @@
     maximumAge: 0
 };
 
-  var currUser = {}
+  // var currUser = {}
 
   var timerStart
 
