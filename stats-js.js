@@ -27,8 +27,6 @@ async function btnShowStatsHtml() {
     endRow['row2'] = getEndRow(datePlayedArr, statRng2)
     endRow['row3'] = getEndRow(datePlayedArr, statRng3)
 
-    console.log(endRow)
-
   setDropdownValues(datePlayedArr, endRow)
 
 
@@ -1181,7 +1179,7 @@ function graphRounds(rounds) {
     scoresArr.push(courseAdjustedScore)
     hcpArr.push(rounds[i].objHandicap.handicap)
     madeTargetArr.push(madeTargetScore(ci.courseInfo['Target Score'].split(' ')[0], rounds[i].finalScore) ? 'green' : 'rgba(255,153,0,0.4)')
-    courseNameArr.push(rounds[i].courseName)
+    courseNameArr.push(shortCourseName(rounds[i].courseName))
 
   }
 
@@ -1323,7 +1321,7 @@ function graphAvgScoreByPar(rounds) {
     var da = dt.getDate()
     
     datePlayedArr.push( yr + "-" + mo + "-" + da)
-    courseNameArr.push(rounds[i].courseName)
+    courseNameArr.push(shortCourseName(rounds[i].courseName))
 
     var scr3 = 0
     var cnt3 = 0
