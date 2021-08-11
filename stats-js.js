@@ -239,23 +239,14 @@ function extrRndData	(rounds, colName, endRow) {
 	// 'courseInfo.courseName', 'scorecard.putts', 'objHandicap.courseAdjustedScore', 'finalScore'
 	// nbrRows
 
-  var statSelectOptions  = readOption('statOptions').statSelectCourse
 
   if (colName) {var parseCol = colName.split('.')}
 
   var rtn = []
 
-  console.log(statSelectOptions)
-
   for (var i = rounds.length - 1; i >= endRow; i--) {
 
     var rnd = rounds[i]
-
-    var select = statSelectOptions ? shortCourseName(rnd.courseName) == statSelectOptions : true
-
-    if (select) {
-
-      console.log(shortCourseName(rnd.courseName))
 
     if (colName) {
       if (parseCol.length == 1) {
@@ -281,12 +272,12 @@ function extrRndData	(rounds, colName, endRow) {
 
       }
 
-  } else {
+    } else {
 
     rtn.push(rnd)
 
   }
-    }
+    
   }
   return rtn
 }

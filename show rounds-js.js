@@ -10,7 +10,7 @@ async function btnShowRoundsHtml() {
   
   var hcpMethod         = srSelectOptions.hcpMethod
   
-  var rounds = await getRounds(srExcludeSmall)
+  var rounds = await getRounds(srExcludeSmall, srSelectedCourse)
 
   if (!rounds) return
 
@@ -50,7 +50,7 @@ async function btnShowRoundsHtml() {
       ) {
          continue;     
       }
-      
+
     var datePlayed = new Date(roundObj.startTime).toString().substring(0,15)
 
     ele.find('#srSeqNbr')[0].innerHTML = rounds.length-j
