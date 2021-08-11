@@ -1199,13 +1199,15 @@ function graphRounds(rounds) {
         yAxisID: 'scoreId',
         data: scoresArr,
         backgroundColor: madeTargetArr,
-        type: 'bar'
+        type: 'bar',
+        order: 2
       },
       {
         label: 'Made Target',
         yAxisID: 'scoreId',
         backgroundColor: 'green',
-        type: 'line'
+        type: 'line',
+        order: 2
       },
       
       {
