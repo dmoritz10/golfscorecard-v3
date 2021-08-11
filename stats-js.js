@@ -302,16 +302,16 @@ function getEndRow(datePlayedArr, dataRngDescr) {
       return nbrRnds - 1
       break;
     case "Last 5 Rounds":
-      return Math.min(Math.abs(nbrRnds - 5), nbrRnds)
+      return nbrRnds < 5 ? 0 : Math.min(nbrRnds - 5, nbrRnds)     
       break;
     case "Last 10 Rounds":
-      return Math.min(Math.abs(nbrRnds - 10), nbrRnds)
+      return nbrRnds < 10 ? 0 : Math.min(nbrRnds - 10, nbrRnds)     
       break;
     case "Last 20 Rounds":
-      return Math.min(Math.abs(nbrRnds - 20), nbrRnds)
+      return nbrRnds < 20 ? 0 : Math.min(nbrRnds - 20, nbrRnds)      
       break;
     case "Last 25 Rounds":
-      return Math.min(Math.abs(nbrRnds - 25), nbrRnds)
+      return nbrRnds < 25 ? 0 : Math.min(nbrRnds - 25, nbrRnds)      
       break;
     case "Last 50 Rounds":
       return nbrRnds < 50 ? 0 : Math.min(nbrRnds - 50, nbrRnds)
