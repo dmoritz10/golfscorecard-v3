@@ -53,7 +53,7 @@ async function getRounds(prmExcludeSmall, prmSelectCourse) {
 
     if (arrRounds.length == 0) {
         bootbox.alert('There are no rounds.')
-        return []]
+        return []
     }
     
     var objRounds = []
