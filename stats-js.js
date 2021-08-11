@@ -29,7 +29,6 @@ async function btnShowStatsHtml() {
 
   setDropdownValues(datePlayedArr, endRow)
 
-
   var myStatsRng = {};
     myStatsRng['rng1'] = statRng1
     myStatsRng['rng2'] = statRng2
@@ -1260,9 +1259,6 @@ function graphRounds(rounds) {
               unit: 'month',
               displayFormats: {
               }
-          },
-          ticks: {
-              source: 'data'
           }
         }]                     
       },
