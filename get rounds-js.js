@@ -16,9 +16,9 @@ async function getRounds(prmExcludeSmall, prmSelectCourse) {
         ])
 
     if (suSht['Scorecard Upload'].rowCount < 1) {
+        
+        return []
 
-        bootbox.alert('There are no rounds to process')
-        return
     }
 
     
@@ -53,7 +53,7 @@ async function getRounds(prmExcludeSmall, prmSelectCourse) {
 
     if (arrRounds.length == 0) {
         bootbox.alert('There are no rounds.')
-        return null
+        return []]
     }
     
     var objRounds = []
