@@ -1194,7 +1194,19 @@ function graphRounds(rounds) {
    
     data: {
       labels: datePlayedArr,
-      datasets: [{
+      datasets: [
+        {
+          label: 'Handicap',
+          yAxisID: 'hcpId',
+          data: hcpArr,
+          borderColor: 'red',
+          borderWidth: 2,
+          fontColor: 'lightblue',
+          fontStyle: 'bold',
+          pointRadius: 0,
+          type: 'line'
+        },
+        {
         label: 'Score',
         yAxisID: 'scoreId',
         data: scoresArr,
@@ -1208,17 +1220,7 @@ function graphRounds(rounds) {
         type: 'line'
       },
       
-      {
-        label: 'Handicap',
-        yAxisID: 'hcpId',
-        data: hcpArr,
-        borderColor: 'red',
-        borderWidth: 2,
-        fontColor: 'lightblue',
-        fontStyle: 'bold',
-        pointRadius: 0,
-        type: 'line'
-      },
+      
       {
         label: "Course Name",
         yAxisID: 'scoreId',
