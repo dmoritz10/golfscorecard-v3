@@ -17,7 +17,8 @@ async function btnShowStatsHtml() {
   if (rounds.length == 0) {
     
     $("#tblStats").empty();
-    return
+    gotoTab('Stats')
+    
   }
   var datePlayedArr = rounds.map(x => x['date'])
 
