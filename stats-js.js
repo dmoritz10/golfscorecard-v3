@@ -1261,6 +1261,7 @@ function graphRounds(rounds) {
               }
           },
           ticks: {
+            color: 'red',
             callback: function(val, idx, arr) {console.log('hi dan')}
           },
           grid: {
