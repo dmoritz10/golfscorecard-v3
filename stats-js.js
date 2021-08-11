@@ -1259,6 +1259,9 @@ function graphRounds(rounds) {
               unit: 'month',
               displayFormats: {
               }
+          },
+          ticks: {
+            callback: function(val, idx, arr) {}
           }
         }]                   
       },
