@@ -1252,11 +1252,6 @@ function graphRounds(rounds) {
             display: false
         },
         
-          ticks: {
-            color: 'red',
-            callback: function(val, idx, arr) {console.log('hi dan')}
-          },
-        
         xAxes: [{
           type: 'time',
           time: {
@@ -1266,7 +1261,7 @@ function graphRounds(rounds) {
               }
           },
           grid: {
-            color: ['lightgrey', 'lightgrey','red','blue','green','lightgrey'],
+            color: 'red',
           }
         }]                   
       },
