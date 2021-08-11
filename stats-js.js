@@ -1261,7 +1261,8 @@ function graphRounds(rounds) {
               }
           },
           ticks: {
-            callback: function(value, index, values) {
+            callback: function(value, index, values) {\
+              console.log(values)
               return '$' + value;
             }
           }
