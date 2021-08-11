@@ -17,9 +17,6 @@ async function btnShowRoundsHtml() {
 
   var nbrRounds = rounds.length
    
-  console.log('rounds')
-  console.log(rounds.length)
-    
   var x = $("#tblShowRounds").clone();
   $("#srContainer").empty()
   x.appendTo("#srContainer");
@@ -45,8 +42,7 @@ async function btnShowRoundsHtml() {
     var targetScore = ci.courseInfo['Target Score'].split(' ')[0]
 
     if (         
-        (srMadeTarget && !madeTargetScore(targetScore, roundObj.finalScore)) ||
-        (srSelectedCourse && srSelectedCourse !== shortCourseName(roundObj.courseName.toString()))
+        (srMadeTarget && !madeTargetScore(targetScore, roundObj.finalScore)) 
       ) {
          continue;     
       }
