@@ -1252,7 +1252,7 @@ function graphRounds(rounds) {
             display: false
         },
         
-        xAxes: {
+        xAxes: [{
           type: 'time',
           time: {
               parser: 'YYYY-MM',
@@ -1260,7 +1260,7 @@ function graphRounds(rounds) {
               displayFormats: {
               }
           }
-        }                   
+        }]                   
       },
       plugins: {
         tooltip: {
