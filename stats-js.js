@@ -1259,7 +1259,7 @@ function graphRounds(rounds) {
               unit: 'month',
               displayFormats: {
               }
-          },
+          }],
           ticks: {
             color: 'red',
             callback: function(val, idx, arr) {console.log('hi dan')}
@@ -1267,7 +1267,7 @@ function graphRounds(rounds) {
           grid: {
             color: ['lightgrey', 'lightgrey','red','blue','green','lightgrey'],
           }
-        }]                   
+        }                   
       },
       plugins: {
         tooltip: {
