@@ -301,38 +301,6 @@
   if (!found) console.log('No duplicate IDs found');
 }
 
-async function getSSId() {
-
-  console.log(currUser)
-
-
-  var q = "name = 'Dan Golf - " + currUser.emailName +
-          "' AND " + "mimeType='application/vnd.google-apps.spreadsheet'" + 
-          " AND " + "trashed = false"
-
-  console.log(q)          
-
-  var ssId = await gapi.client.drive.files.list({
-      q: q,
-      fields: 'nextPageToken, files(id, name, ownedByMe)',
-      spaces: 'drive'
-  }).then(function(response) {
-
-    var files = response.result.files;
-  
-    // files = files.filter(item => item.ownedByMe);    // remove files that are shared with me
-  
-    if (!files || files.length == 0)  return {fileId:null,msg:"'Dan Golf' not found"}
-
-    if (files.length > 1)             return {fileId:null,msg:"'Dan Golf' not unique"}
-
-    return {fileId:files[0].id,msg:'ok'}
-
-  });  
-
-  return ssId
-
-}
 
 
 async function initialUI() {
