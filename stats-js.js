@@ -1217,7 +1217,8 @@ function graphRounds(rounds) {
         fontColor: 'lightblue',
         fontStyle: 'bold',
         pointRadius: 0,
-        type: 'line'
+        type: 'line',
+        order: 1
       },
       {
         label: "Course Name",
