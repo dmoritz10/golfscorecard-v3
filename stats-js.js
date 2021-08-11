@@ -20,6 +20,7 @@ async function btnShowStatsHtml() {
     gotoTab('Stats')
     
   }
+
   var datePlayedArr = rounds.map(x => x['date'])
 
   var endRow = {}
@@ -1176,7 +1177,7 @@ function graphRounds(rounds) {
     
     datePlayedArr.push( yr + "-" + mo + "-" + da)
     scoresArr.push(courseAdjustedScore)
-    hcpArr.push((rounds[i].objHandicap.handicap).toFixed(1))
+    hcpArr.push((rounds[i].objHandicap.handicap))
     madeTargetArr.push(madeTargetScore(ci.courseInfo['Target Score'].split(' ')[0], rounds[i].finalScore) ? 'green' : 'rgba(255,153,0,0.4)')
     courseNameArr.push(shortCourseName(rounds[i].courseName))
 
