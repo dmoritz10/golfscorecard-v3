@@ -3,12 +3,16 @@ async function btnShowStatsHtml() {
 
   var statOptions  = readOption('statOptions')
 
+  var statSelectCourse = statOptions.statSelectCourse
+
   var statExcludeSmall = statOptions.statExcludeSmallCourses
   var statRng1 = statOptions.statRng1
   var statRng2 = statOptions.statRng2
   var statRng3 = statOptions.statRng3
 
-  var rounds = await getRounds(statExcludeSmall, statOptions.statSelectCourse)
+  var rounds = await getRounds(statExcludeSmall, statSelectCourse)
+
+  {$ ('#statHdrSelectCourse').html(statSelectCourse ? statSelectCourse : '')}
 
   if (!rounds) return
 
