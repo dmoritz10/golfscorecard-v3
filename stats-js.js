@@ -16,8 +16,7 @@ async function btnShowStatsHtml() {
 
   if (rounds.length == 0) {
     
-    ("#statsContainer").empty();
- 
+    ("#tblStats").empty();
     return
   }
   var datePlayedArr = rounds.map(x => x['date'])
