@@ -247,6 +247,7 @@ function extrRndData	(rounds, colName, endRow) {
 	// 'courseInfo.courseName', 'scorecard.putts', 'objHandicap.courseAdjustedScore', 'finalScore'
 	// nbrRows
 
+  if (rounds.length == 0) return []
 
   if (colName) {var parseCol = colName.split('.')}
 
