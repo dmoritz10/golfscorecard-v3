@@ -27,6 +27,8 @@ async function btnShowStatsHtml() {
     endRow['row2'] = getEndRow(datePlayedArr, statRng2)
     endRow['row3'] = getEndRow(datePlayedArr, statRng3)
 
+    console.log(endRow)
+
   setDropdownValues(datePlayedArr, endRow)
 
 
@@ -49,27 +51,27 @@ async function btnShowStatsHtml() {
     var rtn = chartPutting             (title, rounds, myStatsRng, endRow)        
   rptArr.push(rtn)
    
-  var title = "Score Comparison"
-  var rtn = chartScoreComparison     (title, rounds, myStatsRng, endRow)        
-rptArr.push(rtn)
-  
-  var title = "Tee to Green"
-  var rtn = chartTeeToGreen          (title, rounds, myStatsRng, endRow)        
-rptArr.push(rtn)    
+    var title = "Score Comparison"
+    var rtn = chartScoreComparison     (title, rounds, myStatsRng, endRow)        
+  rptArr.push(rtn)
+    
+    var title = "Tee to Green"
+    var rtn = chartTeeToGreen          (title, rounds, myStatsRng, endRow)        
+  rptArr.push(rtn)    
 
-  var title = "Driving Accuracy"
-  var rtn = driveAccuracy            (title, rounds, myStatsRng, endRow)        
-rptArr.push(rtn)    
+    var title = "Driving Accuracy"
+    var rtn = driveAccuracy            (title, rounds, myStatsRng, endRow)        
+  rptArr.push(rtn)    
 
-  var title = "Lifetime"
-  var rtn = lifeTime                  (title, rounds)        
-rptArr.push(rtn.rounds)
+    var title = "Lifetime"
+    var rtn = lifeTime                  (title, rounds)        
+  rptArr.push(rtn.rounds)
 
-var title = null 
-rptArr.push(rtn.holes)
+  var title = null 
+  rptArr.push(rtn.holes)
 
-var title = null    
-rptArr.push(rtn.strokes)
+  var title = null    
+  rptArr.push(rtn.strokes)
 
 
   var x = $("#tblStats").clone();
