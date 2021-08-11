@@ -1401,7 +1401,7 @@ function graphAvgScoreByPar(rounds) {
       },
       {
         label: "Course Name",
-        yAxisID: 'scoreId',
+        yAxisID: 'yAxisId',
         data: courseNameArr,
         type: 'line'
       }
