@@ -1251,9 +1251,7 @@ function graphRounds(rounds) {
           type: 'time',
           time: {
               parser: 'YYYY-MM',
-              unit: 'month',
-              displayFormats: {
-              }
+              unit: 'month'
           }
         }]                   
       },
