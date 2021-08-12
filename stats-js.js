@@ -1243,7 +1243,7 @@ function graphRounds(rounds) {
             position: 'right',
             ticks: {
               fontColor: 'red'
-          },
+          }
           },
         courseName: {
             type: 'linear',
