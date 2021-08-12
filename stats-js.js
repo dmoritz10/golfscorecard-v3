@@ -1250,13 +1250,7 @@ function graphRounds(rounds) {
         },
         
         xAxes: {
-          type: 'time',
-          time: {
-              parser: 'YYYY-MM',
-              unit: 'month',
-              displayFormats: {
-              }
-          }
+          type: 'time'
         }                  
       },
       plugins: {
