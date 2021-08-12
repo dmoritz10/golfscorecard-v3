@@ -1248,6 +1248,8 @@ function graphRounds(rounds) {
               callback: function(val,idx,arr) {
 
                 console.log(val)
+
+                return val
     
                 }
             }
@@ -1259,7 +1261,7 @@ function graphRounds(rounds) {
         },
         
         xAxes: [{
-          type: 'time',
+          type: 'timeseries',
           time: {
               parser: 'YYYY-MM',
               unit: 'month',
