@@ -1205,8 +1205,6 @@ function graphRounds(rounds) {
       {
         label: 'Made Target',
         yAxisID: 'scoreId',
-        backgroundColor: 'green',
-        type: 'line',
         order: 2
       },
       
@@ -1216,8 +1214,6 @@ function graphRounds(rounds) {
         data: hcpArr,
         borderColor: 'red',
         borderWidth: 2,
-        fontColor: 'lightblue',
-        fontStyle: 'bold',
         pointRadius: 0,
         type: 'line',
         order: 1
@@ -1244,7 +1240,7 @@ function graphRounds(rounds) {
             type: 'linear',
             display: true,
             position: 'right',
-            title: {
+            tick: {
               color: 'red'
             }
           },
@@ -1253,7 +1249,7 @@ function graphRounds(rounds) {
             display: false
         },
         
-        xAxes: [{
+        xAxes: {
           type: 'time',
           time: {
               parser: 'YYYY-MM',
@@ -1261,7 +1257,7 @@ function graphRounds(rounds) {
               displayFormats: {
               }
           }
-        }]                   
+        }                  
       },
       plugins: {
         tooltip: {
