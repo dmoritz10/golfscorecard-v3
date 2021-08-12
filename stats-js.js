@@ -1235,7 +1235,12 @@ function graphRounds(rounds) {
             type: 'linear',
             display: true,
             position: 'left',
-            min: 70
+            min: 70,
+            ticks: {
+
+              color: 'blue'
+            }
+
           },
         hcpId: {
             type: 'linear',
@@ -1245,13 +1250,23 @@ function graphRounds(rounds) {
         courseName: {
             type: 'linear',
             display: false
+
         },
         
         xAxes: [{
           type: 'time',
           time: {
               parser: 'YYYY-MM',
-              unit: 'month'
+              unit: 'month',
+              displayFormats: {
+              }
+          },
+          ticks: {
+            callback: function(val,idx,arr) {
+
+            console.log(val)
+
+            }
           }
         }]                   
       },
