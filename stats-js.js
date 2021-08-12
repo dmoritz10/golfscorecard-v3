@@ -1205,6 +1205,7 @@ function graphRounds(rounds) {
       {
         label: 'Made Target',
         yAxisID: 'scoreId',
+        backgroundColor: 'green',
         type: 'line',
         order: 2
       },
