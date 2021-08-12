@@ -1232,6 +1232,7 @@ function graphRounds(rounds) {
     options: {
       scales: {
         
+        
         scoreId: {
             type: 'linear',
             display: true,
@@ -1261,7 +1262,7 @@ function graphRounds(rounds) {
         },
         
         xAxes: [{
-          type: 'timeseries',
+          type: 'time',
           time: {
               parser: 'YYYY-MM',
               unit: 'day',
@@ -1269,6 +1270,7 @@ function graphRounds(rounds) {
               }
           },
           ticks: {
+            color: 'blue',
             callback: function(val,idx,arr) {
 
             console.log(val)
