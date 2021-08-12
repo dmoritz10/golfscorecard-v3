@@ -1250,7 +1250,7 @@ function graphRounds(rounds) {
         },
         
         xAxes: {
-          type: 'time'
+         
         }                  
       },
       plugins: {
