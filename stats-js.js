@@ -1198,7 +1198,6 @@ function graphRounds(rounds) {
         label: 'Score',
         yAxisID: 'scoreId',
         data: scoresArr,
-        backgroundColor: madeTargetArr,
         type: 'bar',
         order: 2
       },
@@ -1216,8 +1215,6 @@ function graphRounds(rounds) {
         data: hcpArr,
         borderColor: 'red',
         borderWidth: 2,
-        fontColor: 'lightblue',
-        fontStyle: 'bold',
         pointRadius: 0,
         type: 'line',
         order: 1
@@ -1244,9 +1241,9 @@ function graphRounds(rounds) {
             type: 'linear',
             display: true,
             position: 'right',
-            title: {
-              color: 'red'
-            }
+            ticks: {
+              fontColor: 'red'
+          },
           },
         courseName: {
             type: 'linear',
@@ -1260,7 +1257,18 @@ function graphRounds(rounds) {
               unit: 'month',
               displayFormats: {
               }
-          }
+          },
+          ticks: {
+            fontColor:['green','red','blue','yellow','green','red'],
+            callback: function(value, index, values) {
+            if(index === 3) {
+              return '**'+value+'**';
+            } 
+            else {
+                return value;
+                }
+            }
+        }
         }]                   
       },
       plugins: {
