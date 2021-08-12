@@ -1244,15 +1244,7 @@ function graphRounds(rounds) {
             display: true,
             position: 'right',
             ticks: {
-
-              color: 'red',
-              callback: function(val,idx,arr) {
-
-                console.log(val)
-
-                return val
-    
-                }
+              color: 'red'
             }
           },
         courseName: {
