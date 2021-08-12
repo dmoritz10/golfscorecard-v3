@@ -1259,7 +1259,7 @@ function graphRounds(rounds) {
               }
           },
           ticks: {
-            fontColor:['green','red','blue','yellow','green','red'],
+            color: 'red',
             callback: function(value, index, values) {
             if(index === 3) {
               return '**'+value+'**';
