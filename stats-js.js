@@ -1262,6 +1262,7 @@ function graphRounds(rounds) {
         },
         
         xAxes: [{
+          axis: 'x',
           type: 'time',
           time: {
               parser: 'YYYY-MM',
