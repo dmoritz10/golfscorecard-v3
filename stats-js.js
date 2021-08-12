@@ -1251,13 +1251,7 @@ function graphRounds(rounds) {
         },
         
         xAxes: [{
-          type: 'time',
-          time: {
-              parser: 'YYYY-MM',
-              unit: 'month',
-              displayFormats: {
-              }
-          },
+          
           ticks: {
             color: 'red',
             callback: function(value, index, values) {
