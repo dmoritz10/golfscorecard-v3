@@ -1240,10 +1240,7 @@ function graphRounds(rounds) {
         hcpId: {
             type: 'linear',
             display: true,
-            position: 'right',
-            ticks: {
-              fontColor: 'red'
-          }
+            position: 'right'
           },
         courseName: {
             type: 'linear',
@@ -1257,18 +1254,8 @@ function graphRounds(rounds) {
               unit: 'month',
               displayFormats: {
               }
-          },
-          ticks: {
-            color: 'red',
-            callback: function(value, index, values) {
-            if(index === 3) {
-              return '**'+value+'**';
-            } 
-            else {
-                return 'hi dan';
-                }
-            }
-        }
+          }
+
         }]                   
       },
       plugins: {
