@@ -1264,7 +1264,7 @@ function graphRounds(rounds) {
           type: 'timeseries',
           time: {
               parser: 'YYYY-MM',
-              unit: 'month',
+              unit: 'day',
               displayFormats: {
               }
           },
