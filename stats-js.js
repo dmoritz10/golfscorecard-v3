@@ -1245,7 +1245,11 @@ function graphRounds(rounds) {
         hcpId: {
             type: 'linear',
             display: true,
-            position: 'right'
+            position: 'right',
+            ticks: {
+
+              color: 'red'
+            }
           },
         courseName: {
             type: 'linear',
