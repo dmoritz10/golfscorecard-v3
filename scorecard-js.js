@@ -1062,6 +1062,8 @@ function getWeather(weatherUrl) {
     request.open('GET', 'https://cors.bridged.cc/' + weatherUrl)
 
     request.onload = async function() {
+
+      console.log(request)
     
       if (request.status >= 200 && request.status < 400) {
 
@@ -1072,7 +1074,7 @@ function getWeather(weatherUrl) {
         } else if (request.status == 503) {                                     // it seems that sometimes, cors-anywhere is not available
       
         resolve ( null )
-        console.log ( 'error 503 - cores not available ?')
+        console.log ( 'error 503 - cors not available ?')
         
       } else {
         
