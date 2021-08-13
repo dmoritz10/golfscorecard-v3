@@ -1069,10 +1069,16 @@ async function btnUweatherCompHtml() {
   if (uweatherComp === null) return
 
   var geoLoc =  await getPosition()
-  var bearing = calcBearingToHole(geoLoc.coords.latitude, 
+
+  if (geoLoc) {
+    var bearing = calcBearingToHole(geoLoc.coords.latitude, 
                                   geoLoc.coords.position.coords.longitude, 
                                   prCourse.holeDetail[prScore.currHole - 1].greenLocation.lat,
                                   prCourse.holeDetail[prScore.currHole - 1].greenLocation.lng )
+
+  } else {
+    var bearing = 'unknown'
+  }
 
   var wPrompt = bootbox.alert({
 
@@ -1090,7 +1096,7 @@ async function btnUweatherCompHtml() {
 function getPosition() {
   // Simple wrapper
   return new Promise((res, rej) => {
-      navigator.geolocation.getCurrentPosition(res, rej, geolocationOptions);
+      navigator.geolocation.getCurrentPosition(res, rej => return null, geolocationOptions);
   });
 }
 
