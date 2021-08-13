@@ -1068,9 +1068,15 @@ async function btnUweatherCompHtml() {
 
   if (uweatherComp === null) return
 
+  var geoLoc =  await getPosition()
+  var bearing = calcBearingToHole(geoLoc.coords.latitude, 
+                                  geoLoc.coords.position.coords.longitude, 
+                                  prCourse.holeDetail[prScore.currHole - 1].greenLocation.lat,
+                                  prCourse.holeDetail[prScore.currHole - 1].greenLocation.lng )
+
   var wPrompt = bootbox.alert({
 
-    title: "UWeather Station Comparison<br><small>Heading </small>",
+    title: "UWeather Station Comparison<br><small>Bearing " + bearing + "</small>",
     message: uweatherComp
 
   });
@@ -1081,6 +1087,12 @@ async function btnUweatherCompHtml() {
 
 }
 
+function getPosition() {
+  // Simple wrapper
+  return new Promise((res, rej) => {
+      navigator.geolocation.getCurrentPosition(res, rej, geolocationOptions);
+  });
+}
 
 async function getUWeather(stationIds) {
 
