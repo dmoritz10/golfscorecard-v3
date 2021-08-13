@@ -1072,17 +1072,18 @@ async function btnUweatherCompHtml() {
                   .then ( geoLoc => {
 
                     alert(geoLoc.coords.latitude)
-                    
-                      return calcBearingToHole(
+                    const calcWindDirectionCardinal = (winddir) => (winddir ? ["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW","N"][(Math.round((winddir)/ 22.5,0))] : '')
+
+                      return calcWindDirectionCardinal(calcBearingToHole(
                         geoLoc.coords.latitude, 
                         geoLoc.coords.longitude, 
                         prCourse.holeDetail[prScore.currHole - 1].greenLocation.lat,
-                        prCourse.holeDetail[prScore.currHole - 1].greenLocation.lng )
+                        prCourse.holeDetail[prScore.currHole - 1].greenLocation.lng ))
                       
                   })
                   .catch (rej => {
 console.log(rej)
-                    alert(rej)
+                    alert(rej.message)
                       return "unknown"
                   })
 
