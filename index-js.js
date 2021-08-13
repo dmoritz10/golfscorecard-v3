@@ -1096,7 +1096,7 @@ async function btnUweatherCompHtml() {
 function getPosition() {
   // Simple wrapper
   return new Promise((res, rej) => {
-      navigator.geolocation.getCurrentPosition(res, rej => return null, geolocationOptions);
+      navigator.geolocation.getCurrentPosition(res, function(rej) { return null}, geolocationOptions);
   });
 }
 
