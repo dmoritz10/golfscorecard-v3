@@ -1103,6 +1103,8 @@ function parseWeather(wRptHtml, bearingToHole, distToPin, distToTee) {
   
 // console.log(str)
 // console.log(end)
+
+  if (str < 0) return null  
   
   var current = wRptHtml.substring(str, end).replace(/&q;/g, '"') + '}'  
   var w = JSON.parse(current).value.observations[0]
