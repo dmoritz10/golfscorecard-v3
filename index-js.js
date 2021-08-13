@@ -1080,7 +1080,7 @@ async function btnUweatherCompHtml() {
                       
                   })
                   .catch (rej => {
-
+console.log(rej)
                     alert(rej)
                       return "unknown"
                   })
