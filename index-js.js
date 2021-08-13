@@ -1070,7 +1070,7 @@ async function btnUweatherCompHtml() {
 
   var wPrompt = bootbox.alert({
 
-    title: "UWeather Station Comparison",
+    title: "UWeather Station Comparison<br><small>Heading </small>",
     message: uweatherComp
 
   });
