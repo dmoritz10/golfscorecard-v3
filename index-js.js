@@ -1073,8 +1073,9 @@ async function btnUweatherCompHtml() {
 
                     alert(geoLoc.coords.latitude)
                     
-                      return calcBearingToHole(geoLoc.coords.latitude, 
-                        geoLoc.coords.position.coords.longitude, 
+                      return calcBearingToHole(
+                        geoLoc.coords.latitude, 
+                        geoLoc.coords.longitude, 
                         prCourse.holeDetail[prScore.currHole - 1].greenLocation.lat,
                         prCourse.holeDetail[prScore.currHole - 1].greenLocation.lng )
                       
