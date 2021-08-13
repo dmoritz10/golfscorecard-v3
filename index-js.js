@@ -1068,29 +1068,13 @@ async function btnUweatherCompHtml() {
 
   if (uweatherComp === null) return
 
-  var bearing =  await getPosition()
-                  .then ( geoLoc => {
+  var bearing = await getBearing()
 
-                    alert(geoLoc.coords.latitude)
-                    const calcWindDirectionCardinal = (winddir) => (winddir ? ["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW","N"][(Math.round((winddir)/ 22.5,0))] : '')
-
-                      return calcWindDirectionCardinal(calcBearingToHole(
-                        geoLoc.coords.latitude, 
-                        geoLoc.coords.longitude, 
-                        prCourse.holeDetail[prScore.currHole - 1].greenLocation.lat,
-                        prCourse.holeDetail[prScore.currHole - 1].greenLocation.lng ))
-                      
-                  })
-                  .catch (rej => {
-console.log(rej)
-                    alert(rej.message)
-                      return "unknown"
-                  })
-
+  var title = "UWeather Station Comparison" + (bearing ? "<br><small>Bearing " + bearing + "</small>" : "")
 
   var wPrompt = bootbox.alert({
 
-    title: "UWeather Station Comparison<br><small>Bearing " + bearing + "</small>",
+    title: title,
     message: uweatherComp
 
   });
@@ -1101,6 +1085,25 @@ console.log(rej)
 
 }
 
+async function getBearing(){
+
+  return await getPosition()
+  .then ( geoLoc => {
+
+    const calcWindDirectionCardinal = (winddir) => (winddir ? ["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW","N"][(Math.round((winddir)/ 22.5,0))] : '')
+
+      return calcWindDirectionCardinal(calcBearingToHole(
+        geoLoc.coords.latitude, 
+        geoLoc.coords.longitude, 
+        prCourse.holeDetail[prScore.currHole - 1].greenLocation.lat,
+        prCourse.holeDetail[prScore.currHole - 1].greenLocation.lng ))
+      
+  })
+  .catch (rej => {
+      return null
+  })
+
+}
 function getPosition() {
   // Simple wrapper
   return new Promise((res, rej) => {
