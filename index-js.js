@@ -1070,6 +1070,8 @@ async function btnUweatherCompHtml() {
 
   var bearing =  await getPosition()
                   .then ( geoLoc => {
+
+                    alert(geoLoc.coords.latitude)
                     
                       return calcBearingToHole(geoLoc.coords.latitude, 
                         geoLoc.coords.position.coords.longitude, 
@@ -1078,6 +1080,8 @@ async function btnUweatherCompHtml() {
                       
                   })
                   .catch (rej => {
+
+                    alert(rej)
                       return "unknown"
                   })
 
