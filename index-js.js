@@ -1286,6 +1286,7 @@ async function setStationId(stationId) {
   arrShts['My Courses'].vals[idxRow][idxCol] = stationId
 
   await updateCourse(arrShts['My Courses'].vals[idxRow], idxRow)
+  updateOption('currCourseInfo', JSON.stringify(prCourse))                  
 
   var x = setWeatherHref({
 
