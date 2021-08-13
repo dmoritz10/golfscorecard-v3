@@ -1069,16 +1069,18 @@ async function btnUweatherCompHtml() {
   if (uweatherComp === null) return
 
   var geoLoc =  await getPosition()
+                  .then ( geoLoc => {
+                    
+                      var bearing = calcBearingToHole(geoLoc.coords.latitude, 
+                        geoLoc.coords.position.coords.longitude, 
+                        prCourse.holeDetail[prScore.currHole - 1].greenLocation.lat,
+                        prCourse.holeDetail[prScore.currHole - 1].greenLocation.lng )
+                      
+                  })
+                  .catch (rej => {
+                      var bearing = "unknown"
+                  })
 
-  if (geoLoc) {
-    var bearing = calcBearingToHole(geoLoc.coords.latitude, 
-                                  geoLoc.coords.position.coords.longitude, 
-                                  prCourse.holeDetail[prScore.currHole - 1].greenLocation.lat,
-                                  prCourse.holeDetail[prScore.currHole - 1].greenLocation.lng )
-
-  } else {
-    var bearing = 'unknown'
-  }
 
   var wPrompt = bootbox.alert({
 
