@@ -815,6 +815,8 @@ async function btnSCMFetchSxsHtml(e) {
     
       if (request.status >= 200 && request.status < 400) {
 
+        console.log(this.response)
+
         resolve ( updateSCMForm(this.response) )
               
       } else {

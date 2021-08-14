@@ -1259,22 +1259,6 @@ async function setStationId(stationId) {
   3. update btnSCWeather
   */
 
-  /*
-    var baseUrl = weatherUrlMask.toString().replace(/^(.*\/\/[^\/?#]*).*$/,"$1");
-    
-    if (e == 'manual') {
-      var manSId = $('#manualStationId').val()
-      if (/^(?:\w+:)?\/\/([^\s\.]+\.\S{2}|localhost[\:?\d]*)\S*$/.test(manSId)) {
-        var weatherUrl = manSId
-      } else {
-        var weatherUrl = baseUrl + '/weather/' + $('#manualStationId').val() 
-      }
-    } else {
-      var weatherUrl = baseUrl + '/weather/' + e
-    }
-    
-  
-  */
   console.log(stationId)
   if (stationId == 'default') return
 
