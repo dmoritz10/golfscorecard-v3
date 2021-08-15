@@ -819,7 +819,7 @@ position.coords.longitude = -118.02790414065095
 showPosition(position, e.data.pinLocn)
 return
 */
-  // if (!canUseGeo) return
+  if (!canUseGeo) return
   
   var timer = new Date()
 

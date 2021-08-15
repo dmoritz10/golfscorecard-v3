@@ -22,7 +22,7 @@
   var prClubs
   var clubsThisHole = []
 
-  var canUseGeo
+  var canUseGeo = true
   var geoWatchId
   var prLat
   var prLng
