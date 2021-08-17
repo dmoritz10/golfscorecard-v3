@@ -582,10 +582,11 @@ async function btnSCMSubmitCourseHtml() {
 
   }
   
-  arrShts['My Courses'].vals[idx] = course
+  // arrShts['My Courses'].vals[idx] = course
 
   course = arrShts['My Courses'].vals[idx]
   course[cols.indexOf("SxS Hole Detail")] = $('#scmHoleDetail').val()
+  arrShts['My Courses'].vals[idx] = course
 
   await updateCourse(course, idx)
 
