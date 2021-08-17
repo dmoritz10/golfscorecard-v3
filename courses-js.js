@@ -938,6 +938,7 @@ function buildHoleDtlObj(sxs) {
     delete hole.pinLat
     delete hole.pinLng
     delete hole.changeLocations
+    delete hole.pinExpires
 
     hole.teeBoxes.forEach( teeBox => {
 
@@ -950,7 +951,7 @@ function buildHoleDtlObj(sxs) {
     delete teeBox.teeHexColor      
     delete teeBox.lng
     delete teeBox.lat
-    
+
     })
     
   })
