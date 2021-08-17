@@ -938,7 +938,7 @@ function buildHoleDtlObj(sxs) {
     delete hole.pinLng
     delete hole.changeLocations
 
-    teeBoxes.forEach( teeBox => {
+    hole.teeBoxes.forEach( teeBox => {
 
     delete teeBox.courseHoleTeeBoxId
     delete teeBox.courseHoleId      
