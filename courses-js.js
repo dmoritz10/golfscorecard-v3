@@ -589,6 +589,7 @@ async function btnSCMSubmitCourseHtml() {
 
 
   // To update only the SxS Hole Detail column
+  
   // c[cols.indexOf("SxS Hole Detail")] = $('#scmHoleDetail').val()
   // arrShts['My Courses'].vals[idx] = c
   // await updateCourse(c, idx)
