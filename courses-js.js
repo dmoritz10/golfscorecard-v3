@@ -593,8 +593,6 @@ async function btnSCMSubmitCourseHtml() {
   arrShts['My Courses'].vals[idx] = c
   await updateCourse(c, idx)
 
- 
-
   await initialUI()
   
   $("#course-modal").modal('hide');
@@ -815,6 +813,10 @@ async function updateCourse(arrCourse, idx) {
 
 async function btnSCMFetchSxsHtml(e) {
 
+  $("#course-modal").animate({ opacity: '0.2',}, "slow");
+
+  $('#btnSCMSubmitCourse').prop('disabled', true) 
+
   return new Promise(resolve => {
 
     var request = new XMLHttpRequest()
@@ -830,6 +832,10 @@ async function btnSCMFetchSxsHtml(e) {
         console.log(this.response)
 
         resolve ( updateSCMForm(this.response) )
+
+        $("#course-modal").animate({ opacity: 1.0,}, "slow");
+
+        $('#btnSCMSubmitCourse').prop('disabled', false) 
               
       } else {
         
