@@ -957,7 +957,7 @@ function buildHoleDtlObj(sxs) {
   rtn.stats = sxs.stats
   rtn.holes = sxs.holes
 
-  return rtn
+  return JSON.stringify(rtn)
 
 }
 
