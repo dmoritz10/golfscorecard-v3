@@ -472,6 +472,7 @@ async function editCourse(course) {
     $('#scmZip').val(course['Zip']) 
     $('#scmCountry').val(course['Country']) 
     $('#scmSxsUrl').val(course['SxS Course Id']) 
+    $('#scmHoleDetail').val(course['SxS Hole Detail'])
     
 //    $('#btnDeleteCourse').removeClass('d-none')
 
@@ -554,7 +555,8 @@ async function btnSCMSubmitCourseHtml() {
     course[cols.indexOf("Country")] = $('#scmCountry').val()
     course[cols.indexOf("SxS Course Id")] = $('#scmSxsUrl').val()
     course[cols.indexOf("Tee Info")] = scmPrepTeeInfo(cols, course)
-  
+    course[cols.indexOf("SxS Hole Detail")] = $('#scmHoleDetail').val()
+
   } else {     
     var courseKey = calcCourseKey($('#scmName').val())
     if (dupCourse(courseKey)) {
@@ -576,6 +578,7 @@ async function btnSCMSubmitCourseHtml() {
     course[cols.indexOf("Country")] = $('#scmCountry').val()
     course[cols.indexOf("SxS Course Id")] = $('#scmSxsUrl').val()
     course[cols.indexOf("Tee Info")] = scmPrepTeeInfo(cols, course)
+    course[cols.indexOf("SxS Hole Detail")] = $('#scmHoleDetail').val()
 
   }
   
@@ -853,6 +856,7 @@ function updateSCMForm(sxsRtn) {
     conditionalUpdate($('#scmState'),abbrState(sxs.stateOrProvince))
     conditionalUpdate($('#scmZip'),sxs.zipCode) 
     conditionalUpdate($('#scmCountry'),abbrCountry(sxs.country))
+    $('#scmHoleDetail').val(buildHoleDtlObj(sxs))
 
     var tiCols = {
     
@@ -913,6 +917,48 @@ function updateSCMForm(sxsRtn) {
 
     loadTeeBoxes(JSON.stringify(teeInfo))
  
+}
+
+function buildHoleDtlObj(sxs) {
+
+  sxs.stats.forEach( tee => {
+
+    delete tee.courseStatId
+    delete tee.courseId
+    delete tee.teeTypeId
+    delete tee.teeColorTypeId
+    
+  })
+
+  sxs.holes.forEach( hole => {
+
+    delete hole.courseHoleId
+    delete hole.courseId  
+    delete hole.pinLat
+    delete hole.pinLng
+    delete hole.changeLocations
+
+    teeBoxes.forEach( teeBox => {
+
+    delete teeBox.courseHoleTeeBoxId
+    delete teeBox.courseHoleId      
+    delete teeBox.teeTypeId
+    delete teeBox.teeColorTypeId
+    delete teeBox.meters      
+    delete teeBox.hcp2      
+    delete teeBox.teeHexColor      
+
+    })
+    
+  })
+
+  var rtn = {}
+
+  rtn.stats = sxs.stats
+  rtn.holes = sxs.holes
+
+  return rtn
+
 }
 
 function fixUrl(url) {
