@@ -927,6 +927,7 @@ function buildHoleDtlObj(sxs) {
     delete tee.courseId
     delete tee.teeTypeId
     delete tee.teeColorTypeId
+    delete tee.teeHexColor
     
   })
 
@@ -947,7 +948,9 @@ function buildHoleDtlObj(sxs) {
     delete teeBox.meters      
     delete teeBox.hcp2      
     delete teeBox.teeHexColor      
-
+    delete teeBox.lng
+    delete teeBox.lat
+    
     })
     
   })
