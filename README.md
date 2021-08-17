@@ -122,6 +122,6 @@ x Start from scratch
     scorecards
     settings
 
-x Save Sxs Hold Detail
+x Save Sxs Hold Detail just in case
 
 Recover Costa Mesa Country Club  (Los Lagos Course)	7/25/19  from Scorecards
