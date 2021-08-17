@@ -544,6 +544,8 @@ async function btnSCMSubmitCourseHtml() {
   var cols = arrShts['My Courses'].colHdrs
   var course = arrShts['My Courses'].vals[idx]
 
+  var c = JSON.parse(JSON.stringify(course))
+
   if (idx) {                                                       // update existing course
     
     course[cols.indexOf("Phone")] = $('#scmPhone').val()
@@ -585,8 +587,8 @@ async function btnSCMSubmitCourseHtml() {
   // arrShts['My Courses'].vals[idx] = course
  // await updateCourse(course, idx)
 
- 
-  var c = arrShts['My Courses'].vals[idx]
+
+  
   c[cols.indexOf("SxS Hole Detail")] = $('#scmHoleDetail').val()
   arrShts['My Courses'].vals[idx] = c
   await updateCourse(c, idx)
