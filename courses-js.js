@@ -813,7 +813,7 @@ async function updateCourse(arrCourse, idx) {
 
 async function btnSCMFetchSxsHtml(e) {
 
-  $("#course-modal").animate({ opacity: '0.2',}, "slow");
+  $("#course-modal").animate({ opacity: '0.4',}, "slow");
 
   $('#btnSCMSubmitCourse').prop('disabled', true) 
 
