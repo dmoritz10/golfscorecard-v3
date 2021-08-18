@@ -1007,6 +1007,7 @@ async function btnAddCourseHtml () {
 
     $("#course-modal").modal('show');
     $("#course-form")[0].reset();
+    $('#scmModalTitle').html('') 
     
     // $('#btnDeleteCourse').addClass('d-none')
 
