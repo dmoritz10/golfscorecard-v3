@@ -1657,7 +1657,7 @@ function graphTeeToGreen(rounds) {
         borderColor: 'green',
         borderWidth: 1,
         pointRadius: 0,
-        backgroundColor: 'LightGreen',
+        backgroundColor: '#90ee90',
         type: 'line'
       }
       ]
