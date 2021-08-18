@@ -936,7 +936,7 @@ function updateSCMForm(sxsRtn) {
 }
 
 function buildHoleDtlObj(sxs) {
-
+console.log('hi dan')
   console.log(sxs)
 
   sxs.stats.forEach( tee => {
