@@ -845,8 +845,13 @@ function chartTeeToGreen          (title, rounds, myStatsRng, endRow) {
     ]
 
     arrRound(rtn, 0, 'percent')
+
+    var rnds = extrRndData	(rounds, null, endRow.row3)
+    if (rnds.length == 0 ) var rnds = extrRndData	(rounds, null, endRow.row2)
+    if (rnds.length == 0 ) var rnds = extrRndData	(rounds, null, endRow.row1)
+    var chart = graphTeeToGreen(rnds)
     
-    return {title: title, arrData:rtn, format:''};
+    return {title: title, arrData:rtn, chart: chart, format:''};
 
 }
 
@@ -1402,6 +1407,201 @@ function graphAvgScoreByPar(rounds) {
         label: 'Par 5',
         yAxisID: 'yAxisId',
         data: par5Arr,
+        borderColor: 'green',
+        borderWidth: 1,
+        pointRadius: 2,
+        type: 'line'
+      },
+      {
+        label: "Course Name",
+        yAxisID: 'yAxisId',
+        data: courseNameArr,
+        type: 'line'
+      }
+      ]
+    },
+
+    options: {
+        
+      scales: {
+        
+        yAxisId: {
+
+          min: 2,
+          max: 7,
+          ticks: {
+            // forces step size to be 1 unit
+            stepSize: 1
+          },
+          grid: {
+            color: ['lightgrey', 'lightgrey','red','blue','green','lightgrey'],
+          }
+
+        },
+        courseName: {
+            type: 'linear',
+            display: false
+        },
+        
+        
+        xAxes: [{
+          type: 'time',
+          time: {
+              parser: 'YYYY-MM',
+              unit: 'month',
+              displayFormats: {
+              }
+          },
+          ticks: {
+              source: 'data'
+          }
+        }]                     
+      },
+      plugins: {
+        tooltip: {
+          
+          callbacks: {
+            label: function(tooltipItem) {
+
+              var idx = tooltipItem.dataIndex
+
+              var ds0 = tooltipItem.chart._metasets[0]._dataset
+              var ds1 = tooltipItem.chart._metasets[1]._dataset
+              var ds2 = tooltipItem.chart._metasets[2]._dataset             
+              var ds3 = tooltipItem.chart._metasets[3]._dataset
+              
+              return [ds3.data[idx], "Par 3:\t\t\t\t" + ds0.data[idx], "Par 4:\t\t\t\t" + ds1.data[idx], "Par 5:\t\t\t\t" + ds2.data[idx]];
+              
+            }
+          }
+        },
+
+        legend: {
+          labels: {
+            filter: function(item, chart) {
+              return item.text == "Course Name" ? false : true
+            }
+          }
+        }
+
+      }
+    }
+  });
+
+  return parent
+  
+
+}
+
+
+function graphTeeToGreen(rounds) {
+
+  const fairways = (scoreCard) => {
+    arr = []
+    var nbrNonPar3s = 0
+    var nbrFairways = 0
+
+      scoreCard.forEach((val, idx) => {
+        if (val.par > 3) {
+          nbrNonPar3s++
+          if (val.drive == 'Str8') {
+           nbrFairways++
+          }
+        }
+      })     
+
+    return nbrFairways / nbrNonPar3s
+  }    
+
+  const GIRs = (scoreCard) => {
+    arr = []
+    var nbrGIRs = 0
+    var nbrHoles = 0
+
+      scoreCard.forEach((val, idx) => {
+        nbrHoles++
+        if (val.score - val.putts <= val.par - 2) {
+          nbrGIRs++
+        }
+      })     
+
+    return nbrGIRs / nbrHoles
+  }    
+
+  const scrambling = (scoreCard) => {
+    arr = []
+    var nbrscrmbls = 0
+    var nbrHoles = 0
+
+      scoreCard.forEach((val, idx) => {
+        nbrHoles++
+        if (!(val.score - val.putts <= val.par - 2) && (val.score <= val.par)) {
+          nbrscrmbls++
+        }
+      })     
+
+    return nbrscrmbls / nbrHoles
+  }    
+
+  var datePlayedArr = []
+  var frwyArr = []
+  var girArr = []
+  var scrblArr = []
+  var courseNameArr = []
+
+
+  // for (let i=rounds.length - 1;i>-1;i--) {
+  for (let i=0;i<rounds.length;i++) {
+
+    var sc = JSON.parse(rounds[i].scoreCard).scores
+    var dt = new Date(rounds[i].startTime)
+    var yr = dt.getFullYear()
+    var mo = dt.getMonth() + 1
+    var da = dt.getDate()
+    
+    datePlayedArr.push( yr + "-" + mo + "-" + da)
+    courseNameArr.push(shortCourseName(rounds[i].courseName))
+
+    frwyArr.push(fairways(sc))
+    girArr.push(GIRs(sc))
+    scrblArr.push(scrambling(sc))
+
+    }
+
+
+  try {
+    var parent = document.getElementById('ttgChartContainer');
+    var child = document.getElementById('ttgChart');          
+    parent.removeChild(child);            
+    parent.innerHTML ='<canvas id="ttgChart" width="400" height="300" ></canvas>'; 
+  } catch(e) {console.log(e)}
+  
+  var chart = new Chart(document.getElementById("ttgChart"), {
+   
+    data: {
+      labels: datePlayedArr,
+      datasets: [{
+        label: 'Fairways',
+        yAxisID: 'yAxisId',
+        data: frwyArr,
+        borderColor: 'red',
+        borderWidth: 1,
+        pointRadius: 2,
+        type: 'line'
+      },
+      {
+        label: 'GIRs',
+        yAxisID: 'yAxisId',
+        data: girArr,
+        borderColor: 'blue',
+        borderWidth: 1,
+        pointRadius: 2,
+        type: 'line'
+      },
+      {
+        label: 'Scrambling',
+        yAxisID: 'yAxisId',
+        data: scrblArr,
         borderColor: 'green',
         borderWidth: 1,
         pointRadius: 2,
