@@ -1628,14 +1628,14 @@ function graphTeeToGreen(rounds) {
         yAxisId: {
 
           min: 0,
-          max: 18,
+          max: 16,
           // ticks: {
           //   // forces step size to be 1 unit
           //   stepSize: 10
           // },
-          grid: {
-            color: ['lightgrey', 'lightgrey','red','blue','green','lightgrey'],
-          }
+          // grid: {
+          //   color: ['lightgrey', 'lightgrey','red','blue','green','lightgrey'],
+          // }
 
         },
         courseName: {
