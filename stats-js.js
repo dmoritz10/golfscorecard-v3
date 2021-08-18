@@ -1574,6 +1574,8 @@ function graphTeeToGreen(rounds) {
 
     const average = (array) => array.reduce((a, b) => a + b) / array.length;
     var frwyAvgArr = Array(rounds.length).fill(average(frwyArr));
+    var girAvgArr = Array(rounds.length).fill(average(girArr));
+    var scrblAvgArr = Array(rounds.length).fill(average(scrblArr));
     
 
 
@@ -1634,6 +1636,26 @@ function graphTeeToGreen(rounds) {
         borderWidth: 1,
         pointRadius: 0,
         backgroundColor: 'lightred',
+        type: 'line'
+      },
+      {
+        label: null,
+        yAxisID: 'yAxisId',
+        data: girAvgArr,
+        borderColor: 'blue',
+        borderWidth: 1,
+        pointRadius: 0,
+        backgroundColor: 'blue',
+        type: 'line'
+      },
+      {
+        label: null,
+        yAxisID: 'yAxisId',
+        data: scrblAvgArr,
+        borderColor: 'green',
+        borderWidth: 1,
+        pointRadius: 0,
+        backgroundColor: 'green',
         type: 'line'
       }
       ]
