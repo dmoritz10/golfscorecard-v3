@@ -1600,16 +1600,6 @@ function graphTeeToGreen(rounds) {
         tick: {color:'red'}
       },
       {
-       
-        yAxisID: 'yAxisId',
-        data: frwyAvgArr,
-        borderColor: 'red',
-        borderWidth: 1,
-        pointRadius: 0,
-        backgroundColor: 'lightred',
-        type: 'line'
-      },
-      {
         label: 'GIRs',
         yAxisID: 'yAxisId',
         data: girArr,
@@ -1634,6 +1624,16 @@ function graphTeeToGreen(rounds) {
         label: "Course Name",
         yAxisID: 'yAxisId',
         data: courseNameArr,
+        type: 'line'
+      },
+      {
+        label: null,
+        yAxisID: 'yAxisId',
+        data: frwyAvgArr,
+        borderColor: 'red',
+        borderWidth: 1,
+        pointRadius: 0,
+        backgroundColor: 'lightred',
         type: 'line'
       }
       ]
