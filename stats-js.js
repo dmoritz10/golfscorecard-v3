@@ -1609,8 +1609,7 @@ function graphTeeToGreen(rounds) {
         borderWidth: 1,
         pointRadius: 2,
         backgroundColor: 'blue',
-        type: 'line',
-        tension: .4
+        type: 'line'
       },
       {
         label: 'Scrambling',
