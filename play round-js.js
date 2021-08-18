@@ -4,7 +4,7 @@ async function btnPlayRoundHtml() {
   if (arrShts['My Courses'].vals.length == 0)  {
     bootbox.alert('You must set up a Course before playing a round')
     return null
-}
+  }
 
   console.log('btnPlayRoundHtml')
     
@@ -140,6 +140,7 @@ async function loadCourseInfo(e) {
 
       var cols = arrShts['My Courses'].colHdrs
       courseInfo = makeObj(arrShts['My Courses'].vals[selectedCourseIdx], cols)
+      delete courseInfo['SxS Hole Detail']
       
       var selectedTees = document.getElementById("hpSelectTees"); 
       
