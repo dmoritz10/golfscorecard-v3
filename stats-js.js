@@ -1510,7 +1510,7 @@ function graphTeeToGreen(rounds) {
         }
       })     
 
-    return nbrFairways / nbrNonPar3s
+    return (nbrFairways / nbrNonPar3s)  * 100
   }    
 
   const GIRs = (scoreCard) => {
@@ -1525,7 +1525,7 @@ function graphTeeToGreen(rounds) {
         }
       })     
 
-    return nbrGIRs / nbrHoles
+    return (nbrGIRs / nbrHoles)  * 100
   }    
 
   const scrambling = (scoreCard) => {
@@ -1540,7 +1540,7 @@ function graphTeeToGreen(rounds) {
         }
       })     
 
-    return nbrscrmbls / nbrHoles
+    return (nbrscrmbls / nbrHoles)  * 100
   }    
 
   var datePlayedArr = []
