@@ -1654,7 +1654,7 @@ function graphTeeToGreen(rounds) {
         label: null,
         yAxisID: 'yAxisId',
         data: scrblAvgArr,
-        borderColor: '#80ff80',
+        borderColor: '#1aff66',
         borderWidth: 1,
         pointRadius: 0,
         backgroundColor: 'green',
