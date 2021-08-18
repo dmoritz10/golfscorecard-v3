@@ -1622,8 +1622,8 @@ function graphTeeToGreen(rounds) {
         
         yAxisId: {
 
-          min: 2,
-          max: 7,
+          min: 0,
+          max: 100,
           ticks: {
             // forces step size to be 1 unit
             stepSize: 1
