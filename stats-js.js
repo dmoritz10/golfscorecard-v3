@@ -1510,7 +1510,7 @@ function graphTeeToGreen(rounds) {
         }
       })     
 
-    return (nbrFairways / nbrNonPar3s)  * 100
+    return Math.round((nbrFairways / nbrNonPar3s) * 100)
   }    
 
   const GIRs = (scoreCard) => {
@@ -1525,7 +1525,7 @@ function graphTeeToGreen(rounds) {
         }
       })     
 
-    return (nbrGIRs / nbrHoles)  * 100
+    return Math.round((nbrGIRs / nbrHoles) * 100)
   }    
 
   const scrambling = (scoreCard) => {
@@ -1540,7 +1540,7 @@ function graphTeeToGreen(rounds) {
         }
       })     
 
-    return (nbrscrmbls / nbrHoles)  * 100
+    return Math.round((nbrscrmbls / nbrHoles)  * 100)
   }    
 
   var datePlayedArr = []
@@ -1587,7 +1587,8 @@ function graphTeeToGreen(rounds) {
         borderColor: 'red',
         borderWidth: 1,
         pointRadius: 2,
-        type: 'line'
+        type: 'line',
+        tick: {color:'red'}
       },
       {
         label: 'GIRs',
@@ -1626,7 +1627,7 @@ function graphTeeToGreen(rounds) {
           max: 100,
           ticks: {
             // forces step size to be 1 unit
-            stepSize: 1
+            stepSize: 10
           },
           grid: {
             color: ['lightgrey', 'lightgrey','red','blue','green','lightgrey'],
@@ -1665,7 +1666,7 @@ function graphTeeToGreen(rounds) {
               var ds2 = tooltipItem.chart._metasets[2]._dataset             
               var ds3 = tooltipItem.chart._metasets[3]._dataset
               
-              return [ds3.data[idx], "Par 3:\t\t\t\t" + ds0.data[idx], "Par 4:\t\t\t\t" + ds1.data[idx], "Par 5:\t\t\t\t" + ds2.data[idx]];
+              return [ds3.data[idx], "Fairways:\t\t\t\t" + ds0.data[idx], "GIRs:\t\t\t\t" + ds1.data[idx], "Scrambling:\t\t\t\t" + ds2.data[idx]];
               
             }
           }
