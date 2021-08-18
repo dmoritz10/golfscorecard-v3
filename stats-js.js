@@ -1572,7 +1572,8 @@ function graphTeeToGreen(rounds) {
 
     }
 
-    var frwyAvgArr = Array(rounds.length).fill(14);
+    const average = (array) => array.reduce((a, b) => a + b) / array.length;
+    var frwyAvgArr = Array(rounds.length).fill(average(frwyArr));
     
 
 
