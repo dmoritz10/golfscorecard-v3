@@ -589,7 +589,7 @@ async function btnSCMSubmitCourseHtml() {
 
 
   // To update only the SxS Hole Detail column
-  
+
   // c[cols.indexOf("SxS Hole Detail")] = $('#scmHoleDetail').val()
   // arrShts['My Courses'].vals[idx] = c
   // await updateCourse(c, idx)
@@ -937,6 +937,8 @@ function updateSCMForm(sxsRtn) {
 
 function buildHoleDtlObj(sxs) {
 
+  console.log(sxs)
+
   sxs.stats.forEach( tee => {
 
     delete tee.courseStatId
@@ -974,6 +976,7 @@ function buildHoleDtlObj(sxs) {
 
   var rtn = {}
 
+  // rtn.location.lat = sxs.
   rtn.stats = sxs.stats
   rtn.holes = sxs.holes
 
