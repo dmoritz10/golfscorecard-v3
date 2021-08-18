@@ -1572,9 +1572,8 @@ function graphTeeToGreen(rounds) {
 
     }
 
-    var frwyAvgArr = Array(rounds.length).fill(null);
-    frwyAvgArr[0] = 14
-    frwyAvgArr[rounds.length-1] = 14
+    var frwyAvgArr = Array(rounds.length).fill(14);
+    
 
 
   try {
@@ -1605,7 +1604,7 @@ function graphTeeToGreen(rounds) {
         data: frwyAvgArr,
         borderColor: 'red',
         borderWidth: 1,
-        pointRadius: 2,
+        pointRadius: 0,
         backgroundColor: 'red',
         type: 'line',
         tick: {color:'red'}
