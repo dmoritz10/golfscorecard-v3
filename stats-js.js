@@ -1502,10 +1502,10 @@ function graphTeeToGreen(rounds) {
     var nbrFairways = 0
 
       scoreCard.forEach((val, idx) => {
-
-        if (val.drive == 'Str8') {
-           nbrFairways++
-
+        if (val.par > 3) {
+          if (val.drive == 'Str8') {
+            nbrFairways++
+          }
         }
 
       })     
