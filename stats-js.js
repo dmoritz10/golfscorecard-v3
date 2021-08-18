@@ -577,7 +577,7 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
           nbrPutts++
         }
       })
-      if (nbrHoles>0) {arr.push(nbrPutts / scoreCardArr.length)}
+      if (nbrHoles>0) {arr.push(nbrPutts )}
      })
     return arr
   }   
