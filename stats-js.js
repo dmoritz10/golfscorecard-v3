@@ -1600,15 +1600,14 @@ function graphTeeToGreen(rounds) {
         tick: {color:'red'}
       },
       {
-        label: 'avg frwy',
+       
         yAxisID: 'yAxisId',
         data: frwyAvgArr,
         borderColor: 'red',
         borderWidth: 1,
         pointRadius: 0,
-        backgroundColor: 'red',
-        type: 'line',
-        tick: {color:'red'}
+        backgroundColor: 'lightred',
+        type: 'line'
       },
       {
         label: 'GIRs',
