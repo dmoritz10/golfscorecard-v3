@@ -976,6 +976,7 @@ console.log('hi dan')
 
   var rtn = {}
 
+  rtn.location = {}
   rtn.location.lat = sxs.lat
   rtn.location.lng = sxs.lng
   rtn.stats = sxs.stats
