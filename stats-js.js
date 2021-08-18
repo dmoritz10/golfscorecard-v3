@@ -1634,30 +1634,30 @@ function graphTeeToGreen(rounds) {
         label: null,
         yAxisID: 'yAxisId',
         data: frwyAvgArr,
-        borderColor: 'red',
+        borderColor: '#ffcce0',
         borderWidth: 1,
         pointRadius: 0,
-        backgroundColor: '#ffcce0',
+        backgroundColor: 'red',
         type: 'line'
       },
       {
         label: null,
         yAxisID: 'yAxisId',
         data: girAvgArr,
-        borderColor: 'blue',
+        borderColor: '#ccf2ff',
         borderWidth: 1,
         pointRadius: 0,
-        backgroundColor: '#ccf2ff',
+        backgroundColor: 'blue',
         type: 'line'
       },
       {
         label: null,
         yAxisID: 'yAxisId',
         data: scrblAvgArr,
-        borderColor: 'green',
+        borderColor: '#ccffcc',
         borderWidth: 1,
         pointRadius: 0,
-        backgroundColor: '#ccffcc',
+        backgroundColor: 'green',
         type: 'line'
       }
       ]
