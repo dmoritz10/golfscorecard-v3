@@ -1502,12 +1502,12 @@ function graphTeeToGreen(rounds) {
     var nbrFairways = 0
 
       scoreCard.forEach((val, idx) => {
-        if (val.par > 3) {
-          nbrNonPar3s++
-          if (val.drive == 'Str8') {
+
+        if (val.drive == 'Str8') {
            nbrFairways++
-          }
+
         }
+
       })     
 
     // return Math.round((nbrFairways / nbrNonPar3s) * 100)
@@ -1572,6 +1572,10 @@ function graphTeeToGreen(rounds) {
 
     }
 
+    var frwyAvgArr = Array(rounds.length).fill(null);
+    frwyAvgArr[0] = 14
+    frwyAvgArr[rounds.length-1] = 14
+
 
   try {
     var parent = document.getElementById('ttgChartContainer');
@@ -1588,6 +1592,17 @@ function graphTeeToGreen(rounds) {
         label: 'Fairways',
         yAxisID: 'yAxisId',
         data: frwyArr,
+        borderColor: 'red',
+        borderWidth: 1,
+        pointRadius: 2,
+        backgroundColor: 'red',
+        type: 'line',
+        tick: {color:'red'}
+      },
+      {
+        label: 'avg frwy',
+        yAxisID: 'yAxisId',
+        data: frwyAvgArr,
         borderColor: 'red',
         borderWidth: 1,
         pointRadius: 2,
