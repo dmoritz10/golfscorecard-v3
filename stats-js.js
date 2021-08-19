@@ -1635,7 +1635,7 @@ function graphTeeToGreen(rounds) {
         yAxisID: 'yAxisId',
         data: frwyAvgArr,
         borderColor: 'red',
-        borderWidth: .5,
+        borderWidth: .2,
         pointRadius: 0,
         backgroundColor: 'red',
         type: 'line'
@@ -1645,7 +1645,7 @@ function graphTeeToGreen(rounds) {
         yAxisID: 'yAxisId',
         data: girAvgArr,
         borderColor: 'blue',
-        borderWidth: 1,
+        borderWidth: .2,
         pointRadius: 0,
         backgroundColor: 'blue',
         type: 'line'
@@ -1655,7 +1655,7 @@ function graphTeeToGreen(rounds) {
         yAxisID: 'yAxisId',
         data: scrblAvgArr,
         borderColor: 'green',
-        borderWidth: 1,
+        borderWidth: .2,
         pointRadius: 0,
         backgroundColor: 'green',
         type: 'line'
