@@ -1391,7 +1391,7 @@ function graphAvgScoreByPar(rounds) {
         data: par3Arr,
         borderColor: 'red',
         backgroundColor: 'red',
-        borderWidth: 1,
+        borderWidth: .4,
         pointRadius: 2,
         type: 'line'
       },
@@ -1401,7 +1401,7 @@ function graphAvgScoreByPar(rounds) {
         data: par4Arr,
         borderColor: 'blue',
         backgroundColor: 'blue',
-        borderWidth: 1,
+        borderWidth: .4,
         pointRadius: 2,
         type: 'line'
       },
@@ -1411,7 +1411,7 @@ function graphAvgScoreByPar(rounds) {
         data: par5Arr,
         borderColor: 'green',
         backgroundColor: 'green',
-        borderWidth: 1,
+        borderWidth: .4,
         pointRadius: 2,
         type: 'line'
       },
