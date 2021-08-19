@@ -1392,7 +1392,7 @@ function graphAvgScoreByPar(rounds) {
         borderColor: 'red',
         backgroundColor: 'red',
         borderWidth: 1,
-        pointRadius: 2,
+        pointRadius: 1,
         type: 'line'
       },
       {
@@ -1402,7 +1402,7 @@ function graphAvgScoreByPar(rounds) {
         borderColor: 'blue',
         backgroundColor: 'blue',
         borderWidth: 1,
-        pointRadius: 2,
+        pointRadius: 1,
         type: 'line'
       },
       {
@@ -1412,7 +1412,7 @@ function graphAvgScoreByPar(rounds) {
         borderColor: 'green',
         backgroundColor: 'green',
         borderWidth: 1,
-        pointRadius: 2,
+        pointRadius: 1,
         type: 'line'
       },
       {
@@ -1599,7 +1599,7 @@ function graphTeeToGreen(rounds) {
         data: frwyArr,
         borderColor: 'red',
         borderWidth: 1,
-        pointRadius: 0,
+        pointRadius: 1,
         backgroundColor: 'red',
         type: 'line',
         tick: {color:'red'}
@@ -1610,7 +1610,7 @@ function graphTeeToGreen(rounds) {
         data: girArr,
         borderColor: 'blue',
         borderWidth: 1,
-        pointRadius: 0,
+        pointRadius: 1,
         backgroundColor: 'blue',
         type: 'line'
       },
@@ -1620,7 +1620,7 @@ function graphTeeToGreen(rounds) {
         data: scrblArr,
         borderColor: 'green',
         borderWidth: 1,
-        pointRadius: 0,
+        pointRadius: 1,
         backgroundColor: 'green',
         type: 'line'
       },
