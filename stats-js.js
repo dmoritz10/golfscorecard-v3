@@ -1599,7 +1599,7 @@ function graphTeeToGreen(rounds) {
         data: frwyArr,
         borderColor: 'red',
         borderWidth: 1,
-        pointRadius: 2,
+        pointRadius: 0,
         backgroundColor: 'red',
         type: 'line',
         tick: {color:'red'}
@@ -1610,7 +1610,7 @@ function graphTeeToGreen(rounds) {
         data: girArr,
         borderColor: 'blue',
         borderWidth: 1,
-        pointRadius: 2,
+        pointRadius: 0,
         backgroundColor: 'blue',
         type: 'line'
       },
@@ -1620,7 +1620,7 @@ function graphTeeToGreen(rounds) {
         data: scrblArr,
         borderColor: 'green',
         borderWidth: 1,
-        pointRadius: 2,
+        pointRadius: 0,
         backgroundColor: 'green',
         type: 'line'
       },
