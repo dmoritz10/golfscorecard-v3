@@ -1429,10 +1429,17 @@ function btnGolfersHtml() {
               const htmlString = golferPrompt[0].innerHTML;
               const doc3 = parser.parseFromString(htmlString, "text/html")
 
-              console.log(doc3)
-              var $doc = $(doc3)
-             
-              console.log($($doc + ' tr'))
+              var $jQueryObject = $($.parseHTML(htmlstring));
+
+              console.log($jQueryObject)
+
+              $jQueryObject.each(function(){      
+               
+                var trObj = $(this).find("tr");
+                console.log(trObj)
+                
+            });
+
 
           }
       }
