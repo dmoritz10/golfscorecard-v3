@@ -1446,6 +1446,7 @@ function getGolfers() {
 </div>`
 
 var y = '<div class="row"><div class="col">'
+var z = '</div>'
 
   var golfers = readOption('Golfers', [])
   
@@ -1453,7 +1454,7 @@ var y = '<div class="row"><div class="col">'
 
   golfers.forEach((val,idx) => {
     arr.push({
-      text: y + val.name + x,
+      text: y + val.name  + z + x,
       value: JSON.stringify(val)
     })
   })
