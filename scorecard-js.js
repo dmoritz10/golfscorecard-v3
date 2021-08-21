@@ -1399,6 +1399,10 @@ function distance(lat1, lon1, lat2, lon2, unit) {
 }
 
 function btnGolfersHtml() {
+
+  // var golfersArr = JSON.parse(JSON.stringify(prScore.golfer))
+  // var golfersNameArr = golfersArr.map(a => a[0])
+  // var golfersVal = 
   
   var inputOptions = getGolfers()
 
@@ -1407,7 +1411,7 @@ function btnGolfersHtml() {
   var golferPrompt = bootbox.prompt({
     
     title: "Select Golfers",
-    value: prScore.golfers ? prScore.golfers.map(a => JSON.stringify(a)) : [],
+    value: prScore.golfers ? prScore.golfers.map(a => JSON.stringify(a) + '<div class="btn-group" data-toggle="buttons">    <label data-value="yes" class="control-label col-sm-3 btn btn-default" for="button_1">         <input id="button_1" name="opinion" required="required" value="yes" type="radio"/>      YES     </label>     <label data-value="no" class="control-label col-sm-3 btn btn-default" for="button_0">         <input id="button_0" name="opinion" required="required" value="no" type="radio"/>         NO     </label>     <label') : [],
     inputType: 'checkbox',
     className: 'golfersCSS',
     closeButton: false,
