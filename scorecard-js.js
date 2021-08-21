@@ -1412,7 +1412,7 @@ function btnGolfersHtml() {
     
     title: "Select Golfers",
     value: prScore.golfers ? prScore.golfers.map(a => JSON.stringify(a)) : [],
-    inputType: 'checkbox',
+    // inputType: 'checkbox',
     className: 'golfersCSS',
     closeButton: false,
     size: 'extra-large',
@@ -1445,13 +1445,15 @@ function getGolfers() {
   </label>
 </div>`
 
+var y = '<div class="row">'
+
   var golfers = readOption('Golfers', [])
   
   var arr = []
 
   golfers.forEach((val,idx) => {
     arr.push({
-      text: val.name + x,
+      text: y + val.name + x + '>',
       value: JSON.stringify(val)
     })
   })
