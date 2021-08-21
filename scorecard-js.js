@@ -1423,11 +1423,13 @@ function btnGolfersHtml() {
           label: "ok",
           className: 'btn-primary',
           callback: function(result){
-              console.log(golferPrompt[0].textContent );
+              console.log(golferPrompt[0].innerHTML );
               const parser = new DOMParser();
 
               var htmlString = golferPrompt[0].innerHTML;
               const doc3 = parser.parseFromString(htmlString, "text/html")
+
+              console.log(doc3)
 
               var $jQueryObject = $($.parseHTML(golferPrompt[0].innerHTML));
 
