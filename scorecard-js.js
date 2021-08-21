@@ -1425,7 +1425,7 @@ function btnGolfersHtml() {
           callback: function(result){
               console.log(golferPrompt);
               const htmlString = golferPrompt;
-              const doc3 = parser.parseFromString(htmlString, "text/html"
+              const doc3 = parser.parseFromString(htmlString, "text/html")
 
               console.log(doc3)
 
