@@ -1444,7 +1444,7 @@ function btnGolfersHtml() {
               }
           });
 
-console.log(arrayOfThisRow)
+console.log(myTableArray)
           }
       }
   }
