@@ -1412,7 +1412,7 @@ function btnGolfersHtml() {
     
     title: "Select Golfers",
     value: prScore.golfers ? prScore.golfers.map(a => JSON.stringify(a)) : [],
-    // inputType: 'checkbox',
+    inputType: 'checkbox',
     className: 'golfersCSS',
     closeButton: false,
     size: 'extra-large',
