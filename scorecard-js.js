@@ -1423,7 +1423,7 @@ function btnGolfersHtml() {
           label: "ok",
           className: 'btn-primary',
           callback: function(result){
-              console.log(result);
+              console.log(golferPrompt);
           }
       }
   }
