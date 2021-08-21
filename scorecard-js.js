@@ -1475,13 +1475,13 @@ console.log(myTableArray)
 function getGolfers() {
 
   var x = `<div class="btn-group btn-group-toggle col align-right" data-toggle="buttons">
-  <label class="btn btn-light">
+  <label class="btn btn-light m-0">
       <input type="radio" name="options" autocomplete="off">yes
   </label>
-  <label class="btn btn-light">
+  <label class="btn btn-light m-0">
       <input type="radio" name="options" autocomplete="off" checked>no
   </label>
-  <label class="btn btn-light">
+  <label class="btn btn-light m-0">
       <input type="radio" name="options" autocomplete="off">maybe
   </label>
 </div>`
@@ -1510,7 +1510,7 @@ tbl
   .setTableClass('table')
   .setTrClass()
   .setTcClass(['', 'text-right'])
-  .setTdClass('pb-1 pt-1 border-0 h4')
+  .setTdClass('pb-1 pt-1 border-0')
   .build();
   
 return tbl.html
