@@ -1415,16 +1415,13 @@ function btnGolfersHtml() {
     message: inputOptions,
     buttons: {
       cancel: {
-          label: "I'm a cancel button!",
-          className: 'btn-danger',
-          callback: function(){
-              console.log('Custom cancel clicked');
-          }
+          label: "cancel",
+          className: 'btn-light'
       },
 
       ok: {
-          label: "I'm an OK button!",
-          className: 'btn-info',
+          label: "ok",
+          className: 'btn-primary',
           callback: function(result){
               console.log(result);
           }
