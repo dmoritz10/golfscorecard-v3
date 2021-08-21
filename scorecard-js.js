@@ -1430,13 +1430,28 @@ function btnGolfersHtml() {
 
 function getGolfers() {
 
+  var x = `<div class="btn-group" data-toggle="buttons">
+  <label data-value="yes" class="control-label col-sm-3 btn btn-default" for="button_1">
+      <input id="button_1" name="opinion" required="required" value="yes" type="radio"/>
+      YES
+  </label>
+  <label data-value="no" class="control-label col-sm-3 btn btn-default" for="button_0">
+      <input id="button_0" name="opinion" required="required" value="no" type="radio"/>
+      NO
+  </label>
+  <label data-value="no_idea" class="control-label col-sm-3 btn btn-default" for="button_void">
+      <input id="button_0" name="opinion" required="required" value="no_idea" type="radio" />
+      No Idea
+  </label>
+</div>`
+
   var golfers = readOption('Golfers', [])
   
   var arr = []
 
   golfers.forEach((val,idx) => {
     arr.push({
-      text: val.name + '<h4>html</h4>',
+      text: val.name + x,
       value: JSON.stringify(val)
     })
   })
