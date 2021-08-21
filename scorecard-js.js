@@ -1411,7 +1411,7 @@ function btnGolfersHtml() {
   var golferPrompt = bootbox.dialog({
     
     title: "Select Golfers",
-    size: 'large',
+    // size: 'large',
     message: inputOptions,
     buttons: {
       cancel: {
