@@ -1424,6 +1424,8 @@ function btnGolfersHtml() {
           className: 'btn-primary',
           callback: function(result){
               console.log(golferPrompt);
+              const parser = new DOMParser();
+
               const htmlString = golferPrompt;
               const doc3 = parser.parseFromString(htmlString, "text/html")
 
