@@ -1423,10 +1423,10 @@ function btnGolfersHtml() {
           label: "ok",
           className: 'btn-primary',
           callback: function(result){
-              console.log(golferPrompt);
+              console.log(golferPrompt[0].innerHTML);
               const parser = new DOMParser();
 
-              const htmlString = golferPrompt;
+              const htmlString = golferPrompt[0].innerHTML;
               const doc3 = parser.parseFromString(htmlString, "text/html")
 
               console.log(doc3)
