@@ -1439,7 +1439,7 @@ function getGolfers() {
       <input id="button_0" name="opinion" required="required" value="no" type="radio"/>
       NO
   </label>
-  <label data-value="no_idea" class="control-label  btn btn-default" for="button_void">
+  <label data-value="maybe" class="control-label  btn btn-default" for="button_void">
       <input id="button_0" name="opinion" required="required" value="maybe" type="radio" />
       Maybe
   </label>
