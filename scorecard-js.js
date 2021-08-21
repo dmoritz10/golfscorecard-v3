@@ -1408,17 +1408,31 @@ function btnGolfersHtml() {
 
   if (inputOptions.length == 0) return
   
-  var golferPrompt = bootbox.prompt({
+  var golferPrompt = bootbox.dialog({
     
     title: "Select Golfers",
-    value: prScore.golfers ? prScore.golfers.map(a => JSON.stringify(a)) : [],
-    inputType: 'checkbox',
-    className: 'golfersCSS',
-    closeButton: false,
     size: 'extra-large',
-    inputOptions: inputOptions,
-    callback: function (result) { prScore.golfers = result ? result.map(a => JSON.parse(a)) : []  }
-    
+    message: inputOptions,
+    buttons: {
+      cancel: {
+          label: "I'm a cancel button!",
+          className: 'btn-danger',
+          callback: function(){
+              console.log('Custom cancel clicked');
+          }
+      },
+
+      ok: {
+          label: "I'm an OK button!",
+          className: 'btn-info',
+          callback: function(result){
+              console.log(result);
+          }
+      }
+  }
+    // callback: function (result) { console.log(result)  }
+    // callback: function (result) { prScore.golfers = result ? result.map(a => JSON.parse(a)) : []  }
+   
   });
 
 
@@ -1450,22 +1464,28 @@ var z = '</div>'
   var arr = []
 
   golfers.forEach((val,idx) => {
-    arr.push({
-      text: y + val.name  + z + x,
-      value: JSON.stringify(val)
-    })
+    arr.push([
+      val.name,
+      x
+    ])
   })
   
-/*
-    arr.push({
-      text: 'Other',
-      value: 'Other'
-    })
-*/  
-  return arr
+
+var tbl = new Table();
+  
+tbl
+  .setHeader()
+  .setTableHeaderClass()
+  .setData(arr)
+  .setTableClass('table')
+  .setTrClass()
+  .setTcClass(['', 'text-right'])
+  .setTdClass('pb-1 pt-1 border-0 h4')
+  .build();
+  
+return tbl.html
 
 }
-
 
 async function courseSummary(rounds) {
 
