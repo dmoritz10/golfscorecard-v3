@@ -1441,7 +1441,9 @@ function btnGolfersHtml() {
               var arrayOfThisRow = [];
               var tableData = $(this).find('td');
               if (tableData.length > 0) {
-                  tableData.each(function() { arrayOfThisRow.push($(this).text()); });
+                  tableData.each(function() { 
+                    arrayOfThisRow.push($(this).text()); 
+                  });
                   myTableArray.push(arrayOfThisRow);
               }
           });
