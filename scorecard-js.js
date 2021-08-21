@@ -1474,14 +1474,14 @@ console.log(myTableArray)
 
 function getGolfers() {
 
-  var x = `<div class="btn-group btn-group-toggle col align-right" data-toggle="buttons">
-  <label class="btn btn-light m-0">
+  var x = `<div class="btn-group btn-group-toggle col p-0 m-0" data-toggle="buttons">
+  <label class="btn btn-light m-0 p-0">
       <input type="radio" name="options" autocomplete="off">yes
   </label>
-  <label class="btn btn-light m-0">
+  <label class="btn btn-light m-0 p-0">
       <input type="radio" name="options" autocomplete="off" checked>no
   </label>
-  <label class="btn btn-light m-0">
+  <label class="btn btn-light m-0 p-0">
       <input type="radio" name="options" autocomplete="off">maybe
   </label>
 </div>`
