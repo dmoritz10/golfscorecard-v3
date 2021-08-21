@@ -1432,7 +1432,7 @@ function btnGolfersHtml() {
               console.log(doc3)
               var $doc = $(doc3)
              
-              console.log($($doc ' tr'))
+              console.log($($doc + ' tr'))
 
           }
       }
