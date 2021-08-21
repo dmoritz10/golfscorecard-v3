@@ -1446,7 +1446,7 @@ function btnGolfersHtml() {
                     var labelData = $(this).find('label')
                     labelData.each(function(){
 
-                      console.log($this).text()
+                      console.log($(this).text())
 
 
                     })
