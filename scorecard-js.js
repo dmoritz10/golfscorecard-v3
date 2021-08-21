@@ -1446,6 +1446,7 @@ function btnGolfersHtml() {
                     var labelData = $(this).find('label')
                     labelData.each(function(){
                       if ($(this).hasClass("active")) {
+                      console.log($(this).parent().parent().parent().first())
                       console.log($(this).parent().parent().parent().first().text())
                       console.log($(this).text())
                     }
