@@ -1435,7 +1435,7 @@ function btnGolfersHtml() {
 
               $jQueryObject.each(function(){      
                
-                var trObj = $(this).find("tr");
+                var trObj = $(this).find("tr td");
                 console.log(trObj)
                 
             });
