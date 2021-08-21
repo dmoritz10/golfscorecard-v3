@@ -1445,9 +1445,9 @@ function btnGolfersHtml() {
                     arrayOfThisRow.push($(this).text()); 
                     var labelData = $(this).find('label')
                     labelData.each(function(){
-
+                      if ($(this).hasClass("active")) {
                       console.log($(this).text())
-
+                    }
 
                     })
                   });
