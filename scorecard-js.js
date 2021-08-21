@@ -1424,6 +1424,11 @@ function btnGolfersHtml() {
           className: 'btn-primary',
           callback: function(result){
               console.log(golferPrompt);
+              const htmlString = golferPrompt;
+              const doc3 = parser.parseFromString(htmlString, "text/html"
+
+              console.log(doc3)
+
           }
       }
   }
