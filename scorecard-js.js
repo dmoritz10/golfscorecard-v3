@@ -1426,7 +1426,7 @@ function btnGolfersHtml() {
               console.log(golferPrompt[0].innerHTML);
               const parser = new DOMParser();
 
-              const htmlString = golferPrompt[0].innerHTML;
+              var htmlString = golferPrompt[0].innerHTML;
               const doc3 = parser.parseFromString(htmlString, "text/html")
 
               var $jQueryObject = $($.parseHTML(htmlstring));
