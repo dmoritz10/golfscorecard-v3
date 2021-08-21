@@ -1441,7 +1441,7 @@ function getGolfers() {
   </label>
   <label data-value="no_idea" class="control-label col btn btn-default" for="button_void">
       <input id="button_0" name="opinion" required="required" value="maybe" type="radio" />
-      No Idea
+      Maybe
   </label>
 </div>`
 
