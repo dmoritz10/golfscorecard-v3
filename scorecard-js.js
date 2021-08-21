@@ -1430,6 +1430,9 @@ function btnGolfersHtml() {
               const doc3 = parser.parseFromString(htmlString, "text/html")
 
               console.log(doc3)
+              var $doc = $(doc3)
+             
+              console.log($($doc ' tr'))
 
           }
       }
