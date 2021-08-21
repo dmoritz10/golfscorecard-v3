@@ -1430,8 +1430,8 @@ function btnGolfersHtml() {
 
 function getGolfers() {
 
-  var x = `<div class="btn-group col"  role="group" data-toggle="buttons">
-  <label data-value="yes" class="control-label  btn btn-default" for="button_1">
+  var x = `<div class="btn-group col" data-toggle="buttons">
+  <label data-value="yes" class=" btn btn-default" for="button_1">
       <input id="button_1" name="opinion" required="required" value="yes" type="radio"/>
       YES
   </label>
