@@ -1423,7 +1423,7 @@ function btnGolfersHtml() {
           label: "ok",
           className: 'btn-primary',
           callback: function(result){
-              console.log(golferPrompt[0].innerHTML);
+              console.log(golferPrompt[0].textContent );
               const parser = new DOMParser();
 
               var htmlString = golferPrompt[0].innerHTML;
@@ -1433,14 +1433,17 @@ function btnGolfersHtml() {
 
               console.log($jQueryObject)
 
-              $jQueryObject.each(function(){      
-               
-                var trObj = $(this).find("tr td");
-                console.log(trObj)
-                
-            });
 
+            $jQueryObject.each(function(){ 
+              var arrayOfThisRow = [];
+              var tableData = $(this).find('td');
+              if (tableData.length > 0) {
+                  tableData.each(function() { arrayOfThisRow.push($(this).text()); });
+                  myTableArray.push(arrayOfThisRow);
+              }
+          });
 
+console.log(arrayOfThisRow)
           }
       }
   }
