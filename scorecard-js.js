@@ -1433,6 +1433,7 @@ function btnGolfersHtml() {
 
               console.log($jQueryObject)
 
+              var myTableArray = [];
 
             $jQueryObject.each(function(){ 
               var arrayOfThisRow = [];
