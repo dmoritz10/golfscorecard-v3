@@ -1430,15 +1430,15 @@ function btnGolfersHtml() {
 
 function getGolfers() {
 
-  var x = `<div class="btn-group btn-group-toggle" data-toggle="buttons">
-  <label class="btn btn-primary">
-      <input type="radio" name="options" autocomplete="off"> Option A
+  var x = `<div class="btn-group btn-group-toggle col align-right" data-toggle="buttons">
+  <label class="btn btn-outline">
+      <input type="radio" name="options" autocomplete="off">yes
   </label>
-  <label class="btn btn-primary active">
-      <input type="radio" name="options" autocomplete="off" checked> Option B
+  <label class="btn btn-outline active">
+      <input type="radio" name="options" autocomplete="off" checked>no
   </label>
-  <label class="btn btn-primary">
-      <input type="radio" name="options" autocomplete="off"> Option C
+  <label class="btn btn-outline">
+      <input type="radio" name="options" autocomplete="off">maybe
   </label>
 </div>`
 
