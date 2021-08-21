@@ -1443,6 +1443,13 @@ function btnGolfersHtml() {
               if (tableData.length > 0) {
                   tableData.each(function() { 
                     arrayOfThisRow.push($(this).text()); 
+                    var labelData = $(this).find('label')
+                    labelData.each(function(){
+
+                      console.log($this).text()
+
+
+                    })
                   });
                   myTableArray.push(arrayOfThisRow);
               }
