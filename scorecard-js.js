@@ -1453,7 +1453,7 @@ var y = '<div class="row">'
 
   golfers.forEach((val,idx) => {
     arr.push({
-      text: y + val.name + x + '>',
+      text: y + val.name + x,
       value: JSON.stringify(val)
     })
   })
