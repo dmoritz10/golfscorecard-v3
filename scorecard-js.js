@@ -1442,7 +1442,7 @@ function getGolfers() {
   </label>
 </div>`
 
-var y = '<div class="row"><div class="col-4">'
+var y = '<div class="row"><div class="col-6">'
 var z = '</div>'
 
   var golfers = readOption('Golfers', [])
