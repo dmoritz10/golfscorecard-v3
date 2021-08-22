@@ -1404,6 +1404,7 @@ function btnGolfersHtml() {
   var inputOptions = getGolfers()
 
   console.log(inputOptions)
+  console.log(prScore.golfers.map(a => JSON.stringify(a)))
 
   if (inputOptions.length == 0) return
   
