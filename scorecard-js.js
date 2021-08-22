@@ -1437,27 +1437,41 @@ function btnGolfersHtml() {
 
               var myTableArray = [];
 
-            $jQueryObject.each(function(){ 
-              var arrayOfThisRow = [];
-              var tableData = $(this).find('td');
-              if (tableData.length > 0) {
-                  tableData.each(function() { 
-                    arrayOfThisRow.push($(this).text()); 
-                    var labelData = $(this).find('label')
-                    labelData.each(function(){
-                      if ($(this).hasClass("active")) {
-                      console.log($(this).parent().parent().parent().first().first())
-                      console.log($(this).parent().parent().parent().first().first().text())
-                      console.log($(this).text())
-                    }
+          //   $jQueryObject.each(function(){ 
+          //     var arrayOfThisRow = [];
+          //     var tableData = $(this).find('td');
+          //     if (tableData.length > 0) {
+          //         tableData.each(function() { 
+          //           arrayOfThisRow.push($(this).text()); 
+          //           var labelData = $(this).find('label')
+          //           labelData.each(function(){
+          //             if ($(this).hasClass("active")) {
+          //             console.log($(this).parent().parent().parent().first())
+          //             console.log($(this).parent().parent().parent().first().text())
+          //             console.log($(this).text())
+          //           }
 
-                    })
-                  });
-                  myTableArray.push(arrayOfThisRow);
-              }
-          });
+          //           })
+          //         });
+          //         myTableArray.push(arrayOfThisRow);
+          //     }
+          // });
+
+          $jQueryObject.each(function(){ 
+          var labelData = $(this).find('label')
+          labelData.each(function(){
+            if ($(this).hasClass("active")) {
+            console.log($(this).parent().parent().parent().first().first())
+            console.log($(this).parent().parent().parent().first().first().text())
+            console.log($(this).text())
+          }
+
+          })
+        });
+
 
 console.log(myTableArray)
+
           }
       }
   }
