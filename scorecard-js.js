@@ -1404,7 +1404,7 @@ function btnGolfersHtml() {
   var inputOptions = getGolfers()
   console.log('inputOptions')
   console.log(inputOptions)
-  console.log(prScore.golfers.map(a => a)
+  console.log(prScore.golfers.map(a => a))
 
   if (inputOptions.length == 0) return
   
