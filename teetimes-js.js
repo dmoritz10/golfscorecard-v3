@@ -499,3 +499,111 @@ function calcCourseKey(courseName) {
   wrkArr.sort()
   return wrkArr.join(' ')
 }
+function btnGolfersHtml() {
+
+  // var golfersArr = JSON.parse(JSON.stringify(prScore.golfer))
+  // var golfersNameArr = golfersArr.map(a => a[0])
+  // var golfersVal = 
+  
+  var inputOptions = getGolfers()
+
+  if (inputOptions.length == 0) return
+  
+  var golferPrompt = bootbox.dialog({
+    
+    title: "Select Golfers",
+    // size: 'large',
+    message: inputOptions,
+    buttons: {
+      cancel: {
+          label: "cancel",
+          className: 'btn-light'
+      },
+
+      ok: {
+        label: "ok",
+        className: 'btn-primary',
+        callback: function(result){
+
+          var response = $($.parseHTML(golferPrompt[0].innerHTML));
+          
+          glfrSelect(response)
+
+        }
+      }
+
+    }
+    
+  });
+
+  golferPrompt.init(function(){
+  
+  });
+
+}
+
+function glfrSelect(response){
+
+  var selected = []
+
+  response.each(function(){ 
+    var labelData = $(this).find('label')
+    labelData.each(function(){
+    if ($(this).hasClass("active")) {
+
+      var glfr = $(this).parent().parent().parent().first().text().split('\n')[0]
+      var state = $(this).text().replace(/\n/g,'').replace(/ /g,'')
+
+      selected.push([glfr, state])
+
+    }
+
+    })
+  });
+
+  console.log(selected)
+
+}
+
+function getGolfers() {
+
+  var x = `<div class="btn-group btn-group-toggle col p-0 m-0" data-toggle="buttons">
+  <label class="btn btn-light m-0 p-0 ${yes}">
+      <input type="radio">yes
+  </label>
+  <label class="btn btn-light m-0 p-0 ${no}">
+      <input type="radio">no
+  </label>
+  <label class="btn btn-light m-0 p-0 ${maybe}">
+      <input type="radio">maybe
+  </label>
+</div>`
+
+
+  var golfers = readOption('Golfers', [])
+  
+  var arr = []
+
+  golfers.forEach((val,idx) => {
+    arr.push([
+      val.name,
+      x
+    ])
+  })
+  
+
+var tbl = new Table();
+  
+tbl
+  .setHeader()
+  .setTableHeaderClass()
+  .setData(arr)
+  .setTableClass('table')
+  .setTrClass()
+  .setTcClass(['', 'text-right'])
+  .setTdClass('pb-1 pt-1 border-0')
+  .build();
+  
+return tbl.html
+
+}
