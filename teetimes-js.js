@@ -505,7 +505,7 @@ function btnGolfersHtml() {
   // var golfersNameArr = golfersArr.map(a => a[0])
   // var golfersVal = 
   
-  var inputOptions = getGolfers()
+  var inputOptions = getTTGolfers()
 
   if (inputOptions.length == 0) return
   
@@ -565,7 +565,7 @@ function glfrSelect(response){
 
 }
 
-function getGolfers() {
+function getTTGolfers() {
 
   var x = `<div class="btn-group btn-group-toggle col p-0 m-0" data-toggle="buttons">
   <label class="btn btn-light m-0 p-0 ${yes}">
