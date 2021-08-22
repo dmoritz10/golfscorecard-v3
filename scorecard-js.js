@@ -1428,6 +1428,8 @@ function btnGolfersHtml() {
             
           var response = $($.parseHTML(golferPrompt[0].innerHTML));
 
+          callback(response)
+
           var selected = []
 
           response.each(function(){ 
@@ -1463,6 +1465,16 @@ function btnGolfersHtml() {
   golferPrompt.init(function(){
   
   });
+
+}
+
+function callback(this){
+
+console.log('hi dan')
+
+console.log(this)
+
+
 
 }
 
