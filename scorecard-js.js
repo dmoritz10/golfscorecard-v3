@@ -1411,7 +1411,7 @@ function btnGolfersHtml() {
   var golferPrompt = bootbox.prompt({
     
     title: "Select Golfers",
-    value: prScore.golfers ? prScore.golfers.map(a => a.name) : [],
+    value: prScore.golfers ? prScore.golfers.map(a => ' ' + a.name) : [],
     inputType: 'checkbox',
     className: 'golfersCSS',
     closeButton: false,
