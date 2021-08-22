@@ -1428,7 +1428,7 @@ function btnGolfersHtml() {
             
           var response = $($.parseHTML(golferPrompt[0].innerHTML));
 
-          callback(response)
+          testcb(response)
 
           var selected = []
 
@@ -1469,11 +1469,11 @@ function btnGolfersHtml() {
 
 }
 
-function callback(this){
+function testcb(x){
 
 console.log('hi dan')
 
-console.log(this)
+console.log(x)
 
 
 
