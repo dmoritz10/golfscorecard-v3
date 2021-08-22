@@ -1426,7 +1426,7 @@ function btnGolfersHtml() {
 
           var response = $($.parseHTML(golferPrompt[0].innerHTML));
           
-          glfrSelecet(response)
+          glfrSelect(response)
 
         }
     }
@@ -1445,7 +1445,7 @@ function btnGolfersHtml() {
 
 }
 
-function glfrSelecet(response){
+function glfrSelect(response){
 
   var selected = []
 
@@ -1471,19 +1471,17 @@ function glfrSelecet(response){
 function getGolfers() {
 
   var x = `<div class="btn-group btn-group-toggle col p-0 m-0" data-toggle="buttons">
-  <label class="btn btn-light m-0 p-0">
-      <input type="radio" name="options" autocomplete="off">yes
+  <label class="btn btn-light m-0 p-0 ${yes}">
+      <input type="radio">yes
   </label>
-  <label class="btn btn-light m-0 p-0">
-      <input type="radio" name="options" autocomplete="off" checked>no
+  <label class="btn btn-light m-0 p-0 ${no}">
+      <input type="radio">no
   </label>
-  <label class="btn btn-light m-0 p-0">
-      <input type="radio" name="options" autocomplete="off">maybe
+  <label class="btn btn-light m-0 p-0 ${maybe}">
+      <input type="radio">maybe
   </label>
 </div>`
 
-var y = '<div class="row"><div class="col-6">'
-var z = '</div>'
 
   var golfers = readOption('Golfers', [])
   
