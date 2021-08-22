@@ -1437,12 +1437,13 @@ function btnGolfersHtml() {
             labelData.each(function(){
             if ($(this).hasClass("active")) {
 
-              var glfr = $(this).parent().parent().parent().first().text() 
+              var glfr = $(this).parent().parent().parent().first().text().split('\n')[0]
+              var state = $(this).text().replace(/\n/g,'').replace(/ /g,'')
               console.log(glfr)
-              console.log(glfr.split('\n')[0])
-              console.log($(this).text())
+              console.log(state)
+             
 
-              selected.push([glfr.split('\n')[0], $(this).text()])
+              selected.push([glfr, state])
         
             }
 
