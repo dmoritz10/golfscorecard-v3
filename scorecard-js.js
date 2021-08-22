@@ -1424,34 +1424,9 @@ function btnGolfersHtml() {
         className: 'btn-primary',
         callback: function(result){
 
-          console.log(result)
-            
           var response = $($.parseHTML(golferPrompt[0].innerHTML));
           
-console.log(response)
-          testcb(response)
-
-          var selected = []
-
-          response.each(function(){ 
-            var labelData = $(this).find('label')
-            labelData.each(function(){
-            if ($(this).hasClass("active")) {
-
-              var glfr = $(this).parent().parent().parent().first().text().split('\n')[0]
-              var state = $(this).text().replace(/\n/g,'').replace(/ /g,'')
-              console.log(glfr)
-              console.log(state)
-             
-
-              selected.push([glfr, state])
-        
-            }
-
-            })
-          });
-
-          console.log(selected)
+          glfrSelecet(response)
 
         }
     }
@@ -1470,13 +1445,29 @@ console.log(response)
 
 }
 
-function testcb(x){
+function glfrSelecet(response){
 
-console.log('hi dan')
+  var selected = []
 
-console.log(x)
+  response.each(function(){ 
+    var labelData = $(this).find('label')
+    labelData.each(function(){
+    if ($(this).hasClass("active")) {
 
+      var glfr = $(this).parent().parent().parent().first().text().split('\n')[0]
+      var state = $(this).text().replace(/\n/g,'').replace(/ /g,'')
+      console.log(glfr)
+      console.log(state)
+     
 
+      selected.push([glfr, state])
+
+    }
+
+    })
+  });
+
+  console.log(selected)
 
 }
 
