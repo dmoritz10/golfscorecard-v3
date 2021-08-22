@@ -1464,6 +1464,7 @@ function btnGolfersHtml() {
             console.log($(this).parent().parent().parent().first().first())
             console.log($(this).parent().parent().parent().first().first().text())
             console.log($(this).text())
+            console.log($(this).text().split('\n')[0])
           }
 
           })
