@@ -1403,6 +1403,8 @@ function btnGolfersHtml() {
   
   var inputOptions = getGolfers()
 
+  console.log(inputOptions)
+
   if (inputOptions.length == 0) return
   
   var golferPrompt = bootbox.prompt({
