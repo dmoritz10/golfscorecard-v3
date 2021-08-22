@@ -1427,7 +1427,8 @@ function btnGolfersHtml() {
           console.log(result)
             
           var response = $($.parseHTML(golferPrompt[0].innerHTML));
-
+          
+console.log(response)
           testcb(response)
 
           var selected = []
