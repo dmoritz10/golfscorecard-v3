@@ -499,7 +499,9 @@ function calcCourseKey(courseName) {
   wrkArr.sort()
   return wrkArr.join(' ')
 }
-function btnGolfersHtml() {
+
+
+function btnTTGolfersHtml() {
 
   // var golfersArr = JSON.parse(JSON.stringify(prScore.golfer))
   // var golfersNameArr = golfersArr.map(a => a[0])
