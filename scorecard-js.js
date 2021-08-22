@@ -1411,6 +1411,7 @@ function btnGolfersHtml() {
   var golferPrompt = bootbox.dialog({
     
     title: "Select Golfers",
+    // size: 'large',
     message: inputOptions,
     buttons: {
       cancel: {
@@ -1422,34 +1423,38 @@ function btnGolfersHtml() {
           label: "ok",
           className: 'btn-primary',
           callback: function(result){
-
-            console.log(result)
               
-            var response = $($.parseHTML(golferPrompt[0].innerHTML));
+              var response = $($.parseHTML(golferPrompt[0].innerHTML));
 
-            var selected = []
+              var selected = []
 
-            response.each(function(){ 
-              var labelData = $(this).find('label')
-              labelData.each(function(){
-              if ($(this).hasClass("active")) {
+              response.each(function(){ 
+                var labelData = $(this).find('label')
+                labelData.each(function(){
+                if ($(this).hasClass("active")) {
 
-                var glfr = $(this).parent().parent().parent().first().text() 
+                  var glfr = $(this).parent().parent().parent().first().text() 
+                  
+            
+              console.log(glfr.split('\n')[0])
+              console.log($(this).text())
 
-                selected.push([glfr.split('\n')[0], $(this).text()])
-          
-              }
+          }
 
-              })
-            });
+          })
+        });
 
-            console.log(selected)
+
+console.log(myTableArray)
 
           }
       }
-    }
+  }
+    // callback: function (result) { console.log(result)  }
+    // callback: function (result) { prScore.golfers = result ? result.map(a => JSON.parse(a)) : []  }
    
   });
+
 
   golferPrompt.init(function(){
   
