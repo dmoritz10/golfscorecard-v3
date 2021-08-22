@@ -1428,6 +1428,8 @@ function btnGolfersHtml() {
 function getGolfers() {
 
   var golfers = readOption('Golfers', [])
+
+  console.log(golfers)
   
   var arr = []
 
