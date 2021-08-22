@@ -1456,9 +1456,6 @@ function glfrSelecet(response){
 
       var glfr = $(this).parent().parent().parent().first().text().split('\n')[0]
       var state = $(this).text().replace(/\n/g,'').replace(/ /g,'')
-      console.log(glfr)
-      console.log(state)
-     
 
       selected.push([glfr, state])
 
