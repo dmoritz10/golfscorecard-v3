@@ -1436,7 +1436,7 @@ function btnGolfersHtml() {
 
                 var glfr = $(this).parent().parent().parent().first().text() 
 
-                selected.push(glfr.split('\n')[0], $(this).text())
+                selected.push([glfr.split('\n')[0], $(this).text()])
           
               }
 
