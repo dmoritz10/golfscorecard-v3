@@ -1402,16 +1402,16 @@ function distance(lat1, lon1, lat2, lon2, unit) {
 function btnGolfersHtml() {
   
   var inputOptions = getGolfers()
-
+  console.log('inputOptions')
   console.log(inputOptions)
-  console.log(prScore.golfers.map(a => JSON.parse(a)))
+  console.log(prScore.golfers.map(a => a)
 
   if (inputOptions.length == 0) return
   
   var golferPrompt = bootbox.prompt({
     
     title: "Select Golfers",
-    value: prScore.golfers ? prScore.golfers.map(a => JSON.parse(a)) : [],
+    value: prScore.golfers ? prScore.golfers.map(a => a) : [],
     inputType: 'checkbox',
     className: 'golfersCSS',
     closeButton: false,
