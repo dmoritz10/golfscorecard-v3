@@ -91,7 +91,7 @@ function btnTeetimesHtml () {
       var x = JSON.stringify(objVal)      
       
       ele.find('#ttEditTeetime')[0].setAttribute("onclick", "editTeetime(" + x + ")");
-      ele.find('#btnTTGolfer')[0].setAttribute("onclick", "editCourse(" + x + ")");
+      ele.find('#btnTTGolfer')[0].setAttribute("onclick", "editGolfers(" + idx + ")");
       
       ele.show()
       
@@ -501,7 +501,7 @@ function calcCourseKey(courseName) {
 }
 
 
-function btnTTGolfersHtml() {
+function editGolfers(idx) {
 
   // var golfersArr = JSON.parse(JSON.stringify(prScore.golfer))
   // var golfersNameArr = golfersArr.map(a => a[0])
@@ -529,7 +529,7 @@ function btnTTGolfersHtml() {
 
           var response = $($.parseHTML(golferPrompt[0].innerHTML));
           
-          glfrSelect(response)
+          updateGolfers(response)
 
         }
       }
@@ -544,7 +544,7 @@ function btnTTGolfersHtml() {
 
 }
 
-function glfrSelect(response){
+function updateGolfers(response){
 
   var selected = []
 
