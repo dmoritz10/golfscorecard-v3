@@ -91,7 +91,7 @@ function btnTeetimesHtml () {
       var x = JSON.stringify(objVal)      
       
       ele.find('#ttEditTeetime')[0].setAttribute("onclick", "editTeetime(" + x + ")");
-      ele.find('#btnTTGolfer')[0].setAttribute("onclick", "editGolfers(" + idx + ")");
+      ele.find('#btnTTGolfer')[0].setAttribute("onclick", "editGolfers(" + j + ")");
       
       ele.show()
       
