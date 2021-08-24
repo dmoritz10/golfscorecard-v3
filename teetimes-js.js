@@ -570,13 +570,13 @@ function updateGolfers(response){
 function getTTGolfers() {
 
   var x = `<div class="btn-group btn-group-toggle col p-0 m-0" data-toggle="buttons">
-  <label class="btn btn-light m-0 p-0 ${yes}">
+  <label class="btn btn-light m-0 p-0">
       <input type="radio">yes
   </label>
-  <label class="btn btn-light m-0 p-0 ${no}">
+  <label class="btn btn-light m-0 p-0">
       <input type="radio">no
   </label>
-  <label class="btn btn-light m-0 p-0 ${maybe}">
+  <label class="btn btn-light m-0 p-0">
       <input type="radio">maybe
   </label>
 </div>`
