@@ -547,7 +547,7 @@ async function editGolfers(idx) {
       ok: {
         label: "ok",
         className: 'btn-primary',
-        callback: function(result){
+        callback: async function(result){
 
           var response = $($.parseHTML(golferPrompt[0].innerHTML));
           
