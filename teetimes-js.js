@@ -116,9 +116,9 @@ function getGolferCells(gflrArr) {
 
 
     console.log(val.name)
-    console.log(gflrArr.name)
+    console.log(golfers.name)
 
-    var glfr = golfers.find( val => val.name === gflrArr.name); 
+    var glfr = golfers.find( val => val.name === golfers.name); 
 
 console.log(glfr)
 
