@@ -111,7 +111,7 @@ function getGolferCells(gflrArr) {
 
   gflrArr.forEach( glfrIn => {
 
-    if (val.state == "maybe" || val.state == 'yes') {
+    if (glfrIn.state == "maybe" || glfrIn.state == 'yes') {
     
       var glfr = golfers.find( val => val.name === glfrIn.name); 
 
