@@ -628,6 +628,8 @@ function getTTGolfers(idx) {
 
     var state = glfr ? glfr.state : false
 
+console.log(state)
+
     switch (state) {
 
         case "yes":
