@@ -529,7 +529,7 @@ async function editGolfers(idx) {
   // var golfersNameArr = golfersArr.map(a => a[0])
   // var golfersVal = 
   
-  var inputOptions = getTTGolfers()
+  var inputOptions = getTTGolfers(idx)
 
   if (inputOptions.length == 0) return
   
@@ -589,13 +589,7 @@ async function updateGolfers(response, idx){
 
   var arrTeetimes = readOption('teetimes', [])
 
-  console.log(arrTeetimes)
-  console.log(idx)
-  console.log(arrTeetimes[idx])
-  console.log(arrTeetimes[idx].golfers)
-
   arrTeetimes[idx].golfers = selected
-  console.log(arrTeetimes)
 
   arrOptions['teetimes'] = JSON.stringify(arrTeetimes)
 
@@ -603,7 +597,7 @@ async function updateGolfers(response, idx){
 
 }
 
-function getTTGolfers() {
+function getTTGolfers(idx) {
 
   var x = `<div class="btn-group btn-group-toggle col p-0 m-0" data-toggle="buttons">
   <label class="btn btn-light m-0 p-0 |yesState|">
@@ -619,12 +613,16 @@ function getTTGolfers() {
 
 
   var golfers = readOption('Golfers', [])
+  var arrTeetimes = readOption('teetimes', [])
+  var glfrs = arrTeetimes[idx]
   
   var arr = []
 
   golfers.forEach((val,idx) => {
 
-    var state = val.state ? val.state : false
+    var glfr = glfrs.find( val => val.name === glfrs.name); 
+
+    var state = glfr ? glfr.state : false
 
     switch (state) {
 
