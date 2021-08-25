@@ -1028,7 +1028,7 @@ function lifeTime               (title, rounds) {
     arr.push(['Bunkers', formatNumber(bunkers)])
     arr.push(['Minutes per Stroke', minutesPerStoke])
 
-    arrRtn.strokes = {title: null, arrData:JSON.parse(JSON.stringify(arr)), format:''};
+    arrRtn.strokes = {title: null, arrData:[...arr], format:''};
 
 
     return arrRtn;
@@ -1392,7 +1392,7 @@ function graphAvgScoreByPar(rounds) {
         borderColor: 'red',
         backgroundColor: 'red',
         borderWidth: 1,
-        pointRadius: 1,
+        pointRadius: 2,
         type: 'line'
       },
       {
@@ -1402,7 +1402,7 @@ function graphAvgScoreByPar(rounds) {
         borderColor: 'blue',
         backgroundColor: 'blue',
         borderWidth: 1,
-        pointRadius: 1,
+        pointRadius: 2,
         type: 'line'
       },
       {
@@ -1412,7 +1412,7 @@ function graphAvgScoreByPar(rounds) {
         borderColor: 'green',
         backgroundColor: 'green',
         borderWidth: 1,
-        pointRadius: 1,
+        pointRadius: 2,
         type: 'line'
       },
       {
@@ -1599,7 +1599,7 @@ function graphTeeToGreen(rounds) {
         data: frwyArr,
         borderColor: 'red',
         borderWidth: 1,
-        pointRadius: 1,
+        pointRadius: 2,
         backgroundColor: 'red',
         type: 'line',
         tick: {color:'red'}
@@ -1610,7 +1610,7 @@ function graphTeeToGreen(rounds) {
         data: girArr,
         borderColor: 'blue',
         borderWidth: 1,
-        pointRadius: 1,
+        pointRadius: 2,
         backgroundColor: 'blue',
         type: 'line'
       },
@@ -1620,7 +1620,7 @@ function graphTeeToGreen(rounds) {
         data: scrblArr,
         borderColor: 'green',
         borderWidth: 1,
-        pointRadius: 1,
+        pointRadius: 2,
         backgroundColor: 'green',
         type: 'line'
       },
