@@ -578,7 +578,7 @@ async function updateGolfers(response, idx){
       var glfr = $(this).parent().parent().parent().first().text().split('\n')[0]
       var state = $(this).text().replace(/\n/g,'').replace(/ /g,'')
 
-      selected.push([glfr, state])
+      selected.push({"name":glfr, "state":state})
 
     }
 
@@ -591,8 +591,11 @@ async function updateGolfers(response, idx){
 
   console.log(arrTeetimes)
   console.log(idx)
-
+  console.log(arrTeetimes[idx])
+  console.log(arrTeetimes[idx].golfers)
+  
   arrTeeTimes[idx].golfers = selected
+  console.log(arrTeetimes)
 
   arrOptions['teetimes'] = JSON.stringify(arrTeetimes)
 
