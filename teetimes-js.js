@@ -20,7 +20,7 @@ function btnTeetimesHtml () {
                                   
       ele.find('#ttCourseName')[0].innerHTML = shortCourseName(teetimes[j].courseName)
       ele.find('#ttTeetime')[0].innerHTML = ttDateTime.date + ' at ' + ttDateTime.time
-      ele.find('#ttGolfers')[0].innerHTML = teetimes[j].golfers.map(a => {if (a.state !== 'no') a.name}).join(' | ')
+      ele.find('#ttGolfers')[0].innerHTML = teetimes[j].golfers.map(a => {if (a.state !== 'no') return a.name}).join(' | ')
 
       var course = findCourse(teetimes[j].courseName)
       
