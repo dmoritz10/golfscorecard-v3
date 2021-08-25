@@ -112,13 +112,12 @@ function getGolferCells(gflrArr) {
 
   var cellNbrs = []
 
-  gflrArr.forEach( val => {
+  gflrArr.forEach( glfrIn => {
 
 
-    console.log(val.name)
-    console.log(golfers.name)
-
-    var glfr = golfers.find( val => val.name === golfers.name); 
+    console.log(glfrIn.name)
+    
+    var glfr = golfers.find( val => val.name === glfrIn.name); 
 
 console.log(glfr)
 
