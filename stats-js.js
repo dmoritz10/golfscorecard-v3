@@ -1006,7 +1006,7 @@ function lifeTime               (title, rounds) {
     arr.push(['Play Time', playTime])
     arr.push(['Distance', formatNumber(distance)])
 
-    arrRtn.rounds = {title: title, arrData:JSON.parse(JSON.stringify(arr)), format:''};
+    arrRtn.rounds = {title: title, arrData:[...arr], format:''};
 
     arr = []
   
@@ -1017,7 +1017,7 @@ function lifeTime               (title, rounds) {
     }
 
     // arrRtn.holes = JSON.parse(JSON.stringify(arr))
-    arrRtn.holes = {title: null, arrData:JSON.parse(JSON.stringify(arr)), format:''};
+    arrRtn.holes = {title: null, arrData:[...arr], format:''};
 
     arr = []
 
