@@ -107,7 +107,7 @@ function getGolferCells(gflrArr) {
 
   var golfers = readOption('Golfers', [])
 
-  var cellsNbrs = []
+  var cellNbrs = []
 
   gflrArr.forEach( val => {
 
@@ -116,9 +116,11 @@ function getGolferCells(gflrArr) {
 
     var glfr = golfers.find( val => val.name === gflrArr.name); 
 
-    if (glfr) cellsNbrs.push(glfr.cell)
+    if (glfr) cellNbrs.push(glfr.cell)
 
   })
+
+  return cellNbrs
 
 }
 
