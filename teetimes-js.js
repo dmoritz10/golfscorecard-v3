@@ -589,6 +589,8 @@ async function updateGolfers(response, idx){
 
   var arrTeetimes = readOption('teetimes', [])
 
+  console.log(arrTeetimes)
+
   arrTeeTimes.golfers = selected
 
   arrOptions['teetimes'] = JSON.stringify(arrTeetimes)
