@@ -107,19 +107,11 @@ function getGolferCells(gflrArr) {
 
   var golfers = readOption('Golfers', [])
 
-  console.log(golfers)
-  console.log(gflrArr)
-
   var cellNbrs = []
 
   gflrArr.forEach( glfrIn => {
-
-
-    console.log(glfrIn.name)
     
     var glfr = golfers.find( val => val.name === glfrIn.name); 
-
-console.log(glfr)
 
     if (glfr) cellNbrs.push(glfr.cell)
 
@@ -559,7 +551,7 @@ function editGolfers(idx) {
 
           var response = $($.parseHTML(golferPrompt[0].innerHTML));
           
-          updateGolfers(response)
+          updateGolfers(response, idx)
 
         }
       }
@@ -574,7 +566,7 @@ function editGolfers(idx) {
 
 }
 
-function updateGolfers(response){
+function updateGolfers(response, idx){
 
   var selected = []
 
@@ -595,18 +587,26 @@ function updateGolfers(response){
 
   console.log(selected)
 
+  var arrTeetimes = readOption('teetimes', [])
+
+  arrTeeTimes.golfers = selected
+
+  arrOptions['teetimes'] = JSON.stringify(arrTeetimes)
+
+  await updateTeetimesOption()
+
 }
 
 function getTTGolfers() {
 
   var x = `<div class="btn-group btn-group-toggle col p-0 m-0" data-toggle="buttons">
-  <label class="btn btn-light m-0 p-0">
+  <label class="btn btn-light m-0 p-0 |yesState|">
       <input type="radio">yes
   </label>
-  <label class="btn btn-light m-0 p-0">
+  <label class="btn btn-light m-0 p-0 |noState|">
       <input type="radio">no
   </label>
-  <label class="btn btn-light m-0 p-0">
+  <label class="btn btn-light m-0 p-0 |maybeState|">
       <input type="radio">maybe
   </label>
 </div>`
@@ -617,6 +617,29 @@ function getTTGolfers() {
   var arr = []
 
   golfers.forEach((val,idx) => {
+
+    var state = val.state ? val.state : false
+
+    switch (state) {
+
+        case "yes":
+          x.replace("|yesState|","active")
+          x.replace("|noState|","")
+          x.replace("|maybeState|","")
+          break;
+        case "no":
+          x.replace("|yesState|","")
+          x.replace("|noState|","active")
+          x.replace("|maybeState|","")
+          break;
+        case "maybe":
+          x.replace("|yesState|","")
+          x.replace("|noState|","")
+          x.replace("|maybeState|","active")
+          break;
+
+    }
+
     arr.push([
       val.name,
       x
