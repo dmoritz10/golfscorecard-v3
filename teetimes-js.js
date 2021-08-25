@@ -622,7 +622,7 @@ function getTTGolfers(idx) {
 
   golfers.forEach((val,idx) => {
 
-    var glfr = ttimeGlfrs ? ttimeGlfrs.find( val => val.name === ttimeGlfrs.name) : null
+    var glfr = ttimeGlfrs ? ttimeGlfrs.find( glf => glf.name === val.name) : null
 
     console.log(glfr)
 
