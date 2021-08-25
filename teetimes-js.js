@@ -47,7 +47,7 @@ function btnTeetimesHtml () {
       })
       
       setSmsHref({
-        cellNbrs:teetimes[j].golfers.map(a => a.cell).join(','),
+        cellNbrs:getGolferCells(teetimes[j].golfers).join(','),
         courseName:shortCourseName(teetimes[j].courseName),
         date: teetimes[j].date,
         time: teetimes[j].time,
@@ -101,6 +101,22 @@ function btnTeetimesHtml () {
     
     gotoTab('Teetimes')
     
+}
+
+function getGolferCells(gflrArr) {
+
+  var golfers = readOption('Golfers', [])
+
+  var cellsNbrs = []
+
+  gflrArr.forEach( val => {
+
+    var glrf = golfers.find( item => item.name === gflrArr.name); 
+
+    cellsNbrs.push(glfr.cell)
+
+  })
+
 }
 
 async function editTeetime(objVal) {
@@ -176,7 +192,7 @@ function loadGolfersDropDown(selectGolfers) {
     arrGolfers.forEach((val) => {
     
     $golfers.append($("<option></option>")
-                        .prop("value",JSON.stringify(val))
+                        .prop(val.name)
                         .text(val.name)); 
     })
     
@@ -191,7 +207,7 @@ async function btnSubmitTeetimeHtml() {
   
   var idx = $('#ttmIdx').val()
   
-  var prsdGolfers = $('#ttmGolfers').val().map(a => JSON.parse(a))
+  var prsdGolfers = $('#ttmGolfers').val().map(a => JSON.parse(a.name))
   
   var course = findCourse( $( "#ttmSelectCourse option:selected" ).text())
   var avgPlayTime = course[arrShts['My Courses'].colHdrs.indexOf('Avg Play Time')]
@@ -407,7 +423,10 @@ function ttmGolfersChangeHtml() {
 //  if ($('#ttmGolfers').val().length) return
 
   var txtCellNbrs = $('#ttmGolfers').val().map(a => JSON.parse(a)).map(a => a.cell).join(',')
-  
+
+  // Finish this when implementing golfer lookup in teetime maintenance
+  // getGolferCells(teetimes[j].golfers).join(',')
+
   var ttDateTime = formatsmsDateTime ($('#ttmDate').val(), $('#ttmTime').val())
 
   setSmsHref({

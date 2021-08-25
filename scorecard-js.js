@@ -686,11 +686,6 @@ function btnPauseRoundHtml() {
   
 }
 
-function btnGolfersHtml() {
-  
-  gotoTab('Golfers')
-  
-}
 
 function gotoHole() {
   
