@@ -600,13 +600,13 @@ async function updateGolfers(response, idx){
 function getTTGolfers(idx) {
 
   var html = `<div class="btn-group btn-group-toggle col p-0 m-0" data-toggle="buttons">
-  <label class="btn btn-light m-0 p-0 |yesState|">
+  <label class="btn btn-light m-0 p-0 @yesState@">
       <input type="radio">yes
   </label>
-  <label class="btn btn-light m-0 p-0 |noState|">
+  <label class="btn btn-light m-0 p-0 @noState@">
       <input type="radio">no
   </label>
-  <label class="btn btn-light m-0 p-0 |maybeState|">
+  <label class="btn btn-light m-0 p-0 @maybeState@">
       <input type="radio">maybe
   </label>
 </div>`
@@ -634,21 +634,21 @@ console.log(state)
     switch (state) {
 
         case "yes":
-          x.replace("|yesState|","active")
-          x.replace("|noState|","")
-          x.replace("|maybeState|","")
+          x.replace("@yesState@","active")
+          x.replace("@noState@","")
+          x.replace("@maybeState@","")
           console.log('yes state')
           break;
         case "no":
-          x.replace("|yesState|","")
-          x.replace("|noState|","active")
-          x.replace("|maybeState|","")
+          x.replace("@yesState@","")
+          x.replace("@noState@","active")
+          x.replace("@maybeState@","")
           console.log('no state')
           break;
         case "maybe":
-          x.replace("|yesState|","")
-          x.replace("|noState|","")
-          x.replace("|maybeState|","active")
+          x.replace("@yesState@","")
+          x.replace("@noState@","")
+          x.replace("@maybeState@","active")
           console.log('maybe state')
           break;
 
