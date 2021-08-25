@@ -599,7 +599,7 @@ async function updateGolfers(response, idx){
 
 function getTTGolfers(idx) {
 
-  var x = `<div class="btn-group btn-group-toggle col p-0 m-0" data-toggle="buttons">
+  var html = `<div class="btn-group btn-group-toggle col p-0 m-0" data-toggle="buttons">
   <label class="btn btn-light m-0 p-0 |yesState|">
       <input type="radio">yes
   </label>
@@ -619,6 +619,7 @@ function getTTGolfers(idx) {
   console.log(ttimeGlfrs)
   
   var arr = []
+  var x = html
 
   golfers.forEach((val,idx) => {
 
