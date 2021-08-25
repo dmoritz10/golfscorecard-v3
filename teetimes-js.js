@@ -614,13 +614,17 @@ function getTTGolfers(idx) {
 
   var golfers = readOption('Golfers', [])
   var arrTeetimes = readOption('teetimes', [])
-  var glfrs = arrTeetimes[idx]
+  var ttimeGlfrs = arrTeetimes[idx].golfers
+
+  console.log(ttimeGlfrs)
   
   var arr = []
 
   golfers.forEach((val,idx) => {
 
-    var glfr = glfrs.find( val => val.name === glfrs.name); 
+    var glfr = ttimeGlfrs ? ttimeGlfrs.find( val => val.name === ttimeGlfrs.name) : null
+
+    console.log(glfr)
 
     var state = glfr ? glfr.state : false
 
