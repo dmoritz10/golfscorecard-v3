@@ -594,7 +594,7 @@ async function updateGolfers(response, idx){
   console.log(arrTeetimes[idx])
   console.log(arrTeetimes[idx].golfers)
 
-  arrTeeTimes[idx]['golfers'] = selected
+  arrTeetimes[idx].golfers = selected
   console.log(arrTeetimes)
 
   arrOptions['teetimes'] = JSON.stringify(arrTeetimes)
