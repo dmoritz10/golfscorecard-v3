@@ -523,7 +523,7 @@ function calcCourseKey(courseName) {
 }
 
 
-function editGolfers(idx) {
+async function editGolfers(idx) {
 
   // var golfersArr = JSON.parse(JSON.stringify(prScore.golfer))
   // var golfersNameArr = golfersArr.map(a => a[0])
@@ -551,7 +551,7 @@ function editGolfers(idx) {
 
           var response = $($.parseHTML(golferPrompt[0].innerHTML));
           
-          updateGolfers(response, idx)
+          await updateGolfers(response, idx)
 
         }
       }
@@ -566,7 +566,7 @@ function editGolfers(idx) {
 
 }
 
-function updateGolfers(response, idx){
+async function updateGolfers(response, idx){
 
   var selected = []
 
