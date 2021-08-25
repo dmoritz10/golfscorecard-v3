@@ -636,21 +636,21 @@ console.log(state)
     switch (state) {
 
         case "yes":
-          x.replace(/yesState/,"active")
-          x.replace(/noState/,"")
-          x.replace(/maybeState/,"")
+          x = x.replace(/yesState/g,"active")
+          x = x.replace(/noState/g,"")
+          x = x.replace(/maybeState/g,"")
           console.log('yes state')
           break;
         case "no":
-          x.replace(/yesState/,"")
-          x.replace(/noState/,"active")
-          x.replace(/maybeState/,"")
+          x = x.replace(/yesState/g,"")
+          x = x.replace(/noState/g,"active")
+          x = x.replace(/maybeState/g,"")
           console.log('no state')
           break;
         case "maybe":
-          x.replace(/yesState/,"")
-          x.replace(/noState/,"")
-          x.replace(/maybeState/,"active")
+          x = x.replace(/yesState/g,"")
+          x = x.replace(/noState/g,"")
+          x = x.replace(/maybeState/g,"active")
           console.log('maybe state')
           break;
 
