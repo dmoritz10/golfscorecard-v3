@@ -636,16 +636,19 @@ console.log(state)
           x.replace("|yesState|","active")
           x.replace("|noState|","")
           x.replace("|maybeState|","")
+          console.log('yes state')
           break;
         case "no":
           x.replace("|yesState|","")
           x.replace("|noState|","active")
           x.replace("|maybeState|","")
+          console.log('no state')
           break;
         case "maybe":
           x.replace("|yesState|","")
           x.replace("|noState|","")
           x.replace("|maybeState|","active")
+          console.log('maybe state')
           break;
 
     }
