@@ -111,7 +111,7 @@ function getGolferCells(gflrArr) {
 
   gflrArr.forEach( val => {
 
-    var glrf = golfers.find( item => item.name === gflrArr.name); 
+    var glrf = golfers.find( val => val.name === gflrArr.name); 
 
     cellsNbrs.push(glfr.cell)
 
