@@ -106,12 +106,15 @@ function btnTeetimesHtml () {
 function getGolferCells(gflrArr) {
 
   var golfers = readOption('Golfers', [])
+  
+  console.log(golfers)
+  console.log(gflrArr)
 
   var cellNbrs = []
 
   gflrArr.forEach( val => {
 
-    console.log(golfers)
+
     console.log(val)
 
     var glfr = golfers.find( val => val.name === gflrArr.name); 
