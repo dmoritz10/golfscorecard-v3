@@ -198,7 +198,7 @@ function loadGolfersDropDown(selectGolfers) {
     arrGolfers.forEach((val) => {
     
     $golfers.append($("<option></option>")
-                        .prop(val.name)
+                        .prop("value",val.name)
                         .text(val.name)); 
     })
     
