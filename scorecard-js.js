@@ -11,7 +11,6 @@ async function btnStartRoundHtml() {
 
   prCourse.holeDetail = await getHoleDetail(prCourse.courseInfo['SxS Course Id'], tee, gender)
   
-  
   if (prCourse.holeDetail.length == 0) {
   
     bootbox.alert ('Hole detail cannot be found')
@@ -779,6 +778,8 @@ function useGolfersFromTeetimes( courseName ) {
 
    
   var arrTeetime = arrOptions.teetimes ? JSON.parse(arrOptions.teetimes)[0] : null
+
+  var rtn = []
   
   if (arrTeetime) {
 
@@ -787,13 +788,19 @@ function useGolfersFromTeetimes( courseName ) {
   
     if (shortName == nextTeetimeName) {
   
-      var rtn = arrTeetime.golfers
+      var glfrs = arrTeetime.golfers
+
+      glfrs.forEach( val => {
+
+        if (val.state == "maybe" || val.state == 'yes') {
+
+          rtn.push({"name": val.name})
+
+        }
+
+      })
       
-    } else {
-    
-      var rtn = []
-   
-    }
+    } 
     
   }
 
