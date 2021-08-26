@@ -164,7 +164,7 @@ console.log('btnAddTeetimeHtml')
     
     $("#teetime-form")[0].reset();
    
-    $('#btnTextTeetime').prop('disabled', false).prop('href', '')
+    // $('#btnTextTeetime').prop('disabled', false).prop('href', '')
                       
     $('#btnCallCourse').prop('disabled', false).prop('href', '')
     
