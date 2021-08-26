@@ -589,7 +589,7 @@ async function updateGolfers(response, idx){
     })
   });
 
-  console.log(selected)
+  // console.log(selected)
 
   var arrTeetimes = readOption('teetimes', [])
 
@@ -619,8 +619,6 @@ function getTTGolfers(idx) {
   var golfers = readOption('Golfers', [])
   var arrTeetimes = readOption('teetimes', [])
   var ttimeGlfrs = arrTeetimes[idx].golfers
-
-  console.log(ttimeGlfrs)
   
   var arr = []
   
@@ -631,31 +629,24 @@ function getTTGolfers(idx) {
 
     var glfr = ttimeGlfrs ? ttimeGlfrs.find( glf => glf.name === val.name) : null
 
-    console.log(glfr)
-
     var state = glfr ? glfr.state : false
-
-console.log(state)
 
     switch (state) {
 
         case "yes":
           x = x.replace(/yesState/,"active")
           x = x.replace(/noState/,"")
-          x = x.replace(/maybeState/,"")
-          console.log('yes state')
+          x = x.replace(/maybeState/,"")        
           break;
         case "no":
           x = x.replace(/yesState/,"")
           x = x.replace(/noState/,"active")
-          x = x.replace(/maybeState/,"")
-          console.log('no state')
+          x = x.replace(/maybeState/,"")        
           break;
         case "maybe":
           x = x.replace(/yesState/,"")
           x = x.replace(/noState/,"")
-          x = x.replace(/maybeState/,"active")
-          console.log('maybe state')
+          x = x.replace(/maybeState/,"active")        
           break;
 
     }
