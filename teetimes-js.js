@@ -214,7 +214,8 @@ async function btnSubmitTeetimeHtml() {
   var idx = $('#ttmIdx').val()
   
   // var prsdGolfers = $('#ttmGolfers').val().map(a => JSON.parse(a.name))
-  
+  var prsdGolfers = []
+
   var course = findCourse( $( "#ttmSelectCourse option:selected" ).text())
   var avgPlayTime = course[arrShts['My Courses'].colHdrs.indexOf('Avg Play Time')]
   
