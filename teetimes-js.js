@@ -131,7 +131,7 @@ console.log('editTeetime')
 
     await loadCoursesPlayedDropDown('ttmSelectCourse')
     
-    loadGolfersDropDown('ttmGolfers')
+    // loadGolfersDropDown('ttmGolfers')
     
     $("#teetime-modal").modal('show');
     $("#teetime-form")[0].reset();
@@ -144,9 +144,9 @@ console.log('editTeetime')
     $('#ttmDate').val(objVal.date)         
     $('#ttmTime').val(objVal.time) 
         
-    objVal.golfers ? $('#ttmGolfers').val(objVal.golfers.map(a => JSON.stringify(a))) : ''  // set selected based on array of values, not text
+    // objVal.golfers ? $('#ttmGolfers').val(objVal.golfers.map(a => JSON.stringify(a))) : ''  // set selected based on array of values, not text
     
-    ttmGolfersChangeHtml()
+    // ttmGolfersChangeHtml()
     await ttmSelectCourseChangeHtml()
 
     $('#btnDeleteTeetime').removeClass('d-none')
@@ -158,7 +158,7 @@ console.log('btnAddTeetimeHtml')
     
     await loadCoursesPlayedDropDown('ttmSelectCourse')
     
-    loadGolfersDropDown('ttmGolfers')
+    // loadGolfersDropDown('ttmGolfers')
     
     $("#teetime-modal").modal('show');
     
@@ -213,7 +213,7 @@ async function btnSubmitTeetimeHtml() {
   
   var idx = $('#ttmIdx').val()
   
-  var prsdGolfers = $('#ttmGolfers').val().map(a => JSON.parse(a.name))
+  // var prsdGolfers = $('#ttmGolfers').val().map(a => JSON.parse(a.name))
   
   var course = findCourse( $( "#ttmSelectCourse option:selected" ).text())
   var avgPlayTime = course[arrShts['My Courses'].colHdrs.indexOf('Avg Play Time')]
@@ -226,7 +226,7 @@ async function btnSubmitTeetimeHtml() {
   var event = {
   
       'summary': $( "#ttmSelectCourse option:selected" ).text(),
-      'description': prsdGolfers.map(a => a.name).join(' | '),
+      // 'description': prsdGolfers.map(a => a.name).join(' | '),
       "colorId": "11",
       'start': {
         'dateTime': $('#ttmDate').val() + 'T' + $('#ttmTime').val() + ':00',
@@ -256,7 +256,7 @@ async function btnSubmitTeetimeHtml() {
     arrTeetimes[idx].time = $('#ttmTime').val()
     
     
-    arrTeetimes[idx].golfers = prsdGolfers
+    // arrTeetimes[idx].golfers = prsdGolfers
     arrTeetimes[idx].eventId = eventId
   
   } else {                                                         // add new teetime
@@ -273,7 +273,7 @@ async function btnSubmitTeetimeHtml() {
       courseName: $( "#ttmSelectCourse option:selected" ).text(),
       date:       $('#ttmDate').val(),
       time:       $('#ttmTime').val(),
-      golfers:    prsdGolfers,
+      // golfers:    prsdGolfers,
       eventId:    eventId
       
     })
@@ -424,32 +424,32 @@ async function fetchWebSiteUrl(sxsCourseId) {
 
 
 
-function ttmGolfersChangeHtml() {
+// function ttmGolfersChangeHtml() {
 
-//  if ($('#ttmGolfers').val().length) return
+// //  if ($('#ttmGolfers').val().length) return
 
-  var txtCellNbrs = $('#ttmGolfers').val().map(a => JSON.parse(a)).map(a => a.cell).join(',')
+//   var txtCellNbrs = $('#ttmGolfers').val().map(a => JSON.parse(a)).map(a => a.cell).join(',')
 
-  // Finish this when implementing golfer lookup in teetime maintenance
-  // getGolferCells(teetimes[j].golfers).join(',')
+//   // Finish this when implementing golfer lookup in teetime maintenance
+//   // getGolferCells(teetimes[j].golfers).join(',')
 
-  var ttDateTime = formatsmsDateTime ($('#ttmDate').val(), $('#ttmTime').val())
+//   var ttDateTime = formatsmsDateTime ($('#ttmDate').val(), $('#ttmTime').val())
 
-  setSmsHref({
-    cellNbrs:txtCellNbrs,
-    courseName:$('#ttmSelectCourse option:selected').text(),
-    date:$('#ttmDate').val(),
-    time:$('#ttmTime').val(),
-    element:$('#btnTextTeetime')
-  })
+//   setSmsHref({
+//     cellNbrs:txtCellNbrs,
+//     courseName:$('#ttmSelectCourse option:selected').text(),
+//     date:$('#ttmDate').val(),
+//     time:$('#ttmTime').val(),
+//     element:$('#btnTextTeetime')
+//   })
 
-/*  
-  var txtBody = $('#ttmSelectCourse option:selected').text() + '%0a' + ttDateTime.date + '%0a' + ttDateTime.time
-  $('#btnTextTeetime').prop('disabled', false)
-                      .prop('href', 'sms:' + txtCellNbrs + "?body=" + txtBody  )
-*/      
+// /*  
+//   var txtBody = $('#ttmSelectCourse option:selected').text() + '%0a' + ttDateTime.date + '%0a' + ttDateTime.time
+//   $('#btnTextTeetime').prop('disabled', false)
+//                       .prop('href', 'sms:' + txtCellNbrs + "?body=" + txtBody  )
+// */      
 
-}
+// }
 
 function formatsmsDateTime (date, time) {
 
