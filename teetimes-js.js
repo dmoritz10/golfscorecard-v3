@@ -274,7 +274,7 @@ async function btnSubmitTeetimeHtml() {
       courseName: $( "#ttmSelectCourse option:selected" ).text(),
       date:       $('#ttmDate').val(),
       time:       $('#ttmTime').val(),
-      // golfers:    prsdGolfers,
+      golfers:    prsdGolfers,
       eventId:    eventId
       
     })
@@ -285,7 +285,6 @@ async function btnSubmitTeetimeHtml() {
   arrOptions['teetimes'] = JSON.stringify(arrTeetimes)
 
   await updateTeetimesOption()
-  
   
   $("#teetime-modal").modal('hide');
   
