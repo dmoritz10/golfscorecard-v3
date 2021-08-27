@@ -642,7 +642,7 @@ function getTTGolfers(idx) {
   <label class="btn btn-light m-0 p-0 noState">
       <input class="toggles" type="radio">no
   </label>
-  <label class="btn btn-light m-0 p-0 maybeState">
+  <label class="btn btn-light hidan m-0 p-0 maybeState">
       <input class="toggles" type="radio">maybe
   </label>
 </div>`
