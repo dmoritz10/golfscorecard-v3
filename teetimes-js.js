@@ -257,6 +257,7 @@ async function btnSubmitTeetimeHtml() {
     
     // arrTeetimes[idx].golfers = prsdGolfers
     // arrTeetimes[idx].golfers = []
+    
     arrTeetimes[idx].eventId = eventId
   
   } else {                                                         // add new teetime

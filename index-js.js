@@ -313,7 +313,7 @@ async function initialUI() {
       ])
     
 // alert((new Date() - timerStart)/1000)
-console.log((new Date() - timerStart)/1000)
+  console.log((new Date() - timerStart)/1000)
 
   console.log(arrShts)
 
