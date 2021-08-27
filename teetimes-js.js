@@ -533,15 +533,7 @@ async function editGolfers(idx) {
   // var golfersNameArr = golfersArr.map(a => a[0])
   // var golfersVal = 
 
-  var val;
-$('.toggles').mouseup(function(){
 
-  console.log('mouseup')
-  val = this.checked
-}).click(function(){
-  console.log('click')
-  this.checked = val == true ? false : true
-})
   
   var inputOptions = getTTGolfers(idx)
 
