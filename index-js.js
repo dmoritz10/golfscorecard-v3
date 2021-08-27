@@ -283,6 +283,9 @@
   $( "input[type='radio'].toggles" ).click(function() {
     var $this = $( this );
 
+    console.log('hi dan')
+    console.log($this)
+
     // update and remove the previous checked class
     var $prevChecked = $('input[name=' + $this.attr('name') + ']:not(:checked).checked');
         $prevChecked.removeClass('checked');
