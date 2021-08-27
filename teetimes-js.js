@@ -568,31 +568,31 @@ async function editGolfers(idx) {
 
   golferPrompt.init(function(){
 
-    $( "input.toggles[type='radio']" ).click(function() {
+    $( "tr.clearAllRadio:first-child " ).click(function() {
       var $this = $( this );
   
       console.log('hi dan')
       console.log($this)
-      console.log($this.parent())
+      console.log($( "tr.clearAllRadio:nth-child(2)"))
   
       // update and remove the previous checked class
-      var $prevChecked = $('input[name=' + $this.attr('name') + ']:not(:checked).checked');
-          $prevChecked.removeClass('checked');
+      // var $prevChecked = $('input[name=' + $this.attr('name') + ']:not(:checked).checked');
+      //     $prevChecked.removeClass('checked');
   
-      if( $this.hasClass("checked") ) {
-          $this.removeClass("checked");
-          $this.prop("checked", false);
-          $this.parent().removeClass('active')
-          console.log('clear checked')
-      }
-      else {
-          $this.addClass("checked");
-          $this.parent().addClass('active')
-          console.log('set checked')
-      }
+      // if( $this.hasClass("checked") ) {
+      //     $this.removeClass("checked");
+      //     $this.prop("checked", false);
+      //     $this.parent().removeClass('active')
+      //     console.log('clear checked')
+      // }
+      // else {
+      //     $this.addClass("checked");
+      //     $this.parent().addClass('active')
+      //     console.log('set checked')
+      // }
 
-      console.log($this)
-      console.log($this.parent())
+      // console.log($this)
+      // console.log($this.parent())
 
     });
   
@@ -697,7 +697,7 @@ tbl
   .setTableHeaderClass()
   .setData(arr)
   .setTableClass('table')
-  .setTrClass()
+  .setTrClass('clearAllRadio')
   .setTcClass(['', 'text-right'])
   .setTdClass('pb-1 pt-1 border-0')
   .build();
