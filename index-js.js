@@ -285,11 +285,8 @@
 })
 
 (function() {
-  $( "input[type='radio'].toggles" ).click(function() {
-
-    console.log('hi dabn')
+  $( "input[type='radio'].revertible" ).click(function() {
       var $this = $( this );
-      console.log($this)
 
       // update and remove the previous checked class
       var $prevChecked = $('input[name=' + $this.attr('name') + ']:not(:checked).checked');
