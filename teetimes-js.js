@@ -587,6 +587,9 @@ async function editGolfers(idx) {
           $this.addClass("checked");
           $this.parent().addClass('active')
       }
+
+      console.log($this)
+      
     });
   
   });
