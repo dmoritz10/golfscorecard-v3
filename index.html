@@ -523,7 +523,11 @@ var DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"
           currUser['fullName']  = currUserObj.Os.Ne
           currUser['emailName'] = currUser['email'].split('@')[0]
 
-          $('#authSigninStatus').html('Hi ' + currUser.firstName + '.<br>You are signed in.')
+          if (currUser.firstName) {
+            $('#authSigninStatus').html('Hi ' + currUser.firstName + '.<br>You are signed in.')
+          } else {
+            $('#authSigninStatus').html('Hi ' + currUser.emailName + '.<br>You are signed in.')
+          }
 
           var rtn = await getSSId()
 
