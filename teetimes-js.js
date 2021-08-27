@@ -574,8 +574,9 @@ async function editGolfers(idx) {
       console.log('hi dan')
       console.log($this)
       
-       
-       console.log($this.parent().children().children().children().children())
+      console.log($this.parent().children())
+      console.log($this.parent().children().children())
+      console.log($this.parent().children().children().children())
        
        var lbls = $this.parent().children().children().children()
        lbls.each(function() {$this.removeClass('active')})
