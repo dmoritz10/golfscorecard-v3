@@ -280,26 +280,28 @@
   return date.toISOString().replace('Z', utcOffsetString);
   };
 
+  $( "input[type='radio'].revertible" ).click(function() {
+    var $this = $( this );
+
+    // update and remove the previous checked class
+    var $prevChecked = $('input[name=' + $this.attr('name') + ']:not(:checked).checked');
+        $prevChecked.removeClass('checked');
+
+    if( $this.hasClass("checked") ) {
+        $this.removeClass("checked");
+        $this.prop("checked", false);
+    }
+    else {
+        $this.addClass("checked");
+    }
+});
+
   console.log('doc ready complete')
 
 })
 
 (function() {
-  $( "input[type='radio'].revertible" ).click(function() {
-      var $this = $( this );
 
-      // update and remove the previous checked class
-      var $prevChecked = $('input[name=' + $this.attr('name') + ']:not(:checked).checked');
-          $prevChecked.removeClass('checked');
-
-      if( $this.hasClass("checked") ) {
-          $this.removeClass("checked");
-          $this.prop("checked", false);
-      }
-      else {
-          $this.addClass("checked");
-      }
-  });
 })();
 
   function dupIds () {
