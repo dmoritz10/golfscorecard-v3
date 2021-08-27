@@ -280,25 +280,7 @@
   return date.toISOString().replace('Z', utcOffsetString);
   };
 
-  $( "input.toggles[type='radio']" ).click(function() {
-    var $this = $( this );
-
-    console.log('hi dan')
-    console.log($this)
-
-    // update and remove the previous checked class
-    var $prevChecked = $('input[name=' + $this.attr('name') + ']:not(:checked).checked');
-        $prevChecked.removeClass('checked');
-
-    if( $this.hasClass("checked") ) {
-        $this.removeClass("checked");
-        $this.prop("checked", false);
-    }
-    else {
-        $this.addClass("checked");
-    }
-});
-
+ 
   console.log('doc ready complete')
 
 })
