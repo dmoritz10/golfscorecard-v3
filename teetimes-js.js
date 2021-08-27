@@ -573,8 +573,9 @@ async function editGolfers(idx) {
   
       console.log('hi dan')
       console.log($this)
-      console.log($( "tr:nth-child(2)"))
-      console.log($( "tr:eq(1)"))
+      console.log($( "tr:eq( 2 )" ))
+       console.log($this.children)
+    
   
       // update and remove the previous checked class
       // var $prevChecked = $('input[name=' + $this.attr('name') + ']:not(:checked).checked');
