@@ -532,6 +532,13 @@ async function editGolfers(idx) {
   // var golfersArr = JSON.parse(JSON.stringify(prScore.golfer))
   // var golfersNameArr = golfersArr.map(a => a[0])
   // var golfersVal = 
+
+  var val;
+$('.toggles').mouseup(function(){
+  val = this.checked
+}).click(function(){
+  this.checked = val == true ? false : true
+})
   
   var inputOptions = getTTGolfers(idx)
 
@@ -607,13 +614,13 @@ function getTTGolfers(idx) {
 
   var html = `<div class="btn-group btn-group-toggle col p-0 m-0" data-toggle="buttons">
   <label class="btn btn-light m-0 p-0 yesState">
-      <input type="radio">yes
+      <input class="toggles" type="radio">yes
   </label>
   <label class="btn btn-light m-0 p-0 noState">
-      <input type="radio">no
+      <input class="toggles" type="radio">no
   </label>
   <label class="btn btn-light m-0 p-0 maybeState">
-      <input type="radio">maybe
+      <input class="toggles" type="radio">maybe
   </label>
 </div>`
 
