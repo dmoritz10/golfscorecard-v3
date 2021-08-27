@@ -568,14 +568,14 @@ async function editGolfers(idx) {
 
   golferPrompt.init(function(){
 
-    $( "tr" ).click(function() {
+    $( "tr td" ).click(function() {
       var $this = $( this );
   
       console.log('hi dan')
       console.log($this)
       console.log($( "tr td:eq( 0)" ))
       console.log($( "tr td:eq( 1)" ))
-       console.log($this.children)
+       console.log($this.parent().children())
     
   
       // update and remove the previous checked class
@@ -700,7 +700,7 @@ tbl
   .setTableHeaderClass()
   .setData(arr)
   .setTableClass('table')
-  .setTrClass('clearAllRadio')
+  .setTrClass('')
   .setTcClass(['', 'text-right'])
   .setTdClass('pb-1 pt-1 border-0')
   .build();
