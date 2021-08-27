@@ -581,9 +581,11 @@ async function editGolfers(idx) {
       if( $this.hasClass("checked") ) {
           $this.removeClass("checked");
           $this.prop("checked", false);
+          $this.parent().removeClass('active')
       }
       else {
           $this.addClass("checked");
+          $this.parent().addClass('active')
       }
     });
   
