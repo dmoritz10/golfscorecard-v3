@@ -280,7 +280,7 @@
   return date.toISOString().replace('Z', utcOffsetString);
   };
 
-  $( "input[type='radio'].toggles" ).click(function() {
+  $( "input.toggles[type='radio']" ).click(function() {
     var $this = $( this );
 
     console.log('hi dan')
