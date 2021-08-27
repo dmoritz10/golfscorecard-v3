@@ -280,7 +280,7 @@
   return date.toISOString().replace('Z', utcOffsetString);
   };
 
-  $( "input[type='radio'].revertible" ).click(function() {
+  $( "input[type='radio'].toggles" ).click(function() {
     var $this = $( this );
 
     // update and remove the previous checked class
