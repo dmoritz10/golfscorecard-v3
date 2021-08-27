@@ -280,19 +280,27 @@
   return date.toISOString().replace('Z', utcOffsetString);
   };
 
-  var val;
-$('.toggles').mouseup(function(){
-
-  console.log('mouseup')
-  var val = this.checked
-}).click(function(){
-  console.log('click')
-  this.checked = val == true ? false : true
-})
-
   console.log('doc ready complete')
 
 })
+
+(function() {
+  $( "input[type='radio'].toggles" ).click(function() {
+      var $this = $( this );
+
+      // update and remove the previous checked class
+      var $prevChecked = $('input[name=' + $this.attr('name') + ']:not(:checked).checked');
+          $prevChecked.removeClass('checked');
+
+      if( $this.hasClass("checked") ) {
+          $this.removeClass("checked");
+          $this.prop("checked", false);
+      }
+      else {
+          $this.addClass("checked");
+      }
+  });
+})();
 
   function dupIds () {
   var ids = { };
