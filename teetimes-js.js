@@ -111,7 +111,7 @@ function getGolferCells(gflrArr) {
 
   gflrArr.forEach( glfrIn => {
 
-    if (glfrIn.state == "maybe" || glfrIn.state == 'yes') {
+    if (glfrIn.state == "maybe") {
     
       var glfr = golfers.find( val => val.name === glfrIn.name); 
 
@@ -529,12 +529,6 @@ function calcCourseKey(courseName) {
 
 async function editGolfers(idx) {
 
-  // var golfersArr = JSON.parse(JSON.stringify(prScore.golfer))
-  // var golfersNameArr = golfersArr.map(a => a[0])
-  // var golfersVal = 
-
-
-  
   var inputOptions = getTTGolfers(idx)
 
   if (inputOptions.length == 0) return
@@ -542,7 +536,6 @@ async function editGolfers(idx) {
   var golferPrompt = bootbox.dialog({
     
     title: "Select Golfers",
-    // size: 'large',
     message: inputOptions,
     buttons: {
       cancel: {
