@@ -568,7 +568,7 @@ async function editGolfers(idx) {
 
   golferPrompt.init(function(){
 
-    $( "tr.clearAllRadio:first-child " ).click(function() {
+    $( "tr:first-child " ).click(function() {
       var $this = $( this );
   
       console.log('hi dan')
