@@ -566,40 +566,14 @@ async function editGolfers(idx) {
     
   });
 
-  golferPrompt.init(function(){
+  golferPrompt.init(function(){                           // user can clear radio button by clicking on the golfer name
 
     $( "tr td:nth-child(1)" ).click(function() {
       var $this = $( this );
-  
-      console.log('hi dan')
-      console.log($this)
-      
-      console.log($this.parent().children())
-      console.log($this.parent().children().children())
-      console.log($this.parent().children().children().children())
-       
-       var lbls = $this.parent().children().children().children()
-       lbls.each(function() { 
-        $(this).removeClass('active')})
-  
-      // update and remove the previous checked class
-      // var $prevChecked = $('input[name=' + $this.attr('name') + ']:not(:checked).checked');
-      //     $prevChecked.removeClass('checked');
-  
-      // if( $this.hasClass("checked") ) {
-      //     $this.removeClass("checked");
-      //     $this.prop("checked", false);
-      //     $this.parent().removeClass('active')
-      //     console.log('clear checked')
-      // }
-      // else {
-      //     $this.addClass("checked");
-      //     $this.parent().addClass('active')
-      //     console.log('set checked')
-      // }
-
-      // console.log($this)
-      // console.log($this.parent())
+      var lbls = $this.parent().children().children().children()
+      lbls.each(function() { 
+        $(this).removeClass('active')
+      })
 
     });
   
@@ -691,7 +665,7 @@ function getTTGolfers(idx) {
     }
 
     arr.push([
-      val.name,
+      '<span class="h4 cursor-pointer">' + val.name  + '</span>' ,
       x
     ])
   })
