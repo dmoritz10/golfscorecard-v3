@@ -568,12 +568,13 @@ async function editGolfers(idx) {
 
   golferPrompt.init(function(){
 
-    $( "tr td:eq(0)" ).click(function() {
+    $( "tr" ).click(function() {
       var $this = $( this );
   
       console.log('hi dan')
       console.log($this)
-      console.log($( "tr td:eq( 2 )" ))
+      console.log($( "tr td:eq( 0)" ))
+      console.log($( "tr td:eq( 1)" ))
        console.log($this.children)
     
   
