@@ -568,12 +568,13 @@ async function editGolfers(idx) {
 
   golferPrompt.init(function(){
 
-    $( "tr:first-child " ).click(function() {
+    $( "tr " ).click(function() {
       var $this = $( this );
   
       console.log('hi dan')
       console.log($this)
-      console.log($( "tr.clearAllRadio:nth-child(2)"))
+      console.log($( "tr:nth-child(2)"))
+      console.log($( "tr:eq(1)"))
   
       // update and remove the previous checked class
       // var $prevChecked = $('input[name=' + $this.attr('name') + ']:not(:checked).checked');
