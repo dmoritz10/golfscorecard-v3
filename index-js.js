@@ -300,9 +300,7 @@
 
 })
 
-(function() {
 
-})();
 
   function dupIds () {
   var ids = { };
