@@ -568,7 +568,7 @@ async function editGolfers(idx) {
 
   golferPrompt.init(function(){
 
-    $( "tr td" ).click(function() {
+    $( "tr td:nth-child(1)" ).click(function() {
       var $this = $( this );
   
       console.log('hi dan')
