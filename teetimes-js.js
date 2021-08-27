@@ -251,14 +251,12 @@ async function btnSubmitTeetimeHtml() {
 
     var eventId = request.result.id
 
-
     arrTeetimes[idx].courseName = $( "#ttmSelectCourse option:selected" ).text(),
     arrTeetimes[idx].date = $('#ttmDate').val()
     arrTeetimes[idx].time = $('#ttmTime').val()
     
-    
     // arrTeetimes[idx].golfers = prsdGolfers
-    arrTeetimes[idx].golfers = []
+    // arrTeetimes[idx].golfers = []
     arrTeetimes[idx].eventId = eventId
   
   } else {                                                         // add new teetime
