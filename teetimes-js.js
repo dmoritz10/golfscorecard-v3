@@ -535,8 +535,11 @@ async function editGolfers(idx) {
 
   var val;
 $('.toggles').mouseup(function(){
+
+  console.log('mouseup')
   val = this.checked
 }).click(function(){
+  console.log('click')
   this.checked = val == true ? false : true
 })
   
