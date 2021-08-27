@@ -665,7 +665,7 @@ function getTTGolfers(idx) {
     }
 
     arr.push([
-      '<span class="h4 cursor-pointer">' + val.name  + '</span>' ,
+      '<span class="h5 cursor-pointer">' + val.name  + '</span>' ,
       x
     ])
   })
