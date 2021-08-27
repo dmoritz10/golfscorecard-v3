@@ -576,9 +576,9 @@ async function editGolfers(idx) {
       
       console.log($this.parent().children())
       console.log($this.parent().children().children())
-      console.log($this.parent().children().children().children())
+//      console.log($this.parent().children().children().children())
        
-       var lbls = $this.parent().children().children().children()
+       var lbls = $this.parent().children().children()
        lbls.each(function() {$this.removeClass('active')})
   
       // update and remove the previous checked class
