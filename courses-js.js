@@ -784,7 +784,9 @@ async function updateCourse(arrCourse, idx) {
       console.log('start sort no values')
 
         var request = {
-          sortRange: 
+          sortRange: {
+
+            range:
 
             {
               "sheetId": 3,
@@ -802,7 +804,7 @@ async function updateCourse(arrCourse, idx) {
                 }
               ]
           }
-        
+        }
 
         console.log(request)
         await gapi.client.sheets.spreadsheets.batchUpdate({
