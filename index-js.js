@@ -354,13 +354,6 @@ async function initialUI() {
 
 var openShts = async function (shts) {
 
-  gapi.client.sheets.spreadsheets.get({spreadsheetId})
-
-  .then(async function(response) {
-console.log('get')
-console.log(response)
-
-  })
 
   return new Promise(async resolve => {
 

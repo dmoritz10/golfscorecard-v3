@@ -771,6 +771,10 @@ async function updateCourse(arrCourse, idx) {
     var row = 2
     var rng = calcRngA1(row, 1, 1, arrShts['My Courses'].colHdrs.length + 1)
 
+    var coursesShtId = await getCoursesSheetId()
+
+    console.log('coursesShtId')
+    console.log(coursesShtId)
 
     var params = {
       spreadsheetId: spreadsheetId,
@@ -782,13 +786,7 @@ async function updateCourse(arrCourse, idx) {
     await gapi.client.sheets.spreadsheets.values.append(params, resource)
       .then(async function (response) {
 
-        console.log('course added')
-        console.log(response.result.updates.updatedRange)
-        console.log(response)
-
-        console.log('start sort no values vvv')
-
-        var request = { "requests": [{ "sortRange": { "range": { "sheetId": 1837703152, "startRowIndex": 2, "endRowIndex": 90, "startColumnIndex": 1, "endColumnIndex": 2 }, "sortSpecs": [{ "sortOrder": "ASCENDING", "dimensionIndex": 0 }] } }] }
+        var request = { "requests": [{ "sortRange": { "range": { "sheetId": coursesShtId, "startRowIndex": 2, "endRowIndex": 90, "startColumnIndex": 1, "endColumnIndex": 2 }, "sortSpecs": [{ "sortOrder": "ASCENDING", "dimensionIndex": 0 }] } }] }
 
         console.log(request)
         console.log('spreadsheetId')
@@ -817,7 +815,29 @@ async function updateCourse(arrCourse, idx) {
 
 }
 
+async function getCoursesSheetId() {
 
+  gapi.client.sheets.spreadsheets.get({spreadsheetId})
+
+  .then(async function(response) {
+console.log('get')
+console.log(response)
+
+    var shtProps = results.sheets
+
+    for (let i = 0 ; i < shtProps.length; i++)
+
+      var sht = shtProps[i].properties
+
+      if (sht.title == "My Courses")
+
+        resolve(sht.sheetId)
+
+        break;
+
+  })
+
+}
 async function btnSCMFetchSxsHtml(e) {
 
   $("#course-modal").animate({ opacity: '0.8', }, "slow");
