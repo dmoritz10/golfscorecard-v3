@@ -381,6 +381,8 @@ var openShts = async function (shts) {
   gapi.client.sheets.spreadsheets.values.batchGet({spreadsheetId: spreadsheetId, ranges: shtRngs})
 
   .then(async function(response) {
+console.log('response')
+    console.log(response)
     
     var allShts = response.result.valueRanges
 
