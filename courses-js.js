@@ -829,11 +829,12 @@ console.log(response)
 
       var sht = shtProps[i].properties
 
-      if (sht.title == "My Courses")
+      if (sht.title == "My Courses") {
 
         resolve(sht.sheetId)
 
         break;
+      }
 
   })
 
