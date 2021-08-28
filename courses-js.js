@@ -823,7 +823,7 @@ async function getCoursesSheetId() {
 console.log('get')
 console.log(response)
 
-    var shtProps = results.sheets
+    var shtProps = response.sheets
 
     for (let i = 0 ; i < shtProps.length; i++)
 
