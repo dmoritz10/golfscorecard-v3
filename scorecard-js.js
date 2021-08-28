@@ -1421,7 +1421,10 @@ function btnGolfersHtml() {
     inputOptions: inputOptions,
     callback: function (result) { 
       console.log(result)
-      prScore.golfers = result ? result.map(a => a) : []  }
+      prScore.golfers = result ? result.map(a => {return {"name": a}}) : []  
+    console.log(prScore.golfers)
+    
+    }
     
   });
 
