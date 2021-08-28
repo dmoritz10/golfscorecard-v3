@@ -835,7 +835,7 @@ console.log(response)
 
       if (sht.title === "My Courses") {
 
-        resolve(sht.sheetId)
+        return sht.sheetId
 
       }
     }
