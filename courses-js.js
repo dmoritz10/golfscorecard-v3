@@ -827,17 +827,18 @@ console.log(response)
 
     console.log(shtProps)
 
-    for (let i = 0 ; i < shtProps.length; i++)
+    for (let i = 0 ; i < shtProps.length; i++) {
 
       var sht = shtProps[i].properties
 
       console.log(sht)
 
-      if (sht.title == "My Courses") {
+      if (sht.title === "My Courses") {
 
         resolve(sht.sheetId)
 
       }
+    }
 
   })
 
