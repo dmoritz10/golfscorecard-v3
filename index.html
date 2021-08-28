@@ -524,7 +524,9 @@ console.log('then')
 
           console.log('signed in')
 
-          var currUserObj = await gapi.auth2.getAuthInstance().currentUser.get()
+          var currUserObj = await gapi.auth2.getAuthInstance().currentUser.get().getBasicProfile();
+
+        
 
           console.log(currUserObj)
           
