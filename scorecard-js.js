@@ -1413,7 +1413,7 @@ function btnGolfersHtml() {
   var golferPrompt = bootbox.prompt({
     
     title: "Select Golfers",
-    value: prScore.golfers ? prScore.golfers.map(a => JSON.stringify(a)) : [],
+    value: prScore.golfers ? prScore.golfers.map(a => a.name) : [],
     inputType: 'checkbox',
     className: 'golfersCSS',
     closeButton: false,
@@ -1441,7 +1441,7 @@ function getGolfers() {
   golfers.forEach((val,idx) => {
     arr.push({
       text: val.name,
-      value: JSON.stringify(val)
+      value: val.name
     })
   })
   

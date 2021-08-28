@@ -117,7 +117,7 @@ function getGolferCells(gflrArr) {
 
       if (glfr) cellNbrs.push(glfr.cell)
 
-  }
+    }
 
   })
 
@@ -183,26 +183,26 @@ console.log('btnAddTeetimeHtml')
 console.log('btnAddTeetimeHtml')
 }
 
-function loadGolfersDropDown(selectGolfers) {
+// function loadGolfersDropDown(selectGolfers) {
 
-//    var arrGolfers = getGolfers()
+// //    var arrGolfers = getGolfers()
 
-  var $golfers = $('#' + selectGolfers)
+//   var $golfers = $('#' + selectGolfers)
   
-    var arrGolfers = readOption('Golfers', [])
+//     var arrGolfers = readOption('Golfers', [])
     
-    var s = document.getElementById(selectGolfers)
+//     var s = document.getElementById(selectGolfers)
     
-    $golfers.empty();
+//     $golfers.empty();
     
-    arrGolfers.forEach((val) => {
+//     arrGolfers.forEach((val) => {
     
-    $golfers.append($("<option></option>")
-                        .prop("value",val.name)
-                        .text(val.name)); 
-    })
+//     $golfers.append($("<option></option>")
+//                         .prop("value",val.name)
+//                         .text(val.name)); 
+//     })
     
-}
+// }
 
 
 async function btnSubmitTeetimeHtml() {
