@@ -781,7 +781,7 @@ async function updateCourse(arrCourse, idx) {
         console.log('course added')
         console.log(response.result.updates.updatedRange)
 
-      console.log('start sort no values')
+      console.log('start sort no values vvv')
 
         var request = {
           sortRange: {
