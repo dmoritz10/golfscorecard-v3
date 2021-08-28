@@ -781,8 +781,20 @@ async function updateCourse(arrCourse, idx) {
         console.log('course added')
         console.log(response.result.updates.updatedRange)
 
+      console.log('start sort')
+
         var request = {
-          sortRange: "'My Courses'!a2:ab82",
+          sortRange: 
+
+            {
+              "sheetId": 3,
+              "startRowIndex": 1,
+              "endRowIndex": 4,
+              "startColumnIndex": 1,
+              "endColumnIndex": 1
+            
+
+          },
               sortSpecs: [
                 {
                   sortOrder: "ASCENDING",
