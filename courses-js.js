@@ -781,22 +781,22 @@ async function updateCourse(arrCourse, idx) {
         console.log('course added')
         console.log(response.result.updates.updatedRange)
 
-        // var request = {
-        //   sortRange: "'My Courses'!" + rng,
-        //       sortSpecs: [
-        //         {
-        //           sortOrder: "ASCENDING",
-        //           dimensionIndex: 0
-        //         }
-        //       ]
-        //   }
+        var request = {
+          sortRange: "'My Courses'!" + rng,
+              sortSpecs: [
+                {
+                  sortOrder: "ASCENDING",
+                  dimensionIndex: 0
+                }
+              ]
+          }
         
 
-        // console.log(request)
-        // await gapi.client.sheets.spreadsheets.values.batchUpdate({
-        //   spreadsheetId: spreadsheetId,
-        //   resource: request
-        // })
+        console.log(request)
+        await gapi.client.sheets.spreadsheets.values.batchUpdate({
+          spreadsheetId: spreadsheetId,
+          resource: request
+        })
 
       }, 
       

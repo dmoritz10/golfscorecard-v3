@@ -3,7 +3,7 @@
 https://dmoritz10.github.io/golfscorecard-v3/
 
 
-Fix WGS Handicap
+x Fix WGS Handicap
     Fix Course Handicap 
     Fix Target Score Calc
 
