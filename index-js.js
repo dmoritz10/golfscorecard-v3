@@ -360,7 +360,7 @@ var openShts = async function (shts) {
 console.log('get')
 console.log(response)
 
-  }
+  })
 
   return new Promise(async resolve => {
 
