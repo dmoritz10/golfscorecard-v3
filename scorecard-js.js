@@ -1419,7 +1419,9 @@ function btnGolfersHtml() {
     closeButton: false,
     size: 'extra-large',
     inputOptions: inputOptions,
-    callback: function (result) { prScore.golfers = result ? result.map(a => JSON.parse(a)) : []  }
+    callback: function (result) { 
+      console.log(result)
+      prScore.golfers = result ? result.map(a => a) : []  }
     
   });
 
