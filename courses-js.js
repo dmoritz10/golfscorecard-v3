@@ -788,7 +788,7 @@ async function updateCourse(arrCourse, idx) {
 
         console.log('start sort no values vvv')
 
-        var request = { "requests": [{ "sortRange": { "range": { "sheetId": 3, "startRowIndex": 1, "endRowIndex": 4, "startColumnIndex": 1, "endColumnIndex": 1 }, "sortSpecs": [{ "sortOrder": "ASCENDING", "dimensionIndex": 0 }] } }] }
+        var request = { "requests": [{ "sortRange": { "range": { "sheetId": 1837703152, "startRowIndex": 2, "endRowIndex": 90, "startColumnIndex": 1, "endColumnIndex": 2 }, "sortSpecs": [{ "sortOrder": "ASCENDING", "dimensionIndex": 0 }] } }] }
 
         console.log(request)
         console.log('spreadsheetId')
