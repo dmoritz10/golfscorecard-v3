@@ -782,7 +782,7 @@ async function updateCourse(arrCourse, idx) {
         console.log(response.result.updates.updatedRange)
 
         var request = {
-          sortRange: "'My Courses'!" + rng,
+          sortRange: "'My Courses'!a2:ab82",
               sortSpecs: [
                 {
                   sortOrder: "ASCENDING",
@@ -796,6 +796,11 @@ async function updateCourse(arrCourse, idx) {
         await gapi.client.sheets.spreadsheets.values.batchUpdate({
           spreadsheetId: spreadsheetId,
           resource: request
+        }).then( response => {
+
+console.log('sort complete')
+console.log(response)
+
         })
 
       }, 
