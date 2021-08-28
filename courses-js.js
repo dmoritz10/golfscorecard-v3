@@ -829,7 +829,7 @@ console.log(response)
 
     for (let i = 0 ; i < shtProps.length; i++)
 
-      var sht = shtProps[i]
+      var sht = shtProps[i].properties
 
       console.log(sht)
 
