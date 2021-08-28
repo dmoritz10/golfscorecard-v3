@@ -829,6 +829,8 @@ console.log(response)
 
       var sht = shtProps[i].sheets
 
+      console.log(sht)
+
       if (sht.title == "My Courses") {
 
         resolve(sht.sheetId)
