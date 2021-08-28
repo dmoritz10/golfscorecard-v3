@@ -825,6 +825,8 @@ console.log(response)
 
     var shtProps = response.sheets
 
+    console.log(shtProps)
+
     for (let i = 0 ; i < shtProps.length; i++)
 
       var sht = shtProps[i].sheets
