@@ -781,7 +781,7 @@ async function updateCourse(arrCourse, idx) {
         console.log('course added')
         console.log(response.result.updates.updatedRange)
 
-      console.log('start sort')
+      console.log('start sort no values')
 
         var request = {
           sortRange: 
@@ -805,7 +805,7 @@ async function updateCourse(arrCourse, idx) {
         
 
         console.log(request)
-        await gapi.client.sheets.spreadsheets.values.batchUpdate({
+        await gapi.client.sheets.spreadsheets.batchUpdate({
           spreadsheetId: spreadsheetId,
           resource: request
         }).then( response => {
