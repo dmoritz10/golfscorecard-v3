@@ -526,14 +526,14 @@ console.log('then')
 
           var currUserObj = await gapi.auth2.getAuthInstance().currentUser.get().getBasicProfile();
 
-        console.log('curruserobj')
+        console.log('curruserobj xxx')
 
           console.log(currUserObj)
           
-          currUser['email']     = currUserObj.Rs.Ct
-          currUser['firstName'] = currUserObj.Rs.mU
-          currUser['lastName']  = currUserObj.Rs.mS
-          currUser['fullName']  = currUserObj.Rs.Qe
+          currUser['email']     = currUserObj.getEmail()
+          currUser['firstName'] = currUserObj.getGivenName()
+          currUser['lastName']  = currUserObj.getFamilyName()
+          currUser['fullName']  = currUserObj.getName()
           currUser['emailName'] = currUser['email'].split('@')[0]
 
           if (currUser.firstName) {
