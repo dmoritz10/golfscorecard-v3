@@ -784,11 +784,20 @@ async function updateCourse(arrCourse, idx) {
         var shtProps = await getCoursesSheetId()
         var grdProps = shtProps.gridProperties
 
-        var request = { "requests": [{ "sortRange": { "range": { "sheetId": shtProps.sheetId, "startRowIndex": 1, "endRowIndex": grdProps.rowCount, "startColumnIndex": 0, "endColumnIndex": grdProps.columnCount-1 }, "sortSpecs": [{ "sortOrder": "ASCENDING", "dimensionIndex": 0 }] } }] }
-
-        console.log(shtProps)
-        console.log(request)
-        
+        var request = { "requests": 
+          [{ "sortRange": 
+            { "range": { 
+              "sheetId": shtProps.sheetId, 
+              "startRowIndex": 1, 
+              "endRowIndex": grdProps.rowCount, 
+              "startColumnIndex": 0, 
+              "endColumnIndex": grdProps.columnCount-1 
+            }, 
+            "sortSpecs": 
+            [{ "sortOrder": "ASCENDING", "dimensionIndex": 0 }] 
+            } 
+          }] 
+        }
 
         await gapi.client.sheets.spreadsheets.batchUpdate({
           spreadsheetId: spreadsheetId,
