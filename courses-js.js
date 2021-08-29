@@ -786,7 +786,7 @@ async function updateCourse(arrCourse, idx) {
     await gapi.client.sheets.spreadsheets.values.append(params, resource)
       .then(async function (response) {
 
-        var request = { "requests": [{ "sortRange": { "range": { "sheetId": shtProps.sheetId, "startRowIndex": shtProps.frozenRowCount+1, "endRowIndex": shtProps.rowCount-1, "startColumnIndex": 0, "endColumnIndex": shtProps.columnCount-1 }, "sortSpecs": [{ "sortOrder": "ASCENDING", "dimensionIndex": 0 }] } }] }
+        var request = { "requests": [{ "sortRange": { "range": { "sheetId": shtProps.sheetId, "startRowIndex": shtProps.frozenRowCount*1+1, "endRowIndex": shtProps.rowCount*1-1, "startColumnIndex": 0, "endColumnIndex": shtProps.columnCount*1-1 }, "sortSpecs": [{ "sortOrder": "ASCENDING", "dimensionIndex": 0 }] } }] }
 
         console.log(request)
         console.log('spreadsheetId')
