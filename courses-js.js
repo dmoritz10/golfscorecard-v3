@@ -817,7 +817,7 @@ async function updateCourse(arrCourse, idx) {
 
 async function getCoursesSheetId() {
 
-  gapi.client.sheets.spreadsheets.get({spreadsheetId})
+  await gapi.client.sheets.spreadsheets.get({spreadsheetId})
 
   .then(async function(response) {
 console.log('get')
