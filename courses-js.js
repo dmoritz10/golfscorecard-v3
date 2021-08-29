@@ -771,11 +771,6 @@ async function updateCourse(arrCourse, idx) {
     var row = 2
     var rng = calcRngA1(row, 1, 1, arrShts['My Courses'].colHdrs.length + 1)
 
-
-
-    console.log('shtProps')
-    console.log(shtProps)
-
     var params = {
       spreadsheetId: spreadsheetId,
       range: "'My Courses'!" + rng,
@@ -788,7 +783,7 @@ async function updateCourse(arrCourse, idx) {
 
         var shtProps = await getCoursesSheetId()
         var grdProps = shtProps.gridProperties
-        
+
         var request = { "requests": [{ "sortRange": { "range": { "sheetId": shtProps.sheetId, "startRowIndex": 1, "endRowIndex": grdProps.rowCount-1, "startColumnIndex": 0, "endColumnIndex": grdProps.columnCount-1 }, "sortSpecs": [{ "sortOrder": "ASCENDING", "dimensionIndex": 0 }] } }] }
 
         console.log(request)
