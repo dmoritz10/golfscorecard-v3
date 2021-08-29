@@ -817,6 +817,8 @@ async function updateCourse(arrCourse, idx) {
 
 async function getCoursesSheetId() {
 
+  return new Promise(async resolve => {
+
   await gapi.client.sheets.spreadsheets.get({spreadsheetId})
 
   .then(async function(response) {
@@ -835,12 +837,14 @@ console.log(response)
 
       if (sht.title === "My Courses") {
 
-        return sht.sheetId
+        resolve( sht.sheetId)
 
       }
     }
 
   })
+
+})
 
 }
 async function btnSCMFetchSxsHtml(e) {
