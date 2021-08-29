@@ -771,7 +771,7 @@ async function updateCourse(arrCourse, idx) {
     var row = 2
     var rng = calcRngA1(row, 1, 1, arrShts['My Courses'].colHdrs.length + 1)
 
-    var coursesShtId = await getCoursesSheetId()
+    var shtProps = await getCoursesSheetId()
 
     console.log('coursesShtId')
     console.log(coursesShtId)
@@ -786,7 +786,7 @@ async function updateCourse(arrCourse, idx) {
     await gapi.client.sheets.spreadsheets.values.append(params, resource)
       .then(async function (response) {
 
-        var request = { "requests": [{ "sortRange": { "range": { "sheetId": coursesShtId, "startRowIndex": 2, "endRowIndex": 90, "startColumnIndex": 1, "endColumnIndex": 2 }, "sortSpecs": [{ "sortOrder": "ASCENDING", "dimensionIndex": 0 }] } }] }
+        var request = { "requests": [{ "sortRange": { "range": { "sheetId": shtProps.sheetId, "startRowIndex": shtProps.frozenRowCount, "endRowIndex": shtProps.rowCount-1, "startColumnIndex": 0, "endColumnIndex": shtProps.columnCount-1 }, "sortSpecs": [{ "sortOrder": "ASCENDING", "dimensionIndex": 0 }] } }] }
 
         console.log(request)
         console.log('spreadsheetId')
@@ -837,7 +837,7 @@ console.log(response)
 
       if (sht.title === "My Courses") {
 
-        resolve( sht.sheetId)
+        resolve( sht)
 
       }
     }
