@@ -773,8 +773,8 @@ async function updateCourse(arrCourse, idx) {
 
     var shtProps = await getCoursesSheetId()
 
-    console.log('coursesShtId')
-    console.log(coursesShtId)
+    console.log('shtProps')
+    console.log(shtProps)
 
     var params = {
       spreadsheetId: spreadsheetId,
