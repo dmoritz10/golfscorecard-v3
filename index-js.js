@@ -149,7 +149,7 @@
     html: true,
   sanitize: false,
   container: 'body',
-  template: '<div class="popover" ><div class="arrow"></div>' +
+  template: '<div class="popover" role="tooltip"><div class="arrow"></div>' +
     '<h4 class="popover-header"></h4>' +
     '<h5 class="popover-body"></h5>' +
     '</div>'
