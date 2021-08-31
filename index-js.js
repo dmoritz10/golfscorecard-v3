@@ -194,7 +194,6 @@
   $('#btnAddTeetime')        .click(btnAddTeetimeHtml);
   $('#btnSubmitTeetime')     .click(btnSubmitTeetimeHtml);
   $('#btnDeleteTeetime')     .click(btnDeleteTeetimeHtml);
-  $('#btnEnterTeeTime')      .button().click(btnEnterTeeTimeHtml);
   // $('#ttmGolfers')           .change(ttmGolfersChangeHtml);
   $('#ttmSelectCourse')      .change(ttmSelectCourseChangeHtml);
 

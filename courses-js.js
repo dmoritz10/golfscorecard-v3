@@ -133,8 +133,6 @@ async function btnShowCoursesHtml() {
 
 async function showCourseDetail(courseInfo) {
 
-  transitionPlayRoundTab('Courses')
-
   var teeInfoIdx = {
 
     teeName: 1,
@@ -258,59 +256,6 @@ function showCourseDetailPrep(courseInfo) {
   courseInfo['targetHcp'] = $("#hpTargetHandicap").val()
 
   showCourseDetail(courseInfo)
-
-}
-
-
-function transitionPlayRoundTab(direction) {
-
-  $('#hpSelectTees').off("change");
-  $('#hpTargetHandicap').off("change");
-
-  if (direction == "Courses") {
-
-    $('#hpCourseNameAddr').removeClass('d-none')
-    $('#hpDispDialer').removeClass('d-none')
-    $('#hpHoleDetail').removeClass('d-none')
-
-
-    $('#hpDispHcp').addClass('d-none')
-    $('#hpDispStartBtn').addClass('d-none')
-    $('#hpBanner').addClass('d-none')
-    //    $('#hpDispSelectCourse').addClass('d-none')
-
-    $('#hpGoTo')[0].setAttribute("onclick", 'gotoTab("Courses")');
-
-  } else {
-
-    $('#hpCourseNameAddr').addClass('d-none')
-    $('#hpDispDialer').addClass('d-none')
-    $('#hpHoleDetail').addClass('d-none')
-
-    $('#hpDispHcp').removeClass('d-none')
-    $('#hpDispStartBtn').removeClass('d-none')
-    $('#hpBanner').removeClass('d-none')
-    //    $('#hpDispSelectCourse').removeClass('d-none')
-
-    $('#hpGoTo')[0].setAttribute("onclick", 'gotoTab("Home")');
-
-    $('#hpSelectTees').change(function (event) {
-      event.preventDefault()
-      loadCourseInfo()
-    });
-
-    $('#hpTargetHandicap').change(function () {
-      event.preventDefault()
-      loadCourseInfo()
-    });
-  }
-
-}
-
-function btnEnterTeeTimeHtml() {
-
-  btnAddTeetimeHtml($("#hpSelectCourse option:selected").text())
-  gotoTab("Teetimes")
 
 }
 
