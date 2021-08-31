@@ -6,6 +6,9 @@ async function btnPlayRoundHtml() {
     return null
   }
 
+  console.log('btnPlayRoundHtml')
+    
+  transitionPlayRoundTab()
   
   var resumeRound = await checkForIncompleteRound()
   

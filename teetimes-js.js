@@ -11,6 +11,7 @@ function btnTeetimesHtml () {
     
     $("#nbrTeetimes")[0].innerHTML = teetimes.length
     
+        
     for (var j = 0; j<teetimes.length;j++) {
     
       var ele = $("#tblTeetimes").clone();
@@ -153,6 +154,7 @@ console.log('editTeetime')
 }
 
 async function btnAddTeetimeHtml (preSelectCourse) {
+console.log('btnAddTeetimeHtml')
     
     await loadCoursesPlayedDropDown('ttmSelectCourse')
     
@@ -254,6 +256,7 @@ async function btnSubmitTeetimeHtml() {
     arrTeetimes[idx].time = $('#ttmTime').val()
     
     // arrTeetimes[idx].golfers = prsdGolfers
+    // arrTeetimes[idx].golfers = []
 
     arrTeetimes[idx].eventId = eventId
   
@@ -350,7 +353,21 @@ async function ttmSelectCourseChangeHtml() {
   setWebSiteHref({      
         url:sxsUrl,
         element: $('#btnWebSite')
-      })     
+      })
+
+
+
+
+
+/*      
+  var phoneNbr = $('#ttmSelectCourse').val()
+  $('#btnCallCourse').prop('disabled', false)
+                     .prop('href', 'tel:' + phoneNbr )
+
+  var webSite = await fetchWebSiteUrl(sxsUrl)
+  $('#btnWebSite').prop('disabled', false)
+                  .prop('href', webSite )
+*/                  
 
 }
 
@@ -390,7 +407,6 @@ async function fetchWebSiteUrl(sxsCourseId) {
         console.log('error' + request.status)
       
       }
-
     }
     
     request.onerror = async function() {
@@ -543,9 +559,7 @@ async function editGolfers(idx) {
     
   });
 
-  golferPrompt.init(function(){                           
-    
-    // user can clear radio button by clicking on the golfer name
+  golferPrompt.init(function(){                           // user can clear radio button by clicking on the golfer name
 
     $( "tr td:nth-child(1)" ).click(function() {
       var $this = $( this );
@@ -560,23 +574,26 @@ async function editGolfers(idx) {
 
 }
 
-async function updateGolfers(response, idx) {
+async function updateGolfers(response, idx){
 
   var selected = []
 
-  response.each(function () {
+  response.each(function(){ 
     var labelData = $(this).find('label')
-    labelData.each(function () {
-      if ($(this).hasClass("active")) {
+    labelData.each(function(){
+    if ($(this).hasClass("active")) {
 
-        var glfr = $(this).parent().parent().parent().first().text().split('\n')[0]
-        var state = $(this).text().replace(/\n/g, '').replace(/ /g, '')
+      var glfr = $(this).parent().parent().parent().first().text().split('\n')[0]
+      var state = $(this).text().replace(/\n/g,'').replace(/ /g,'')
 
-        selected.push({ "name": glfr, "state": state })
+      selected.push({"name":glfr, "state":state})
 
-      }
+    }
+
     })
   });
+
+  // console.log(selected)
 
   var arrTeetimes = readOption('teetimes', [])
 
@@ -602,64 +619,63 @@ function getTTGolfers(idx) {
   <label class="btn btn-light hidan m-0 p-0 maybeState">
       <input class="toggles" type="radio">maybe
   </label>
-  </div>`
+</div>`
 
 
   var golfers = readOption('Golfers', [])
   var arrTeetimes = readOption('teetimes', [])
   var ttimeGlfrs = arrTeetimes[idx].golfers
-
+  
   var arr = []
+  
 
-
-  golfers.forEach((val, idx) => {
+  golfers.forEach((val,idx) => {
 
     var x = html
 
-    var glfr = ttimeGlfrs ? ttimeGlfrs.find(glf => glf.name === val.name) : null
+    var glfr = ttimeGlfrs ? ttimeGlfrs.find( glf => glf.name === val.name) : null
 
     var state = glfr ? glfr.state : false
 
     switch (state) {
 
-      case "yes":
-        x = x.replace(/yesState/, "active")
-        x = x.replace(/noState/, "")
-        x = x.replace(/maybeState/, "")
-        break;
-      case "no":
-        x = x.replace(/yesState/, "")
-        x = x.replace(/noState/, "active")
-        x = x.replace(/maybeState/, "")
-        break;
-      case "maybe":
-        x = x.replace(/yesState/, "")
-        x = x.replace(/noState/, "")
-        x = x.replace(/maybeState/, "active")
-        break;
+        case "yes":
+          x = x.replace(/yesState/,"active")
+          x = x.replace(/noState/,"")
+          x = x.replace(/maybeState/,"")        
+          break;
+        case "no":
+          x = x.replace(/yesState/,"")
+          x = x.replace(/noState/,"active")
+          x = x.replace(/maybeState/,"")        
+          break;
+        case "maybe":
+          x = x.replace(/yesState/,"")
+          x = x.replace(/noState/,"")
+          x = x.replace(/maybeState/,"active")        
+          break;
 
     }
 
     arr.push([
-      '<span class="h5 cursor-pointer">' + val.name + '</span>',
+      '<span class="h5 cursor-pointer">' + val.name  + '</span>' ,
       x
     ])
-    
   })
+  
 
-
-  var tbl = new Table();
-
-  tbl
-    .setHeader()
-    .setTableHeaderClass()
-    .setData(arr)
-    .setTableClass('table')
-    .setTrClass('')
-    .setTcClass(['', 'text-right'])
-    .setTdClass('pb-1 pt-1 border-0')
-    .build();
-
-  return tbl.html
+var tbl = new Table();
+  
+tbl
+  .setHeader()
+  .setTableHeaderClass()
+  .setData(arr)
+  .setTableClass('table')
+  .setTrClass('')
+  .setTcClass(['', 'text-right'])
+  .setTdClass('pb-1 pt-1 border-0')
+  .build();
+  
+return tbl.html
 
 }
