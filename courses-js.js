@@ -270,7 +270,7 @@ function transitionPlayRoundTab(direction) {
   if (direction == "Courses") {
 
     $('#hpCourseNameAddr').removeClass('d-none')
-    $('#hpDispDialer').removeClass('d-none')
+    // $('#hpDispDialer').removeClass('d-none')
     $('#hpHoleDetail').removeClass('d-none')
 
 
@@ -284,7 +284,7 @@ function transitionPlayRoundTab(direction) {
   } else {
 
     $('#hpCourseNameAddr').addClass('d-none')
-    $('#hpDispDialer').addClass('d-none')
+    // $('#hpDispDialer').addClass('d-none')
     $('#hpHoleDetail').addClass('d-none')
 
     $('#hpDispHcp').removeClass('d-none')
@@ -299,7 +299,7 @@ function transitionPlayRoundTab(direction) {
       loadCourseInfo()
     });
 
-    $('#hpTargetHandicap').change(function () {
+    $('#hpTargetHandicap').change(function (event) {
       event.preventDefault()
       loadCourseInfo()
     });
