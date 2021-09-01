@@ -277,7 +277,7 @@ function transitionPlayRoundTab(direction) {
     $('#hpDispHcp').addClass('d-none')
     $('#hpDispStartBtn').addClass('d-none')
     $('#hpBanner').addClass('d-none')
-    //    $('#hpDispSelectCourse').addClass('d-none')
+       $('#hpDispSelectCourse').addClass('d-none')
 
     $('#hpGoTo')[0].setAttribute("onclick", 'gotoTab("Courses")');
 
@@ -290,7 +290,7 @@ function transitionPlayRoundTab(direction) {
     $('#hpDispHcp').removeClass('d-none')
     $('#hpDispStartBtn').removeClass('d-none')
     $('#hpBanner').removeClass('d-none')
-    //    $('#hpDispSelectCourse').removeClass('d-none')
+       $('#hpDispSelectCourse').removeClass('d-none')
 
     $('#hpGoTo')[0].setAttribute("onclick", 'gotoTab("Home")');
 
