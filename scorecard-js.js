@@ -328,7 +328,7 @@ function adjustScrolls() {
    
   document.getElementById("divPutts").scrollTop -= 12;  
 
-  document.getElementById("divPnlty").scrollTop -= 12; 
+  document.getElementById("divPnlty").scrollTop -= 12;
 
   document.getElementById("divDrive").scrollTop -= 12;  
 

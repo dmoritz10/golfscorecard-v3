@@ -7,6 +7,7 @@
     "ShortcutMenuBar.toggleTerminal": false,
     "editor.minimap.enabled": false,
     "workbench.editor.enablePreview": false,
+    "editor.bracketPairColorization.enabled": true,
 
 
     
