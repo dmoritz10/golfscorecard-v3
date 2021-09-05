@@ -155,7 +155,7 @@ fade {
   
 }
 
-body {
+/* body {
     height:100vh;
     overflow-y: scroll;
     scrollbar-width: none; /* Firefox */
@@ -164,7 +164,7 @@ body {
 body::-webkit-scrollbar { /* WebKit */
     width: 0px;
     height: 0px;
-} 
+}  */
 
 /* .disable-scrollbars::-webkit-scrollbar {
     width: 0px;
@@ -407,7 +407,7 @@ console.log('end code load')
       </div>        
       
         
-      <div class="m-0 p-0 tab-pane fade" id="ShowRounds"  role="tabpanel">
+      <div class="m-0 p-0 tab-pane fade" id="ShowRounds"  class="disable-scrollbars" role="tabpanel">
 
         <div class="load-html" data-source="show rounds"></div>
         <div class="load-script d-none" data-source="show rounds-js.js"></div>
