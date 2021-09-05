@@ -635,44 +635,11 @@ function promiseRun (func) {
 
 function gotoTab(tabName) {
 
+console.log($( "div.tab-content > div.active" )  )
+
     $('[href="#' + tabName + '"]').trigger('click');
 
-   /*
-
-    $('[href="#' + tabName + '"]').click();
-
- console.log($('[role="tabpanel"]'))
-  console.log($('[href="#' + tabName + '"]'))
-
-
-
-  $('[role="tabpanel"]').removeClass('show').removeClass('active').hide()
-$('#' + tabName).addClass('show').addClass('active').show()
-
-console.log($('[href="#' + tabName + '"]'))
-
- 
-console.log(tabName)
-console.log($("#main-panel ul>li a"))
-var tab = $("#main-panel ul>li a:contains('" + tabName + "')");
-
-console.log(tab)
-  if (tab[0]) {
-    var tabid = tab[0].id;
-  console.log(tab[0])
-  var tabIndex = tabid.slice(tabid.lastIndexOf('-') + 1);;
-  console.log(tabIndex)
-  $('#main-panel').tabs('option', 'active', tabIndex - 1);
-  }
-
-
-  //  $('[href="#' + tabName + '"]').trigger('click');
-  //$( "#main-panel" ).tabs( "option", "active", 1 );
-
-  console.log($( "#main-panel" ).tabs())
-  console.log($('[data-role="tabs"]'))
-  $('[data-role="tabs"]' ).tabs( "option", "active", 2 );
-  */  
+   
 }
 
 
