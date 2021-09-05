@@ -164,18 +164,19 @@ body {
 body::-webkit-scrollbar { /* WebKit */
     width: 0px;
     height: 0px;
+    background: transparent; /* Chrome/Safari/Webkit */
 } 
 
-.disable-scrollbars::-webkit-scrollbar {
+/* .disable-scrollbars::-webkit-scrollbar {
     width: 0px;
-    background: transparent; /* Chrome/Safari/Webkit */
-}
+    
+} */
 
 .disable-scrollbars {
   height:100vh;
   overflow-y: scroll;
   scrollbar-width: none !important; /* Firefox */
-  -ms-overflow-style: none !important;  /* IE 10+ */
+  -ms-overflow-style: none !important;  IE 10+
 }
 
 .popover-body {
