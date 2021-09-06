@@ -148,7 +148,7 @@ async function btnShowHandicapHtml () {
     if (hcpAlert && j == idxOf11th) {
       ele.css( "background", "#acdb9e")      
       ele.find('#hcpSeqNbr')[0].innerHTML = hcpMethod == 'WHS' ? 9 : 11
-  }
+    }
     
     ele.show()
     
@@ -159,6 +159,7 @@ async function btnShowHandicapHtml () {
   }
   
   displayHcpTrend(hcpArr, handicapAlert)
+
 
   gotoTab('ShowHCP')
 
