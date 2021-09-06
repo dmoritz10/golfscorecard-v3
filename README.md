@@ -16,7 +16,7 @@ x Fix WGS Handicap
         Courses
         Home.btnPlayRound
 
-Fix re-positioning to top of listing
+x Fix re-positioning to top of listing
     Courses - edit course
     Courses - Playround
 
