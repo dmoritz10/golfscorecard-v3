@@ -637,7 +637,15 @@ function gotoTab(tabName) {
 
 console.log($( "div.tab-content > div.active" )  )
 
-    $('[href="#' + tabName + '"]').trigger('click');
+  var $tab = $('[href="#' + tabName + '"]')
+
+  var top = $tab.scrollTop()
+
+  console.log(top)
+
+  $tab.trigger('click');
+
+  $tab.scrollTop(top)
 
    
 }
