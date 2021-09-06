@@ -26,8 +26,12 @@ function RSCloseHtml(e) {
 
 function btnRoundStatsHtml(rtnTo) {
 
-  console.log('ccccccc')
+  console.log('ssssss')
+  console.log(`gotoTab('${rtnTo}')`)
 
+  var returnTo = rtnTo ? rtnTo : "Scorecard"
+  
+  $('#rsGoTo')[0].setAttribute("onclick", `gotoTab('${returnTo}')`);
   gotoTab('RoundStats')
   
   var datePlayed = new Date(prScore.startTime).toString().substring(0,15)
