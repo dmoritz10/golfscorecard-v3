@@ -129,11 +129,7 @@ async function showRoundDetail (rowIdx, rtnTo) {
     
     RSCalledFrom = rtnTo
 
-console.log('dmdmdmdmdm')
-console.log(`gotoTab('${rtnTo}')`)
-
-    $('#rsGoTo')[0].setAttribute("onclick", `gotoTab('${rtnTo}')`);
-    btnRoundStatsHtml()
+    btnRoundStatsHtml(rtnTo)
 
   })
 

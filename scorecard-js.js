@@ -584,7 +584,7 @@ async function btnEndRoundHtml() {
   
   navigator.geolocation.clearWatch(geoWatchId);  
  
-  RSCalledFrom = "EndRound"
+  // RSCalledFrom = "EndRound"
   btnRoundStatsHtml()
   
   gotoTab('RoundStats')  
