@@ -634,7 +634,7 @@ function promiseRun (func) {
 }
 
 function gotoTab(tabName) {
-
+  console.log('yp dan')
 console.log($( "div.tab-content > div.active" )  )
 
   var $tab = $('[href="#' + tabName + '"]')
