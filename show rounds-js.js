@@ -128,7 +128,8 @@ async function showRoundDetail (rowIdx, rtnTo) {
     prScore = JSON.parse(roundObj.scoreCard)
     
     RSCalledFrom = rtnTo
-
+    
+console.log('dmdmdmdmdm')
 console.log("gotoTab('${rtnTo}')")
 
     $('#rsGoTo')[0].setAttribute("onclick", "gotoTab('${rtnTo}')");
