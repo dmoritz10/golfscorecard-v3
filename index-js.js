@@ -641,6 +641,8 @@ console.log($( "div.tab-content > div.active" )  )
 
   var top = $tab.scrollTop()
 
+  console.log('hi dan')
+
   console.log(top)
 
   $tab.trigger('click');
