@@ -27,7 +27,8 @@ function RSCloseHtml(e) {
 function btnRoundStatsHtml(rtnTo) {
 
   console.log('tttttt')
-  console.log(e)
+
+  console.log(rtnTo)
   console.log(`gotoTab('${rtnTo}')`)
 
   var returnTo = rtnTo ? rtnTo : "Scorecard"
