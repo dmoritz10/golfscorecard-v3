@@ -130,7 +130,7 @@
 
   //  $('#btnChangeTee')           .button().click(btnChangeTeeHtml);
 
-  $('#btnRoundStats')          .button().click(btnRoundStatsHtml("Scorecard"));
+  $('#btnRoundStats')          .button().click(btnRoundStatsHtml);
   $('#btnClearScore')          .button().click(btnClearScoreHtml);
   $('#prDistance')             .click({pinLocn: 'center'}, btnShowLocationHtml);
   $('#prDistanceFront')        .click({pinLocn: 'front'}, btnShowLocationHtml);
