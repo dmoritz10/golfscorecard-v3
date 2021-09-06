@@ -634,20 +634,21 @@ function promiseRun (func) {
 }
 
 function gotoTab(tabName) {
-  console.log('yp dan')
-console.log($( "div.tab-content > div.active" )  )
+
+//   console.log('yp dan')
+// console.log($( "div.tab-content > div.active" )  )
 
   var $tab = $('[href="#' + tabName + '"]')
 
-  var top = $tab.scrollTop()
+  // var top = $tab.scrollTop()
 
-  console.log('hi dan')
+  // console.log('hi dan')
 
-  console.log(top)
+  // console.log(top)
 
   $tab.trigger('click');
 
-  $tab.scrollTop(top)
+  // $tab.scrollTop(top)
 
    
 }
