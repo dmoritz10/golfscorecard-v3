@@ -26,7 +26,7 @@ function RSCloseHtml(e) {
 
 function btnRoundStatsHtml(rtnTo) {
 
-  console.log('dmdmdmdmdm')
+  console.log('zzzzxxxx')
 
   gotoTab('RoundStats')
   
