@@ -26,12 +26,13 @@ function RSCloseHtml(e) {
 
 function btnRoundStatsHtml(rtnTo) {
 
-  console.log('tttttt')
+  console.log('ffffff')
 
   console.log(rtnTo)
   console.log(`gotoTab('${rtnTo}')`)
+  console.log(typeof rtnTo)
 
-  var returnTo = rtnTo ? rtnTo : "Scorecard"
+  var returnTo = typeof rtnTo === 'object' ? "Scorecard" : rtnTo
   
   $('#rsGoTo')[0].setAttribute("onclick", `gotoTab('${returnTo}')`);
   gotoTab('RoundStats')
