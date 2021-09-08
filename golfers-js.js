@@ -88,6 +88,8 @@ async function btnSubmitGolferHtml() {
 
   var idx = $('#glfmIdx').val()
 
+  console.log(idx)
+console.log('dan')
   if (idx) {                                                       // update existing golfer
 
     arrGolfers[idx].name = $('#glfmName').val()
