@@ -627,6 +627,9 @@ async function btnEndRoundHtml() {
       // console.log(response.result.updates.updatedRange)
       // updateOption('Clubs', prClubs)
       console.log('round posted')
+
+      await updateOption('currScoreCard', '')                  
+      await updateOption('currCourseInfo', '')      
    
     }, 
     

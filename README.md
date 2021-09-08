@@ -124,13 +124,13 @@ x Start from scratch
 
 x Save Sxs Hold Detail just in case
 
+x Clear round after successful append
+
 Recover Costa Mesa Country Club  (Los Lagos Course)	7/25/19  from Scorecards
 
 test collabration
 
 test for uniqueness golfers and clubs
-
-gotoTab / returntoTab
 
 use tags for versioning
 

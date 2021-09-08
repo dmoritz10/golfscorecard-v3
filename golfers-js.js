@@ -95,6 +95,11 @@ async function btnSubmitGolferHtml() {
 
   } else {                                                         // add new golfer
 
+    if (arrGolfers.indexOf($('#glfmName').val()) > -1) {
+      toast("Course already exists")
+      return
+    }
+
     arrGolfers.push({
       name: $('#glfmName').val(),
       cell: $('#glfmCell').val()
