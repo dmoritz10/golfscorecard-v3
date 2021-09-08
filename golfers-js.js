@@ -99,7 +99,7 @@ console.log('ddd')
 
 console.log(arrGolfers)
 console.log($('#glfmName').val())
-console.log(arrGolfers.indexOf($('#glfmName').val())
+console.log(arrGolfers.indexOf($('#glfmName').val()))
 
     if (arrGolfers.indexOf($('#glfmName').val()) > -1) {
       toast("Golfer already exists")
