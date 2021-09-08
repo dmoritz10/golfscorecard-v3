@@ -99,9 +99,11 @@ console.log('ddd')
 
 console.log(arrGolfers)
 console.log($('#glfmName').val())
-console.log(arrGolfers.indexOf($('#glfmName').val()))
 
-    if (arrGolfers.indexOf($('#glfmName').val()) > -1) {
+var x = arrGolfers.find(x => x.name === $('#glfmName').val())
+console.log(x)
+
+    if (x) {
       toast("Golfer already exists")
       return
     }
