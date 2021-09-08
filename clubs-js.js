@@ -135,6 +135,12 @@ async function btnSubmitClubHtml() {
   
   } else {                                                         // add new Club
 
+    var x = arrClubs.find(x => x.club === $('#clbmClub').val())
+    if (x) {
+      toast("Club already exists")
+      return
+    }
+
     arrClubs.push({
       club:        $('#clbmClub').val(),
       mfg:         $('#clbmMfg').val(),
@@ -154,6 +160,8 @@ async function btnSubmitClubHtml() {
   }
   
   console.log(arrClubs)
+
+  arrClubs.sort((a, b) => (a.club > b.club) ? 1 : -1)
   
   arrOptions['Clubs'] = JSON.stringify(arrClubs)
 

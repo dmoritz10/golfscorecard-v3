@@ -109,6 +109,7 @@ async function btnSubmitGolferHtml() {
   }
 
   arrGolfers.sort((a, b) => (a.name > b.name) ? 1 : -1)
+  
   arrOptions['Golfers'] = JSON.stringify(arrGolfers)
 
   await updateGolfersOption()
