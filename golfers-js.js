@@ -95,8 +95,11 @@ async function btnSubmitGolferHtml() {
 
   } else {                                                         // add new golfer
 
+console.log(arrGolfers)
+console.log($('#glfmName').val())
+
     if (arrGolfers.indexOf($('#glfmName').val()) > -1) {
-      toast("Course already exists")
+      toast("Golfer already exists")
       return
     }
 
