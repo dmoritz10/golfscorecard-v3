@@ -88,8 +88,6 @@ async function btnSubmitGolferHtml() {
 
   var idx = $('#glfmIdx').val()
 
-  console.log(idx)
-console.log('ddd')
   if (idx) {                                                       // update existing golfer
 
     arrGolfers[idx].name = $('#glfmName').val()
@@ -97,12 +95,7 @@ console.log('ddd')
 
   } else {                                                         // add new golfer
 
-console.log(arrGolfers)
-console.log($('#glfmName').val())
-
-var x = arrGolfers.find(x => x.name === $('#glfmName').val())
-console.log(x)
-
+    var x = arrGolfers.find(x => x.name === $('#glfmName').val())
     if (x) {
       toast("Golfer already exists")
       return
@@ -115,6 +108,7 @@ console.log(x)
     })
   }
 
+  arrGolfers.sort((a, b) => (a.name > b.name) ? 1 : -1)
   arrOptions['Golfers'] = JSON.stringify(arrGolfers)
 
   await updateGolfersOption()
