@@ -128,9 +128,13 @@ x Clear round after successful append
 
 Recover Costa Mesa Country Club  (Los Lagos Course)	7/25/19  from Scorecards
 
-test collabration
+x test collabration
 
-test for uniqueness golfers and clubs
+x test for uniqueness golfers and clubs -->
 
-use tags for versioning
+versioning
+
+    subdirectory ?
+
+
 
