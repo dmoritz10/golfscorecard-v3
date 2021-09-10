@@ -15,15 +15,12 @@ async function btnShowRoundsHtml() {
   rounds.sort((a, b) => {
     
     if (!isNaN(b.objHandicap.handicapDiff) && !isNaN(b.objHandicap.handicapDiff)) {
-      
+
       return b.objHandicap.handicapDiff - a.objHandicap.handicapDiff;
 
   } else {
 
     return 99
-
-  }
-
 
   }
 
