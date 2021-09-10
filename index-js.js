@@ -429,7 +429,6 @@ function loadCoursesPlayedDropDown(selectCourse) {
 
     var nextCourseName = teetimes ? JSON.parse(teetimes)[0].courseName : null
 
-    
     courses =  arrShts['My Courses'].vals
 
     var s = document.getElementById(selectCourse)
