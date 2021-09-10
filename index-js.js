@@ -425,8 +425,10 @@ function loadCoursesPlayedDropDown(selectCourse) {
 
     removeOldTeetimes()
     
-    var nextCourseName = arrOptions.teetimes ? JSON.parse(arrOptions.teetimes)[0].courseName : null
+    var teetimes = readOption('teetimes', null)
 
+    var nextCourseName = teetimes ? JSON.parse(teetimes)[0].courseName : null
+    
     courses =  arrShts['My Courses'].vals
 
     var s = document.getElementById(selectCourse)
