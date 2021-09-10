@@ -16,15 +16,15 @@ async function btnShowRoundsHtml() {
 
     console.log(isNaN(b.objHandicap.handicapDiff))
     
-    if (isNaN(b.objHandicap.handicapDiff) || isNaN(b.objHandicap.handicapDiff)) {
+    if (typeof b.objHandicap.handicapDiff === 'number' && typeof a.objHandicap.handicapDiff === 'number') {
+
+      return b.objHandicap.handicapDiff - a.objHandicap.handicapDiff;
+
+    } else {
 
       return 99
 
-  } else {
-
-    return b.objHandicap.handicapDiff - a.objHandicap.handicapDiff;
-
-  }
+    }
   })
 
   if (!rounds) return
