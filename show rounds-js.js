@@ -14,7 +14,7 @@ async function btnShowRoundsHtml() {
 
   rounds.sort((a, b) => {
 
-    console.log(isNaN(b.objHandicap.handicapDiff)
+    console.log(isNaN(b.objHandicap.handicapDiff))
     
     if (isNaN(b.objHandicap.handicapDiff) || isNaN(b.objHandicap.handicapDiff)) {
 
