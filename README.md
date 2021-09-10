@@ -132,9 +132,21 @@ x test collabration
 
 x test for uniqueness golfers and clubs -->
 
-versioning
+x versioning - have an ok solution
 
-    subdirectory ?
+stats - line of closest fit for 
 
+    hcp in CAS
+    avg score by par
+    tee to green
+
+Rounds - sort option
+
+    Sort by Date Played
+    Sort by Best Rounds (hcp diff)
+
+
+
+    add reset button to pull down
 
 
