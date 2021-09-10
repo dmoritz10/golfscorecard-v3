@@ -23,6 +23,7 @@ async function btnShowRoundsHtml() {
     return 99
 
   }
+  })
 
   if (!rounds) return
 
