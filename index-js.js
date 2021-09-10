@@ -470,7 +470,7 @@ function searchTeeTimes() {
 
 function removeOldTeetimes() {
 
-    var teetimes = readOption('teetimes', null)
+  var teetimes = readOption('teetimes', null)
 
   if (!teetimes) return
 
@@ -479,18 +479,18 @@ function removeOldTeetimes() {
 
   var arrTeetimes = []
     
-    teetimes.forEach ((val) => { if (parseDateISOString(val.date) >= td)  {arrTeetimes.push(val)} })
+  teetimes.forEach ((val) => { if (parseDateISOString(val.date) >= td)  {arrTeetimes.push(val)} })
 
   if (teetimes.length == arrTeetimes.length) return
     
     arrOptions.teetimes = arrTeetimes.length > 0 ? JSON.stringify(arrTeetimes) : ''
 
-  updateTeetimesOption()
+    updateTeetimesOption()
 
 }
 
 function parseDateISOString(s) {
-    let ds = s.split(/\D/).map(s => parseInt(s));
+  let ds = s.split(/\D/).map(s => parseInt(s));
   ds[1] = ds[1] - 1; // adjust month
   return new Date(...ds);
 }
