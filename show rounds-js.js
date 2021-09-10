@@ -13,14 +13,16 @@ async function btnShowRoundsHtml() {
   var rounds = await getRounds(srExcludeSmall, srSelectedCourse)
 
   rounds.sort((a, b) => {
-    
-    if (!isNaN(b.objHandicap.handicapDiff) && !isNaN(b.objHandicap.handicapDiff)) {
 
-      return b.objHandicap.handicapDiff - a.objHandicap.handicapDiff;
+    console.log(isNaN(b.objHandicap.handicapDiff)
+    
+    if (isNaN(b.objHandicap.handicapDiff) || isNaN(b.objHandicap.handicapDiff)) {
+
+      return 99
 
   } else {
 
-    return 99
+    return b.objHandicap.handicapDiff - a.objHandicap.handicapDiff;
 
   }
   })
