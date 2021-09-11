@@ -18,11 +18,7 @@ async function btnShowRoundsHtml() {
 
   var nbrRounds = rnds.length
    
-  var x = $("#tblShowRounds").clone();
-  $("#srContainer").empty()
-  x.appendTo("#srContainer");
-  
-  $("#tblShowRounds").hide()
+ 
   
   
 
@@ -62,9 +58,24 @@ async function btnShowRoundsHtml() {
       }
     })
 
+    $("#srHcpDiff").removeClass("d-none")
+    $("#srGIR").addClass("d-none")
+    
+  } else {
+    
+    $("#srHcpDiff").addClass("d-none")
+    $("#srGIR").removeClass("d-none")
+     
   }
 
   var rndCntr = 0
+  
+
+  var x = $("#tblShowRounds").clone();
+  $("#srContainer").empty()
+  x.appendTo("#srContainer");
+  
+  $("#tblShowRounds").hide()
 
   for (var j = 0; j < rounds.length; j++) {
   
@@ -102,11 +113,7 @@ async function btnShowRoundsHtml() {
     var hcpDiff = objHandicap.handicapDiff ? (objHandicap.handicapDiff*1).toFixed(1) : '&nbsp;'
     var escCorrections = objHandicap.escCorrections
 
-    // ele.find('#srGIR')[0].innerHTML = escCorrections ? (hcpDiff*1).toFixed(1) + '<sup>' + escCorrections + '</sup>' : (hcpDiff*1).toFixed(1)
-
-
     ele.find('#srHcpDiff')[0].innerHTML = escCorrections ? hcpDiff + '<sup>' + escCorrections + '</sup>' : hcpDiff
-    // ele.find('#srHcpDiff')[0].innerHTML = hcpDiff
     ele.find('#srHcp')[0].innerHTML = objHandicap.handicap
           
     if (roundObj.finalScore*1 <= targetScore ) {
