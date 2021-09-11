@@ -53,7 +53,7 @@ async function btnShowRoundsHtml() {
       
       if (typeof b.objHandicap.handicapDiff === 'number' && typeof a.objHandicap.handicapDiff === 'number') {
 
-        return b.objHandicap.handicapDiff - a.objHandicap.handicapDiff;
+        return a.objHandicap.handicapDiff - b.objHandicap.handicapDiff;
 
       } else {
 
