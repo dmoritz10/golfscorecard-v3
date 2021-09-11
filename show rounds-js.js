@@ -7,28 +7,16 @@ async function btnShowRoundsHtml() {
   var srMadeTarget      = srSelectOptions.srMadeTarget
   var srSelectedCourse  = srSelectOptions.srSelectedCourse
   var srSelectedDateRng = srSelectOptions.srSelectedDateRng
+  var srSelectedSortBy  = srSelectOptions.srSelectedSortBy
   
   var hcpMethod         = srSelectOptions.hcpMethod
   
-  var rounds = await getRounds(srExcludeSmall, srSelectedCourse)
+  var getRounds = await getRounds(srExcludeSmall, srSelectedCourse)
 
-  rounds.sort((a, b) => {
-    
-    if (typeof b.objHandicap.handicapDiff === 'number' && typeof a.objHandicap.handicapDiff === 'number') {
-
-      return b.objHandicap.handicapDiff - a.objHandicap.handicapDiff;
-
-    } else {
-
-      return 99
-
-    }
-  })
-
-  if (!rounds) return
+  if (!getRounds) return
 
 
-  var nbrRounds = rounds.length
+  var nbrRounds = getRounds.length
    
   var x = $("#tblShowRounds").clone();
   $("#srContainer").empty()
@@ -36,12 +24,49 @@ async function btnShowRoundsHtml() {
   
   $("#tblShowRounds").hide()
   
+  
+
+  var datePlayedArr = getRounds.map(x => x['date']) 
+  var endRow = srSelectedDateRng ? getEndRow(datePlayedArr, srSelectedDateRng) : 0
+
+  var rounds = []
+  
+  for (var j = getRounds.length - 1; j > endRow - 1; j--) {
+
+    let roundObj = getRounds[j]
+    let ci = JSON.parse(roundObj.courseInfo)
+
+    let targetScore = ci.courseInfo['Target Score'].split(' ')[0]
+    if (         
+      (srMadeTarget && !madeTargetScore(targetScore, roundObj.finalScore)) 
+    ) {
+       continue;     
+    }
+
+    rounds.push(getRounds[j])
+
+  }
+
+  if (srSelectedSortBy == 'Sort by Best Rounds') {
+
+    rounds.sort((a, b) => {
+      
+      if (typeof b.objHandicap.handicapDiff === 'number' && typeof a.objHandicap.handicapDiff === 'number') {
+
+        return b.objHandicap.handicapDiff - a.objHandicap.handicapDiff;
+
+      } else {
+
+        return 99
+
+      }
+    })
+
+  }
+
   var rndCntr = 0
 
-  var datePlayedArr = rounds.map(x => x['date']) 
-  var endRow = srSelectedDateRng ? getEndRow(datePlayedArr, srSelectedDateRng) : 0
-  
-  for (var j = rounds.length - 1; j > endRow - 1; j--) {
+  for (var j = rounds.length - 1; j > -1; j--) {
   
     var ele = $("#tblShowRounds").clone();
     
@@ -53,12 +78,6 @@ async function btnShowRoundsHtml() {
     var objTargetScore = objHandicap.targetScore
 
     var targetScore = ci.courseInfo['Target Score'].split(' ')[0]
-
-    if (         
-        (srMadeTarget && !madeTargetScore(targetScore, roundObj.finalScore)) 
-      ) {
-         continue;     
-      }
 
     var datePlayed = new Date(roundObj.startTime).toString().substring(0,15)
 
@@ -155,7 +174,8 @@ async function btnSRMoreVertHtml() {
   $('#srExcludeSmall').prop('checked',  srSelectOptions.srExcludeSmall )
   $('#srMadeTarget').prop('checked',  srSelectOptions.srMadeTarget  )
   setSelectedIdx('selectRoundsDateRng', srSelectOptions.srSelectedDateRng)
- 
+  setSelectedIdx('selectRoundsSortBy', srSelectOptions.srSelectedSortBy)
+
   loadCoursesSelect('srSelectCourse')
 
 }
