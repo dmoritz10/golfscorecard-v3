@@ -14,7 +14,7 @@ async function btnShowRoundsHtml() {
 
   rounds.sort((a, b) => {
 
-    console.log(b.objHandicap.handicapDiff === 'number')
+    console.log(typeof b.objHandicap.handicapDiff === 'number')
     
     if (typeof b.objHandicap.handicapDiff === 'number' && typeof a.objHandicap.handicapDiff === 'number') {
 
