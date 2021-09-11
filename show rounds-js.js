@@ -58,13 +58,13 @@ async function btnShowRoundsHtml() {
       }
     })
 
-    $("#srHcpDiff").removeClass("d-none")
-    $("#srGIR").addClass("d-none")
+    $("#srHcpDiffDisplay").removeClass("d-none")
+    $("#srGIRDisplay").addClass("d-none")
     
   } else {
-    
-    $("#srHcpDiff").addClass("d-none")
-    $("#srGIR").removeClass("d-none")
+
+    $("#srHcpDiffDisplay").addClass("d-none")
+    $("#srGIRDisplay").removeClass("d-none")
      
   }
 
