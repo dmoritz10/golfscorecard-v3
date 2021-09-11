@@ -187,6 +187,7 @@ async function btnSRSelectHtml(e) {
   var srExcludeSmallVal     = $('#srExcludeSmall').prop('checked')
   var srMadeTargetVal       = $('#srMadeTarget').prop('checked')
   var srSelectedCourseVal   = $( "#srSelectCourse" ).val() > -1 ? $( "#srSelectCourse option:selected" ).text() : false
+  var srSelectedSortBy      = $( "#selectRoundsSortBy" ).val() > -1 ? $( "#selectRoundsSortBy option:selected" ).text() : 'Sort by Date Played'
   var srSelectedDateRngVal  = document.getElementById("selectRoundsDateRng").selectedIndex > 0 ? $( "#selectRoundsDateRng option:selected" ).text() : false
 
   console.log(srSelectedCourseVal)
@@ -196,12 +197,15 @@ async function btnSRSelectHtml(e) {
   console.log($( "#selectRoundsDateRng" ).val())
   console.log($( "#selectRoundsDateRng" ).selectedIndex)
   console.log($( "#selectRoundsDateRng option:selected" ).text())
+  console.log(srSelectedSortBy)
+  console.log($( "#srSelectCourse" ))
 
   await updateOption('srFilter', {
                                   'srExcludeSmall':     srExcludeSmallVal ,
                                   'srSelectedCourse':   srSelectedCourseVal ,
                                   'srSelectedDateRng':  srSelectedDateRngVal ,
-                                  'srMadeTarget':       srMadeTargetVal
+                                  'srMadeTarget':       srMadeTargetVal,
+                                  'srSelectedSortBy':   srSelectedSortBy
                                   })
                                   
                                   
