@@ -9,7 +9,7 @@ async function btnShowRoundsHtml() {
   var srSelectedDateRng = srSelectOptions.srSelectedDateRng
   var srSelectedSortBy  = srSelectOptions.srSelectedSortBy
   
-  var hcpMethod         = srSelectOptions.hcpMethod
+  console.log(srSelectOptions)
   
   var rnds = await getRounds(srExcludeSmall, srSelectedCourse)
 
@@ -199,6 +199,7 @@ async function btnSRSelectHtml(e) {
   console.log($( "#selectRoundsDateRng option:selected" ).text())
   console.log(srSelectedSortBy)
   console.log($( "#srSelectCourse" ))
+  console.log($( "#srSelectCourse option:selected" ).text())
 
   await updateOption('srFilter', {
                                   'srExcludeSmall':     srExcludeSmallVal ,
