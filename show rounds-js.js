@@ -11,12 +11,12 @@ async function btnShowRoundsHtml() {
   
   var hcpMethod         = srSelectOptions.hcpMethod
   
-  var getRounds = await getRounds(srExcludeSmall, srSelectedCourse)
+  var rnds = await getRounds(srExcludeSmall, srSelectedCourse)
 
-  if (!getRounds) return
+  if (!rnds) return
 
 
-  var nbrRounds = getRounds.length
+  var nbrRounds = rnds.length
    
   var x = $("#tblShowRounds").clone();
   $("#srContainer").empty()
@@ -26,14 +26,14 @@ async function btnShowRoundsHtml() {
   
   
 
-  var datePlayedArr = getRounds.map(x => x['date']) 
+  var datePlayedArr = rnds.map(x => x['date']) 
   var endRow = srSelectedDateRng ? getEndRow(datePlayedArr, srSelectedDateRng) : 0
 
   var rounds = []
   
-  for (var j = getRounds.length - 1; j > endRow - 1; j--) {
+  for (var j = rnds.length - 1; j > endRow - 1; j--) {
 
-    let roundObj = getRounds[j]
+    let roundObj = rnds[j]
     let ci = JSON.parse(roundObj.courseInfo)
 
     let targetScore = ci.courseInfo['Target Score'].split(' ')[0]
@@ -43,7 +43,7 @@ async function btnShowRoundsHtml() {
        continue;     
     }
 
-    rounds.push(getRounds[j])
+    rounds.push(rnds[j])
 
   }
 
