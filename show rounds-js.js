@@ -66,7 +66,7 @@ async function btnShowRoundsHtml() {
 
   var rndCntr = 0
 
-  for (var j = rounds.length - 1; j > -1; j--) {
+  for (var j = 0; j < rounds.length; j++) {
   
     var ele = $("#tblShowRounds").clone();
     
