@@ -187,7 +187,7 @@ async function btnSRSelectHtml(e) {
   var srExcludeSmallVal     = $('#srExcludeSmall').prop('checked')
   var srMadeTargetVal       = $('#srMadeTarget').prop('checked')
   var srSelectedCourseVal   = $( "#srSelectCourse" ).val() > -1 ? $( "#srSelectCourse option:selected" ).text() : false
-  var srSelectedSortBy      = $( "#selectRoundsSortBy" ).val() > -1 ? $( "#selectRoundsSortBy option:selected" ).text() : 'Sort by Date Played'
+  var srSelectedSortBy      = $( "#selectRoundsSortBy option:selected" ).text()
   var srSelectedDateRngVal  = document.getElementById("selectRoundsDateRng").selectedIndex > 0 ? $( "#selectRoundsDateRng option:selected" ).text() : false
 
   console.log(srSelectedCourseVal)
