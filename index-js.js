@@ -428,9 +428,10 @@ function loadCoursesPlayedDropDown(selectCourse) {
     var teetimes = readOption('teetimes', null)
 
     console.log(teetimes)
-    console.log(JSON.parse(teetimes))
+    console.log(teetimes[0].courseName)
 
-    var nextCourseName = teetimes ? JSON.parse(teetimes)[0].courseName : null
+    // var nextCourseName = teetimes ? JSON.parse(teetimes)[0].courseName : null
+    var nextCourseName = teetimes ? teetimes[0].courseName : null
 
     courses =  arrShts['My Courses'].vals
 
