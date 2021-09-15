@@ -1188,6 +1188,8 @@ function graphRounds(rounds) {
 
   }
 
+  var hcpLineOfBestFit = calcLBF(hcpArr)
+
   try {
     var parent = document.getElementById('casChartContainer');
     var child = document.getElementById('casChart');          
@@ -1225,6 +1227,16 @@ function graphRounds(rounds) {
         pointRadius: 0,
         type: 'line',
         order: 1
+      },
+      {
+        label: null,
+        yAxisID: 'yAxisId',
+        data: hcpLineOfBestFit,
+        borderColor: 'red',
+        borderWidth: .4,
+        pointRadius: 0,
+        backgroundColor: 'red',
+        type: 'line'
       },
       {
         label: "Course Name",
@@ -1300,7 +1312,7 @@ function graphRounds(rounds) {
         legend: {
           labels: {
             filter: function(item, chart) {
-              return item.text == "Course Name" ? false : true
+              return item.text == "Course Name" || item.text === null ? false : true
             }
           }
         }
@@ -1613,9 +1625,9 @@ function graphTeeToGreen(rounds) {
     }
 
     const average = (array) => array.reduce((a, b) => a + b) / array.length;
-    var frwyAvgArr = Array(rounds.length).fill(average(frwyArr));
-    var girAvgArr = Array(rounds.length).fill(average(girArr));
-    var scrblAvgArr = Array(rounds.length).fill(average(scrblArr));
+    // var frwyAvgArr = Array(rounds.length).fill(average(frwyArr));
+    // var girAvgArr = Array(rounds.length).fill(average(girArr));
+    // var scrblAvgArr = Array(rounds.length).fill(average(scrblArr));
 
     var frwyLineOfBestFit = calcLBF(frwyArr)
     var girLineOfBestFit = calcLBF(girArr)
