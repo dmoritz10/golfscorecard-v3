@@ -1579,6 +1579,8 @@ function graphTeeToGreen(rounds) {
     var frwyAvgArr = Array(rounds.length).fill(average(frwyArr));
     var girAvgArr = Array(rounds.length).fill(average(girArr));
     var scrblAvgArr = Array(rounds.length).fill(average(scrblArr));
+
+    var frwyLineOfBestFit = Array(rounds.length).fill(calcLBF(frwyArr));
     
 
 
@@ -1633,7 +1635,7 @@ function graphTeeToGreen(rounds) {
       {
         label: null,
         yAxisID: 'yAxisId',
-        data: frwyAvgArr,
+        data: frwyLineOfBestFit,
         borderColor: 'red',
         borderWidth: .4,
         pointRadius: 0,
@@ -1732,5 +1734,38 @@ function graphTeeToGreen(rounds) {
 
   return parent
   
+}
+
+function calcLBF(arr) {
+  
+  var yAxis = arr
+  var xAxis = Array(n).fill().map((_, i) => i)
+
+  var n = yAxis.length
+
+  var meanY = yAxis.reduce((a, b) => a + b, 0) / n
+  var meanX = xAxis / n
+
+  console.log(meanY)
+  console.log(meanX)
+
+  var slopeNum = xAxis.map( (_, i) => (xAxis[i] - meanX) * (yAxis[i] - meanY) )
+  var slopeDenom = xAxis.map( (_, i) => (xAxis[i] - meanX) ** 2 )
+
+  var slope = slopeNum / slopeDenom
+
+console.log(slopeNum)
+console.log(slopeDenom)
+console.log(slope)
+
+  var yIntercept = meanY - slope * meanX
+
+console.log(yIntercept)  
+
+  var lbfArr = xAxis.map(x => x * slope + yIntercept);
+
+console.log(lbfArr)
+
+  return lbfArr
 
 }
