@@ -1760,9 +1760,11 @@ console.log(xAxis)
 console.log(slopeNum)
   
 var a = 0
-  var slopeNum = xAxis.forEach( (val, idx) => {a + ((xAxis[i] - meanX) * (yAxis[i] - meanY)) })
+  var slopeNum = xAxis.forEach( (val, idx) => {a = a + ((xAxis[i] - meanX) * (yAxis[i] - meanY)) })
   console.log(a)
 console.log(slopeNum)
+
+var slopeNum = a
 
   var slope = slopeNum / slopeDenom
 
