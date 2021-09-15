@@ -1377,6 +1377,7 @@ function graphAvgScoreByPar(rounds) {
     var par4LineOfBestFit = calcLBF(par4Arr)
     var par5LineOfBestFit = calcLBF(par5Arr)
 
+    console.log(par3Arr)
     console.log(par3LineOfBestFit)
 
   try {
