@@ -1757,14 +1757,12 @@ console.log(xAxis)
 
   var slopeNum   = xAxis.reduce( (a, _, i) => a + ((xAxis[i] - meanX) * (yAxis[i] - meanY)) )
   var slopeDenom = xAxis.reduce( (a, _, i) => a + ((xAxis[i] - meanX) ** 2) )
-console.log(slopeNum)
-  console.log('new')
-var a = 0
-  var slopeNum = xAxis.forEach( (val, i) => {a = a + ((xAxis[i] - meanX) * (yAxis[i] - meanY)) })
-  console.log(a)
-console.log(slopeNum)
 
-var slopeNum = a
+  var slopeNum = 0
+  xAxis.forEach( (val, i) => {slopeNum = slopeNum + ((xAxis[i] - meanX) * (yAxis[i] - meanY)) })
+
+  var slopeDenom = 0
+  xAxis.forEach( (val, i) => {slopeDenom = slopeDenom + ((xAxis[i] - meanX) ** 2) })
 
   var slope = slopeNum / slopeDenom
 
