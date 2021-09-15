@@ -1580,7 +1580,7 @@ function graphTeeToGreen(rounds) {
     var girAvgArr = Array(rounds.length).fill(average(girArr));
     var scrblAvgArr = Array(rounds.length).fill(average(scrblArr));
 
-    var frwyLineOfBestFit = Array(rounds.length).fill(calcLBF(frwyArr));
+    var frwyLineOfBestFit = calcLBF(frwyArr)
     
 
 
@@ -1742,7 +1742,7 @@ function calcLBF(arr) {
   var n = yAxis.length
 
   var xAxis = Array(n).fill().map((_, i) => i)
-  
+
 console.log(yAxis)
 console.log(xAxis)  
 
