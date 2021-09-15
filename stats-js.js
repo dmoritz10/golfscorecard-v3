@@ -1739,11 +1739,13 @@ function graphTeeToGreen(rounds) {
 function calcLBF(arr) {
   
   var yAxis = arr
+  var n = yAxis.length
+  
   var xAxis = Array(n).fill().map((_, i) => i)
 
 console.log(xAxis)  
 
-  var n = yAxis.length
+  
 
   var meanY = yAxis.reduce((a, b) => a + b, 0) / n
   var meanX = xAxis / n
