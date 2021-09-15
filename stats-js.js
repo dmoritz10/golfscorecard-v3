@@ -416,9 +416,8 @@ function chartAverageScorebyPar   (title, rounds, myStatsRng, endRow) {
 
     arrRound(rtn, 1)
 
-    var rnds = extrRndData	(rounds, null, endRow.row3)
-    if (rnds.length == 0 ) var rnds = extrRndData	(rounds, null, endRow.row2)
-    if (rnds.length == 0 ) var rnds = extrRndData	(rounds, null, endRow.row1)
+    var endRowGraphs = Math.min(endRow.row1, endRow.row2, endRow.row3)
+    var rnds = extrRndData	(rounds, null, endRowGraphs)
     var chart = graphAvgScoreByPar(rnds)
     
     return {title: title, arrData:rtn, chart: chart, format:''};
@@ -489,9 +488,8 @@ function chartCourseAdjustedScore (title, rounds, myStatsRng, endRow)   {
 
     arrRound(rtn, 1)
 
-    var rnds = extrRndData	(rounds, null, endRow.row3)
-    if (rnds.length == 0 ) var rnds = extrRndData	(rounds, null, endRow.row2)
-    if (rnds.length == 0 ) var rnds = extrRndData	(rounds, null, endRow.row1)
+    var endRowGraphs = Math.min(endRow.row1, endRow.row2, endRow.row3)
+    var rnds = extrRndData	(rounds, null, endRowGraphs)
     var chart = graphRounds(rnds)
     
     return {title: title, arrData:rtn, chart: chart, format:''};
@@ -845,10 +843,6 @@ function chartTeeToGreen          (title, rounds, myStatsRng, endRow) {
     ]
 
     arrRound(rtn, 0, 'percent')
-
-    var rnds = extrRndData	(rounds, null, endRow.row3)
-    if (rnds.length == 0 ) var rnds = extrRndData	(rounds, null, endRow.row2)
-    if (rnds.length == 0 ) var rnds = extrRndData	(rounds, null, endRow.row1)
 
     var endRowGraphs = Math.min(endRow.row1, endRow.row2, endRow.row3)
     var rnds = extrRndData	(rounds, null, endRowGraphs)
