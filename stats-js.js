@@ -1740,7 +1740,7 @@ function calcLBF(arr) {
   
   var yAxis = arr
   var n = yAxis.length
-  
+
   var xAxis = Array(n).fill().map((_, i) => i)
 
 console.log(xAxis)  
@@ -1748,7 +1748,7 @@ console.log(xAxis)
   
 
   var meanY = yAxis.reduce((a, b) => a + b, 0) / n
-  var meanX = xAxis / n
+  var meanX = xAxis.reduce((a, b) => a + b, 0) / n
 
   console.log(meanY)
   console.log(meanX)
