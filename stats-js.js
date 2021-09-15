@@ -1776,7 +1776,7 @@ function graphTeeToGreen(rounds) {
 
 function calcLBF(arr) {
   
-  var yAxis = arr
+  var yAxis = arr.map( x => x*1)
   var n = yAxis.length
 
   var xAxis = Array(n).fill().map((_, i) => i)
