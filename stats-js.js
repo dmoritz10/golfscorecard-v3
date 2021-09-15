@@ -1373,6 +1373,9 @@ function graphAvgScoreByPar(rounds) {
       par5Arr.push(cnt5 ? (scr5 / cnt5).toFixed(1) : null)
     }
 
+    var par3LineOfBestFit = calcLBF(par3Arr)
+    var par4LineOfBestFit = calcLBF(par4Arr)
+    var par5LineOfBestFit = calcLBF(par5Arr)
 
   try {
     var parent = document.getElementById('aspChartContainer');
@@ -1420,6 +1423,36 @@ function graphAvgScoreByPar(rounds) {
         yAxisID: 'yAxisId',
         data: courseNameArr,
         type: 'line'
+      },
+      {
+        label: null,
+        yAxisID: 'yAxisId',
+        data: par3LineOfBestFit,
+        borderColor: 'red',
+        borderWidth: .4,
+        pointRadius: 0,
+        backgroundColor: 'red',
+        type: 'line'
+      },
+      {
+        label: null,
+        yAxisID: 'yAxisId',
+        data: par4LineOfBestFit,
+        borderColor: 'blue',
+        borderWidth: .4,
+        pointRadius: 0,
+        backgroundColor: 'blue',
+        type: 'line'
+      },
+      {
+        label: null,
+        yAxisID: 'yAxisId',
+        data: par5LineOfBestFit,
+        borderColor: 'green',
+        borderWidth: .4,
+        pointRadius: 0,
+        backgroundColor: 'green',
+        type: 'line'
       }
       ]
     },
@@ -1435,10 +1468,11 @@ function graphAvgScoreByPar(rounds) {
           ticks: {
             // forces step size to be 1 unit
             stepSize: 1
-          },
-          grid: {
-            color: ['lightgrey', 'lightgrey','red','blue','green','lightgrey'],
           }
+          // ,
+          // grid: {
+          //   color: ['lightgrey', 'lightgrey','red','blue','green','lightgrey'],
+          // }
 
         },
         courseName: {
@@ -1744,19 +1778,11 @@ function calcLBF(arr) {
 
   var xAxis = Array(n).fill().map((_, i) => i)
 
-console.log(yAxis)
-console.log(xAxis)  
-
-  
-
   var meanY = yAxis.reduce((a, b) => a + b, 0) / n
   var meanX = xAxis.reduce((a, b) => a + b, 0) / n
 
-  console.log(meanY)
-  console.log(meanX)
-
-  var slopeNum   = xAxis.reduce( (a, _, i) => a + ((xAxis[i] - meanX) * (yAxis[i] - meanY)) )
-  var slopeDenom = xAxis.reduce( (a, _, i) => a + ((xAxis[i] - meanX) ** 2) )
+  // var slopeNum   = xAxis.reduce( (a, _, i) => a + ((xAxis[i] - meanX) * (yAxis[i] - meanY)) )
+  // var slopeDenom = xAxis.reduce( (a, _, i) => a + ((xAxis[i] - meanX) ** 2) )
 
   var slopeNum = 0
   xAxis.forEach( (val, i) => {slopeNum = slopeNum + ((xAxis[i] - meanX) * (yAxis[i] - meanY)) })
@@ -1766,17 +1792,9 @@ console.log(xAxis)
 
   var slope = slopeNum / slopeDenom
 
-console.log(slopeNum)
-console.log(slopeDenom)
-console.log(slope)
-
   var yIntercept = meanY - slope * meanX
 
-console.log(yIntercept)  
-
   var lbfArr = xAxis.map(x => x * slope + yIntercept);
-
-console.log(lbfArr)
 
   return lbfArr
 
