@@ -1230,7 +1230,7 @@ function graphRounds(rounds) {
       },
       {
         label: null,
-        yAxisID: 'yAxisId',
+        yAxisID: 'hcpId',
         data: hcpLineOfBestFit,
         borderColor: 'red',
         borderWidth: .4,
