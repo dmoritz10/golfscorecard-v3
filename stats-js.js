@@ -1764,7 +1764,7 @@ var a = 0
   console.log(a)
 console.log(slopeNum)
 
-var slopeNum =
+var slopeNum = a
 
   var slope = slopeNum / slopeDenom
 
