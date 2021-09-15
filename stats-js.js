@@ -1742,7 +1742,8 @@ function calcLBF(arr) {
   var n = yAxis.length
 
   var xAxis = Array(n).fill().map((_, i) => i)
-
+  
+console.log(yAxis)
 console.log(xAxis)  
 
   
