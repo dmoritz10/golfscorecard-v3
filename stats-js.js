@@ -1758,13 +1758,13 @@ console.log(xAxis)
   var slopeNum   = xAxis.reduce( (a, _, i) => a + ((xAxis[i] - meanX) * (yAxis[i] - meanY)) )
   var slopeDenom = xAxis.reduce( (a, _, i) => a + ((xAxis[i] - meanX) ** 2) )
 console.log(slopeNum)
-  
+  console.log('new')
 var a = 0
-  var slopeNum = xAxis.forEach( (val, idx) => {a = a + ((xAxis[i] - meanX) * (yAxis[i] - meanY)) })
+  var slopeNum = xAxis.forEach( (val, i) => {a = a + ((xAxis[i] - meanX) * (yAxis[i] - meanY)) })
   console.log(a)
 console.log(slopeNum)
 
-var slopeNum = a
+var slopeNum =
 
   var slope = slopeNum / slopeDenom
 
