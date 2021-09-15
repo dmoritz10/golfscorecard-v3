@@ -1581,7 +1581,8 @@ function graphTeeToGreen(rounds) {
     var scrblAvgArr = Array(rounds.length).fill(average(scrblArr));
 
     var frwyLineOfBestFit = calcLBF(frwyArr)
-    
+    var girLineOfBestFit = calcLBF(girArr)
+    var scrblLineOfBestFit = calcLBF(scrblArr)
 
 
   try {
@@ -1645,7 +1646,7 @@ function graphTeeToGreen(rounds) {
       {
         label: null,
         yAxisID: 'yAxisId',
-        data: girAvgArr,
+        data: girLineOfBestFit,
         borderColor: 'blue',
         borderWidth: .4,
         pointRadius: 0,
@@ -1655,7 +1656,7 @@ function graphTeeToGreen(rounds) {
       {
         label: null,
         yAxisID: 'yAxisId',
-        data: scrblAvgArr,
+        data: scrblLineOfBestFit,
         borderColor: 'green',
         borderWidth: .4,
         pointRadius: 0,
