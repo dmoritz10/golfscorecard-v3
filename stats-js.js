@@ -1519,7 +1519,7 @@ function graphAvgScoreByPar(rounds) {
         legend: {
           labels: {
             filter: function(item, chart) {
-              return item.text == "Course Name" ? false : true
+              return item.text == "Course Name" || item.text === null ? false : true
             }
           }
         }
