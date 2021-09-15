@@ -850,7 +850,7 @@ function chartTeeToGreen          (title, rounds, myStatsRng, endRow) {
     if (rnds.length == 0 ) var rnds = extrRndData	(rounds, null, endRow.row2)
     if (rnds.length == 0 ) var rnds = extrRndData	(rounds, null, endRow.row1)
 
-    var endRowGraphs = Math.max(endRow.row1, endRow.row2, endRow.row3)
+    var endRowGraphs = Math.min(endRow.row1, endRow.row2, endRow.row3)
     var rnds = extrRndData	(rounds, null, endRowGraphs)
 
     var chart = graphTeeToGreen(rnds)
