@@ -515,11 +515,13 @@ function calcScoreSummary() {
     }
   })
 
-  if (p3Cnt) arr.push((p3Sum/p3Cnt).toFixed(1))
-  if (p4Cnt) arr.push((p4Sum/p4Cnt).toFixed(1))
-  if (p5Cnt) arr.push((p5Sum/p5Cnt).toFixed(1))
+  if (p3Cnt) arr.push(['Par 3', (p3Sum/p3Cnt).toFixed(1)])
+  if (p4Cnt) arr.push(['Par 4', (p4Sum/p4Cnt).toFixed(1)])
+  if (p5Cnt) arr.push(['Par 5', (p5Sum/p5Cnt).toFixed(1)])
   
   for (var i=arr.length-1;i>-1;i--) {if (arr[i][1] == 0) arr.splice(i,1)}
+
+  console.log(arr)
 
   var tbl = new Table();
   
