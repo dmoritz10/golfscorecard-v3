@@ -14,12 +14,12 @@ async function btnShowCoursesHtml() {
   var cols = arrShts['My Courses'].colHdrs
   var courses = arrShts['My Courses'].vals
 
-  var x = $("#tblShowCourses").clone();
+  var $tblCourses = $("#glfContainer > div")
+
+  var x = tblCourses.clone();
   $("#scContainer").empty();
   x.appendTo("#scContainer");
 
-
-  $("#tblShowCourses").hide()
 
   var nbrCourses = 0
 
@@ -117,7 +117,7 @@ async function btnShowCoursesHtml() {
     }
 
 
-    ele.show()
+    ele.removeClass('d-none')
 
     ele.appendTo("#scContainer");
 
