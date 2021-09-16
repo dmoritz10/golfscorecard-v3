@@ -6,7 +6,7 @@
 
     var golfers = readOption('Golfers', [])
 
-    var $tblGolfers = $("#glfContainer" > '.tblGolfers')
+    var $tblGolfers = $("#glfContainer .tblGolfers")
 
     console.log($tblGolfers)
     console.log($("#tblGolfers"))
