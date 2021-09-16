@@ -16,7 +16,7 @@ async function btnShowCoursesHtml() {
 
   var $tblCourses = $("#glfContainer > div")
 
-  var x = tblCourses.clone();
+  var x = $tblCourses.clone();
   $("#scContainer").empty();
   x.appendTo("#scContainer");
 
@@ -35,7 +35,7 @@ async function btnShowCoursesHtml() {
 
     nbrCourses++
 
-    var ele = $("#tblShowCourses").clone();
+    var ele = $tblCourses.clone();
 
     var hcpObj = readOption('handicapObj')
     var tsObj = calcTargetScoreDan(hcpObj.mostRecent20HcpDiff, hcpObj.currHandicap * 1 - .1, coursesObj['USGA Course Rating'], coursesObj['Slope Rating'], coursesObj['Front 9 Rating'])
