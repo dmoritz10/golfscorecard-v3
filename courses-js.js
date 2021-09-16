@@ -503,9 +503,6 @@ function loadTeeBoxes(teeInfo) {
 
   var $tblSCM = $("#scmContainer > div").eq(1)
 
-  console.log($tblSCM)
-  console.log($tblSCM.eq(1))
-
   var x = $tblSCM.clone();
   var y = $("#scmHdrs").clone();
   $("#scmContainer").empty()
