@@ -906,7 +906,7 @@ function updateSCMForm(sxsRtn) {
   var d = sxsRtn.split('bootstrapData(').pop().split('}}});')[0] + '}}}'
   var sxs = JSON.parse(d).model.data
 
-  console.log(sxs)
+  // console.log(sxs)
 
   conditionalUpdate($('#scmName'), sxs.name)
   conditionalUpdate($('#scmPhone'), sxs.phone)
