@@ -70,16 +70,16 @@ async function btnShowRoundsHtml() {
 
   var rndCntr = 0
   
+  var $tblRounds = $("#srContainer > div")
 
-  var x = $("#tblShowRounds").clone();
+  var x = $tblRounds.clone();
   $("#srContainer").empty()
   x.appendTo("#srContainer");
   
-  $("#tblShowRounds").hide()
 
   for (var j = 0; j < rounds.length; j++) {
   
-    var ele = $("#tblShowRounds").clone();
+    var ele = $tblRounds.clone();
     
     var roundObj = rounds[j]
     
@@ -129,7 +129,7 @@ async function btnShowRoundsHtml() {
     ele.find('#srFetchRound')[0].setAttribute("onclick", "showRoundDetail(" + roundObj.rowIdx + ", 'ShowRounds')");
     
     
-    ele.show()
+    ele.removeClass('d-none')
     
     ele.appendTo("#srContainer");
     
