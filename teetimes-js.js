@@ -3,18 +3,19 @@ function btnTeetimesHtml () {
     
     var teetimes = readOption('teetimes', [])
     
-    var x = $("#tblTeetimes").clone();
+    var $tblTeetimes = $("#ttContainer > div")
+
+    var x = $tblTeetimes.clone();
     $("#ttContainer").empty()
     x.appendTo("#ttContainer");
     
-    $("#tblTeetimes").hide()
     
     $("#nbrTeetimes")[0].innerHTML = teetimes.length
     
         
     for (var j = 0; j<teetimes.length;j++) {
     
-      var ele = $("#tblTeetimes").clone();
+      var ele = $tblTeetimes.clone();
       
       var ttDateTime = formatsmsDateTime (teetimes[j].date, teetimes[j].time)
                                   
@@ -93,7 +94,7 @@ function btnTeetimesHtml () {
       ele.find('#ttEditTeetime')[0].setAttribute("onclick", "editTeetime(" + x + ")");
       ele.find('#btnTTGolfer')[0].setAttribute("onclick", "editGolfers(" + j + ")");
       
-      ele.show()
+      ele.removeClass('d-none')
       
       ele.appendTo("#ttContainer");
     
