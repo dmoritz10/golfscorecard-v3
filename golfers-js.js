@@ -15,7 +15,8 @@
     $("#glfContainer").empty()
     x.appendTo("#glfContainer");
 
-    $tblGolfers.hide()
+    // $tblGolfers.hide()
+    $tblGolfers.addClass('d-none')
 
     $("#nbrGolfers")[0].innerHTML = golfers.length
 
@@ -47,7 +48,8 @@
 
       ele.find('#glfEditGolfer')[0].setAttribute("onclick", "editGolfer(" + x + ")");
 
-      ele.show()
+      // ele.show()
+      ele.removeClass('d-none')
 
       ele.appendTo("#glfContainer");
 
