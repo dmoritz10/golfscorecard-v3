@@ -151,4 +151,4 @@ x Include score by par in round stats pulldown
 
 x replace dup ids with classes
 
-
+x reset button for rounds, courses and stats
