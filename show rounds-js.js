@@ -344,7 +344,7 @@ function setSelectedIdx(ele, txt) {
 
   if (txt == 'default') {
 
-    dd.selectedInfex = 0
+    dd.selectedIndex = 0
     
   } else {
     
