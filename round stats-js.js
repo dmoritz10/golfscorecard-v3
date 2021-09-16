@@ -458,6 +458,14 @@ function calcScoreSummary() {
     ['', '']
   ]
   
+  var p3Cnt = 0
+  var p3Sum = 0
+  var p4Cnt = 0
+  var p4Sum = 0
+  var p5Cnt = 0
+  var p5Sum = 0
+
+
   sc.map((val,idx) => {
   
     if (val) {
@@ -487,13 +495,6 @@ function calcScoreSummary() {
         break;
       }
 
-      var p3Cnt = 0
-      var p3Sum = 0
-      var p4Cnt = 0
-      var p4Sum = 0
-      var p5Cnt = 0
-      var p5Sum = 0
-
       switch (val.par*1) {
 
         case 3:
@@ -514,29 +515,26 @@ function calcScoreSummary() {
     }
   })
 
-    if (p3Cnt) arr.push((p3Sum/p3Cnt).toFixed(1))
-    if (p4Cnt) arr.push((p4Sum/p4Cnt).toFixed(1))
-    if (p5Cnt) arr.push((p5Sum/p5Cnt).toFixed(1))
-    
-    for (var i=arr.length-1;i>-1;i--) {if (arr[i][1] == 0) arr.splice(i,1)}
+  if (p3Cnt) arr.push((p3Sum/p3Cnt).toFixed(1))
+  if (p4Cnt) arr.push((p4Sum/p4Cnt).toFixed(1))
+  if (p5Cnt) arr.push((p5Sum/p5Cnt).toFixed(1))
+  
+  for (var i=arr.length-1;i>-1;i--) {if (arr[i][1] == 0) arr.splice(i,1)}
 
-    var tbl = new Table();
+  var tbl = new Table();
+  
+  tbl
+    .setHeader()
+    .setTableHeaderClass()
+    .setData(arr)
+    .setTableClass('table')
+    .setTrClass()
+    .setTcClass(['', 'text-right'])
+    .setTdClass('pb-1 pt-1 border-0 h4')
+    .build();
     
-    tbl
-      .setHeader()
-      .setTableHeaderClass()
-      .setData(arr)
-      .setTableClass('table')
-      .setTrClass()
-      .setTcClass(['', 'text-right'])
-      .setTdClass('pb-1 pt-1 border-0 h4')
-      .build();
-      
-    return tbl.html
-    
-    
-    
-    
+  return tbl.html
+     
   }
 
   function calcPuttSummary() {
