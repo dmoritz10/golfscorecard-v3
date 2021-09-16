@@ -8,15 +8,12 @@
 
     var $tblGolfers = $("#glfContainer > div")
 
-    console.log($tblGolfers)
-    console.log($("#tblGolfers"))
-
     var x = $tblGolfers.clone();
     $("#glfContainer").empty()
     x.appendTo("#glfContainer");
 
     // $tblGolfers.hide()
-    $tblGolfers.addClass('d-none')
+    // $tblGolfers.addClass('d-none')
 
     $("#nbrGolfers")[0].innerHTML = golfers.length
 
