@@ -455,7 +455,7 @@ function calcScoreSummary() {
     ['Bogeys', 0],
     ['Dbl Bogeys', 0],
     ['Over Dbl Bogeys', 0],
-    ['', '']
+    ['&nbsp;', '&nbsp;']
   ]
   
   var p3Cnt = 0
