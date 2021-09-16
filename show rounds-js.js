@@ -187,6 +187,15 @@ async function btnSRMoreVertHtml() {
 
 }
 
+function btnSRResetHtml() {
+
+  $('#srExcludeSmall').prop('checked',  true )
+  $('#srMadeTarget').prop('checked',  false  )
+  setSelectedIdx('selectRoundsDateRng', 'default')
+  setSelectedIdx('selectRoundsSortBy', 'default')
+
+}
+
 async function btnSRSelectHtml(e) {
 
   var selectDateRng = $( "#selectRoundsDateRng option:selected" ).text()
@@ -332,12 +341,20 @@ function loadCoursesSelect(selectCourse) {
 function setSelectedIdx(ele, txt) {
 
   var dd = document.getElementById(ele);
-  for (var i = 0; i < dd.options.length; i++) {
+
+  if (txt == 'default') {
+
+    dd.selectedInfex = 0
+    
+  } else {
+    
+    for (var i = 0; i < dd.options.length; i++) {
       if (dd.options[i].text === txt) {
           dd.selectedIndex = i;
           break;
       }
-
-    }
-
+    } 
+  
+  }
+  
 }

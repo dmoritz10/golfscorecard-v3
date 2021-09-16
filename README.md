@@ -134,13 +134,13 @@ x test for uniqueness golfers and clubs -->
 
 x versioning - have an ok solution
 
-stats - line of closest fit for 
+x stats - line of closest fit for 
 
     hcp in CAS
     avg score by par
     tee to green
 
-Rounds - sort option
+x Rounds - sort option
 
     Sort by Date Played
     Sort by Best Rounds (hcp diff)

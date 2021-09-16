@@ -159,6 +159,8 @@
   //  $('#btnShowRounds')           .click(getRounds);
   $('#btnShowRounds')           .click(btnShowRoundsHtml);
   $('#btnSRSelect')            .click(btnSRSelectHtml);
+  $('#btnSRReset')            .click(btnSRResetHtml);
+  
   $('#srSelectDropDown').on('show.bs.dropdown', function () {
     btnSRMoreVertHtml()
   })
