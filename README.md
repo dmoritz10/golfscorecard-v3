@@ -147,4 +147,6 @@ x Rounds - sort option
 
     add reset button to pull down
 
-Include score by par in round stats pulldown
+x Include score by par in round stats pulldown
+
+replace dup ids with classes
