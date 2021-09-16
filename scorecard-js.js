@@ -779,8 +779,8 @@ function updateClub() {
 
 function useGolfersFromTeetimes( courseName ) {
 
-   
-  var arrTeetime = arrOptions.teetimes ? JSON.parse(arrOptions.teetimes)[0] : null
+  var arrTeetimes = readOption('teetimes', [])
+  var arrTeetime = arrTeetimes ? arrTeetimes[0] : null
 
   var rtn = []
   
