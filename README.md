@@ -145,8 +145,6 @@ x Rounds - sort option
     Sort by Date Played
     Sort by Best Rounds (hcp diff)
 
-
-
     add reset button to pull down
 
 
