@@ -501,24 +501,22 @@ function loadTeeBoxes(teeInfo) {
 
   }
 
-  var $tblSCM = $("#scmContainer > div")
+  var $tblSCM = $("#scmContainer > div").eq(1)
 
   console.log($tblSCM)
   console.log($tblSCM.eq(1))
 
-  var x = $("#tblSCM").clone();
+  var x = $tblSCM.clone();
   var y = $("#scmHdrs").clone();
   $("#scmContainer").empty()
   y.appendTo("#scmContainer");
   x.appendTo("#scmContainer");
 
-  $("#tblSCM").hide()
-
   var ti = JSON.parse(teeInfo)
 
   for (var j = 0; j < ti.length; j++) {
 
-    var ele = $("#tblSCM").clone();
+    var ele = $tblSCM.clone();
 
     ele.find('#scmDefaultTee').eq(0).prop('checked', ti[j][tiCols.default_tee])
 
@@ -536,7 +534,7 @@ function loadTeeBoxes(teeInfo) {
     ele.find('#scmYardage').eq(0).val(ti[j][tiCols.yardage])
 
 
-    ele.show()
+    ele.removeClass('d-none')
 
     ele.appendTo("#scmContainer");
 
