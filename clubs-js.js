@@ -2,18 +2,18 @@
 function btnShowClubsHtml () {
     
     var clubs = readOption('Clubs', [])
+
+    var $tblClubs = $("#clbContainer > div")
     
-    var x = $("#tblClubs").clone();
+    var x = $tblClubs.clone();
     $("#clbContainer").empty()
     x.appendTo("#clbContainer");
-    
-    $("#tblClubs").hide()
     
     $("#nbrClubs")[0].innerHTML = clubs.length
     
     for (var j = 0; j<clubs.length;j++) {
     
-      var ele = $("#tblClubs").clone();
+      var ele = $tblClubs.clone();
       
       var tt = clubs[j]
       
@@ -61,6 +61,7 @@ function btnShowClubsHtml () {
       ele.find('#clbEditClub')[0].setAttribute("onclick", "editClub(" + x + ")");
       
       ele.show()
+      ele.removeClass('d-none')
       
       ele.appendTo("#clbContainer");
     
