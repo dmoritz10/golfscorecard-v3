@@ -11,17 +11,17 @@
     console.log($tblGolfers)
     console.log($("#tblGolfers"))
 
-    var x = $("#tblGolfers").clone();
+    var x = $tblGolfers.clone();
     $("#glfContainer").empty()
     x.appendTo("#glfContainer");
 
-    $("#tblGolfers").hide()
+    $tblGolfers.hide()
 
     $("#nbrGolfers")[0].innerHTML = golfers.length
 
     for (var j = 0; j<golfers.length;j++) {
 
-      var ele = $("#tblGolfers").clone();
+      var ele = $tblGolfers.clone();
 
       var c = golfers[j].cell
 
