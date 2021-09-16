@@ -193,6 +193,7 @@ function btnSRResetHtml() {
   $('#srMadeTarget').prop('checked',  false  )
   setSelectedIdx('selectRoundsDateRng', 'default')
   setSelectedIdx('selectRoundsSortBy', 'default')
+  setSelectedIdx('srSelectCourse', 'default')
 
 }
 
