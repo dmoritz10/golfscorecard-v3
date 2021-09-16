@@ -219,6 +219,14 @@ async function btnHCPMoreVertHtml() {
 
 }
 
+function btnHCPResetHtml() {
+
+  $('#hcpExcludeSmall').prop('checked',  true )
+  $('#hcpMethodWHS').prop('checked',  true  )
+
+}
+
+
 async function btnHCPSelectHtml(e) {
   
   var hcpExcludeSmallVal = $('#hcpExcludeSmall').prop('checked')

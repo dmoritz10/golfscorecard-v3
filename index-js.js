@@ -168,6 +168,7 @@
   // Show Handicap
   $('#btnShowHandicap')         .click(btnShowHandicapHtml);
   $('#btnHCPSelect')            .click(btnHCPSelectHtml);
+  $('#btnHCPReset')            .click(btnHCPResetHtml);
   $('#hcpSelectDropDown').on('show.bs.dropdown', function () {
     btnHCPMoreVertHtml()
   })

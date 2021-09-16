@@ -149,4 +149,6 @@ x Rounds - sort option
 
 x Include score by par in round stats pulldown
 
-replace dup ids with classes
+x replace dup ids with classes
+
+
