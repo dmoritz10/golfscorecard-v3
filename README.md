@@ -147,4 +147,4 @@ x Rounds - sort option
 
     add reset button to pull down
 
-
+Include score by par in round stats pulldown

@@ -454,94 +454,124 @@ function calcScoreSummary() {
     ['Pars', 0],
     ['Bogeys', 0],
     ['Dbl Bogeys', 0],
-    ['Over Dbl Bogeys', 0]
+    ['Over Dbl Bogeys', 0],
+    ['', '']
   ]
   
   sc.map((val,idx) => {
   
     if (val) {
   
-    var p = val.score - val.par
-    
-    switch (p) {
-    
-    case -2:
-    case -3:
-      arr[0][1]++
-      break;
-    case -1:
-      arr[1][1]++
-      break;
-    case 0:
-      arr[2][1]++
-      break;
-    case 1:
-      arr[3][1]++
-      break;
-    case 2:
-      arr[4][1]++
-      break;
-    default:
-      arr[5][1]++
-      break;
-    }
+      var p = val.score - val.par
+      
+      switch (p) {
+      
+      case -2:
+      case -3:
+        arr[0][1]++
+        break;
+      case -1:
+        arr[1][1]++
+        break;
+      case 0:
+        arr[2][1]++
+        break;
+      case 1:
+        arr[3][1]++
+        break;
+      case 2:
+        arr[4][1]++
+        break;
+      default:
+        arr[5][1]++
+        break;
+      }
+
+      var p3Cnt = 0
+      var p3Sum = 0
+      var p4Cnt = 0
+      var p4Sum = 0
+      var p5Cnt = 0
+      var p5Sum = 0
+
+      switch (val.par*1) {
+
+        case 3:
+          p3Cnt++
+          p3Sum += val.score*1
+          break;
+        case 4:
+          p4Cnt++
+          p4Sum += val.score*1
+          break;
+        case 5:
+          p5Cnt++
+          p5Sum += val.score*1
+          break;
+
+      }
+
     }
   })
-  
-  for (var i=arr.length-1;i>-1;i--) {if (arr[i][1] == 0) arr.splice(i,1)}
 
-  var tbl = new Table();
-  
-  tbl
-    .setHeader()
-    .setTableHeaderClass()
-    .setData(arr)
-    .setTableClass('table')
-    .setTrClass()
-    .setTcClass(['', 'text-right'])
-    .setTdClass('pb-1 pt-1 border-0 h4')
-    .build();
+    if (p3Cnt) arr.push((p3Sum/p3Cnt).toFixed(1))
+    if (p4Cnt) arr.push((p4Sum/p4Cnt).toFixed(1))
+    if (p5Cnt) arr.push((p5Sum/p5Cnt).toFixed(1))
     
-  return tbl.html
-  
-  
-  
-  
-}
+    for (var i=arr.length-1;i>-1;i--) {if (arr[i][1] == 0) arr.splice(i,1)}
 
-function calcPuttSummary() {
-
-  var sc = prScore.scores
-  var arr = [
-    ['0 Putt', 0],
-    ['1 Putt', 0],
-    ['2 Putt', 0],
-    ['3 Putt', 0],
-    ['>3 Putt', 0]
-  ]
-  
-  sc.map((val,idx) => {
-  
-    if (val) {
-  
-    switch (parseInt(val.putts)) {
+    var tbl = new Table();
     
-    case 0:
-      arr[0][1]++
-      break;
-    case 1:
-      arr[1][1]++
-      break;
-    case 2:
-      arr[2][1]++
-      break;
-    case 3:
-      arr[3][1]++
-      break;
-    default:
-      arr[4][1]++
-      break;
-    }
+    tbl
+      .setHeader()
+      .setTableHeaderClass()
+      .setData(arr)
+      .setTableClass('table')
+      .setTrClass()
+      .setTcClass(['', 'text-right'])
+      .setTdClass('pb-1 pt-1 border-0 h4')
+      .build();
+      
+    return tbl.html
+    
+    
+    
+    
+  }
+
+  function calcPuttSummary() {
+
+    var sc = prScore.scores
+    var arr = [
+      ['0 Putt', 0],
+      ['1 Putt', 0],
+      ['2 Putt', 0],
+      ['3 Putt', 0],
+      ['>3 Putt', 0]
+    ]
+    
+    sc.map((val,idx) => {
+    
+      if (val) {
+    
+      switch (parseInt(val.putts)) {
+      
+      case 0:
+        arr[0][1]++
+        break;
+      case 1:
+        arr[1][1]++
+        break;
+      case 2:
+        arr[2][1]++
+        break;
+      case 3:
+        arr[3][1]++
+        break;
+      default:
+        arr[4][1]++
+        break;
+      }
     }
   })
   
