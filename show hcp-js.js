@@ -111,10 +111,12 @@ async function btnShowHandicapHtml () {
    
   }
 
-  var x = $("#tblShowHCP").clone();
+  var $tblHcp = $("#hcpContainer > div")
+
+  var x = $tblHcp.clone();
   $("#hcpContainer").empty();
   x.appendTo("#hcpContainer");
-  $("#tblShowHCP").hide()
+
 
   for (var j = 0; j < hcpArr.length; j++) {
   
@@ -122,7 +124,7 @@ async function btnShowHandicapHtml () {
 
     val.hcpDiff = val.hcpDiff ? val.hcpDiff : '&nbsp;'
       
-    var ele = $("#tblShowHCP").clone();
+    var ele = $tblHcp.clone();
 
     ele.find('#hcpScore')[0].innerHTML = val.score
     ele.find('#hcpCourseName')[0].innerHTML = val.shortCourseName
@@ -150,7 +152,7 @@ async function btnShowHandicapHtml () {
       ele.find('#hcpSeqNbr')[0].innerHTML = hcpMethod == 'WHS' ? 9 : 11
     }
     
-    ele.show()
+    ele.removeClass('d-none')
     
     ele.appendTo("#hcpContainer");
     
