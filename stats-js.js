@@ -181,6 +181,17 @@ async function btnStatsMoreVertHtml() {
 
 }
 
+function btnStatResetHtml() {
+
+  $('#statExcludeSmall').prop('checked',  true )
+  setSelectedIdx('statSelectCourse', 'default')
+
+  setSelectedIdx('selectStatsRng1', 'This Round')
+  setSelectedIdx('selectStatsRng2', 'Last 5 Rounds')
+  setSelectedIdx('selectStatsRng3', 'Last 20 Rounds')
+
+}
+
 function setDropdownValues(datePlayedArr, endRow) {
 
   var nbrRnds = datePlayedArr.length

@@ -188,6 +188,7 @@
   // Show Stats
   $('#btnShowStats')          .click(btnShowStatsHtml);
   $('#btnStatSelect')         .click(btnStatSelectHtml);
+  $('#btnStatReset')            .click(btnStatResetHtml);
   $('#statSelectDropDown').on('show.bs.dropdown', function () {
     btnStatsMoreVertHtml()
   })
