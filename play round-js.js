@@ -9,6 +9,8 @@ async function btnPlayRoundHtml() {
   console.log('btnPlayRoundHtml')
     
   transitionPlayRoundTab()
+
+  $('#rsGoTo')[0].setAttribute("onclick", `gotoTab('Scorecard')`);
   
   var resumeRound = await checkForIncompleteRound()
   
@@ -24,8 +26,7 @@ async function btnPlayRoundHtml() {
   var e = {}; e.data = {};
   e.data.useDefaultTee = true
   await loadCourseInfo(e)
-  
-  $('#rsGoTo')[0].setAttribute("onclick", `gotoTab('Scorecard')`);
+
   gotoTab('PlayRound')
 
 }
