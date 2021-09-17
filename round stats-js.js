@@ -21,7 +21,8 @@ function btnRoundStatsHtml(rtnTo) {
   $('#rsPutts')   .html ( $.sum (prScore.scores, 'putts'))
   $('#rsFairways').html ( $.fairwaysHit(prScore.scores))
 
-  $('#rsHoles')   .attr('data-content', calcHoleSummary(RSCalledFrom));
+  // $('#rsHoles')   .attr('data-content', calcHoleSummary(RSCalledFrom));
+  $('#rsHoles')   .attr('data-content', calcHoleSummary());
   $('#rsScore')   .attr('data-content', calcScoreSummary());
   $('#rsPutts')   .attr('data-content', calcPuttSummary());
   $('#rsFairways').attr('data-content', calcDriveSummary());
