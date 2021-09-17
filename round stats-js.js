@@ -4,7 +4,7 @@ function btnRoundStatsHtml(rtnTo) {
 
   var returnTo = typeof rtnTo === 'object' ? "Scorecard" : rtnTo
   
-  $('#rsGoTo')[0].setAttribute("onclick", `gotoTab('${returnTo}')`);
+  $('#rsGoTo')[0].setAttribute("onclick", `gotoTab('Scorecard')`);
   gotoTab('RoundStats')
   
   var datePlayed = new Date(prScore.startTime).toString().substring(0,15)

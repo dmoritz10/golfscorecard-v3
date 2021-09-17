@@ -150,7 +150,7 @@ async function btnShowRoundsHtml() {
 
 }
 
-async function showRoundDetail (rowIdx, rtnTo) {
+async function showRoundDetail (rowIdx) {
 
   var range = "'Scorecard Upload'!" + calcRngA1(rowIdx + 2, 1, 1, 100)
   
@@ -165,10 +165,8 @@ async function showRoundDetail (rowIdx, rtnTo) {
     
     prCourse = JSON.parse(roundObj.courseInfo)
     prScore = JSON.parse(roundObj.scoreCard)
-    
-    // RSCalledFrom = rtnTo
 
-    btnRoundStatsHtml(rtnTo)
+    btnRoundStatsHtml()
 
   })
 
