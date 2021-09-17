@@ -1,6 +1,6 @@
 
 
-function btnRoundStatsHtml(rtnTo) {
+function btnRoundStatsHtml() {
 
   $('#rsGoTo')[0].setAttribute("onclick", `gotoTab('Scorecard')`);
   gotoTab('RoundStats')
@@ -20,7 +20,7 @@ function btnRoundStatsHtml(rtnTo) {
   $('#rsFairways').html ( $.fairwaysHit(prScore.scores))
 
   // $('#rsHoles')   .attr('data-content', calcHoleSummary(RSCalledFrom));
-  $('#rsHoles')   .attr('data-content', calcHoleSummary(rtnTo));
+  $('#rsHoles')   .attr('data-content', calcHoleSummary());
   $('#rsScore')   .attr('data-content', calcScoreSummary());
   $('#rsPutts')   .attr('data-content', calcPuttSummary());
   $('#rsFairways').attr('data-content', calcDriveSummary());

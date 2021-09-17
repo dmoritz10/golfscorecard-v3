@@ -145,12 +145,12 @@ async function btnShowRoundsHtml() {
   
     { $ ('#srNbrRounds').html(rndCntr + ' of ' + nbrRounds)}
   
-  
+    $('#rsGoTo')[0].setAttribute("onclick", `gotoTab('ShowRounds')`);
   gotoTab('ShowRounds')
 
 }
 
-async function showRoundDetail (rowIdx, rtnTo) {
+async function showRoundDetail (rowIdx) {
 
   var range = "'Scorecard Upload'!" + calcRngA1(rowIdx + 2, 1, 1, 100)
   
@@ -166,7 +166,7 @@ async function showRoundDetail (rowIdx, rtnTo) {
     prCourse = JSON.parse(roundObj.courseInfo)
     prScore = JSON.parse(roundObj.scoreCard)
 
-    btnRoundStatsHtml(rtnTo)
+    btnRoundStatsHtml()
 
   })
 

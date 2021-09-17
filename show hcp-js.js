@@ -162,7 +162,7 @@ async function btnShowHandicapHtml () {
   
   displayHcpTrend(hcpArr, handicapAlert)
 
-
+  $('#rsGoTo')[0].setAttribute("onclick", `gotoTab('ShowHCP')`);
   gotoTab('ShowHCP')
 
   if (rounds.length != prevNbrRounds)    courseSummary(rounds)
