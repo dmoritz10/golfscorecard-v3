@@ -1,29 +1,5 @@
 
 
-function RSCloseHtml(e) {
-
-  if ( !RSCalledFrom ) {
-  
-    gotoTab('Scorecard')
-    
-  } else if ( RSCalledFrom == "ShowRounds" ){
-  
-    gotoTab('ShowRounds')
-  
-  } else if ( RSCalledFrom == "ShowHCP" ){
-    
-    gotoTab('ShowHCP')
-  
-  } else {
-
-    gotoTab('Home')
-  }
-  
-  RSCalledFrom = null
-  
-}
-
-
 function btnRoundStatsHtml(rtnTo) {
 
   var returnTo = typeof rtnTo === 'object' ? "Scorecard" : rtnTo
@@ -179,7 +155,7 @@ function scorecard() {
     }
     
     var lhs = prScore.lastHoleScored + 1 <= ci.length ? prScore.lastHoleScored + 1 : 1
-    if (RSCalledFrom == "ShowRounds") lhs = null
+    // if (RSCalledFrom == "ShowRounds") lhs = null
   
     if (val.hole == lhs) {
    

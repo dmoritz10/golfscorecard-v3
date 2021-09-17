@@ -15,8 +15,6 @@
   // var currHandicap
   var hcpMethod
 
-
-  var RSCalledFrom
   var prCourse = { }
   var prScore = { }
   var prClubs
@@ -141,7 +139,6 @@
 
 
   // Round Stats tab
-  $('#btnRSClose')             .button().click(RSCloseHtml);
   $('#btnRSScorecard')         .button().click(btnRSScorecard);
 
   $('[data-toggle="popover"]').popover({

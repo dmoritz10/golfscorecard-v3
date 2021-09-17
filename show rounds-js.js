@@ -166,7 +166,7 @@ async function showRoundDetail (rowIdx, rtnTo) {
     prCourse = JSON.parse(roundObj.courseInfo)
     prScore = JSON.parse(roundObj.scoreCard)
     
-    RSCalledFrom = rtnTo
+    // RSCalledFrom = rtnTo
 
     btnRoundStatsHtml(rtnTo)
 
