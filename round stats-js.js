@@ -68,7 +68,11 @@ function btnRSScorecard() {
 }
 
 
-function scorecard() {
+function scorecard(e) {
+
+  console.log('scorecard')
+
+  console.log(e)
 
   var ci = prCourse.holeDetail
   var sc = prScore.scores
