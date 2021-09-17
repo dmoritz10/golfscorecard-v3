@@ -63,7 +63,7 @@ function btnRoundStatsHtml(rtnTo) {
 
 function btnRSScorecard() {
   
-  $('#btnRSScorecard')   .attr('data-content', scorecard('hi dan'));  
+  $('#btnRSScorecard')   .attr('data-content', scorecard('RoundStats'));  
 
 }
 
@@ -160,7 +160,7 @@ function scorecard(e) {
     }
     
     var lhs = prScore.lastHoleScored + 1 <= ci.length ? prScore.lastHoleScored + 1 : 1
-    // if (RSCalledFrom == "ShowRounds") lhs = null
+    if (e !== "RoundStats") lhs = null
   
     if (val.hole == lhs) {
    
