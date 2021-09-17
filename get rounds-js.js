@@ -34,7 +34,6 @@ async function getRounds(prmExcludeSmall, prmSelectCourse) {
         if (hcpExcludeSmall) {
         
           var sc = JSON.parse(rounds[j][scoreCardCol])
-          var round = sc.scores
           var nbrHolesCorrection = 18 / sc.scores.filter(Boolean).length
 
           if (nbrHolesCorrection !== 1 || rounds[j][parCol]*1 < 69) 
@@ -60,9 +59,6 @@ async function getRounds(prmExcludeSmall, prmSelectCourse) {
     var prevRndHandicap = 0 
     var hcpNbrRounds = hcpMethod == 'WHS' ? 8 : 10
     
-    var cl = []
-    
-
     for (var r = 0; r < arrRounds.length; r++) {
 
         var roundObj = makeObj(arrRounds[r][0], cols)

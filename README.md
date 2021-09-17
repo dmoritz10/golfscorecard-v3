@@ -152,3 +152,10 @@ x Include score by par in round stats pulldown
 x replace dup ids with classes
 
 x reset button for rounds, courses and stats
+
+hcp with 2 rounds
+
+conditionally fetch scorecards
+
+change My Courses to Courses
+    scorecard upload to scorecards
