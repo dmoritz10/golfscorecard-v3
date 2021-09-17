@@ -74,7 +74,6 @@ async function getRounds(prmExcludeSmall, prmSelectCourse) {
             handicapScore: '',
             courseAdjustedScore: '',
             mostRecent20: [],
-
             netAdj: {},
             targetScore: {}
         }
