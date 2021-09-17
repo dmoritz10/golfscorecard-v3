@@ -63,7 +63,7 @@ function btnRoundStatsHtml(rtnTo) {
 
 function btnRSScorecard() {
   
-  $('#btnRSScorecard')   .attr('data-content', scorecard());  
+  $('#btnRSScorecard')   .attr('data-content', scorecard('hi dan'));  
 
 }
 
