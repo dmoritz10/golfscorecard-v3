@@ -44,11 +44,9 @@ async function getRounds(prmExcludeSmall, prmSelectCourse) {
             if (shortCourseName(rounds[j][courseNameCol]) != selectCourse) 
                 continue
         }
-            ;
 
         arrRounds.push([rounds[j], j])
     }
-
 
     if (arrRounds.length == 0) {
         bootbox.alert('There are no rounds.')
