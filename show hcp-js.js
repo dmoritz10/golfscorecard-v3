@@ -111,7 +111,7 @@ async function btnShowHandicapHtml () {
    
   }
 
-  var $tblHcp = $("#hcpContainer > div")
+  var $tblHcp = $("#hcpContainer > .d-none")
 
   var x = $tblHcp.clone();
   $("#hcpContainer").empty();

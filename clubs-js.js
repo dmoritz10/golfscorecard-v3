@@ -3,7 +3,7 @@ function btnShowClubsHtml () {
     
     var clubs = readOption('Clubs', [])
 
-    var $tblClubs = $("#clbContainer > div")
+    var $tblClubs = $("#clbContainer > .d-none")
     
     var x = $tblClubs.clone();
     $("#clbContainer").empty()

@@ -14,7 +14,7 @@ async function btnShowCoursesHtml() {
   var cols = arrShts['My Courses'].colHdrs
   var courses = arrShts['My Courses'].vals
 
-  var $tblCourses = $("#scContainer > div")
+  var $tblCourses = $("#scContainer > .d-none")
 
   var x = $tblCourses.clone();
   $("#scContainer").empty();

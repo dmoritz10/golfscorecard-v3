@@ -6,7 +6,7 @@
 
     var golfers = readOption('Golfers', [])
 
-    var $tblGolfers = $("#glfContainer > div")
+    var $tblGolfers = $("#glfContainer > .d-none")
 
     var x = $tblGolfers.clone();
     $("#glfContainer").empty()
