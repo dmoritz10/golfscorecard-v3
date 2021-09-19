@@ -13,7 +13,7 @@
   var courseInfo
   var teePlayed
   // var currHandicap
-  var hcpMethod
+  // var hcpMethod
 
   var prCourse = { }
   var prScore = { }
