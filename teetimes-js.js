@@ -3,7 +3,6 @@ function btnTeetimesHtml () {
     
     var teetimes = readOption('teetimes', [])
     
-    console.log('1')
     var $tblTeetimes = $("#ttContainer > .d-none")
 
     var x = $tblTeetimes.clone();

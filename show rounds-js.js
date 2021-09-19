@@ -70,7 +70,8 @@ async function btnShowRoundsHtml() {
 
   var rndCntr = 0
   
-  var $tblRounds = $("#srContainer > div")
+  var $tblRounds = $("#srContainer > .d-none")
+  console.log('2')
 
   var x = $tblRounds.clone();
   $("#srContainer").empty()
