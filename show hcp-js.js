@@ -165,7 +165,9 @@ async function btnShowHandicapHtml () {
   $('#rsGoTo')[0].setAttribute("onclick", `gotoTab('ShowHCP')`);
   gotoTab('ShowHCP')
 
-  if (rounds.length != prevNbrRounds)    courseSummary(rounds)
+
+  var hcpForceRecalc = $('#hcpForceRecalc').prop('checked')
+  if (rounds.length != prevNbrRounds || hcpForceRecalc)    courseSummary(rounds)
 
   console.log('summarizeRounds')
   console.log(rounds.length != prevNbrRounds)

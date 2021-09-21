@@ -155,10 +155,15 @@ x reset button for rounds, courses and stats
 
 x replace rtnto
 
+add more info on club distance to round stats
+
 hcp with 2 rounds
 
 conditionally fetch scorecards
 
+method to force recalc
+
 rename sheets
     My Courses to Courses
     scorecard upload to scorecards
+
