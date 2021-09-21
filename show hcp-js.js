@@ -217,6 +217,7 @@ async function btnHCPMoreVertHtml() {
   var hcpMethod         = hcpSelectOptions.hcpMethod
   
   $('#hcpExcludeSmall').prop('checked',  hcpExcludeSmall )
+  $('#hcpForceRecalc').prop('checked',  false )
   $("input[name='hcpMethod']").val([hcpMethod]);  
 
 }
