@@ -7,7 +7,6 @@ async function getRounds(prmExcludeSmall, prmSelectCourse) {
     var hcpExcludeSmall = prmExcludeSmall === undefined ? hcpSelectOptions.hcpExcludeSmall : prmExcludeSmall
     var selectCourse = prmSelectCourse === undefined ? false : prmSelectCourse
 
-    var hcpMethod = hcpSelectOptions.hcpMethod
 
     suSht = await openShts(
         [
@@ -55,7 +54,7 @@ async function getRounds(prmExcludeSmall, prmSelectCourse) {
     
     var objRounds = []
     var prevRndHandicap = 0 
-    var hcpNbrRounds = hcpMethod == 'WHS' ? 8 : 10
+    var hcpNbrRounds =  8
     
     for (var r = 0; r < arrRounds.length; r++) {
 
@@ -93,7 +92,7 @@ async function getRounds(prmExcludeSmall, prmSelectCourse) {
         var round = sc.scores
         var nbrHolesCorrection = 18 / sc.scores.filter(Boolean).length
 
-        var rtnHcpDiff = calcHandicapDifferential(sc, hcpMethod, slopeRating, courseRating, courseHandicap, ci.holeDetail)
+        var rtnHcpDiff = calcHandicapDifferential(sc, slopeRating, courseRating, courseHandicap, ci.holeDetail)
 
         rndHcp.handicapDiff = rtnHcpDiff.hcpDiff
         rndHcp.escCorrections = rtnHcpDiff.escCorrections

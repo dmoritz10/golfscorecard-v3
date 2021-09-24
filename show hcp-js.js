@@ -5,7 +5,6 @@ async function btnShowHandicapHtml () {
   var prevNbrRounds = hcpObj.nbrRounds*1
 
   var hcpSelectOptions = readOption('hcpFilter')
-  var hcpMethod = hcpSelectOptions.hcpMethod
 
   var rounds = await getRounds()
 
@@ -69,7 +68,7 @@ async function btnShowHandicapHtml () {
     
   }
   
-  var hcpNbrRounds = hcpMethod == 'WHS' ? 8 : 10
+  var hcpNbrRounds = 8
 
   var frstIdx = 0
   var lastIdx = Math.min(hcpArr.length - 1, 19)
@@ -149,7 +148,7 @@ async function btnShowHandicapHtml () {
     
     if (hcpAlert && j == idxOf11th) {
       ele.css( "background", "#acdb9e")      
-      ele.find('#hcpSeqNbr')[0].innerHTML = hcpMethod == 'WHS' ? 9 : 11
+      ele.find('#hcpSeqNbr')[0].innerHTML =  9
     }
     
     ele.removeClass('d-none')
@@ -211,18 +210,15 @@ async function btnHCPMoreVertHtml() {
 
   var hcpSelectOptions  = readOption('hcpFilter')
   var hcpExcludeSmall   = hcpSelectOptions.hcpExcludeSmall
-  var hcpMethod         = hcpSelectOptions.hcpMethod
   
   $('#hcpExcludeSmall').prop('checked',  hcpExcludeSmall )
   $('#hcpForceRecalc').prop('checked',  false )
-  $("input[name='hcpMethod']").val([hcpMethod]);  
 
 }
 
 function btnHCPResetHtml() {
 
   $('#hcpExcludeSmall').prop('checked',  true )
-  $('#hcpMethodWHS').prop('checked',  true  )
 
 }
 
@@ -230,11 +226,9 @@ function btnHCPResetHtml() {
 async function btnHCPSelectHtml(e) {
   
   var hcpExcludeSmallVal = $('#hcpExcludeSmall').prop('checked')
-  var hcpMethodVal       = $("input[type='radio'][name='hcpMethod']:checked").val();
 
   await updateOption('hcpFilter', {
-                                  'hcpExcludeSmall': hcpExcludeSmallVal,
-                                  'hcpMethod': hcpMethodVal
+                                  'hcpExcludeSmall': hcpExcludeSmallVal
                                   })
                       
   $("#btnHCPMoreVert").click()
@@ -245,41 +239,23 @@ async function btnHCPSelectHtml(e) {
 
 
 
-function calcHandicapDifferential(sc, hcpMethod, slopeRating, courseRating, courseHandicap, holeDetail) {   
+function calcHandicapDifferential(sc, slopeRating, courseRating, courseHandicap, holeDetail) {   
 
   var nbrHolesCorrection = 18 / sc.scores.filter(Boolean).length
   
   var equitableScoreControl = 0
   
-  if (hcpMethod == 'USGA') {
+  var netParAdj = calcHcpAdj(courseHandicap, holeDetail)
   
   for (var i=0;i<sc.scores.length;i++) {
-    
-    var ecsMax = calcEcsMax(courseHandicap)
-    
-    
+  
     if (!sc.scores[i]) continue; 
-    
-    if (ecsMax !== 0) {
-      equitableScoreControl += Math.min(parseInt(sc.scores[i].score), ecsMax)
-    } else {
-      equitableScoreControl += Math.min(parseInt(sc.scores[i].score), parseInt(sc.scores[i].par) + 2)     // scratch golfer
-    }
-  }
   
-  } else {
+    equitableScoreControl += Math.min(sc.scores[i].score*1,sc.scores[i].par*1 + 2 - netParAdj[i][2])
+
+  } 
   
-    var netParAdj = calcHcpAdj(courseHandicap, holeDetail)
-    
-    for (var i=0;i<sc.scores.length;i++) {
-    
-      if (!sc.scores[i]) continue; 
-    
-      equitableScoreControl += Math.min(sc.scores[i].score*1,sc.scores[i].par*1 + 2 - netParAdj[i][2])
   
-    } 
-  
-  }
   
   var escCorrections = $.sum (sc.scores, 'score') - equitableScoreControl
    

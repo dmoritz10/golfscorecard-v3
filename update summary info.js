@@ -12,7 +12,6 @@ function madeTargetScore(targetScore, finalScore) {
 function calcTargetScoreDan(mostRecent20HcpDiff, targetHandicap, courseRating, slopeRating, courseRatingFront9) {
 
   var hcpSelectOptions = readOption('hcpFilter')
-  var hcpMethod = hcpSelectOptions.hcpMethod
 
   var mostRecent19 = JSON.parse(JSON.stringify(mostRecent20HcpDiff))
   
@@ -20,7 +19,7 @@ function calcTargetScoreDan(mostRecent20HcpDiff, targetHandicap, courseRating, s
 
   var nbrToUse = calcNbrToUse(mostRecent20HcpDiff)
   
-  var hcpNbrRounds = hcpMethod == 'WHS' ? 8 : 10
+  var hcpNbrRounds =  8
   
   nbrToUse = Math.min(nbrToUse, hcpNbrRounds)
 

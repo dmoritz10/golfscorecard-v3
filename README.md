@@ -155,6 +155,8 @@ x reset button for rounds, courses and stats
 
 x replace rtnto
 
+rework wgs handicap calc
+
 add more info on club distance to round stats
 
 hcp with 2 rounds

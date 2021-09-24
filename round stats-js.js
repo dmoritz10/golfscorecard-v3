@@ -351,7 +351,6 @@ function calcTargetScore(netParAdj) {
   
   var calcEsc = calcHandicapDifferential(
                          prScore, 
-                         readOption('hcpFilter').hcpMethod,
                          prCourse.courseInfo['Slope Rating'], 
                          prCourse.courseInfo['USGA Course Rating'], 
                          prCourse.courseInfo['Course Handicap'], 
