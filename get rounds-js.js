@@ -189,21 +189,7 @@ async function getRounds(prmExcludeSmall, prmSelectCourse) {
         rndHcp.targetScore = targetScore
             
         var prevRndHandicap = handicap
-/*            
-            var cl=
-            
-            roundObj.courseName + '\t' +
-            roundObj.date + '\t' +
-            
-            rndHcp.handicap + '\t' +
-            rndHcp.courseHandicap + '\t' +
-            rndHcp.handicapDiff + '\t' +
-            rndHcp.escCorrections + '\t' +
-            rndHcp.handicapScore + '\t' +
-            rndHcp.courseAdjustedScore
-           
-            console.log(cl)
-*/
+
     }
     
     console.log((new Date() - str)/1000)
@@ -277,9 +263,9 @@ function calcNbrToUse(mostRecent20) {
 
 async function updateTarScr(objRounds, cols) {
 
-  var arrCi = []
+var arrCi = []
 
-    for (var j = 0; j < objRounds.length; j++) {
+for (var j = 0; j < objRounds.length; j++) {
   
     var roundObj = objRounds[j]
 
@@ -299,7 +285,7 @@ async function updateTarScr(objRounds, cols) {
     console.log(ci.courseInfo)
 
     arrCi.push([JSON.stringify(ci)])
-  }
+}
   
   console.log(arrCi)
   

@@ -169,9 +169,6 @@ async function btnShowHandicapHtml () {
   var hcpForceRecalc = $('#hcpForceRecalc').prop('checked')
   if (rounds.length != prevNbrRounds || hcpForceRecalc)    courseSummary(rounds)
 
-  console.log('summarizeRounds')
-  console.log(rounds.length != prevNbrRounds)
-
 }
 
 function displayHcpTrend(hcpArr, handicapAlert) {

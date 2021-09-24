@@ -161,7 +161,7 @@ hcp with 2 rounds
 
 conditionally fetch scorecards
 
-method to force recalc
+x method to force recalc
 
 rename sheets
     My Courses to Courses
