@@ -7,20 +7,23 @@ async function getRounds(prmExcludeSmall, prmSelectCourse) {
     var hcpExcludeSmall = prmExcludeSmall === undefined ? hcpSelectOptions.hcpExcludeSmall : prmExcludeSmall
     var selectCourse = prmSelectCourse === undefined ? false : prmSelectCourse
 
-
-    if (suSht.length > 0) {
+    console.log(suSht)
+    
+    // if (suSht.length > 0) {
         suSht = await openShts(
             [
             { title: 'Scorecard Upload', type: "all"
             }
             ])
-    }
+    // }
 
     if (suSht['Scorecard Upload'].rowCount < 1) {
         
         return []
 
     }
+
+    console.log(suSht)
 
     
     var cols = suSht['Scorecard Upload'].colHdrs
