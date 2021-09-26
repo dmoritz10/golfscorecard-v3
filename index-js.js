@@ -6,7 +6,7 @@
   var spreadsheetId
 
   var arrShts = []
-  var suSht = []
+  var suSht = null
   var arrOptions
   var optionsIdx
 

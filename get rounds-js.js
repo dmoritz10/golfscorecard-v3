@@ -8,14 +8,14 @@ async function getRounds(prmExcludeSmall, prmSelectCourse) {
     var selectCourse = prmSelectCourse === undefined ? false : prmSelectCourse
 
     console.log(suSht)
-    
-    // if (suSht.length > 0) {
+
+    if (!suSht) {
         suSht = await openShts(
             [
             { title: 'Scorecard Upload', type: "all"
             }
             ])
-    // }
+    }
 
     if (suSht['Scorecard Upload'].rowCount < 1) {
         

@@ -630,7 +630,7 @@ async function btnEndRoundHtml() {
 
       await updateOption('currScoreCard', '')                  
       await updateOption('currCourseInfo', '')   
-      suSht = []   
+      suSht = null   
    
     }, 
     
