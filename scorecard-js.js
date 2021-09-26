@@ -629,7 +629,8 @@ async function btnEndRoundHtml() {
       console.log('round posted')
 
       await updateOption('currScoreCard', '')                  
-      await updateOption('currCourseInfo', '')      
+      await updateOption('currCourseInfo', '')   
+      suSht = []   
    
     }, 
     

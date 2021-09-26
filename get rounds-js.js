@@ -8,11 +8,13 @@ async function getRounds(prmExcludeSmall, prmSelectCourse) {
     var selectCourse = prmSelectCourse === undefined ? false : prmSelectCourse
 
 
-    suSht = await openShts(
-        [
-        { title: 'Scorecard Upload', type: "all"
-        }
-        ])
+    if (suSht.length > 0) {
+        suSht = await openShts(
+            [
+            { title: 'Scorecard Upload', type: "all"
+            }
+            ])
+    }
 
     if (suSht['Scorecard Upload'].rowCount < 1) {
         
@@ -22,7 +24,7 @@ async function getRounds(prmExcludeSmall, prmSelectCourse) {
 
     
     var cols = suSht['Scorecard Upload'].colHdrs
-    var rounds = suSht['Scorecard Upload'].vals
+    var rounds = [...suSht['Scorecard Upload'].vals]
     var arrRounds = []
     
     var parCol = cols.indexOf('par')
@@ -77,7 +79,7 @@ async function getRounds(prmExcludeSmall, prmSelectCourse) {
         
         objRounds.push(roundObj)
         
-        if (r<5) continue;
+        if (r<3) continue;
          
         var rndHcp = objRounds[objRounds.length-1].objHandicap
 
