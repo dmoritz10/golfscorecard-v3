@@ -10,6 +10,9 @@ async function getRounds(prmExcludeSmall, prmSelectCourse) {
     console.log(suSht)
 
     if (!suSht) {
+
+console.log('fetch')
+
         suSht = await openShts(
             [
             { title: 'Scorecard Upload', type: "all"
