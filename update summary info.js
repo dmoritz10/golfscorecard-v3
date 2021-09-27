@@ -39,7 +39,7 @@ function calcTargetScoreDan(mostRecent20HcpDiff, targetHandicap, courseRating, s
       //  ((sum + thd) * .96) = (handicap - .1) * (cnt + 1)
       //  thd = (((handicap - .1) * (cnt + 1)) / .96 ) - sum)
     
-    var targetHandicapDiff = ((targetHandicap * (cnt + 1)) / .96) - sum
+    var targetHandicapDiff = (targetHandicap * (cnt + 1)) - sum
   
   } else {
     
