@@ -134,13 +134,12 @@ async function getRounds(prmExcludeSmall, prmSelectCourse) {
                 lowScores.push(mostRecent20[i])
             }
 
-            var handicap = parseInt(sum * 10 / cnt) / 10
+            var handicap = parseInt(sum * 0.96 * 10 / cnt) / 10
         } else {
             var handicap = ''
         }
 
-        var courseHandicap = prevRndHandicap == '' ? '' : (Math.round(slopeRating * prevRndHandicap) / 113) 
-                                                                + courseRating - ci.courseInfo['Par']*1
+        var courseHandicap = prevRndHandicap == '' ? '' : Math.round(slopeRating * prevRndHandicap) / 113
 
         if (handicap !== '') {
             var handicapScore = ($.sum(sc.scores, 'score') * nbrHolesCorrection) - courseHandicap
@@ -172,7 +171,7 @@ async function getRounds(prmExcludeSmall, prmSelectCourse) {
             //  ((sum + thd) * .96) = (handicap - .1) * (cnt + 1)
             //  thd = (((handicap - .1) * (cnt + 1)) / .96 ) - sum)
           
-          var targetHandicapDiff = ((prevRndHandicap - .1) * (cnt + 1)) - sum
+          var targetHandicapDiff = (((prevRndHandicap - .1) * (cnt + 1)) / .96) - sum
         } else {
           
           var targetHandicapDiff = ''

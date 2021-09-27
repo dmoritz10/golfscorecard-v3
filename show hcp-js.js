@@ -106,7 +106,7 @@ async function btnShowHandicapHtml () {
     sum -= hcpDiffOf10th                                         // the last round processed is the most recent round     
     sum += hcpDiffOf11th                                  
 
-    var handicapAlert = parseInt(sum * 10 / cnt) / 10     // calc the hcp as if the 20th round was replaced with the 11th ranked by Hcp Diff
+    var handicapAlert = parseInt(sum * 0.96 * 10 / cnt) / 10     // calc the hcp as if the 20th round was replaced with the 11th ranked by Hcp Diff
    
   }
 
