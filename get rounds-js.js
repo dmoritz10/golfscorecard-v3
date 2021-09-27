@@ -7,11 +7,7 @@ async function getRounds(prmExcludeSmall, prmSelectCourse) {
     var hcpExcludeSmall = prmExcludeSmall === undefined ? hcpSelectOptions.hcpExcludeSmall : prmExcludeSmall
     var selectCourse = prmSelectCourse === undefined ? false : prmSelectCourse
 
-    console.log(suSht)
-
-    if (!suSht) {
-
-console.log('fetch')
+    if (!suSht) {            // everytime (only endRound.scorecards so far) scorecards are altered, suSht is set to null
 
         suSht = await openShts(
             [
@@ -26,16 +22,13 @@ console.log('fetch')
 
     }
 
-    console.log(suSht)
-
+    var cols            = suSht['Scorecard Upload'].colHdrs
+    var rounds          = [...suSht['Scorecard Upload'].vals]
+    var arrRounds       = []
     
-    var cols = suSht['Scorecard Upload'].colHdrs
-    var rounds = [...suSht['Scorecard Upload'].vals]
-    var arrRounds = []
-    
-    var parCol = cols.indexOf('par')
-    var scoreCardCol = cols.indexOf('scoreCard')
-    var courseNameCol = cols.indexOf('courseName')
+    var parCol          = cols.indexOf('par')
+    var scoreCardCol    = cols.indexOf('scoreCard')
+    var courseNameCol   = cols.indexOf('courseName')
 
     for (var j = 0; j < rounds.length; j++) {
         if (hcpExcludeSmall) {
@@ -208,7 +201,58 @@ console.log('fetch')
     return objRounds
 }
 
+function calcHandicapDifferential(sc, slopeRating, courseRating, courseHandicap, holeDetail) {   
 
+    var nbrHolesCorrection = 18 / sc.scores.filter(Boolean).length
+    
+    var equitableScoreControl = 0
+    
+    var netParAdj = calcHcpAdj(courseHandicap, holeDetail)
+    
+    for (var i=0;i<sc.scores.length;i++) {
+    
+      if (!sc.scores[i]) continue; 
+    
+      equitableScoreControl += Math.min(sc.scores[i].score*1,sc.scores[i].par*1 + 2 - netParAdj[i][2])
+  
+    } 
+    
+    var escCorrections = $.sum (sc.scores, 'score') - equitableScoreControl
+     
+    equitableScoreControl = equitableScoreControl * nbrHolesCorrection
+    
+    if (slopeRating !== '') {
+      var result = Math.round((equitableScoreControl - courseRating) * 113 * 10 /  slopeRating) / 10
+    } else {
+      var result = ''
+    } 
+      return {hcpDiff:result, escCorrections: escCorrections}
+  
+  }
+  
+  function calcEcsMax(courseHandicap) {
+  
+    var ecsMax = 0
+    switch (true) {
+      case courseHandicap < 10:
+        ecsMax = 0
+        break;
+      case courseHandicap < 20:
+        ecsMax = 7
+        break;
+      case courseHandicap < 30:
+        ecsMax = 8
+        break;
+      case courseHandicap < 40:
+        ecsMax = 9
+        break;
+      default:
+        ecsMax = 10
+        break;
+    }
+    return ecsMax
+  }
+  
 function compareNumbers(a, b) { return a - b}
 
 function median(a, b, c) { return a < b ? b < c ? b : a < c ? c : a : b < c ? a < c ? a : c : b;}

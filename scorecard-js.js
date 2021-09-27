@@ -630,7 +630,7 @@ async function btnEndRoundHtml() {
 
       await updateOption('currScoreCard', '')                  
       await updateOption('currCourseInfo', '')   
-      suSht = null   
+      suSht = null                               // causes getRounds to refresh suSht next time its called   
    
     }, 
     
