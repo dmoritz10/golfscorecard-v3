@@ -87,7 +87,7 @@ async function getRounds(prmExcludeSmall, prmSelectCourse) {
 
         var slopeRating = ci.courseInfo['Slope Rating']*1
         var courseRating = ci.courseInfo['USGA Course Rating']*1
-        var courseHandicap = Math.round((slopeRating * prevRndHandicap) / 113)
+        var courseHandicap = Math.round((slopeRating * prevRndHandicap) / 113) + courseRating - ci.courseInfo['Par']*1
         var courseRatingFront9 = ci.courseInfo['Front 9 Rating']
 
         var round = sc.scores
