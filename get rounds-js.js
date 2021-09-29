@@ -204,7 +204,7 @@ async function getRounds(prmExcludeSmall, prmSelectCourse) {
 
 function calcCourseHandicap (courseRating, slopeRating, par, handicap) {
 
-    return Math.round((slopeRating*1 * handicap*1 / 113) + courseRating*1 - par*1
+    return Math.round(((slopeRating*1) * (handicap*1) / 113) + (courseRating*1) - (par*1))
 }
 
 function calcHandicapDifferential(sc, slopeRating, courseRating, courseHandicap, holeDetail) {   
