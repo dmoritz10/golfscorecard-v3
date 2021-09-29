@@ -192,7 +192,11 @@ async function loadCourseInfo(e) {
       $('#hpNbr_Times_Played').html ( courseInfo['Nbr Times Played'])
       $('#hpAvg_Play_Time').html ( courseInfo['Avg Play Time'])
       
-      courseInfo['Course Handicap'] = Math.round(($('#hpSlope_Rating').html() * hcpObj.currHandicap*1) / 113)
+      courseInfo['Course Handicap'] = calcCourseHandicap (courseInfo['USGA Course Rating'], 
+                                                          courseInfo['Slope Rating'], 
+                                                          courseInfo['Par'],  
+                                                          hcpObj.currHandicap)
+      
       $('#hpCourseHandicap').html (courseInfo['Course Handicap'])
 
       var tsObj = calcTargetScoreDan(hcpObj.mostRecent20HcpDiff, $('#hpTargetHandicap').val(), courseInfo['USGA Course Rating'], courseInfo['Slope Rating'], courseInfo['Front 9 Rating'])
