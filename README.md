@@ -171,8 +171,24 @@ rename sheets
 
 rework wgs handicap calc
 
-    x courseHandicap
     x remove .96
+    
+    courseHandicap
+
+        current
+            teetime screen - display
+
+            play round - display
+
+
+
+        historical
+    
+
+course handicap => handicap index
+
+
+
 
 Will there still be exceptional scoring reductions (ESR)?
 Yes, but only if a player submits a score that produces a score differential that is seven strokes or more below their handicap index. 

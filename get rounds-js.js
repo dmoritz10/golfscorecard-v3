@@ -87,6 +87,7 @@ async function getRounds(prmExcludeSmall, prmSelectCourse) {
 
         var slopeRating = ci.courseInfo['Slope Rating']*1
         var courseRating = ci.courseInfo['USGA Course Rating']*1
+        var par = ci.courseInfo['Par']*1
         var courseHandicap = Math.round((slopeRating * prevRndHandicap) / 113) + courseRating - ci.courseInfo['Par']*1
         var courseRatingFront9 = ci.courseInfo['Front 9 Rating']
 
@@ -139,8 +140,7 @@ async function getRounds(prmExcludeSmall, prmSelectCourse) {
             var handicap = ''
         }
 
-        var courseHandicap = prevRndHandicap == '' ? '' : (Math.round(slopeRating * prevRndHandicap) / 113) 
-                                                                + courseRating - ci.courseInfo['Par']*1
+        var courseHandicap = prevRndHandicap == '' ? '' : calcCourseHandicap(courseRating, slopeRating, par, prevRndHandicap)
 
         if (handicap !== '') {
             var handicapScore = ($.sum(sc.scores, 'score') * nbrHolesCorrection) - courseHandicap
@@ -200,6 +200,11 @@ async function getRounds(prmExcludeSmall, prmSelectCourse) {
 //    await updateTarScr(JSON.parse(JSON.stringify(objRounds)), cols)
     
     return objRounds
+}
+
+function calcCourseHandicap (courseRating, slopeRating, par, handicap) {
+
+    return Math.round((slopeRating * handicap / 113) + courseRating - par
 }
 
 function calcHandicapDifferential(sc, slopeRating, courseRating, courseHandicap, holeDetail) {   
