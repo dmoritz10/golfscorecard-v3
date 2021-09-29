@@ -47,7 +47,7 @@ async function btnShowCoursesHtml() {
     ele.find('#scTees')[0].innerHTML = coursesObj['Tee Name']
     ele.find('#scCourseRating')[0].innerHTML = coursesObj['USGA Course Rating']
     ele.find('#scSlopeRating')[0].innerHTML = coursesObj['Slope Rating']
-    ele.find('#scCourseHandicap')[0].innerHTML = Math.round((coursesObj['Slope Rating'] * hcpObj.currHandicap * 1) / 113)
+    ele.find('#scCourseHandicap')[0].innerHTML = calcCourseHandicap (coursesObj['USGA Course Rating'], coursesObj['Slope Rating'], coursesObj['Par'], hcpObj.currHandicap)
 
     ele.find('#scTimesPlayed')[0].innerHTML = coursesObj['Nbr Times Played'] > 0 ? coursesObj['Nbr Times Played'] : '\u00a0'
 
@@ -239,12 +239,10 @@ async function showCourseDetail(courseInfo) {
   $('#hpTargetScore').html(courseInfo['Target Score'])
 
   $('#hpSelectTees').change(function () {
-    event.preventDefault()
     showCourseDetailPrep(courseInfo)
   });
 
   $('#hpTargetHandicap').change(function () {
-    event.preventDefault()
     showCourseDetailPrep(courseInfo)
   });
 

@@ -176,9 +176,10 @@ rework wgs handicap calc
     courseHandicap
 
         current
-            teetime screen - display
+            x teetime screen - display
+            x play round - display and recalc
+            round stats
 
-            play round - display
 
 
 

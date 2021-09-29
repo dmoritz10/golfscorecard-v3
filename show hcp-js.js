@@ -172,7 +172,7 @@ async function btnShowHandicapHtml () {
 
 function displayHcpTrend(hcpArr, handicapAlert) {
 
-  var hcpAlertTxt = handicapAlert ? '<i class="material-icons">trending_up</i>' + handicapAlert : ''
+  var hcpAlertTxt = handicapAlert ? '<i class="material-icons">trending_up</i>' + handicapAlert.toFixed(1) : ''
   
   if (hcpArr.length > 0) {
     $ ('#hcpHcp1').html(hcpArr[0].hcp.toFixed(1) + hcpAlertTxt)
