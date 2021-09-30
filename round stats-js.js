@@ -104,6 +104,9 @@ function scorecard(e) {
   
   var arrHcpAdj = calcHcpAdj(parseInt(prCourse.courseInfo['Target Score'].split(' ')[0]) 
                                           - parseInt(prCourse.courseInfo['Par']), prCourse.holeDetail)
+
+console.log('target score hcpadj')                                          
+console.log(arrHcpAdj)
                                           
   ci.forEach((val,idx) => {
   
