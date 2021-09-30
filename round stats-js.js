@@ -354,7 +354,7 @@ function calcTargetScore(netParAdj) {
                          prScore, 
                          prCourse.courseInfo['Slope Rating'], 
                          prCourse.courseInfo['USGA Course Rating'], 
-                         prCourse.courseInfo['Course Handicap'], 
+                         targetScore - prCourse.courseInfo['Par'], 
                          prCourse.holeDetail)
 
 
@@ -365,7 +365,8 @@ console.log(calcEsc)
   var rtn = [
     'target',
     targetScore,
-    adjPar,calcEsc.escCorrections ? $.sum (prScore.scores, 'score') - calcEsc.escCorrections + '<sup>' + calcEsc.escCorrections + '</sup>': $.sum (prScore.scores, 'score'),
+    adjPar,
+    calcEsc.escCorrections ? $.sum (prScore.scores, 'score') - calcEsc.escCorrections + '<sup>' + calcEsc.escCorrections + '</sup>': $.sum (prScore.scores, 'score'),
     $.sum (prScore.scores, 'score') - adjPar - calcEsc.escCorrections
   ]
   
