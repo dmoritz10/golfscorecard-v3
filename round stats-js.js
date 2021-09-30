@@ -354,7 +354,7 @@ function calcTargetScore(netParAdj) {
                          prScore, 
                          prCourse.courseInfo['Slope Rating'], 
                          prCourse.courseInfo['USGA Course Rating'], 
-                         targetScore - prCourse.courseInfo['Par'], 
+                         prCourse.courseInfo['Course Handicap'], 
                          prCourse.holeDetail)
 
 
