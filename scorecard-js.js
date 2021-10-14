@@ -423,7 +423,10 @@ async function getHoleDetail(sxsCourseId, tee, gender) {
 
     
 //    request.open('GET', 'https://cors-anywhere.herokuapp.com/' + sxsCourseId)
-    request.open('GET', 'https://cors.bridged.cc/' + sxsCourseId)
+    // request.open('GET', 'https://cors.bridged.cc/' + sxsCourseId)
+    request.open('GET', 'https://gobetween.oklabs.org/' + sxsCourseId)
+
+    
 
     request.onload = async function() {
     
