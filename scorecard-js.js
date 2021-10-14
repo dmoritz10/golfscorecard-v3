@@ -424,7 +424,7 @@ async function getHoleDetail(sxsCourseId, tee, gender) {
     
 //    request.open('GET', 'https://cors-anywhere.herokuapp.com/' + sxsCourseId)
     // request.open('GET', 'https://cors.bridged.cc/' + sxsCourseId)
-    request.open('GET', 'http://gobetween.oklabs.org/' + sxsCourseId)
+    request.open('GET', 'https://yacdn.org/serve/' + sxsCourseId)
 
     
 
