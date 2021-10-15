@@ -426,7 +426,7 @@ async function getHoleDetail(sxsCourseId, tee, gender) {
     request.open('GET', 'https://cors.bridged.cc/' + sxsCourseId)
     // request.open('GET', 'https://test.cors.workers.dev/?' + sxsCourseId)
 
-    
+    request.setRequestHeader("x-cors-grida-api-key", "d7f2a4f7-3e21-4e2a-9e4a-fb3b0834cc06")
 
     request.onload = async function() {
     
