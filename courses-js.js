@@ -870,7 +870,7 @@ async function btnSCMFetchSxsHtml(e) {
     var sxsCourseId = $('#scmSxsUrl').val()
 
     request.open('GET', 'https://cors.bridged.cc/' + sxsCourseId)
-
+    request.setRequestHeader("x-cors-grida-api-key", "d7f2a4f7-3e21-4e2a-9e4a-fb3b0834cc06")
     request.onload = async function () {
 
       if (request.status >= 200 && request.status < 400) {

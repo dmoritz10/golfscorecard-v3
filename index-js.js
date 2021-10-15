@@ -1182,6 +1182,7 @@ async function getWeatherByStationId(stationId) {
 
 
   var response = await fetch('https://cors.bridged.cc/' + weatherUrl);
+  response.append("x-cors-grida-api-key", "d7f2a4f7-3e21-4e2a-9e4a-fb3b0834cc06");
 
   let w = await response.text(); // read response body as text
 
@@ -1200,6 +1201,7 @@ async function getNearByUweatherStations() {
   // console.log(weatherUrl)
 
   var response = await fetch('https://cors.bridged.cc/' + weatherUrl);
+  response.append("x-cors-grida-api-key", "d7f2a4f7-3e21-4e2a-9e4a-fb3b0834cc06");
 
   let w = await response.text(); // read response body as text
   // console.log(w.length)
@@ -1391,6 +1393,7 @@ async function gpsCoords() {
 //  var w = await getWeather(weatherUrl)
   
   var response = await fetch( 'https://cors.bridged.cc/' + weatherUrl);
+  response.append("x-cors-grida-api-key", "d7f2a4f7-3e21-4e2a-9e4a-fb3b0834cc06");
 
   let w = await response.text(); // read response body as text
   console.log(w.length)
@@ -1420,6 +1423,7 @@ async function courseUCoords() {
 //  var w = await getWeather(weatherUrl)
   
   var response = await fetch( 'https://cors.bridged.cc/' + weatherUrl);
+  response.append("x-cors-grida-api-key", "d7f2a4f7-3e21-4e2a-9e4a-fb3b0834cc06");
 
   let w = await response.text(); // read response body as text
   console.log(w.length)
@@ -1450,6 +1454,7 @@ async function manualStation() {
 //  var w = await getWeather(weatherUrl)
   
   var response = await fetch( 'https://cors.bridged.cc/' + weatherUrl);
+  response.append("x-cors-grida-api-key", "d7f2a4f7-3e21-4e2a-9e4a-fb3b0834cc06");
 
   let w = await response.text(); // read response body as text
 
