@@ -865,53 +865,63 @@ async function btnSCMFetchSxsHtml(e) {
 
   console.log("here")
   var sxsCourseId = $('#scmSxsUrl').val()
+
   atomic('https://cors.bridged.cc/' + sxsCourseId)
 	.then(function (response) {
-		console.log(response.data); // xhr.responseText
+		// console.log(response.data); // xhr.responseText
 		console.log(response.xhr);  // full response
+
+    updateSCMForm(response.data)
+
+        $("#course-modal").animate({ opacity: 1.0, }, "slow");
+
+        $('#btnSCMSubmitCourse').prop('disabled', false)
+
+
 	})
 	.catch(function (error) {
 		console.log(error.status); // xhr.status
 		console.log(error.statusText); // xhr.statusText
 	});
 
-  return new Promise(resolve => {
 
-    var request = new XMLHttpRequest()
+  // return new Promise(resolve => {
 
-    var sxsCourseId = $('#scmSxsUrl').val()
+  //   var request = new XMLHttpRequest()
 
-    request.open('GET', 'https://cors.bridged.cc/' + sxsCourseId)
-    request.setRequestHeader("x-cors-grida-api-key", "d7f2a4f7-3e21-4e2a-9e4a-fb3b0834cc06")
-    request.onload = async function () {
+  //   var sxsCourseId = $('#scmSxsUrl').val()
 
-      if (request.status >= 200 && request.status < 400) {
+  //   request.open('GET', 'https://cors.bridged.cc/' + sxsCourseId)
+  //   request.setRequestHeader("x-cors-grida-api-key", "d7f2a4f7-3e21-4e2a-9e4a-fb3b0834cc06")
+  //   request.onload = async function () {
 
-        console.log(this.response)
+  //     if (request.status >= 200 && request.status < 400) {
 
-        resolve(updateSCMForm(this.response))
+  //       console.log(this.response)
 
-        $("#course-modal").animate({ opacity: 1.0, }, "slow");
+  //       resolve(updateSCMForm(this.response))
 
-        $('#btnSCMSubmitCourse').prop('disabled', false)
+  //       $("#course-modal").animate({ opacity: 1.0, }, "slow");
 
-      } else {
+  //       $('#btnSCMSubmitCourse').prop('disabled', false)
 
-        console.log('error' + request.status)
+  //     } else {
 
-      }
+  //       console.log('error' + request.status)
 
-    }
+  //     }
 
-    request.onerror = async function () {
+  //   }
 
-      console.log('onerror')
+  //   request.onerror = async function () {
 
-    };
+  //     console.log('onerror')
 
-    request.send()
+  //   };
 
-  })
+  //   request.send()
+
+  // })
 
 }
 
