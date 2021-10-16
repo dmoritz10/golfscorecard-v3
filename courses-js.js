@@ -863,6 +863,18 @@ async function btnSCMFetchSxsHtml(e) {
 
   $('#btnSCMSubmitCourse').prop('disabled', true)
 
+  console.log("here")
+
+  atomic('https://cors.bridged.cc/' + sxsCourseId)
+	.then(function (response) {
+		console.log(response.data); // xhr.responseText
+		console.log(response.xhr);  // full response
+	})
+	.catch(function (error) {
+		console.log(error.status); // xhr.status
+		console.log(error.statusText); // xhr.statusText
+	});
+
   return new Promise(resolve => {
 
     var request = new XMLHttpRequest()
