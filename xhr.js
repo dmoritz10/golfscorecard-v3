@@ -94,7 +94,6 @@
 			result = JSON.parse(req.responseText);
 		} catch (e) {
 			result = req.responseText;
-			console.log('catch', e)
 		}
 		return {data: result, xhr: req};
 	};
