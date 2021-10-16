@@ -884,45 +884,6 @@ async function btnSCMFetchSxsHtml(e) {
       console.log(error.statusText); // xhr.statusText
 	  });
 
-
-  // return new Promise(resolve => {
-
-  //   var request = new XMLHttpRequest()
-
-  //   var sxsCourseId = $('#scmSxsUrl').val()
-
-  //   request.open('GET', 'https://cors.bridged.cc/' + sxsCourseId)
-  //   request.setRequestHeader("x-cors-grida-api-key", "d7f2a4f7-3e21-4e2a-9e4a-fb3b0834cc06")
-  //   request.onload = async function () {
-
-  //     if (request.status >= 200 && request.status < 400) {
-
-  //       console.log(this.response)
-
-  //       resolve(updateSCMForm(this.response))
-
-  //       $("#course-modal").animate({ opacity: 1.0, }, "slow");
-
-  //       $('#btnSCMSubmitCourse').prop('disabled', false)
-
-  //     } else {
-
-  //       console.log('error' + request.status)
-
-  //     }
-
-  //   }
-
-  //   request.onerror = async function () {
-
-  //     console.log('onerror')
-
-  //   };
-
-  //   request.send()
-
-  // })
-
 }
 
 function updateSCMForm(sxsRtn) {
