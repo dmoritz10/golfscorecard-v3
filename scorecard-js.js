@@ -422,7 +422,7 @@ async function getHoleDetail(sxsCourseId, tee, gender) {
     .then( response => {
       
       console.log(response.xhr);  // full response
-      console.log(response.data)
+      // console.log(response.data)
 
       assembleHoleDetail(response.data, tee, gender)
 
@@ -471,9 +471,12 @@ async function getHoleDetail(sxsCourseId, tee, gender) {
 //     request.send()
 
 //   })
+
 }
 
 function assembleHoleDetail(sxsCourseInfo, tee, gender) {
+
+  console.log('hi dan')
 
   var d = sxsCourseInfo.split('bootstrapData(').pop().split('}}});')[0] + '}}}'
   
