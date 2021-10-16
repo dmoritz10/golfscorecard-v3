@@ -6,7 +6,7 @@
 	} else if (typeof exports === 'object') {
 		module.exports = factory(root);
 	} else {
-		window.atomic = factory(root);
+		window.xhr = factory(root); 
 	}
 })(typeof global !== 'undefined' ? global : typeof window !== 'undefined' ? window : this, function (window) {
 
@@ -203,14 +203,14 @@
 	};
 
 	/**
-	 * Instatiate Atomic
+	 * Instatiate xhr
 	 * @param {String} url      The request URL
 	 * @param {Object} options  A set of options for the request [optional]
 	 */
-	var Atomic = function (url, options) {
+	var xhr = function (url, options) {
 
 		// Check browser support
-		if (!supports()) throw 'Atomic: This browser does not support the methods used in this plugin.';
+		if (!supports()) throw 'xhr: This browser does not support the methods used in this plugin.';
 
 		// Merge options into defaults
 		settings = extend(defaults, options || {});
@@ -225,6 +225,6 @@
 	// Public Methods
 	//
 
-	return Atomic;
+	return xhr;
 
 });
