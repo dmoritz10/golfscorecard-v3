@@ -367,7 +367,7 @@ async function holeDetail() {
   var sxsCourseId = $('#btnHPHoleDetail').data('button-data').sxsCourseId;
 
   var ci = await getHoleDetail(sxsCourseId, tee, gender)
-
+console.log('1')
   console.log(ci)
 
   var btnHtml = '<button class="btn btn-outline btn-primary btn-circle">'
