@@ -863,26 +863,26 @@ async function btnSCMFetchSxsHtml(e) {
 
   $('#btnSCMSubmitCourse').prop('disabled', true)
 
-  console.log("here")
   var sxsCourseId = $('#scmSxsUrl').val()
 
   atomic('https://cors.bridged.cc/' + sxsCourseId)
-	.then(function (response) {
-		// console.log(response.data); // xhr.responseText
-		console.log(response.xhr);  // full response
+    
+    .then( response => {
+      
+      console.log(response.xhr);  // full response
 
-    updateSCMForm(response.data)
+      updateSCMForm(response.data)
 
-        $("#course-modal").animate({ opacity: 1.0, }, "slow");
+      $("#course-modal").animate({ opacity: 1.0, }, "slow");
 
-        $('#btnSCMSubmitCourse').prop('disabled', false)
+      $('#btnSCMSubmitCourse').prop('disabled', false)
 
+	  })
 
-	})
-	.catch(function (error) {
-		console.log(error.status); // xhr.status
-		console.log(error.statusText); // xhr.statusText
-	});
+	  .catch( error => {
+      console.log(error.status); // xhr.status
+      console.log(error.statusText); // xhr.statusText
+	  });
 
 
   // return new Promise(resolve => {
