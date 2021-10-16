@@ -529,6 +529,8 @@ function assembleHoleDetail(sxsCourseInfo, tee, gender) {
       } 
     }
   })
+
+  console.log(holeDetail)
   
   return holeDetail
   
