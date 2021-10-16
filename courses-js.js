@@ -864,7 +864,7 @@ async function btnSCMFetchSxsHtml(e) {
   $('#btnSCMSubmitCourse').prop('disabled', true)
 
   console.log("here")
-
+  var sxsCourseId = $('#scmSxsUrl').val()
   atomic('https://cors.bridged.cc/' + sxsCourseId)
 	.then(function (response) {
 		console.log(response.data); // xhr.responseText
