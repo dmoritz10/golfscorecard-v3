@@ -417,7 +417,7 @@ function setScoreDescriptions(par) {
 
 async function getHoleDetail(sxsCourseId, tee, gender) {
 
-  xhr('https://cors.bridged.cc/' + sxsCourseId)
+  await xhr('https://cors.bridged.cc/' + sxsCourseId)
     
     .then( response => {
       
