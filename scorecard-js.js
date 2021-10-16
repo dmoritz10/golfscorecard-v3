@@ -424,7 +424,7 @@ async function getHoleDetail(sxsCourseId, tee, gender) {
       console.log(response.xhr);  // full response
       // console.log(response.data)
 
-      assembleHoleDetail(response.data, tee, gender)
+      resolve( assembleHoleDetail(response.data, tee, gender) )
 
 	  })
 
