@@ -417,15 +417,19 @@ function setScoreDescriptions(par) {
 
 async function getHoleDetail(sxsCourseId, tee, gender) {
 
-  await xhr('https://cors.bridged.cc/' + sxsCourseId)
+  return await xhr('https://cors.bridged.cc/' + sxsCourseId)
     
     .then( response => {
       
       console.log(response.xhr);  // full response
       // console.log(response.data)
-      console.log('resolve')
+      console.log('resolve xx')
 
-      resolve( assembleHoleDetail(response.data, tee, gender) )
+      var x = assembleHoleDetail(response.data, tee, gender) 
+
+      console.log(x)
+
+      resolve( x )
 
 	  })
 
