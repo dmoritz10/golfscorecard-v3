@@ -1196,17 +1196,6 @@ async function getWeatherByStationId(stationId) {
       console.log(error.statusText); // xhr.statusText
 	  });
 
-
-  // var response = await fetch('https://cors.bridged.cc/' + weatherUrl);
-  // response.append("x-cors-grida-api-key", "d7f2a4f7-3e21-4e2a-9e4a-fb3b0834cc06");
-
-
-  
-
-  // let w = await response.text(); // read response body as text
-
-  // console.log('getWeatherByStationId - ' + weatherUrl)
-
   var rtn = parseUweather(w)
 
   return rtn
@@ -1234,15 +1223,6 @@ async function getNearByUweatherStations() {
     console.log(error.status); // xhr.status
     console.log(error.statusText); // xhr.statusText
   });
-
-
-  // var response = await fetch('https://cors.bridged.cc/' + weatherUrl);
-  // response.append("x-cors-grida-api-key", "d7f2a4f7-3e21-4e2a-9e4a-fb3b0834cc06");
-  // response.append("Access-Control-Allow-Origin", "*");
-
-  // let w = await response.text(); // read response body as text
-  // console.log(w.length)
-  //  console.log(w)
 
   var rtn = parseNearByUweatherStations(w)
 
