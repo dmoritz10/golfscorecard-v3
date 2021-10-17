@@ -381,11 +381,6 @@ function calcHoleSummary() {
     
 //  var d = getDateDiff(RSCalledFrom != "ShowRounds" ? new Date(prScore.endTime) : new Date(),  new Date(prScore.startTime))
   var d = getDateDiff(prScore.endTime ? new Date(prScore.endTime) : new Date(),  new Date(prScore.startTime))
-
-console.log(prScore.endTime)
-console.log(prScore.startTime)
-console.log(d)
-
   arr.push(["Play Time", d])
   
   var cntr = 0
