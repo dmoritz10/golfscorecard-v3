@@ -8,11 +8,12 @@
 	} else {
 		window.xhr = factory(root); 
 	}
-
+try{
 console.log('xhr')
 console.log(define)
 console.log(module)
 console.log(window)
+} catch(e) {console.log(e)}
 
 })(typeof global !== 'undefined' ? global : typeof window !== 'undefined' ? window : this, function (window) {
 
