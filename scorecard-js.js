@@ -421,15 +421,10 @@ async function getHoleDetail(sxsCourseId, tee, gender) {
     
     .then( response => {
       
-      console.log(response.xhr);  // full response
+      // console.log(response.xhr);  // full response
       // console.log(response.data)
-      console.log('return xx')
 
-      var x = assembleHoleDetail(response.data, tee, gender) 
-
-      console.log(x)
-
-      return x 
+      return assembleHoleDetail(response.data, tee, gender) 
 
 	  })
 
@@ -1090,45 +1085,65 @@ async function getCurrWeather(bearingToHole) {
 }
 
 function getWeather(weatherUrl) {
-  return new Promise(resolve => {
 
-    var request = new XMLHttpRequest()
-
-    request.open('GET', 'https://cors.bridged.cc/' + weatherUrl)
-    request.setRequestHeader("x-cors-grida-api-key", "d7f2a4f7-3e21-4e2a-9e4a-fb3b0834cc06")
-    request.onload = async function() {
-
-      console.log(request)
+  return await xhr('https://cors.bridged.cc/' + weatherUrl)
     
-      if (request.status >= 200 && request.status < 400) {
-
-        resolve ( this.response )
-        
-        // console.log(request.status)
-        
-        } else if (request.status == 503) {                                     // it seems that sometimes, cors-anywhere is not available
+    .then( response => {
       
-        resolve ( null )
-        console.log ( 'error 503 - cors not available ?')
+      // console.log(response.xhr);  // full response
+      // console.log(response.data)
+
+      return response.data
+
+	  })
+
+	  .catch( error => {
+      console.log(error.status); // xhr.status
+      console.log(error.statusText); // xhr.statusText
+	  });
+
+
+
+
+  // return new Promise(resolve => {
+
+  //   var request = new XMLHttpRequest()
+
+  //   request.open('GET', 'https://cors.bridged.cc/' + weatherUrl)
+  //   request.setRequestHeader("x-cors-grida-api-key", "d7f2a4f7-3e21-4e2a-9e4a-fb3b0834cc06")
+  //   request.onload = async function() {
+
+  //     console.log(request)
+    
+  //     if (request.status >= 200 && request.status < 400) {
+
+  //       resolve ( this.response )
         
-      } else {
+  //       // console.log(request.status)
         
-        console.log('error' + request.status)
-        resolve (null)
+  //       } else if (request.status == 503) {                                     // it seems that sometimes, cors-anywhere is not available
       
-      }
-    }
+  //       resolve ( null )
+  //       console.log ( 'error 503 - cors not available ?')
+        
+  //     } else {
+        
+  //       console.log('error' + request.status)
+  //       resolve (null)
+      
+  //     }
+  //   }
     
-    request.onerror = async function() {
+  //   request.onerror = async function() {
     
     
-    console.log('onerror')
+  //   console.log('onerror')
 
-    };
+  //   };
 
-    request.send()
+  //   request.send()
 
-  })
+  // })
 }
 
 function parseWeather(wRptHtml, bearingToHole, distToPin, distToTee) {
