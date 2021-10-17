@@ -1084,7 +1084,7 @@ async function getCurrWeather(bearingToHole) {
 
 }
 
-function getWeather(weatherUrl) {
+async function getWeather(weatherUrl) {
 
   return await xhr('https://cors.bridged.cc/' + weatherUrl)
     
