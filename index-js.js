@@ -1206,7 +1206,6 @@ async function getNearByUweatherStations() {
   console.log('getNearByUweatherStations')
 
   var weatherUrl = 'https://www.wunderground.com/weather/' + prCourse.courseInfo.courseCoords.lat + ',' + prCourse.courseInfo.courseCoords.lng
-  // console.log(weatherUrl)
 
   var w =  await xhr('https://cors.bridged.cc/' + weatherUrl)
     

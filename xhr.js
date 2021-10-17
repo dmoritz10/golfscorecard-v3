@@ -8,6 +8,12 @@
 	} else {
 		window.xhr = factory(root); 
 	}
+
+console.log('xhr')
+console.log(define)
+console.log(module)
+console.log(window)
+
 })(typeof global !== 'undefined' ? global : typeof window !== 'undefined' ? window : this, function (window) {
 
 	'use strict';
