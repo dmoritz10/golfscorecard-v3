@@ -433,45 +433,6 @@ async function getHoleDetail(sxsCourseId, tee, gender) {
       console.log(error.statusText); // xhr.statusText
 	  });
 
-
-
-//   return new Promise(resolve => {
-
-//     var request = new XMLHttpRequest()
-
-    
-// //    request.open('GET', 'https://cors-anywhere.herokuapp.com/' + sxsCourseId)
-//     request.open('GET', 'https://cors.bridged.cc/' + sxsCourseId)
-
-
-//     request.setRequestHeader("x-cors-grida-api-key", "d7f2a4f7-3e21-4e2a-9e4a-fb3b0834cc06")
-
-//     request.onload = async function() {
-    
-//       if (request.status >= 200 && request.status < 400) {
-//       console.log('status')
-//       console.log(request.status)
-
-//         resolve ( assembleHoleDetail(this.response, tee, gender) )
-              
-//       } else {
-        
-//         console.log('error' + request.status)
-      
-//       }
-//     }
-    
-//     request.onerror = async function() {
-    
-    
-//       console.log('onerror')
-    
-//     };
-
-//     request.send()
-
-//   })
-
 }
 
 function assembleHoleDetail(sxsCourseInfo, tee, gender) {
@@ -1102,48 +1063,6 @@ async function getWeather(weatherUrl) {
       console.log(error.statusText); // xhr.statusText
 	  });
 
-
-
-
-  // return new Promise(resolve => {
-
-  //   var request = new XMLHttpRequest()
-
-  //   request.open('GET', 'https://cors.bridged.cc/' + weatherUrl)
-  //   request.setRequestHeader("x-cors-grida-api-key", "d7f2a4f7-3e21-4e2a-9e4a-fb3b0834cc06")
-  //   request.onload = async function() {
-
-  //     console.log(request)
-    
-  //     if (request.status >= 200 && request.status < 400) {
-
-  //       resolve ( this.response )
-        
-  //       // console.log(request.status)
-        
-  //       } else if (request.status == 503) {                                     // it seems that sometimes, cors-anywhere is not available
-      
-  //       resolve ( null )
-  //       console.log ( 'error 503 - cors not available ?')
-        
-  //     } else {
-        
-  //       console.log('error' + request.status)
-  //       resolve (null)
-      
-  //     }
-  //   }
-    
-  //   request.onerror = async function() {
-    
-    
-  //   console.log('onerror')
-
-  //   };
-
-  //   request.send()
-
-  // })
 }
 
 function parseWeather(wRptHtml, bearingToHole, distToPin, distToTee) {
