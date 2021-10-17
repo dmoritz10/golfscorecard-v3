@@ -1219,9 +1219,26 @@ async function getNearByUweatherStations() {
   var weatherUrl = 'https://www.wunderground.com/weather/' + prCourse.courseInfo.courseCoords.lat + ',' + prCourse.courseInfo.courseCoords.lng
   // console.log(weatherUrl)
 
-  var response = await fetch('https://cors.bridged.cc/' + weatherUrl);
-  response.append("x-cors-grida-api-key", "d7f2a4f7-3e21-4e2a-9e4a-fb3b0834cc06");
-  response.append("Access-Control-Allow-Origin", "*");
+  var w =  await xhr('https://cors.bridged.cc/' + weatherUrl)
+    
+  .then( response => {
+    
+    // console.log(response.xhr);  // full response
+    // console.log(response.data)
+
+    return response.data
+
+  })
+
+  .catch( error => {
+    console.log(error.status); // xhr.status
+    console.log(error.statusText); // xhr.statusText
+  });
+
+
+  // var response = await fetch('https://cors.bridged.cc/' + weatherUrl);
+  // response.append("x-cors-grida-api-key", "d7f2a4f7-3e21-4e2a-9e4a-fb3b0834cc06");
+  // response.append("Access-Control-Allow-Origin", "*");
 
   let w = await response.text(); // read response body as text
   // console.log(w.length)
