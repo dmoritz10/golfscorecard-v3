@@ -355,21 +355,7 @@ async function ttmSelectCourseChangeHtml() {
   setWebSiteHref({      
         url:sxsUrl,
         element: $('#btnWebSite')
-      })
-
-
-
-
-
-/*      
-  var phoneNbr = $('#ttmSelectCourse').val()
-  $('#btnCallCourse').prop('disabled', false)
-                     .prop('href', 'tel:' + phoneNbr )
-
-  var webSite = await fetchWebSiteUrl(sxsUrl)
-  $('#btnWebSite').prop('disabled', false)
-                  .prop('href', webSite )
-*/                  
+      })              
 
 }
 
@@ -377,76 +363,6 @@ function getCourseVal(rowIdx, colName) {
 
   var idxCol = arrShts['My Courses'].colHdrs.indexOf(colName)
   return       arrShts['My Courses'].vals[rowIdx][idxCol]
-
-}
-
-async function fetchWebSiteUrl(sxsCourseId) {
-
-
-  return await xhr('https://cors.bridged.cc/' + sxsCourseId)
-    
-    .then( response => {
-      
-      // console.log(response.xhr);  // full response
-      // console.log(response.data)
-
-      var d = this.response.split('bootstrapData(').pop().split('}}});')[0] + '}}}'
-      var ws = JSON.parse(d).model.data.website
-      var x = ws ? ws.replace(/https:/i,'').replace(/http:/i,'').replace(/\/\//i,'').replace(/www./,'') : ''
-      
-      var rtn = 'https://www.' + x
-      
-      return rtn
-
-    })
-
-    .catch( error => {
-      console.log(error.status); // xhr.status
-      console.log(error.statusText); // xhr.statusText
-    });
-
-
-
-  // return new Promise(resolve => {
-
-  //   var request = new XMLHttpRequest()
-    
-  //   request.open('GET', 'https://cors.bridged.cc/' + sxsCourseId)
-  //   request.setRequestHeader("x-cors-grida-api-key", "d7f2a4f7-3e21-4e2a-9e4a-fb3b0834cc06")
-  //   request.onload = async function() {
-    
-  //     if (request.status >= 200 && request.status < 400) {
-      
-  //       var d = this.response.split('bootstrapData(').pop().split('}}});')[0] + '}}}'
-  //       var ws = JSON.parse(d).model.data.website
-  //       var x = ws ? ws.replace(/https:/i,'').replace(/http:/i,'').replace(/\/\//i,'').replace(/www./,'') : ''
-        
-  //       var rtn = 'https://www.' + x
-        
-  //       resolve ( rtn )
-      
-  //     } else if (request.status == 503) {                                     // it seems that sometimes, cors-anywhere is not available
-      
-  //       resolve ( '' )
-        
-  //     } else {
-        
-  //       console.log('error' + request.status)
-      
-  //     }
-  //   }
-    
-  //   request.onerror = async function() {
-    
-    
-  //   console.log('onerror')
-
-  //       resolve ( '' )
-  //   };
-
-  //   request.send()
-
-  // })
 
 }
 
