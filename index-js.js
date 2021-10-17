@@ -1240,7 +1240,7 @@ async function getNearByUweatherStations() {
   // response.append("x-cors-grida-api-key", "d7f2a4f7-3e21-4e2a-9e4a-fb3b0834cc06");
   // response.append("Access-Control-Allow-Origin", "*");
 
-  let w = await response.text(); // read response body as text
+  // let w = await response.text(); // read response body as text
   // console.log(w.length)
   //  console.log(w)
 
