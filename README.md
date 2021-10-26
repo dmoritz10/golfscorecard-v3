@@ -188,7 +188,7 @@ rework wgs handicap calc
 
 course handicap => handicap index
 
-
+test of github api
 
 
 Will there still be exceptional scoring reductions (ESR)?
