@@ -190,6 +190,8 @@ course handicap => handicap index
 
 test of github api
 
+test #2
+
 
 Will there still be exceptional scoring reductions (ESR)?
 Yes, but only if a player submits a score that produces a score differential that is seven strokes or more below their handicap index. 
