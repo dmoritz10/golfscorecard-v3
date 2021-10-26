@@ -33,7 +33,7 @@ x Port Course Maintenance
     x Full Courses Maintenance
     course delete
 
-Sort Courses after add
+x Sort Courses after add
 
 x Retro show-hcp to getRounds
 
@@ -126,7 +126,7 @@ x Save Sxs Hold Detail just in case
 
 x Clear round after successful append
 
-Recover Costa Mesa Country Club  (Los Lagos Course)	7/25/19  from Scorecards
+x Recover Costa Mesa Country Club  (Los Lagos Course)	7/25/19  from Scorecards
 
 x test collabration
 

@@ -4,8 +4,6 @@ async function btnShowHandicapHtml () {
   var hcpObj = readOption('handicapObj')
   var prevNbrRounds = hcpObj.nbrRounds*1
 
-  var hcpSelectOptions = readOption('hcpFilter')
-
   var rounds = await getRounds()
 
   if (!rounds) return
