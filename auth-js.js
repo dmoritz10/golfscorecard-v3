@@ -73,12 +73,15 @@ async function btnDecryptHtml(event) {
       );
   
       let buffer = new Uint8Array(ciphertext, 0, 5);
-      const ciphertextValue = document.querySelector(".aes-gcm .ciphertext-value");
-      ciphertextValue.classList.add('fade-in');
-      ciphertextValue.addEventListener('animationend', () => {
-        ciphertextValue.classList.remove('fade-in');
-      });
-      ciphertextValue.textContent = `${buffer}...[${ciphertext.byteLength} bytes total]`;
+    //   const ciphertextValue = document.querySelector(".aes-gcm .ciphertext-value");
+    //   ciphertextValue.classList.add('fade-in');
+    //   ciphertextValue.addEventListener('animationend', () => {
+    //     ciphertextValue.classList.remove('fade-in');
+    //   });
+    //   ciphertextValue.textContent = `${buffer}...[${ciphertext.byteLength} bytes total]`;
+
+console.log(`${buffer}...[${ciphertext.byteLength} bytes total]`)
+
     }
   
     /*
