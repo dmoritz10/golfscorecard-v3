@@ -99,12 +99,15 @@ console.log(`${buffer}...[${ciphertext.byteLength} bytes total]`)
       );
   
       let dec = new TextDecoder();
-      const decryptedValue = document.querySelector(".aes-gcm .decrypted-value");
-      decryptedValue.classList.add('fade-in');
-      decryptedValue.addEventListener('animationend', () => {
-        decryptedValue.classList.remove('fade-in');
-      });
-      decryptedValue.textContent = dec.decode(decrypted);
+    //   const decryptedValue = document.querySelector(".aes-gcm .decrypted-value");
+    //   decryptedValue.classList.add('fade-in');
+    //   decryptedValue.addEventListener('animationend', () => {
+    //     decryptedValue.classList.remove('fade-in');
+    //   });
+    //   decryptedValue.textContent = dec.decode(decrypted);
+
+console.log(dec.decode(decrypted))
+
     }
   
     /*
