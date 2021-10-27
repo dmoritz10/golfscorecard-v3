@@ -34,10 +34,10 @@ async function btnDecryptHtml(event) {
     
 }
 async function encryptMessage(key, msg) {
-    let encoded = msg;
+    var encoded = msg;
     // The iv must never be reused with a given key.
-    iv = window.crypto.getRandomValues(new Uint8Array(12));
-    ciphertext = await window.crypto.subtle.encrypt(
+    var iv = window.crypto.getRandomValues(new Uint8Array(12));
+    var ciphertext = await window.crypto.subtle.encrypt(
         {
             name: "AES-GCM",
             iv: iv
