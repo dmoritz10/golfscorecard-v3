@@ -116,7 +116,7 @@ async function btnDecryptHtml(event) {
       true,
       ["encrypt", "decrypt"]
     ).then((key) => {
-      const encryptButton = document.querySelector(".aes-gcm .encrypt-button");
+      const encryptButton = document.getElementById("btnEncrypt");
 
 console.log(encryptButton)
 
@@ -124,7 +124,7 @@ console.log(encryptButton)
         encryptMessage(key);
       });
   
-      const decryptButton = document.querySelector(".aes-gcm .decrypt-button");
+      const decryptButton = document.getElementById("btnDecrypt");
       decryptButton.addEventListener("click", () => {
         decryptMessage(key);
       });
