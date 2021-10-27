@@ -12,7 +12,7 @@ function btnSignoutHtml(event) {
     gotoTab('Auth')
 }
       
-function btnEncrypt(event) {
+async function btnEncrypt(event) {
 
   let msg = "hi dan"
   let key = "cTeetime101"
@@ -26,7 +26,7 @@ console.log(encryptMsg)
 
 }
 
-function btnDecrypt(event) {
+async function btnDecrypt(event) {
 
 
 
