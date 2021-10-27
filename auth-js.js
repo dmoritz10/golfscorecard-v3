@@ -37,7 +37,11 @@ async function encryptMessage(key, msg) {
     var encoded = new Uint8Array(msg);
     // The iv must never be reused with a given key.
     var iv = window.crypto.getRandomValues(new Uint8Array(12));
-    var ciphertext = await window.crypto.subtle.encrypt(
+
+console.log(encoded)
+console.log(iv)
+
+    await window.crypto.subtle.encrypt(
         {
             name: "AES-GCM",
             iv: iv
