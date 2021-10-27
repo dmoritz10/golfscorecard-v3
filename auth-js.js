@@ -14,8 +14,8 @@ function btnSignoutHtml(event) {
       
 async function btnEncryptHtml(event) {
 
-  let msg = "hi dan"
-  let key = "cTeetime101"
+  var msg = "hi dan"
+  var key = "cTeetime101"
 
   var encryptMsg = await encryptMessage(key, msg)
 
@@ -34,7 +34,7 @@ async function btnDecryptHtml(event) {
     
 }
 async function encryptMessage(key, msg) {
-    var encoded = msg;
+    var encoded = new Uint8Array(msg);
     // The iv must never be reused with a given key.
     var iv = window.crypto.getRandomValues(new Uint8Array(12));
     var ciphertext = await window.crypto.subtle.encrypt(
