@@ -81,7 +81,8 @@
 
   $('#btnAuth')            .button().click(btnAuthHtml);
   $('#btnSignout')           .button().click(btnSignoutHtml);
-
+  $('#btnEncrypt')            .button().click(btnEncryptHtml);
+  $('#btnDecrypt')           .button().click(btnDecryptHtml);
 
   // Home tab
 
