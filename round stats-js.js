@@ -677,6 +677,9 @@ function calcCourseSummary() {
 
 function getDateDiff(adate, bdate) {
 
+  console.log(adate)
+  console.log(bdate)
+
   var diff = (adate.getTime() - bdate.getTime()) / (1000 * 60)
   var hours   = ('0' + Math.floor(diff / 60)).slice(-2);
   var minutes = ('0' + Math.floor(diff % 60)).slice(-2);
