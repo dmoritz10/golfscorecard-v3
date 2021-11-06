@@ -700,7 +700,8 @@ function estimateCompletion() {
     var hrmin = avgPlayTime.split(":")
     var minutesPlayed = hrmin[0]*60 + hrmin[1]
     var estPlayTimeMS = (minutesPlayed * prCourse.holeDetail.length / sc.length) * 1000 * 60
-
+  console.log('<5')
+ 
   } else {
 
     var hrmin = rndPlayTime.split(":")
@@ -708,7 +709,11 @@ function estimateCompletion() {
     var estPlayTimeMS = (minutesPlayed * prCourse.holeDetail.length / sc.length) * 1000 * 60
 
   }
-
+  console.log(hrmin)
+  console.log(minutesPlayed)
+  console.log(estPlayTimeMS)
+  
+  
   var hours = ('0' + Math.floor(estPlayTimeMS / 60)).slice(-2);
   var minutes = ('0' + Math.floor(estPlayTimeMS % 60)).slice(-2);
   var estPlayTime = hours + ':' + minutes
