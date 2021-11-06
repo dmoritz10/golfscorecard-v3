@@ -707,7 +707,7 @@ function estimateCompletion() {
 
     var hrmin = rndPlayTime.split(":")
     var minutesPlayed = hrmin[0]*60 + hrmin[1]*1
-    var estPlayTimeMS = (minutesPlayed * prCourse.holeDetail.length / sc.length) * 1000 * 60
+    var estPlayTimeMS = minutesPlayed * prCourse.holeDetail.length / sc.length
 
   }
   console.log(hrmin)
@@ -718,6 +718,8 @@ function estimateCompletion() {
   var hours = ('0' + Math.floor(estPlayTimeMS / 60)).slice(-2);
   var minutes = ('0' + Math.floor(estPlayTimeMS % 60)).slice(-2);
   var estPlayTime = hours + ':' + minutes
+
+  console.log(estPlayTime)
 
   var st = new Date(prScore.startTime).getTime() + estPlayTimeMS
   var estTimeOfCompletion = getDateDiff(new Date(st), new Date(prScore.startTime))
