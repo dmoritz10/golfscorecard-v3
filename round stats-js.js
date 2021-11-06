@@ -6,7 +6,7 @@ function btnRoundStatsHtml() {
 
   if (prScore.status == 'in process' || prScore.status == 'initialize')  {
     var datePlayed = estimateCompletion()
-  } else
+  } else {
     var datePlayed = new Date(prScore.startTime).toString().substring(0,15)
   }
 
