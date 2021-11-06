@@ -3,10 +3,13 @@
 function btnRoundStatsHtml() {
 
   gotoTab('RoundStats')
-  
-  var datePlayed = new Date(prScore.startTime).toString().substring(0,15)
-  
-  
+
+  if (prScore.status == 'in process' || prScore.status == 'initialize')  {
+    var datePlayed = estimateCompletion()
+  } else
+    var datePlayed = new Date(prScore.startTime).toString().substring(0,15)
+  }
+
   $('#rsCourseName').html(shortCourseName(prCourse.courseInfo['Course Name']))
   $('#rsStartDate').html(datePlayed)
   $('#rsTees').html(prScore.tee)
@@ -682,3 +685,30 @@ function getDateDiff(adate, bdate) {
 
 }
 
+function estimateCompletion() {
+
+  var sc = prScore.scores
+  var avgPlayTime = prCourse.courseInfo['Avg Play Time']
+  var rndPlayTime = getDateDiff(prScore.endTime ? new Date(prScore.endTime) : new Date(),  new Date(prScore.startTime))
+
+  if (sc.length < 5) {
+    var hrmin = avgPlayTime.split(":")
+    var minutesPlayed = hrmin[0]*60 + hrmin[1]
+    var estPlayTimeMS = (minutesPlayed * prCourse.holeDetail.length / sc.length) * 1000 * 60
+
+  } else {
+
+    var hrmin = rndPlayTime.split(":")
+    var minutesPlayed = hrmin[0]*60 + hrmin[1]
+    var estPlayTimeMS = (minutesPlayed * prCourse.holeDetail.length / sc.length) * 1000 * 60
+
+  }
+
+  var hours = ('0' + Math.floor(estPlayTimeMS / 60)).slice(-2);
+  var minutes = ('0' + Math.floor(estPlayTimeMS % 60)).slice(-2);
+  var estPlayTime = hours + ':' + minutes
+
+  var estTimeOfCompletion = getDateDiff(new Date(prScore.startTime) + estPlayTimeMS, new Date(prScore.startTime))
+  return rndPlayTime + ' | ' + estPlayTime + ' | ' + estTimeOfCompletion
+
+}
