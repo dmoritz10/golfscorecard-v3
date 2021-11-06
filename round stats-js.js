@@ -690,6 +690,8 @@ function getDateDiff(adate, bdate) {
 
 function estimateCompletion() {
 
+  console.log('EST')
+
   var sc = prScore.scores
   var avgPlayTime = prCourse.courseInfo['Avg Play Time']
   var rndPlayTime = getDateDiff(prScore.endTime ? new Date(prScore.endTime) : new Date(),  new Date(prScore.startTime))
