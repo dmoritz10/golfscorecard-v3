@@ -712,7 +712,7 @@ function estimateCompletion() {
   var estPlayTime = hours + ':' + minutes
 
   var st = new Date(prScore.startTime).getTime() + estPlayTimeMS
-  var estTimeOfCompletion = getDateDiff(new Date(st) + estPlayTimeMS, new Date(prScore.startTime))
+  var estTimeOfCompletion = getDateDiff(new Date(st), new Date(prScore.startTime))
   return rndPlayTime + ' | ' + estPlayTime + ' | ' + estTimeOfCompletion
 
 }
