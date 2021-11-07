@@ -4,9 +4,9 @@ function btnRoundStatsHtml() {
 
   gotoTab('RoundStats')
 
-  if (prScore.status == 'in process' || prScore.status == 'initialize')  {
+  if (prScore.status == 'in process' || prScore.status == 'initialize')  {    // called from scorecard
     var datePlayed = estimateCompletion()
-  } else {
+  } else {                                                                    // called from handicap, rounds
     var datePlayed = new Date(prScore.startTime).toString().substring(0,15)
   }
 
@@ -677,9 +677,6 @@ function calcCourseSummary() {
 
 function getDateDiff(adate, bdate) {
 
-  console.log(adate)
-  console.log(bdate)
-
   var diff = (adate.getTime() - bdate.getTime()) / (1000 * 60)
   var hours   = ('0' + Math.floor(diff / 60)).slice(-2);
   var minutes = ('0' + Math.floor(diff % 60)).slice(-2);
@@ -690,8 +687,6 @@ function getDateDiff(adate, bdate) {
 
 function estimateCompletion() {
 
-  console.log('EST')
-
   var sc = prScore.scores
   var avgPlayTime = prCourse.courseInfo['Avg Play Time']
   var rndPlayTime = getDateDiff(prScore.endTime ? new Date(prScore.endTime) : new Date(),  new Date(prScore.startTime))
@@ -701,8 +696,6 @@ function estimateCompletion() {
     var minutesPlayed = hrmin[0]*60 + hrmin[1]*1
     var estPlayTimeMS = minutesPlayed
 
-  console.log('<5')
- 
   } else {
 
     var hrmin = rndPlayTime.split(":")
@@ -710,19 +703,13 @@ function estimateCompletion() {
     var estPlayTimeMS = minutesPlayed * prCourse.holeDetail.length / sc.length
 
   }
-  console.log(hrmin)
-  console.log(minutesPlayed)
-  console.log(estPlayTimeMS)
-  
   
   var hours = ('0' + Math.floor(estPlayTimeMS / 60)).slice(-2);
   var minutes = ('0' + Math.floor(estPlayTimeMS % 60)).slice(-2);
   var estPlayTime = hours + ':' + minutes
 
-  console.log(estPlayTime)
-
   var st = new Date(new Date(prScore.startTime).getTime() + (estPlayTimeMS * 1000 * 60))
-  var estTimeOfCompletion = getDateDiff(new Date(st), new Date(prScore.startTime))
+ 
   return rndPlayTime + ' | ' + estPlayTime + ' | ' + st.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
 
 }

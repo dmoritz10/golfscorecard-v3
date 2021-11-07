@@ -185,6 +185,8 @@ rework wgs handicap calc
 
         historical
     
+Remove initial rounds (ie. no hcpdiff) from Stats esp. 'made target'
+
 
 course handicap => handicap index
 tesy
