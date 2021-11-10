@@ -852,9 +852,9 @@ async function setSmsHref(d) {
 
     var txtWeather = parseWeatherText(w)
 
-    alert(weatherUrl)
+    console.log(weatherUrl)
     console.log(w)
-    alert(txtWeather)
+    console.log(txtWeather)
 
     var dt = formatsmsDateTime (d.date, d.time)
 
@@ -924,7 +924,7 @@ function parseWeatherText(wRptHtml) {
 
   var strToken = '</a></div></div><p _ngcontent-sc247="">'
 
-  alert (strToken)
+  console.log (strToken)
 
 
   var str = wRptHtml.indexOf(strToken) + strToken.length
