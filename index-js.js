@@ -852,6 +852,10 @@ async function setSmsHref(d) {
 
     var txtWeather = parseWeatherText(w)
 
+    console.log(weatherUrl)
+    console.log(w)
+    console.log(txtWeather)
+
     var dt = formatsmsDateTime (d.date, d.time)
 
     var txtBody = d.courseName + '%0a' + dt.date + '%0a' + dt.time

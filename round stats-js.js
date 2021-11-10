@@ -692,6 +692,7 @@ function estimateCompletion() {
   var rndPlayTime = getDateDiff(prScore.endTime ? new Date(prScore.endTime) : new Date(),  new Date(prScore.startTime))
 
   if (sc.length < 5) {
+    
     var hrmin = avgPlayTime.split(":")
     var minutesPlayed = hrmin[0]*60 + hrmin[1]*1
     var estPlayTimeMS = minutesPlayed
