@@ -852,9 +852,9 @@ async function setSmsHref(d) {
 
     var txtWeather = parseWeatherText(w)
 
-    console.log(weatherUrl)
+    alert(weatherUrl)
     console.log(w)
-    console.log(txtWeather)
+    alert(txtWeather)
 
     var dt = formatsmsDateTime (d.date, d.time)
 
@@ -923,6 +923,8 @@ function setAddTeeTimeClick(d) {
 function parseWeatherText(wRptHtml) {
 
   var strToken = '</a></div></div><p _ngcontent-sc247="">'
+
+  alert (strToken)
 
 
   var str = wRptHtml.indexOf(strToken) + strToken.length
