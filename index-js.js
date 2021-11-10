@@ -922,7 +922,7 @@ function setAddTeeTimeClick(d) {
 
 function parseWeatherText(wRptHtml) {
 
-  var strToken = '</a></div></div><p _ngcontent-sc248="">'
+  var strToken = '</a></div></div><p _ngcontent-sc247="">'
 
 
   var str = wRptHtml.indexOf(strToken) + strToken.length
