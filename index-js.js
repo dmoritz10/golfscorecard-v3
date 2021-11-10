@@ -924,8 +924,10 @@ function parseWeatherText(wRptHtml) {
 
   var strToken = '</a></div></div><p _ngcontent-sc247="">'
 
-  console.log (strToken)
+  if (strToken < 0) 
+    var strToken = '</a></div></div><p _ngcontent-sc248="">'
 
+  if (strToken < 0) console.log("Can't parse uweather report")  
 
   var str = wRptHtml.indexOf(strToken) + strToken.length
   if (str < 100) return ''
