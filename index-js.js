@@ -853,7 +853,7 @@ async function setSmsHref(d) {
     var txtWeather = parseWeatherText(w)
 
     console.log(weatherUrl)
-    console.log(w)
+    
     console.log(txtWeather)
 
     var dt = formatsmsDateTime (d.date, d.time)
