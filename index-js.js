@@ -930,11 +930,11 @@ function parseWeatherText(wRptHtml) {
   var str = wRptHtml.match(/(?=>[A-Z])(.*)(?=<\/p><\/div><\/div><\/div>)/)   
 
   var end = wRptHtml.indexOf("</p></div></div></div>")
-  var str = wRptHtml.lastIndexOf(".", end)
+  var str = wRptHtml.lastIndexOf(">", end)
 
   var wText = wRptHtml.substring(str, end)
   
-  console.log('xxx')
+  console.log('zzz')
   console.log(str)
   console.log(end)
   console.log(wText)
