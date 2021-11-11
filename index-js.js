@@ -922,30 +922,13 @@ function setAddTeeTimeClick(d) {
 
 function parseWeatherText(wRptHtml) {
 
-  var strToken = '</a></div></div><p _ngcontent-sc247="">'
-
-  if (strToken < 0) 
-    var strToken = '</a></div></div><p _ngcontent-sc248="">'
-
-  var str = wRptHtml.match(/(?=>[A-Z])(.*)(?=<\/p><\/div><\/div><\/div>)/)   
-
   var end = wRptHtml.indexOf("</p></div></div></div>")
   var str = wRptHtml.lastIndexOf(">", end) + 1
 
   var wText = wRptHtml.substring(str, end)
   
-  console.log('aaa')
-  console.log(str)
-  console.log(end)
-  console.log(wText)
 
-  if (strToken < 0) console.log("Can't parse uweather report")  
-
-  var str = wRptHtml.indexOf(strToken) + strToken.length
-  if (str < 100) return ''
-  var end = wRptHtml.indexOf('</p>', str)
-
-  var wText = wRptHtml.substring(str, end)
+  if (str < 0 || end < 0) console.log("Can't parse uweather report")  
 
   return wText
 
