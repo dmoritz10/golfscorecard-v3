@@ -927,7 +927,6 @@ function parseWeatherText(wRptHtml) {
 
   var wText = wRptHtml.substring(str, end)
   
-
   if (str < 0 || end < 0) console.log("Can't parse uweather report")  
 
   return wText
