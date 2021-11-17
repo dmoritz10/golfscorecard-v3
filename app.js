@@ -195,8 +195,6 @@ jQuery(function ($) {
 
    }
 
-   console.log('signin complete')
-   console.log(signin)
 
 	var App = {
 		init: function () {
@@ -464,7 +462,7 @@ jQuery(function ($) {
 		}
 	};
 	
-console.log('hi dan')
+console.log('hi ddd')
 
     App.init();
 
