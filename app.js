@@ -48,6 +48,10 @@ jQuery(function ($) {
 
 	var App = {
 		init: function () {
+
+            console.log('init')
+            console.log(init)
+
 			this.serviceWorker()
 			this.signin.handleClientLoad()
 			this.bindEvents();
@@ -115,6 +119,11 @@ jQuery(function ($) {
           scope: this.SCOPES
         }).then(function () {
           // Listen for sign-in state changes.
+
+console.log('initClient then')
+console.log(this)
+console.log(gapi.auth2.getAuthInstance())
+
           gapi.auth2.getAuthInstance().isSignedIn.listen(this.updateSigninStatus);
 
           // Handle the initial sign-in state.
