@@ -110,6 +110,9 @@ jQuery(function ($) {
        *  listeners.
        */
        initClient: async function () {
+
+        console.log('initClient')
+        console.log(this)
       
         await gapi.client.init({
           apiKey: this.API_KEY,
@@ -124,6 +127,7 @@ console.log('initClient then auth2')
 console.log(this)
 console.log(gapi.client)
 console.log(gapi.auth2)
+console.log(gapi.auth2.getAuthInstance())
 
           gapi.auth2.getAuthInstance().isSignedIn.listen(this.updateSigninStatus);
 
