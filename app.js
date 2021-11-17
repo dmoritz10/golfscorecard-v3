@@ -115,12 +115,11 @@ jQuery(function ($) {
           scope: this.SCOPES
         }).then(function () {
           // Listen for sign-in state changes.
-          gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+          gapi.auth2.getAuthInstance().isSignedIn.listen(this.updateSigninStatus);
 
           // Handle the initial sign-in state.
           updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
 
-          //          testButton.onclick = handleTestClick;
         }, function(error) {
           console.log(JSON.stringify(error, null, 2));
         });
@@ -251,8 +250,8 @@ jQuery(function ($) {
           
             // Auth tab
           
-            $('#btnAuth')            .button().click(btnAuthHtml);
-            $('#btnSignout')           .button().click(btnSignoutHtml);
+            $('#btnAuth')                   .button().click(btnAuthHtml);
+            $('#btnSignout')                .button().click(btnSignoutHtml);
           
           
             // Home tab
