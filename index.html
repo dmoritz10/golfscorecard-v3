@@ -267,12 +267,12 @@ body::-webkit-scrollbar { /* WebKit */
     for (i = 0; i < loadList.length; i++) {
 
       var src = loadList[i].dataset.source
-      // if (src !== 'index-js.js') {
+      if (src !== 'index-js.js') {
 
         script_arr.push(src)
         console.log(src)
       
-      // }
+      }
     }
 
     // define a function to load array of scripts and wait for all to load before continuing
@@ -290,8 +290,8 @@ body::-webkit-scrollbar { /* WebKit */
     }
 
     await $.getMultiScripts(script_arr).done(function() {
-      // console.log('load index-js.js')
-      // $.getScript( 'index-js.js' )      // load and run index-js.js last
+      console.log('load index-js.js')
+      $.getScript( 'index-js.js' )      // load and run index-js.js last
       console.log('all scripts loaded')
     });
 
