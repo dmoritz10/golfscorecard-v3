@@ -76,6 +76,8 @@ jQuery(function ($) {
          */
         initClient: async function () {
 
+            var self = this
+
         console.log('signin')
         console.log(this)
         
@@ -200,6 +202,9 @@ jQuery(function ($) {
         }
 
    }
+
+   console.log('signin complete')
+   console.log(signin)
 
 	var App = {
 		init: function () {
@@ -466,8 +471,10 @@ jQuery(function ($) {
         
 		}
 	};
-console.log("App")
+    
+    console.log("App")
     console.log(App)
-	App.init();
+	
+    App.init();
 
 });
