@@ -149,7 +149,7 @@ jQuery(function ($) {
          */
         handleAuthClick: function (event) {
         
-        gapi.auth2.getAuthInstance().signIn();
+            gapi.auth2.getAuthInstance().signIn();
         },
 
         /**

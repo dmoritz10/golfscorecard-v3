@@ -7,6 +7,8 @@ function btnAuthHtml(event) {
 }
     
 function btnSignoutHtml(event) {
+console.log('signout')
+  console.log(this)
 
     signin.handleSignoutClick();
     gotoTab('Auth')
