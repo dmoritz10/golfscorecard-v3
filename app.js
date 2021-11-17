@@ -157,7 +157,7 @@ jQuery(function ($) {
             gapi.auth2.getAuthInstance().signOut();
         }
 
-   }
+    }
 
 
 	var App = {
