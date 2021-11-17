@@ -119,16 +119,16 @@ jQuery(function ($) {
 
             var currUserObj = await gapi.auth2.getAuthInstance().currentUser.get().getBasicProfile();
 
-            currUser['email']     = currUserObj.getEmail()
-            currUser['firstName'] = currUserObj.getGivenName()
-            currUser['lastName']  = currUserObj.getFamilyName()
-            currUser['fullName']  = currUserObj.getName()
-            currUser['emailName'] = currUser['email'].split('@')[0]
+            signin.currUser['email']     = currUserObj.getEmail()
+            signin.currUser['firstName'] = currUserObj.getGivenName()
+            signin.currUser['lastName']  = currUserObj.getFamilyName()
+            signin.currUser['fullName']  = currUserObj.getName()
+            signin.currUser['emailName'] = signin.currUser['email'].split('@')[0]
 
-            if (currUser.firstName) {
-            $('#authSigninStatus').html('Hi ' + currUser.firstName + '.<br>You are signed in.')
+            if (signin.currUser.firstName) {
+            $('#authSigninStatus').html('Hi ' + signin.currUser.firstName + '.<br>You are signed in.')
             } else {
-            $('#authSigninStatus').html('Hi ' + currUser.emailName + '.<br>You are signed in.')
+            $('#authSigninStatus').html('Hi ' + signin.currUser.emailName + '.<br>You are signed in.')
             }
 
             var rtn = await getSSId()
@@ -146,7 +146,7 @@ jQuery(function ($) {
 
             $('#authSigninStatus').html('You are signed out.  Authorization is required.')
 
-            currUser = {}
+            signin.currUser = {}
 
             gotoTab('Auth')
         }
@@ -170,10 +170,10 @@ jQuery(function ($) {
 
         getSSId: async function () {
 
-        console.log(currUser)
+        console.log(signin.currUser)
 
 
-        var q = "name = 'Dan Golf - " + currUser.emailName +
+        var q = "name = 'Dan Golf - " + signin.currUser.emailName +
                 "' AND " + "mimeType='application/vnd.google-apps.spreadsheet'" + 
                 " AND " + "trashed = false"
 
