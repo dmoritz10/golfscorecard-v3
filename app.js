@@ -97,7 +97,7 @@ jQuery(function ($) {
         console.log('handleload')
         console.log(this)
 
-        gapi.load('client:auth2', initClient);
+        gapi.load('client:auth2', this.initClient);
       },
      
 
