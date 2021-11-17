@@ -1,6 +1,3 @@
-/*global jQuery */
-jQuery(function ($) {
-	// 'use strict';
 
 	// Global variables
 
@@ -45,6 +42,13 @@ jQuery(function ($) {
   
     var weatherUrlMask = 'https://www.wunderground.com/*type*/*country*/*state*/*city*/*stationId*'
     
+
+
+/*global jQuery */
+jQuery(function ($) {
+	// 'use strict';
+
+
     var signin =  {
 
         currUser : {},
