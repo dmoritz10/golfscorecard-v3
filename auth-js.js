@@ -125,8 +125,6 @@ console.log(dec.decode(decrypted))
     ).then((key) => {
       const encryptButton = document.getElementById("btnEncrypt");
 
-console.log(encryptButton)
-
       encryptButton.addEventListener("click", () => {
         encryptMessage(key);
       });

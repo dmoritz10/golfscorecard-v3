@@ -224,12 +224,12 @@ body::-webkit-scrollbar { /* WebKit */
 // var fp = document.featurePolicy
 // console.log(fp)
 
-  try { canUseGeo = document.featurePolicy.allowsFeature("geolocation") }
-  catch(err) {console.log(err)}
-  try { canUseGeo = document.featurePolicy.allowedFeatures("geolocation") }
-  catch(err) {console.log(err)}
-  try { canUseGeo = document.permissionsPolicy.allowsFeature("geolocation") }
-  catch(err) {console.log(err)}
+  // try { canUseGeo = document.featurePolicy.allowsFeature("geolocation") }
+  // catch(err) {console.log(err)}
+  // try { canUseGeo = document.featurePolicy.allowedFeatures("geolocation") }
+  // catch(err) {console.log(err)}
+  // try { canUseGeo = document.permissionsPolicy.allowsFeature("geolocation") }
+  // catch(err) {console.log(err)}
     
   $(async function () {
 
@@ -435,28 +435,15 @@ body::-webkit-scrollbar { /* WebKit */
     </div>  
   </div> 
 
-<div class="load-script d-none" data-source="table-builder.js"></div>
-<div class="load-script d-none" data-source="get rounds-js.js"></div>
-<div class="load-script d-none" data-source="update summary info.js"></div>
-<div class="load-script d-none" data-source="xhr.js"></div>
-<div class="load-script d-none" data-source="index-js.js"></div>
-<div class="load-script d-none" data-source="app.js"></div>
+  <div class="load-script d-none" data-source="table-builder.js"></div>
+  <div class="load-script d-none" data-source="get rounds-js.js"></div>
+  <div class="load-script d-none" data-source="update summary info.js"></div>
+  <div class="load-script d-none" data-source="xhr.js"></div>
+  <div class="load-script d-none" data-source="index-js.js"></div>
+  <div class="load-script d-none" data-source="app.js"></div>
   
   <!-- <button id="test_button" class="d-none">Test</button> -->
   
-<script>
-
-
-</script>
-
-<script 
-
-    
-    >
-console.log('hi dan')
-    console.log(this)
-
-</script>
 
 </body>
 </html>
