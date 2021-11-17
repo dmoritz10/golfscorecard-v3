@@ -67,9 +67,6 @@ jQuery(function ($) {
          *  On load, called to load the auth2 library and API client library.
          */
         handleClientLoad: function() {
-            console.log('handleload')
-            console.log(this)
-
             gapi.load('client:auth2', this.initClient);
         },
 
@@ -79,26 +76,15 @@ jQuery(function ($) {
          *  listeners.
          */
         initClient: async function () {
-
-            var self = this
-
-        console.log('signin')
-        console.log(this)
         
         await gapi.client.init({
-            apiKey: signin.API_KEY,
-            clientId: signin.CLIENT_ID,
-            discoveryDocs: signin.DISCOVERY_DOCS,
-            fetch_basic_profile: true,
-            scope: signin.SCOPES
+            apiKey:                 signin.API_KEY,
+            clientId:               signin.CLIENT_ID,
+            discoveryDocs:          signin.DISCOVERY_DOCS,
+            fetch_basic_profile:    true,
+            scope:                  signin.SCOPES
         }).then(function () {
             // Listen for sign-in state changes.
-
-        console.log('initClient then auth2 zzzzz')
-        console.log(signin)
-        console.log(gapi.client)
-        console.log(gapi.auth2)
-        console.log(gapi.auth2.getAuthInstance())
 
             gapi.auth2.getAuthInstance().isSignedIn.listen(signin.updateSigninStatus);
 
@@ -116,6 +102,8 @@ jQuery(function ($) {
          *  appropriately. After a sign-in, the API is called.
          */
         updateSigninStatus: async function  (isSignedIn) {
+
+            console.log(isSignedIn)
 
         if (isSignedIn) { 
 
@@ -475,9 +463,6 @@ jQuery(function ($) {
         
 		}
 	};
-    
-    console.log("App")
-    console.log(App)
 	
     App.init();
 
