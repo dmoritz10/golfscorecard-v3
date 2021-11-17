@@ -603,13 +603,15 @@ var DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"
 </script>
 
 <script 
-    
+    console.log('load platform.jc')
+console.log(this)
+
     async defer src="https://apis.google.com/js/platform.js"
     onload="this.onload=function(){};handleClientLoad()"
     onreadystatechange="if (this.readyState === 'complete') this.onload()"
     
     >
-  
+  console.log(this)
 </script>
 
 </body>
