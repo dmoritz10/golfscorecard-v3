@@ -50,7 +50,7 @@ jQuery(function ($) {
 		init: function () {
 
             console.log('init')
-            console.log(init)
+            console.log(this)
 
 			this.serviceWorker()
 			this.signin.handleClientLoad()
