@@ -82,21 +82,21 @@ jQuery(function ($) {
         console.log(this)
         
         await gapi.client.init({
-            apiKey: this.API_KEY,
-            clientId: this.CLIENT_ID,
-            discoveryDocs: this.DISCOVERY_DOCS,
+            apiKey: signin.API_KEY,
+            clientId: signin.CLIENT_ID,
+            discoveryDocs: signin.DISCOVERY_DOCS,
             fetch_basic_profile: true,
-            scope: this.SCOPES
+            scope: signin.SCOPES
         }).then(function () {
             // Listen for sign-in state changes.
 
         console.log('initClient then auth2 ddd')
-        console.log(this)
+        console.log(signin)
         console.log(gapi.client)
         console.log(gapi.auth2)
         console.log(gapi.auth2.getAuthInstance())
 
-            gapi.auth2.getAuthInstance().isSignedIn.listen(this.updateSigninStatus);
+            gapi.auth2.getAuthInstance().isSignedIn.listen(signin.updateSigninStatus);
 
             // Handle the initial sign-in state.
             updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
