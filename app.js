@@ -90,7 +90,7 @@ jQuery(function ($) {
         }).then(function () {
             // Listen for sign-in state changes.
 
-        console.log('initClient then auth2 xxxx')
+        console.log('initClient then auth2 zzzzz')
         console.log(signin)
         console.log(gapi.client)
         console.log(gapi.auth2)
@@ -99,7 +99,7 @@ jQuery(function ($) {
             gapi.auth2.getAuthInstance().isSignedIn.listen(signin.updateSigninStatus);
 
             // Handle the initial sign-in state.
-            updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+            signin.updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
 
         }, function(error) {
             console.log(JSON.stringify(error, null, 2));
