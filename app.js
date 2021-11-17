@@ -77,23 +77,24 @@ jQuery(function ($) {
          */
         initClient: async function () {
         
-        await gapi.client.init({
-            apiKey:                 signin.API_KEY,
-            clientId:               signin.CLIENT_ID,
-            discoveryDocs:          signin.DISCOVERY_DOCS,
-            fetch_basic_profile:    true,
-            scope:                  signin.SCOPES
-        }).then(function () {
-            // Listen for sign-in state changes.
+            await gapi.client.init({
+                apiKey:                 signin.API_KEY,
+                clientId:               signin.CLIENT_ID,
+                discoveryDocs:          signin.DISCOVERY_DOCS,
+                fetch_basic_profile:    true,
+                scope:                  signin.SCOPES
 
-            gapi.auth2.getAuthInstance().isSignedIn.listen(signin.updateSigninStatus);
+            }).then(function () {
+                // Listen for sign-in state changes.
 
-            // Handle the initial sign-in state.
-            signin.updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+                gapi.auth2.getAuthInstance().isSignedIn.listen(signin.updateSigninStatus);
 
-        }, function(error) {
-            console.log(JSON.stringify(error, null, 2));
-        });
+                // Handle the initial sign-in state.
+                signin.updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+
+            }, function(error) {
+                console.log(JSON.stringify(error, null, 2));
+            });
         
         },
 
@@ -103,45 +104,43 @@ jQuery(function ($) {
          */
         updateSigninStatus: async function  (isSignedIn) {
 
-            console.log(isSignedIn)
+            if (isSignedIn) { 
 
-        if (isSignedIn) { 
+                console.log('signed in')
 
-            console.log('signed in')
+                var currUserObj = await gapi.auth2.getAuthInstance().currentUser.get().getBasicProfile();
 
-            var currUserObj = await gapi.auth2.getAuthInstance().currentUser.get().getBasicProfile();
+                signin.currUser['email']     = currUserObj.getEmail()
+                signin.currUser['firstName'] = currUserObj.getGivenName()
+                signin.currUser['lastName']  = currUserObj.getFamilyName()
+                signin.currUser['fullName']  = currUserObj.getName()
+                signin.currUser['emailName'] = signin.currUser['email'].split('@')[0]
 
-            signin.currUser['email']     = currUserObj.getEmail()
-            signin.currUser['firstName'] = currUserObj.getGivenName()
-            signin.currUser['lastName']  = currUserObj.getFamilyName()
-            signin.currUser['fullName']  = currUserObj.getName()
-            signin.currUser['emailName'] = signin.currUser['email'].split('@')[0]
+                if (signin.currUser.firstName) {
+                $('#authSigninStatus').html('Hi ' + signin.currUser.firstName + '.<br>You are signed in.')
+                } else {
+                $('#authSigninStatus').html('Hi ' + signin.currUser.emailName + '.<br>You are signed in.')
+                }
 
-            if (signin.currUser.firstName) {
-            $('#authSigninStatus').html('Hi ' + signin.currUser.firstName + '.<br>You are signed in.')
+                var rtn = await signin.getSSId()
+
+                if (rtn.fileId) {spreadsheetId = rtn.fileId}
+                else {$('#authSigninStatus').html(rtn.msg);return}
+                
+                await initialUI();
+
+                goHome()
+
             } else {
-            $('#authSigninStatus').html('Hi ' + signin.currUser.emailName + '.<br>You are signed in.')
+
+                console.log('NOT signed in')
+
+                $('#authSigninStatus').html('You are signed out.  Authorization is required.')
+
+                signin.currUser = {}
+
+                gotoTab('Auth')
             }
-
-            var rtn = await signin.getSSId()
-
-            if (rtn.fileId) {spreadsheetId = rtn.fileId}
-            else {$('#authSigninStatus').html(rtn.msg);return}
-            
-            await initialUI();
-
-            goHome()
-
-        } else {
-
-            console.log('NOT signed in')
-
-            $('#authSigninStatus').html('You are signed out.  Authorization is required.')
-
-            signin.currUser = {}
-
-            gotoTab('Auth')
-        }
         },
 
         /**
@@ -199,12 +198,17 @@ jQuery(function ($) {
 	var App = {
 		init: function () {
 
-            console.log('init new')
-            console.log(this)
-
 			this.serviceWorker()
+
+            console.log('serviceworker complete')
+
 			signin.handleClientLoad()
+
+            console.log('signin complete')
+
 			this.bindEvents();
+
+            console.log('bindEvents complete')
 
 		},
         serviceWorker: function () {
@@ -239,21 +243,18 @@ jQuery(function ($) {
                 $('#' + selId).find("*").removeClass("sel");
                 $(event.target).addClass('sel')
           
-              });
+            });
           
-              $('.score').on('shown.bs.tab', function(event){
+            $('.score').on('shown.bs.tab', function(event){
             
-              var selId = $(event.target)[0].parentElement.parentElement.parentElement.id
-              $('#' + selId).find(".vis").addClass("hid");
-          
-              var event =  $(event.target).children().eq(0);
-              event.removeClass('hid')
+                var selId = $(event.target)[0].parentElement.parentElement.parentElement.id
+                $('#' + selId).find(".vis").addClass("hid");
+            
+                var event =  $(event.target).children().eq(0);
+                event.removeClass('hid')
           
             });
           
-          
-          
-            var tabs = $( "#main-panel" ).tabs();
           
             // Auth tab
           
@@ -274,13 +275,13 @@ jQuery(function ($) {
           
             $("#hpTargetHandicap")
             .TouchSpin({
-              min: 0,
-            max: 50,
-            step: 0.1,
-            decimals: 1,
-            boostat: 5,
-            maxboostedstep: 10,
-            verticalbuttons: true
+                min: 0,
+                max: 50,
+                step: 0.1,
+                decimals: 1,
+                boostat: 5,
+                maxboostedstep: 10,
+                verticalbuttons: true
               });
           
           
@@ -311,31 +312,28 @@ jQuery(function ($) {
             $('#prDistanceBack')         .click({pinLocn: 'back'}, btnShowLocationHtml);
             $('#prTrackDistance')        .click(btnTrackDistanceHtml);
             $('#btnTrackClub')           .click(btnTrackClubHtml);
-            //  $('#btnTrackClub')           .click(btnShowLocationHtml);
-          
           
             // Round Stats tab
             $('#btnRSScorecard')         .button().click(btnRSScorecard);
           
             $('[data-toggle="popover"]').popover({
           
-              html: true,
-            sanitize: false,
-            container: 'body',
-            template: '<div class="popover" role="tooltip"><div class="arrow"></div>' +
-              '<h4 class="popover-header"></h4>' +
-              '<h5 class="popover-body"></h5>' +
-              '</div>'
+                html: true,
+                sanitize: false,
+                container: 'body',
+                template: '<div class="popover" role="tooltip"><div class="arrow"></div>' +
+                '<h4 class="popover-header"></h4>' +
+                '<h5 class="popover-body"></h5>' +
+                '</div>'
             });
           
             // Show Rounds tab
-            //  $('#btnShowRounds')           .click(getRounds);
             $('#btnShowRounds')           .click(btnShowRoundsHtml);
             $('#btnSRSelect')            .click(btnSRSelectHtml);
             $('#btnSRReset')            .click(btnSRResetHtml);
             
             $('#srSelectDropDown').on('show.bs.dropdown', function () {
-              btnSRMoreVertHtml()
+                btnSRMoreVertHtml()
             })
           
             // Show Handicap
@@ -343,25 +341,22 @@ jQuery(function ($) {
             $('#btnHCPSelect')            .click(btnHCPSelectHtml);
             $('#btnHCPReset')            .click(btnHCPResetHtml);
             $('#hcpSelectDropDown').on('show.bs.dropdown', function () {
-              btnHCPMoreVertHtml()
+                btnHCPMoreVertHtml()
             })
           
             // Show Clubs
             $('#btnShowClubs')          .click(btnShowClubsHtml);
-            // $('#btnShowClubs')          .click(courseSummary);
             $('#btnSubmitClub')         .click(btnSubmitClubHtml);
             $('#btnDeleteClub')         .click(btnDeleteClubHtml);
             $('#btnAddClub')            .click(btnAddClubHtml);
             $('#clbmLaunch')            .change({p: 'launch'},   adjustClubParmsHtml);
             $('#clbmSpeed')             .change({p: 'speed'},    adjustClubParmsHtml);
             $('#clbmDistance')          .change({p: 'distance'}, adjustClubParmsHtml);
-          
-          
-          
+                   
             // Show Stats
             $('#btnShowStats')          .click(btnShowStatsHtml);
             $('#btnStatSelect')         .click(btnStatSelectHtml);
-            $('#btnStatReset')            .click(btnStatResetHtml);
+        $('#btnStatReset')              .click(btnStatResetHtml);
             $('#statSelectDropDown').on('show.bs.dropdown', function () {
               btnStatsMoreVertHtml()
             })
@@ -371,12 +366,9 @@ jQuery(function ($) {
             $('#btnAddTeetime')        .click(btnAddTeetimeHtml);
             $('#btnSubmitTeetime')     .click(btnSubmitTeetimeHtml);
             $('#btnDeleteTeetime')     .click(btnDeleteTeetimeHtml);
-            // $('#btnEnterTeeTime')      .button().click(btnEnterTeeTimeHtml);
-            // $('#ttmGolfers')           .change(ttmGolfersChangeHtml);
             $('#ttmSelectCourse')      .change(ttmSelectCourseChangeHtml);
           
-          
-          
+                   
             puttsOriginalState = $("#divPutts").clone(true);
             driveOriginalState = $("#divDrive").clone(true);
             pnltyOriginalState = $("#divPnlty").clone(true);
@@ -394,23 +386,13 @@ jQuery(function ($) {
             // Courses
             $('#btnShowCourses')         .click(btnShowCoursesHtml);
             $('#btnSCSelect')            .click(btnSCSelectHtml);
-            //  $('#btnSCMoreVert')          .click(btnSCMoreVertHtml);
             $('#btnHPHoleDetail')         .button().click(btnHPHoleDetailHtml);
             $('#btnSCMFetchSxs')         .click(btnSCMFetchSxsHtml);
             $('#btnSCMSubmitCourse')         .click(btnSCMSubmitCourseHtml);
-            $('#btnAddCourse')            .click(btnAddCourseHtml);
-          
-            
-          
-          
+            $('#btnAddCourse')            .click(btnAddCourseHtml);        
             $('#scSelectDropDown').on('show.bs.dropdown', function () {
-              btnSCMoreVertHtml()
+                btnSCMoreVertHtml()
             })
-          
-            // $('#scmCourseRating')           .change(scmCourseRatingHtml);
-          
-          
-            
           
             // Golfers
             $('#btnShowGolfers')          .click(btnShowGolfersHtml);
@@ -425,13 +407,13 @@ jQuery(function ($) {
           
             var whiteList = $.fn.tooltip.Constructor.Default.whiteList
           
-            whiteList.table = []
-            whiteList.td = []
-            whiteList.th = []
-            whiteList.thead = []
-            whiteList.tr = []
-            whiteList.tbody = []
-            whiteList.button = []
+                whiteList.table = []
+                whiteList.td = []
+                whiteList.th = []
+                whiteList.thead = []
+                whiteList.tr = []
+                whiteList.tbody = []
+                whiteList.button = []
           
             setupFormValidation()
           
@@ -445,24 +427,19 @@ jQuery(function ($) {
               $(this).addClass("d-none");
                   })
           
-            //  dupIds()
           
             Date.prototype.toLocaleISOString = function() {
-            const zOffsetMs = this.getTimezoneOffset() * 60 * 1000;
-            const localTimeMs = this - zOffsetMs;
-            const date = new Date(localTimeMs);
-            const utcOffsetHr = this.getTimezoneOffset() / 60;
-            const utcOffsetSign = utcOffsetHr <= 0 ? '+' : '-';
-            const utcOffsetString = utcOffsetSign + (utcOffsetHr.toString.length == 1 ? `0${utcOffsetHr}` : `${utcOffsetHr}`) + ':00';
-            return date.toISOString().replace('Z', utcOffsetString);
+                const zOffsetMs = this.getTimezoneOffset() * 60 * 1000;
+                const localTimeMs = this - zOffsetMs;
+                const date = new Date(localTimeMs);
+                const utcOffsetHr = this.getTimezoneOffset() / 60;
+                const utcOffsetSign = utcOffsetHr <= 0 ? '+' : '-';
+                const utcOffsetString = utcOffsetSign + (utcOffsetHr.toString.length == 1 ? `0${utcOffsetHr}` : `${utcOffsetHr}`) + ':00';
+                return date.toISOString().replace('Z', utcOffsetString);
             };
-             
-            console.log('doc ready complete')
-        
+                    
 		}
 	};
-	
-console.log('hi ddd')
 
     App.init();
 
