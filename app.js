@@ -464,6 +464,8 @@ jQuery(function ($) {
 		}
 	};
 	
+console.log('hi dan')
+
     App.init();
 
 });
