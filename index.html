@@ -244,7 +244,7 @@ body::-webkit-scrollbar { /* WebKit */
   try { canUseGeo = document.permissionsPolicy.allowsFeature("geolocation") }
   catch(err) {console.log(err)}
     
-  $(function () {
+  $(async function () {
 
     console.log('start code load')
 
@@ -289,7 +289,7 @@ body::-webkit-scrollbar { /* WebKit */
       return $.when.apply($, _arr);
     }
 
-    $.getMultiScripts(script_arr).done(function() {
+    await $.getMultiScripts(script_arr).done(function() {
       // console.log('load index-js.js')
       // $.getScript( 'index-js.js' )      // load and run index-js.js last
       console.log('all scripts loaded')
