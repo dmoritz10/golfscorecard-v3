@@ -59,153 +59,151 @@ jQuery(function ($) {
                            "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest",
                            "https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"],
 
- /**
-  *  On load, called to load the auth2 library and API client library.
-  */
-  handleClientLoad: function() {
-   console.log('handleload')
-   console.log(this)
+        /**
+         *  On load, called to load the auth2 library and API client library.
+         */
+        handleClientLoad: function() {
+        console.log('handleload')
+        console.log(this)
 
-   gapi.load('client:auth2', this.initClient);
- },
-
-
- /**
-  *  Initializes the API client library and sets up sign-in state
-  *  listeners.
-  */
-  initClient: async function () {
-
-   console.log('signin')
-   console.log(App.signin)
- 
-   await gapi.client.init({
-     apiKey: this.API_KEY,
-     clientId: this.CLIENT_ID,
-     discoveryDocs: this.DISCOVERY_DOCS,
-     fetch_basic_profile: true,
-     scope: this.SCOPES
-   }).then(function () {
-     // Listen for sign-in state changes.
-
-console.log('initClient then auth2 ddd')
-console.log(this)
-console.log(gapi.client)
-console.log(gapi.auth2)
-console.log(gapi.auth2.getAuthInstance())
-
-     gapi.auth2.getAuthInstance().isSignedIn.listen(this.updateSigninStatus);
-
-     // Handle the initial sign-in state.
-     updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-
-   }, function(error) {
-     console.log(JSON.stringify(error, null, 2));
-   });
-   
- },
-
- /**
-  *  Called when the signed in status changes, to update the UI
-  *  appropriately. After a sign-in, the API is called.
-  */
-  updateSigninStatus: async function  (isSignedIn) {
-
-   if (isSignedIn) { 
-
-     console.log('signed in')
-
-     var currUserObj = await gapi.auth2.getAuthInstance().currentUser.get().getBasicProfile();
-
-     currUser['email']     = currUserObj.getEmail()
-     currUser['firstName'] = currUserObj.getGivenName()
-     currUser['lastName']  = currUserObj.getFamilyName()
-     currUser['fullName']  = currUserObj.getName()
-     currUser['emailName'] = currUser['email'].split('@')[0]
-
-     if (currUser.firstName) {
-       $('#authSigninStatus').html('Hi ' + currUser.firstName + '.<br>You are signed in.')
-     } else {
-       $('#authSigninStatus').html('Hi ' + currUser.emailName + '.<br>You are signed in.')
-     }
-
-     var rtn = await getSSId()
-
-     if (rtn.fileId) {spreadsheetId = rtn.fileId}
-     else {$('#authSigninStatus').html(rtn.msg);return}
-      
-     await initialUI();
-
-     goHome()
-
-   } else {
-
-     console.log('NOT signed in')
-
-     $('#authSigninStatus').html('You are signed out.  Authorization is required.')
-
-     currUser = {}
-
-     gotoTab('Auth')
-   }
- },
-
- /**
-  *  Sign in the user upon button click.
-  */
-  handleAuthClick: function (event) {
-   
-   gapi.auth2.getAuthInstance().signIn();
- },
-
- /**
-  *  Sign out the user upon button click.
-  */
-  handleSignoutClick: function (event) {
-   
-   gapi.auth2.getAuthInstance().signOut();
- },
-
- getSSId: async function () {
-
-   console.log(currUser)
+        gapi.load('client:auth2', this.initClient);
+        },
 
 
-   var q = "name = 'Dan Golf - " + currUser.emailName +
-           "' AND " + "mimeType='application/vnd.google-apps.spreadsheet'" + 
-           " AND " + "trashed = false"
+        /**
+         *  Initializes the API client library and sets up sign-in state
+         *  listeners.
+         */
+        initClient: async function () {
 
-   console.log(q)          
+        console.log('signin')
+        console.log(App.signin)
+        
+        await gapi.client.init({
+            apiKey: this.API_KEY,
+            clientId: this.CLIENT_ID,
+            discoveryDocs: this.DISCOVERY_DOCS,
+            fetch_basic_profile: true,
+            scope: this.SCOPES
+        }).then(function () {
+            // Listen for sign-in state changes.
 
-   var ssId = await gapi.client.drive.files.list({
-       q: q,
-       fields: 'nextPageToken, files(id, name, ownedByMe)',
-       spaces: 'drive'
-   }).then(function(response) {
+        console.log('initClient then auth2 ddd')
+        console.log(this)
+        console.log(gapi.client)
+        console.log(gapi.auth2)
+        console.log(gapi.auth2.getAuthInstance())
 
-     var files = response.result.files;
+            gapi.auth2.getAuthInstance().isSignedIn.listen(this.updateSigninStatus);
 
-     // files = files.filter(item => item.ownedByMe);    // remove files that are shared with me
+            // Handle the initial sign-in state.
+            updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
 
-     if (!files || files.length == 0)  return {fileId:null,msg:"'Dan Golf' not found"}
+        }, function(error) {
+            console.log(JSON.stringify(error, null, 2));
+        });
+        
+        },
 
-     if (files.length > 1)             return {fileId:null,msg:"'Dan Golf' not unique"}
+        /**
+         *  Called when the signed in status changes, to update the UI
+         *  appropriately. After a sign-in, the API is called.
+         */
+        updateSigninStatus: async function  (isSignedIn) {
 
-     return {fileId:files[0].id,msg:'ok'}
+        if (isSignedIn) { 
 
-   });  
+            console.log('signed in')
 
-   return ssId
+            var currUserObj = await gapi.auth2.getAuthInstance().currentUser.get().getBasicProfile();
 
-}
+            currUser['email']     = currUserObj.getEmail()
+            currUser['firstName'] = currUserObj.getGivenName()
+            currUser['lastName']  = currUserObj.getFamilyName()
+            currUser['fullName']  = currUserObj.getName()
+            currUser['emailName'] = currUser['email'].split('@')[0]
+
+            if (currUser.firstName) {
+            $('#authSigninStatus').html('Hi ' + currUser.firstName + '.<br>You are signed in.')
+            } else {
+            $('#authSigninStatus').html('Hi ' + currUser.emailName + '.<br>You are signed in.')
+            }
+
+            var rtn = await getSSId()
+
+            if (rtn.fileId) {spreadsheetId = rtn.fileId}
+            else {$('#authSigninStatus').html(rtn.msg);return}
+            
+            await initialUI();
+
+            goHome()
+
+        } else {
+
+            console.log('NOT signed in')
+
+            $('#authSigninStatus').html('You are signed out.  Authorization is required.')
+
+            currUser = {}
+
+            gotoTab('Auth')
+        }
+        },
+
+        /**
+         *  Sign in the user upon button click.
+         */
+        handleAuthClick: function (event) {
+        
+        gapi.auth2.getAuthInstance().signIn();
+        },
+
+        /**
+         *  Sign out the user upon button click.
+         */
+        handleSignoutClick: function (event) {
+        
+        gapi.auth2.getAuthInstance().signOut();
+        },
+
+        getSSId: async function () {
+
+        console.log(currUser)
 
 
+        var q = "name = 'Dan Golf - " + currUser.emailName +
+                "' AND " + "mimeType='application/vnd.google-apps.spreadsheet'" + 
+                " AND " + "trashed = false"
+
+        console.log(q)          
+
+        var ssId = await gapi.client.drive.files.list({
+            q: q,
+            fields: 'nextPageToken, files(id, name, ownedByMe)',
+            spaces: 'drive'
+        }).then(function(response) {
+
+            var files = response.result.files;
+
+            // files = files.filter(item => item.ownedByMe);    // remove files that are shared with me
+
+            if (!files || files.length == 0)  return {fileId:null,msg:"'Dan Golf' not found"}
+
+            if (files.length > 1)             return {fileId:null,msg:"'Dan Golf' not unique"}
+
+            return {fileId:files[0].id,msg:'ok'}
+
+        });  
+
+        return ssId
+
+        }
 
    }
 	var App = {
 		init: function () {
 
-            console.log('init')
+            console.log('init new')
             console.log(this)
 
 			this.serviceWorker()
