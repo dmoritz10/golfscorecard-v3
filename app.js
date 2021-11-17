@@ -131,7 +131,7 @@ jQuery(function ($) {
             $('#authSigninStatus').html('Hi ' + signin.currUser.emailName + '.<br>You are signed in.')
             }
 
-            var rtn = await getSSId()
+            var rtn = await signin.getSSId()
 
             if (rtn.fileId) {spreadsheetId = rtn.fileId}
             else {$('#authSigninStatus').html(rtn.msg);return}
