@@ -63,10 +63,10 @@ jQuery(function ($) {
          *  On load, called to load the auth2 library and API client library.
          */
         handleClientLoad: function() {
-        console.log('handleload')
-        console.log(this)
+            console.log('handleload')
+            console.log(this)
 
-        gapi.load('client:auth2', this.initClient);
+            gapi.load('client:auth2', this.initClient);
         },
 
 
@@ -77,7 +77,7 @@ jQuery(function ($) {
         initClient: async function () {
 
         console.log('signin')
-        console.log(App.signin)
+        console.log(this)
         
         await gapi.client.init({
             apiKey: this.API_KEY,
@@ -200,6 +200,7 @@ jQuery(function ($) {
         }
 
    }
+
 	var App = {
 		init: function () {
 
