@@ -468,7 +468,8 @@ console.log(gapi.auth2.getAuthInstance())
         
 		}
 	};
-
+console.log("App")
+    console.log(App)
 	App.init();
 
 });
