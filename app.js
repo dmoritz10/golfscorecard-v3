@@ -111,7 +111,7 @@ jQuery(function ($) {
        */
        initClient: async function () {
 
-        console.log('initClient')
+        console.log('signin')
         console.log(signin)
       
         await gapi.client.init({
