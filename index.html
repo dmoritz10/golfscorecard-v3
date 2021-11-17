@@ -609,10 +609,10 @@ console.log(this)
 
     async defer src="https://apis.google.com/js/platform.js"
     onload="this.onload=function(){};handleClientLoad()"
-    onreadystatechange="if (this.readyState === 'complete') this.onload()"
+    <!-- onreadystatechange="if (this.readyState === 'complete') this.onload()" -->
     
     >
-
+// console.log('hi dan')
     console.log(this)
 
 </script>
