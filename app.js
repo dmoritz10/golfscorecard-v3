@@ -157,7 +157,7 @@ jQuery(function ($) {
          */
         handleSignoutClick: function (event) {
         
-        gapi.auth2.getAuthInstance().signOut();
+            gapi.auth2.getAuthInstance().signOut();
         },
 
         getSSId: async function () {
