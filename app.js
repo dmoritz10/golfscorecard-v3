@@ -196,19 +196,17 @@ jQuery(function ($) {
 
 
 	var App = {
+
 		init: function () {
 
 			this.serviceWorker()
-
-            console.log('serviceworker complete')
+                console.log('serviceworker')
 
 			signin.handleClientLoad()
-
-            console.log('signin complete')
+                console.log('signin')
 
 			this.bindEvents();
-
-            console.log('bindEvents complete')
+                console.log('bindEvents')
 
 		},
         serviceWorker: function () {
