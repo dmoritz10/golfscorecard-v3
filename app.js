@@ -120,7 +120,7 @@ jQuery(function ($) {
                     $('#authSigninStatus').html('Hi ' + signin.currUser.emailName + '.<br>You are signed in.')
                 }
 
-                var rtn = await signin.getSSId()
+                var rtn = await getSSId(currUser);
 
                 if (rtn.fileId) {spreadsheetId = rtn.fileId}
                 else {$('#authSigninStatus').html(rtn.msg);return}
@@ -155,40 +155,9 @@ jQuery(function ($) {
         handleSignoutClick: function (event) {
         
             gapi.auth2.getAuthInstance().signOut();
-        },
-
-        getSSId: async function () {
-
-        console.log(signin.currUser)
-
-
-        var q = "name = 'Dan Golf - " + signin.currUser.emailName +
-                "' AND " + "mimeType='application/vnd.google-apps.spreadsheet'" + 
-                " AND " + "trashed = false"
-
-        console.log(q)          
-
-        var ssId = await gapi.client.drive.files.list({
-            q: q,
-            fields: 'nextPageToken, files(id, name, ownedByMe)',
-            spaces: 'drive'
-        }).then(function(response) {
-
-            var files = response.result.files;
-
-            // files = files.filter(item => item.ownedByMe);    // remove files that are shared with me
-
-            if (!files || files.length == 0)  return {fileId:null,msg:"'Dan Golf' not found"}
-
-            if (files.length > 1)             return {fileId:null,msg:"'Dan Golf' not unique"}
-
-            return {fileId:files[0].id,msg:'ok'}
-
-        });  
-
-        return ssId
-
         }
+
+
 
    }
 
@@ -439,6 +408,6 @@ jQuery(function ($) {
 
     App.init();
 
-    console.log('version')
+    console.log('version 1')
 
 });
