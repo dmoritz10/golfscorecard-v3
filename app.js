@@ -112,7 +112,7 @@ jQuery(function ($) {
        initClient: async function () {
 
         console.log('signin')
-        console.log(this.signin)
+        console.log(App.signin)
       
         await gapi.client.init({
           apiKey: this.API_KEY,
