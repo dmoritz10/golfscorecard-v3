@@ -1,20 +1,18 @@
 
-// Global variables
-
 
   function dupIds () {
-  var ids = { };
-  var found = false;
-  $('[id]').each(function(key,val) {
+    var ids = { };
+    var found = false;
+    $('[id]').each(function(key,val) {
 
 
-  if (this.id && ids[this.id]) {
-    found = true;
-  console.warn('Duplicate ID #'+this.id);
-    }
-  ids[this.id] =+ 1;
-  });
-  if (!found) console.log('No duplicate IDs found');
+    if (this.id && ids[this.id]) {
+      found = true;
+      console.warn('Duplicate ID #'+this.id);
+      }
+    ids[this.id] =+ 1;
+    });
+    if (!found) console.log('No duplicate IDs found');
 }
 
 async function getSSId(currUser) {
@@ -72,7 +70,7 @@ async function initialUI() {
 
 };
 
-  var confirm = function (msg) {
+var confirm = function (msg) {
 
   return new Promise(resolve => {
 
@@ -353,7 +351,7 @@ function toast(e) {
    return
     */
 
-    $("#toast-content").html(e)
+  $("#toast-content").html(e)
 
   $("#myToast").toast({delay: 5000});
 
@@ -384,22 +382,10 @@ function promiseRun (func) {
 
 function gotoTab(tabName) {
 
-//   console.log('yp dan')
-// console.log($( "div.tab-content > div.active" )  )
-
   var $tab = $('[href="#' + tabName + '"]')
-
-  // var top = $tab.scrollTop()
-
-  // console.log('hi dan')
-
-  // console.log(top)
 
   $tab.trigger('click');
 
-  // $tab.scrollTop(top)
-
-   
 }
 
 
@@ -501,7 +487,7 @@ function setupSumFunctions() {
 
 }
 
-  function setWeatherHref(e) {
+function setWeatherHref(e) {
 
   const isURL = (str) => {
   var pattern = new RegExp(/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/gi); // fragment locator
@@ -740,9 +726,6 @@ async function updateOption(key, val) {
 
       }
     );
-
-  console.log('gapiResult')
-  console.log(gapiResult)
 
 }
 
