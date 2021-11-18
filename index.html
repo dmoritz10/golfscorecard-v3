@@ -41,11 +41,6 @@
 
 <script>
 
- 
-  
-// var fp = document.featurePolicy
-// console.log(fp)
-
   // try { canUseGeo = document.featurePolicy.allowsFeature("geolocation") }
   // catch(err) {console.log(err)}
   // try { canUseGeo = document.featurePolicy.allowedFeatures("geolocation") }
@@ -57,7 +52,7 @@
 
     console.log('start code load')
 
-    // get loads of html files started
+    // load html files
     
     var loadList = $(".load-html")
 
@@ -76,12 +71,12 @@
     for (i = 0; i < loadList.length; i++) {
 
       var src = loadList[i].dataset.source
-      if (src !== 'app.js') {
+      // if (src !== 'app.js') {
 
         script_arr.push(src)
         console.log(src)
       
-      }
+      // }
     }
 
     // define a function to load array of scripts and wait for all to load before continuing
@@ -100,7 +95,7 @@
 
     await $.getMultiScripts(script_arr).done(function() {
       console.log('load app.js')
-      $.getScript( 'app.js' )      // load and run index-js.js last
+      // $.getScript( 'app.js' )      // load and run index-js.js last
       console.log('all scripts loaded')
     });
 
