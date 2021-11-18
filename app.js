@@ -319,7 +319,7 @@ jQuery(function ($) {
             // Show Stats
             $('#btnShowStats')          .click(btnShowStatsHtml);
             $('#btnStatSelect')         .click(btnStatSelectHtml);
-        $('#btnStatReset')              .click(btnStatResetHtml);
+            $('#btnStatReset')              .click(btnStatResetHtml);
             $('#statSelectDropDown').on('show.bs.dropdown', function () {
               btnStatsMoreVertHtml()
             })
@@ -336,6 +336,9 @@ jQuery(function ($) {
             driveOriginalState = $("#divDrive").clone(true);
             pnltyOriginalState = $("#divPnlty").clone(true);
             sandOriginalState  = $("#divSand").clone(true);
+
+            console.log('puttsOriginalState')
+            console.log(puttsOriginalState)
           
             $('body').on('click', function (e) {
               $('[data-toggle="popover"]').each(function () {
