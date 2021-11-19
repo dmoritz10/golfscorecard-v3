@@ -58,7 +58,7 @@
 
     for (i = 0; i < loadList.length; i++) {
       
-      var src = loadList[i].dataset.source
+      var src = loadList[i].dataset.source + '.html'
       $(loadList[i]).load(encodeURI(src))
       console.log(src)
     
