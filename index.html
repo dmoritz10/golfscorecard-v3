@@ -67,8 +67,6 @@
     }
     
     var loadList = $(".load-html")
-
-    for (i = 0; i < loadList.length; i++) {
       
       var script_arr = []
       for (i = 0; i < loadList.length; i++) {
@@ -83,7 +81,7 @@
     await $.getMultiScripts(script_arr).done(function() {
       console.log('all html loaded')
     });
-    
+
     // get array of script files to be loaded.  Exclude index-js.js because it must run after all other scripts are fully loaded
 
     var loadList = $(".load-script")
