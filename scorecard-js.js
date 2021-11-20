@@ -29,13 +29,15 @@ async function btnStartRoundHtml() {
   
   gotoTab('Scorecard')  
 
-  btnChangeHoleHtml(e)
-
 console.log('1')
 
   initScorecardUpload(tee, gender)
 
   loadHoleDetail(0)  
+
+  btnChangeHoleHtml(e)
+
+  console.log("done")
   
   if (canUseGeo) {var position = await initDistance()  }
   
