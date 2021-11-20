@@ -29,6 +29,8 @@ async function btnStartRoundHtml() {
   
   gotoTab('Scorecard')  
 
+  btnChangeHoleHtml(e)
+
 console.log('1')
 
   initScorecardUpload(tee, gender)
@@ -525,7 +527,8 @@ async function btnSaveScoreHtml() {
 //  await promiseRun('logRound', 'currScoreCard', JSON.stringify(prScore))
   
   var e = {}; e.data = {};e.data.offset = 1
-  // btnChangeHoleHtml(e)
+
+  btnChangeHoleHtml(e)
   
   $("#Scorecard").animate({ opacity: 1.0,}, "slow");
 
