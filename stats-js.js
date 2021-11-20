@@ -472,6 +472,7 @@ function chartCourseAdjustedScore (title, rounds, myStatsRng, endRow)   {
       '', 
       '<small>&nbsp;', 
       '<small>&nbsp;', 
+      '<small>&nbsp;', 
       '<small>&nbsp;'
       ],    
      
