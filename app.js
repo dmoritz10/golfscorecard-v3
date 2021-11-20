@@ -66,6 +66,7 @@ jQuery(function ($) {
          */
         handleClientLoad: function() {
             gapi.load('client:auth2', this.initClient);
+            console.log('initClient')
         },
 
 
@@ -74,6 +75,10 @@ jQuery(function ($) {
          *  listeners.
          */
         initClient: async function () {
+
+            console.log('initClient start')
+
+            1 == 1
         
             await gapi.client.init({
                 apiKey:                 signin.API_KEY,
@@ -85,6 +90,9 @@ jQuery(function ($) {
             }).then(function () {
                 // Listen for sign-in state changes.
 
+                console.log('initClient then')
+                console.log(this)
+
                 gapi.auth2.getAuthInstance().isSignedIn.listen(signin.updateSigninStatus);
 
                 // Handle the initial sign-in state.
@@ -93,6 +101,8 @@ jQuery(function ($) {
             }, function(error) {
                 console.log(JSON.stringify(error, null, 2));
             });
+
+            console.log("initClient end")
         
         },
 
@@ -164,8 +174,8 @@ jQuery(function ($) {
 
 		init: function () {
 
-			this.serviceWorker()
-                console.log('serviceworker')
+			// this.serviceWorker()
+            //     console.log('serviceworker')
 
 			signin.handleClientLoad()
                 console.log('signin')
