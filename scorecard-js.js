@@ -35,6 +35,7 @@ console.log('1')
 
   loadHoleDetail(0)  
 
+  var e = {}; e.data={};  e.data.offset = {}
   btnChangeHoleHtml(e)
 
   console.log("done")
