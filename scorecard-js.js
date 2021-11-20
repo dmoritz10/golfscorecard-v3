@@ -249,13 +249,13 @@ function setScoreIfPlayed() {
     
   } else {
 
-    console.log('not holeScore xxx')
+    console.log('not holeScore zzz')
     console.log(holeScore)
   
-    // $('.puttsDesc')[2].scrollIntoView();
-    // $('.pnltyDesc')[0].scrollIntoView();
-    // $('.driveDesc')[1].scrollIntoView();
-    // $('.sandDesc')[0].scrollIntoView();
+    $('.puttsDesc')[2].scrollIntoView();
+    $('.pnltyDesc')[0].scrollIntoView();
+    $('.driveDesc')[1].scrollIntoView();
+    $('.sandDesc')[0].scrollIntoView();
 
     $('.scoreComp').removeClass('hdrScored');
     $('.puttsDesc').not('.hid').removeClass('selScored')
