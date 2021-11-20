@@ -53,47 +53,6 @@ console.log('1')
         
   })  
   
-/*
-console.log('2')
-
-console.log(position)
-  
-//  if (position) {
-  
-        var weatherUrl = prCourse.courseInfo['Uweather StationId'].toString().replace(/^(.*\/\/[^\/?#]*).*$/,"$1");
-        console.log(weatherUrl)
-        weatherUrl += '/hourly/' + courseCoords.lat + ',' + courseCoords.lng
-
-      console.log('hi dan')
-      console.log(weatherUrl)
-      console.log(prCourse)
-      
-    setWeatherHref({
-    
-        weatherUrl:weatherUrl,
-        city:prCourse.courseInfo['City'],
-        state:prCourse.courseInfo['State'],
-        country:'US',
-        type:'hourly',
-        element:$('#btnSCWeather')
-        
-  })
-
-  } else {
-   
-    setWeatherHref({
-      
-        weatherUrl:prCourse.courseInfo['Uweather StationId'],
-        city:prCourse.courseInfo['City'],
-        state:prCourse.courseInfo['State'],
-        country:'US',
-        type:'hourly',
-        element:$('#btnSCWeather')
-        
-  })
-  
-  }
-*/  
 }
 
 async function initDistance() {
@@ -296,11 +255,11 @@ function setScoreIfPlayed() {
 
   }
   
-  document.getElementById("divScore").scrollTop -= 12;
-  document.getElementById("divPutts").scrollTop -= 12;  
-  document.getElementById("divPnlty").scrollTop -= 12; 
-  document.getElementById("divDrive").scrollTop -= 12;  
-  document.getElementById("divSand").scrollTop  -= 12;  
+  // document.getElementById("divScore").scrollTop -= 12;
+  // document.getElementById("divPutts").scrollTop -= 12;  
+  // document.getElementById("divPnlty").scrollTop -= 12; 
+  // document.getElementById("divDrive").scrollTop -= 12;  
+  // document.getElementById("divSand").scrollTop  -= 12;  
   
 }
 
