@@ -226,6 +226,9 @@ function setScoreIfPlayed() {
   
   if (holeScore) {
 
+    console.log('holeScore')
+    console.log(holeScore)
+
     setScoreComp('Score', holeScore.score)
     setScoreComp('Putts', holeScore.putts)
     setScoreComp('Pnlty', holeScore.pnlty)
@@ -240,6 +243,9 @@ function setScoreIfPlayed() {
     $('.sandDesc') .not('.hid').addClass('selScored')
     
   } else {
+
+    console.log('not holeScore')
+    console.log(holeScore)
   
     $('.puttsDesc')[2].scrollIntoView();
     $('.pnltyDesc')[0].scrollIntoView();
