@@ -166,6 +166,9 @@ function btnChangeHoleHtml(e) {
 
 function loadHoleDetail(offset) {
 
+  console.log('loadHoleDetail', arguments)
+
+
   if (typeof offset === 'object') {
   
     var hole = offset.goto - 1
