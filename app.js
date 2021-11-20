@@ -55,7 +55,7 @@ jQuery(function ($) {
 
         CLIENT_ID : '764306262696-esbdj8daoee741d44fdhrh5fehjtjjm5.apps.googleusercontent.com',  // TODO: Update placeholder with desired client ID.
 
-        SCOPES : "",
+        SCOPES : "https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/drive.metadata.readonly",
 
         DISCOVERY_DOCS : ["https://sheets.googleapis.com/$discovery/rest?version=v4", 
                            "https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest",
@@ -64,7 +64,7 @@ jQuery(function ($) {
         /**
          *  On load, called to load the auth2 library and API client library.
          */
-         handleClientLoad: function() {
+        handleClientLoad: function() {
             gapi.load('client:auth2', this.initClient);
             console.log('initClient')
         },
