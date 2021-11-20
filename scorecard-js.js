@@ -152,10 +152,12 @@ async function initScorecardUpload(tee, gender) {
 
 function btnChangeHoleHtml(e) {
 
-  $("#divPutts").replaceWith(puttsOriginalState.clone(true));  
-  $("#divDrive").replaceWith(driveOriginalState.clone(true));  
-  $("#divPnlty").replaceWith(pnltyOriginalState.clone(true));  
-  $("#divSand").replaceWith(sandOriginalState.clone(true));  
+  console.log('btnChangeHoleHtml', arguments)
+
+  // $("#divPutts").replaceWith(puttsOriginalState.clone(true));  
+  // $("#divDrive").replaceWith(driveOriginalState.clone(true));  
+  // $("#divPnlty").replaceWith(pnltyOriginalState.clone(true));  
+  // $("#divSand").replaceWith(sandOriginalState.clone(true));  
 
   var offset = e.data.offset
   
