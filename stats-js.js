@@ -1250,7 +1250,7 @@ function graphRounds(rounds) {
       },
       {
         label: "Course Name",
-        yAxisID: 'hcpId',
+        yAxisID: 'scoreId',
         data: courseNameArr,
         type: 'line'
       }
