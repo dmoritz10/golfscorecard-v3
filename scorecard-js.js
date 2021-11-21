@@ -34,11 +34,6 @@ console.log('1')
   initScorecardUpload(tee, gender)
 
   loadHoleDetail(0)  
-
-  // var e = {}; e.data={};  e.data.offset = {}
-  // btnChangeHoleHtml(e)
-
-  console.log("done")
   
   if (canUseGeo) {var position = await initDistance()  }
   
@@ -53,6 +48,47 @@ console.log('1')
         
   })  
   
+/*
+console.log('2')
+
+console.log(position)
+  
+//  if (position) {
+  
+        var weatherUrl = prCourse.courseInfo['Uweather StationId'].toString().replace(/^(.*\/\/[^\/?#]*).*$/,"$1");
+        console.log(weatherUrl)
+        weatherUrl += '/hourly/' + courseCoords.lat + ',' + courseCoords.lng
+
+      console.log('hi dan')
+      console.log(weatherUrl)
+      console.log(prCourse)
+      
+    setWeatherHref({
+    
+        weatherUrl:weatherUrl,
+        city:prCourse.courseInfo['City'],
+        state:prCourse.courseInfo['State'],
+        country:'US',
+        type:'hourly',
+        element:$('#btnSCWeather')
+        
+  })
+
+  } else {
+   
+    setWeatherHref({
+      
+        weatherUrl:prCourse.courseInfo['Uweather StationId'],
+        city:prCourse.courseInfo['City'],
+        state:prCourse.courseInfo['State'],
+        country:'US',
+        type:'hourly',
+        element:$('#btnSCWeather')
+        
+  })
+  
+  }
+*/  
 }
 
 async function initDistance() {
@@ -152,8 +188,6 @@ async function initScorecardUpload(tee, gender) {
 
 function btnChangeHoleHtml(e) {
 
-  console.log('btnChangeHoleHtml', arguments)
-
   $("#divPutts").replaceWith(puttsOriginalState.clone(true));  
   $("#divDrive").replaceWith(driveOriginalState.clone(true));  
   $("#divPnlty").replaceWith(pnltyOriginalState.clone(true));  
@@ -167,9 +201,6 @@ function btnChangeHoleHtml(e) {
 
 
 function loadHoleDetail(offset) {
-
-  console.log('loadHoleDetail', arguments)
-
 
   if (typeof offset === 'object') {
   
@@ -231,9 +262,6 @@ function setScoreIfPlayed() {
   
   if (holeScore) {
 
-    console.log('holeScore')
-    console.log(holeScore)
-
     setScoreComp('Score', holeScore.score)
     setScoreComp('Putts', holeScore.putts)
     setScoreComp('Pnlty', holeScore.pnlty)
@@ -248,9 +276,6 @@ function setScoreIfPlayed() {
     $('.sandDesc') .not('.hid').addClass('selScored')
     
   } else {
-
-    console.log('not holeScore zaaazz')
-    console.log(holeScore)
   
     $('.puttsDesc')[2].scrollIntoView();
     $('.pnltyDesc')[0].scrollIntoView();
@@ -500,7 +525,6 @@ async function btnSaveScoreHtml() {
 //  await promiseRun('logRound', 'currScoreCard', JSON.stringify(prScore))
   
   var e = {}; e.data = {};e.data.offset = 1
-
   btnChangeHoleHtml(e)
   
   $("#Scorecard").animate({ opacity: 1.0,}, "slow");
