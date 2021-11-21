@@ -249,7 +249,7 @@ function setScoreIfPlayed() {
     
   } else {
 
-    console.log('not holeScore zzz')
+    console.log('not holeScore zaaazz')
     console.log(holeScore)
   
     $('.puttsDesc')[2].scrollIntoView();
