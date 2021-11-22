@@ -1,0 +1,151 @@
+
+
+
+ 
+
+<script>
+    
+    async function testAuth() {
+    
+    
+    
+      var signinStatus = await gapi.auth2.getAuthInstance().isSignedIn.get()
+    
+      if (!signinStatus) {
+      
+        await gapi.auth2.getAuthInstance().signIn();
+        var signinStatus = await gapi.auth2.getAuthInstance().isSignedIn.get()
+    
+      }
+      
+      return signinStatus
+    
+    }
+    
+    async function handleTestClick() {
+    
+//     toast(gapi.auth2.getAuthInstance().isSignedIn.get())
+    console.log('xxxxx')
+     console.log(gapi.auth2.getAuthInstance().isSignedIn.get())
+     await btnTestAPIStatusHtml()
+
+}    
+    
+    </script>
+    
+    
+    <script>
+      
+      canUseGeo = document.featurePolicy.allowsFeature("geolocation")
+    
+    </script>
+ 
+ <script>
+async function btnTestAPIStatusHtml() {
+  var arrShts = await openShts (
+    [
+    
+    {title: 'Options',      type: "all"}
+    ])
+    
+console.log(arrShts)
+
+}
+
+var openShts = async function (shts) {
+
+return new Promise(async resolve => {
+
+  shtRngs = []
+  
+  for (s in shts) {
+
+    var sheet = shts[s]
+
+    switch (sheet.type) {
+
+      case "headers":
+        shtRngs.push("'" + sheet.title + "'!1:1")
+        break;
+
+      case "all"  :        
+        shtRngs.push("'" + sheet.title + "'!A1:ZZ10000")
+        break;
+
+    }
+
+  }
+
+await checkAuth()
+
+gapi.client.sheets.spreadsheets.values.batchGet({spreadsheetId: spreadsheetId, ranges: shtRngs})
+  
+  .then(async function(response) {
+  
+      var allShts = response.result.valueRanges
+
+      var arr = []
+      
+      for (s in allShts) {
+      
+        var shtVals = allShts[s].values
+
+        var colHdrs = shtVals[0]
+        var vals = shtVals.slice(1)
+        var colCnt = vals[0] ? vals[0].length : 0
+        var rowCnt = vals ? vals.length : 0
+
+        var shtTitle = allShts[s].range.split('!')[0].replace(/'/g,"")
+        
+        arr[shtTitle] =  {
+            colHdrs:      shtVals[0],
+            vals:         shtVals.slice(1),
+            columnCount:  colCnt,
+            rowCount:     rowCnt
+        }
+        
+      }
+      
+      resolve(arr)
+    }, 
+  
+    function(response) {
+    
+      console.log('Error: ' + response.result.error.message);
+        
+    }
+  );
+})
+
+}
+
+
+async function checkAuth() {
+
+var minAuthRemaining = (new Date(gapi.auth2.getAuthInstance().currentUser.get().getAuthResponse().expires_at) - new Date()) / (1000*60)
+if (minAuthRemaining < 10) {
+  console.log('auth reload - ' + minAuthRemaining); 
+  await gapi.auth2.getAuthInstance().currentUser.get().reloadAuthResponse()
+} else {
+  console.log('auth ok - ' + minAuthRemaining);
+}
+}
+
+ </script>
+    
+    
+    <div>hi</div>
+
+        
+<div>dan</div>
+
+    
+<div>moritz</div>
+
+
+
+<div>iframe</div>
+    
+
+    
+
