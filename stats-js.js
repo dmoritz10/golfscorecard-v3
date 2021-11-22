@@ -472,6 +472,7 @@ function chartCourseAdjustedScore (title, rounds, myStatsRng, endRow)   {
       '', 
       '<small>&nbsp;', 
       '<small>&nbsp;', 
+      '<small>&nbsp;', 
       '<small>&nbsp;'
       ],    
      
@@ -1238,6 +1239,12 @@ function graphRounds(rounds) {
         order: 1
       },
       {
+        label: "Course Name",
+        yAxisID: 'scoreId',
+        data: courseNameArr,
+        type: 'line'
+      },
+      {
         label: null,
         yAxisID: 'hcpId',
         data: hcpLineOfBestFit,
@@ -1245,12 +1252,6 @@ function graphRounds(rounds) {
         borderWidth: .4,
         pointRadius: 0,
         backgroundColor: 'red',
-        type: 'line'
-      },
-      {
-        label: "Course Name",
-        yAxisID: 'scoreId',
-        data: courseNameArr,
         type: 'line'
       }
       ]

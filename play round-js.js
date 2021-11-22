@@ -66,7 +66,7 @@ function checkForIncompleteRound () {
         
         recoverScorecard()
         
-          if (canUseGeo) startGeoLoc()
+        if (canUseGeo) startGeoLoc()
         
         resolve(true)
         

@@ -2,13 +2,14 @@
 
 function btnAuthHtml(event) {
 
-    handleAuthClick();
+    // handleAuthClick();
+    gapi.auth2.getAuthInstance().signIn();
     
 }
     
 function btnSignoutHtml(event) {
-
-    handleSignoutClick();
+  gapi.auth2.getAuthInstance().signOut();
+    // signin.handleSignoutClick();
     gotoTab('Auth')
 }
       
@@ -123,8 +124,6 @@ console.log(dec.decode(decrypted))
       ["encrypt", "decrypt"]
     ).then((key) => {
       const encryptButton = document.getElementById("btnEncrypt");
-
-console.log(encryptButton)
 
       encryptButton.addEventListener("click", () => {
         encryptMessage(key);

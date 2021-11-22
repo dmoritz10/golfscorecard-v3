@@ -1,307 +1,53 @@
 
-// Global variables
-
-  var scriptVersion = "Version 193 on Mar 17, 12:05 PM"
-
-  var spreadsheetId
-
-  var arrShts = []
-  var suSht = null
-  var arrOptions
-  var optionsIdx
-
-  var courseInfo
-  var teePlayed
-
-  var prCourse = { }
-  var prScore = { }
-  var prClubs
-  var clubsThisHole = []
-
-  var canUseGeo = true
-  var geoWatchId
-  var prLat
-  var prLng
-  var courseCoords = { }
-  var nearByUweatherStations = null
-
-  var geolocationOptions = {
-    enableHighAccuracy: true,
-    timeout: 5000,
-    maximumAge: 0
-};
-
-  // var currUser = {}
-
-  var timerStart
-
-  var puttsOriginalState
-  var driveOriginalState
-  var pnltyOriginalState
-  var sandOriginalState
-
-  var weatherUrlMask = 'https://www.wunderground.com/*type*/*country*/*state*/*city*/*stationId*'
-
-
-  $(async function () {
-
- 
-    //  $('body').bootstrapMaterialDesign();
-
-    //  parent.document.getElementById('userHtmlFrame').style.overflowY = "hidden";
-    //  $("body").css("height", "100hv")
-    //  $("body").css("overflow", "hidden")
-
-    console.log('doc ready start')
-
-    $('.score a').on('shown.bs.tab', function (event) {
-
-      var selId = $(event.target)[0].parentElement.parentElement.id
-
-      $('#' + selId).find("*").removeClass("sel");
-      $(event.target).addClass('sel')
-
-    });
-
-    $('.score').on('shown.bs.tab', function(event){
-  
-    var selId = $(event.target)[0].parentElement.parentElement.parentElement.id
-    $('#' + selId).find(".vis").addClass("hid");
-
-    var event =  $(event.target).children().eq(0);
-    event.removeClass('hid')
-
-  });
-
-
-
-  var tabs = $( "#main-panel" ).tabs();
-
-  // Auth tab
-
-  $('#btnAuth')            .button().click(btnAuthHtml);
-  $('#btnSignout')           .button().click(btnSignoutHtml);
-
-
-  // Home tab
-
-
-  // Play Round tab
-  $('#btnPlayRound')            .button().click(btnPlayRoundHtml);
-  $('#btnStartRound')           .button().click(btnStartRoundHtml);
-  $( "#hpSelectCourse")         .change({useDefaultTee:true},  loadCourseInfo);
-  $( "#hpSelectTees")           .change({useDefaultTee:false}, loadCourseInfo);
-  $("#hpTargetHandicap")        .change({useDefaultTee:false}, loadCourseInfo);
-
-
-  $("#hpTargetHandicap")
-  .TouchSpin({
-    min: 0,
-  max: 50,
-  step: 0.1,
-  decimals: 1,
-  boostat: 5,
-  maxboostedstep: 10,
-  verticalbuttons: true
-    });
-
-
-
-  // Scorecard tab
-  $('#btnPrevHole')            .button().click({offset: -1}, btnChangeHoleHtml);
-  $('#btnNextHole')            .button().click({offset: +1}, btnChangeHoleHtml);
-  $('#btnCurrHole')            .button().click({offset: 0},  btnChangeHoleHtml);
-  $('#btnSaveScore')           .button().click(btnSaveScoreHtml);
-  $('#btnEndRound')            .button().click(btnEndRoundHtml);
-  $('#btnCancelRound')         .button().click(btnCancelRoundHtml);
-  $('#btnPauseRound')          .button().click(btnPauseRoundHtml);
-  $('#btnGolfers')             .button().click(btnGolfersHtml);
-  
-  $('#btnUweatherComp')             .button().click(btnUweatherCompHtml);
-
-  $('#btnTestAPIStatus')       .button().click(btnTestAPIStatusHtml);
-  $('#btnTestGASStatus')       .button().click(btnTestGASStatusHtml);
-
-
-
-  //  $('#btnChangeTee')           .button().click(btnChangeTeeHtml);
-
-  $('#btnRoundStats')          .button().click(btnRoundStatsHtml);
-  $('#btnClearScore')          .button().click(btnClearScoreHtml);
-  $('#prDistance')             .click({pinLocn: 'center'}, btnShowLocationHtml);
-  $('#prDistanceFront')        .click({pinLocn: 'front'}, btnShowLocationHtml);
-  $('#prDistanceBack')         .click({pinLocn: 'back'}, btnShowLocationHtml);
-  $('#prTrackDistance')        .click(btnTrackDistanceHtml);
-  $('#btnTrackClub')           .click(btnTrackClubHtml);
-  //  $('#btnTrackClub')           .click(btnShowLocationHtml);
-
-
-  // Round Stats tab
-  $('#btnRSScorecard')         .button().click(btnRSScorecard);
-
-  $('[data-toggle="popover"]').popover({
-
-    html: true,
-  sanitize: false,
-  container: 'body',
-  template: '<div class="popover" role="tooltip"><div class="arrow"></div>' +
-    '<h4 class="popover-header"></h4>' +
-    '<h5 class="popover-body"></h5>' +
-    '</div>'
-  });
-
-  // Show Rounds tab
-  //  $('#btnShowRounds')           .click(getRounds);
-  $('#btnShowRounds')           .click(btnShowRoundsHtml);
-  $('#btnSRSelect')            .click(btnSRSelectHtml);
-  $('#btnSRReset')            .click(btnSRResetHtml);
-  
-  $('#srSelectDropDown').on('show.bs.dropdown', function () {
-    btnSRMoreVertHtml()
-  })
-
-  // Show Handicap
-  $('#btnShowHandicap')         .click(btnShowHandicapHtml);
-  $('#btnHCPSelect')            .click(btnHCPSelectHtml);
-  $('#btnHCPReset')            .click(btnHCPResetHtml);
-  $('#hcpSelectDropDown').on('show.bs.dropdown', function () {
-    btnHCPMoreVertHtml()
-  })
-
-  // Show Clubs
-  $('#btnShowClubs')          .click(btnShowClubsHtml);
-  // $('#btnShowClubs')          .click(courseSummary);
-  $('#btnSubmitClub')         .click(btnSubmitClubHtml);
-  $('#btnDeleteClub')         .click(btnDeleteClubHtml);
-  $('#btnAddClub')            .click(btnAddClubHtml);
-  $('#clbmLaunch')            .change({p: 'launch'},   adjustClubParmsHtml);
-  $('#clbmSpeed')             .change({p: 'speed'},    adjustClubParmsHtml);
-  $('#clbmDistance')          .change({p: 'distance'}, adjustClubParmsHtml);
-
-
-
-  // Show Stats
-  $('#btnShowStats')          .click(btnShowStatsHtml);
-  $('#btnStatSelect')         .click(btnStatSelectHtml);
-  $('#btnStatReset')            .click(btnStatResetHtml);
-  $('#statSelectDropDown').on('show.bs.dropdown', function () {
-    btnStatsMoreVertHtml()
-  })
-
-  // Show Teetimes
-  $('#btnTeetimes')          .click(btnTeetimesHtml);
-  $('#btnAddTeetime')        .click(btnAddTeetimeHtml);
-  $('#btnSubmitTeetime')     .click(btnSubmitTeetimeHtml);
-  $('#btnDeleteTeetime')     .click(btnDeleteTeetimeHtml);
-  // $('#btnEnterTeeTime')      .button().click(btnEnterTeeTimeHtml);
-  // $('#ttmGolfers')           .change(ttmGolfersChangeHtml);
-  $('#ttmSelectCourse')      .change(ttmSelectCourseChangeHtml);
-
-
-
-  puttsOriginalState = $("#divPutts").clone(true);
-  driveOriginalState = $("#divDrive").clone(true);
-  pnltyOriginalState = $("#divPnlty").clone(true);
-  sandOriginalState  = $("#divSand").clone(true);
-
-  $('body').on('click', function (e) {
-    $('[data-toggle="popover"]').each(function () {
-      if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
-        $(this).popover('hide');
-      }
-    });
-  });
-
-
-  // Courses
-  $('#btnShowCourses')         .click(btnShowCoursesHtml);
-  $('#btnSCSelect')            .click(btnSCSelectHtml);
-  //  $('#btnSCMoreVert')          .click(btnSCMoreVertHtml);
-  $('#btnHPHoleDetail')         .button().click(btnHPHoleDetailHtml);
-  $('#btnSCMFetchSxs')         .click(btnSCMFetchSxsHtml);
-  $('#btnSCMSubmitCourse')         .click(btnSCMSubmitCourseHtml);
-  $('#btnAddCourse')            .click(btnAddCourseHtml);
-
-  
-
-
-  $('#scSelectDropDown').on('show.bs.dropdown', function () {
-    btnSCMoreVertHtml()
-  })
-
-  // $('#scmCourseRating')           .change(scmCourseRatingHtml);
-
-
-  
-
-  // Golfers
-  $('#btnShowGolfers')          .click(btnShowGolfersHtml);
-  $('#btnSubmitGolfer')         .click(btnSubmitGolferHtml);
-  $('#btnDeleteGolfer')         .click(btnDeleteGolferHtml);
-  $('#btnAddGolfer')            .click(btnAddGolferHtml);
-
-  // All tabs
-  $('.divfullscreen').click(function(){
-    document.documentElement.requestFullscreen();
-  });
-
-  var whiteList = $.fn.tooltip.Constructor.Default.whiteList
-
-  whiteList.table = []
-  whiteList.td = []
-  whiteList.th = []
-  whiteList.thead = []
-  whiteList.tr = []
-  whiteList.tbody = []
-  whiteList.button = []
-
-  setupFormValidation()
-
-  setupSumFunctions()
-
-  $("#myToast").on("show.bs.toast", function() {
-    $(this).removeClass("d-none");
-        })
-
-  $("#myToast").on("hidden.bs.toast", function() {
-    $(this).addClass("d-none");
-        })
-
-  //  dupIds()
-
-  Date.prototype.toLocaleISOString = function() {
-  const zOffsetMs = this.getTimezoneOffset() * 60 * 1000;
-  const localTimeMs = this - zOffsetMs;
-  const date = new Date(localTimeMs);
-  const utcOffsetHr = this.getTimezoneOffset() / 60;
-  const utcOffsetSign = utcOffsetHr <= 0 ? '+' : '-';
-  const utcOffsetString = utcOffsetSign + (utcOffsetHr.toString.length == 1 ? `0${utcOffsetHr}` : `${utcOffsetHr}`) + ':00';
-  return date.toISOString().replace('Z', utcOffsetString);
-  };
-
- 
-  console.log('doc ready complete')
-
-})
-
-
 
   function dupIds () {
-  var ids = { };
-  var found = false;
-  $('[id]').each(function(key,val) {
+    var ids = { };
+    var found = false;
+    $('[id]').each(function(key,val) {
 
 
-  if (this.id && ids[this.id]) {
-    found = true;
-  console.warn('Duplicate ID #'+this.id);
-    }
-  ids[this.id] =+ 1;
-  });
-  if (!found) console.log('No duplicate IDs found');
+    if (this.id && ids[this.id]) {
+      found = true;
+      console.warn('Duplicate ID #'+this.id);
+      }
+    ids[this.id] =+ 1;
+    });
+    if (!found) console.log('No duplicate IDs found');
 }
 
+async function getSSId(currUser) {
 
+  console.log(currUser)
+
+
+  var q = "name = 'Dan Golf - " + currUser.emailName +
+      "' AND " + "mimeType='application/vnd.google-apps.spreadsheet'" +
+      " AND " + "trashed = false"
+
+  console.log(q)
+
+  var ssId = await gapi.client.drive.files.list({
+      q: q,
+      fields: 'nextPageToken, files(id, name, ownedByMe)',
+      spaces: 'drive'
+  }).then(function (response) {
+
+      var files = response.result.files
+
+      // files = files.filter(item => item.ownedByMe);    // remove files that are shared with me
+      if (!files || files.length == 0)
+          return { fileId: null, msg: "'Dan Golf' not found" }
+
+      if (files.length > 1)
+          return { fileId: null, msg: "'Dan Golf' not unique" }
+
+      return { fileId: files[0].id, msg: 'ok' }
+
+  })
+
+  return ssId
+
+}
 
 async function initialUI() {
   timerStart = new Date()
@@ -324,7 +70,7 @@ async function initialUI() {
 
 };
 
-  var confirm = function (msg) {
+var confirm = function (msg) {
 
   return new Promise(resolve => {
 
@@ -605,7 +351,7 @@ function toast(e) {
    return
     */
 
-    $("#toast-content").html(e)
+  $("#toast-content").html(e)
 
   $("#myToast").toast({delay: 5000});
 
@@ -636,22 +382,10 @@ function promiseRun (func) {
 
 function gotoTab(tabName) {
 
-//   console.log('yp dan')
-// console.log($( "div.tab-content > div.active" )  )
-
   var $tab = $('[href="#' + tabName + '"]')
-
-  // var top = $tab.scrollTop()
-
-  // console.log('hi dan')
-
-  // console.log(top)
 
   $tab.trigger('click');
 
-  // $tab.scrollTop(top)
-
-   
 }
 
 
@@ -753,7 +487,7 @@ function setupSumFunctions() {
 
 }
 
-  function setWeatherHref(e) {
+function setWeatherHref(e) {
 
   const isURL = (str) => {
   var pattern = new RegExp(/(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/gi); // fragment locator
@@ -992,9 +726,6 @@ async function updateOption(key, val) {
 
       }
     );
-
-  console.log('gapiResult')
-  console.log(gapiResult)
 
 }
 
