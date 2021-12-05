@@ -283,6 +283,8 @@ function setScoreComp(scoreComp, compVal) {
   $(selector).find(find).each(function(index, element) {
 
     if ($(this)[0].textContent == compVal) {
+
+      console.log($(this))
       
       var selector = '.' + scoreComp.toLowerCase() + 'Desc'
       
