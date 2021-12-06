@@ -41,12 +41,12 @@
 
 <script>
 
-  // try { canUseGeo = document.featurePolicy.allowsFeature("geolocation") }
-  // catch(err) {console.log(err)}
-  // try { canUseGeo = document.featurePolicy.allowedFeatures("geolocation") }
-  // catch(err) {console.log(err)}
-  // try { canUseGeo = document.permissionsPolicy.allowsFeature("geolocation") }
-  // catch(err) {console.log(err)}
+  try { canUseGeo = document.featurePolicy.allowsFeature("geolocation") }
+  catch(err) {console.log(err)}
+  try { canUseGeo = document.featurePolicy.allowedFeatures("geolocation") }
+  catch(err) {console.log(err)}
+  try { canUseGeo = document.permissionsPolicy.allowsFeature("geolocation") }
+  catch(err) {console.log(err)}
     
   $(async function () {
 
