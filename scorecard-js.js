@@ -277,6 +277,8 @@ function setScoreIfPlayed() {
 
 function setScoreComp(scoreComp, compVal) {
 
+  console.log('setCoreComp', arguments)
+
   var selector = '#sel' + scoreComp.charAt(0).toUpperCase() + scoreComp.slice(1) + '.nav li'
   var find = "." + scoreComp.toLowerCase() + "Nbr"
   
