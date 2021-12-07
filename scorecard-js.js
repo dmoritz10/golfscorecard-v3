@@ -391,10 +391,10 @@ function setScoreDescriptions(par) {
     if (scoreDescriptors[index] == 'par') {
 
       console.log('.scoreDesc', index, $(this))
-      console.log('hi dan')
+      console.log(element)
     
       $(this).click()
-      $(this).scrollIntoView();
+      this.scrollIntoView();
   
     }
   });       
