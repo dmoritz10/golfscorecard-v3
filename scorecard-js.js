@@ -384,12 +384,14 @@ function setScoreDescriptions(par) {
   $('.scoreDesc').each(function(index, element) {
 
     console.log($(this))
+
     
     $(this).html(scoreDescriptors[index])
 
     if (scoreDescriptors[index] == 'par') {
 
       console.log('.scoreDesc', index, $(this))
+      console.log('hi dan')
     
       $(this).click()
       $(this).scrollIntoView();
