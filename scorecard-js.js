@@ -27,13 +27,13 @@ async function btnStartRoundHtml() {
   $('#prDistanceBack').html('-')
   $('#prDistanceFront').html('-')  
   
-  gotoTab('Scorecard')  
 
 console.log('1')
 
   initScorecardUpload(tee, gender)
 
   loadHoleDetail(0)  
+  gotoTab('Scorecard')  
 
   // var e = {}; e.data={};  e.data.offset = {}
   // btnChangeHoleHtml(e)
