@@ -392,7 +392,7 @@ function setScoreDescriptions(par) {
       console.log('.scoreDesc', index, $(this))
     
       $(this).click()
-      element.scrollIntoView();
+      $(this).scrollIntoView();
   
     }
   });       
