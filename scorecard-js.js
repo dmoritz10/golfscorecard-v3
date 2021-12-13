@@ -666,6 +666,7 @@ function gotoHole() {
   var e = {}; e.data={};  e.data.offset = {}
   e.data.offset.goto = this.textContent
 
+  console.log('gotoHole')
   console.log(this.textContent)
     
   btnChangeHoleHtml(e)
