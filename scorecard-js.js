@@ -31,12 +31,15 @@ async function btnStartRoundHtml() {
 console.log('1')
 
   initScorecardUpload(tee, gender)
+  
+  var e = {}; e.data={};  e.data.offset = {}; e.data.offset.goto = 1
+  btnChangeHoleHtml(e)
 
   loadHoleDetail(0)  
   gotoTab('Scorecard')  
 
-  // var e = {}; e.data={};  e.data.offset = {}
-  // btnChangeHoleHtml(e)
+  var e = {}; e.data={};  e.data.offset = {}
+  btnChangeHoleHtml(e)
 
   console.log("done")
   
