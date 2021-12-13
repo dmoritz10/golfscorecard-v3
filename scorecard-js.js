@@ -180,11 +180,11 @@ function loadHoleDetail(offset) {
     var hole = prScore.currHole + offset - 1
   
     if (hole > prCourse.holeDetail.length - 1) {
-      hole = 0
+      var hole = 0
     }
   
     if (hole < 0) {
-      hole = prCourse.holeDetail.length - 1
+      var hole = prCourse.holeDetail.length - 1
     }
   
   } else {
