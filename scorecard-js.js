@@ -255,10 +255,16 @@ function setScoreIfPlayed() {
     console.log('not holeScore zaaazz')
     console.log(holeScore)
   
-    $('.puttsDesc')[2].scrollIntoView();
-    $('.pnltyDesc')[0].scrollIntoView();
-    $('.driveDesc')[1].scrollIntoView();
-    $('.sandDesc')[0].scrollIntoView();
+    // $('.puttsDesc')[2].scrollIntoView();
+    // $('.pnltyDesc')[0].scrollIntoView();
+    // $('.driveDesc')[1].scrollIntoView();
+    // $('.sandDesc')[0].scrollIntoView();
+
+    // setScoreComp('Score', holeScore.score)
+    setScoreComp('Putts', 2)
+    setScoreComp('Pnlty', 0)
+    setScoreComp('Drive', 'Str8')
+    setScoreComp('Sand',  'No')
 
     $('.scoreComp').removeClass('hdrScored');
     $('.puttsDesc').not('.hid').removeClass('selScored')
