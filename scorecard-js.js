@@ -192,6 +192,9 @@ function loadHoleDetail(offset) {
     var hole = prScore.lastHoleScored ? prScore.lastHoleScored : 0
 
   }
+
+console.log('offset', offset)  
+console.log('hole', hole)
   
   prScore.currHole = hole + 1
   
