@@ -32,8 +32,8 @@ console.log('1')
 
   initScorecardUpload(tee, gender)
   
-  var e = {}; e.data={};  e.data.offset = {}; e.data.offset.goto = 1
-  btnChangeHoleHtml(e)
+  // var e = {}; e.data={};  e.data.offset = {}; e.data.offset.goto = 1
+  // btnChangeHoleHtml(e)
 
   loadHoleDetail(0)  
   gotoTab('Scorecard')  
