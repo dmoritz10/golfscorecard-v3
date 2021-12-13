@@ -154,10 +154,10 @@ function btnChangeHoleHtml(e) {
 
   console.log('btnChangeHoleHtml', arguments)
 
-  $("#divPutts").replaceWith(puttsOriginalState.clone(true));  
-  $("#divDrive").replaceWith(driveOriginalState.clone(true));  
-  $("#divPnlty").replaceWith(pnltyOriginalState.clone(true));  
-  $("#divSand").replaceWith(sandOriginalState.clone(true));  
+  // $("#divPutts").replaceWith(puttsOriginalState.clone(true));  
+  // $("#divDrive").replaceWith(driveOriginalState.clone(true));  
+  // $("#divPnlty").replaceWith(pnltyOriginalState.clone(true));  
+  // $("#divSand").replaceWith(sandOriginalState.clone(true));  
 
   var offset = e.data.offset
   
