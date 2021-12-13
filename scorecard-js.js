@@ -38,9 +38,6 @@ console.log('1')
   loadHoleDetail(0)  
   gotoTab('Scorecard')  
 
-  var e = {}; e.data={};  e.data.offset = {}
-  btnChangeHoleHtml(e)
-
   console.log("done")
   
   if (canUseGeo) {var position = await initDistance()  }
