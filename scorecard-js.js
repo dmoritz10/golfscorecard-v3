@@ -245,10 +245,10 @@ function setScoreIfPlayed() {
     
     $('.scoreComp').addClass('hdrScored');
 
-    $('.puttsDesc').not('.hid').addClass('selScored')
-    $('.pnltyDesc').not('.hid').addClass('selScored')
-    $('.driveDesc').not('.hid').addClass('selScored')
-    $('.sandDesc') .not('.hid').addClass('selScored')
+    // $('.puttsDesc').not('.hid').addClass('selScored')
+    // $('.pnltyDesc').not('.hid').addClass('selScored')
+    // $('.driveDesc').not('.hid').addClass('selScored')
+    // $('.sandDesc') .not('.hid').addClass('selScored')
     
   } else {
 
@@ -260,26 +260,26 @@ function setScoreIfPlayed() {
     // $('.driveDesc')[1].scrollIntoView();
     // $('.sandDesc')[0].scrollIntoView();
 
-    // setScoreComp('Score', holeScore.score)
+     // setScoreComp('Score', holeScore.score)
     setScoreComp('Putts', 2)
     setScoreComp('Pnlty', 0)
     setScoreComp('Drive', 'Str8')
     setScoreComp('Sand',  'No')
 
     $('.scoreComp').removeClass('hdrScored');
-    $('.puttsDesc').not('.hid').removeClass('selScored')
-    $('.pnltyDesc').not('.hid').removeClass('selScored')
-    $('.driveDesc').not('.hid').removeClass('selScored')
-    $('.sandDesc') .not('.hid').removeClass('selScored')
+    // $('.puttsDesc').not('.hid').removeClass('selScored')
+    // $('.pnltyDesc').not('.hid').removeClass('selScored')
+    // $('.driveDesc').not('.hid').removeClass('selScored')
+    // $('.sandDesc') .not('.hid').removeClass('selScored')
  
 
   }
-  
-  document.getElementById("divScore").scrollTop -= 12;
-  document.getElementById("divPutts").scrollTop -= 12;  
-  document.getElementById("divPnlty").scrollTop -= 12; 
-  document.getElementById("divDrive").scrollTop -= 12;  
-  document.getElementById("divSand").scrollTop  -= 12;  
+ console.log('new') 
+  // document.getElementById("divScore").scrollTop -= 12;
+  // document.getElementById("divPutts").scrollTop -= 12;  
+  // document.getElementById("divPnlty").scrollTop -= 12; 
+  // document.getElementById("divDrive").scrollTop -= 12;  
+  // document.getElementById("divSand").scrollTop  -= 12;  
   
 }
 
