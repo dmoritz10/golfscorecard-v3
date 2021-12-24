@@ -32,11 +32,11 @@ async function btnStartRoundHtml() {
 console.log('1')
 
   initScorecardUpload(tee, gender)
+  
+  // var e = {}; e.data={};  e.data.offset = {}; e.data.offset.goto = 1
+  // btnChangeHoleHtml(e)
 
   loadHoleDetail(0)  
-
-  // var e = {}; e.data={};  e.data.offset = {}
-  // btnChangeHoleHtml(e)
 
   console.log("done")
   
@@ -154,10 +154,10 @@ function btnChangeHoleHtml(e) {
 
   console.log('btnChangeHoleHtml', arguments)
 
-  $("#divPutts").replaceWith(puttsOriginalState.clone(true));  
-  $("#divDrive").replaceWith(driveOriginalState.clone(true));  
-  $("#divPnlty").replaceWith(pnltyOriginalState.clone(true));  
-  $("#divSand").replaceWith(sandOriginalState.clone(true));  
+  // $("#divPutts").replaceWith(puttsOriginalState.clone(true));  
+  // $("#divDrive").replaceWith(driveOriginalState.clone(true));  
+  // $("#divPnlty").replaceWith(pnltyOriginalState.clone(true));  
+  // $("#divSand").replaceWith(sandOriginalState.clone(true));  
 
   var offset = e.data.offset
   
@@ -180,11 +180,11 @@ function loadHoleDetail(offset) {
     var hole = prScore.currHole + offset - 1
   
     if (hole > prCourse.holeDetail.length - 1) {
-      hole = 0
+      var hole = 0
     }
   
     if (hole < 0) {
-      hole = prCourse.holeDetail.length - 1
+      var hole = prCourse.holeDetail.length - 1
     }
   
   } else {
@@ -192,6 +192,9 @@ function loadHoleDetail(offset) {
     var hole = prScore.lastHoleScored ? prScore.lastHoleScored : 0
 
   }
+
+console.log('offset', offset)  
+console.log('hole', hole)
   
   prScore.currHole = hole + 1
   
@@ -242,35 +245,41 @@ function setScoreIfPlayed() {
     
     $('.scoreComp').addClass('hdrScored');
 
-    $('.puttsDesc').not('.hid').addClass('selScored')
-    $('.pnltyDesc').not('.hid').addClass('selScored')
-    $('.driveDesc').not('.hid').addClass('selScored')
-    $('.sandDesc') .not('.hid').addClass('selScored')
+    // $('.puttsDesc').not('.hid').addClass('selScored')
+    // $('.pnltyDesc').not('.hid').addClass('selScored')
+    // $('.driveDesc').not('.hid').addClass('selScored')
+    // $('.sandDesc') .not('.hid').addClass('selScored')
     
   } else {
 
     console.log('not holeScore zaaazz')
     console.log(holeScore)
   
-    $('.puttsDesc')[2].scrollIntoView();
-    $('.pnltyDesc')[0].scrollIntoView();
-    $('.driveDesc')[1].scrollIntoView();
-    $('.sandDesc')[0].scrollIntoView();
+    // $('.puttsDesc')[2].scrollIntoView();
+    // $('.pnltyDesc')[0].scrollIntoView();
+    // $('.driveDesc')[1].scrollIntoView();
+    // $('.sandDesc')[0].scrollIntoView();
+
+     // setScoreComp('Score', holeScore.score)
+    setScoreComp('Putts', 2)
+    setScoreComp('Pnlty', 0)
+    setScoreComp('Drive', 'Str8')
+    setScoreComp('Sand',  'No')
 
     $('.scoreComp').removeClass('hdrScored');
-    $('.puttsDesc').not('.hid').removeClass('selScored')
-    $('.pnltyDesc').not('.hid').removeClass('selScored')
-    $('.driveDesc').not('.hid').removeClass('selScored')
-    $('.sandDesc') .not('.hid').removeClass('selScored')
+    // $('.puttsDesc').not('.hid').removeClass('selScored')
+    // $('.pnltyDesc').not('.hid').removeClass('selScored')
+    // $('.driveDesc').not('.hid').removeClass('selScored')
+    // $('.sandDesc') .not('.hid').removeClass('selScored')
  
 
   }
-  
-  document.getElementById("divScore").scrollTop -= 12;
-  document.getElementById("divPutts").scrollTop -= 12;  
-  document.getElementById("divPnlty").scrollTop -= 12; 
-  document.getElementById("divDrive").scrollTop -= 12;  
-  document.getElementById("divSand").scrollTop  -= 12;  
+ console.log('new') 
+  // document.getElementById("divScore").scrollTop -= 12;
+  // document.getElementById("divPutts").scrollTop -= 12;  
+  // document.getElementById("divPnlty").scrollTop -= 12; 
+  // document.getElementById("divDrive").scrollTop -= 12;  
+  // document.getElementById("divSand").scrollTop  -= 12;  
   
 }
 
@@ -657,6 +666,9 @@ function gotoHole() {
   
   var e = {}; e.data={};  e.data.offset = {}
   e.data.offset.goto = this.textContent
+
+  console.log('gotoHole')
+  console.log(this.textContent)
     
   btnChangeHoleHtml(e)
   
