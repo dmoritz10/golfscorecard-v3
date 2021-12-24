@@ -27,13 +27,13 @@ async function btnStartRoundHtml() {
   $('#prDistanceBack').html('-')
   $('#prDistanceFront').html('-')  
   
+  gotoTab('Scorecard')  
 
 console.log('1')
 
   initScorecardUpload(tee, gender)
 
   loadHoleDetail(0)  
-  gotoTab('Scorecard')  
 
   // var e = {}; e.data={};  e.data.offset = {}
   // btnChangeHoleHtml(e)
@@ -277,8 +277,6 @@ function setScoreIfPlayed() {
 
 function setScoreComp(scoreComp, compVal) {
 
-  console.log('setCoreComp', arguments)
-
   var selector = '#sel' + scoreComp.charAt(0).toUpperCase() + scoreComp.slice(1) + '.nav li'
   var find = "." + scoreComp.toLowerCase() + "Nbr"
   
@@ -382,19 +380,13 @@ function setScoreDescriptions(par) {
   }
       
   $('.scoreDesc').each(function(index, element) {
-
-    console.log($(this))
-
     
     $(this).html(scoreDescriptors[index])
 
     if (scoreDescriptors[index] == 'par') {
-
-      console.log('.scoreDesc', index, $(this))
-      console.log(element)
     
       $(this).click()
-      this.scrollIntoView();
+      element.scrollIntoView();
   
     }
   });       
