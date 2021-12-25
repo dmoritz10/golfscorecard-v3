@@ -1,6 +1,9 @@
 
 async function btnPlayRoundHtml() {
 
+  console.log('puttsOriginalState-from playround')
+  console.log(puttsOriginalState)
+
   if (arrShts['My Courses'].vals.length == 0)  {
     bootbox.alert('You must set up a Course before playing a round')
     return null
