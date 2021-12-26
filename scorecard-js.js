@@ -244,14 +244,14 @@ function setScoreIfPlayed() {
     
     $('.scoreComp').addClass('hdrScored');
 
-    $('.puttsDesc').not('.hid').addClass('selScored')
-    $('.pnltyDesc').not('.hid').addClass('selScored')
-    $('.driveDesc').not('.hid').addClass('selScored')
-    $('.sandDesc') .not('.hid').addClass('selScored')
+    // $('.puttsDesc').not('.hid').addClass('selScored')
+    // $('.pnltyDesc').not('.hid').addClass('selScored')
+    // $('.driveDesc').not('.hid').addClass('selScored')
+    // $('.sandDesc') .not('.hid').addClass('selScored')
     
   } else {
 
-    console.log('not holeScore zaaazz')
+    console.log('not holeScore xxxxxx')
     console.log(holeScore)
   
     $('.puttsDesc')[2].scrollIntoView();
@@ -260,10 +260,10 @@ function setScoreIfPlayed() {
     $('.sandDesc')[0].scrollIntoView();
 
     $('.scoreComp').removeClass('hdrScored');
-    $('.puttsDesc').not('.hid').removeClass('selScored')
-    $('.pnltyDesc').not('.hid').removeClass('selScored')
-    $('.driveDesc').not('.hid').removeClass('selScored')
-    $('.sandDesc') .not('.hid').removeClass('selScored')
+    // $('.puttsDesc').not('.hid').removeClass('selScored')
+    // $('.pnltyDesc').not('.hid').removeClass('selScored')
+    // $('.driveDesc').not('.hid').removeClass('selScored')
+    // $('.sandDesc') .not('.hid').removeClass('selScored')
  
 
   }
