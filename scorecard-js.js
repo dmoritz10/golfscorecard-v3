@@ -154,9 +154,9 @@ async function initScorecardUpload(tee, gender) {
 
 function btnChangeHoleHtml(e) {
 
-  console.log('btnChangeHoleHtml', arguments)
+  console.log('btnChangeHoleHtmlno putts', arguments)
 
-  $("#divPutts").replaceWith(puttsOriginalState.clone(true));  
+  // $("#divPutts").replaceWith(puttsOriginalState.clone(true));  
   $("#divDrive").replaceWith(driveOriginalState.clone(true));  
   $("#divPnlty").replaceWith(pnltyOriginalState.clone(true));  
   $("#divSand").replaceWith(sandOriginalState.clone(true));  
