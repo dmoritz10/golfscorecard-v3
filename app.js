@@ -342,12 +342,12 @@ jQuery(function ($) {
             $('#ttmSelectCourse')      .change(ttmSelectCourseChangeHtml);
           
                    
-            puttsOriginalState = $("#divPutts").clone(true);
-            driveOriginalState = $("#divDrive").clone(true);
-            pnltyOriginalState = $("#divPnlty").clone(true);
-            sandOriginalState  = $("#divSand").clone(true);
+            // puttsOriginalState = $("#divPutts").clone(true);
+            // driveOriginalState = $("#divDrive").clone(true);
+            // pnltyOriginalState = $("#divPnlty").clone(true);
+            // sandOriginalState  = $("#divSand").clone(true);
 
-            console.log('puttsOriginalState')
+            console.log('puttsOriginalStatexxx')
             console.log(puttsOriginalState)
           
             $('body').on('click', function (e) {
