@@ -27,7 +27,7 @@ async function btnStartRoundHtml() {
   $('#prDistanceBack').html('-')
   $('#prDistanceFront').html('-')  
   
-  gotoTab('Scorecard')  
+ 
 
 console.log('1')
 
@@ -38,7 +38,9 @@ console.log('1')
   var e = {}; e.data={};  e.data.offset = 0
   btnChangeHoleHtml(e)
 
-  console.log("done")
+  gotoTab('Scorecard') 
+
+  console.log("done xx")
   
   if (canUseGeo) {var position = await initDistance()  }
   
