@@ -341,11 +341,15 @@ jQuery(function ($) {
             $('#btnDeleteTeetime')     .click(btnDeleteTeetimeHtml);
             $('#ttmSelectCourse')      .change(ttmSelectCourseChangeHtml);
           
+            $('.puttsDesc')[2].scrollIntoView();
+    $('.pnltyDesc')[0].scrollIntoView();
+    $('.driveDesc')[1].scrollIntoView();
+    $('.sandDesc')[0].scrollIntoView();
                    
-            // puttsOriginalState = $("#divPutts").clone(true);
-            // driveOriginalState = $("#divDrive").clone(true);
-            // pnltyOriginalState = $("#divPnlty").clone(true);
-            // sandOriginalState  = $("#divSand").clone(true);
+            puttsOriginalState = $("#divPutts").clone(true);
+            driveOriginalState = $("#divDrive").clone(true);
+            pnltyOriginalState = $("#divPnlty").clone(true);
+            sandOriginalState  = $("#divSand").clone(true);
 
             console.log('puttsOriginalStatexxx')
             console.log(puttsOriginalState)
