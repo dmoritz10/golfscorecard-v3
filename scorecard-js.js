@@ -33,10 +33,10 @@ console.log('1')
 
   initScorecardUpload(tee, gender)
 
-  loadHoleDetail(0)  
+  // loadHoleDetail(0)  
 
-  // var e = {}; e.data={};  e.data.offset = {}
-  // btnChangeHoleHtml(e)
+  var e = {}; e.data={};  e.data.offset = 0
+  btnChangeHoleHtml(e)
 
   console.log("done")
   
