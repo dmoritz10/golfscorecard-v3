@@ -156,7 +156,7 @@ function btnChangeHoleHtml(e) {
 
   console.log('btnChangeHoleHtmlno putts', arguments)
 
-  // $("#divPutts").replaceWith(puttsOriginalState.clone(true));  
+  $("#divPutts").replaceWith(puttsOriginalState.clone(true));  
   $("#divDrive").replaceWith(driveOriginalState.clone(true));  
   $("#divPnlty").replaceWith(pnltyOriginalState.clone(true));  
   $("#divSand").replaceWith(sandOriginalState.clone(true));  
@@ -251,7 +251,7 @@ function setScoreIfPlayed() {
     
   } else {
 
-    console.log('not holeScore xxxxxx')
+    console.log('not holeScore dddddd')
     console.log(holeScore)
   
     $('.puttsDesc')[2].scrollIntoView();
