@@ -160,7 +160,7 @@ body::-webkit-scrollbar { /* WebKit */
 }
 
 .golfer-icon {
-  background: url('../images/icons/golfer-icon bg trns.png');
+  background: url('images/icons/golfer-icon bg trns.png');
   background-color: transparent;
   height: 24px;
   width: 24px;
