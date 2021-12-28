@@ -479,13 +479,23 @@ function assembleHoleDetail(sxsCourseInfo, tee, gender) {
 
 async function btnSaveScoreHtml() {
 
-console.log('btnSaveScoreHtml - 1')
+  console.log('btnSaveScoreHtml - 2')
 
+  $('#btnSaveScore').prop('disabled', true)
+  
+  $("#Scorecard").css('opacity', '0.2');  
+
+              
+//  await promiseRun('logRound', 'currScoreCard', JSON.stringify(prScore))
+  
   var e = {}; e.data = {};e.data.offset = 1
 
   btnChangeHoleHtml(e)
   
-  
+  $("#Scorecard").animate({ opacity: 1.0,}, "slow");
+
+  $('#btnSaveScore').prop('disabled', false) 
+   
 }
 
 async function btnClearScoreHtml() {
