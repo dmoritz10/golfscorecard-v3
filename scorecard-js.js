@@ -259,6 +259,8 @@ function setScoreIfPlayed() {
     $('.driveDesc')[1].scrollIntoView();
     $('.sandDesc')[0].scrollIntoView();
 
+    console.log('others scrollIntoView')
+
     $('.scoreComp').removeClass('hdrScored');
     // $('.puttsDesc').not('.hid').removeClass('selScored')
     // $('.pnltyDesc').not('.hid').removeClass('selScored')
@@ -386,6 +388,8 @@ function setScoreDescriptions(par) {
     $(this).html(scoreDescriptors[index])
 
     if (scoreDescriptors[index] == 'par') {
+
+      console.log('scrollIntoView')
     
       $(this).click()
       element.scrollIntoView();
