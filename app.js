@@ -137,8 +137,8 @@ jQuery(function ($) {
                 
                 await initialUI();
 
-                // goHome()
-                gotoTab('Scorecard')
+                goHome()
+                // gotoTab('Scorecard')
 
             } else {
 
