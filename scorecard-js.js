@@ -29,14 +29,16 @@ async function btnStartRoundHtml() {
   
   gotoTab('Scorecard') 
 
-console.log('1 vvv')
+console.log('1 zzzzz')
 
   initScorecardUpload(tee, gender)
 
   // loadHoleDetail(0)  
 
-  var e = {}; e.data={};  e.data.offset = 0
-  btnChangeHoleHtml(e)
+  // var e = {}; e.data={};  e.data.offset = 0
+  // btnChangeHoleHtml(e)
+
+  btnSaveScoreHtml()
 
   console.log("done xx")
   
