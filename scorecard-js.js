@@ -27,7 +27,7 @@ async function btnStartRoundHtml() {
   $('#prDistanceBack').html('-')
   $('#prDistanceFront').html('-')  
   
- 
+  gotoTab('Scorecard') 
 
 console.log('1')
 
@@ -39,7 +39,7 @@ console.log('1')
   btnChangeHoleHtml(e)
   btnChangeHoleHtml(e)
 
-  gotoTab('Scorecard') 
+
 
   console.log("done xx")
   
