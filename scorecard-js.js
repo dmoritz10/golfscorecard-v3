@@ -486,7 +486,7 @@ async function btnSaveScoreHtml() {
 //  await updateOption('currScoreCard', JSON.stringify(prScore))                  
 //  await promiseRun('logRound', 'currScoreCard', JSON.stringify(prScore))
   
-  var e = {}; e.data = {};e.data.offset = 1
+  var e = {}; e.data = {};e.data.offset = 0
 
   btnChangeHoleHtml(e)
   
