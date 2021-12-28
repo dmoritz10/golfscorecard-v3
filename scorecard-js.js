@@ -37,9 +37,6 @@ console.log('1 vvv')
 
   var e = {}; e.data={};  e.data.offset = 0
   btnChangeHoleHtml(e)
-  btnChangeHoleHtml(e)
-
-
 
   console.log("done xx")
   
