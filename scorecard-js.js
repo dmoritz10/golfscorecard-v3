@@ -479,10 +479,10 @@ function assembleHoleDetail(sxsCourseInfo, tee, gender) {
 
 async function btnSaveScoreHtml() {
 
-  console.log('btnSaveScoreHtml  - 6')
+  console.log('btnSaveScoreHtml  - 7')
 
 
- await new Promise(resolve => setTimeout(resolve, 2000));
+ await new Promise(resolve => setTimeout(resolve, 500));
 //  await updateOption('currScoreCard', JSON.stringify(prScore))                  
 //  await promiseRun('logRound', 'currScoreCard', JSON.stringify(prScore))
   
