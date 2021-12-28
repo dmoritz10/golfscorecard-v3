@@ -34,7 +34,7 @@ console.log('1 zzzzz')
   await initScorecardUpload(tee, gender)
 
   // loadHoleDetail(0)  
-  // await new Promise(resolve => setTimeout(resolve, 500));
+  await new Promise(resolve => setTimeout(resolve, 500));
   var e = {}; e.data={};  e.data.offset = 0
   btnChangeHoleHtml(e)
 
