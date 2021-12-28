@@ -29,16 +29,16 @@ async function btnStartRoundHtml() {
   
   gotoTab('Scorecard') 
 
-console.log('1 zzzzz')
+console.log('1 asdasd')
 
   initScorecardUpload(tee, gender)
 
   // loadHoleDetail(0)  
+  await new Promise(resolve => setTimeout(resolve, 500));
+  var e = {}; e.data={};  e.data.offset = 0
+  btnChangeHoleHtml(e)
 
-  // var e = {}; e.data={};  e.data.offset = 0
-  // btnChangeHoleHtml(e)
-
-  btnSaveScoreHtml()
+ 
 
   console.log("done xx")
   
@@ -479,18 +479,42 @@ function assembleHoleDetail(sxsCourseInfo, tee, gender) {
 
 async function btnSaveScoreHtml() {
 
-  console.log('btnSaveScoreHtml  - 7')
+  $('#btnSaveScore').prop('disabled', true)
+  
+  $("#Scorecard").css('opacity', '0.2');  
 
+  if (!prScore.scores[prScore.currHole - 1]) prScore.lastHoleScored = prScore.currHole
 
- await new Promise(resolve => setTimeout(resolve, 500));
-//  await updateOption('currScoreCard', JSON.stringify(prScore))                  
+  prScore.scores[prScore.currHole - 1] = {
+
+    holeNbr: prScore.currHole,
+    holeFinishTime: new Date(),
+    score: $("#selScore.nav li a.active").find('.scoreNbr')[0].textContent,
+    putts: $("#selPutts.nav li a.active").find('.puttsNbr')[0].textContent,
+    pnlty: $("#selPnlty.nav li a.active").find('.pnltyNbr')[0].textContent,
+    sand:  $("#selSand.nav li a.active") .find('.sandNbr' )[0].textContent,
+    drive: $("#selDrive.nav li a.active").find('.driveNbr')[0].textContent,
+ 
+    par:   $('#prPar').html (),
+    hcp:   $('#prHCP').html (),
+    clubs: clubsThisHole
+
+  }
+  
+  clubsThisHole = []
+  prScore.status = 'in process'
+
+  await updateOption('currScoreCard', JSON.stringify(prScore))                  
 //  await promiseRun('logRound', 'currScoreCard', JSON.stringify(prScore))
   
-  var e = {}; e.data = {};e.data.offset = 0
+  var e = {}; e.data = {};e.data.offset = 1
 
   btnChangeHoleHtml(e)
   
-  
+  $("#Scorecard").animate({ opacity: 1.0,}, "slow");
+
+  $('#btnSaveScore').prop('disabled', false) 
+
 }
 
 async function btnClearScoreHtml() {
