@@ -29,7 +29,7 @@ async function btnStartRoundHtml() {
   
 
 
-console.log('1 zzzzz')
+console.log('1 sssss')
 
   await initScorecardUpload(tee, gender)
 
