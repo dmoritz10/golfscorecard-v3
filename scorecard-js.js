@@ -27,18 +27,18 @@ async function btnStartRoundHtml() {
   $('#prDistanceBack').html('-')
   $('#prDistanceFront').html('-')  
   
-  gotoTab('Scorecard') 
+
 
 console.log('1 asdasd')
 
-  initScorecardUpload(tee, gender)
+  await initScorecardUpload(tee, gender)
 
   // loadHoleDetail(0)  
-  await new Promise(resolve => setTimeout(resolve, 500));
+  // await new Promise(resolve => setTimeout(resolve, 500));
   var e = {}; e.data={};  e.data.offset = 0
   btnChangeHoleHtml(e)
 
- 
+  gotoTab('Scorecard') 
 
   console.log("done xx")
   
