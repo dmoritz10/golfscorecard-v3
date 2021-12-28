@@ -29,7 +29,7 @@ async function btnStartRoundHtml() {
   
   gotoTab('Scorecard') 
 
-console.log('1')
+console.log('1 vvv')
 
   initScorecardUpload(tee, gender)
 
