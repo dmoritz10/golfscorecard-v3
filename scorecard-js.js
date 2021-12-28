@@ -37,6 +37,7 @@ console.log('1')
 
   var e = {}; e.data={};  e.data.offset = 0
   btnChangeHoleHtml(e)
+  btnChangeHoleHtml(e)
 
   gotoTab('Scorecard') 
 
@@ -251,7 +252,7 @@ function setScoreIfPlayed() {
     
   } else {
 
-    console.log('not holeScore eeeeee')
+    console.log('not holeScore ffffff')
     console.log(holeScore)
   
     $('.puttsDesc')[2].scrollIntoView();
