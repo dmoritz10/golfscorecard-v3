@@ -1,9 +1,6 @@
 
 async function btnPlayRoundHtml() {
 
-  console.log('puttsOriginalState-from playround')
-  console.log(puttsOriginalState)
-
   if (arrShts['My Courses'].vals.length == 0)  {
     bootbox.alert('You must set up a Course before playing a round')
     return null
@@ -114,13 +111,13 @@ function recoverScorecard() {
         element:$('#btnSCWeather')
         
   })
+    
+  gotoTab('Scorecard')
 
   var e = {}; e.data={};  e.data.offset = {}
   e.data.offset.goto = prScore.lastHoleScored > 17 ? 1 : prScore.lastHoleScored + 1
   btnChangeHoleHtml(e)
 
-  gotoTab('Scorecard')
-  
 }
 
 async function loadCourseInfo(e) {

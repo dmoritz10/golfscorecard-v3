@@ -138,7 +138,6 @@ jQuery(function ($) {
                 await initialUI();
 
                 goHome()
-                // gotoTab('Scorecard')
 
             } else {
 
@@ -175,8 +174,8 @@ jQuery(function ($) {
 
 		init: function () {
 
-			this.serviceWorker()
-                console.log('serviceworker')
+			// this.serviceWorker()
+            //     console.log('serviceworker')
 
 			signin.handleClientLoad()
                 console.log('signin')
@@ -348,7 +347,7 @@ jQuery(function ($) {
             pnltyOriginalState = $("#divPnlty").clone(true);
             sandOriginalState  = $("#divSand").clone(true);
 
-            console.log('puttsOriginalStatexxx')
+            console.log('puttsOriginalState')
             console.log(puttsOriginalState)
           
             $('body').on('click', function (e) {
