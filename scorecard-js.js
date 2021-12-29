@@ -29,7 +29,7 @@ async function btnStartRoundHtml() {
   
 
 
-console.log('1 btnSaveScoreHtml await')
+console.log('1 btnSaveScoreHtml await no cache')
 
   await initScorecardUpload(tee, gender)
 
