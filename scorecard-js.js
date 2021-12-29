@@ -29,12 +29,12 @@ async function btnStartRoundHtml() {
   
 
 
-console.log('1 250 ms')
+console.log('1 500 ms')
 
   await initScorecardUpload(tee, gender)
 
   // loadHoleDetail(0)  
-  await new Promise(resolve => setTimeout(resolve, 250));
+  await new Promise(resolve => setTimeout(resolve, 500));
   var e = {}; e.data={};  e.data.offset = 0
   btnChangeHoleHtml(e)
 
