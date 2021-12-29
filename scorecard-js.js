@@ -29,7 +29,7 @@ async function btnStartRoundHtml() {
   
 
 
-console.log('1 3000 ms')
+console.log('1 3000 ms no await')
 
   initScorecardUpload(tee, gender)
 
