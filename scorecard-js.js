@@ -196,10 +196,6 @@ function loadHoleDetail(offset) {
   }
   
   prScore.currHole = hole + 1
-
-  console.log('hole', hole)
-  console.log(offset)
-  console(prScore.targetScoreHcpAdj)
   
   var tsAdj = ' ' + '-'.repeat(Math.abs(prScore.targetScoreHcpAdj[hole][2]))
   
