@@ -27,9 +27,9 @@ async function btnStartRoundHtml() {
   $('#prDistanceBack').html('-')
   $('#prDistanceFront').html('-')  
   
+  gotoTab('Scorecard')  
 
-
-console.log('1 aaa')
+console.log('1 bbb')
 
   initScorecardUpload(tee, gender)
 
@@ -39,7 +39,7 @@ console.log('1 aaa')
   btnChangeHoleHtml(e)
 
   // btnSaveScoreHtml()
-  gotoTab('Scorecard')  
+
   console.log("done")
   
   if (canUseGeo) {var position = await initDistance()  }
