@@ -33,7 +33,7 @@ console.log('1 aaa')
 
   initScorecardUpload(tee, gender)
 
-  // loadHoleDetail(0)  
+  loadHoleDetail(0)  
 
   var e = {}; e.data={};  e.data.offset = {}
   btnChangeHoleHtml(e)
@@ -196,6 +196,9 @@ function loadHoleDetail(offset) {
   }
   
   prScore.currHole = hole + 1
+
+  console.log('hole', hole)
+  console(prScore.targetScoreHcpAdj)
   
   var tsAdj = ' ' + '-'.repeat(Math.abs(prScore.targetScoreHcpAdj[hole][2]))
   
