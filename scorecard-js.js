@@ -27,22 +27,18 @@ async function btnStartRoundHtml() {
   $('#prDistanceBack').html('-')
   $('#prDistanceFront').html('-')  
   
+  gotoTab('Scorecard')  
 
+console.log('1')
 
-console.log('1 btnSaveScoreHtml ssss')
+  initScorecardUpload(tee, gender)
 
-  await initScorecardUpload(tee, gender)
+  loadHoleDetail(0)  
 
-  // loadHoleDetail(0)  
-  // await new Promise(resolve => setTimeout(resolve, 3000));
-  var e = {}; e.data={};  e.data.offset = 0
-  btnChangeHoleHtml(e)
+  // var e = {}; e.data={};  e.data.offset = {}
+  // btnChangeHoleHtml(e)
 
-  btnSaveScoreHtml()
-
-  gotoTab('Scorecard') 
-
-  console.log("done xx")
+  console.log("done")
   
   if (canUseGeo) {var position = await initDistance()  }
   
@@ -156,7 +152,7 @@ async function initScorecardUpload(tee, gender) {
 
 function btnChangeHoleHtml(e) {
 
-  console.log('btnChangeHoleHtmlno putts', arguments)
+  console.log('btnChangeHoleHtml', arguments)
 
   $("#divPutts").replaceWith(puttsOriginalState.clone(true));  
   $("#divDrive").replaceWith(driveOriginalState.clone(true));  
@@ -246,14 +242,14 @@ function setScoreIfPlayed() {
     
     $('.scoreComp').addClass('hdrScored');
 
-    // $('.puttsDesc').not('.hid').addClass('selScored')
-    // $('.pnltyDesc').not('.hid').addClass('selScored')
-    // $('.driveDesc').not('.hid').addClass('selScored')
-    // $('.sandDesc') .not('.hid').addClass('selScored')
+    $('.puttsDesc').not('.hid').addClass('selScored')
+    $('.pnltyDesc').not('.hid').addClass('selScored')
+    $('.driveDesc').not('.hid').addClass('selScored')
+    $('.sandDesc') .not('.hid').addClass('selScored')
     
   } else {
 
-    console.log('not holeScore ffffff')
+    console.log('not holeScore zaaazz')
     console.log(holeScore)
   
     $('.puttsDesc')[2].scrollIntoView();
@@ -261,13 +257,11 @@ function setScoreIfPlayed() {
     $('.driveDesc')[1].scrollIntoView();
     $('.sandDesc')[0].scrollIntoView();
 
-    console.log('others scrollIntoView')
-
     $('.scoreComp').removeClass('hdrScored');
-    // $('.puttsDesc').not('.hid').removeClass('selScored')
-    // $('.pnltyDesc').not('.hid').removeClass('selScored')
-    // $('.driveDesc').not('.hid').removeClass('selScored')
-    // $('.sandDesc') .not('.hid').removeClass('selScored')
+    $('.puttsDesc').not('.hid').removeClass('selScored')
+    $('.pnltyDesc').not('.hid').removeClass('selScored')
+    $('.driveDesc').not('.hid').removeClass('selScored')
+    $('.sandDesc') .not('.hid').removeClass('selScored')
  
 
   }
@@ -390,8 +384,6 @@ function setScoreDescriptions(par) {
     $(this).html(scoreDescriptors[index])
 
     if (scoreDescriptors[index] == 'par') {
-
-      console.log('scrollIntoView')
     
       $(this).click()
       element.scrollIntoView();
@@ -481,6 +473,55 @@ function assembleHoleDetail(sxsCourseInfo, tee, gender) {
 
 async function btnSaveScoreHtml() {
 
+  $('#btnSaveScore').prop('disabled', true)
+  
+  $("#Scorecard").css('opacity', '0.2');  
+
+  if (!prScore.scores[prScore.currHole - 1]) prScore.lastHoleScored = prScore.currHole
+
+  prScore.scores[prScore.currHole - 1] = {
+
+    holeNbr: prScore.currHole,
+    holeFinishTime: new Date(),
+    score: $("#selScore.nav li a.active").find('.scoreNbr')[0].textContent,
+    putts: $("#selPutts.nav li a.active").find('.puttsNbr')[0].textContent,
+    pnlty: $("#selPnlty.nav li a.active").find('.pnltyNbr')[0].textContent,
+    sand:  $("#selSand.nav li a.active") .find('.sandNbr' )[0].textContent,
+    drive: $("#selDrive.nav li a.active").find('.driveNbr')[0].textContent,
+ 
+    par:   $('#prPar').html (),
+    hcp:   $('#prHCP').html (),
+    clubs: clubsThisHole
+
+  }
+  
+  clubsThisHole = []
+  prScore.status = 'in process'
+
+  await updateOption('currScoreCard', JSON.stringify(prScore))                  
+//  await promiseRun('logRound', 'currScoreCard', JSON.stringify(prScore))
+  
+  var e = {}; e.data = {};e.data.offset = 1
+
+  btnChangeHoleHtml(e)
+  
+  $("#Scorecard").animate({ opacity: 1.0,}, "slow");
+
+  $('#btnSaveScore').prop('disabled', false) 
+   
+}
+
+async function btnClearScoreHtml() {
+
+  if (!prScore.scores[prScore.currHole - 1]) return
+
+  $('#btnClearScore').prop('disabled', true)
+  
+//  if (prScore.scores[prScore.currHole - 1]) prScore.scores.splice(prScore.currHole - 1, 1);
+  if (prScore.scores[prScore.currHole - 1]) prScore.scores[prScore.currHole - 1] = null;
+
+
+  clubsThisHole = []
   
  await updateOption('currScoreCard', JSON.stringify(prScore))                  
 //   await promiseRun('logRound', 'currScoreCard', JSON.stringify(prScore))
@@ -488,7 +529,7 @@ async function btnSaveScoreHtml() {
   var e = {}; e.data = {};e.data.offset = 0
   btnChangeHoleHtml(e)
 
- 
+  $('#btnClearScore').prop('disabled', false) 
    
 }
 
