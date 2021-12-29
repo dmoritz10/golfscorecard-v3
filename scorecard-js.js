@@ -29,14 +29,16 @@ async function btnStartRoundHtml() {
   
 
 
-console.log('1 3000 ms no await')
+console.log('1 btnSaveScoreHtml')
 
   initScorecardUpload(tee, gender)
 
   // loadHoleDetail(0)  
-  await new Promise(resolve => setTimeout(resolve, 3000));
-  var e = {}; e.data={};  e.data.offset = 0
-  btnChangeHoleHtml(e)
+  // await new Promise(resolve => setTimeout(resolve, 3000));
+  // var e = {}; e.data={};  e.data.offset = 0
+  // btnChangeHoleHtml(e)
+
+  btnSaveScoreHtml()
 
   gotoTab('Scorecard') 
 
