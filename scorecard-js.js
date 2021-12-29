@@ -29,12 +29,12 @@ async function btnStartRoundHtml() {
   
   gotoTab('Scorecard')  
 
-console.log('1 ccc')
+console.log('1 100 ms')
 
   initScorecardUpload(tee, gender)
 
   // loadHoleDetail(0)  
-  await new Promise(resolve => setTimeout(resolve, 500));
+  await new Promise(resolve => setTimeout(resolve, 100));
   var e = {}; e.data={};  e.data.offset = 0
   btnChangeHoleHtml(e)
 
