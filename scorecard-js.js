@@ -34,7 +34,8 @@ console.log('1 150 ms')
   initScorecardUpload(tee, gender)
 
   // loadHoleDetail(0)  
-  await new Promise(resolve => setTimeout(resolve, 150));
+  await new Promise(resolve => setTimeout(resolve, 150)); // Didn't have to do this before 2021-11-16_04-08-09_PM initialization release
+
   var e = {}; e.data={};  e.data.offset = 0
   btnChangeHoleHtml(e)
 
