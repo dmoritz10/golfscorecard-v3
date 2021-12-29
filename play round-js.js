@@ -86,7 +86,7 @@ function checkForIncompleteRound () {
   });
 }
 
-function recoverScorecard() {
+async function recoverScorecard() {
 
   $('#prCourseName').html(shortCourseName(prCourse.courseInfo['Course Name']))
   
