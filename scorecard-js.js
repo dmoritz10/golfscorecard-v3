@@ -33,10 +33,12 @@ console.log('1')
 
   initScorecardUpload(tee, gender)
 
-  loadHoleDetail(0)  
+  // loadHoleDetail(0)  
 
-  // var e = {}; e.data={};  e.data.offset = {}
-  // btnChangeHoleHtml(e)
+  var e = {}; e.data={};  e.data.offset = {}
+  btnChangeHoleHtml(e)
+
+  btnSaveScoreHtml()
 
   console.log("done")
   
@@ -473,30 +475,7 @@ function assembleHoleDetail(sxsCourseInfo, tee, gender) {
 
 async function btnSaveScoreHtml() {
 
-  $('#btnSaveScore').prop('disabled', true)
   
-  $("#Scorecard").css('opacity', '0.2');  
-
-  if (!prScore.scores[prScore.currHole - 1]) prScore.lastHoleScored = prScore.currHole
-
-  prScore.scores[prScore.currHole - 1] = {
-
-    holeNbr: prScore.currHole,
-    holeFinishTime: new Date(),
-    score: $("#selScore.nav li a.active").find('.scoreNbr')[0].textContent,
-    putts: $("#selPutts.nav li a.active").find('.puttsNbr')[0].textContent,
-    pnlty: $("#selPnlty.nav li a.active").find('.pnltyNbr')[0].textContent,
-    sand:  $("#selSand.nav li a.active") .find('.sandNbr' )[0].textContent,
-    drive: $("#selDrive.nav li a.active").find('.driveNbr')[0].textContent,
- 
-    par:   $('#prPar').html (),
-    hcp:   $('#prHCP').html (),
-    clubs: clubsThisHole
-
-  }
-  
-  clubsThisHole = []
-  prScore.status = 'in process'
 
   await updateOption('currScoreCard', JSON.stringify(prScore))                  
 //  await promiseRun('logRound', 'currScoreCard', JSON.stringify(prScore))
@@ -505,10 +484,7 @@ async function btnSaveScoreHtml() {
 
   btnChangeHoleHtml(e)
   
-  $("#Scorecard").animate({ opacity: 1.0,}, "slow");
-
-  $('#btnSaveScore').prop('disabled', false) 
-   
+  
 }
 
 async function btnClearScoreHtml() {
