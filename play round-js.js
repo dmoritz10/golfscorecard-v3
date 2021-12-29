@@ -114,6 +114,8 @@ function recoverScorecard() {
     
   gotoTab('Scorecard')
 
+  await new Promise(resolve => setTimeout(resolve, 150));s
+
   var e = {}; e.data={};  e.data.offset = {}
   e.data.offset.goto = prScore.lastHoleScored > 17 ? 1 : prScore.lastHoleScored + 1
   btnChangeHoleHtml(e)
