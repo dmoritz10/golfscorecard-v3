@@ -29,9 +29,9 @@ async function btnStartRoundHtml() {
   
 
 
-console.log('1 btnSaveScoreHtml')
+console.log('1 btnSaveScoreHtml await')
 
-  initScorecardUpload(tee, gender)
+  await initScorecardUpload(tee, gender)
 
   // loadHoleDetail(0)  
   // await new Promise(resolve => setTimeout(resolve, 3000));
