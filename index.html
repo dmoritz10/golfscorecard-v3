@@ -99,7 +99,7 @@
 
     await $.getMultiScripts(script_arr).done(function() {
       console.log('load app.js')
-      $.getScript( 'app.js' )      // load and run index-js.js last
+      $.getScript( 'app.js' )      // load and run app.js last
       console.log('all scripts loaded')
     });
 
