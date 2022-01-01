@@ -62,7 +62,7 @@ async function btnShowStatsHtml() {
   rptArr.push(rtn)    
 
     var title = "Lifetime"
-    var rtn = lifeTime                  (title, rounds)        
+    var rtn = lifeTime                  (title, rounds, endRow)        
   rptArr.push(rtn.rounds)
 
   var title = null 
@@ -930,8 +930,9 @@ function driveAccuracy            (title, rounds, myStatsRng, endRow)     {
 }   
 
 
-function lifeTime               (title, rounds) {
+function lifeTime               (title, rounds, endRow) {
 
+  var rounds = extrRndData	(rounds, null, endRow.row3)
 
   var nbrRounds = rounds.length
 
