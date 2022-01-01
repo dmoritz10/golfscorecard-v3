@@ -336,10 +336,13 @@ function getEndRow(datePlayedArr, dataRngDescr) {
 console.log('oneYrAgo', oneYrAgo)
 console.log(now.getFullYear() - 1)
 
-      for (var i = 1; i < nbrRnds; i++) {if (new Date(datePlayedArr[i]) >= oneYrAgo) {
+      for (var i = 1; i < nbrRnds; i++) {
+        console.log(new Date(datePlayedArr[i]))
+        if (new Date(datePlayedArr[i]) >= oneYrAgo) {
 
         console.log(new Date(datePlayedArr[i]))
         console.log(new Date(datePlayedArr[i]) >= oneYrAgo)
+        console.log(i)
         return i}
       }
       break;
