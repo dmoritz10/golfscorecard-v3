@@ -930,10 +930,12 @@ function driveAccuracy            (title, rounds, myStatsRng, endRow)     {
 }   
 
 
-function lifeTime               (title, rounds, endRow) {
+function lifeTime               (title, rnds, endRow) {
 
-  var rounds = extrRndData	(rounds, null, endRow.row3)
+console.log('lifeTime', endRow)
 
+  var rounds = extrRndData	(rnds, null, endRow.row3)
+console.log(rounds)
   var nbrRounds = rounds.length
 
   var nbrHoles = 0
