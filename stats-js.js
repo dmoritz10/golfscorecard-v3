@@ -332,21 +332,27 @@ function getEndRow(datePlayedArr, dataRngDescr) {
       var now = new Date();
       var oneYrAgo = new Date();
       oneYrAgo.setFullYear(now.getFullYear() - 1);
-
-console.log('oneYrAgo', oneYrAgo)
-console.log(now.getFullYear() - 1)
-
-      for (var i = 1; i < nbrRnds; i++) {
-        console.log(new Date(datePlayedArr[i]))
-        if (new Date(datePlayedArr[i]) >= oneYrAgo) {
-
-        console.log(new Date(datePlayedArr[i]))
-        console.log(new Date(datePlayedArr[i]) >= oneYrAgo)
-        console.log(i)
+      for (var i = 1; i < nbrRnds; i++) {if (new Date(datePlayedArr[i]) >= oneYrAgo) {
         return i}
       }
       break;
-    case "Past Month":
+    case "Past 2 Years":
+        var now = new Date();
+        var oneYrAgo = new Date();
+        oneYrAgo.setFullYear(now.getFullYear() - 2);
+        for (var i = 1; i < nbrRnds; i++) {if (new Date(datePlayedArr[i]) >= oneYrAgo) {
+          return i}
+        }
+        break;    
+        case "Past 5 Years":
+          var now = new Date();
+          var oneYrAgo = new Date();
+          oneYrAgo.setFullYear(now.getFullYear() - 5);
+          for (var i = 1; i < nbrRnds; i++) {if (new Date(datePlayedArr[i]) >= oneYrAgo) {
+            return i}
+          }
+          break;    
+      case "Past Month":
       var now = new Date();
       var oneMoAgo = new Date();
       oneMoAgo.setMonth(now.getMonth() - 1);
