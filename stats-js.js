@@ -332,19 +332,22 @@ function getEndRow(datePlayedArr, dataRngDescr) {
       var now = new Date();
       var oneYrAgo = new Date();
       oneYrAgo.setFullYear(now.getFullYear() - 1);
+
+console.log('oneYrAgo', oneYrAgo)
+
       for (var i = 1; i < nbrRnds; i++) {if (new Date(datePlayedArr[i]) >= oneYrAgo) {
         return i}
       }
-      return nbrRnds
       break;
     case "Past Month":
       var now = new Date();
       var oneMoAgo = new Date();
       oneMoAgo.setMonth(now.getMonth() - 1);
+      console.log('oneMoAgo', oneMoAgo)
       for (var i = 1; i < nbrRnds; i++) {if (new Date(datePlayedArr[i]) >= oneMoAgo) {
         return i}
       }
-      return nbrRnds
+
       break;
     case "All Time":
     case "Show All Rounds":
