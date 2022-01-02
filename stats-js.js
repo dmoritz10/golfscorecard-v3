@@ -974,6 +974,10 @@ function lifeTime               (title, rnds, endRow) {
     var difdt = Math.abs(frstDate - lastDate);
 
     var difdtInYrs = difdt / (1000*60*60*24*365)
+
+console.log(difdtInYrs)
+console.log(Math.floor(difdtInYrs))
+
     var years = Math.floor(difdtInYrs)
     var months = Math.floor((difdtInYrs - years) * 365 / 30)
     var days = Math.round((difdt - years * (1000*60*60*24*365) - months * (1000*60*60*24*30)) / (1000*60*60*24))
