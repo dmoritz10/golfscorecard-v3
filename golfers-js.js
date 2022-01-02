@@ -22,7 +22,7 @@
       var c = golfers[j].cell
 
       ele.find('#glfName')[0].innerHTML = golfers[j].name
-      ele.find('#glfNbr')[0].innerHTML = golfers[j].nbr
+      ele.find('#glfNbr')[0].innerHTML = golfers[j].nbr ? golfers[j].nbr : '&nbsp;'
       ele.find('#btnGlfCallCourse').prop('href', 'tel:' + golfers[j].cell )
       if (!!c) {ele.find('#btnGlfCallCourse').removeClass('d-none')} else {ele.find('#btnGlfCallCourse').addClass('d-none')}
 
