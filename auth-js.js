@@ -123,8 +123,8 @@ console.log(dec.decode(decrypted))
       true,
       ["encrypt", "decrypt"]
     ).then((key) => {
-      const encryptButton = document.getElementById("btnEncrypt");
 
+      const encryptButton = document.getElementById("btnEncrypt");
       encryptButton.addEventListener("click", () => {
         encryptMessage(key);
       });
@@ -133,6 +133,7 @@ console.log(dec.decode(decrypted))
       decryptButton.addEventListener("click", () => {
         decryptMessage(key);
       });
+      
     });
   
   })();
