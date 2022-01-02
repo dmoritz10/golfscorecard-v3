@@ -990,7 +990,6 @@ console.log('0')
     }
 
     var days = Math.round((difdt - years * (1000*60*60*24*365) - months * (1000*60*60*24*365/12)) / (1000*60*60*24))
-    
     if (days < 0) days = 0
   
   var totTime =  years + "Y " + months + "M " + days + "D"
