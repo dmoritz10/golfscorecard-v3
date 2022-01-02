@@ -356,7 +356,7 @@ function getEndRow(datePlayedArr, dataRngDescr) {
       var now = new Date();
       var oneMoAgo = new Date();
       oneMoAgo.setMonth(now.getMonth() - 1);
-      console.log('oneMoAgo', oneMoAgo)
+
       for (var i = 1; i < nbrRnds; i++) {if (new Date(datePlayedArr[i]) >= oneMoAgo) {
         return i}
       }
@@ -1315,8 +1315,6 @@ function graphRounds(rounds) {
             color: 'blue',
             callback: function(val,idx,arr) {
 
-            console.log(val)
-
             }
           }
         }]                   
@@ -1419,9 +1417,6 @@ function graphAvgScoreByPar(rounds) {
     var par3LineOfBestFit = calcLBF(par3Arr)
     var par4LineOfBestFit = calcLBF(par4Arr)
     var par5LineOfBestFit = calcLBF(par5Arr)
-
-    console.log(par3Arr)
-    console.log(par3LineOfBestFit)
 
   try {
     var parent = document.getElementById('aspChartContainer');
