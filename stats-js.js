@@ -985,7 +985,7 @@ console.log('++')
     var months = Math.floor((difdtInYrs - years) * 365 / 30)
 
     if (months ==12) {
-      years++
+      years++                 //  sometimes rounding causes this
       months = 0
     }
 
