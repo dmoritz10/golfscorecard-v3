@@ -12,7 +12,6 @@
     $("#glfContainer").empty()
     x.appendTo("#glfContainer");
 
-
     $("#nbrGolfers")[0].innerHTML = golfers.length
 
     for (var j = 0; j<golfers.length;j++) {
