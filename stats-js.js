@@ -977,8 +977,11 @@ function lifeTime               (title, rnds, endRow) {
 
 console.log(difdtInYrs)
 console.log(Math.floor(difdtInYrs))
+console.log('+1')
 
-    var years = Math.floor(difdtInYrs)
+    if (Math.round(difdtInYrs) - difdtInYrs )
+
+    var years = Math.floor(difdtInYrs) + 1
     var months = Math.floor((difdtInYrs - years) * 365 / 30)
     var days = Math.round((difdt - years * (1000*60*60*24*365) - months * (1000*60*60*24*30)) / (1000*60*60*24))
   var totTime =  years + "Y " + months + "M " + days + "D"
