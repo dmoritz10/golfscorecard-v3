@@ -948,10 +948,8 @@ function driveAccuracy            (title, rounds, myStatsRng, endRow)     {
 
 function lifeTime               (title, rnds, endRow) {
 
-console.log('lifeTime', endRow)
-
   var rounds = extrRndData	(rnds, null, endRow.row3)
-console.log(rounds)
+
   var nbrRounds = rounds.length
 
   var nbrHoles = 0
@@ -973,7 +971,7 @@ console.log(rounds)
 
     var lastDate = new Date(rounds[0]['startTime'])
     var frstDate = new Date(rounds[rounds.length-1]['endTime'])
-    var difdt = frstDate - lastDate;
+    var difdt = Math.abs(frstDate - lastDate);
 
     var difdtInYrs = difdt / (1000*60*60*24*365)
     var years = Math.floor(difdtInYrs)
