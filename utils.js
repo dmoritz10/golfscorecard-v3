@@ -45,7 +45,7 @@ async function getSSId(currUser) {
 
   })
 
-  return ssId
+  // return ssId
 
 }
 
