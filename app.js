@@ -174,8 +174,8 @@ jQuery(function ($) {
 
 		init: function () {
 
-			// this.serviceWorker()
-            //     console.log('serviceworker')
+			this.serviceWorker()
+                console.log('serviceworker')
 
 			signin.handleClientLoad()
                 console.log('signin')
