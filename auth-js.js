@@ -1,5 +1,4 @@
 
-
 function btnAuthHtml(event) {
 
     // handleAuthClick();
