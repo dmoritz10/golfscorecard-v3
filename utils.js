@@ -494,6 +494,9 @@ function setWeatherHref(e) {
   return pattern.test(str);
     }
 
+console.log(e.stationId)
+console.log(isURL(e.stationId))
+
   if (e.stationId && isURL(e.stationId)) {
   
     var weatherUrl = e.type !== 'weather' ? e.stationId.replace(/weather/g, e.type) : e.stationId
