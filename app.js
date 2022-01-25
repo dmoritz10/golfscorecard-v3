@@ -376,7 +376,8 @@ jQuery(function ($) {
                 $("#scContainer #scCourseName").filter(function() {
                   $(this).parent().parent().parent().toggle($(this).text().toLowerCase().indexOf(value) > -1)
                 });
-                
+
+                $("#scNbrCoursess")[0].innerHTML = $("#scContainer").length
             });
 
           
