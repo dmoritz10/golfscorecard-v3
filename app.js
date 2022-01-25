@@ -379,8 +379,13 @@ jQuery(function ($) {
 
                 console.log($(".scContainer"))
                 console.log($("#scContainer"))
+                console.log(document.getElementById('scContainer'))
+                console.log(document.getElementByClass('scContainer'))
+                console.log(document.getElementById('scContainer').length)
+                console.log(document.getElementByClass('scContainer').length)
 
                 $("#scNbrCoursess")[0].innerHTML = $(".scContainer").length
+
             });
 
           
