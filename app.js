@@ -377,7 +377,7 @@ jQuery(function ($) {
                   $(this).parent().parent().parent().toggle($(this).text().toLowerCase().indexOf(value) > -1)
                 });
 
-                $("#scNbrCoursess")[0].innerHTML = $("#scContainer").length
+                $("#scNbrCoursess")[0].innerHTML = $(".scContainer").length
             });
 
           
