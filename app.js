@@ -382,7 +382,7 @@ jQuery(function ($) {
                 console.log(document.getElementById('scContainer'))
                 console.log(document.getElementById('scContainer').length)
 
-                $("#scNbrCoursess")[0].innerHTML = $(".scContainer").length
+                $("#scNbrCoursess")[0].innerHTML = document.getElementById('scContainer').length
 
             });
 
