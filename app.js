@@ -369,6 +369,15 @@ jQuery(function ($) {
             $('#scSelectDropDown').on('show.bs.dropdown', function () {
                 btnSCMoreVertHtml()
             })
+
+            $("#shtSearchCourses").on("input", function() {
+                var value = $(this).val().toLowerCase();
+
+                $("#scContainer #scCourseName").filter(function() {
+                  $(this).parent().parent().parent().toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+              });
+
           
             // Golfers
             $('#btnShowGolfers')          .click(btnShowGolfersHtml);
