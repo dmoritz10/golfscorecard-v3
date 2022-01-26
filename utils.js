@@ -382,9 +382,15 @@ function promiseRun (func) {
 
 function gotoTab(tabName) {
 
-  var $tab = $('[href="#' + tabName + '"]')
+  // var $tab = $('[href="#' + tabName + '"]')
 
-  $tab.trigger('click');
+  // $tab.trigger('click');
+
+  var $tab = $('#' + tabName )
+
+  $( '.tab-content > div.active' ).removeClass( 'active show' );
+  
+  $tab.addClass( 'active show' );
 
 }
 
