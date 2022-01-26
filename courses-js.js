@@ -124,7 +124,7 @@ async function btnShowCoursesHtml() {
   }
 
   gotoTab('Courses')
-
+  
   var srchVal = $("#scSearchCourses").val()
 
   if (srchVal) {
@@ -141,10 +141,10 @@ async function btnShowCoursesHtml() {
 
   console.log($("#scContainer"))
   console.log($("#scContainer").children())
-  console.log($("#scContainer").children().find(":hidden"))
-  console.log($("#scContainer").children().find(":visible"))
-  console.log($("#scContainer").children().find(":hidden").length)
-  console.log($("#scContainer").children().find(":visible").length)
+  console.log($("#scContainer").children().not(":hidden"))
+  console.log($("#scContainer").children().not(":visible"))
+  console.log($("#scContainer").children().not(":hidden").length)
+  console.log($("#scContainer").children().not(":visible").length)
   
   var nbrCourses = $("#scContainer").children().not(":hidden").length
 
