@@ -137,10 +137,11 @@ async function btnShowCoursesHtml() {
    
   }
 
+  gotoTab('Courses')
+
   var nbrCourses = $("#scContainer").children().not(":hidden").length
 
   $("#scNbrCourses").text(nbrCourses)
-  gotoTab('Courses')
 }
 
 async function showCourseDetail(courseInfo) {
