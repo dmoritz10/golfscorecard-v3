@@ -139,7 +139,7 @@ async function btnShowCoursesHtml() {
   
   var nbrCourses = $("#scContainer").children().not(":hidden").length
 
-  $("#scNbrCoursess")[0].innerHTML = nbrCourses
+  $("#scNbrCourses").text(nbrCourses)
 
 }
 
