@@ -125,7 +125,7 @@ async function btnShowCoursesHtml() {
 
  
   
-  var srchVal = $("#scSearchCourses").val()
+  var srchVal = $("#scSearch").val()
 
   if (srchVal) {
 
@@ -137,7 +137,7 @@ async function btnShowCoursesHtml() {
    
   }
 
-  
+
   gotoTab('Courses')
 
   var nbrCourses = $("#scContainer").children().not(":hidden").length
