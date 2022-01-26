@@ -124,9 +124,10 @@ async function btnShowCoursesHtml() {
   }
 
   var srchVal = $("#scSearchCourses").val()
+
   if (srchVal) {
 
-    var value = $(this).val().toLowerCase();
+    var value = srchVal.toLowerCase();
 
     $("#scContainer #scCourseName").filter(function() {
       $(this).parent().parent().parent().toggle($(this).text().toLowerCase().indexOf(value) > -1)
