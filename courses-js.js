@@ -140,7 +140,9 @@ async function btnShowCoursesHtml() {
   console.log($("#scContainer"))
   console.log($("#scContainer").children())
   console.log($("#scContainer").children().not(":hidden"))
+  console.log($("#scContainer").children().not(":visible"))
   console.log($("#scContainer").children().not(":hidden").length)
+  console.log($("#scContainer").children().not(":visible").length)
   
   var nbrCourses = $("#scContainer").children().not(":hidden").length
 
