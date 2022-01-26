@@ -377,12 +377,12 @@ jQuery(function ($) {
                   $(this).parent().parent().parent().toggle($(this).text().toLowerCase().indexOf(value) > -1)
                 });
 
-                console.log($(".scContainer"))
-                console.log($("#scContainer"))
-                console.log(document.getElementById('scContainer'))
-                console.log(document.getElementById('scContainer').length)
+                console.log($(".scContainer").children())
+                console.log($("#scContainer").children())
+                // console.log(document.getElementById('scContainer'))
+                // console.log(document.getElementById('scContainer').length)
 
-                $("#scNbrCoursess")[0].innerHTML = document.getElementById('scContainer').length
+                $("#scNbrCoursess")[0].innerHTML = $("#scContainer").children().length
 
             });
 
