@@ -308,6 +308,22 @@ jQuery(function ($) {
             $('#srSelectDropDown').on('show.bs.dropdown', function () {
                 btnSRMoreVertHtml()
             })
+
+            $("#srSearch").on("input", function() {
+                var value = $(this).val().toLowerCase();
+
+                $("#srContainer #srCourseName").filter(function() {
+                  $(this).parent().parent().parent().toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+
+                var nbr = $("#srContainer").children().not(":hidden").length
+
+                // $("#scNbrCourses")[0].innerHTML = nbrCourses
+                $("#srNbrRounds").text(nbr)
+
+            });
+
+
           
             // Show Handicap
             $('#btnShowHandicap')         .click(btnShowHandicapHtml);

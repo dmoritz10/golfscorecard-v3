@@ -140,9 +140,9 @@ async function btnShowCoursesHtml() {
 
   gotoTab('Courses')
 
-  var nbrCourses = $("#scContainer").children().not(":hidden").length
+  var nbr = $("#scContainer").children().not(":hidden").length
 
-  $("#scNbrCourses").text(nbrCourses)
+  $("#scNbrCourses").text(nbr)
 }
 
 async function showCourseDetail(courseInfo) {

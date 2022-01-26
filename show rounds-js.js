@@ -147,7 +147,25 @@ async function btnShowRoundsHtml() {
     { $ ('#srNbrRounds').html(rndCntr + ' of ' + nbrRounds)}
   
     $('#rsGoTo')[0].setAttribute("onclick", `gotoTab('ShowRounds')`);
+  
+  var srchVal = $("#srSearch").val()
+
+  if (srchVal) {
+
+    var value = srchVal.toLowerCase();
+
+    $("#srContainer #srCourseName").filter(function() {
+      $(this).parent().parent().parent().toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+   
+  }
+
+
   gotoTab('ShowRounds')
+
+  var nbr = $("#srContainer").children().not(":hidden").length
+
+  $("#srNbrRounds").text(nbr)
 
 }
 
