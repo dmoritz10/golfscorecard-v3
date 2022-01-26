@@ -124,6 +124,8 @@ async function btnShowCoursesHtml() {
   }
 
   gotoTab('Courses')
+
+  alert('hi dan')
   
   var srchVal = $("#scSearchCourses").val()
 
