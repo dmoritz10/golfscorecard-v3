@@ -123,6 +123,8 @@ async function btnShowCoursesHtml() {
 
   }
 
+  gotoTab('Courses')
+  
   var srchVal = $("#scSearchCourses").val()
 
   if (srchVal) {
@@ -135,7 +137,7 @@ async function btnShowCoursesHtml() {
    
   }
 
-  gotoTab('Courses')
+
 
   console.log($("#scContainer"))
   console.log($("#scContainer").children())
