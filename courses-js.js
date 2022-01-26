@@ -140,6 +140,10 @@ async function btnShowCoursesHtml() {
 
 
   console.log($("#scContainer"))
+  console.log($("#scContainer").parent())
+  console.log($("#scContainer").parent().filter(':hidden'))
+  console.log($("#scContainer").parent().filter(':visible'))
+
   console.log($("#scContainer").children())
   console.log($("#scContainer").children().not(":hidden"))
   console.log($("#scContainer").children().not(":visible"))
