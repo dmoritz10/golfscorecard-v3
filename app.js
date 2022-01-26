@@ -377,15 +377,9 @@ jQuery(function ($) {
                   $(this).parent().parent().parent().toggle($(this).text().toLowerCase().indexOf(value) > -1)
                 });
 
-                console.log($("#scContainer").children())
-                var nbrDisp = $("#scContainer").children().not(":hidden")
-                console.log(nbrDisp)
-                console.log(nbrDisp.length)
-               
-                // console.log(document.getElementById('scContainer'))
-                // console.log(document.getElementById('scContainer').length)
+                var nbrCourses = $("#scContainer").children().not(":hidden").length
 
-                $("#scNbrCoursess")[0].innerHTML = nbrDisp.length
+                $("#scNbrCoursess")[0].innerHTML = nbrCourses
 
             });
 

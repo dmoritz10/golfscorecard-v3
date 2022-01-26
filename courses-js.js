@@ -123,6 +123,19 @@ async function btnShowCoursesHtml() {
 
   }
 
+  var srchVal = $("#shtSearchProviders").val()
+  if (srchVal) {
+
+    var value = $(this).val().toLowerCase();
+
+    $("#scContainer #scCourseName").filter(function() {
+      $(this).parent().parent().parent().toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+   
+  }
+
+  var nbrCourses = $("#scContainer").children().not(":hidden").length
+
   $("#scNbrCoursess")[0].innerHTML = nbrCourses
 
   // btnTeetimesHtml()
