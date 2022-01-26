@@ -123,9 +123,7 @@ async function btnShowCoursesHtml() {
 
   }
 
-  gotoTab('Courses')
-
-  alert('hi dan')
+ 
   
   var srchVal = $("#scSearchCourses").val()
 
@@ -139,23 +137,10 @@ async function btnShowCoursesHtml() {
    
   }
 
-
-
-  console.log($("#scContainer"))
-  console.log($("#scContainer").parent())
-  console.log($("#scContainer").parent().filter(':hidden'))
-  console.log($("#scContainer").parent().filter(':visible'))
-
-  console.log($("#scContainer").children())
-  console.log($("#scContainer").children().not(":hidden"))
-  console.log($("#scContainer").children().not(":visible"))
-  console.log($("#scContainer").children().not(":hidden").length)
-  console.log($("#scContainer").children().not(":visible").length)
-  
   var nbrCourses = $("#scContainer").children().not(":hidden").length
 
   $("#scNbrCourses").text(nbrCourses)
-
+  gotoTab('Courses')
 }
 
 async function showCourseDetail(courseInfo) {
