@@ -136,6 +136,10 @@ async function btnShowCoursesHtml() {
   }
 
   gotoTab('Courses')
+
+  console.log($("#scContainer"))
+  console.log($("#scContainer").children())
+  console.log($("#scContainer").children().not(":hidden"))
   
   var nbrCourses = $("#scContainer").children().not(":hidden").length
 
