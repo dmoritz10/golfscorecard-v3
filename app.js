@@ -318,7 +318,6 @@ jQuery(function ($) {
 
                 var nbr = $("#srContainer").children().not(":hidden").length
 
-                // $("#scNbrCourses")[0].innerHTML = nbrCourses
                 $("#srNbrRounds").text(nbr)
 
             });
