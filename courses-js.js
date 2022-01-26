@@ -123,7 +123,7 @@ async function btnShowCoursesHtml() {
 
   }
 
-  var srchVal = $("#shtSearchProviders").val()
+  var srchVal = $("#scSearchCourses").val()
   if (srchVal) {
 
     var value = $(this).val().toLowerCase();

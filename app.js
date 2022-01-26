@@ -370,7 +370,7 @@ jQuery(function ($) {
                 btnSCMoreVertHtml()
             })
 
-            $("#shtSearchCourses").on("input", function() {
+            $("#scSearchCourses").on("input", function() {
                 var value = $(this).val().toLowerCase();
 
                 $("#scContainer #scCourseName").filter(function() {
