@@ -510,6 +510,104 @@ async function btnSaveScoreHtml() {
   
 }
 
+async function btnHoleHistHtml() {
+
+  var rounds = await getRounds()
+
+  if (!rounds) return
+
+  var s = {
+   
+    Eagles: {nbr: 0, rcnt: new Date('1/1/1900')},
+    Birdies:{nbr: 0, rcnt: new Date('1/1/1900')},
+    Pars:{nbr: 0, rcnt: new Date('1/1/1900')},
+    Bogeys:{nbr: 0, rcnt: new Date('1/1/1900')},
+    'Dbl Bogeys':{nbr: 0, rcnt: new Date('1/1/1900')},
+    'Over Dbl Bogeys':{nbr: 0, rcnt: new Date('1/1/1900')}
+  }
+  
+  rounds.forEach((rnd) => {
+    var scorecard = JSON.parse(rnd.scoreCard)
+    scorecard.scores.forEach( val => {
+
+      if (val) {
+
+        var wrtp = val.score - val.par
+
+        switch(true) {
+
+          case wrtp < -1:
+            s.Eagles.nbr++
+            s.Eagles.rcnt = rnd.Date > s.Eagles.rcnt ? rnd.Date : s.Eagles.rcnt
+            break;
+          case wrtp < 0:
+            s.Birdies.nbr++
+            break;
+          case wrtp < 1:
+            s.Pars.nbr++
+            break;
+          case wrtp < 2:
+            s.Bogeys.nbr++
+            break;
+          case wrtp < 3:
+            s['Dbl Bogeys'].nbr++
+            break;
+          default:
+            s['Over Dbl Bogeys'].nbr++
+            break;
+
+        }
+    }
+    })
+  })
+
+  var arr = []
+
+  arr.push(['stationId', ...(w.map(({ stationID }) => '<small>' + stationID))])
+  arr.push(['obs', ...(w.map(({ obs }) => obs))])
+  arr.push(['distance', ...(w.map(({ coords }) => dist(coords)))])
+  arr.push(['elev', ...(w.map(({ elev }) => elev))])
+  arr.push(['temp', ...(w.map(({ temp }) => temp))])
+  arr.push(['humidity', ...(w.map(({ humidity }) => humidity))])
+  arr.push(['dewpt', ...(w.map(({ dewpt }) => dewpt))])
+  arr.push(['bPressure', ...(w.map(({ pressure }) => pressure))])
+  arr.push(['aPressure', ...(w.map(({ elev }) => pressure(elev)))])
+  arr.push(['windSpeed', ...(w.map(({ windSpeed }) => windSpeed))])
+  arr.push(['winddir', ...(w.map(({ winddir }) => winddir))])
+  arr.push(['set', ...(w.map(({ stationID }) => setBtn(stationID)))])
+  arr.push(['current', '<small>' + '<input  class="col-12 px-0 text-right" type="text" id="manualStationId" value=\'' + currentStation + '\'>',
+    '<button class="btn btn-outline-primary btn-sm py-0 my-0" onclick="setStationId(\'' + currentStation + '\')">Set</button>', ''])
+  console.log(arr)
+
+  var tbl = new Table();
+
+  tbl
+    .setHeader()
+    .setTableHeaderClass()
+    .setData(arr)
+    .setTableClass('table')
+    .setTrClass()
+    .setTcClass(['', 'text-right', 'text-right', 'text-right', 'text-right', 'text-right', 'text-right', 'text-right', 'text-right', 'text-right', 'text-right'])
+    .setTdClass('pb-1 pt-1 border-0')
+    .build();
+
+  return tbl.html
+
+  var title = "UWeather Station Comparison" + (bearing ? "<br><small>Bearing " + bearing + "</small>" : "")
+
+  var wPrompt = bootbox.alert({
+
+    title: title,
+    message: uweatherComp
+
+  });
+
+  wPrompt.init(function () {
+
+  });
+
+}
+
 async function btnClearScoreHtml() {
 
   if (!prScore.scores[prScore.currHole - 1]) return

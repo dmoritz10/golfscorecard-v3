@@ -263,6 +263,7 @@ jQuery(function ($) {
             $('#btnPrevHole')            .button().click({offset: -1}, btnChangeHoleHtml);
             $('#btnNextHole')            .button().click({offset: +1}, btnChangeHoleHtml);
             $('#btnCurrHole')            .button().click({offset: 0},  btnChangeHoleHtml);
+            $('#btnHoleHist')            .button().click(btnHoleHistHtml);
             $('#btnSaveScore')           .button().click(btnSaveScoreHtml);
             $('#btnEndRound')            .button().click(btnEndRoundHtml);
             $('#btnCancelRound')         .button().click(btnCancelRoundHtml);

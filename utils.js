@@ -1,6 +1,6 @@
 
 
-  function dupIds () {
+function dupIds () {
     var ids = { };
     var found = false;
     $('[id]').each(function(key,val) {
