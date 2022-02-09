@@ -344,7 +344,7 @@ function formatPercent (str, nbrDec) {
 
   if (!str) {return}
 
-  return Number((item* 100).toFixed(nbrDec))  + "%";
+  return Number((str* 100).toFixed(nbrDec))  + "%";
 
 }
 
