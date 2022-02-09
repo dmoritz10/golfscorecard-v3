@@ -530,8 +530,9 @@ async function btnHoleHistHtml(e) {
    var curHoleNbr = $('#prHole').text() * 1
 
    console.log('e', e )
+   console.log(typeof e)
 
-  if (e === 'Object') {
+  if (typeof e === 'Object') {
     var holeNbr = curHoleNbr
     console.log('!e', holeNbr)
   } else {
