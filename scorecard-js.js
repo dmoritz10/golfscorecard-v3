@@ -594,7 +594,7 @@ async function btnHoleHistHtml(e, prevHoleNbr) {
         sType, 
         formatNumber(s[sType].nbr), 
         formatPercent(s[sType].nbr / nbrTimesPlayed, 0),
-        s[sType].rcnt.toString().substr(4,11)
+        formatDate(s[sType].rcnt)
       ])
   }
 
