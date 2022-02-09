@@ -529,12 +529,17 @@ async function btnHoleHistHtml(e) {
   
    var curHoleNbr = $('#prHole').text() * 1
 
+   console.log('e', e )
+
   if (!e) {
     var holeNbr = curHoleNbr
+    console.log('!e', holeNbr)
   } else {
     var holeNbr = e == 'prev' ? curHoleNbr - 1 : curHoleNbr + 1
     if (holeNbr < 1) holeNbr = 18
     if (holeNbr > 18) holeNbr = 1
+    console.log('e', holeNbr)
+
   }
   
   var nbrTimesPlayed = 0 

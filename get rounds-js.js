@@ -193,9 +193,9 @@ async function getRounds(prmExcludeSmall, prmSelectCourse) {
 
     }
     
-    console.log((new Date() - str)/1000)
+    // console.log((new Date() - str)/1000)
     
-    console.log( objRounds)
+    // console.log( objRounds)
     
 //    await updateTarScr(JSON.parse(JSON.stringify(objRounds)), cols)
     
