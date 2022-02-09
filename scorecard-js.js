@@ -527,7 +527,7 @@ async function btnHoleHistHtml() {
 
   }
   
-  var holeNbr = $('#prHole').val()
+  var holeNbr = $('#prHole').text()
 
   console.log(holeNbr)
   
@@ -538,7 +538,7 @@ async function btnHoleHistHtml() {
     var scorecard = JSON.parse(rnd.scoreCard)
 
     console.log(scorecard)
-    
+
     scorecard.scores.forEach( val => {
 
       if (val) {
