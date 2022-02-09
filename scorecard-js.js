@@ -529,17 +529,12 @@ async function btnHoleHistHtml(e, prevHoleNbr) {
   
    var curHoleNbr = prevHoleNbr ? prevHoleNbr : $('#prHole').text() * 1
 
-   console.log('e', e )
-   console.log(typeof e)
-
   if (typeof e === 'object') {
     var holeNbr = curHoleNbr
-    console.log('!e', holeNbr)
   } else {
     var holeNbr = e == 'prev' ? curHoleNbr - 1 : curHoleNbr + 1
     if (holeNbr < 1)  holeNbr = 18
     if (holeNbr > 18) holeNbr = 1
-    console.log('e', holeNbr)
   }
   
   var nbrTimesPlayed = 0 
@@ -599,12 +594,9 @@ async function btnHoleHistHtml(e, prevHoleNbr) {
         sType, 
         formatNumber(s[sType].nbr), 
         formatPercent(s[sType].nbr / nbrTimesPlayed, 0),
-        s[sType].rcnt.toString().substr(0,15)
+        s[sType].rcnt.toString().substr(4,11)
       ])
   }
-
-  // arr.push(['current', '<small>' + '<input  class="col-12 px-0 text-right" type="text" id="manualStationId" value=\'' + currentStation + '\'>',
-  // '<button class="btn btn-outline-primary btn-sm py-0 my-0" onclick="setStationId(\'' + currentStation + '\')">Set</button>', ''])
 
   var tbl = new Table();
 
@@ -618,7 +610,7 @@ async function btnHoleHistHtml(e, prevHoleNbr) {
     .setTdClass('pb-1 pt-1 border-0')
     .build();
 
-  var title = "Scoring History for Hole " + holeNbr
+  var title = "Hole " + holeNbr + " Par " + rnd.par + " Avg " + rnd.par + " Dev " + rnd.par
 
   var wPrompt = bootbox.dialog({
 
