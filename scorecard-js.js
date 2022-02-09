@@ -543,6 +543,10 @@ async function btnHoleHistHtml() {
 
           var wrtp = val.score - val.par
 
+          console.log(rnd.date)
+          console.log(new Date(rnd.date))
+          console.log(s.Eagles.rcnt)
+
           switch(true) {
 
             case wrtp < -1:
