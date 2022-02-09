@@ -561,6 +561,8 @@ async function btnHoleHistHtml() {
     })
   })
 
+console.log(s)
+
   var arr = []
 
   arr.push(['stationId', ...(w.map(({ stationID }) => '<small>' + stationID))])
