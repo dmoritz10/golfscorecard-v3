@@ -623,12 +623,7 @@ async function btnHoleHistHtml(e) {
     message: tbl.html,    
     buttons: 
       {
-      cancel: 
-        {
-          label: "cancel",
-          className: 'btn-light'
-        },
-
+       
       prevHole: 
         {
           label: "prev",
@@ -638,7 +633,24 @@ async function btnHoleHistHtml(e) {
             btnHoleHistHtml('prev')
 
           }
-        }
+        },
+
+        nextHole: 
+          {
+            label: "next",
+            className: 'btn-primary',
+            callback: function(result){
+            
+              btnHoleHistHtml('next')
+  
+            }
+          },
+          
+        cancel:
+          {
+            label: "ok",
+            className: 'btn-primary'
+          }
       }
 
   });
