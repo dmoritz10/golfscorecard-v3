@@ -340,6 +340,14 @@ function formatNumber (str) {
 
 };
 
+function formatPercent (str, nbrDec) {
+
+  if (!str) {return}
+
+  return Number((item* 100).toFixed(nbrDec))  + "%";
+
+}
+
 function toast(e) {
     /*
    

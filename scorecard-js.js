@@ -527,7 +527,8 @@ async function btnHoleHistHtml() {
 
   }
   
-  var holeNbr = $('#prHole').text()  
+  var holeNbr = $('#prHole').text() 
+  var nbrTimesPlayed = 0 
 
   rounds.forEach((rnd) => {
 
@@ -539,7 +540,7 @@ async function btnHoleHistHtml() {
         
         if (rnd['courseName'] == prScore.courseName && holeNbr == val.holeNbr) {
 
-
+          nbrTimesPlayed++
           var wrtp = val.score - val.par
 
           switch(true) {
@@ -579,7 +580,11 @@ async function btnHoleHistHtml() {
   var arr = []
 
   for (const sType in s) {
-    if (s[sType].nbr) arr.push([sType, s[sType].nbr, s[sType].rcnt.toString().substr(0,15)])
+    if (s[sType].nbr) arr.push([
+      sType, 
+      formatNumber(s[sType].nbr), 
+      formatPercent(s[sType].nbr / nbrTimesPlayed, 0),
+      s[sType].rcnt.toString().substr(0,15)])
   }
 
   var tbl = new Table();
@@ -594,7 +599,7 @@ async function btnHoleHistHtml() {
     .setTdClass('pb-1 pt-1 border-0')
     .build();
 
-  var title = "Scoring History for hole " + holeNbr
+  var title = "Scoring History for Hole " + holeNbr
 
   var wPrompt = bootbox.alert({
 
