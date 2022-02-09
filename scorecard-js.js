@@ -510,7 +510,7 @@ async function btnSaveScoreHtml() {
   
 }
 
-async function btnHoleHistHtml() {
+async function btnHoleHistHtml(e) {
 
   var rounds = await getRounds()
 
@@ -528,7 +528,8 @@ async function btnHoleHistHtml() {
   }
   
   // var holeNbr = $('#prHole').text() 
-  var holeNbr = 5 
+  var holeNbr = e.data.holeNbr ? e.data.holeNbr : $('#prHole').text()
+  
   var nbrTimesPlayed = 0 
 
   rounds.forEach((rnd) => {
@@ -581,12 +582,17 @@ async function btnHoleHistHtml() {
   var arr = []
 
   for (const sType in s) {
-    if (s[sType].nbr) arr.push([
-      sType, 
-      formatNumber(s[sType].nbr), 
-      formatPercent(s[sType].nbr / nbrTimesPlayed, 0),
-      s[sType].rcnt.toString().substr(0,15)])
+    if (s[sType].nbr) 
+      arr.push([
+        sType, 
+        formatNumber(s[sType].nbr), 
+        formatPercent(s[sType].nbr / nbrTimesPlayed, 0),
+        s[sType].rcnt.toString().substr(0,15)
+      ])
   }
+
+  arr.push(['current', '<small>' + '<input  class="col-12 px-0 text-right" type="text" id="manualStationId" value=\'' + currentStation + '\'>',
+  '<button class="btn btn-outline-primary btn-sm py-0 my-0" onclick="setStationId(\'' + currentStation + '\')">Set</button>', ''])
 
   var tbl = new Table();
 
@@ -602,7 +608,7 @@ async function btnHoleHistHtml() {
 
   var title = "Scoring History for Hole " + holeNbr
 
-  var wPrompt = bootbox.alert({
+  var wPrompt = bootbox.dialog({
 
     title: title,
     message: tbl.html
