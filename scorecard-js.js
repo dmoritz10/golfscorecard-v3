@@ -577,7 +577,7 @@ console.log(s)
   var arr = []
 
   for (const sType in s) {
-    arr.push([sType, s[sType].nbr, s[sType].Date])
+    arr.push([sType, s[sType].nbr, s[sType].rcnt.substr(0,15)])
   }
 
   
@@ -591,7 +591,7 @@ console.log(s)
     .setData(arr)
     .setTableClass('table')
     .setTrClass()
-    .setTcClass(['', 'text-right', 'text-right'])
+    .setTcClass(['', 'text-right', 'text-left'])
     .setTdClass('pb-1 pt-1 border-0')
     .build();
 
