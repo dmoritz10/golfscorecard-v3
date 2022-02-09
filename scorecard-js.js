@@ -569,10 +569,10 @@ async function btnHoleHistHtml() {
 console.log(s)
 
   var arr = []
-
-  s.forEach((sType) => {
+  
+  for (const sType in s) {
     arr.push([sType.nbr, sType.Date])
-  })
+  }
 
   
   console.log(arr)
