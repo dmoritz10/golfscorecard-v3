@@ -528,12 +528,17 @@ async function btnHoleHistHtml() {
   }
   
   var holeNbr = $('#prHole').val()
+
+  console.log(holeNbr)
   
 
   rounds.forEach((rnd) => {
 
 
     var scorecard = JSON.parse(rnd.scoreCard)
+
+    console.log(scorecard)
+    
     scorecard.scores.forEach( val => {
 
       if (val) {
