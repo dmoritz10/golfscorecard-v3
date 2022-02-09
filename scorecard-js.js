@@ -618,7 +618,7 @@ async function btnHoleHistHtml(e, prevHoleNbr) {
 
   var dev = stdDev(arrScores)
 
-  var title = "Hole " + holeNbr + " | Par " + par + " | Avg " + formatNumber(dev.mean) + " | Dev " + formatNumber(dev.stdDev)
+  var title = "<p class='text-center'>Hole " + holeNbr + " | Par " + par + " | Avg " + formatNumber(dev.mean) + " | Dev " + formatNumber(dev.stdDev) + "</p"
 
   var wPrompt = bootbox.dialog({
 
