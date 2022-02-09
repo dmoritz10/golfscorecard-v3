@@ -571,7 +571,7 @@ console.log(s)
   var arr = []
 
   for (const sType in s) {
-    arr.push([sType, s.sType.nbr, s.sType.Date])
+    arr.push([sType, s[sType].nbr, s[sType].Date])
   }
 
   
