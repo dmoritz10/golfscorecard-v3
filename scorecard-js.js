@@ -527,10 +527,7 @@ async function btnHoleHistHtml() {
 
   }
   
-  var holeNbr = $('#prHole').text()
-
-  console.log(holeNbr)
-  
+  var holeNbr = $('#prHole').text()  
 
   rounds.forEach((rnd) => {
 
