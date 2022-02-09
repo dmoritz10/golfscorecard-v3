@@ -529,8 +529,8 @@ async function btnHoleHistHtml(e) {
   
    var curHoleNbr = $('#prHole').text() 
 
-  if (typeof e === "Object") {
-    var holeNbr = $('#prHole').text()
+  if (!e) {
+    var holeNbr = curHoleNbr
   } else {
     var holeNbr = e == 'prev' ? curHoleNbr - 1 : curHoleNbr + 1
     if (holeNbr < 1) holeNbr = 18
