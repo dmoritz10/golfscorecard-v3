@@ -527,7 +527,7 @@ async function btnHoleHistHtml(e) {
 
   }
   
-   var curHoleNbr = $('#prHole').text() 
+   var curHoleNbr = $('#prHole').text() * 1
 
   if (!e) {
     var holeNbr = curHoleNbr
