@@ -538,27 +538,27 @@ async function btnHoleHistHtml() {
 
           case wrtp < -1:
             s.Eagles.nbr++
-            s.Eagles.rcnt = rnd.Date > s.Eagles.rcnt ? rnd.Date : s.Eagles.rcnt
+            s.Eagles.rcnt = new Date(rnd.Date) > s.Eagles.rcnt ? new Date(rnd.Date) : s.Eagles.rcnt
             break;
           case wrtp < 0:
             s.Birdies.nbr++
-            s.Birdies.rcnt = rnd.Date > s.Birdies.rcnt ? rnd.Date : s.Birdies.rcnt
+            s.Birdies.rcnt = new Date(rnd.Date) > s.Birdies.rcnt ? new Date(rnd.Date) : s.Birdies.rcnt
             break;
           case wrtp < 1:
             s.Pars.nbr++
-            s.Pars.rcnt = rnd.Date > s.Pars.rcnt ? rnd.Date : s.Pars.rcnt
+            s.Pars.rcnt = new Date(rnd.Date) > s.Pars.rcnt ? new Date(rnd.Date) : s.Pars.rcnt
             break;
           case wrtp < 2:
             s.Bogeys.nbr++
-            s.Bogeys.rcnt = rnd.Date > s.Bogeys.rcnt ? rnd.Date : s.Bogeys.rcnt
+            s.Bogeys.rcnt = new Date(rnd.Date) > s.Bogeys.rcnt ? new Date(rnd.Date) : s.Bogeys.rcnt
             break;
           case wrtp < 3:
             s['Dbl Bogeys'].nbr++
-            s['Dbl Bogeys'].rcnt = rnd.Date > s['Dbl Bogeys'].rcnt ? rnd.Date : s['Dbl Bogeys'].rcnt
+            s['Dbl Bogeys'].rcnt = new Date(rnd.Date) > s['Dbl Bogeys'].rcnt ? new Date(rnd.Date) : s['Dbl Bogeys'].rcnt
             break;
           default:
             s['Over Dbl Bogeys'].nbr++
-            s['Over Dbl Bogeys'].rcnt = rnd.Date > s['Over Dbl Bogeys'].rcnt ? rnd.Date : s['Over Dbl Bogeys'].rcnt
+            s['Over Dbl Bogeys'].rcnt = new Date(rnd.Date)() > s['Over Dbl Bogeys'].rcnt ? new Date(rnd.Date) : s['Over Dbl Bogeys'].rcnt
             break;
 
         }
@@ -569,7 +569,7 @@ async function btnHoleHistHtml() {
 console.log(s)
 
   var arr = []
-  
+
   for (const sType in s) {
     arr.push([sType.nbr, sType.Date])
   }
