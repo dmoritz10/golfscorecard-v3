@@ -624,7 +624,7 @@ async function btnHoleHistHtml(e) {
        
       prevHole: 
         {
-          label: "prev",
+          label: "prev hole",
           className: 'btn-primary',
           callback: function(result){
           
@@ -635,7 +635,7 @@ async function btnHoleHistHtml(e) {
 
         nextHole: 
           {
-            label: "next",
+            label: "next hole",
             className: 'btn-primary',
             callback: function(result){
             
