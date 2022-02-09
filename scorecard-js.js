@@ -523,7 +523,7 @@ async function btnHoleHistHtml(e, prevHoleNbr) {
     Pars:{nbr: 0, rcnt: new Date('1/1/1900')},
     Bogeys:{nbr: 0, rcnt: new Date('1/1/1900')},
     'Dbl Bogeys':{nbr: 0, rcnt: new Date('1/1/1900')},
-    'Over Dbl Bogeys':{nbr: 0, rcnt: new Date('1/1/1900')}
+    '> Dbl Bogeys':{nbr: 0, rcnt: new Date('1/1/1900')}
 
   }
   
@@ -581,8 +581,8 @@ async function btnHoleHistHtml(e, prevHoleNbr) {
               s['Dbl Bogeys'].rcnt = new Date(rnd.date) > s['Dbl Bogeys'].rcnt ? new Date(rnd.date) : s['Dbl Bogeys'].rcnt
               break;
             default:
-              s['Over Dbl Bogeys'].nbr++
-              s['Over Dbl Bogeys'].rcnt = new Date(rnd.date) > s['Over Dbl Bogeys'].rcnt ? new Date(rnd.date) : s['Over Dbl Bogeys'].rcnt
+              s['> Dbl Bogeys'].nbr++
+              s['> Dbl Bogeys'].rcnt = new Date(rnd.date) > s['> Dbl Bogeys'].rcnt ? new Date(rnd.date) : s['> Dbl Bogeys'].rcnt
               break;
 
           }
