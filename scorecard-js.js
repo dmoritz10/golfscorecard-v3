@@ -542,18 +542,23 @@ async function btnHoleHistHtml() {
             break;
           case wrtp < 0:
             s.Birdies.nbr++
+            s.Birdies.rcnt = rnd.Date > s.Birdies.rcnt ? rnd.Date : s.Birdies.rcnt
             break;
           case wrtp < 1:
             s.Pars.nbr++
+            s.Pars.rcnt = rnd.Date > s.Pars.rcnt ? rnd.Date : s.Pars.rcnt
             break;
           case wrtp < 2:
             s.Bogeys.nbr++
+            s.Bogeys.rcnt = rnd.Date > s.Bogeys.rcnt ? rnd.Date : s.Bogeys.rcnt
             break;
           case wrtp < 3:
             s['Dbl Bogeys'].nbr++
+            s['Dbl Bogeys'].rcnt = rnd.Date > s['Dbl Bogeys'].rcnt ? rnd.Date : s['Dbl Bogeys'].rcnt
             break;
           default:
             s['Over Dbl Bogeys'].nbr++
+            s['Over Dbl Bogeys'].rcnt = rnd.Date > s['Over Dbl Bogeys'].rcnt ? rnd.Date : s['Over Dbl Bogeys'].rcnt
             break;
 
         }
