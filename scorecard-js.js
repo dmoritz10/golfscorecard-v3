@@ -527,7 +527,8 @@ async function btnHoleHistHtml() {
 
   }
   
-  var holeNbr = $('#prHole').text() 
+  // var holeNbr = $('#prHole').text() 
+  var holeNbr = 5 
   var nbrTimesPlayed = 0 
 
   rounds.forEach((rnd) => {
