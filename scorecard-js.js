@@ -576,8 +576,6 @@ async function btnHoleHistHtml() {
     
   })
 
-console.log(s)
-
   var arr = []
 
   for (const sType in s) {
@@ -596,7 +594,7 @@ console.log(s)
     .setTdClass('pb-1 pt-1 border-0')
     .build();
 
-  var title = "Score"
+  var title = "Scoring History for hole " + holeNbr
 
   var wPrompt = bootbox.alert({
 
