@@ -610,7 +610,7 @@ async function btnHoleHistHtml(e, prevHoleNbr) {
     .setTdClass('pb-1 pt-1 border-0')
     .build();
 
-  var title = "Hole " + holeNbr + " Par " + rnd.par + " Avg " + rnd.par + " Dev " + rnd.par
+  var title = "Hole " + holeNbr + " Par " + "72" + " Avg " + "4.1" + " Dev " + "1.1"
 
   var wPrompt = bootbox.dialog({
 
