@@ -534,10 +534,7 @@ async function btnHoleHistHtml() {
 
   rounds.forEach((rnd) => {
 
-
     var scorecard = JSON.parse(rnd.scoreCard)
-
-    console.log(scorecard)
 
     scorecard.scores.forEach( val => {
 
@@ -547,10 +544,6 @@ async function btnHoleHistHtml() {
 
 
           var wrtp = val.score - val.par
-
-          console.log(rnd.date)
-          console.log(new Date(rnd.date))
-          console.log(s.Eagles.rcnt)
 
           switch(true) {
 
@@ -580,8 +573,8 @@ async function btnHoleHistHtml() {
               break;
 
           }
-      }
-    } 
+        }
+      } 
     })
     
   })
@@ -591,11 +584,8 @@ console.log(s)
   var arr = []
 
   for (const sType in s) {
-    arr.push([sType, s[sType].nbr, s[sType].rcnt.toString().substr(0,15)])
+    if (s[sType].nbr) arr.push([sType, s[sType].nbr, s[sType].rcnt.toString().substr(0,15)])
   }
-
-  
-  console.log(arr)
 
   var tbl = new Table();
 
