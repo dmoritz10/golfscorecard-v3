@@ -558,7 +558,7 @@ async function btnHoleHistHtml() {
             break;
           default:
             s['Over Dbl Bogeys'].nbr++
-            s['Over Dbl Bogeys'].rcnt = new Date(rnd.Date)() > s['Over Dbl Bogeys'].rcnt ? new Date(rnd.Date) : s['Over Dbl Bogeys'].rcnt
+            s['Over Dbl Bogeys'].rcnt = new Date(rnd.Date) > s['Over Dbl Bogeys'].rcnt ? new Date(rnd.Date) : s['Over Dbl Bogeys'].rcnt
             break;
 
         }
