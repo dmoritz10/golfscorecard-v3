@@ -536,41 +536,42 @@ async function btnHoleHistHtml() {
     var scorecard = JSON.parse(rnd.scoreCard)
     scorecard.scores.forEach( val => {
 
-      if (rnd['courseName'] == prScore.courseName && holeNbr == val.holeNbr) {
-
       if (val) {
+        
+        if (rnd['courseName'] == prScore.courseName && holeNbr == val.holeNbr) {
 
-        var wrtp = val.score - val.par
 
-        switch(true) {
+          var wrtp = val.score - val.par
 
-          case wrtp < -1:
-            s.Eagles.nbr++
-            s.Eagles.rcnt = new Date(rnd.date) > s.Eagles.rcnt ? new Date(rnd.date) : s.Eagles.rcnt
-            break;
-          case wrtp < 0:
-            s.Birdies.nbr++
-            s.Birdies.rcnt = new Date(rnd.date) > s.Birdies.rcnt ? new Date(rnd.date) : s.Birdies.rcnt
-            break;
-          case wrtp < 1:
-            s.Pars.nbr++
-            s.Pars.rcnt = new Date(rnd.date) > s.Pars.rcnt ? new Date(rnd.date) : s.Pars.rcnt
-            break;
-          case wrtp < 2:
-            s.Bogeys.nbr++
-            s.Bogeys.rcnt = new Date(rnd.date) > s.Bogeys.rcnt ? new Date(rnd.date) : s.Bogeys.rcnt
-            break;
-          case wrtp < 3:
-            s['Dbl Bogeys'].nbr++
-            s['Dbl Bogeys'].rcnt = new Date(rnd.date) > s['Dbl Bogeys'].rcnt ? new Date(rnd.date) : s['Dbl Bogeys'].rcnt
-            break;
-          default:
-            s['Over Dbl Bogeys'].nbr++
-            s['Over Dbl Bogeys'].rcnt = new Date(rnd.date) > s['Over Dbl Bogeys'].rcnt ? new Date(rnd.date) : s['Over Dbl Bogeys'].rcnt
-            break;
+          switch(true) {
 
-        }
-    }
+            case wrtp < -1:
+              s.Eagles.nbr++
+              s.Eagles.rcnt = new Date(rnd.date) > s.Eagles.rcnt ? new Date(rnd.date) : s.Eagles.rcnt
+              break;
+            case wrtp < 0:
+              s.Birdies.nbr++
+              s.Birdies.rcnt = new Date(rnd.date) > s.Birdies.rcnt ? new Date(rnd.date) : s.Birdies.rcnt
+              break;
+            case wrtp < 1:
+              s.Pars.nbr++
+              s.Pars.rcnt = new Date(rnd.date) > s.Pars.rcnt ? new Date(rnd.date) : s.Pars.rcnt
+              break;
+            case wrtp < 2:
+              s.Bogeys.nbr++
+              s.Bogeys.rcnt = new Date(rnd.date) > s.Bogeys.rcnt ? new Date(rnd.date) : s.Bogeys.rcnt
+              break;
+            case wrtp < 3:
+              s['Dbl Bogeys'].nbr++
+              s['Dbl Bogeys'].rcnt = new Date(rnd.date) > s['Dbl Bogeys'].rcnt ? new Date(rnd.date) : s['Dbl Bogeys'].rcnt
+              break;
+            default:
+              s['Over Dbl Bogeys'].nbr++
+              s['Over Dbl Bogeys'].rcnt = new Date(rnd.date) > s['Over Dbl Bogeys'].rcnt ? new Date(rnd.date) : s['Over Dbl Bogeys'].rcnt
+              break;
+
+          }
+      }
     } 
     })
     
