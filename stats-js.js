@@ -668,6 +668,21 @@ function chartPutting (title, rounds, myStatsRng, endRow)   {
 
 }
 
+function xPuttsPerRound (scoreCardArr, x) {    // move this out of above routine to make accessible from scorecard-js.js
+  var arr = []
+  scoreCardArr.forEach((scoreCard) => {
+    var nbrHoles = scoreCard.length
+    var nbrPutts = 0
+    scoreCard.forEach((val, idx) => {
+      if (val.putts*1 == x) {
+        nbrPutts++
+      }
+    })
+    if (nbrHoles>0) {arr.push(nbrPutts )}
+   })
+  return arr
+}   
+
 function chartScoreComparison (title, rounds, myStatsRng, endRow) {
 
   var rounds1 = extrRndData	(rounds, null, endRow.row1)
