@@ -372,7 +372,11 @@ function stdDev(arr){
  let variance = sum / arr.length
   
  // Returning the Standered deviation
- return {mean: mean, stdDev: Math.sqrt(sum / arr.length)}
+ return {
+    mean: Math.round(mean * 10) / 10, 
+    stdDev: Math.round(Math.sqrt(sum / arr.length) * 10) / 10
+  }
+  
 }
  
 
