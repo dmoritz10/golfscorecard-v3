@@ -681,6 +681,7 @@ function xPuttsPerRound (scoreCardArr, x) {    // move this out of above routine
     if (nbrHoles>0) {arr.push(nbrPutts )}
    })
   return arr
+  
 }   
 
 function chartScoreComparison (title, rounds, myStatsRng, endRow) {
