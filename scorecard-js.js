@@ -527,8 +527,12 @@ async function btnHoleHistHtml() {
   }
   
   rounds.forEach((rnd) => {
+
+
     var scorecard = JSON.parse(rnd.scoreCard)
     scorecard.scores.forEach( val => {
+
+      if (rnd['courseName'] == prScore.courseName) {
 
       if (val) {
 
@@ -563,7 +567,9 @@ async function btnHoleHistHtml() {
 
         }
     }
+    } 
     })
+    
   })
 
 console.log(s)
