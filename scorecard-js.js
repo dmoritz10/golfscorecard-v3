@@ -540,6 +540,7 @@ async function btnHoleHistHtml(e, prevHoleNbr) {
   var nbrTimesPlayed = 0 
 
   var par
+  var arrScores = []
 
   rounds.forEach((rnd) => {
 
@@ -552,6 +553,7 @@ async function btnHoleHistHtml(e, prevHoleNbr) {
         if (rnd['courseName'] == prScore.courseName && holeNbr == val.holeNbr) {
 
           par = val.par
+          arrScores.push(val.score)
 
           nbrTimesPlayed++
           var wrtp = val.score - val.par
@@ -614,7 +616,9 @@ async function btnHoleHistHtml(e, prevHoleNbr) {
     .setTdClass('pb-1 pt-1 border-0')
     .build();
 
-  var title = "Hole " + holeNbr + " Par " + par + " Avg " + "4.1" + " Dev " + "1.1"
+  var stdDev = stdDev(arrScores)
+
+  var title = "Hole " + holeNbr + " Par " + par + " Avg " + stdDev.mean + " Dev " + stdDev.stdDev
 
   var wPrompt = bootbox.dialog({
 
