@@ -527,7 +527,16 @@ async function btnHoleHistHtml(e) {
 
   }
   
-  // var holeNbr = $('#prHole').text() 
+   var curHoleNbr = $('#prHole').text() 
+
+  if (typeof e === "Object") {
+    var holeNbr = $('#prHole').text()
+  } else {
+    var holeNbr = e == 'prev' ? curHoleNbr - 1 : curHoleNbr + 1
+    if (holeNbr < 1) holeNbr = 18
+    if (holeNbr > 18) holeNbr = 1
+  }
+  
   var holeNbr = e.data.holeNbr ? e.data.holeNbr : $('#prHole').text()
   
   var nbrTimesPlayed = 0 
