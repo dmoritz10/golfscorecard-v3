@@ -586,7 +586,7 @@ console.log(s)
 
   return tbl.html
 
-  var title = "Score)
+  var title = "Score"
 
   var wPrompt = bootbox.alert({
 
