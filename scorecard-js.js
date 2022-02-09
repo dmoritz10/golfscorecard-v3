@@ -537,8 +537,6 @@ async function btnHoleHistHtml(e) {
     if (holeNbr > 18) holeNbr = 1
   }
   
-  var holeNbr = e.data.holeNbr ? e.data.holeNbr : $('#prHole').text()
-  
   var nbrTimesPlayed = 0 
 
   rounds.forEach((rnd) => {
@@ -645,7 +643,7 @@ async function btnHoleHistHtml(e) {
   
             }
           },
-          
+
         cancel:
           {
             label: "ok",
