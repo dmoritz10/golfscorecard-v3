@@ -595,7 +595,7 @@ async function btnHoleHistHtml() {
     .setData(arr)
     .setTableClass('table')
     .setTrClass()
-    .setTcClass(['', 'text-right', 'text-left'])
+    .setTcClass(['', 'text-right', 'text-right', 'text-left'])
     .setTdClass('pb-1 pt-1 border-0')
     .build();
 
