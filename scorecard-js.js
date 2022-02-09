@@ -589,8 +589,6 @@ console.log(s)
     .setTdClass('pb-1 pt-1 border-0')
     .build();
 
-  return tbl.html
-
   var title = "Score"
 
   var wPrompt = bootbox.alert({
