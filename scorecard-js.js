@@ -582,7 +582,7 @@ console.log(s)
   var arr = []
 
   for (const sType in s) {
-    arr.push([sType, s[sType].nbr, s[sType].rcnt.substr(0,15)])
+    arr.push([sType, s[sType].nbr, s[sType].rcnt.toString().substr(0,15)])
   }
 
   
