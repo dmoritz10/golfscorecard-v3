@@ -532,7 +532,7 @@ async function btnHoleHistHtml(e) {
    console.log('e', e )
    console.log(typeof e)
 
-  if (typeof e === 'Object') {
+  if (typeof e === 'object') {
     var holeNbr = curHoleNbr
     console.log('!e', holeNbr)
   } else {
