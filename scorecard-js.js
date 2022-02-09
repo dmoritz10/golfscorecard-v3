@@ -524,15 +524,19 @@ async function btnHoleHistHtml() {
     Bogeys:{nbr: 0, rcnt: new Date('1/1/1900')},
     'Dbl Bogeys':{nbr: 0, rcnt: new Date('1/1/1900')},
     'Over Dbl Bogeys':{nbr: 0, rcnt: new Date('1/1/1900')}
+
   }
   
+  var holeNbr = $('#prHole').val()
+  
+
   rounds.forEach((rnd) => {
 
 
     var scorecard = JSON.parse(rnd.scoreCard)
     scorecard.scores.forEach( val => {
 
-      if (rnd['courseName'] == prScore.courseName) {
+      if (rnd['courseName'] == prScore.courseName && holeNbr == val.holeNbr) {
 
       if (val) {
 
