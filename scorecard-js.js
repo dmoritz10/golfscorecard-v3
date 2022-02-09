@@ -565,20 +565,11 @@ console.log(s)
 
   var arr = []
 
-  arr.push(['stationId', ...(w.map(({ stationID }) => '<small>' + stationID))])
-  arr.push(['obs', ...(w.map(({ obs }) => obs))])
-  arr.push(['distance', ...(w.map(({ coords }) => dist(coords)))])
-  arr.push(['elev', ...(w.map(({ elev }) => elev))])
-  arr.push(['temp', ...(w.map(({ temp }) => temp))])
-  arr.push(['humidity', ...(w.map(({ humidity }) => humidity))])
-  arr.push(['dewpt', ...(w.map(({ dewpt }) => dewpt))])
-  arr.push(['bPressure', ...(w.map(({ pressure }) => pressure))])
-  arr.push(['aPressure', ...(w.map(({ elev }) => pressure(elev)))])
-  arr.push(['windSpeed', ...(w.map(({ windSpeed }) => windSpeed))])
-  arr.push(['winddir', ...(w.map(({ winddir }) => winddir))])
-  arr.push(['set', ...(w.map(({ stationID }) => setBtn(stationID)))])
-  arr.push(['current', '<small>' + '<input  class="col-12 px-0 text-right" type="text" id="manualStationId" value=\'' + currentStation + '\'>',
-    '<button class="btn btn-outline-primary btn-sm py-0 my-0" onclick="setStationId(\'' + currentStation + '\')">Set</button>', ''])
+  s.forEach((sType) => {
+    arr.push([sType.nbr, sType.Date])
+  }
+
+  
   console.log(arr)
 
   var tbl = new Table();
@@ -595,12 +586,12 @@ console.log(s)
 
   return tbl.html
 
-  var title = "UWeather Station Comparison" + (bearing ? "<br><small>Bearing " + bearing + "</small>" : "")
+  var title = "Score)
 
   var wPrompt = bootbox.alert({
 
     title: title,
-    message: uweatherComp
+    message: tbl.html
 
   });
 
