@@ -580,7 +580,7 @@ console.log(s)
     .setData(arr)
     .setTableClass('table')
     .setTrClass()
-    .setTcClass(['', 'text-right', 'text-right', 'text-right', 'text-right', 'text-right', 'text-right', 'text-right', 'text-right', 'text-right', 'text-right'])
+    .setTcClass(['', 'text-right', 'text-right'])
     .setTdClass('pb-1 pt-1 border-0')
     .build();
 
