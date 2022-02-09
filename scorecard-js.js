@@ -611,7 +611,24 @@ async function btnHoleHistHtml(e) {
   var wPrompt = bootbox.dialog({
 
     title: title,
-    message: tbl.html
+    message: tbl.html,    
+    buttons: {
+      cancel: {
+          label: "cancel",
+          className: 'btn-light'
+      },
+
+      prevHole: {
+        label: "prev",
+        className: 'btn-primary',
+        callback: async function(result){
+        
+          await btnHoleHistHtml('prev')
+
+        }
+      }
+
+    }
 
   });
 
