@@ -567,7 +567,7 @@ console.log(s)
 
   s.forEach((sType) => {
     arr.push([sType.nbr, sType.Date])
-  }
+  })
 
   
   console.log(arr)
