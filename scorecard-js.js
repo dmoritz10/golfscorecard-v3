@@ -510,7 +510,7 @@ async function btnSaveScoreHtml() {
   
 }
 
-async function btnHoleHistHtml(e) {
+async function btnHoleHistHtml(e, prevHoleNbr) {
 
   var rounds = await getRounds()
 
@@ -527,7 +527,7 @@ async function btnHoleHistHtml(e) {
 
   }
   
-   var curHoleNbr = $('#prHole').text() * 1
+   var curHoleNbr = prevHoleNbr ? prevHoleNbr : $('#prHole').text() * 1
 
    console.log('e', e )
    console.log(typeof e)
@@ -537,10 +537,9 @@ async function btnHoleHistHtml(e) {
     console.log('!e', holeNbr)
   } else {
     var holeNbr = e == 'prev' ? curHoleNbr - 1 : curHoleNbr + 1
-    if (holeNbr < 1) holeNbr = 18
+    if (holeNbr < 1)  holeNbr = 18
     if (holeNbr > 18) holeNbr = 1
     console.log('e', holeNbr)
-
   }
   
   var nbrTimesPlayed = 0 
@@ -634,7 +633,7 @@ async function btnHoleHistHtml(e) {
           className: 'btn-primary',
           callback: function(result){
           
-            btnHoleHistHtml('prev')
+            btnHoleHistHtml('prev', holeNbr)
 
           }
         },
@@ -645,7 +644,7 @@ async function btnHoleHistHtml(e) {
             className: 'btn-primary',
             callback: function(result){
             
-              btnHoleHistHtml('next')
+              btnHoleHistHtml('next', holeNbr)
   
             }
           },
