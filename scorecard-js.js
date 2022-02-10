@@ -624,6 +624,7 @@ async function btnHoleHistHtml(e, prevHoleNbr) {
 
     title: title,
     message: tbl.html,    
+    className: 'holeHistoryCSS',
     buttons: 
       {
        
@@ -631,7 +632,6 @@ async function btnHoleHistHtml(e, prevHoleNbr) {
         {
           label: "prev hole",
           className: 'btn-outline-primary',
-          className: 'holeHistoryCSS',
           callback: function(result){
           
             btnHoleHistHtml('prev', holeNbr)
