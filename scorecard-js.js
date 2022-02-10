@@ -618,7 +618,7 @@ async function btnHoleHistHtml(e, prevHoleNbr) {
 
   var dev = stdDev(arrScores)
 
-  var title = "<span class='text-center text-primary'>Hole " + holeNbr + "&nbsp;".repeat(4) + "Par " + par + "&nbsp;".repeat(3) + "Avg " + formatNumber(dev.mean) + "&nbsp;".repeat(3) + "Dev " + formatNumber(dev.stdDev) + "</span"
+  var title = "Hole " + holeNbr + "&nbsp;".repeat(4) + "Par " + par + "&nbsp;".repeat(3) + "Avg " + formatNumber(dev.mean) + "&nbsp;".repeat(3) + "Dev " + formatNumber(dev.stdDev)
 
   var wPrompt = bootbox.dialog({
 
@@ -631,6 +631,7 @@ async function btnHoleHistHtml(e, prevHoleNbr) {
         {
           label: "prev hole",
           className: 'btn-outline-primary',
+          className: 'holeHistoryCSS',
           callback: function(result){
           
             btnHoleHistHtml('prev', holeNbr)
