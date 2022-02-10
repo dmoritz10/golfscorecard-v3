@@ -651,7 +651,7 @@ async function btnHoleHistHtml(e, prevHoleNbr) {
 
         cancel:
           {
-            label: "ok",
+            label: "close",
             className: 'btn-primary'
           }
       }
