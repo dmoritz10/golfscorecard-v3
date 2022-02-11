@@ -621,7 +621,7 @@ async function btnHoleHistHtml(e, prevHoleNbr) {
   var title = "Hole " + holeNbr + "&nbsp;".repeat(4) + 
               "Par " + par + "&nbsp;".repeat(3) + 
               "Avg " + formatNumber(dev.mean) + "&nbsp;".repeat(3) + 
-              "Plyd " + formatNumber(margin: auto)
+              "Plyd " + formatNumber(nbrTimesPlayed)
 
   var wPrompt = bootbox.dialog({
 
