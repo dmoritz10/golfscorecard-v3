@@ -604,6 +604,8 @@ async function btnHoleHistHtml(e, prevHoleNbr) {
       ])
   }
 
+  arr.push(['', nbrTimesPlayed, '', ''])
+
   var tbl = new Table();
 
   tbl
@@ -620,8 +622,8 @@ async function btnHoleHistHtml(e, prevHoleNbr) {
 
   var title = "Hole " + holeNbr + " - " + 
               "Par " + par + " - " + 
-              "Avg " + formatNumber(dev.mean) + " - " + 
-              "Plyd " + formatNumber(nbrTimesPlayed)
+              "Hcp " + prCourse.holeDetail[holeNbr - 1].hcp + " - " +
+              "Avg " + formatNumber(dev.mean)
 
   var wPrompt = bootbox.dialog({
 
