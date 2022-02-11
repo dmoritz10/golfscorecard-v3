@@ -632,7 +632,6 @@ async function btnHoleHistHtml(e, prevHoleNbr) {
     className: 'holeHistoryCSS',
     buttons: 
       {
-       
       prevHole: 
         {
           label: "prev hole",
