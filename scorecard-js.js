@@ -630,6 +630,7 @@ async function btnHoleHistHtml(e, prevHoleNbr) {
     title: title,
     message: tbl.html,    
     className: 'holeHistoryCSS',
+    closeButton: false,
     buttons: 
       {
       prevHole: 
