@@ -698,15 +698,11 @@ async function btnEndRoundHtml() {
 
   if (!confirmOK) return
   
-  // var signinStatus = await testAuth()
-  // if (!signinStatus) return
-  
  
   $('#btnEndRound').prop('disabled', true)
   
   navigator.geolocation.clearWatch(geoWatchId);  
  
-  // RSCalledFrom = "EndRound"
   btnRoundStatsHtml()
   
   gotoTab('RoundStats')  
@@ -716,7 +712,6 @@ async function btnEndRoundHtml() {
   prScore.finalScore = $.sum (prScore.scores, 'score')
 
   await updateOption('currScoreCard', JSON.stringify(prScore))                  
-//  await promiseRun('logRound', 'currScoreCard', JSON.stringify(prScore))
 
   var resource = {
     "majorDimension": "ROWS",
@@ -746,8 +741,6 @@ async function btnEndRoundHtml() {
   await gapi.client.sheets.spreadsheets.values.append(params, resource)
     .then(async function(response) {
       
-      // console.log(response.result.updates.updatedRange)
-      // updateOption('Clubs', prClubs)
       console.log('round posted')
 
       await updateOption('currScoreCard', '')                  
