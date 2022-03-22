@@ -143,6 +143,14 @@ async function btnShowCoursesHtml() {
   var nbr = $("#scContainer").children().not(":hidden").length
 
   $("#scNbrCourses").text(nbr)
+
+  $('#scContainer > div').click(function(e){         // highlight clicked row
+    
+    $('#scContainer > div').removeClass('sheet-focus');
+    $(e.currentTarget).addClass('sheet-focus')
+    
+  });
+
 }
 
 async function showCourseDetail(courseInfo) {
