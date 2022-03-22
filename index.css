@@ -37,6 +37,7 @@
     max-height: 550px;
     overflow-y: auto;
     white-space:pre-wrap;
+    background-color: lightblue;
 }    
     
 .popover {
