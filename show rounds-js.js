@@ -167,6 +167,11 @@ async function btnShowRoundsHtml() {
 
   $("#srNbrRounds").text(nbr)
 
+  $('#srContainer > div').click(function(e){         // highlight clicked row
+    $('#srContainer > div').removeClass('sheet-focus');
+    $(e.currentTarget).addClass('sheet-focus')
+  });
+
 }
 
 async function showRoundDetail (rowIdx) {

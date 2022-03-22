@@ -68,6 +68,11 @@ function btnShowClubsHtml () {
     }
     
     gotoTab('Clubs')
+
+    $('#clbContainer > div').click(function(e){         // highlight clicked row
+      $('#clbContainer > div').removeClass('sheet-focus');
+      $(e.currentTarget).addClass('sheet-focus')
+    });
     
 }
 

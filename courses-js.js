@@ -145,10 +145,8 @@ async function btnShowCoursesHtml() {
   $("#scNbrCourses").text(nbr)
 
   $('#scContainer > div').click(function(e){         // highlight clicked row
-    
     $('#scContainer > div').removeClass('sheet-focus');
     $(e.currentTarget).addClass('sheet-focus')
-    
   });
 
 }

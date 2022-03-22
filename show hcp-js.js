@@ -166,6 +166,11 @@ async function btnShowHandicapHtml () {
   var hcpForceRecalc = $('#hcpForceRecalc').prop('checked')
   if (rounds.length != prevNbrRounds || hcpForceRecalc)    courseSummary(rounds)
 
+  $('#hcpContainer > div').click(function(e){         // highlight clicked row
+    $('#hcpContainer > div').removeClass('sheet-focus');
+    $(e.currentTarget).addClass('sheet-focus')
+  });
+
 }
 
 function displayHcpTrend(hcpArr, handicapAlert) {

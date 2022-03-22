@@ -50,7 +50,11 @@
 
     gotoTab('Golfers')
 
-console.log("btnShowGolfersHtml")
+    $('#glfContainer > div').click(function(e){         // highlight clicked row
+      $('#glfContainer > div').removeClass('sheet-focus');
+      $(e.currentTarget).addClass('sheet-focus')
+    });
+    
 
 }
 

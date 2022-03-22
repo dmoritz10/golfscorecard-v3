@@ -102,6 +102,11 @@ function btnTeetimesHtml () {
     }
     
     gotoTab('Teetimes')
+
+    $('#ttContainer > div').click(function(e){         // highlight clicked row
+      $('#ttContainer > div').removeClass('sheet-focus');
+      $(e.currentTarget).addClass('sheet-focus')
+    });
     
 }
 
