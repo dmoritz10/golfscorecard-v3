@@ -719,7 +719,7 @@ function shareRound() {
 
 
 
-  window.open('mailto:test@example.com?subject=subject&body=body');
+  window.open('mailto:test@example.com?subject=subject&body=<div style="background-color:powderblue;color:red;">');
 
 
 
