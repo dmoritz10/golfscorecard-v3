@@ -714,3 +714,13 @@ function estimateCompletion() {
   return rndPlayTime + ' | ' + estPlayTime + ' | ' + st.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
 
 }
+
+function btnShareRound() {
+
+
+
+  window.open('mailto:test@example.com?subject=subject&body=body');
+
+
+
+}
