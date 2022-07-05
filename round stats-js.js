@@ -715,7 +715,7 @@ function estimateCompletion() {
 
 }
 
-function btnShareRound() {
+function shareRound() {
 
 
 
